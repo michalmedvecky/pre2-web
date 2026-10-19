@@ -24,12 +24,12 @@ export class World {
   loadLevel(index,{restart=false}={}){
     index=clamp(index,0,this.assets.game.levels.length-1);const prior=restart?this.capturePersistence():null;
     this.levelIndex=index;this.level=this.assets.game.levels[index];this.map=this.assets.maps[this.level.id].slice();this.mem=new Uint8Array(65536);this.mem.set(this.assets.tables.subarray(0,65536));this.mem.set(this.assets.footers[this.level.id],0x7e5a);
-    this.rng=new Random(5,0x22,0x86,0xe58d,this.word(0x28bd));this.frame=0;this.transition=null;this.transitionTimer=0;this.deathTimer=0;this.effects=[];this.projectiles=[];this.playerWeapon=null;this.actors=[];this.items=[];this.platforms=[];this.gates=this.level.gates;this.gateCameraFlag=0;this.spawnCursor=0;this.spawnSide=0;
+    this.rng=new Random(5,0x22,0x86,0xe58d,this.word(0x28bd));this.frame=0;this.transition=null;this.transitionTimer=0;this.deathTimer=0;this.effects=[];this.projectiles=[];this.playerWeapon=null;this.actors=[];this.items=[];this.platforms=[];this.gates=this.level.gates;this.gateCameraFlag=0;this.spawnCursor=0;this.spawnSide=0;this.enemyPowerTimer=0;this.ropePoints=[];
     this.inventory=0;this.inventory2=0;this.foodHealth=0;this.health=3;this.power=0;this.weather=0;this.collectedFood=0;this.brokenBlocks=0;this.foodCounts=new Uint16Array(110);this.alternate=false;this.wind=0;this.sceneFlash=0;this.blockCooldown=0;
     this.definitions=this.level.enemies.filter(d=>!d.expert_flag||this.expert).map((d,index)=>({...d,index,active:false,destroyed:false,timer:d.unknown7||0,flags:d.unknown4||0,extra:Uint8Array.from((d.extra_hex||'').match(/../g)||[],x=>parseInt(x,16))}));
     this.items=this.level.items.filter(d=>d.active).map(d=>({...d,sprite:d.sprite,active:true,originalSprite:d.sprite,bob:s8(d.flags||0),baseY:d.y,permanent:false}));
     this.platforms=this.level.platforms.filter(d=>d.active).map(d=>this.makePlatform(d));
-    const footer=this.assets.footers[this.level.id];this.blocks=this.level.secrets.filter(d=>d.active && (d.raw[3]!==255 || d.raw[4]!==255)).map(d=>({index:d.index,content:d.raw[0],replacement:d.raw[1],durability:d.raw[2],pos:d.raw[3]|d.raw[4]<<8,active:true,hitAt:-999}));
+    const footer=this.assets.footers[this.level.id];this.blocks=this.level.secrets.filter(d=>d.active && (d.raw[3]!==255 || d.raw[4]!==255)).map(d=>{const pos=d.raw[3]|d.raw[4]<<8,replacement=this.map[pos];this.map[pos]=d.raw[0];return {index:d.index,concealedTile:d.raw[0],replacement,durability:d.raw[2],pos,active:true,hitAt:-999};});
     this.totalBlocks=this.blocks.length;this.totalFood=this.items.filter(d=>{const c=(d.sprite&0x1fff)-0x35;return c>=75&&c<=166}).length;
     this.player={x:this.level.start.x,y:this.level.start.y,vx:0,vy:0,face:1,sprite:9,action:-1,animationVariant:-1,walkHistory:0,runTimer:0,glideMode:0,glideEnergy:0,formAngle:this.formAngle??this.byte(0x7b16),lastGroundY:this.level.start.y,landingShake:0,platformGrip:false,attackActive:false,attackAction:3,anim:0,jumpFrame:0,jumpLock:0,fallFrames:0,grounded:false,speedShift:0,invulnerable:0,attackTimer:0,attackCooldown:0,downTimer:0,powerTimer:0,look:false};
     this.checkpoint={x:this.player.x,y:this.player.y};this.camera={x:clamp((Math.floor(this.player.x/16)-10)*16,0,this.maxCameraX()),y:clamp(this.word(0x815a)*16,0,this.maxCameraY())};
@@ -48,7 +48,19 @@ export class World {
   floorClass(x,y){return this.prop('tilePropertiesY',this.tile(x,y));}
   solidSupport(x,y,down=false){const c=this.floorClass(x,y);return c>=1&&c<=5&&!(c===5&&down);}
   spriteBounds(a){const sp=this.assets.game.sprites[(a.sprite||0)&0x1fff]||this.assets.game.sprites[0];const flip=a.flip??(a.face<0||!!(a.sprite&0x8000));const ox=flip?sp.width-sp.originX:sp.originX;return {left:a.x-ox,right:a.x-ox+sp.width,top:a.y+sp.originY-sp.height,bottom:a.y+sp.originY,width:sp.width,height:sp.height};}
-  overlap(a,b){if(Math.abs(a.x-b.x)>=64||Math.abs(a.y-b.y)>=70)return false;const A=this.spriteBounds(a),B=this.spriteBounds(b);const w=Math.min(A.width,B.width)>>1;return Math.max(A.top,B.top)<Math.min(A.bottom,B.bottom)&&Math.abs((A.left+A.width/2)-(B.left+B.width/2))<w;}
+  // 0x18fa5 uses feet/height and half-width overlap; attacks use full width.
+  collisionDetails(a,b,{attack=false}={}){
+    if(Math.abs(a.x-b.x)>=64||Math.abs(a.y-b.y)>=70)return null;
+    const sprite=o=>this.assets.game.sprites[o.sprite&0x1fff];if(!sprite(a)||!sprite(b))return null;
+    const lower=a.y>=b.y?a:b,upper=lower===a?b:a,h=sprite(lower).height,penetration=upper.y-(lower.y-h);
+    if(penetration<=0)return null;
+    let left=a.x-(sprite(a).originX&255),right=b.x-(sprite(b).originX&255),width=sprite(a).width;
+    if(left>right){[left,right]=[right,left];width=sprite(b).width;}
+    if(left+(attack?width:width>>1)<=right)return null;
+    return {penetration,topContact:!attack&&(this.player.vy>=128||(penetration<=(h>>1)&&upper===this.player))};
+  }
+  overlap(a,b,attack=false){return !!this.collisionDetails(a,b,{attack});}
+  visibleActor(a){const b=this.spriteBounds(a),c=this.camera;return b.left<c.x+320&&b.right>=c.x&&b.bottom>c.y&&b.top<c.y+176;}
   setAnimation(a,p){if(a.animStart!==p){a.animStart=p;a.anim=p;}}
   nextAnimation(a,base=0){let ptr=a.anim||a.animStart;if(!ptr)return;let word=this.signedWord(ptr);let guard=0;while(word<0&&guard++<8){ptr=u16(ptr+word);word=this.signedWord(ptr);}if(guard>=8||word===0x7d01)return;a.sprite=(word&0x1fff)+base;a.marker=word&0xe000;a.anim=u16(ptr+2);}
   animatePlayer(action,variant=action){const p=this.player;const ptr=this.word(0x7cdb+variant*2);if(p.animationVariant!==variant){p.animationVariant=variant;p.animStart=0;this.setAnimation(p,ptr||this.word(0x7cdb));}p.action=action;this.nextAnimation(p);p.sprite=(p.sprite&0x1fff)|(p.face<0?0x8000:0);}
@@ -85,7 +97,7 @@ export class World {
     if(this.deathTimer){this.updateEffects();this.player.vy+=8;this.player.y+=sar4(this.player.vy);if(--this.deathTimer===0){if(this.lives>0){this.lives--;this.loadLevel(this.levelIndex,{restart:true});}else{this.transition={type:'gameover',delay:1};this.transitionTimer=0;}}return;}
     if(this.blockCooldown)this.blockCooldown--;if(this.sceneFlash)this.sceneFlash--;if(this.weaponPower)this.weaponPower--;
     // Original broad update order: actors, effects, player, interactions, world changes, presentation counter.
-    this.checkBlocks();this.updateActors();this.spawnActors();this.updatePlatforms();this.updateEffects();this.updateProjectiles();this.stepPlayer(input);this.checkActorDamage();this.checkPickups();this.checkGates();this.updateBosses();this.updateCamera();
+    for(const a of this.actors)a.hitFlash=false;this.checkEnemyAttacks();this.checkBlocks();this.updateActors();this.spawnActors();this.updatePlatforms();this.updateEffects();this.updateProjectiles();this.stepPlayer(input);if(this.enemyPowerTimer)this.enemyPowerTimer--;this.checkActorDamage();this.checkPickups();this.checkGates();this.updateBosses();this.updateCamera();
     if(this.levelIndex===14&&this.player.y>=this.level.height*16-8)this.finish('ending');else if(this.player.y>this.level.height*16+32||this.player.y< -320)this.loseLife();
     for(const i of this.items)if(i.active&&!(this.frame&1)){i.bob=(i.bob||0)+1;if(i.bob>=4)i.bob=-i.bob+1;i.y+=i.bob;}
     if(this.player.invulnerable)this.player.invulnerable--;if(this.power)this.power--;if(this.player.landingShake)this.player.landingShake--;
@@ -215,8 +227,22 @@ export class World {
   loseLife(){if(this.deathTimer||this.transition)return;this.deathTimer=38;this.playerWeapon=null;this.player.sprite=33;this.player.vy=-160;this.emit('sfx',{index:7});this.emit('lifeLost');}
   scoreAward(index,x=this.player.x,y=this.player.y){index=clamp(index,0,16);this.score=(this.score+AWARDS[index])>>>0;this.effects.push({x,y:y-10,sprite:0x4a+index,vy:-8,ttl:44,active:true});}
   floatText(text,x,y,sprite){this.effects.push({x,y,text,sprite:sprite??0xffff,vy:-8,ttl:44,active:true});}
-  updateEffects(){for(const e of this.effects){if(e.dust)e.sprite++;e.ttl--;e.y+=(e.vy||0)>>4;if(e.physics){e.x+=(e.vx||0)>>4;e.vy=Math.min(256,(e.vy||0)+9);if(this.solidSupport(e.x,e.y)&&e.vy>0){e.vy=-(e.vy>>1);e.y&=~15;}}}this.effects=this.effects.filter(e=>e.ttl>0);}
-  checkPickups(){for(const i of this.items){if(!i.active)continue;const sp=i.sprite&0x1fff;if(sp===0x116||NON_PICKUPS.has(sp))continue;if(!this.overlap(this.player,i))continue;this.pickup(i);}}
+  updateEffects(){for(const e of this.effects){
+      if(e.nativeObject){
+        if(--e.ttl<=0)continue;
+        e.x=s16(e.x+sar4(e.vx));if(e.x<0){e.x=0;e.vx=-e.vx;}
+        const motion=sar4(e.vy);e.y=s16(e.y+motion);if(e.vy+9<256)e.vy+=9;
+        const sprite=e.sprite&0x1fff;
+        if([300,306,308,310].includes(sprite)){e.ttl=Math.min(e.ttl,50);continue;}
+        if(sprite===229)continue;
+        if(motion>0&&this.floorClass(e.x,e.y)){e.vy=(-e.vy)>>1;const old=e.vx;e.vx-=Math.sign(e.vx)*8;if(Math.sign(e.vx)!==Math.sign(old))e.vx=0;}
+        else if(motion<=0&&this.prop('tilePropertiesX',this.tile(e.x,e.y-16))){e.vx=-e.vx;e.x+=sar4(e.vx);}
+        if(!(this.frame&1)&&e.vx&&sprite<=73)e.sprite=(e.sprite&0xe000)|(sprite===73?70:sprite+1);
+        continue;
+      }
+      if(e.dust)e.sprite++;e.ttl--;e.y+=(e.vy||0)>>4;if(e.physics){e.x+=(e.vx||0)>>4;e.vy=Math.min(256,(e.vy||0)+9);if(this.solidSupport(e.x,e.y)&&e.vy>0){e.vy=-(e.vy>>1);e.y&=~15;}}
+    }this.effects=this.effects.filter(e=>e.ttl>0);}
+  checkPickups(){for(const e of this.effects){if(e.nativeObject&&e.collectible&&e.ttl<=188&&e.ttl>0&&this.visibleActor(e)&&this.overlap(this.player,e)){this.pickup(e);e.ttl=0;}}for(const i of this.items){if(!i.active)continue;const sp=i.sprite&0x1fff;if(sp===0x116||NON_PICKUPS.has(sp))continue;if(!this.overlap(this.player,i))continue;this.pickup(i);}}
   pickup(i){const sprite=i.sprite&0x1fff;const c=sprite-0x35;if(sprite===0x1ca||sprite===0x1cb){i.active=false;this.damage();return;}
     if(c===258){i.active=false;this.complete('bonus');return;}if(c===226){i.active=false;this.complete('special');return;}
     if(c===228){this.checkpoint={x:this.player.x,y:this.player.y};for(const j of this.items)if((j.sprite&0x1fff)===0x118)j.sprite=(j.sprite&0xe000)|0x119;i.sprite=(i.sprite&0xe000)|0x118;this.emit('sfx',{index:4});this.floatText('CHECKPOINT',i.x,i.y-20);return;}
@@ -224,7 +250,7 @@ export class World {
     if(c in weaponMap){this.weapon=weaponMap[c];this.emit('weapon',{weapon:this.weapon});}
     else if(c>=0&&c<=20){this.foodHealth=u8(this.foodHealth+1);if(this.foodHealth>=6&&this.health<3){this.health++;this.foodHealth=0;this.floatText('ENERGY',i.x,i.y-20,0xe2);}}
     else if(c>=39&&c<=43){this.inventory|=1<<(c-39);if(this.inventory===31){this.power=160;this.player.powerTimer=160;this.floatText('BONUS!',i.x,i.y-24,0xe0);}}
-    else if(c>=45&&c<=50){this.inventory2|=1<<(c-45);if(c===46)this.unlockExits();}
+    else if(c>=45&&c<=50){this.inventory2|=1<<(c-45);if(c===46)this.unlockExits();if((this.inventory2&0x38)===0x38){this.inventory2&=~0x38;this.enemyPowerTimer=660;}}
     else if(c>=65&&c<=74){if(!this.alternate){this.alternate=true;this.player.action=-1;this.player.animationVariant=-1;}this.floatText('GO!',i.x,i.y-18);}
     else if(c>=75&&c<=166){const index=c-57;this.foodCounts[index]=u16(this.foodCounts[index]+1);this.collectedFood++;this.scoreAward(this.byte(0xa371+index),i.x,i.y);}
     else if(c===173)this.health=Math.min(3,this.health+1);
@@ -273,23 +299,48 @@ export class World {
     }}
   defByte(d,p){if(p===13)return d.extra[0]||0;return d.extra[p-13]||0;}
   defWord(d,p){return this.defByte(d,p)|(this.defByte(d,p+1)<<8);}
-  updateActors(){for(const a of this.actors){if(!a.active)continue;const d=a.def,e=d.extra,b=n=>this.defByte(d,n),w=n=>this.defWord(d,n);a.age++;const dx=this.player.x-a.x,dy=this.player.y-a.y,dir=dx>=0?1:-1;
-      if(a.state!==255&&!(a.marker&0x2000)){
-        const outside=a.type===9?(Math.abs(dy)>=190||this.player.x<w(13)-480||this.player.x>=w(15)+480):(Math.abs(dx)>=320||Math.abs(dy)>=300);
+  setDefWord(d,p,value){d.extra[p-13]=value&255;d.extra[p-12]=value>>>8;}
+  updateActors(){this.ropePoints=[];for(const a of this.actors){if(!a.active)continue;const d=a.def,e=d.extra,b=n=>this.defByte(d,n),w=n=>this.defWord(d,n);a.age++;const dx=this.player.x-a.x,dy=this.player.y-a.y,dir=dx>=0?1:-1;
+      if(a.state!==255&&!this.visibleActor(a)){
+        const outside=a.type===9?(Math.abs(dy)>=190||this.player.x<w(13)-480||this.player.x>=w(15)+480):(Math.abs((a.type===4?d.x:a.x)-this.player.x)>320||Math.abs((a.type===4?d.y:a.y)-this.player.y)>300);
         if(outside){const timer=d.timer;this.removeActor(a,a.state>=10&&!(d.flags&2));if(a.type===9)d.timer=timer;continue;}
       }
-      const previous={x:a.x,y:a.y};if(a.vx!==-1)a.x+=sar4(a.vx);a.y+=sar4(a.vy);
-      if(d.flags&8)this.actorPhysics(a,previous);if(a.anim)this.nextAnimation(a,0x138);
-      const nearX=r=>Math.abs(this.player.x-d.x)<=r*16,nearY=r=>Math.abs(this.player.y-d.y)<=r*16;
+      if(a.vx!==-1)a.x+=sar4(a.vx);a.y+=sar4(a.vy);
+      if(d.flags&8)this.actorPhysics(a);a.face=a.vx<0?-1:1;if(a.anim){
+        const saved=a.anim;this.nextAnimation(a,0x138);
+        if(this.enemyPowerTimer){a.marker|=(this.enemyPowerTimer&255)<<8;let converted=false;for(let ptr=0xa7fd;ptr<0xa85d;ptr+=6){if(a.sprite<this.word(ptr))break;if(a.sprite<=this.word(ptr+2)){a.sprite=this.word(ptr+4)+0x35;converted=true;break;}}if(converted)a.anim=saved;}
+      }
+      if(a.state===255){this.updateDeadActor(a);continue;}
+
       switch(a.type){
-        case 0: if(a.age>4&&a.state===0){d.flags|=8;a.state=1;}if(a.state===1&&a.grounded){a.vx=dir*32;a.state=2;}break;
+        case 0:
+          if(a.state===0&&this.enemyDelay(d)){if(a.y-this.player.y>=176){this.removeActor(a,!(d.flags&2));break;}d.flags|=8;a.state=1;}
+          else if(a.state===1&&a.vy===0){a.vx=dir*32;a.state=2;this.advanceEnemySegment(a);}break;
         case 1:break;
-        case 2: if(!a.state){a.vy=s8(b(14))*16;if(Math.abs(a.y-d.y)>s8(b(13))){a.vy=-a.vy;a.state=1;}}else if(a.y<=d.y){a.state=0;a.vy=Math.abs(a.vy);}break;
-        case 3:if(!a.state&&nearX(b(13))){a.vy=32;a.state=1;}if(a.state===1&&this.solidSupport(a.x,a.y)){a.y&=~15;a.vy=0;a.vx=dir*48;a.state=2;}break;
-        case 4:{if(a.state===0){if(a.age>=4){a.y+=2;if(a.y>=d.y+Math.max(2,b(14)))a.state=1;}}else{a.phase=u8((a.phase||0)+4);const amp=b(13);a.x=d.x+((s8(this.byte(0x6f8c+a.phase))*amp)>>7);a.y=d.y+((s8(this.byte(0x708c+a.phase))*amp)>>7);}break;}
-        case 5:if(!a.state&&nearX(b(13))&&nearY(b(14))){a.vx=dir*b(15)*16;a.vy=(dy>=0?1:-1)*b(15)*16;a.state=10;}if(a.state===10&&Math.abs(dy)<=8){a.vy=0;a.state=11;}break;
-        case 6:if(nearX(b(13)||12)){if(!(a.age&7)){const r=this.rng.word();a.vx=dir*(8+(r&31));a.vy=(dy+50>=0?1:-1)*(8+((r>>5)&31));if(this.player.attackTimer&&dx*dx+dy*dy<10000){a.vx=-dir*64;a.vy=-64;}}}break;
-        case 7:if(!a.state&&nearX(b(13))){const s=s8(b(14))*16;a.vx=dir*Math.abs(s);a.vy=s;a.state=10;}break;
+        case 2:if(a.state<2)this.enemyRope(d,0,a.y-d.y);if(a.state===0){a.vy=s8(b(14))*16;if(a.y-d.y>s8(b(13))){a.state=1;this.advanceEnemySegment(a);}}else if(a.state===1){a.vy=-s8(b(14))*16;if(a.y-d.y<0){a.state=0;this.rewindEnemySegment(a);}}break;
+        case 3:
+          if(a.state===0&&this.enemyDelay(d)&&(Math.abs(this.player.x-d.x)>>4)<=b(13)){d.flags&=~16;a.vy=32;a.state=1;this.advanceEnemySegment(a);}
+          else if(a.state===1){this.enemyRope(d,0,a.y-d.y);if(this.floorClass(a.x,a.y)){a.y&=~15;a.vy=0;a.state=2;d.flags|=0x48;a.vx=dir*48;this.advanceEnemySegment(a);}}
+          else if(a.state===2&&a.x<0)a.vx=-a.vx;break;
+        case 4:{
+          const swing=()=>{const phase=b(15),radius=s8(b(13));a.x=d.x+(((s8(this.byte(0x6f8c+phase))>>2)*radius)>>4);a.y=d.y+(((s8(this.byte(0x708c+phase))>>2)*radius)>>4);this.enemyRope(d,phase,b(13));};
+          if(a.state===0){if(this.enemyDelay(d)){this.enemyRope(d,0,a.y-d.y);if(a.y-d.y<b(13))a.y+=2;else a.state=1;}}
+          else if(a.state===1){swing();e[2]=u8(e[2]+4);if(e[2]>=b(14)){e[2]=b(14);a.state=2;}}
+          else if(a.state===2){swing();e[3]=u8(e[3]+(s8(e[2])<0?1:-1));e[2]=u8(e[2]+s8(e[3]));}break;
+        }
+        case 5:
+          if(a.state===0){a.vx=dir;if((Math.abs(dx)>>4)<=b(13)&&(Math.abs(dy)>>4)<=b(14)){a.state=10;a.vy=b(15)*16;a.vx=dir*a.vy;}}
+          else if(a.state===10&&Math.abs(dy)<=8){a.vy=0;a.state=11;this.advanceEnemySegment(a);}break;
+        case 6:{
+          a.vx=dir;
+          if(a.state===0){if((Math.abs(dx)>>4)<=b(13)){a.state=1;e[3]=24;e[1]=e[2]=0;this.setDefWord(d,17,u16(a.x<<3));this.setDefWord(d,19,u16(a.y<<3));}break;}
+          if(a.state!==1)break;
+          const distance=dx*dx+dy*dy;
+          if(this.player.attackActive&&distance<10000){if(Math.abs(dy)<48)e[1]=u8(-dir*(distance<3600?104:64));else e[2]=0xc0;}
+          else {e[3]=u8(e[3]-1);if(s8(e[3])<0){e[3]=(this.rng.word()&15)+3;const tx=(this.rng.next()&15)*dir;const ty=(this.rng.next()&15)*(this.player.y<a.y+50?-1:1);e[1]=u8((this.rng.word()&31)*(tx<0?-1:1));const vy=tx===0?2:Math.floor(Math.abs(ty)*8/Math.abs(tx));e[2]=u8(Math.min(32,vy)*(ty<0?-1:1));}}
+          this.setDefWord(d,17,u16(w(17)+s8(e[1])));this.setDefWord(d,19,u16(w(19)+s8(e[2])));a.x=s16(w(17))>>3;a.y=s16(w(19))>>3;break;
+        }
+        case 7:if(a.state===0){a.vx=dir;if((Math.abs(dx)>>4)<=b(13)){a.state=10;a.vy=s8(b(14))*16;a.vx=dir*a.vy;this.advanceEnemySegment(a);}}break;
         case 8:{
           if(!a.vx)a.vx=dir;
           const jump=()=>{a.vy=-s8(b(14))*16;a.vx=dir*s8(b(15))*16;a.state=10;d.flags=(d.flags&0xd3)|0x2c;this.advanceEnemySegment(a);};
@@ -306,31 +357,78 @@ export class World {
             if(Math.abs(a.vx)<16&&a.marker){d.flags=0x0f;a.vx=b(13)*(a.x>=this.player.x?-1:1);}
             if(!(this.frame&3)&&--d.timer===0){a.state=3;a.vy=0;a.vx=a.vx<0?-1:0;d.flags=0x36;this.advanceEnemySegment(a);}
           }else if(a.state===3&&a.marker)this.removeActor(a,!(d.flags&2));break;
-        case 11:if(a.age===8){a.vx=dir*Math.abs(s8(b(13)))*16;a.vy=-Math.abs(s8(b(14)))*16;}if(a.age>=8)a.vy=Math.min(Math.abs(s8(b(15)))*16||192,a.vy+8);break;
-        case 12:if(a.age===1)a.vx=dir*Math.abs(s8(b(13)))*16;a.vy=Math.min(240,a.vy+15);if(a.age>154)this.removeActor(a,!(d.flags&2));break;
+        case 11:if(a.state===0&&a.marker){a.state=1;d.flags&=~16;a.vx=dir*s8(b(13))*16;a.vy=-s8(b(14))*16;}else if(a.state===1&&a.vy<s8(b(15))*16)a.vy+=8;break;
+        case 12:if(a.state===0){a.vx=dir*s8(b(13))*16;a.state=1;}else if(a.state===1){if(this.visibleActor(a))d.timer=0;else if(++d.timer>=154)a.state=255;}break;
       }
-      if(a.vx)a.face=a.vx<0?-1:1;
-      for(const shot of this.projectiles){if(shot.ttl<=0||a.invulnerable||d.flags&0x10)continue;if(this.overlap(shot,a)){this.consumeAttack(shot);const hp=a.hp;a.hp=u8(a.hp-shot.damage);if(hp<shot.damage)this.killActor(a);else{a.invulnerable=5;a.x-=sar4(a.vx<<2);}this.emit('sfx',{index:2});break;}}
-      if(a.invulnerable)a.invulnerable--;
     }this.actors=this.actors.filter(a=>a.active);}
-  actorPhysics(a,previous){if(a.vx){const side=this.prop('tilePropertiesX',this.tile(a.x+(a.vx>0?8:-8),a.y-8));if(side===1){a.x=previous.x;a.vx=-a.vx;}}
-    a.grounded=false;if(a.vy>=0&&this.solidSupport(a.x,a.y)){a.y=this.surface(a.x,a.y);a.grounded=true;if(a.def.flags&32)a.vy=0;else{a.vy=-(a.vy>>1);if(Math.abs(a.vy)<33)a.vy=0;}}else a.vy=Math.min(256,a.vy+16);}
+  // 0x1820a/0x14d82 enqueue three original one-pixel rope points, pool20.
+  enemyRope(d,phase,length){const quarter=s8(length)>>2;for(let n=1;n<=3&&(this.ropePoints?.length||0)<20;n++){const radius=s8(quarter*n);this.ropePoints.push({x:d.x+(((s8(this.byte(0x6f8c+phase))>>2)*radius)>>4),y:d.y-24+(((s8(this.byte(0x708c+phase))>>2)*radius)>>4)});}}
+  // 0x16bbd: terrain callbacks are nonzero classes; 40/80 flags select wall climbing.
+  actorPhysics(a){const d=a.def,feet=this.tile(a.x,a.y),above=this.tile(a.x,a.y-16),side=this.prop('tilePropertiesX',this.tile(a.x+Math.sign(a.vx)*16,a.y-16));
+    a.grounded=false;
+    if((d.flags&0xc0)===0xc0){if(side){a.x-=sar4(a.vx);return;}this.rewindEnemySegment(a);a.vy=0;d.flags&=~0x80;a.y-=16;return;}
+    if(side){if(d.flags&0x40){this.advanceEnemySegment(a);d.flags|=0x80;a.vy=-16;a.x+=a.vx>>2;return;}a.vx=-a.vx;a.x+=sar4(a.vx);}
+    let tile=feet;if(this.prop('tilePropertiesY',above)){a.y-=16;tile=above;}else if(!this.prop('tilePropertiesY',feet)){if(a.vy<256)a.vy+=16;return;}
+    a.y=(a.y&~15)+slopeOffset(this.level.tileSlopes[tile]||0,a.x);a.grounded=true;
+    a.vy=(d.flags&32)?0:(-a.vy)>>1;if(Math.abs(a.vy)<=32)a.vy=0;
+  }
   removeActor(a,destroy){a.active=false;a.def.active=false;a.def.flags&=~4;a.def.timer=0;if(destroy)a.def.destroyed=true;}
-  killActor(a){this.removeActor(a,!(a.def.flags&2));this.scoreAward(clamp(a.def.score_candidate||0,0,16),a.x,a.y);for(let i=0;i<3;i++)this.effects.push({x:a.x,y:a.y,sprite:0x35+(this.rng.next()%20),vx:(this.rng.next()%65)-32,vy:-80-(this.rng.next()&63),ttl:40,physics:true,active:true});}
-  checkActorDamage(){if(this.player.invulnerable)return;for(const a of this.actors){if(!a.active||a.def.flags&0x10)continue;if(this.overlap(this.player,a)){this.damage();break;}}}
+  enemyDeathAnimation(a){let ptr=a.anim;for(let n=0;n<2048&&ptr+2<this.assets.tables.length;n++){ptr+=2;if(this.word(ptr)===0x7d00){a.anim=ptr+2;return true;}if(this.word(ptr)===0x7d01)break;}return false;}
+  killActor(a,attack={face:this.player.face,damage:25}){
+    if(!a.active||a.state===255)return;
+    const repeats=this.byte(0xa3ed+(((a.aux||0)>>>3)&7))||1;
+    for(let n=0;n<repeats;n++)this.scoreAward(clamp(a.def.score_candidate||0,0,16),a.x+9*n,a.y+7*n);
+    a.state=255;a.hitFlash=true;
+    if(!(a.def.flags&1)){this.spawnFragments(a.x,a.y,0x2046,48,-128,6);return;}
+    this.enemyDeathAnimation(a);if((a.def.flags&0xc8)!==0x88)a.def.flags&=~8;
+    const strength=Math.min(attack.damage??25,25);a.vy=-strength*8;a.vx=(attack.face??this.player.face)*strength*4;
+  }
+  updateDeadActor(a){if(!(a.def.flags&1)||(!this.visibleActor(a)&&this.player.y<a.y)){this.removeActor(a,!(a.def.flags&2));return;}if(a.vy<240)a.vy+=15;}
+  checkEnemyAttacks(){for(const shot of this.projectiles){if(shot.ttl<=0)continue;for(const a of this.actors){if(!a.active||a.state===255||a.def.flags&0x10)continue;if(!this.overlap(shot,a,true))continue;
+        this.consumeAttack(shot);a.hitFlash=true;const hp=a.hp;a.hp=u8(hp-shot.damage);if(hp<shot.damage){this.emit('sfx',{index:2});this.killActor(a,shot);}else a.x-=a.vx>>2;break;
+      }}}
+  checkActorDamage(){const p=this.player;if(p.invulnerable)return;for(const a of this.actors){if(!a.active||a.state===255||a.def.flags&0x10||!this.visibleActor(a))continue;const hit=this.collisionDetails(p,a);if(!hit)continue;
+      if(this.enemyPowerTimer){this.killActor(a);return;}
+      if(hit.topContact&&p.vy>=0){
+        if(p.glideMode){
+          if(p.vy>32){const count=(a.aux||0)&3;this.scoreAward(8+count*2,a.x,a.y);a.hitFlash=true;if(count===2){a.state=255;this.enemyDeathAnimation(a);a.def.flags&=~8;a.vy=-200;a.vx=(a.x>p.x?1:-1)*Math.abs(p.vy)*3;return;}a.aux=u8((a.aux||0)+1);}
+          p.vy=-96;
+        }else{this.emit('sfx',{index:3});const count=(a.aux||0)>>>2;if(count!==11){a.aux=u8((a.aux||0)+4);const next=count+1;if(!(next&1)){const sprite=this.word(0xa3e1+next);this.effects.push({x:a.x,y:a.y,sprite,vy:-8,ttl:44,active:true});}}p.vy=this.input.up?-224:-64;}
+        p.jumpLock=0;p.y-=hit.penetration;p.grounded=false;return;
+      }
+      a.def.flags&=~1;this.damage();return;
+    }}
   makePlatform(d){const raw=d.raw;const word=p=>raw[p]|raw[p+1]<<8;return {...d,x:d.x,y:d.y,sprite:d.sprite,originX:d.x,originY:d.y,active:true,raw,dx:0,phase:0,mode:raw[14]||0,animation:word(8),min:word(6),max:word(10),speed:s8(raw[12])||1};}
   updatePlatforms(){for(const p of this.platforms){if(!p.active)continue;const old=p.x;p.phase=u8(p.phase+1);const raw=p.raw;const min=p.min,max=p.max;
       if(min<4096&&max<4096&&max>min){p.dir??=1;if(p.x>=max)p.dir=-1;if(p.x<=min)p.dir=1;p.x+=p.dir*Math.max(1,Math.abs(p.speed));}
       else{const sy=s8(raw[13]||0);if(sy)p.y=p.originY+((s8(this.byte(0x6f8c+p.phase))*Math.abs(sy))>>3);}
       p.dx=p.x-old;}
   }
-  checkBlocks(){if(!this.projectiles.some(s=>s.ttl>0))return;for(const shot of this.projectiles){if(shot.ttl<=0)continue;const tx=shot.x>>4,sy=shot.y-16;for(const b of this.blocks){if(!b.active)continue;const bx=b.pos&255,by=(b.pos>>8)*16;if(Math.abs(bx-tx)<=1&&Math.abs(by-sy)<20){this.hitBlock(b);this.consumeAttack(shot);break;}}}}
+  checkBlocks(){for(const shot of this.projectiles){if(shot.ttl<=0)continue;const tx=shot.x>>4,sy=shot.y-16;for(const b of this.blocks){if(!b.active)continue;const bx=b.pos&255,by=(b.pos>>8)*16;if(Math.abs(bx-tx)<=1&&Math.abs(by-sy)<16){this.consumeAttack(shot);this.hitBlock(b,shot);break;}}}}
   hitTileBlocks(pos,fromAttack){const b=this.blocks.find(b=>b.active&&b.pos===pos);if(b&&fromAttack)this.hitBlock(b);}
-  hitBlock(b){if(this.blockCooldown||!b.active)return;this.blockCooldown=6;this.emit('sfx',{index:2});b.hitAt=this.frame;const durability=b.durability&63;if(durability){b.durability=(b.durability&0xc0)|(durability-1);return;}this.breakBlock(b);}
-  breakBlock(b){if(!b.active)return;b.active=false;this.brokenBlocks++;this.map[b.pos]=b.replacement;const x=(b.pos&255)*16+8,y=(b.pos>>8)*16;
-    for(let j=0;j<4;j++)this.effects.push({x,y:y+8,sprite:0x35+(j%4),vx:(j-2)*20,vy:-80-j*12,ttl:28,physics:true,active:true});
-    const content=b.content;if(content!==255){let sprite=content>=0x35?content:content+0x35;sprite&=0x1fff;if(sprite<this.assets.game.sprites.length)this.items.push({index:1000+b.index,x,y,sprite:sprite|0x2000,originalSprite:sprite|0x2000,active:true,bob:0,baseY:y});}
+  spawnFragments(x,y,sprite,vx,vy,count,{collectible=false}={}){for(let n=0;n<count&&this.effects.filter(e=>e.nativeObject).length<32;n++){
+      this.effects.push({x,y,sprite,vx,vy,ttl:198,physics:true,nativeObject:true,collectible,active:true});vx=-vx;if(n&1){if(n+1>12)vx=0;vx-=16;vy-=16;}
+    }}
+  hitBlock(b,shot=this.player){if(!b.active)return false;const high=b.durability&0x80;
+    if(!high&&this.blockCooldown)return false;
+    if(!high)this.blockCooldown=6;b.hitAt=this.frame;this.emit('sfx',{index:2});
+    const x=(b.pos&255)*16,y=(b.pos>>8)*16;
+    let consume=false;
+    if(high){b.durability=u8(b.durability-1);if(b.durability&0x80){this.revealConnectedBlocks(b,false);return true;}let n=0;while(!n)n=this.rng.next()&7;this.spawnFragments(x,y-112,110+n,0,0,1);consume=true;}
+    else {
+      const c=b.durability;
+      if(c&0x40){const debris=this.levelIndex===3?306:[6,7].includes(this.levelIndex)?300:308;
+        if(c===0x40){b.durability=0;this.spawnFragments(x,y,debris,32,-48,2);this.spawnFragments(x,y,this.levelIndex===8?310:229,shot.face<0?48:-48,-112,4);}
+        else this.spawnFragments(x,y,debris,48,-96,4);
+      }else{let n;do{n=this.rng.next()&127;}while(n>94);this.spawnFragments(x,y,0x2080+n,shot.face<0?48:-48,-112,1,{collectible:true});}
+      const before=b.durability;b.durability=u8(before-1);consume=before===0;
+    }
+    if(consume)this.revealConnectedBlocks(b,true);return consume;
   }
+  revealConnectedBlocks(seed,consumeSeed=true){const work=[seed.pos],seen=new Set([seed.index]);if(consumeSeed)this.breakBlock(seed);
+    while(work.length){const pos=work.pop(),x=pos&255,y=pos>>8;for(const b of this.blocks){if(!b.active||seen.has(b.index)||Math.abs((b.pos&255)-x)>1||Math.abs((b.pos>>8)-y)>1)continue;seen.add(b.index);work.push(b.pos);this.breakBlock(b);}}
+  }
+  breakBlock(b){if(!b.active)return;b.active=false;this.brokenBlocks++;this.map[b.pos]=b.replacement;}
   // 0x1550e: twenty seven-byte gate records at DS:8363; DS:6bdd buffers Down.
   checkGates(){if(!this.player.downTimer||this.alternate)return;const pos=this.tilePos(this.player.x,this.player.y);for(const g of this.gates){if(!g.active||g.triggerTile!==pos)continue;
       const dest=g.destinationTile,camera=g.cameraTile;this.player.x=(dest&255)*16;this.player.y=(dest>>8)*16;this.player.vx=this.player.vy=0;

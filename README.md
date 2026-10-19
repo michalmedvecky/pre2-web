@@ -4,7 +4,7 @@ Playable native JavaScript reconstruction using the recovered original graphics,
 
 There is **no server-side application, database, PVC, account service or dependency on Sites hosting**. nginx serves `dist/`. Browser localStorage stores checkpoint progress per browser and origin. Multiple replicas require no session affinity.
 
-All 16 recovered stages are available. Core player animations, jump impulses, weapon timing and glider controls follow recovered routines and data. Enemy/boss controllers, some terrain/platform interactions and special blocks remain approximate; a full campaign playthrough and exact original-game behavioral equivalence have not been verified.
+All 16 recovered stages are available. Core player animations, jump impulses, weapon timing and glider controls follow recovered routines and data. The 13 generic enemy families, head bounces, combat and connected hidden-platform reveals follow recovered callbacks and tables. Some boss behavior and terrain/platform edge cases remain approximate; a full campaign playthrough and exact original-game behavioral equivalence have not been verified.
 
 ## Local development
 
@@ -18,6 +18,8 @@ npm start
 ```
 
 Open http://127.0.0.1:5775. On macOS, `Play.command` also serves the game using Python 3. Arrow keys/WASD move, Up/Z jumps, Space attacks, Down crouches/uses passages, X looks ahead, P/Escape pauses, M/F3 toggles sound and F enters fullscreen. Sound starts after a gesture; click **Sound on**. Touch controls appear on touch devices.
+
+Land on enemies while holding jump for a higher bounce. Repeated club hits reveal connected hidden platforms; the first hit may leave them concealed. There is no invincibility or extra-life cheat in this browser version. Completing the original three-item bonus grants temporary enemy-contact power, which is separate from cheats.
 
 Assets are already generated and committed. Building or deploying does not require the original game or analysis workspace. `dist/rules.json` and the data tables in `dist/assets/` are runtime inputs. Do not remove them or regenerate them from guessed formats.
 
