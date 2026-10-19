@@ -1,0 +1,23 @@
+# Optional: adapt host, ingressClassName and TLS secret to your cluster.
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: prehistorik
+  namespace: prehistorik
+spec:
+  ingressClassName: traefik
+  tls:
+    - hosts:
+        - prehistorik.example.com
+      secretName: prehistorik-tls
+  rules:
+    - host: prehistorik.example.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: prehistorik
+                port:
+                  number: 80

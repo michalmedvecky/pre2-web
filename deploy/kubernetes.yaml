@@ -1,0 +1,74 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: prehistorik
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prehistorik
+  namespace: prehistorik
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: prehistorik
+  template:
+    metadata:
+      labels:
+        app: prehistorik
+    spec:
+      automountServiceAccountToken: false
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        runAsGroup: 10001
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+        - name: game
+          image: registry.example.com/games/prehistorik:1.0.0
+          ports:
+            - name: http
+              containerPort: 8080
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop: [ALL]
+          resources:
+            requests:
+              cpu: 25m
+              memory: 32Mi
+            limits:
+              cpu: 250m
+              memory: 128Mi
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: http
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: http
+            initialDelaySeconds: 5
+          volumeMounts:
+            - name: tmp
+              mountPath: /tmp
+      volumes:
+        - name: tmp
+          emptyDir:
+            sizeLimit: 64Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: prehistorik
+  namespace: prehistorik
+spec:
+  selector:
+    app: prehistorik
+  ports:
+    - name: http
+      port: 80
+      targetPort: http

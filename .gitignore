@@ -1,0 +1,15 @@
+# Local hosting identity and analysis material are not part of this repository.
+.openai/
+PROGRESS.md
+FIDELITY.md
+RESEARCH-RULES.md
+rules-extracted.json
+scripts/build-assets.py
+preview.png
+# Redundant decoded source banks and analysis-oriented asset notes.
+dist/assets/source/
+dist/assets/executable-data.bin
+dist/assets/README.md
+node_modules/
+.DS_Store
+*.tar.gz
