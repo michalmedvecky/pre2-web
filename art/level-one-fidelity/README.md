@@ -16,7 +16,7 @@ HD terrain now keeps up to96 cropped256×256 cached region canvases (24MiB RGBA 
 - [x] Browser-check all16 stages for Original/HD indexed-raster parity and unchanged simulation, all three visible bush poses, HUD/foreground order, cached phase reuse, map mutation/restoration, graphics switching, mobile control, persistence and load-failure fallback. [Results](review/browser.json).
 - [x] Save visual comparisons of the three bush phases and the raised-rock area before any attack, in both graphics modes.
 - [x] Sample5.5 seconds of IDDQD/IDKFA scrolling in local headless Chromium: render-call p95 about1.4ms, max17.8ms, sampled camera delta at most2 native pixels per display frame. [Raw measurement](review/performance.json). This includes new animated-region cache generation; it is not a headset/GPU performance guarantee.
-- [ ] Publish and verify the new amd64/arm64 image, then pin its digest for Kubernetes.
+- [x] Publish and verify amd64/arm64 in [Actions build39312110975](https://github.com/michalmedvecky/pre2-web/actions/runs/39312110975), independently verify GHCR index `sha256:677f3d83d487683eac35e809ff6028a4a5516113349652d21735469d70e24540`, and pin it for Kubernetes. No cluster rollout was performed.
 
 `npm test` runs the input routes and regression checks. With `npm start` serving the game, `scripts/verify-hd-browser.mjs` runs optional browser verification through an available Playwright package.
 
