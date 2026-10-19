@@ -23,3 +23,17 @@ test('world palette override persists while authored base palette remains immuta
 test('all five final boss tile poses use distinct original indexed art without touching the HUD',()=>{const r=renderer(),level=game.levels[9],hashes=new Set();for(let pose=0;pose<5;pose++){r.render({level,levelIndex:9,map:a.maps[level.id],camera:{x:0,y:0},finalBoss:{pose},bossStatus:[{x:8,y:170,sprite:309}]});hashes.add(createHash('sha256').update(r.frame).digest('hex'));assert.equal(r.frame[176*320],a.hud[0]);assert.ok(r.frame.every(v=>v<16));}assert.equal(hashes.size,5);});
 
 test('IDKFA draws a reversible overlay in every world while preserving the original HUD and asset maps',()=>{const r=renderer();for(let i=0;i<game.levels.length;i++){const l=game.levels[i],before=a.maps[l.id].slice(),w={level:l,levelIndex:i,map:a.maps[l.id],camera:{x:0,y:0},player:{x:40,y:100,sprite:9},blocks:[{index:0,pos:5*256+3,active:true}],gates:[],items:[],frame:0};r.render(w);const plain=r.frame.slice();w.secretHints=true;r.render(w);assert.ok(r.frame.some((v,n)=>n<176*320&&v!==plain[n]));assert.deepEqual(r.frame.slice(176*320),plain.slice(176*320));assert.deepEqual(a.maps[l.id],before);w.secretHints=false;r.render(w);assert.deepEqual(r.frame,plain);}});
+
+test('level-one scenery never draws unflagged FRONT20 foliage, while real foreground tiles still cover actors',()=>{
+ const r=renderer(),l=game.levels[0],calls=[],tile=r.tile.bind(r);r.tile=(value,x,y,level,front,...rest)=>{if(front)calls.push({value,x,y});return tile(value,x,y,level,front,...rest);};
+ // Authored tile41 at (33,34) has a stale overlay index20 but no bit40.
+ assert.equal(a.maps['1'][34*256+33],41);assert.equal(l.overlayIndices[41],20);assert.equal(l.tilePropertiesMisc[41]&64,0);
+ r.render({level:l,map:a.maps['1'],camera:{x:512,y:416}});assert.equal(calls.length,0);
+ const forest=game.levels[1],map=new Uint8Array(256*forest.height);map[8*256+6]=148;assert.equal(forest.tilePropertiesMisc[148]&64,64);assert.equal(forest.overlayIndices[148],1);
+ r.render({level:forest,map,camera:{x:0,y:0},player:{x:104,y:150,sprite:9}});assert.ok(calls.some(c=>c.value===1&&c.x===96&&c.y===128));
+});
+test('native bush triplets animate through all three distinct poses without changing map or HUD',()=>{
+ const r=renderer(),l=game.levels[0],map=a.maps[l.id].slice(),before=map.slice(),hashes=new Set(),hud=[];
+ for(let phase=0;phase<3;phase++){r.render({level:l,map,camera:{x:0,y:608},tileAnimationPhase:phase});hashes.add(createHash('sha256').update(r.frame.slice(0,176*320)).digest('hex'));hud.push(r.frame.slice(176*320));}
+ assert.equal(hashes.size,3);assert.deepEqual(map,before);assert.deepEqual(hud[0],hud[1]);assert.deepEqual(hud[1],hud[2]);
+});

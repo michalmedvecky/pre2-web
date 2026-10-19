@@ -1,3 +1,4 @@
+import {tileAnimation} from './tile-animation.js';
 import * as platforms from './platforms.js';
 import * as bosses from './bosses.js';
 import {u8,u16,s8,s16,sar4,clamp,Random,ACTIONS,JUMP,AWARDS,actionIndex,inputMask,fnv1a} from './compat.js';
@@ -28,7 +29,7 @@ export class World {
     index=clamp(index,0,this.assets.game.levels.length-1);const prior=restart?this.capturePersistence():null;
     this.levelIndex=index;this.level=this.assets.game.levels[index];this.map=this.assets.maps[this.level.id].slice();this.mem=new Uint8Array(65536);this.mem.set(this.assets.tables.subarray(0,65536));this.mem.set(this.assets.footers[this.level.id],0x7e5a);
     this.rng=new Random(5,0x22,0x86,0xe58d,this.word(0x28bd));this.frame=0;this.transition=null;this.transitionTimer=0;this.deathTimer=0;this.effects=[];this.projectiles=[];this.playerWeapon=null;this.actors=[];this.items=[];this.platforms=[];this.gates=this.level.gates;this.gateCameraFlag=0;this.spawnCursor=0;this.spawnSide=0;this.enemyPowerTimer=0;this.ropePoints=[];
-    this.inventory=0;this.inventory2=0;this.foodHealth=0;this.health=3;this.power=0;this.weather=0;this.collectedFood=0;this.collectedAuthoredFood=0;this.brokenBlocks=0;this.foodCounts=new Uint8Array(113);this.paletteMode=0;this.paletteTransition=null;this.paletteOverride=null;this.particleRepel=new Uint8Array(20);this.followParticles=Array(20).fill(null);this.collectionFlash=0;this.alternate=false;this.wind=0;this.sceneFlash=0;this.blockCooldown=0;
+    this.inventory=0;this.inventory2=0;this.foodHealth=0;this.health=3;this.power=0;this.weather=0;this.tileAnimationTick=0;this.tileAnimationPhase=0;this.collectedFood=0;this.collectedAuthoredFood=0;this.brokenBlocks=0;this.foodCounts=new Uint8Array(113);this.paletteMode=0;this.paletteTransition=null;this.paletteOverride=null;this.particleRepel=new Uint8Array(20);this.followParticles=Array(20).fill(null);this.collectionFlash=0;this.alternate=false;this.wind=0;this.sceneFlash=0;this.blockCooldown=0;
     this.definitions=this.level.enemies.filter(d=>!d.expert_flag||this.expert).map((d,index)=>({...d,index,active:false,destroyed:false,timer:d.unknown7||0,flags:d.unknown4||0,extra:Uint8Array.from((d.extra_hex||'').match(/../g)||[],x=>parseInt(x,16))}));
     this.items=this.level.items.filter(d=>d.active).map(d=>({...d,sprite:d.sprite,active:true,originalSprite:d.sprite,bob:s8(d.flags||0),baseY:d.y,permanent:false,authored:true}));
     this.platforms=this.level.platforms.filter(d=>d.active).map(d=>this.makePlatform(d));
@@ -38,6 +39,11 @@ export class World {
     this.checkpoint={x:this.player.x,y:this.player.y};this.camera={x:clamp((Math.floor(this.player.x/16)-10)*16,0,this.maxCameraX()),y:clamp(this.word(0x815a)*16,0,this.maxCameraY())};
     if(prior){this.restorePersistence(prior);Object.assign(this.player,this.checkpoint,{vx:0,vy:0,invulnerable:24});this.camera.y=clamp((Math.floor(this.player.y/16)-8)*16,0,this.maxCameraY());this.camera.x=clamp((Math.floor(this.player.x/16)-10)*16,0,this.maxCameraX());}
     this.initBosses();this.animatePlayer(0);this.emit('level',{index,id:this.level.id,restart});
+  }
+  // 0x13849: advance only while animated tiles are in the 20x11 cache view.
+  updateTileAnimation(){const {animated}=tileAnimation(this.level);const tx=this.camera.x>>4,ty=this.camera.y>>4;let visible=false;
+    for(let y=Math.max(0,ty);y<Math.min(this.level.height,ty+11)&&!visible;y++)for(let x=Math.max(0,tx);x<Math.min(256,tx+20);x++)if(animated[this.map[y*256+x]]){visible=true;break;}
+    if(visible){this.tileAnimationTick=u8(this.tileAnimationTick+1);if(!(this.tileAnimationTick&(this.weather>=20?1:3)))this.tileAnimationPhase=(this.tileAnimationPhase+1)%3;}
   }
   maxCameraX(){return Math.max(0,Math.min(this.level.scrollLimit||236,236)*16);}
   maxCameraY(){return Math.max(0,this.level.height*16-176);}
@@ -100,7 +106,7 @@ export class World {
     if(this.deathTimer){this.updateEffects();this.player.vy+=8;this.player.y+=sar4(this.player.vy);if(--this.deathTimer===0){if(this.lives>0){this.lives--;this.loadLevel(this.levelIndex,{restart:true});}else{this.transition={type:'gameover',delay:1};this.transitionTimer=0;}}return;}
     if(this.collectionFlash)this.collectionFlash--;if(this.blockCooldown)this.blockCooldown--;if(this.sceneFlash)this.sceneFlash--;if(this.weaponPower)this.weaponPower--;
     // Original broad update order: actors, effects, player, interactions, world changes, presentation counter.
-    for(const a of this.actors)a.hitFlash=false;this.checkEnemyAttacks();this.checkBlocks();this.updateBosses();this.updateActors();this.spawnActors();this.updatePlatforms();this.updateEffects();this.updateProjectiles();this.stepPlayer(input);if(this.enemyPowerTimer)this.enemyPowerTimer--;this.checkActorDamage();this.checkPickups();this.updateFollowParticles();this.updatePalette();this.checkGates();this.updateCamera();
+    for(const a of this.actors)a.hitFlash=false;this.checkEnemyAttacks();this.checkBlocks();this.updateBosses();this.updateActors();this.spawnActors();this.updatePlatforms();this.updateEffects();this.updateProjectiles();this.stepPlayer(input);if(this.enemyPowerTimer)this.enemyPowerTimer--;this.checkActorDamage();this.checkPickups();this.updateFollowParticles();this.updatePalette();this.checkGates();this.updateTileAnimation();this.updateCamera();
     if(this.levelIndex===14&&this.player.y>(this.level.height+1)*16)this.finish('ending');else if(this.player.y>this.level.height*16+32||this.player.y< -320)this.loseLife();
     for(const i of this.items)if(i.active&&!(this.frame&1)){i.bob=(i.bob||0)+1;if(i.bob>=4)i.bob=-i.bob+1;i.y+=i.bob;}
     if(this.player.invulnerable)this.player.invulnerable--;if(this.power)this.power--;if(this.player.landingShake)this.player.landingShake--;
@@ -427,7 +433,7 @@ export class World {
           if(p.vy>32){const count=(a.aux||0)&3;this.scoreAward(8+count*2,a.x,a.y);a.hitFlash=true;if(count===2){a.state=255;this.enemyDeathAnimation(a);a.def.flags&=~8;a.vy=-200;a.vx=(a.x>p.x?1:-1)*Math.abs(p.vy)*3;return;}a.aux=u8((a.aux||0)+1);}
           p.vy=-96;
         }else{this.emit('sfx',{index:3});const count=(a.aux||0)>>>2;if(count!==11){a.aux=u8((a.aux||0)+4);const next=count+1;if(!(next&1)){const sprite=this.word(0xa3e1+next);this.effects.push({x:a.x,y:a.y,sprite,vy:-8,ttl:44,active:true});}}p.vy=this.input.up?-224:-64;}
-        p.jumpLock=0;p.y-=hit.penetration;p.grounded=false;return;
+        p.fallFrames=0;p.y-=hit.penetration;p.grounded=false;return;
       }
       if(!this.godMode){a.def.flags&=~1;this.damage();}return;
     }}

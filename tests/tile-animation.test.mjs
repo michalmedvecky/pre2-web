@@ -1,0 +1,8 @@
+import test from'node:test';import assert from'node:assert/strict';import{readFile}from'node:fs/promises';import{tileAnimation}from'../dist/js/tile-animation.js';import{World}from'../dist/js/engine.js';
+const root=new URL('../dist/assets/',import.meta.url),g=JSON.parse(await readFile(new URL('game.json',root))),a={game:g,tables:new Uint8Array(await readFile(new URL('tables.bin',root))),maps:{},footers:{}};for(const l of g.levels){a.maps[l.id]=new Uint8Array(await readFile(new URL(l.map,root)));a.footers[l.id]=new Uint8Array(await readFile(new URL(l.footer,root)));}
+test('DOS bit80 rotates all three members and leaves unrelated map IDs unchanged in all worlds',()=>{
+ for(const l of g.levels){const covered=new Set();for(let base=0;base<256;base++){if(!(l.tilePropertiesMisc[base]&128))continue;for(let p=0;p<3;p++)for(let offset=0;offset<3;offset++){assert.equal(tileAnimation(l,p).remap[base+offset],base+(p+offset)%3);covered.add(base+offset);}base+=2;}for(let id=0;id<256;id++)if(!covered.has(id))for(let p=0;p<3;p++)assert.equal(tileAnimation(l,p).remap[id],id);}
+});
+test('bush animation runs every four game updates, freezes offscreen and respects the faster weather cadence',()=>{
+ const w=new World(a),initial=w.map.slice();for(let frame=1;frame<=24;frame++){w.step({});assert.equal(w.tileAnimationPhase,Math.floor(frame/4)%3);}assert.deepEqual(w.map,initial);const tick=w.tileAnimationTick;w.camera={x:0,y:0};for(let i=0;i<5;i++)w.updateTileAnimation();assert.equal(w.tileAnimationTick,tick);w.camera={x:0,y:608};w.weather=20;w.updateTileAnimation();assert.equal(w.tileAnimationPhase,0);w.updateTileAnimation();assert.equal(w.tileAnimationPhase,1);
+});

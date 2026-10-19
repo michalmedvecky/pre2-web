@@ -31,26 +31,26 @@ export class HDCompositor {
  atlas(record,x,y,clip=176){if(!record)return false;const image=this.pack.images.get(record.atlas),scale=this.scale;this.clipped(clip,c=>{c.imageSmoothingEnabled=true;c.drawImage(image,...record.rect,x*scale,y*scale,record.width*scale,record.height*scale);});return true;}
  tile(level,bank,id,x,y){return this.atlas(this.pack.manifest.tiles?.[level+':'+bank+':'+id],Math.round(x),Math.round(y));}
  background(level,name){return this.atlas(this.pack.manifest.backgrounds?.[level+':'+name],0,0);}
- terrain(assets,level,map,cx,cy){
+ terrain(assets,level,map,cx,cy,animation){
   if(level.id!=='1')return false;
   const size=64,halo=16,width=size+halo*2,columns=width/16,keys=new Set();
-  const valueAt=(x,y)=>x<0||x>=4096||y<0||y>=level.height*16?256:level.lookup[map[(y>>4)*256+(x>>4)]];
+  const valueAt=(x,y)=>x<0||x>=4096||y<0||y>=level.height*16?256:level.lookup[animation.remap[map[(y>>4)*256+(x>>4)]]];
   const bankOf=v=>v<256?assets.tiles[level.id]:assets.union;
   const sample=(x,y)=>{const v=valueAt(x,y);if(v===256||v===65535||v===undefined)return 0;return bankOf(v)?.[(v<256?v:v-256)*256+(y&15)*16+(x&15)]||0;};
   this.clipped(176,c=>{for(let gy=Math.max(0,Math.floor(cy/size));gy<=Math.floor((cy+175)/size);gy++)for(let gx=Math.max(0,Math.floor(cx/size));gx<=Math.floor((cx+319)/size);gx++){
-   const ox=gx*size,oy=gy*size,key=gx+':'+gy;keys.add(key);let signature='';for(let y=oy-16;y<=oy+size;y+=16)for(let x=ox-16;x<=ox+size;x+=16)signature+=valueAt(x,y)+',';
+   const ox=gx*size,oy=gy*size;let signature='',animated=false;for(let y=oy-16;y<=oy+size;y+=16)for(let x=ox-16;x<=ox+size;x+=16){signature+=valueAt(x,y)+',';if(x>=0&&x<4096&&y>=0&&y<level.height*16&&animation.animated[map[(y>>4)*256+(x>>4)]])animated=true;}const key=gx+':'+gy+':'+(animated?animation.phase:0);keys.add(key);
    let chunk=this.terrainCache.get(key);if(!chunk||chunk.signature!==signature){
     const source=new Uint8Array(width*width);for(let y=0;y<width;y++)for(let x=0;x<width;x++)source[y*width+x]=sample(ox+x-halo,oy+y-halo);
     const details=[];for(let y=0;y<columns;y++)for(let x=0;x<columns;x++){
      const v=valueAt(ox+x*16-halo,oy+y*16-halo),record=this.pack.manifest.tiles?.['1:'+(v<256?'local:':'union:')+(v<256?v:v-256)];details.push(record&&!record.preservedOriginal&&!record.preservedFlat?this.terrainDetail(record):null);
     }
     const rgba=connectedTerrain(source,width,width,this.palette,(x,y)=>details[(y>>6)*columns+(x>>6)]?.[(y&63)*64+(x&63)]||0);
-    const image=document.createElement('canvas');image.width=width*4;image.height=width*4;const ctx=image.getContext('2d');ctx.putImageData(new ImageData(rgba,width*4,width*4),0,0);chunk={signature,image};this.terrainCache.set(key,chunk);
+    const image=document.createElement('canvas');image.width=size*4;image.height=size*4;const ctx=image.getContext('2d');ctx.putImageData(new ImageData(rgba,width*4,width*4),-halo*4,-halo*4);chunk={signature,image};this.terrainCache.set(key,chunk);
    }
-   c.drawImage(chunk.image,halo*4,halo*4,size*4,size*4,(ox-cx)*4,(oy-cy)*4,size*4,size*4);
+   c.drawImage(chunk.image,0,0,size*4,size*4,(ox-cx)*4,(oy-cy)*4,size*4,size*4);
   }});
   // Keep a bounded cache while walking an entire stage.
-  for(const key of this.terrainCache.keys())if(this.terrainCache.size>48&&!keys.has(key))this.terrainCache.delete(key);
+  for(const key of this.terrainCache.keys())if(this.terrainCache.size>96&&!keys.has(key))this.terrainCache.delete(key);
   return true;
  }
  terrainDetail(record){

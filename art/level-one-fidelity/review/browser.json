@@ -1,0 +1,25 @@
+{
+  "ok": true,
+  "stages": 16,
+  "frames": 143,
+  "tileFrames": 198,
+  "backgrounds": 1,
+  "hash": "fe31068c",
+  "checks": [
+    "lazy loading",
+    "all-stage native raster parity",
+    "unchanged simulation",
+    "native HUD raster parity and true HD HUD detail",
+    "HUD health/score/lives/BONUS redraw",
+    "terrain mutation and restoration",
+    "three animated bush poses in Original and HD",
+    "animated terrain phase cache reuse",
+    "world-space cache reuse",
+    "foreground order",
+    "all HD frames and mirrored hit flashes",
+    "mode toggle",
+    "persistence",
+    "mobile control",
+    "failed-load fallback"
+  ]
+}

@@ -11,7 +11,7 @@ The v2 AI texture sheets illustrated tiles independently. Their silhouettes, lig
 - Transparent terrain stays transparent; contour interpolation can move visual contour coverage by less than one native pixel. Gameplay collisions continue to use the original map.
 - Neighboring cache regions produce the same pixels as one uninterrupted upscale; their halos prevent cache-boundary seams.
 - Region signatures include neighboring tile lookup values. Revealing steps, breaking walls and opening routes invalidates the affected regions and their neighbors without retaining stale scenery.
-- The cache keeps up to 48 regions (about27 MiB of RGBA storage before browser overhead); it is cleared on palette changes and uses world coordinates, independent of camera smoothing. Texture-detail arrays are cached separately.
+- With the later [animated-scenery correction](../level-one-fidelity/README.md), the cache keeps up to96 cropped region/phase images (24MiB of RGBA storage before browser overhead); it is cleared on palette changes and uses world coordinates, independent of camera smoothing. Texture-detail arrays are cached separately.
 - The foreground layer still composites after actors. Existing background art, characters and pickups remain in use. Connected terrain is scoped to level1; the new HUD covers all16 worlds.
 
 ## HD HUD

@@ -18,6 +18,11 @@ try{
   for(const id of Object.keys(pack.manifest.sprites)){r.hd.begin();r.sprite(+id,160,136,true);r.sprite(+id|16384,220,136,false);}
   q.start(0);q.pause();const level=q.world.level,map=q.world.map,camera=q.world.camera;
   r.render(q.world);const initial=hash(r.ctx.getImageData(0,0,1280,704).data),hudBase=hash(r.ctx.getImageData(0,704,1280,96).data);
+  const poses=new Set(),hdPoses=new Set();for(let phase=0;phase<3;phase++){q.world.tileAnimationPhase=phase;r.setHD(null);r.render(q.world);const native=hash(r.frame);poses.add(native);r.setHD(pack);r.render(q.world);if(hash(r.frame)!==native)throw Error('animated native/HD parity');hdPoses.add(hash(r.ctx.getImageData(0,0,1280,704).data));}
+  if(poses.size!==3||hdPoses.size!==3)throw Error('bush poses frozen');
+  // All phase images are cached; returning to a phase must reuse its canvases.
+  for(let phase=0;phase<3;phase++){q.world.tileAnimationPhase=phase;r.render(q.world);}const warmed=new Set([...r.hd.terrainCache.values()].map(v=>v.image));for(let phase=0;phase<3;phase++){q.world.tileAnimationPhase=phase;r.render(q.world);if([...r.hd.terrainCache.values()].some(v=>!warmed.has(v.image)))throw Error('animated terrain rebuilt every cycle');}
+  q.world.tileAnimationPhase=0;r.render(q.world);
   const beforeMap=map.slice(),cacheBefore=new Map(r.hd.terrainCache);let changedCell=-1;
   for(let y=Math.floor(camera.y/16);y<Math.ceil((camera.y+176)/16)&&changedCell<0;y++)for(let x=Math.floor(camera.x/16);x<Math.ceil((camera.x+320)/16);x++){const i=y*256+x;if(level.lookup[map[i]]!==256){changedCell=i;break;}}
   if(changedCell<0)throw Error('no visible terrain to mutate');const empty=level.lookup.findIndex(v=>v===256);map[changedCell]=empty;r.render(q.world);
@@ -36,5 +41,5 @@ try{
  await page.keyboard.press('KeyH');await page.waitForFunction(()=>prehistorik.graphics==='original');assert.equal(await page.locator('#game').getAttribute('width'),'320');await page.keyboard.press('KeyH');await page.waitForFunction(()=>prehistorik.graphics==='hd');await page.reload();await page.waitForFunction(()=>window.prehistorik?.graphics==='hd');
  await page.setViewportSize({width:390,height:844});assert.ok(await page.locator('#graphics-label').isVisible(),'mobile toggle label');assert.deepEqual(errors,[]);await context.close();
  const broken=await browser.newContext(),fallback=await broken.newPage();await fallback.route('**/assets/hd/**',r=>r.abort());await fallback.goto(url);await fallback.waitForFunction(()=>window.prehistorik);await fallback.locator('#graphics-button').click();await fallback.waitForFunction(()=>!document.querySelector('#graphics-button').disabled);assert.equal(await fallback.evaluate(()=>prehistorik.graphics),'original');assert.equal(await fallback.locator('#game').getAttribute('width'),'320');await broken.close();
- console.log(JSON.stringify({ok:true,...coverage,checks:['lazy loading','all-stage native raster parity','unchanged simulation','native HUD raster parity and true HD HUD detail','HUD health/score/lives/BONUS redraw','terrain mutation and restoration','world-space cache reuse','foreground order','all HD frames and mirrored hit flashes','mode toggle','persistence','mobile control','failed-load fallback']},null,2));
+ console.log(JSON.stringify({ok:true,...coverage,checks:['lazy loading','all-stage native raster parity','unchanged simulation','native HUD raster parity and true HD HUD detail','HUD health/score/lives/BONUS redraw','terrain mutation and restoration','three animated bush poses in Original and HD','animated terrain phase cache reuse','world-space cache reuse','foreground order','all HD frames and mirrored hit flashes','mode toggle','persistence','mobile control','failed-load fallback']},null,2));
 }finally{await browser.close();}
