@@ -1,0 +1,36 @@
+[
+  {
+    "file": "bear-ai-v1.png",
+    "width": 1254,
+    "height": 1254,
+    "colorType": "RGBA8",
+    "alphaRange": [
+      0,
+      255
+    ],
+    "visibleBoundsAlphaAbove16": [
+      387,
+      435,
+      894,
+      1036
+    ],
+    "sha256": "5140e0d6f965a4a8a2cf41f41060a5faccf5563a77ce0901890c86d3a8793193"
+  },
+  {
+    "file": "prehistorik-ai-v1.png",
+    "width": 1254,
+    "height": 1254,
+    "colorType": "RGBA8",
+    "alphaRange": [
+      0,
+      255
+    ],
+    "visibleBoundsAlphaAbove16": [
+      264,
+      320,
+      865,
+      1023
+    ],
+    "sha256": "9e253eef7d973f8eef14485937bbaec8199262fc92470157ed1d7c04bf17c54d"
+  }
+]

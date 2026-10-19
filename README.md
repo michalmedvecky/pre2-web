@@ -6,6 +6,8 @@ There is **no server-side application, database, PVC, account service or depende
 
 All 16 recovered stages are available. Core player animations, jump impulses, weapon timing and glider controls follow recovered routines and data. The 13 generic enemy families, head bounces, combat and connected hidden-platform reveals follow recovered callbacks and tables. Boss state machines, multipart weak points, scripted attacks and fractional energy damage follow recovered routines. Terrain/platform edge cases and some presentation details remain approximate; a full campaign playthrough and exact original-game behavioral equivalence have not been verified.
 
+An optional [AI character-remaster study](art/ai-upscale-v1/README.md) compares original hero/bear sprites with transparent high-resolution samples. It is an art experiment and is not enabled in the game.
+
 ## Local development
 
 Use Node.js 20 or newer. No dependency installation or build step is required:

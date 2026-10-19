@@ -1,0 +1,39 @@
+{
+  "prehistorik": [
+    {
+      "sprite": 34,
+      "anchor": [
+        32,
+        52
+      ]
+    },
+    {
+      "sprite": 58,
+      "anchor": [
+        21,
+        36
+      ]
+    }
+  ],
+  "bear": [
+    {
+      "sprite": 313,
+      "anchor": [
+        32,
+        52
+      ]
+    }
+  ],
+  "palette": 0,
+  "nativeCanvas": [
+    64,
+    64
+  ],
+  "referenceScale": 8,
+  "sourceHashes": {
+    "dist/assets/game.json": "a77f4d1dacc9c0d627d822f35c8cdd5b5ab40099fe0f774f86ebd1683079c297",
+    "dist/assets/sprites.idx": "575f271e68501aaa1a728ddd25c511aae00d87edcbb746af8af355f9b24eef77",
+    "dist/assets/tables.bin": "a430027ead2d632d0c1867e2d67c8fa10e90fe3c73bdf42e24159cd2996e3765"
+  },
+  "purpose": "Unmodified original indexed pixels, exported for imagegen edit references; transparent index 0."
+}
