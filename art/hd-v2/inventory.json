@@ -1,0 +1,4729 @@
+{
+  "version": 1,
+  "scope": "Level1 environment and its food/pickups; shared sprite IDs apply globally, tile/background art is level-scoped.",
+  "groups": [
+    {
+      "id": "v2-food-a",
+      "kind": "sprite",
+      "ids": [
+        112,
+        113,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        146,
+        153,
+        170,
+        172,
+        176,
+        182,
+        184,
+        185
+      ],
+      "columns": 4,
+      "rows": 4
+    },
+    {
+      "id": "v2-food-b",
+      "kind": "sprite",
+      "ids": [
+        186,
+        187,
+        188,
+        189,
+        190,
+        191,
+        194,
+        195,
+        196,
+        197,
+        198,
+        203,
+        204,
+        212,
+        218
+      ],
+      "columns": 4,
+      "rows": 4
+    },
+    {
+      "id": "v2-pickups",
+      "kind": "sprite",
+      "ids": [
+        70,
+        71,
+        72,
+        73,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        280,
+        281,
+        282,
+        283,
+        284
+      ],
+      "columns": 4,
+      "rows": 6
+    },
+    {
+      "id": "v2-local",
+      "kind": "tile",
+      "tiles": [
+        {
+          "bank": "local",
+          "id": 0
+        },
+        {
+          "bank": "local",
+          "id": 1
+        },
+        {
+          "bank": "local",
+          "id": 2
+        },
+        {
+          "bank": "local",
+          "id": 3
+        },
+        {
+          "bank": "local",
+          "id": 4
+        },
+        {
+          "bank": "local",
+          "id": 5
+        },
+        {
+          "bank": "local",
+          "id": 6
+        },
+        {
+          "bank": "local",
+          "id": 7
+        },
+        {
+          "bank": "local",
+          "id": 8
+        },
+        {
+          "bank": "local",
+          "id": 9
+        },
+        {
+          "bank": "local",
+          "id": 10
+        },
+        {
+          "bank": "local",
+          "id": 11
+        },
+        {
+          "bank": "local",
+          "id": 12
+        },
+        {
+          "bank": "local",
+          "id": 13
+        },
+        {
+          "bank": "local",
+          "id": 14
+        },
+        {
+          "bank": "local",
+          "id": 15
+        },
+        {
+          "bank": "local",
+          "id": 16
+        },
+        {
+          "bank": "local",
+          "id": 17
+        },
+        {
+          "bank": "local",
+          "id": 18
+        },
+        {
+          "bank": "local",
+          "id": 19
+        },
+        {
+          "bank": "local",
+          "id": 20
+        },
+        {
+          "bank": "local",
+          "id": 21
+        },
+        {
+          "bank": "local",
+          "id": 22
+        },
+        {
+          "bank": "local",
+          "id": 23
+        },
+        {
+          "bank": "local",
+          "id": 24
+        },
+        {
+          "bank": "local",
+          "id": 25
+        },
+        {
+          "bank": "local",
+          "id": 28
+        },
+        {
+          "bank": "front",
+          "id": 20
+        }
+      ],
+      "columns": 8,
+      "rows": 4
+    },
+    {
+      "id": "v2-union-0",
+      "kind": "tile",
+      "tiles": [
+        {
+          "bank": "union",
+          "id": 1
+        },
+        {
+          "bank": "union",
+          "id": 323
+        },
+        {
+          "bank": "union",
+          "id": 324
+        },
+        {
+          "bank": "union",
+          "id": 325
+        },
+        {
+          "bank": "union",
+          "id": 326
+        },
+        {
+          "bank": "union",
+          "id": 327
+        },
+        {
+          "bank": "union",
+          "id": 328
+        },
+        {
+          "bank": "union",
+          "id": 329
+        },
+        {
+          "bank": "union",
+          "id": 330
+        },
+        {
+          "bank": "union",
+          "id": 331
+        },
+        {
+          "bank": "union",
+          "id": 332
+        },
+        {
+          "bank": "union",
+          "id": 333
+        },
+        {
+          "bank": "union",
+          "id": 334
+        },
+        {
+          "bank": "union",
+          "id": 335
+        },
+        {
+          "bank": "union",
+          "id": 336
+        },
+        {
+          "bank": "union",
+          "id": 337
+        },
+        {
+          "bank": "union",
+          "id": 338
+        },
+        {
+          "bank": "union",
+          "id": 339
+        },
+        {
+          "bank": "union",
+          "id": 340
+        },
+        {
+          "bank": "union",
+          "id": 341
+        },
+        {
+          "bank": "union",
+          "id": 342
+        },
+        {
+          "bank": "union",
+          "id": 343
+        },
+        {
+          "bank": "union",
+          "id": 344
+        },
+        {
+          "bank": "union",
+          "id": 345
+        },
+        {
+          "bank": "union",
+          "id": 346
+        },
+        {
+          "bank": "union",
+          "id": 347
+        },
+        {
+          "bank": "union",
+          "id": 348
+        },
+        {
+          "bank": "union",
+          "id": 349
+        },
+        {
+          "bank": "union",
+          "id": 350
+        },
+        {
+          "bank": "union",
+          "id": 352
+        },
+        {
+          "bank": "union",
+          "id": 353
+        },
+        {
+          "bank": "union",
+          "id": 354
+        },
+        {
+          "bank": "union",
+          "id": 355
+        },
+        {
+          "bank": "union",
+          "id": 356
+        },
+        {
+          "bank": "union",
+          "id": 357
+        },
+        {
+          "bank": "union",
+          "id": 358
+        },
+        {
+          "bank": "union",
+          "id": 359
+        },
+        {
+          "bank": "union",
+          "id": 360
+        },
+        {
+          "bank": "union",
+          "id": 361
+        },
+        {
+          "bank": "union",
+          "id": 362
+        },
+        {
+          "bank": "union",
+          "id": 363
+        },
+        {
+          "bank": "union",
+          "id": 364
+        },
+        {
+          "bank": "union",
+          "id": 365
+        },
+        {
+          "bank": "union",
+          "id": 366
+        },
+        {
+          "bank": "union",
+          "id": 367
+        },
+        {
+          "bank": "union",
+          "id": 369
+        },
+        {
+          "bank": "union",
+          "id": 370
+        },
+        {
+          "bank": "union",
+          "id": 371
+        },
+        {
+          "bank": "union",
+          "id": 372
+        },
+        {
+          "bank": "union",
+          "id": 373
+        },
+        {
+          "bank": "union",
+          "id": 374
+        },
+        {
+          "bank": "union",
+          "id": 375
+        },
+        {
+          "bank": "union",
+          "id": 376
+        },
+        {
+          "bank": "union",
+          "id": 377
+        },
+        {
+          "bank": "union",
+          "id": 378
+        },
+        {
+          "bank": "union",
+          "id": 379
+        },
+        {
+          "bank": "union",
+          "id": 380
+        },
+        {
+          "bank": "union",
+          "id": 381
+        },
+        {
+          "bank": "union",
+          "id": 382
+        },
+        {
+          "bank": "union",
+          "id": 383
+        },
+        {
+          "bank": "union",
+          "id": 384
+        },
+        {
+          "bank": "union",
+          "id": 385
+        },
+        {
+          "bank": "union",
+          "id": 386
+        },
+        {
+          "bank": "union",
+          "id": 387
+        }
+      ],
+      "columns": 8,
+      "rows": 8
+    },
+    {
+      "id": "v2-union-1",
+      "kind": "tile",
+      "tiles": [
+        {
+          "bank": "union",
+          "id": 388
+        },
+        {
+          "bank": "union",
+          "id": 389
+        },
+        {
+          "bank": "union",
+          "id": 390
+        },
+        {
+          "bank": "union",
+          "id": 391
+        },
+        {
+          "bank": "union",
+          "id": 392
+        },
+        {
+          "bank": "union",
+          "id": 393
+        },
+        {
+          "bank": "union",
+          "id": 394
+        },
+        {
+          "bank": "union",
+          "id": 395
+        },
+        {
+          "bank": "union",
+          "id": 396
+        },
+        {
+          "bank": "union",
+          "id": 397
+        },
+        {
+          "bank": "union",
+          "id": 398
+        },
+        {
+          "bank": "union",
+          "id": 399
+        },
+        {
+          "bank": "union",
+          "id": 400
+        },
+        {
+          "bank": "union",
+          "id": 401
+        },
+        {
+          "bank": "union",
+          "id": 402
+        },
+        {
+          "bank": "union",
+          "id": 403
+        },
+        {
+          "bank": "union",
+          "id": 404
+        },
+        {
+          "bank": "union",
+          "id": 405
+        },
+        {
+          "bank": "union",
+          "id": 406
+        },
+        {
+          "bank": "union",
+          "id": 407
+        },
+        {
+          "bank": "union",
+          "id": 408
+        },
+        {
+          "bank": "union",
+          "id": 409
+        },
+        {
+          "bank": "union",
+          "id": 410
+        },
+        {
+          "bank": "union",
+          "id": 411
+        },
+        {
+          "bank": "union",
+          "id": 412
+        },
+        {
+          "bank": "union",
+          "id": 413
+        },
+        {
+          "bank": "union",
+          "id": 414
+        },
+        {
+          "bank": "union",
+          "id": 415
+        },
+        {
+          "bank": "union",
+          "id": 416
+        },
+        {
+          "bank": "union",
+          "id": 417
+        },
+        {
+          "bank": "union",
+          "id": 418
+        },
+        {
+          "bank": "union",
+          "id": 419
+        },
+        {
+          "bank": "union",
+          "id": 420
+        },
+        {
+          "bank": "union",
+          "id": 421
+        },
+        {
+          "bank": "union",
+          "id": 422
+        },
+        {
+          "bank": "union",
+          "id": 423
+        },
+        {
+          "bank": "union",
+          "id": 424
+        },
+        {
+          "bank": "union",
+          "id": 425
+        },
+        {
+          "bank": "union",
+          "id": 426
+        },
+        {
+          "bank": "union",
+          "id": 427
+        },
+        {
+          "bank": "union",
+          "id": 428
+        },
+        {
+          "bank": "union",
+          "id": 429
+        },
+        {
+          "bank": "union",
+          "id": 430
+        },
+        {
+          "bank": "union",
+          "id": 431
+        },
+        {
+          "bank": "union",
+          "id": 432
+        },
+        {
+          "bank": "union",
+          "id": 433
+        },
+        {
+          "bank": "union",
+          "id": 434
+        },
+        {
+          "bank": "union",
+          "id": 435
+        },
+        {
+          "bank": "union",
+          "id": 436
+        },
+        {
+          "bank": "union",
+          "id": 437
+        },
+        {
+          "bank": "union",
+          "id": 438
+        },
+        {
+          "bank": "union",
+          "id": 439
+        },
+        {
+          "bank": "union",
+          "id": 440
+        },
+        {
+          "bank": "union",
+          "id": 441
+        },
+        {
+          "bank": "union",
+          "id": 442
+        },
+        {
+          "bank": "union",
+          "id": 443
+        },
+        {
+          "bank": "union",
+          "id": 444
+        },
+        {
+          "bank": "union",
+          "id": 445
+        },
+        {
+          "bank": "union",
+          "id": 446
+        },
+        {
+          "bank": "union",
+          "id": 448
+        },
+        {
+          "bank": "union",
+          "id": 449
+        },
+        {
+          "bank": "union",
+          "id": 452
+        },
+        {
+          "bank": "union",
+          "id": 455
+        },
+        {
+          "bank": "union",
+          "id": 456
+        }
+      ],
+      "columns": 8,
+      "rows": 8
+    },
+    {
+      "id": "v2-union-2",
+      "kind": "tile",
+      "tiles": [
+        {
+          "bank": "union",
+          "id": 458
+        },
+        {
+          "bank": "union",
+          "id": 459
+        },
+        {
+          "bank": "union",
+          "id": 460
+        },
+        {
+          "bank": "union",
+          "id": 461
+        },
+        {
+          "bank": "union",
+          "id": 462
+        },
+        {
+          "bank": "union",
+          "id": 463
+        },
+        {
+          "bank": "union",
+          "id": 464
+        },
+        {
+          "bank": "union",
+          "id": 466
+        },
+        {
+          "bank": "union",
+          "id": 467
+        },
+        {
+          "bank": "union",
+          "id": 501
+        },
+        {
+          "bank": "union",
+          "id": 502
+        },
+        {
+          "bank": "union",
+          "id": 503
+        },
+        {
+          "bank": "union",
+          "id": 504
+        },
+        {
+          "bank": "union",
+          "id": 505
+        },
+        {
+          "bank": "union",
+          "id": 506
+        },
+        {
+          "bank": "union",
+          "id": 507
+        },
+        {
+          "bank": "union",
+          "id": 508
+        },
+        {
+          "bank": "union",
+          "id": 509
+        },
+        {
+          "bank": "union",
+          "id": 510
+        },
+        {
+          "bank": "union",
+          "id": 511
+        },
+        {
+          "bank": "union",
+          "id": 512
+        },
+        {
+          "bank": "union",
+          "id": 513
+        },
+        {
+          "bank": "union",
+          "id": 514
+        },
+        {
+          "bank": "union",
+          "id": 515
+        },
+        {
+          "bank": "union",
+          "id": 516
+        },
+        {
+          "bank": "union",
+          "id": 517
+        },
+        {
+          "bank": "union",
+          "id": 518
+        },
+        {
+          "bank": "union",
+          "id": 519
+        },
+        {
+          "bank": "union",
+          "id": 520
+        },
+        {
+          "bank": "union",
+          "id": 521
+        },
+        {
+          "bank": "union",
+          "id": 522
+        },
+        {
+          "bank": "union",
+          "id": 523
+        },
+        {
+          "bank": "union",
+          "id": 524
+        },
+        {
+          "bank": "union",
+          "id": 525
+        },
+        {
+          "bank": "union",
+          "id": 526
+        },
+        {
+          "bank": "union",
+          "id": 527
+        },
+        {
+          "bank": "union",
+          "id": 528
+        },
+        {
+          "bank": "union",
+          "id": 529
+        },
+        {
+          "bank": "union",
+          "id": 530
+        },
+        {
+          "bank": "union",
+          "id": 531
+        },
+        {
+          "bank": "union",
+          "id": 532
+        },
+        {
+          "bank": "union",
+          "id": 533
+        }
+      ],
+      "columns": 8,
+      "rows": 8
+    }
+  ],
+  "sprites": {
+    "70": {
+      "id": 70,
+      "width": 16,
+      "height": 15,
+      "originX": 8,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        3,
+        0,
+        9,
+        15
+      ],
+      "group": "v2-pickups",
+      "cell": 0
+    },
+    "71": {
+      "id": 71,
+      "width": 16,
+      "height": 15,
+      "originX": 8,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        0,
+        0,
+        15,
+        15
+      ],
+      "group": "v2-pickups",
+      "cell": 1
+    },
+    "72": {
+      "id": 72,
+      "width": 16,
+      "height": 9,
+      "originX": 8,
+      "originY": -3,
+      "role": "collectible",
+      "ink": [
+        0,
+        0,
+        15,
+        9
+      ],
+      "group": "v2-pickups",
+      "cell": 2
+    },
+    "73": {
+      "id": 73,
+      "width": 16,
+      "height": 15,
+      "originX": 8,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        0,
+        0,
+        15,
+        15
+      ],
+      "group": "v2-pickups",
+      "cell": 3
+    },
+    "92": {
+      "id": 92,
+      "width": 16,
+      "height": 13,
+      "originX": 7,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        0,
+        0,
+        15,
+        13
+      ],
+      "group": "v2-pickups",
+      "cell": 4
+    },
+    "93": {
+      "id": 93,
+      "width": 16,
+      "height": 13,
+      "originX": 7,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        0,
+        0,
+        16,
+        13
+      ],
+      "group": "v2-pickups",
+      "cell": 5
+    },
+    "94": {
+      "id": 94,
+      "width": 16,
+      "height": 13,
+      "originX": 7,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        0,
+        0,
+        16,
+        13
+      ],
+      "group": "v2-pickups",
+      "cell": 6
+    },
+    "95": {
+      "id": 95,
+      "width": 16,
+      "height": 13,
+      "originX": 7,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        0,
+        0,
+        16,
+        13
+      ],
+      "group": "v2-pickups",
+      "cell": 7
+    },
+    "96": {
+      "id": 96,
+      "width": 16,
+      "height": 13,
+      "originX": 7,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        0,
+        0,
+        15,
+        13
+      ],
+      "group": "v2-pickups",
+      "cell": 8
+    },
+    "97": {
+      "id": 97,
+      "width": 24,
+      "height": 19,
+      "originX": 6,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        0,
+        0,
+        23,
+        19
+      ],
+      "group": "v2-pickups",
+      "cell": 9
+    },
+    "98": {
+      "id": 98,
+      "width": 32,
+      "height": 22,
+      "originX": 15,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        0,
+        0,
+        32,
+        22
+      ],
+      "group": "v2-pickups",
+      "cell": 10
+    },
+    "99": {
+      "id": 99,
+      "width": 24,
+      "height": 30,
+      "originX": 11,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        2,
+        0,
+        19,
+        30
+      ],
+      "group": "v2-pickups",
+      "cell": 11
+    },
+    "100": {
+      "id": 100,
+      "width": 24,
+      "height": 29,
+      "originX": 11,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        1,
+        0,
+        21,
+        29
+      ],
+      "group": "v2-pickups",
+      "cell": 12
+    },
+    "101": {
+      "id": 101,
+      "width": 24,
+      "height": 33,
+      "originX": 11,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        2,
+        0,
+        19,
+        33
+      ],
+      "group": "v2-pickups",
+      "cell": 13
+    },
+    "102": {
+      "id": 102,
+      "width": 16,
+      "height": 33,
+      "originX": 6,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        2,
+        0,
+        12,
+        33
+      ],
+      "group": "v2-pickups",
+      "cell": 14
+    },
+    "103": {
+      "id": 103,
+      "width": 24,
+      "height": 33,
+      "originX": 11,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        2,
+        0,
+        19,
+        33
+      ],
+      "group": "v2-pickups",
+      "cell": 15
+    },
+    "112": {
+      "id": 112,
+      "width": 48,
+      "height": 32,
+      "originX": 22,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        1,
+        0,
+        46,
+        32
+      ],
+      "group": "v2-food-a",
+      "cell": 0
+    },
+    "113": {
+      "id": 113,
+      "width": 40,
+      "height": 46,
+      "originX": 19,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        2,
+        0,
+        35,
+        46
+      ],
+      "group": "v2-food-a",
+      "cell": 1
+    },
+    "135": {
+      "id": 135,
+      "width": 16,
+      "height": 25,
+      "originX": 8,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        1,
+        0,
+        13,
+        25
+      ],
+      "group": "v2-food-a",
+      "cell": 2
+    },
+    "136": {
+      "id": 136,
+      "width": 24,
+      "height": 21,
+      "originX": 12,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        3,
+        0,
+        18,
+        21
+      ],
+      "group": "v2-food-a",
+      "cell": 3
+    },
+    "137": {
+      "id": 137,
+      "width": 24,
+      "height": 23,
+      "originX": 12,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        3,
+        0,
+        17,
+        23
+      ],
+      "group": "v2-food-a",
+      "cell": 4
+    },
+    "138": {
+      "id": 138,
+      "width": 16,
+      "height": 27,
+      "originX": 8,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        0,
+        0,
+        15,
+        27
+      ],
+      "group": "v2-food-a",
+      "cell": 5
+    },
+    "139": {
+      "id": 139,
+      "width": 16,
+      "height": 20,
+      "originX": 8,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        0,
+        0,
+        15,
+        20
+      ],
+      "group": "v2-food-a",
+      "cell": 6
+    },
+    "140": {
+      "id": 140,
+      "width": 16,
+      "height": 23,
+      "originX": 8,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        0,
+        0,
+        16,
+        23
+      ],
+      "group": "v2-food-a",
+      "cell": 7
+    },
+    "146": {
+      "id": 146,
+      "width": 16,
+      "height": 19,
+      "originX": 8,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        0,
+        0,
+        16,
+        19
+      ],
+      "group": "v2-food-a",
+      "cell": 8
+    },
+    "153": {
+      "id": 153,
+      "width": 24,
+      "height": 20,
+      "originX": 12,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        0,
+        0,
+        23,
+        20
+      ],
+      "group": "v2-food-a",
+      "cell": 9
+    },
+    "170": {
+      "id": 170,
+      "width": 16,
+      "height": 23,
+      "originX": 8,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        0,
+        0,
+        16,
+        23
+      ],
+      "group": "v2-food-a",
+      "cell": 10
+    },
+    "172": {
+      "id": 172,
+      "width": 24,
+      "height": 15,
+      "originX": 12,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        3,
+        0,
+        17,
+        15
+      ],
+      "group": "v2-food-a",
+      "cell": 11
+    },
+    "176": {
+      "id": 176,
+      "width": 24,
+      "height": 20,
+      "originX": 12,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        2,
+        0,
+        20,
+        20
+      ],
+      "group": "v2-food-a",
+      "cell": 12
+    },
+    "182": {
+      "id": 182,
+      "width": 16,
+      "height": 12,
+      "originX": 8,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        0,
+        0,
+        16,
+        12
+      ],
+      "group": "v2-food-a",
+      "cell": 13
+    },
+    "184": {
+      "id": 184,
+      "width": 24,
+      "height": 23,
+      "originX": 12,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        3,
+        0,
+        18,
+        23
+      ],
+      "group": "v2-food-a",
+      "cell": 14
+    },
+    "185": {
+      "id": 185,
+      "width": 16,
+      "height": 18,
+      "originX": 8,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        1,
+        0,
+        14,
+        18
+      ],
+      "group": "v2-food-a",
+      "cell": 15
+    },
+    "186": {
+      "id": 186,
+      "width": 16,
+      "height": 16,
+      "originX": 8,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        2,
+        0,
+        11,
+        16
+      ],
+      "group": "v2-food-b",
+      "cell": 0
+    },
+    "187": {
+      "id": 187,
+      "width": 16,
+      "height": 14,
+      "originX": 8,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        1,
+        0,
+        13,
+        14
+      ],
+      "group": "v2-food-b",
+      "cell": 1
+    },
+    "188": {
+      "id": 188,
+      "width": 16,
+      "height": 22,
+      "originX": 8,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        0,
+        0,
+        16,
+        22
+      ],
+      "group": "v2-food-b",
+      "cell": 2
+    },
+    "189": {
+      "id": 189,
+      "width": 32,
+      "height": 13,
+      "originX": 16,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        3,
+        0,
+        25,
+        13
+      ],
+      "group": "v2-food-b",
+      "cell": 3
+    },
+    "190": {
+      "id": 190,
+      "width": 24,
+      "height": 16,
+      "originX": 12,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        3,
+        0,
+        18,
+        16
+      ],
+      "group": "v2-food-b",
+      "cell": 4
+    },
+    "191": {
+      "id": 191,
+      "width": 24,
+      "height": 18,
+      "originX": 12,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        2,
+        0,
+        19,
+        18
+      ],
+      "group": "v2-food-b",
+      "cell": 5
+    },
+    "194": {
+      "id": 194,
+      "width": 16,
+      "height": 19,
+      "originX": 8,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        1,
+        0,
+        14,
+        19
+      ],
+      "group": "v2-food-b",
+      "cell": 6
+    },
+    "195": {
+      "id": 195,
+      "width": 16,
+      "height": 25,
+      "originX": 8,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        2,
+        0,
+        12,
+        25
+      ],
+      "group": "v2-food-b",
+      "cell": 7
+    },
+    "196": {
+      "id": 196,
+      "width": 8,
+      "height": 22,
+      "originX": 4,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        0,
+        0,
+        8,
+        22
+      ],
+      "group": "v2-food-b",
+      "cell": 8
+    },
+    "197": {
+      "id": 197,
+      "width": 16,
+      "height": 13,
+      "originX": 8,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        1,
+        0,
+        13,
+        13
+      ],
+      "group": "v2-food-b",
+      "cell": 9
+    },
+    "198": {
+      "id": 198,
+      "width": 16,
+      "height": 19,
+      "originX": 8,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        0,
+        0,
+        16,
+        19
+      ],
+      "group": "v2-food-b",
+      "cell": 10
+    },
+    "203": {
+      "id": 203,
+      "width": 16,
+      "height": 28,
+      "originX": 8,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        1,
+        0,
+        13,
+        28
+      ],
+      "group": "v2-food-b",
+      "cell": 11
+    },
+    "204": {
+      "id": 204,
+      "width": 16,
+      "height": 14,
+      "originX": 8,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        0,
+        0,
+        16,
+        14
+      ],
+      "group": "v2-food-b",
+      "cell": 12
+    },
+    "212": {
+      "id": 212,
+      "width": 24,
+      "height": 13,
+      "originX": 12,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        1,
+        0,
+        22,
+        13
+      ],
+      "group": "v2-food-b",
+      "cell": 13
+    },
+    "218": {
+      "id": 218,
+      "width": 16,
+      "height": 19,
+      "originX": 8,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        1,
+        0,
+        13,
+        19
+      ],
+      "group": "v2-food-b",
+      "cell": 14
+    },
+    "280": {
+      "id": 280,
+      "width": 40,
+      "height": 27,
+      "originX": 13,
+      "originY": 1,
+      "role": "collectible",
+      "ink": [
+        2,
+        0,
+        36,
+        27
+      ],
+      "group": "v2-pickups",
+      "cell": 16
+    },
+    "281": {
+      "id": 281,
+      "width": 48,
+      "height": 29,
+      "originX": 25,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        2,
+        0,
+        43,
+        29
+      ],
+      "group": "v2-pickups",
+      "cell": 17
+    },
+    "282": {
+      "id": 282,
+      "width": 56,
+      "height": 14,
+      "originX": 28,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        3,
+        0,
+        50,
+        14
+      ],
+      "group": "v2-pickups",
+      "cell": 18
+    },
+    "283": {
+      "id": 283,
+      "width": 16,
+      "height": 12,
+      "originX": 8,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        0,
+        0,
+        16,
+        12
+      ],
+      "group": "v2-pickups",
+      "cell": 19
+    },
+    "284": {
+      "id": 284,
+      "width": 16,
+      "height": 12,
+      "originX": 8,
+      "originY": 0,
+      "role": "collectible",
+      "ink": [
+        1,
+        0,
+        14,
+        12
+      ],
+      "group": "v2-pickups",
+      "cell": 20
+    }
+  },
+  "tiles": {
+    "1:local:0": {
+      "bank": "local",
+      "id": 0,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-local",
+      "cell": 0
+    },
+    "1:local:1": {
+      "bank": "local",
+      "id": 1,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-local",
+      "cell": 1
+    },
+    "1:local:2": {
+      "bank": "local",
+      "id": 2,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-local",
+      "cell": 2
+    },
+    "1:local:3": {
+      "bank": "local",
+      "id": 3,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-local",
+      "cell": 3
+    },
+    "1:local:4": {
+      "bank": "local",
+      "id": 4,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        13,
+        16
+      ],
+      "group": "v2-local",
+      "cell": 4
+    },
+    "1:local:5": {
+      "bank": "local",
+      "id": 5,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-local",
+      "cell": 5
+    },
+    "1:local:6": {
+      "bank": "local",
+      "id": 6,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-local",
+      "cell": 6
+    },
+    "1:local:7": {
+      "bank": "local",
+      "id": 7,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        2,
+        0,
+        14,
+        16
+      ],
+      "group": "v2-local",
+      "cell": 7
+    },
+    "1:local:8": {
+      "bank": "local",
+      "id": 8,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-local",
+      "cell": 8
+    },
+    "1:local:9": {
+      "bank": "local",
+      "id": 9,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-local",
+      "cell": 9
+    },
+    "1:local:10": {
+      "bank": "local",
+      "id": 10,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-local",
+      "cell": 10
+    },
+    "1:local:11": {
+      "bank": "local",
+      "id": 11,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-local",
+      "cell": 11
+    },
+    "1:local:12": {
+      "bank": "local",
+      "id": 12,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-local",
+      "cell": 12
+    },
+    "1:local:13": {
+      "bank": "local",
+      "id": 13,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-local",
+      "cell": 13
+    },
+    "1:local:14": {
+      "bank": "local",
+      "id": 14,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        7
+      ],
+      "group": "v2-local",
+      "cell": 14
+    },
+    "1:local:15": {
+      "bank": "local",
+      "id": 15,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        8
+      ],
+      "group": "v2-local",
+      "cell": 15
+    },
+    "1:local:16": {
+      "bank": "local",
+      "id": 16,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        11,
+        0,
+        5,
+        7
+      ],
+      "group": "v2-local",
+      "cell": 16
+    },
+    "1:local:17": {
+      "bank": "local",
+      "id": 17,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-local",
+      "cell": 17
+    },
+    "1:local:18": {
+      "bank": "local",
+      "id": 18,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        3,
+        0,
+        13,
+        16
+      ],
+      "group": "v2-local",
+      "cell": 18
+    },
+    "1:local:19": {
+      "bank": "local",
+      "id": 19,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-local",
+      "cell": 19
+    },
+    "1:local:20": {
+      "bank": "local",
+      "id": 20,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-local",
+      "cell": 20
+    },
+    "1:local:21": {
+      "bank": "local",
+      "id": 21,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        14,
+        16
+      ],
+      "group": "v2-local",
+      "cell": 21
+    },
+    "1:local:22": {
+      "bank": "local",
+      "id": 22,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        1,
+        0,
+        15,
+        16
+      ],
+      "group": "v2-local",
+      "cell": 22
+    },
+    "1:local:23": {
+      "bank": "local",
+      "id": 23,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        8,
+        0,
+        8,
+        16
+      ],
+      "group": "v2-local",
+      "cell": 23
+    },
+    "1:local:24": {
+      "bank": "local",
+      "id": 24,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-local",
+      "cell": 24
+    },
+    "1:local:25": {
+      "bank": "local",
+      "id": 25,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-local",
+      "cell": 25
+    },
+    "1:local:28": {
+      "bank": "local",
+      "id": 28,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-local",
+      "cell": 26
+    },
+    "1:front:20": {
+      "bank": "front",
+      "id": 20,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-local",
+      "cell": 27
+    },
+    "1:union:1": {
+      "bank": "union",
+      "id": 1,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 0
+    },
+    "1:union:323": {
+      "bank": "union",
+      "id": 323,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 1
+    },
+    "1:union:324": {
+      "bank": "union",
+      "id": 324,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 2
+    },
+    "1:union:325": {
+      "bank": "union",
+      "id": 325,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 3
+    },
+    "1:union:326": {
+      "bank": "union",
+      "id": 326,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 4
+    },
+    "1:union:327": {
+      "bank": "union",
+      "id": 327,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 5
+    },
+    "1:union:328": {
+      "bank": "union",
+      "id": 328,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 6
+    },
+    "1:union:329": {
+      "bank": "union",
+      "id": 329,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 7
+    },
+    "1:union:330": {
+      "bank": "union",
+      "id": 330,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 8
+    },
+    "1:union:331": {
+      "bank": "union",
+      "id": 331,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 9
+    },
+    "1:union:332": {
+      "bank": "union",
+      "id": 332,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 10
+    },
+    "1:union:333": {
+      "bank": "union",
+      "id": 333,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 11
+    },
+    "1:union:334": {
+      "bank": "union",
+      "id": 334,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 12
+    },
+    "1:union:335": {
+      "bank": "union",
+      "id": 335,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 13
+    },
+    "1:union:336": {
+      "bank": "union",
+      "id": 336,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 14
+    },
+    "1:union:337": {
+      "bank": "union",
+      "id": 337,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 15
+    },
+    "1:union:338": {
+      "bank": "union",
+      "id": 338,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 16
+    },
+    "1:union:339": {
+      "bank": "union",
+      "id": 339,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 17
+    },
+    "1:union:340": {
+      "bank": "union",
+      "id": 340,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 18
+    },
+    "1:union:341": {
+      "bank": "union",
+      "id": 341,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 19
+    },
+    "1:union:342": {
+      "bank": "union",
+      "id": 342,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 20
+    },
+    "1:union:343": {
+      "bank": "union",
+      "id": 343,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 21
+    },
+    "1:union:344": {
+      "bank": "union",
+      "id": 344,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 22
+    },
+    "1:union:345": {
+      "bank": "union",
+      "id": 345,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 23
+    },
+    "1:union:346": {
+      "bank": "union",
+      "id": 346,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 24
+    },
+    "1:union:347": {
+      "bank": "union",
+      "id": 347,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 25
+    },
+    "1:union:348": {
+      "bank": "union",
+      "id": 348,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 26
+    },
+    "1:union:349": {
+      "bank": "union",
+      "id": 349,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 27
+    },
+    "1:union:350": {
+      "bank": "union",
+      "id": 350,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 28
+    },
+    "1:union:352": {
+      "bank": "union",
+      "id": 352,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 29
+    },
+    "1:union:353": {
+      "bank": "union",
+      "id": 353,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 30
+    },
+    "1:union:354": {
+      "bank": "union",
+      "id": 354,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 31
+    },
+    "1:union:355": {
+      "bank": "union",
+      "id": 355,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 32
+    },
+    "1:union:356": {
+      "bank": "union",
+      "id": 356,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 33
+    },
+    "1:union:357": {
+      "bank": "union",
+      "id": 357,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 34
+    },
+    "1:union:358": {
+      "bank": "union",
+      "id": 358,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 35
+    },
+    "1:union:359": {
+      "bank": "union",
+      "id": 359,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 36
+    },
+    "1:union:360": {
+      "bank": "union",
+      "id": 360,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 37
+    },
+    "1:union:361": {
+      "bank": "union",
+      "id": 361,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 38
+    },
+    "1:union:362": {
+      "bank": "union",
+      "id": 362,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 39
+    },
+    "1:union:363": {
+      "bank": "union",
+      "id": 363,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 40
+    },
+    "1:union:364": {
+      "bank": "union",
+      "id": 364,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 41
+    },
+    "1:union:365": {
+      "bank": "union",
+      "id": 365,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 42
+    },
+    "1:union:366": {
+      "bank": "union",
+      "id": 366,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 43
+    },
+    "1:union:367": {
+      "bank": "union",
+      "id": 367,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 44
+    },
+    "1:union:369": {
+      "bank": "union",
+      "id": 369,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 45
+    },
+    "1:union:370": {
+      "bank": "union",
+      "id": 370,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        2,
+        0,
+        14,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 46
+    },
+    "1:union:371": {
+      "bank": "union",
+      "id": 371,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 47
+    },
+    "1:union:372": {
+      "bank": "union",
+      "id": 372,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 48
+    },
+    "1:union:373": {
+      "bank": "union",
+      "id": 373,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 49
+    },
+    "1:union:374": {
+      "bank": "union",
+      "id": 374,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 50
+    },
+    "1:union:375": {
+      "bank": "union",
+      "id": 375,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 51
+    },
+    "1:union:376": {
+      "bank": "union",
+      "id": 376,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 52
+    },
+    "1:union:377": {
+      "bank": "union",
+      "id": 377,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 53
+    },
+    "1:union:378": {
+      "bank": "union",
+      "id": 378,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 54
+    },
+    "1:union:379": {
+      "bank": "union",
+      "id": 379,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 55
+    },
+    "1:union:380": {
+      "bank": "union",
+      "id": 380,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 56
+    },
+    "1:union:381": {
+      "bank": "union",
+      "id": 381,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 57
+    },
+    "1:union:382": {
+      "bank": "union",
+      "id": 382,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 58
+    },
+    "1:union:383": {
+      "bank": "union",
+      "id": 383,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 59
+    },
+    "1:union:384": {
+      "bank": "union",
+      "id": 384,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 60
+    },
+    "1:union:385": {
+      "bank": "union",
+      "id": 385,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 61
+    },
+    "1:union:386": {
+      "bank": "union",
+      "id": 386,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 62
+    },
+    "1:union:387": {
+      "bank": "union",
+      "id": 387,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        1,
+        0,
+        15,
+        16
+      ],
+      "group": "v2-union-0",
+      "cell": 63
+    },
+    "1:union:388": {
+      "bank": "union",
+      "id": 388,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 0
+    },
+    "1:union:389": {
+      "bank": "union",
+      "id": 389,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 1
+    },
+    "1:union:390": {
+      "bank": "union",
+      "id": 390,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 2
+    },
+    "1:union:391": {
+      "bank": "union",
+      "id": 391,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 3
+    },
+    "1:union:392": {
+      "bank": "union",
+      "id": 392,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 4
+    },
+    "1:union:393": {
+      "bank": "union",
+      "id": 393,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 5
+    },
+    "1:union:394": {
+      "bank": "union",
+      "id": 394,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 6
+    },
+    "1:union:395": {
+      "bank": "union",
+      "id": 395,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 7
+    },
+    "1:union:396": {
+      "bank": "union",
+      "id": 396,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 8
+    },
+    "1:union:397": {
+      "bank": "union",
+      "id": 397,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 9
+    },
+    "1:union:398": {
+      "bank": "union",
+      "id": 398,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 10
+    },
+    "1:union:399": {
+      "bank": "union",
+      "id": 399,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 11
+    },
+    "1:union:400": {
+      "bank": "union",
+      "id": 400,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 12
+    },
+    "1:union:401": {
+      "bank": "union",
+      "id": 401,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 13
+    },
+    "1:union:402": {
+      "bank": "union",
+      "id": 402,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 14
+    },
+    "1:union:403": {
+      "bank": "union",
+      "id": 403,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 15
+    },
+    "1:union:404": {
+      "bank": "union",
+      "id": 404,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 16
+    },
+    "1:union:405": {
+      "bank": "union",
+      "id": 405,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 17
+    },
+    "1:union:406": {
+      "bank": "union",
+      "id": 406,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 18
+    },
+    "1:union:407": {
+      "bank": "union",
+      "id": 407,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 19
+    },
+    "1:union:408": {
+      "bank": "union",
+      "id": 408,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 20
+    },
+    "1:union:409": {
+      "bank": "union",
+      "id": 409,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 21
+    },
+    "1:union:410": {
+      "bank": "union",
+      "id": 410,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 22
+    },
+    "1:union:411": {
+      "bank": "union",
+      "id": 411,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 23
+    },
+    "1:union:412": {
+      "bank": "union",
+      "id": 412,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 24
+    },
+    "1:union:413": {
+      "bank": "union",
+      "id": 413,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 25
+    },
+    "1:union:414": {
+      "bank": "union",
+      "id": 414,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 26
+    },
+    "1:union:415": {
+      "bank": "union",
+      "id": 415,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 27
+    },
+    "1:union:416": {
+      "bank": "union",
+      "id": 416,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 28
+    },
+    "1:union:417": {
+      "bank": "union",
+      "id": 417,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 29
+    },
+    "1:union:418": {
+      "bank": "union",
+      "id": 418,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 30
+    },
+    "1:union:419": {
+      "bank": "union",
+      "id": 419,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 31
+    },
+    "1:union:420": {
+      "bank": "union",
+      "id": 420,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 32
+    },
+    "1:union:421": {
+      "bank": "union",
+      "id": 421,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 33
+    },
+    "1:union:422": {
+      "bank": "union",
+      "id": 422,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 34
+    },
+    "1:union:423": {
+      "bank": "union",
+      "id": 423,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 35
+    },
+    "1:union:424": {
+      "bank": "union",
+      "id": 424,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 36
+    },
+    "1:union:425": {
+      "bank": "union",
+      "id": 425,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 37
+    },
+    "1:union:426": {
+      "bank": "union",
+      "id": 426,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 38
+    },
+    "1:union:427": {
+      "bank": "union",
+      "id": 427,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 39
+    },
+    "1:union:428": {
+      "bank": "union",
+      "id": 428,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 40
+    },
+    "1:union:429": {
+      "bank": "union",
+      "id": 429,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 41
+    },
+    "1:union:430": {
+      "bank": "union",
+      "id": 430,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 42
+    },
+    "1:union:431": {
+      "bank": "union",
+      "id": 431,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 43
+    },
+    "1:union:432": {
+      "bank": "union",
+      "id": 432,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 44
+    },
+    "1:union:433": {
+      "bank": "union",
+      "id": 433,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 45
+    },
+    "1:union:434": {
+      "bank": "union",
+      "id": 434,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 46
+    },
+    "1:union:435": {
+      "bank": "union",
+      "id": 435,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 47
+    },
+    "1:union:436": {
+      "bank": "union",
+      "id": 436,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 48
+    },
+    "1:union:437": {
+      "bank": "union",
+      "id": 437,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 49
+    },
+    "1:union:438": {
+      "bank": "union",
+      "id": 438,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 50
+    },
+    "1:union:439": {
+      "bank": "union",
+      "id": 439,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 51
+    },
+    "1:union:440": {
+      "bank": "union",
+      "id": 440,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 52
+    },
+    "1:union:441": {
+      "bank": "union",
+      "id": 441,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 53
+    },
+    "1:union:442": {
+      "bank": "union",
+      "id": 442,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 54
+    },
+    "1:union:443": {
+      "bank": "union",
+      "id": 443,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        13
+      ],
+      "group": "v2-union-1",
+      "cell": 55
+    },
+    "1:union:444": {
+      "bank": "union",
+      "id": 444,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        13
+      ],
+      "group": "v2-union-1",
+      "cell": 56
+    },
+    "1:union:445": {
+      "bank": "union",
+      "id": 445,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 57
+    },
+    "1:union:446": {
+      "bank": "union",
+      "id": 446,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 58
+    },
+    "1:union:448": {
+      "bank": "union",
+      "id": 448,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 59
+    },
+    "1:union:449": {
+      "bank": "union",
+      "id": 449,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 60
+    },
+    "1:union:452": {
+      "bank": "union",
+      "id": 452,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 61
+    },
+    "1:union:455": {
+      "bank": "union",
+      "id": 455,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 62
+    },
+    "1:union:456": {
+      "bank": "union",
+      "id": 456,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-1",
+      "cell": 63
+    },
+    "1:union:458": {
+      "bank": "union",
+      "id": 458,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-2",
+      "cell": 0
+    },
+    "1:union:459": {
+      "bank": "union",
+      "id": 459,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-2",
+      "cell": 1
+    },
+    "1:union:460": {
+      "bank": "union",
+      "id": 460,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-2",
+      "cell": 2
+    },
+    "1:union:461": {
+      "bank": "union",
+      "id": 461,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-2",
+      "cell": 3
+    },
+    "1:union:462": {
+      "bank": "union",
+      "id": 462,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-2",
+      "cell": 4
+    },
+    "1:union:463": {
+      "bank": "union",
+      "id": 463,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-2",
+      "cell": 5
+    },
+    "1:union:464": {
+      "bank": "union",
+      "id": 464,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-2",
+      "cell": 6
+    },
+    "1:union:466": {
+      "bank": "union",
+      "id": 466,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-2",
+      "cell": 7
+    },
+    "1:union:467": {
+      "bank": "union",
+      "id": 467,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-2",
+      "cell": 8
+    },
+    "1:union:501": {
+      "bank": "union",
+      "id": 501,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-2",
+      "cell": 9
+    },
+    "1:union:502": {
+      "bank": "union",
+      "id": 502,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        2,
+        12,
+        13,
+        4
+      ],
+      "group": "v2-union-2",
+      "cell": 10
+    },
+    "1:union:503": {
+      "bank": "union",
+      "id": 503,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        2,
+        4,
+        14,
+        12
+      ],
+      "group": "v2-union-2",
+      "cell": 11
+    },
+    "1:union:504": {
+      "bank": "union",
+      "id": 504,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        2,
+        0,
+        14,
+        16
+      ],
+      "group": "v2-union-2",
+      "cell": 12
+    },
+    "1:union:505": {
+      "bank": "union",
+      "id": 505,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        4,
+        16,
+        12
+      ],
+      "group": "v2-union-2",
+      "cell": 13
+    },
+    "1:union:506": {
+      "bank": "union",
+      "id": 506,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        11,
+        2,
+        5,
+        14
+      ],
+      "group": "v2-union-2",
+      "cell": 14
+    },
+    "1:union:507": {
+      "bank": "union",
+      "id": 507,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-2",
+      "cell": 15
+    },
+    "1:union:508": {
+      "bank": "union",
+      "id": 508,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-2",
+      "cell": 16
+    },
+    "1:union:509": {
+      "bank": "union",
+      "id": 509,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-2",
+      "cell": 17
+    },
+    "1:union:510": {
+      "bank": "union",
+      "id": 510,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        4,
+        16,
+        12
+      ],
+      "group": "v2-union-2",
+      "cell": 18
+    },
+    "1:union:511": {
+      "bank": "union",
+      "id": 511,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-2",
+      "cell": 19
+    },
+    "1:union:512": {
+      "bank": "union",
+      "id": 512,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        4,
+        16,
+        12
+      ],
+      "group": "v2-union-2",
+      "cell": 20
+    },
+    "1:union:513": {
+      "bank": "union",
+      "id": 513,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-2",
+      "cell": 21
+    },
+    "1:union:514": {
+      "bank": "union",
+      "id": 514,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        4,
+        16,
+        12
+      ],
+      "group": "v2-union-2",
+      "cell": 22
+    },
+    "1:union:515": {
+      "bank": "union",
+      "id": 515,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        1,
+        16,
+        15
+      ],
+      "group": "v2-union-2",
+      "cell": 23
+    },
+    "1:union:516": {
+      "bank": "union",
+      "id": 516,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        15,
+        16
+      ],
+      "group": "v2-union-2",
+      "cell": 24
+    },
+    "1:union:517": {
+      "bank": "union",
+      "id": 517,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        3,
+        0,
+        13,
+        16
+      ],
+      "group": "v2-union-2",
+      "cell": 25
+    },
+    "1:union:518": {
+      "bank": "union",
+      "id": 518,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        1,
+        8,
+        15,
+        8
+      ],
+      "group": "v2-union-2",
+      "cell": 26
+    },
+    "1:union:519": {
+      "bank": "union",
+      "id": 519,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-2",
+      "cell": 27
+    },
+    "1:union:520": {
+      "bank": "union",
+      "id": 520,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-2",
+      "cell": 28
+    },
+    "1:union:521": {
+      "bank": "union",
+      "id": 521,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-2",
+      "cell": 29
+    },
+    "1:union:522": {
+      "bank": "union",
+      "id": 522,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-2",
+      "cell": 30
+    },
+    "1:union:523": {
+      "bank": "union",
+      "id": 523,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-2",
+      "cell": 31
+    },
+    "1:union:524": {
+      "bank": "union",
+      "id": 524,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-2",
+      "cell": 32
+    },
+    "1:union:525": {
+      "bank": "union",
+      "id": 525,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-2",
+      "cell": 33
+    },
+    "1:union:526": {
+      "bank": "union",
+      "id": 526,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-2",
+      "cell": 34
+    },
+    "1:union:527": {
+      "bank": "union",
+      "id": 527,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        4,
+        1,
+        12,
+        15
+      ],
+      "group": "v2-union-2",
+      "cell": 35
+    },
+    "1:union:528": {
+      "bank": "union",
+      "id": 528,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        4,
+        4,
+        12,
+        12
+      ],
+      "group": "v2-union-2",
+      "cell": 36
+    },
+    "1:union:529": {
+      "bank": "union",
+      "id": 529,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        15,
+        16
+      ],
+      "group": "v2-union-2",
+      "cell": 37
+    },
+    "1:union:530": {
+      "bank": "union",
+      "id": 530,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-2",
+      "cell": 38
+    },
+    "1:union:531": {
+      "bank": "union",
+      "id": 531,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-2",
+      "cell": 39
+    },
+    "1:union:532": {
+      "bank": "union",
+      "id": 532,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-2",
+      "cell": 40
+    },
+    "1:union:533": {
+      "bank": "union",
+      "id": 533,
+      "level": "1",
+      "width": 16,
+      "height": 16,
+      "ink": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "group": "v2-union-2",
+      "cell": 41
+    }
+  },
+  "backgrounds": {
+    "1:BACK0": {
+      "name": "BACK0",
+      "level": "1",
+      "width": 320,
+      "height": 200,
+      "group": "v2-background"
+    }
+  },
+  "sourceHashes": {
+    "dist/assets/sprites.idx": "575f271e68501aaa1a728ddd25c511aae00d87edcbb746af8af355f9b24eef77",
+    "dist/assets/game.json": "a77f4d1dacc9c0d627d822f35c8cdd5b5ab40099fe0f774f86ebd1683079c297",
+    "dist/assets/tiles-1.idx": "3eae9d31c984600bf665645ffbc9ba6432c365603e46eac40245a8e5af6a4146",
+    "dist/assets/union.idx": "c59810d54d3dab5fbe9c820003b89937bd3872ea792c4ac2461961ddc8e8f09a",
+    "dist/assets/front.idx": "a2c556433b77bfb94be78e35eafab04573b4813d9414f17c188e4a5c3d3b7070",
+    "dist/assets/background-BACK0.idx": "bf34654123093c8d0c9ee906ec71de5df2852369b946f6d03901ec5778c2656b"
+  }
+}

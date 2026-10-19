@@ -13,7 +13,7 @@ try{
    const pixels=r.ctx.getImageData(0,176*4,1280,24*4).data;for(let y=0;y<24;y++)for(let x=0;x<320;x++)for(let k=0;k<4;k++){const a=pixels[((y*4+2)*1280+x*4+2)*4+k],b=hud[(y*320+x)*4+k];if(a!==b)throw Error(`HUD mismatch stage${i} at${x},${y},${k}: ${a}/${b}`);}stages++;}
   const w=q.world;r.setPalette(palette);r.hd.begin();r.frame.fill(0);r.sprite(313,100,100);r.blit(Uint8Array.of(4),1,1,95,90);let pixel=r.ctx.getImageData(95*4+2,90*4+2,1,1).data;if(pixel[0]!==palette[12]||pixel[1]!==palette[13]||pixel[2]!==palette[14])throw Error('foreground compositing order');
   for(const id of Object.keys(pack.manifest.sprites)){r.hd.begin();r.sprite(+id,160,136,true);r.sprite(+id|16384,220,136,false);}
-  r.render(w);return {stages,frames:Object.keys(pack.manifest.sprites).length,hash:stateHash(w)};
+  r.render(w);return {stages,frames:Object.keys(pack.manifest.sprites).length,tileFrames:Object.keys(pack.manifest.tiles||{}).length,backgrounds:Object.keys(pack.manifest.backgrounds||{}).length,hash:stateHash(w)};
   function stateHash(w){return w.stateHash();}
  });
  await page.keyboard.press('KeyH');await page.waitForFunction(()=>prehistorik.graphics==='original');assert.equal(await page.locator('#game').getAttribute('width'),'320');await page.keyboard.press('KeyH');await page.waitForFunction(()=>prehistorik.graphics==='hd');await page.reload();await page.waitForFunction(()=>window.prehistorik?.graphics==='hd');

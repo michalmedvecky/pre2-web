@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "stages": 16,
+  "frames": 143,
+  "tileFrames": 198,
+  "backgrounds": 1,
+  "hash": "fe31068c",
+  "checks": [
+    "lazy loading",
+    "all-stage native raster parity",
+    "unchanged simulation",
+    "HUD clipping",
+    "foreground order",
+    "all HD frames and mirrored hit flashes",
+    "mode toggle",
+    "persistence",
+    "mobile control",
+    "failed-load fallback"
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "tool": "built-in image_gen",
+  "mode": "edit",
+  "groups": [
+    {
+      "id": "v2-food-a",
+      "c": 4,
+      "r": 4,
+      "n": 16,
+      "kind": "sprite",
+      "specific": "These are bananas, grapes, pear, cherries, small grapes, pineapple, strawberry, ice cream sundae, cake slice, pudding, tall green drink, teacup, beer mug, amber gem, candelabra and ring, exactly in the reference row-major order.",
+      "prompt": "Use case: identity-preserve. Asset type: production HD collectible sprite atlas for a classic cartoon platformer. Image1 is the EXACT edit target. Image2 is STYLE ONLY (clean cel-shaded cartoon linework), do NOT add its character or club. Keep exactly 4 columns by 4 rows of equal cells, exactly 16 occupied cells in row-major order and the same empty trailing cells as the source. Every source image stays in its original cell, same relative scale, placement, orientation, silhouette, colors and transparent padding. These are bananas, grapes, pear, cherries, small grapes, pineapple, strawberry, ice cream sundae, cake slice, pudding, tall green drink, teacup, beer mug, amber gem, candelabra and ring, exactly in the reference row-major order. Redraw only the existing object with crisp cartoon contours and restrained cel shading, polished like the approved character remaster. Do not add faces, characters, limbs or new props. Smooth coarse pixel stair steps into detailed curves and material texture, retaining original color blocks and identity. True transparent background outside each original object/patch, no opaque colored rectangle behind it, no glow, no ground or cast shadows. No grid lines, frame numbers, labels or captions. Preserve original intentional letters on objects only. Keep identical canvas aspect ratio and cell ordering. No3D, no photorealism."
+    },
+    {
+      "id": "v2-food-b",
+      "c": 4,
+      "r": 4,
+      "n": 15,
+      "kind": "sprite",
+      "specific": "These are the exact treasure/household/food pickup objects in the reference, including goblet, flagon, candle, stacked ingots, popcorn, crown, hammer, radio, pencil, floppy disk, antique coffee pot, potted flower, black shoe, small retro screen/device, and playing card with black club suit. Preserve their original identities. Last cell is empty.",
+      "prompt": "Use case: identity-preserve. Asset type: production HD collectible sprite atlas for a classic cartoon platformer. Image1 is the EXACT edit target. Image2 is STYLE ONLY (clean cel-shaded cartoon linework), do NOT add its character or club. Keep exactly 4 columns by 4 rows of equal cells, exactly 15 occupied cells in row-major order and the same empty trailing cells as the source. Every source image stays in its original cell, same relative scale, placement, orientation, silhouette, colors and transparent padding. These are the exact treasure/household/food pickup objects in the reference, including goblet, flagon, candle, stacked ingots, popcorn, crown, hammer, radio, pencil, floppy disk, antique coffee pot, potted flower, black shoe, small retro screen/device, and playing card with black club suit. Preserve their original identities. Last cell is empty. Redraw only the existing object with crisp cartoon contours and restrained cel shading, polished like the approved character remaster. Do not add faces, characters, limbs or new props. Smooth coarse pixel stair steps into detailed curves and material texture, retaining original color blocks and identity. True transparent background outside each original object/patch, no opaque colored rectangle behind it, no glow, no ground or cast shadows. No grid lines, frame numbers, labels or captions. Preserve original intentional letters on objects only. Keep identical canvas aspect ratio and cell ordering. No3D, no photorealism."
+    },
+    {
+      "id": "v2-pickups",
+      "c": 4,
+      "r": 6,
+      "n": 21,
+      "kind": "sprite",
+      "specific": "First four cells are the same collectible white bone rotating through four orientations. Next five colored cubes bear the exact letters B O N U S. Next original objects are an axe, stone gate arch, green lighter/tool, opener/tool, fork, knife, spoon, and the two green/red passage signposts with pointing hands. Preserve last three occupied HUD-like symbols including original visible letters/numerals exactly, not new slogans. Final3 cells empty. Keep original bone pose angles and sign pointing directions.",
+      "prompt": "Use case: identity-preserve. Asset type: production HD collectible sprite atlas for a classic cartoon platformer. Image1 is the EXACT edit target. Image2 is STYLE ONLY (clean cel-shaded cartoon linework), do NOT add its character or club. Keep exactly 4 columns by 6 rows of equal cells, exactly 21 occupied cells in row-major order and the same empty trailing cells as the source. Every source image stays in its original cell, same relative scale, placement, orientation, silhouette, colors and transparent padding. First four cells are the same collectible white bone rotating through four orientations. Next five colored cubes bear the exact letters B O N U S. Next original objects are an axe, stone gate arch, green lighter/tool, opener/tool, fork, knife, spoon, and the two green/red passage signposts with pointing hands. Preserve last three occupied HUD-like symbols including original visible letters/numerals exactly, not new slogans. Final3 cells empty. Keep original bone pose angles and sign pointing directions. Redraw only the existing object with crisp cartoon contours and restrained cel shading, polished like the approved character remaster. Do not add faces, characters, limbs or new props. Smooth coarse pixel stair steps into detailed curves and material texture, retaining original color blocks and identity. True transparent background outside each original object/patch, no opaque colored rectangle behind it, no glow, no ground or cast shadows. No grid lines, frame numbers, labels or captions. Preserve original intentional letters on objects only. Keep identical canvas aspect ratio and cell ordering. No3D, no photorealism."
+    },
+    {
+      "id": "v2-local",
+      "c": 8,
+      "r": 4,
+      "n": 28,
+      "kind": "tile",
+      "specific": "These are rock, root, trunk and hanging-leaf terrain FRAGMENTS. They are cropped square pieces of larger cave scenery, not standalone complete rocks or trees. Final4 cells empty.",
+      "prompt": "Use case: identity-preserve. Asset type: production HD terrain texture atlas for a classic cartoon platformer. Image1 is the EXACT edit target. Image2 is STYLE ONLY (clean cel-shaded cartoon linework), do NOT add its character or club. Keep exactly 8 columns by 4 rows of equal cells, exactly 28 occupied cells in row-major order and the same empty trailing cells as the source. Every source image stays in its original cell, same relative scale, placement, orientation, silhouette, colors and transparent padding. These are rock, root, trunk and hanging-leaf terrain FRAGMENTS. They are cropped square pieces of larger cave scenery, not standalone complete rocks or trees. Final4 cells empty. Each occupied patch is a cropped square16x16 terrain tile enlarged inside its cell; do NOT complete partial scenery or turn fragments into complete standalone objects. Retain patch edge shapes and spatial arrangements; detail only the existing materials. No new ledges, walkable surfaces, openings or silhouettes. Smooth coarse pixel stair steps into detailed curves and material texture, retaining original color blocks and identity. True transparent background outside each original object/patch, no opaque colored rectangle behind it, no glow, no ground or cast shadows. No grid lines, frame numbers, labels or captions. Preserve original intentional letters on objects only. Keep identical canvas aspect ratio and cell ordering. No3D, no photorealism."
+    },
+    {
+      "id": "v2-union-0",
+      "c": 8,
+      "r": 8,
+      "n": 64,
+      "kind": "tile",
+      "specific": "All64 cells are terrain FRAGMENTS: dark cave recesses, rock faces, corners, cracks, green vines and wooden trunk patches. Intentionally nearly empty dark fragments must remain nearly empty, not be filled with stones.",
+      "prompt": "Use case: identity-preserve. Asset type: production HD terrain texture atlas for a classic cartoon platformer. Image1 is the EXACT edit target. Image2 is STYLE ONLY (clean cel-shaded cartoon linework), do NOT add its character or club. Keep exactly 8 columns by 8 rows of equal cells, exactly 64 occupied cells in row-major order and the same empty trailing cells as the source. Every source image stays in its original cell, same relative scale, placement, orientation, silhouette, colors and transparent padding. All64 cells are terrain FRAGMENTS: dark cave recesses, rock faces, corners, cracks, green vines and wooden trunk patches. Intentionally nearly empty dark fragments must remain nearly empty, not be filled with stones. Each occupied patch is a cropped square16x16 terrain tile enlarged inside its cell; do NOT complete partial scenery or turn fragments into complete standalone objects. Retain patch edge shapes and spatial arrangements; detail only the existing materials. No new ledges, walkable surfaces, openings or silhouettes. Smooth coarse pixel stair steps into detailed curves and material texture, retaining original color blocks and identity. True transparent background outside each original object/patch, no opaque colored rectangle behind it, no glow, no ground or cast shadows. No grid lines, frame numbers, labels or captions. Preserve original intentional letters on objects only. Keep identical canvas aspect ratio and cell ordering. No3D, no photorealism."
+    },
+    {
+      "id": "v2-union-1",
+      "c": 8,
+      "r": 8,
+      "n": 64,
+      "kind": "tile",
+      "specific": "All64 cells are square FRAGMENTS of larger rock walls, rooted soil, tree-trunk/green foliage combinations, bright yellow mineral flecks and grass/dirt platform edges. Keep each fragment's visible content and crop.",
+      "prompt": "Use case: identity-preserve. Asset type: production HD terrain texture atlas for a classic cartoon platformer. Image1 is the EXACT edit target. Image2 is STYLE ONLY (clean cel-shaded cartoon linework), do NOT add its character or club. Keep exactly 8 columns by 8 rows of equal cells, exactly 64 occupied cells in row-major order and the same empty trailing cells as the source. Every source image stays in its original cell, same relative scale, placement, orientation, silhouette, colors and transparent padding. All64 cells are square FRAGMENTS of larger rock walls, rooted soil, tree-trunk/green foliage combinations, bright yellow mineral flecks and grass/dirt platform edges. Keep each fragment's visible content and crop. Each occupied patch is a cropped square16x16 terrain tile enlarged inside its cell; do NOT complete partial scenery or turn fragments into complete standalone objects. Retain patch edge shapes and spatial arrangements; detail only the existing materials. No new ledges, walkable surfaces, openings or silhouettes. Smooth coarse pixel stair steps into detailed curves and material texture, retaining original color blocks and identity. True transparent background outside each original object/patch, no opaque colored rectangle behind it, no glow, no ground or cast shadows. No grid lines, frame numbers, labels or captions. Preserve original intentional letters on objects only. Keep identical canvas aspect ratio and cell ordering. No3D, no photorealism."
+    },
+    {
+      "id": "v2-union-2",
+      "c": 8,
+      "r": 8,
+      "n": 42,
+      "kind": "tile",
+      "specific": "First42 cells are cropped terrain fragments. Preserve cut rock shapes, cave shadow shapes and leafy roots. Cells in row4 cols5,6 combine to read LEVEL; preserve exactly those source letters and their registration, no new labels anywhere. Last22 cells empty.",
+      "prompt": "Use case: identity-preserve. Asset type: production HD terrain texture atlas for a classic cartoon platformer. Image1 is the EXACT edit target. Image2 is STYLE ONLY (clean cel-shaded cartoon linework), do NOT add its character or club. Keep exactly 8 columns by 8 rows of equal cells, exactly 42 occupied cells in row-major order and the same empty trailing cells as the source. Every source image stays in its original cell, same relative scale, placement, orientation, silhouette, colors and transparent padding. First42 cells are cropped terrain fragments. Preserve cut rock shapes, cave shadow shapes and leafy roots. Cells in row4 cols5,6 combine to read LEVEL; preserve exactly those source letters and their registration, no new labels anywhere. Last22 cells empty. Each occupied patch is a cropped square16x16 terrain tile enlarged inside its cell; do NOT complete partial scenery or turn fragments into complete standalone objects. Retain patch edge shapes and spatial arrangements; detail only the existing materials. No new ledges, walkable surfaces, openings or silhouettes. Smooth coarse pixel stair steps into detailed curves and material texture, retaining original color blocks and identity. True transparent background outside each original object/patch, no opaque colored rectangle behind it, no glow, no ground or cast shadows. No grid lines, frame numbers, labels or captions. Preserve original intentional letters on objects only. Keep identical canvas aspect ratio and cell ordering. No3D, no photorealism."
+    },
+    {
+      "id": "v2-background",
+      "kind": "background",
+      "specific": "A fixed original 320x200 background: periwinkle sky in upper third, off-white jagged cloud band above distant dark gray and charcoal mountain silhouettes, black lower half. Keep skyline heights, composition and original subtle warm-gray/periwinkle palette exactly. Add smooth cartoon-painted rock/cloud detail while keeping distant silhouettes subdued so gameplay remains readable. The lower half stays near-black and free of added objects. No foreground cliffs, paths, trees, people or extra scenery.",
+      "prompt": "Use case: style-transfer. Asset type: faithful HD game background. Edit only the supplied original background, preserving its complete layout. A fixed original 320x200 background: periwinkle sky in upper third, off-white jagged cloud band above distant dark gray and charcoal mountain silhouettes, black lower half. Keep skyline heights, composition and original subtle warm-gray/periwinkle palette exactly. Add smooth cartoon-painted rock/cloud detail while keeping distant silhouettes subdued so gameplay remains readable. The lower half stays near-black and free of added objects. No foreground cliffs, paths, trees, people or extra scenery. Clean detailed 2D cel-painted game illustration to match a classic cartoon platformer remaster, no blocky pixel edges. Output landscape 8:5 aspect, ideally1280x800. Opaque full-frame background, no transparency, no border, text, labels or watermark."
+    }
+  ]
+}

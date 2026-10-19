@@ -2,6 +2,8 @@
 
 The opt-in **Original / HD** toolbar button (or **H**) uses these AI remasters in the game. Original is the default. The preference is stored under `prehistorik2-graphics-v1`; it is independent of progress and survives reloads. All original indexed banks remain untouched and selectable. HD download/decoding is lazy; a load failure leaves the original renderer operational.
 
+Later [environment/collectible batch v2](../hd-v2/README.md) extends the combined runtime manifest. This document records the original 92-frame character set. When rebuilding the full current release, also run the v2 builder after the base builder.
+
 ## Coverage and provenance
 
 | Set | Native sprite IDs | Frames |
