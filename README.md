@@ -25,6 +25,8 @@ Pickups follow the original tables: six bones restore one heart; ordinary enemie
 
 Recorded input-only completion routes cover all 16 worlds, all four boss encounters and selected secret-room/bonus branches. See [playthrough coverage](PLAYTHROUGH.md) for reproducible checks and their limits.
 
+Scrolling and moving sprites are interpolated on browser animation frames, with a 65ms camera filter to smooth the original 16px camera steps. Simulation, collisions and authored animation frames retain the original approximately 24.3Hz tick. Presentation adds up to one tick of motion latency; passages, respawns and checkpoint rescues cut immediately. Pixel art remains on the 320×200 pixel grid.
+
 Assets are already generated and committed. Building or deploying does not require the original game or analysis workspace. `dist/rules.json` and the data tables in `dist/assets/` are runtime inputs. Do not remove them or regenerate them from guessed formats.
 
 ## Kubernetes deployment — agent runbook
