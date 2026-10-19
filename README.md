@@ -4,7 +4,7 @@ Playable native JavaScript reconstruction using the recovered original graphics,
 
 There is **no server-side application, database, PVC, account service or dependency on Sites hosting**. nginx serves `dist/`. Browser localStorage stores checkpoint progress per browser and origin. Multiple replicas require no session affinity.
 
-All 16 recovered stages are available. Enemy/boss controllers and some special blocks/forms remain approximate; a full campaign playthrough and exact original-game behavioral equivalence have not been verified.
+All 16 recovered stages are available. Core player animations, jump impulses, weapon timing and glider controls follow recovered routines and data. Enemy/boss controllers, some terrain/platform interactions and special blocks remain approximate; a full campaign playthrough and exact original-game behavioral equivalence have not been verified.
 
 ## Local development
 
