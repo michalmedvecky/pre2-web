@@ -15,7 +15,7 @@ export function exitDestination(index,kind){
 export class World {
   constructor(assets,{onEvent=()=>{},expert=false}={}){
     this.assets=assets;this.onEvent=onEvent;this.expert=expert;this.score=0;this.lives=2;this.health=3;this.extraLifeQuotient=0;
-    this.frame=0;this.inventory=0;this.inventory2=0;this.weapon=0;this.foodHealth=0;this.weaponPower=0;this.transition=null;this.events=[];this.recorded=[];this.loadLevel(0);
+    this.presentationTicks=0;this.frame=0;this.inventory=0;this.inventory2=0;this.weapon=0;this.foodHealth=0;this.weaponPower=0;this.transition=null;this.events=[];this.recorded=[];this.loadLevel(0);
   }
   emit(type,data={}){const e={type,...data};this.events.push(e);this.onEvent(e);}
   word(p){return(this.mem[p&65535]||0)|((this.mem[(p+1)&65535]||0)<<8);}
@@ -24,14 +24,14 @@ export class World {
   loadLevel(index,{restart=false}={}){
     index=clamp(index,0,this.assets.game.levels.length-1);const prior=restart?this.capturePersistence():null;
     this.levelIndex=index;this.level=this.assets.game.levels[index];this.map=this.assets.maps[this.level.id].slice();this.mem=new Uint8Array(65536);this.mem.set(this.assets.tables.subarray(0,65536));this.mem.set(this.assets.footers[this.level.id],0x7e5a);
-    this.rng=new Random(5,0x22,0x86,0xe58d,this.word(0x28bd));this.frame=0;this.transition=null;this.transitionTimer=0;this.deathTimer=0;this.effects=[];this.projectiles=[];this.actors=[];this.items=[];this.platforms=[];this.gates=this.level.gates;
+    this.rng=new Random(5,0x22,0x86,0xe58d,this.word(0x28bd));this.frame=0;this.transition=null;this.transitionTimer=0;this.deathTimer=0;this.effects=[];this.projectiles=[];this.playerWeapon=null;this.actors=[];this.items=[];this.platforms=[];this.gates=this.level.gates;
     this.inventory=0;this.inventory2=0;this.foodHealth=0;this.health=3;this.power=0;this.weather=0;this.collectedFood=0;this.brokenBlocks=0;this.foodCounts=new Uint16Array(110);this.alternate=false;this.wind=0;this.sceneFlash=0;this.blockCooldown=0;
     this.definitions=this.level.enemies.filter(d=>!d.expert_flag||this.expert).map((d,index)=>({...d,index,active:false,destroyed:false,timer:0,flags:d.unknown4||0,extra:Uint8Array.from((d.extra_hex||'').match(/../g)||[],x=>parseInt(x,16))}));
     this.items=this.level.items.filter(d=>d.active).map(d=>({...d,sprite:d.sprite,active:true,originalSprite:d.sprite,bob:s8(d.flags||0),baseY:d.y,permanent:false}));
     this.platforms=this.level.platforms.filter(d=>d.active).map(d=>this.makePlatform(d));
     const footer=this.assets.footers[this.level.id];this.blocks=this.level.secrets.filter(d=>d.active && (d.raw[3]!==255 || d.raw[4]!==255)).map(d=>({index:d.index,content:d.raw[0],replacement:d.raw[1],durability:d.raw[2],pos:d.raw[3]|d.raw[4]<<8,active:true,hitAt:-999}));
     this.totalBlocks=this.blocks.length;this.totalFood=this.items.filter(d=>{const c=(d.sprite&0x1fff)-0x35;return c>=75&&c<=166}).length;
-    this.player={x:this.level.start.x,y:this.level.start.y,vx:0,vy:0,face:1,sprite:9,action:-1,anim:0,jumpFrame:0,jumpLock:0,fallFrames:0,grounded:false,speedShift:0,invulnerable:0,attackTimer:0,attackCooldown:0,downTimer:0,powerTimer:0,look:false};
+    this.player={x:this.level.start.x,y:this.level.start.y,vx:0,vy:0,face:1,sprite:9,action:-1,animationVariant:-1,walkHistory:0,attackAction:3,anim:0,jumpFrame:0,jumpLock:0,fallFrames:0,grounded:false,speedShift:0,invulnerable:0,attackTimer:0,attackCooldown:0,downTimer:0,powerTimer:0,look:false};
     this.checkpoint={x:this.player.x,y:this.player.y};this.camera={x:clamp((Math.floor(this.player.x/16)-10)*16,0,this.maxCameraX()),y:clamp(this.word(0x815a)*16,0,this.maxCameraY())};
     if(prior){this.restorePersistence(prior);Object.assign(this.player,this.checkpoint,{vx:0,vy:0,invulnerable:24});this.camera.y=clamp((Math.floor(this.player.y/16)-8)*16,0,this.maxCameraY());this.camera.x=clamp((Math.floor(this.player.x/16)-10)*16,0,this.maxCameraX());}
     this.initBosses();this.animatePlayer(0);this.emit('level',{index,id:this.level.id,restart});
@@ -51,13 +51,34 @@ export class World {
   overlap(a,b){if(Math.abs(a.x-b.x)>=64||Math.abs(a.y-b.y)>=70)return false;const A=this.spriteBounds(a),B=this.spriteBounds(b);const w=Math.min(A.width,B.width)>>1;return Math.max(A.top,B.top)<Math.min(A.bottom,B.bottom)&&Math.abs((A.left+A.width/2)-(B.left+B.width/2))<w;}
   setAnimation(a,p){if(a.animStart!==p){a.animStart=p;a.anim=p;}}
   nextAnimation(a,base=0){let ptr=a.anim||a.animStart;if(!ptr)return;let word=this.signedWord(ptr);let guard=0;while(word<0&&guard++<8){ptr=u16(ptr+word);word=this.signedWord(ptr);}if(guard>=8||word===0x7d01)return;a.sprite=(word&0x1fff)+base;a.marker=word&0xe000;a.anim=u16(ptr+2);}
-  animatePlayer(action){const p=this.player;const ptr=this.word(0x7cdb+action*2);if(p.action!==action){p.action=action;p.animStart=0;this.setAnimation(p,ptr||this.word(0x7cdb));}this.nextAnimation(p);p.sprite=(p.sprite&0x1fff)|(p.face<0?0x8000:0);}
+  animatePlayer(action,variant=action){const p=this.player;const ptr=this.word(0x7cdb+variant*2);if(p.animationVariant!==variant){p.animationVariant=variant;p.animStart=0;this.setAnimation(p,ptr||this.word(0x7cdb));}p.action=action;this.nextAnimation(p);p.sprite=(p.sprite&0x1fff)|(p.face<0?0x8000:0);}
+  // Original idle dispatcher 0x15eeb: secondary animations use DS:7cdb[16..19].
+  idleAnimation(input){const p=this.player;if(Math.abs(p.vx)>=8)return 18;
+    if(p.vx!==0)return 0;
+    const looking=input.look||(input.left&&input.right);
+    if(p.walkHistory>=30&&!looking){p.walkHistory-=3;return 16;}
+    if(looking)return 19;
+    // IRQ0 0x119a3 advances DS:27ec once per four slow ticks; a game update uses three.
+    const time=(this.presentationTicks>>>2)&511;
+    for(let address=0x79dc;address<0x79e8;address+=4){if(time<this.word(address))return 0;if(time<this.word(address+2))return 17;}
+    return 0;
+  }
+  attackDuration(action){const ptr=this.word(0x7cdb+action*2);for(let i=0;i<32;i++){const word=this.word(ptr+i*2);if(word&0x4000)return i+1;if(word&0x8000)break;}return 7;}
+  // Original weapon overlay records: body frame, weapon sprite, signed X/Y offsets.
+  // 0x16291..0x162ee subtracts offsets and mirrors X with the player's facing.
+  updatePlayerWeapon(){this.playerWeapon=null;const p=this.player;if(this.deathTimer||this.transition)return;
+    if((WEAPON[this.weapon].flags&1)&&(p.marker&0x4000))return;
+    const table=this.word(0x7b00+this.weapon*5),body=p.sprite&0x1fff;
+    for(let n=0;n<64;n++){const ptr=table+n*8,frame=this.word(ptr);if(frame===0x55aa)return;if(frame!==body)continue;
+      this.playerWeapon={sprite:this.word(ptr+2)|(p.face<0?0x8000:0),x:p.x-p.face*this.signedWord(ptr+4),y:p.y-this.signedWord(ptr+6),active:true};return;
+    }
+  }
   secondaryAnimationFor(sprite,type){let ptr=0xa86b,limit=Math.min(this.mem.length-2,this.assets.tables.length);for(;ptr<limit-4;ptr+=2){if(this.word(ptr)!==0x7d01||this.word(ptr+2)!==type)continue;let p=ptr+4;for(let count=0;count<250&&p<limit-2;count++,p+=2){const w=this.word(p);if(w===0x7d01)break;if((w&0x1fff)===sprite-0x138)return p;}}return 0;}
   accelerate(cap=80){const p=this.player;if(this.input.left!==this.input.right){const a=(p.face*16)>>p.speedShift;p.vx=s16(clamp(p.vx+a,-cap,cap));}}
   friction(){const p=this.player;const a=12>>p.speedShift;p.vx=Math.sign(p.vx)*Math.max(0,Math.abs(p.vx)-a);}
   gravity(){const p=this.player;const slow=this.alternate&&p.slowFall;p.vy=s16(Math.min(p.vy+(slow?4:16),slow?24:192));}
   step(input={}){
-    this.events=[];this.input=input;this.recorded.push(inputMask(input));if(this.recorded.length>60000)this.recorded.shift();this.frame=u16(this.frame+1);
+    this.presentationTicks=u16(this.presentationTicks+3);this.events=[];this.input=input;this.recorded.push(inputMask(input));if(this.recorded.length>60000)this.recorded.shift();this.frame=u16(this.frame+1);
     if(this.transition){if(++this.transitionTimer>=this.transition.delay)this.emit('transitionReady',{transition:this.transition});return;}
     if(this.deathTimer){this.updateEffects();this.player.vy+=8;this.player.y+=sar4(this.player.vy);if(--this.deathTimer===0){if(this.lives>0){this.lives--;this.loadLevel(this.levelIndex,{restart:true});}else{this.transition={type:'gameover',delay:1};this.transitionTimer=0;}}return;}
     if(this.blockCooldown)this.blockCooldown--;if(this.sceneFlash)this.sceneFlash--;if(this.power)this.power--;if(this.weaponPower)this.weaponPower--;
@@ -73,7 +94,8 @@ export class World {
     if(p.invulnerable)p.invulnerable--;if(p.attackCooldown)p.attackCooldown--;if(p.attackTimer)p.attackTimer--;if(p.downTimer)p.downTimer--;if(p.powerTimer)p.powerTimer--;
     let action=ACTIONS[actionIndex(input)];if(p.invulnerable>22)action=8;
     if(input.down)p.downTimer=4;
-    if(input.attack&&p.attackCooldown===0&&p.invulnerable<22)this.attack();
+    if(input.attack&&p.attackCooldown===0&&p.invulnerable<22)this.attack(action);
+    if(action===1||p.attackTimer>0)p.walkHistory=Math.min(255,p.walkHistory+1);else if(action===4||action===5)p.walkHistory=0;
     const isJump=action===2;
     if(isJump&&p.jumpLock===0){if(p.grounded)p.jumpFrame=0;if(p.jumpFrame<9)p.vy=s16(p.vy+(this.alternate?(JUMP[p.jumpFrame]>>1):JUMP[p.jumpFrame]));else this.gravity();p.jumpFrame=Math.min(255,p.jumpFrame+1);p.grounded=false;if(u16(p.vx)>=48)this.friction();else this.accelerate(48);}
     else if(action===4){this.accelerate(32);}else if(action===1){this.accelerate(80);}else this.friction();
@@ -82,7 +104,8 @@ export class World {
     this.collidePlayer(oldX,oldY);
     if(!p.grounded){this.accelerate(80);this.gravity();if(p.vy>0){p.fallFrames++;p.jumpLock=6;}}
     else {p.jumpFrame=0;p.jumpLock=Math.max(0,p.jumpLock-1);p.fallFrames=0;}
-    if(p.invulnerable>22)this.animatePlayer(8);else if(p.attackTimer>0)this.animatePlayer(action===7?7:action===6?6:3);else if(!p.grounded&&!isJump){p.sprite=(p.fallFrames>=12?13:12)|(p.face<0?0x8000:0);p.action=-1;}else this.animatePlayer(action);
+    if(p.invulnerable>22)this.animatePlayer(8);else if(p.attackTimer>0)this.animatePlayer(p.attackAction);else if(!p.grounded&&!isJump){p.sprite=(p.fallFrames>=12?13:12)|(p.face<0?0x8000:0);p.action=-1;p.animationVariant=-1;p.marker=0;}else this.animatePlayer(action,action===0?this.idleAnimation(input):action);
+    this.updatePlayerWeapon();
     p.look=!!input.look;
   }
   collidePlayer(oldX,oldY){
@@ -98,14 +121,14 @@ export class World {
     if(!p.grounded&&p.vy>=0){const nextC=this.floorClass(p.x,p.y+16),nextSlope=this.level.tileSlopes[this.tile(p.x,p.y+16)];if(nextC>=1&&nextC<=5&&nextSlope&&!(nextC===5&&p.downTimer)){let sy=this.surface(p.x,p.y+16);if(sy<=p.y+5){p.y=sy;p.vy=0;p.grounded=true;}}}
     for(const q of this.platforms){if(!q.active)continue;const bounds=this.spriteBounds(q);if(p.vy>=0&&p.x>bounds.left-3&&p.x<bounds.right+3&&oldY<=bounds.top+8&&p.y>=bounds.top){p.y=bounds.top;p.vy=0;p.grounded=true;p.x+=q.dx||0;}}
   }
-  attack(){const p=this.player,w=WEAPON[this.weapon];p.attackCooldown=Math.max(5,w.cooldown+3);p.attackTimer=5;this.emit('sfx',{index:0});
+  attack(action=3){const p=this.player,w=WEAPON[this.weapon];p.attackAction=action===6||action===7?action:3;p.attackTimer=this.attackDuration(p.attackAction);p.attackCooldown=p.attackTimer+w.cooldown;this.emit('sfx',{index:0});
     if(w.flags&1){if(this.projectiles.length<4)this.projectiles.push({x:p.x+p.face*14,y:p.y-20,sprite:(w.flags&2)?0x1d:0x1c,face:p.face,vx:p.face*112,vy:(w.flags&2)?-96:0,ttl:36,damage:w.damage*(p.powerTimer?4:1),ranged:true});}
     else if(this.projectiles.length<4)this.projectiles.push({x:p.x+p.face*22,y:p.y-(this.input.down?14:22),sprite:0x13,face:p.face,vx:0,vy:0,ttl:3,damage:w.damage*(p.powerTimer?4:1),contact:true,hidden:true});
   }
   updateProjectiles(){for(const a of this.projectiles){a.ttl--;a.x+=sar4(a.vx);a.y+=sar4(a.vy);if(a.ranged&&(WEAPON[this.weapon].flags&2))a.vy+=12;if(a.contact&&a.ttl>0){a.x=this.player.x+this.player.face*22;a.y=this.player.y-(this.input?.down?14:22);}}
     this.projectiles=this.projectiles.filter(a=>a.ttl>0&&Math.abs(a.x-this.player.x)<420);}
   damage(){if(this.player.invulnerable||this.deathTimer||this.transition)return;this.emit('sfx',{index:1});if(this.health>0){this.health--;this.player.invulnerable=44;this.player.vx=-this.player.face*32;this.player.vy=-64;this.player.jumpFrame=9;}else this.loseLife();}
-  loseLife(){if(this.deathTimer||this.transition)return;this.deathTimer=38;this.player.sprite=33;this.player.vy=-160;this.emit('sfx',{index:7});this.emit('lifeLost');}
+  loseLife(){if(this.deathTimer||this.transition)return;this.deathTimer=38;this.playerWeapon=null;this.player.sprite=33;this.player.vy=-160;this.emit('sfx',{index:7});this.emit('lifeLost');}
   scoreAward(index,x=this.player.x,y=this.player.y){index=clamp(index,0,16);this.score=(this.score+AWARDS[index])>>>0;this.effects.push({x,y:y-10,sprite:0x4a+index,vy:-8,ttl:44,active:true});}
   floatText(text,x,y,sprite){this.effects.push({x,y,text,sprite:sprite??0xffff,vy:-8,ttl:44,active:true});}
   updateEffects(){for(const e of this.effects){e.ttl--;e.y+=(e.vy||0)>>4;if(e.physics){e.x+=(e.vx||0)>>4;e.vy=Math.min(256,(e.vy||0)+9);if(this.solidSupport(e.x,e.y)&&e.vy>0){e.vy=-(e.vy>>1);e.y&=~15;}}}this.effects=this.effects.filter(e=>e.ttl>0);}
