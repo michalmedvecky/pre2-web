@@ -84,9 +84,11 @@ jobs:
             --tmpfs /tmp:rw,noexec,nosuid,size=64m \
             -p 127.0.0.1:8080:8080 "$IMAGE@$DIGEST"
           trap 'docker logs game-smoke; docker rm -f game-smoke' EXIT
-          curl --fail --retry 15 --retry-connrefused --retry-delay 1 http://127.0.0.1:8080/healthz
+          curl --fail --connect-timeout 2 --max-time 5 \
+            --retry 15 --retry-all-errors --retry-delay 1 http://127.0.0.1:8080/healthz
           for path in / /assets/game.json /js/audio.js; do
-            curl --fail --output /dev/null "http://127.0.0.1:8080$path"
+            curl --fail --connect-timeout 2 --max-time 5 \
+              --retry 5 --retry-all-errors --retry-delay 1 --output /dev/null "http://127.0.0.1:8080$path"
           done
 
       - name: Record deployment image
