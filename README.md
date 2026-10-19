@@ -23,7 +23,7 @@ Assets are already generated and committed. Building or deploying does not requi
 
 ## Kubernetes deployment — agent runbook
 
-An agent with authorized access to a cluster and registry can follow this section from a fresh checkout. Commands assume a POSIX shell, Docker/buildx, kubectl and curl. Node is only needed for tests, not serving the container.
+An agent with authorized access to a cluster and registry can follow this section from a fresh checkout. Commands assume a POSIX shell, kubectl and curl. GitHub Actions builds the container; Docker/buildx is only needed for optional local container checks. Node is only needed for local tests, not serving the container.
 
 ### 1. Resolve the deployment inputs
 
@@ -32,21 +32,21 @@ Use the operator's existing project configuration and deployment authorization. 
 | Input | How to obtain it |
 | --- | --- |
 | Kubernetes context | Intended context from the operator; inspect `kubectl config get-contexts` |
-| Image registry/repository | A registry the operator controls and the cluster can pull from |
+| Image | Successful workflow image at `ghcr.io/michalmedvecky/pre2-web`; choose a commit tag or digest |
 | Node architectures | `kubectl --context "$KUBE_CONTEXT" get nodes -L kubernetes.io/arch` |
 | Namespace | Manifests default to dedicated namespace `prehistorik` |
 | Public/private access | Preserve the operator's requested access and existing authentication |
 | Hostname and HTTPS route | Existing ingress/Gateway configuration, DNS and certificate workflow |
 | Registry pull credentials | Existing Secret or the operator's normal registry workflow |
 
-If context, registry or exposure is ambiguous, ask for the missing value. Do not choose an unrelated context, print credentials, disable TLS checks, install a new controller, replace shared routes, or widen access as an incidental deployment step. Registry login is performed with the operator's existing credential mechanism.
+If context, image release or exposure is ambiguous, ask for the missing value. Do not choose an unrelated context, print credentials, disable TLS checks, install a new controller, replace shared routes, or widen access as an incidental deployment step. Registry login is performed with the operator's existing credential mechanism.
 
 Set values for this deployment (replace every example):
 
 ```sh
 export KUBE_CONTEXT='your-cluster-context'
-export IMAGE_REPOSITORY='registry.example.com/games/prehistorik'
-export RELEASE="$(git rev-parse --short=12 HEAD)"
+export IMAGE_REPOSITORY='ghcr.io/michalmedvecky/pre2-web'
+export RELEASE="sha-$(git rev-parse HEAD)"
 export IMAGE="$IMAGE_REPOSITORY:$RELEASE"
 kubectl --context "$KUBE_CONTEXT" cluster-info
 kubectl --context "$KUBE_CONTEXT" get nodes -L kubernetes.io/arch
@@ -55,9 +55,34 @@ npm test
 
 If using a different namespace, update **every** namespace reference in both manifests and subsequent commands. Do not deploy placeholder values.
 
-### 2. Build, smoke-test and push the image
+### 2. Use the image published by GitHub Actions
 
-First validate the local container in one terminal:
+[Publish game image](https://github.com/michalmedvecky/pre2-web/actions/workflows/publish-image.yml) runs on **every push to `main`**, and can also be dispatched manually on `main`. It tests the game, uses QEMU/Buildx to build `linux/amd64` and `linux/arm64`, and pushes a single multi-platform image to GHCR. It verifies both manifest entries and smoke-tests the published image on the runner's native architecture with a read-only root filesystem.
+
+The workflow authenticates using its automatic `GITHUB_TOKEN` with `contents: read` and `packages: write`; no custom publishing PAT is required. GitHub Actions and these permissions must be allowed by repository/organization policy. The image has a source label linking the package to this repository. For a pre-existing package not linked to this repository, grant this repository Actions access in the package settings if publishing is denied. The workflow does not deploy to Kubernetes or change package visibility.
+
+| Reference | Purpose |
+| --- | --- |
+| `ghcr.io/michalmedvecky/pre2-web:sha-<full-40-character-commit-SHA>` | Versioned image for a particular successful `main` build |
+| `ghcr.io/michalmedvecky/pre2-web:latest` | Convenience tag; changes on publication, avoid for repeatable rollouts |
+| `ghcr.io/michalmedvecky/pre2-web@sha256:<digest>` | Exact image index; preferred deployment/rollback reference |
+
+**Wait for the workflow for your selected commit to finish successfully before applying.** A local commit, a feature branch or an unsuccessful workflow does not guarantee its image exists. The workflow run summary prints the exact digest reference; copy it to `IMAGE` to pin the deployment:
+
+```sh
+# Replace the example with the complete reference from the successful run summary.
+export IMAGE='ghcr.io/michalmedvecky/pre2-web@sha256:REPLACE_WITH_PUBLISHED_DIGEST'
+```
+
+Alternatively, keep the `sha-$(git rev-parse HEAD)` image selected in step 1 if that exact commit was successfully published. Kubernetes selects the node's architecture from the image index. Tags are version identifiers, not enforced immutable registry policy; a digest is the authoritative immutable reference.
+
+#### GHCR pull access
+
+Public packages can be pulled anonymously. New GHCR packages may be private even for a public repository. Inspect package visibility and preserve the intended audience; the workflow does not make the package public. For a private package, provision a GHCR pull Secret in namespace `prehistorik` through the operator's secret-management workflow (a personal access token **classic** with `read:packages` and package access is the usual GHCR credential). Reference its name under `spec.template.spec.imagePullSecrets` in the Deployment. Do not use the short-lived Actions `GITHUB_TOKEN` as a cluster credential or commit any token/Secret manifest.
+
+#### Optional local container verification
+
+A local build is unnecessary for deployment. To inspect changes before pushing, use Docker:
 
 ```sh
 docker build -t prehistorik:smoke .
@@ -75,14 +100,7 @@ curl --fail --output /dev/null http://127.0.0.1:8080/assets/game.json
 curl --fail --output /dev/null http://127.0.0.1:8080/js/audio.js
 ```
 
-Open http://localhost:8080 and verify the title, new game, movement, attack, pause, stage selector and sound toggle. Stop the container with Control-C. Then publish the versioned image:
-
-```sh
-# Authenticate to your selected registry using its normal login workflow.
-docker buildx build --platform linux/amd64,linux/arm64 -t "$IMAGE" --push .
-```
-
-Select only `linux/amd64` or `linux/arm64` for a single-architecture cluster if needed. A Mac build must target Linux, not macOS. The buildx builder must support the selected target platforms. The image contains nginx and the web assets; it excludes analysis files and Sites metadata. For repeatable releases, pin the nginx base image and deployed image by digest using your registry's workflow.
+Open http://localhost:8080 and verify the title, new game, movement, attack, pause, stage selector and sound toggle. Stop the container with Control-C. The image contains nginx and the web assets; it excludes analysis files and Sites metadata. The nginx base uses `stable-alpine`; pin it by digest if base-image reproducibility is required.
 
 ### 3. Render and apply the workload
 
@@ -147,7 +165,7 @@ Report the repository commit, pushed image tag/digest, context, namespace, Deplo
 
 ## Updates, rollback and troubleshooting
 
-For updates, build a new commit-tagged image and repeat the render/diff/apply procedure. Retain the same HTTPS origin to preserve browser saves. `Cache-Control: no-cache` revalidates files; players should refresh after a rollout. No service worker is installed. Reapply the previous image version for a declarative rollback, or use:
+For updates, push changes to `main`, wait for the GHCR workflow to succeed, select the new `sha-<full-commit>` tag or digest, and repeat the render/diff/apply procedure. Retain the same HTTPS origin to preserve browser saves. `Cache-Control: no-cache` revalidates files; players should refresh after a rollout. No service worker is installed. Reapply the previous image version for a declarative rollback, or use:
 
 ```sh
 kubectl --context "$KUBE_CONTEXT" -n prehistorik rollout history deployment/prehistorik
@@ -179,9 +197,10 @@ kubectl --context "$KUBE_CONTEXT" -n prehistorik get events --sort-by=.lastTimes
 - `dist/js/`: native simulation, rendering, input/UI and audio mixer
 - `tests/`: asset/render/audio/simulation tests
 - `scripts/serve.mjs`: local HTTP server
+- `.github/workflows/publish-image.yml`: tests, multi-platform GHCR publishing and container smoke checks
 - `Dockerfile`, `.dockerignore`: static container packaging
 - `deploy/`: nginx configuration and Kubernetes workload/Ingress templates
 
 Original assets retain their original authorship; this repository does not grant a new license to the 1993 TITUS artwork or music.
 
-References: [Kubernetes Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/), [official nginx image](https://hub.docker.com/_/nginx).
+References: [Kubernetes Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/), [official nginx image](https://hub.docker.com/_/nginx), [GitHub container registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry), [Docker multi-platform Actions](https://docs.docker.com/build/ci/github-actions/multi-platform/).

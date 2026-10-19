@@ -1,6 +1,8 @@
 # Deployment configuration
 
-Follow the complete [Kubernetes agent runbook in the root README](../README.md#kubernetes-deployment--agent-runbook). It covers registry/context selection, container checks, image publishing, workload rollout, HTTPS ingress, acceptance, diagnostics and rollback.
+Follow the complete [Kubernetes agent runbook in the root README](../README.md#kubernetes-deployment--agent-runbook). It covers context selection, consuming the multi-platform GHCR image published on each push to main, private-package pull access, workload rollout, HTTPS ingress, acceptance, diagnostics and rollback.
+
+Image repository: `ghcr.io/michalmedvecky/pre2-web`. Deploy a successful build’s `sha-<full-commit-SHA>` tag or its digest from the Actions run summary. No local Docker build is required.
 
 - `nginx.conf`: non-root static server on port 8080, `/healthz`, revalidating cache headers.
 - `kubernetes.yaml`: namespace `prehistorik`, two-replica Deployment and ClusterIP Service. Replace the example image before deployment.
