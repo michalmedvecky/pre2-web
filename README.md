@@ -74,7 +74,7 @@ The workflow authenticates using its automatic `GITHUB_TOKEN` with `contents: re
 export IMAGE='ghcr.io/michalmedvecky/pre2-web@sha256:REPLACE_WITH_PUBLISHED_DIGEST'
 ```
 
-By default, step 1 reads the verified multi-platform digest already pinned in `deploy/kubernetes.yaml`, from successful build [39238652602](https://github.com/michalmedvecky/pre2-web/actions/runs/39238652602) of commit `36a596335050bd9e38e6f8f1e5493027556799fd`. Keep that value to deploy the checked-in release, or override `IMAGE` with another successful build’s digest or full-commit tag. Kubernetes selects the node's architecture from the image index. Tags are version identifiers, not enforced immutable registry policy; a digest is the authoritative immutable reference.
+By default, step 1 reads the verified multi-platform digest already pinned in `deploy/kubernetes.yaml`, from successful build [39243150976](https://github.com/michalmedvecky/pre2-web/actions/runs/39243150976) of commit `e01a86f8dd13b90b1be787a80ed6a0c5694ad92c`. Keep that value to deploy the checked-in release, or override `IMAGE` with another successful build’s digest or full-commit tag. Kubernetes selects the node's architecture from the image index. Tags are version identifiers, not enforced immutable registry policy; a digest is the authoritative immutable reference.
 
 #### GHCR pull access
 
