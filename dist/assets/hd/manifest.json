@@ -1,0 +1,1638 @@
+{
+  "version": 1,
+  "scale": 4,
+  "kind": "2d-rgba-sprite-atlases",
+  "sourceHashes": {
+    "dist/assets/sprites.idx": "575f271e68501aaa1a728ddd25c511aae00d87edcbb746af8af355f9b24eef77",
+    "dist/assets/tables.bin": "a430027ead2d632d0c1867e2d67c8fa10e90fe3c73bdf42e24159cd2996e3765"
+  },
+  "atlases": [
+    {
+      "id": "hero-00-15",
+      "file": "hero-00-15.png",
+      "width": 1024,
+      "height": 1024,
+      "sha256": "876999e5d7e6c76b7eb6094cbd4175fb0c5fac5b17149acb2c9a786979466a43",
+      "frames": 16
+    },
+    {
+      "id": "hero-16-31",
+      "file": "hero-16-31.png",
+      "width": 1024,
+      "height": 1024,
+      "sha256": "22905a69182993dbe847593350138554b4d2c4013504a3874be623d098a84154",
+      "frames": 16
+    },
+    {
+      "id": "hero-32-38",
+      "file": "hero-32-38.png",
+      "width": 1024,
+      "height": 512,
+      "sha256": "8a5f92f2163d233f1b90e221e593950eeaaa374a89c95c11d4d23b4ec226f2b4",
+      "frames": 7
+    },
+    {
+      "id": "hero-legs",
+      "file": "hero-legs.png",
+      "width": 1024,
+      "height": 1024,
+      "sha256": "5c42938049de0eee806134041350523e267b4b2b165566fb79e56f757d3b1ade",
+      "frames": 14
+    },
+    {
+      "id": "hero-gear",
+      "file": "hero-gear.png",
+      "width": 1024,
+      "height": 768,
+      "sha256": "f5a11fa1174ee7b032829c80430e0792d6985626920d5f3105d23f4c8f6b467c",
+      "frames": 9
+    },
+    {
+      "id": "weapons",
+      "file": "weapons.png",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "5354b7ba937b4de5eb1cb6402e31372c759290868d3e29abeb12b5167f27ec3b",
+      "frames": 22
+    },
+    {
+      "id": "bears",
+      "file": "bears.png",
+      "width": 1024,
+      "height": 512,
+      "sha256": "b1caf28e334c7fb6f14e1659362b3da795f3647a6399d4521c39ff2d35fb3c2e",
+      "frames": 8
+    }
+  ],
+  "sprites": {
+    "0": {
+      "atlas": "hero-00-15",
+      "rect": [
+        0,
+        0,
+        160,
+        144
+      ],
+      "width": 40,
+      "height": 36,
+      "originX": 20,
+      "originY": 0,
+      "role": "hero",
+      "sourceSprite": 0,
+      "dimensionality": "2d",
+      "sourceCell": 0
+    },
+    "1": {
+      "atlas": "hero-00-15",
+      "rect": [
+        256,
+        0,
+        128,
+        140
+      ],
+      "width": 32,
+      "height": 35,
+      "originX": 16,
+      "originY": 0,
+      "role": "hero",
+      "sourceSprite": 1,
+      "dimensionality": "2d",
+      "sourceCell": 1
+    },
+    "2": {
+      "atlas": "hero-00-15",
+      "rect": [
+        512,
+        0,
+        96,
+        144
+      ],
+      "width": 24,
+      "height": 36,
+      "originX": 12,
+      "originY": 0,
+      "role": "hero",
+      "sourceSprite": 2,
+      "dimensionality": "2d",
+      "sourceCell": 2
+    },
+    "3": {
+      "atlas": "hero-00-15",
+      "rect": [
+        768,
+        0,
+        128,
+        136
+      ],
+      "width": 32,
+      "height": 34,
+      "originX": 16,
+      "originY": -2,
+      "role": "hero",
+      "sourceSprite": 3,
+      "dimensionality": "2d",
+      "sourceCell": 3
+    },
+    "4": {
+      "atlas": "hero-00-15",
+      "rect": [
+        0,
+        256,
+        128,
+        148
+      ],
+      "width": 32,
+      "height": 37,
+      "originX": 16,
+      "originY": 0,
+      "role": "hero",
+      "sourceSprite": 4,
+      "dimensionality": "2d",
+      "sourceCell": 4
+    },
+    "5": {
+      "atlas": "hero-00-15",
+      "rect": [
+        256,
+        256,
+        128,
+        148
+      ],
+      "width": 32,
+      "height": 37,
+      "originX": 16,
+      "originY": 0,
+      "role": "hero",
+      "sourceSprite": 5,
+      "dimensionality": "2d",
+      "sourceCell": 5
+    },
+    "6": {
+      "atlas": "hero-00-15",
+      "rect": [
+        512,
+        256,
+        128,
+        144
+      ],
+      "width": 32,
+      "height": 36,
+      "originX": 15,
+      "originY": 0,
+      "role": "hero",
+      "sourceSprite": 6,
+      "dimensionality": "2d",
+      "sourceCell": 6
+    },
+    "7": {
+      "atlas": "hero-00-15",
+      "rect": [
+        768,
+        256,
+        128,
+        140
+      ],
+      "width": 32,
+      "height": 35,
+      "originX": 16,
+      "originY": 0,
+      "role": "hero",
+      "sourceSprite": 7,
+      "dimensionality": "2d",
+      "sourceCell": 7
+    },
+    "8": {
+      "atlas": "hero-00-15",
+      "rect": [
+        0,
+        512,
+        128,
+        140
+      ],
+      "width": 32,
+      "height": 35,
+      "originX": 15,
+      "originY": 0,
+      "role": "hero",
+      "sourceSprite": 8,
+      "dimensionality": "2d",
+      "sourceCell": 8
+    },
+    "9": {
+      "atlas": "hero-00-15",
+      "rect": [
+        256,
+        512,
+        128,
+        140
+      ],
+      "width": 32,
+      "height": 35,
+      "originX": 15,
+      "originY": 0,
+      "role": "hero",
+      "sourceSprite": 9,
+      "dimensionality": "2d",
+      "sourceCell": 9
+    },
+    "10": {
+      "atlas": "hero-00-15",
+      "rect": [
+        512,
+        512,
+        96,
+        140
+      ],
+      "width": 24,
+      "height": 35,
+      "originX": 12,
+      "originY": 0,
+      "role": "hero",
+      "sourceSprite": 10,
+      "dimensionality": "2d",
+      "sourceCell": 10
+    },
+    "11": {
+      "atlas": "hero-00-15",
+      "rect": [
+        768,
+        512,
+        128,
+        152
+      ],
+      "width": 32,
+      "height": 38,
+      "originX": 16,
+      "originY": 0,
+      "role": "hero",
+      "sourceSprite": 11,
+      "dimensionality": "2d",
+      "sourceCell": 11
+    },
+    "12": {
+      "atlas": "hero-00-15",
+      "rect": [
+        0,
+        768,
+        160,
+        124
+      ],
+      "width": 40,
+      "height": 31,
+      "originX": 20,
+      "originY": 0,
+      "role": "hero",
+      "sourceSprite": 12,
+      "dimensionality": "2d",
+      "sourceCell": 12
+    },
+    "13": {
+      "atlas": "hero-00-15",
+      "rect": [
+        256,
+        768,
+        192,
+        124
+      ],
+      "width": 48,
+      "height": 31,
+      "originX": 24,
+      "originY": 0,
+      "role": "hero",
+      "sourceSprite": 13,
+      "dimensionality": "2d",
+      "sourceCell": 13
+    },
+    "14": {
+      "atlas": "hero-00-15",
+      "rect": [
+        512,
+        768,
+        128,
+        124
+      ],
+      "width": 32,
+      "height": 31,
+      "originX": 16,
+      "originY": 0,
+      "role": "hero",
+      "sourceSprite": 14,
+      "dimensionality": "2d",
+      "sourceCell": 14
+    },
+    "15": {
+      "atlas": "hero-00-15",
+      "rect": [
+        768,
+        768,
+        128,
+        144
+      ],
+      "width": 32,
+      "height": 36,
+      "originX": 16,
+      "originY": 0,
+      "role": "hero",
+      "sourceSprite": 15,
+      "dimensionality": "2d",
+      "sourceCell": 15
+    },
+    "16": {
+      "atlas": "hero-16-31",
+      "rect": [
+        0,
+        0,
+        96,
+        128
+      ],
+      "width": 24,
+      "height": 32,
+      "originX": 12,
+      "originY": 0,
+      "role": "hero",
+      "sourceSprite": 16,
+      "dimensionality": "2d",
+      "sourceCell": 0
+    },
+    "17": {
+      "atlas": "hero-16-31",
+      "rect": [
+        256,
+        0,
+        160,
+        120
+      ],
+      "width": 40,
+      "height": 30,
+      "originX": 20,
+      "originY": 0,
+      "role": "hero",
+      "sourceSprite": 17,
+      "dimensionality": "2d",
+      "sourceCell": 1
+    },
+    "18": {
+      "atlas": "hero-16-31",
+      "rect": [
+        512,
+        0,
+        160,
+        124
+      ],
+      "width": 40,
+      "height": 31,
+      "originX": 20,
+      "originY": 0,
+      "role": "hero",
+      "sourceSprite": 18,
+      "dimensionality": "2d",
+      "sourceCell": 2
+    },
+    "19": {
+      "atlas": "hero-16-31",
+      "rect": [
+        768,
+        0,
+        160,
+        124
+      ],
+      "width": 40,
+      "height": 31,
+      "originX": 20,
+      "originY": 0,
+      "role": "hero",
+      "sourceSprite": 19,
+      "dimensionality": "2d",
+      "sourceCell": 3
+    },
+    "20": {
+      "atlas": "hero-16-31",
+      "rect": [
+        0,
+        256,
+        128,
+        120
+      ],
+      "width": 32,
+      "height": 30,
+      "originX": 16,
+      "originY": 0,
+      "role": "hero",
+      "sourceSprite": 20,
+      "dimensionality": "2d",
+      "sourceCell": 4
+    },
+    "21": {
+      "atlas": "hero-16-31",
+      "rect": [
+        256,
+        256,
+        96,
+        120
+      ],
+      "width": 24,
+      "height": 30,
+      "originX": 12,
+      "originY": 0,
+      "role": "hero",
+      "sourceSprite": 21,
+      "dimensionality": "2d",
+      "sourceCell": 5
+    },
+    "22": {
+      "atlas": "hero-16-31",
+      "rect": [
+        512,
+        256,
+        128,
+        124
+      ],
+      "width": 32,
+      "height": 31,
+      "originX": 16,
+      "originY": 0,
+      "role": "hero",
+      "sourceSprite": 22,
+      "dimensionality": "2d",
+      "sourceCell": 6
+    },
+    "23": {
+      "atlas": "hero-16-31",
+      "rect": [
+        768,
+        256,
+        96,
+        120
+      ],
+      "width": 24,
+      "height": 30,
+      "originX": 12,
+      "originY": 0,
+      "role": "hero",
+      "sourceSprite": 23,
+      "dimensionality": "2d",
+      "sourceCell": 7
+    },
+    "24": {
+      "atlas": "hero-16-31",
+      "rect": [
+        0,
+        512,
+        96,
+        128
+      ],
+      "width": 24,
+      "height": 32,
+      "originX": 12,
+      "originY": 0,
+      "role": "hero",
+      "sourceSprite": 24,
+      "dimensionality": "2d",
+      "sourceCell": 8
+    },
+    "25": {
+      "atlas": "hero-16-31",
+      "rect": [
+        256,
+        512,
+        160,
+        136
+      ],
+      "width": 40,
+      "height": 34,
+      "originX": 20,
+      "originY": 0,
+      "role": "hero",
+      "sourceSprite": 25,
+      "dimensionality": "2d",
+      "sourceCell": 9
+    },
+    "26": {
+      "atlas": "hero-16-31",
+      "rect": [
+        512,
+        512,
+        128,
+        132
+      ],
+      "width": 32,
+      "height": 33,
+      "originX": 16,
+      "originY": 0,
+      "role": "hero",
+      "sourceSprite": 26,
+      "dimensionality": "2d",
+      "sourceCell": 10
+    },
+    "27": {
+      "atlas": "hero-16-31",
+      "rect": [
+        768,
+        512,
+        128,
+        140
+      ],
+      "width": 32,
+      "height": 35,
+      "originX": 16,
+      "originY": 0,
+      "role": "hero",
+      "sourceSprite": 27,
+      "dimensionality": "2d",
+      "sourceCell": 11
+    },
+    "28": {
+      "atlas": "hero-16-31",
+      "rect": [
+        0,
+        768,
+        128,
+        136
+      ],
+      "width": 32,
+      "height": 34,
+      "originX": 16,
+      "originY": 0,
+      "role": "hero",
+      "sourceSprite": 28,
+      "dimensionality": "2d",
+      "sourceCell": 12
+    },
+    "29": {
+      "atlas": "hero-16-31",
+      "rect": [
+        256,
+        768,
+        160,
+        124
+      ],
+      "width": 40,
+      "height": 31,
+      "originX": 20,
+      "originY": 0,
+      "role": "hero",
+      "sourceSprite": 29,
+      "dimensionality": "2d",
+      "sourceCell": 13
+    },
+    "30": {
+      "atlas": "hero-16-31",
+      "rect": [
+        512,
+        768,
+        160,
+        128
+      ],
+      "width": 40,
+      "height": 32,
+      "originX": 20,
+      "originY": 0,
+      "role": "hero",
+      "sourceSprite": 30,
+      "dimensionality": "2d",
+      "sourceCell": 14
+    },
+    "31": {
+      "atlas": "hero-16-31",
+      "rect": [
+        768,
+        768,
+        160,
+        120
+      ],
+      "width": 40,
+      "height": 30,
+      "originX": 20,
+      "originY": 0,
+      "role": "hero",
+      "sourceSprite": 31,
+      "dimensionality": "2d",
+      "sourceCell": 15
+    },
+    "32": {
+      "atlas": "hero-32-38",
+      "rect": [
+        0,
+        0,
+        160,
+        124
+      ],
+      "width": 40,
+      "height": 31,
+      "originX": 20,
+      "originY": 0,
+      "role": "hero",
+      "sourceSprite": 32,
+      "dimensionality": "2d",
+      "sourceCell": 0
+    },
+    "33": {
+      "atlas": "hero-32-38",
+      "rect": [
+        256,
+        0,
+        192,
+        128
+      ],
+      "width": 48,
+      "height": 32,
+      "originX": 24,
+      "originY": 0,
+      "role": "hero",
+      "sourceSprite": 33,
+      "dimensionality": "2d",
+      "sourceCell": 1
+    },
+    "34": {
+      "atlas": "hero-32-38",
+      "rect": [
+        512,
+        0,
+        128,
+        144
+      ],
+      "width": 32,
+      "height": 36,
+      "originX": 16,
+      "originY": 0,
+      "role": "hero",
+      "sourceSprite": 34,
+      "dimensionality": "2d",
+      "sourceCell": 2
+    },
+    "35": {
+      "atlas": "hero-32-38",
+      "rect": [
+        768,
+        0,
+        96,
+        128
+      ],
+      "width": 24,
+      "height": 32,
+      "originX": 12,
+      "originY": 0,
+      "role": "hero",
+      "sourceSprite": 35,
+      "dimensionality": "2d",
+      "sourceCell": 3
+    },
+    "36": {
+      "atlas": "hero-32-38",
+      "rect": [
+        0,
+        256,
+        128,
+        128
+      ],
+      "width": 32,
+      "height": 32,
+      "originX": 16,
+      "originY": 0,
+      "role": "hero",
+      "sourceSprite": 36,
+      "dimensionality": "2d",
+      "sourceCell": 4
+    },
+    "37": {
+      "atlas": "hero-32-38",
+      "rect": [
+        256,
+        256,
+        128,
+        132
+      ],
+      "width": 32,
+      "height": 33,
+      "originX": 16,
+      "originY": 0,
+      "role": "hero",
+      "sourceSprite": 37,
+      "dimensionality": "2d",
+      "sourceCell": 5
+    },
+    "38": {
+      "atlas": "hero-32-38",
+      "rect": [
+        512,
+        256,
+        96,
+        116
+      ],
+      "width": 24,
+      "height": 29,
+      "originX": 12,
+      "originY": 0,
+      "role": "hero",
+      "sourceSprite": 38,
+      "dimensionality": "2d",
+      "sourceCell": 6
+    },
+    "39": {
+      "atlas": "hero-legs",
+      "rect": [
+        0,
+        0,
+        96,
+        68
+      ],
+      "width": 24,
+      "height": 17,
+      "originX": 14,
+      "originY": 0,
+      "role": "hero-legs",
+      "sourceSprite": 39,
+      "dimensionality": "2d",
+      "sourceCell": 0
+    },
+    "40": {
+      "atlas": "hero-legs",
+      "rect": [
+        256,
+        0,
+        64,
+        64
+      ],
+      "width": 16,
+      "height": 16,
+      "originX": 9,
+      "originY": 0,
+      "role": "hero-legs",
+      "sourceSprite": 40,
+      "dimensionality": "2d",
+      "sourceCell": 1
+    },
+    "41": {
+      "atlas": "hero-legs",
+      "rect": [
+        512,
+        0,
+        96,
+        68
+      ],
+      "width": 24,
+      "height": 17,
+      "originX": 14,
+      "originY": 0,
+      "role": "hero-legs",
+      "sourceSprite": 41,
+      "dimensionality": "2d",
+      "sourceCell": 2
+    },
+    "42": {
+      "atlas": "hero-legs",
+      "rect": [
+        768,
+        0,
+        128,
+        56
+      ],
+      "width": 32,
+      "height": 14,
+      "originX": 15,
+      "originY": -2,
+      "role": "hero-legs",
+      "sourceSprite": 42,
+      "dimensionality": "2d",
+      "sourceCell": 3
+    },
+    "43": {
+      "atlas": "hero-legs",
+      "rect": [
+        0,
+        256,
+        96,
+        60
+      ],
+      "width": 24,
+      "height": 15,
+      "originX": 9,
+      "originY": 0,
+      "role": "hero-legs",
+      "sourceSprite": 43,
+      "dimensionality": "2d",
+      "sourceCell": 4
+    },
+    "44": {
+      "atlas": "hero-legs",
+      "rect": [
+        256,
+        256,
+        64,
+        60
+      ],
+      "width": 16,
+      "height": 15,
+      "originX": 10,
+      "originY": 0,
+      "role": "hero-legs",
+      "sourceSprite": 44,
+      "dimensionality": "2d",
+      "sourceCell": 5
+    },
+    "45": {
+      "atlas": "hero-legs",
+      "rect": [
+        512,
+        256,
+        96,
+        56
+      ],
+      "width": 24,
+      "height": 14,
+      "originX": 12,
+      "originY": 0,
+      "role": "hero-legs",
+      "sourceSprite": 45,
+      "dimensionality": "2d",
+      "sourceCell": 6
+    },
+    "46": {
+      "atlas": "hero-legs",
+      "rect": [
+        768,
+        256,
+        128,
+        44
+      ],
+      "width": 32,
+      "height": 11,
+      "originX": 16,
+      "originY": 0,
+      "role": "hero-legs",
+      "sourceSprite": 46,
+      "dimensionality": "2d",
+      "sourceCell": 7
+    },
+    "47": {
+      "atlas": "hero-legs",
+      "rect": [
+        0,
+        512,
+        96,
+        64
+      ],
+      "width": 24,
+      "height": 16,
+      "originX": 12,
+      "originY": 0,
+      "role": "hero-legs",
+      "sourceSprite": 47,
+      "dimensionality": "2d",
+      "sourceCell": 8
+    },
+    "48": {
+      "atlas": "hero-legs",
+      "rect": [
+        256,
+        512,
+        128,
+        100
+      ],
+      "width": 32,
+      "height": 25,
+      "originX": 16,
+      "originY": 0,
+      "role": "hero-legs",
+      "sourceSprite": 48,
+      "dimensionality": "2d",
+      "sourceCell": 9
+    },
+    "49": {
+      "atlas": "hero-legs",
+      "rect": [
+        512,
+        512,
+        128,
+        124
+      ],
+      "width": 32,
+      "height": 31,
+      "originX": 16,
+      "originY": 0,
+      "role": "hero-legs",
+      "sourceSprite": 49,
+      "dimensionality": "2d",
+      "sourceCell": 10
+    },
+    "50": {
+      "atlas": "hero-legs",
+      "rect": [
+        768,
+        512,
+        96,
+        132
+      ],
+      "width": 24,
+      "height": 33,
+      "originX": 12,
+      "originY": 0,
+      "role": "hero-legs",
+      "sourceSprite": 50,
+      "dimensionality": "2d",
+      "sourceCell": 11
+    },
+    "51": {
+      "atlas": "hero-legs",
+      "rect": [
+        0,
+        768,
+        128,
+        124
+      ],
+      "width": 32,
+      "height": 31,
+      "originX": 16,
+      "originY": 0,
+      "role": "hero-legs",
+      "sourceSprite": 51,
+      "dimensionality": "2d",
+      "sourceCell": 12
+    },
+    "52": {
+      "atlas": "hero-legs",
+      "rect": [
+        256,
+        768,
+        128,
+        124
+      ],
+      "width": 32,
+      "height": 31,
+      "originX": 16,
+      "originY": 0,
+      "role": "hero-legs",
+      "sourceSprite": 52,
+      "dimensionality": "2d",
+      "sourceCell": 13
+    },
+    "58": {
+      "atlas": "weapons",
+      "rect": [
+        0,
+        0,
+        64,
+        76
+      ],
+      "width": 16,
+      "height": 19,
+      "originX": 8,
+      "originY": 0,
+      "role": "weapons",
+      "sourceSprite": 58,
+      "dimensionality": "2d",
+      "sourceCell": 0
+    },
+    "59": {
+      "atlas": "weapons",
+      "rect": [
+        256,
+        0,
+        96,
+        72
+      ],
+      "width": 24,
+      "height": 18,
+      "originX": 12,
+      "originY": 0,
+      "role": "weapons",
+      "sourceSprite": 59,
+      "dimensionality": "2d",
+      "sourceCell": 1
+    },
+    "60": {
+      "atlas": "weapons",
+      "rect": [
+        512,
+        0,
+        96,
+        52
+      ],
+      "width": 24,
+      "height": 13,
+      "originX": 12,
+      "originY": 0,
+      "role": "weapons",
+      "sourceSprite": 60,
+      "dimensionality": "2d",
+      "sourceCell": 2
+    },
+    "61": {
+      "atlas": "weapons",
+      "rect": [
+        768,
+        0,
+        64,
+        64
+      ],
+      "width": 16,
+      "height": 16,
+      "originX": 8,
+      "originY": 0,
+      "role": "weapons",
+      "sourceSprite": 61,
+      "dimensionality": "2d",
+      "sourceCell": 3
+    },
+    "62": {
+      "atlas": "weapons",
+      "rect": [
+        0,
+        256,
+        64,
+        64
+      ],
+      "width": 16,
+      "height": 16,
+      "originX": 8,
+      "originY": 0,
+      "role": "weapons",
+      "sourceSprite": 62,
+      "dimensionality": "2d",
+      "sourceCell": 4
+    },
+    "63": {
+      "atlas": "weapons",
+      "rect": [
+        256,
+        256,
+        64,
+        64
+      ],
+      "width": 16,
+      "height": 16,
+      "originX": 8,
+      "originY": 0,
+      "role": "weapons",
+      "sourceSprite": 63,
+      "dimensionality": "2d",
+      "sourceCell": 5
+    },
+    "64": {
+      "atlas": "weapons",
+      "rect": [
+        512,
+        256,
+        64,
+        60
+      ],
+      "width": 16,
+      "height": 15,
+      "originX": 8,
+      "originY": 0,
+      "role": "weapons",
+      "sourceSprite": 64,
+      "dimensionality": "2d",
+      "sourceCell": 6
+    },
+    "65": {
+      "atlas": "weapons",
+      "rect": [
+        768,
+        256,
+        96,
+        60
+      ],
+      "width": 24,
+      "height": 15,
+      "originX": 12,
+      "originY": 0,
+      "role": "weapons",
+      "sourceSprite": 65,
+      "dimensionality": "2d",
+      "sourceCell": 7
+    },
+    "66": {
+      "atlas": "weapons",
+      "rect": [
+        0,
+        512,
+        96,
+        76
+      ],
+      "width": 24,
+      "height": 19,
+      "originX": 12,
+      "originY": 0,
+      "role": "weapons",
+      "sourceSprite": 66,
+      "dimensionality": "2d",
+      "sourceCell": 8
+    },
+    "67": {
+      "atlas": "weapons",
+      "rect": [
+        256,
+        512,
+        96,
+        96
+      ],
+      "width": 24,
+      "height": 24,
+      "originX": 17,
+      "originY": 9,
+      "role": "weapons",
+      "sourceSprite": 67,
+      "dimensionality": "2d",
+      "sourceCell": 9
+    },
+    "68": {
+      "atlas": "weapons",
+      "rect": [
+        512,
+        512,
+        128,
+        76
+      ],
+      "width": 32,
+      "height": 19,
+      "originX": 14,
+      "originY": 6,
+      "role": "weapons",
+      "sourceSprite": 68,
+      "dimensionality": "2d",
+      "sourceCell": 10
+    },
+    "69": {
+      "atlas": "weapons",
+      "rect": [
+        768,
+        512,
+        96,
+        100
+      ],
+      "width": 24,
+      "height": 25,
+      "originX": 7,
+      "originY": 15,
+      "role": "weapons",
+      "sourceSprite": 69,
+      "dimensionality": "2d",
+      "sourceCell": 11
+    },
+    "119": {
+      "atlas": "hero-gear",
+      "rect": [
+        0,
+        0,
+        192,
+        116
+      ],
+      "width": 48,
+      "height": 29,
+      "originX": 24,
+      "originY": 0,
+      "role": "hero-gear",
+      "sourceSprite": 119,
+      "dimensionality": "2d",
+      "sourceCell": 0
+    },
+    "120": {
+      "atlas": "hero-gear",
+      "rect": [
+        256,
+        0,
+        192,
+        124
+      ],
+      "width": 48,
+      "height": 31,
+      "originX": 24,
+      "originY": 0,
+      "role": "hero-gear",
+      "sourceSprite": 120,
+      "dimensionality": "2d",
+      "sourceCell": 1
+    },
+    "121": {
+      "atlas": "hero-gear",
+      "rect": [
+        512,
+        0,
+        192,
+        76
+      ],
+      "width": 48,
+      "height": 19,
+      "originX": 12,
+      "originY": 0,
+      "role": "hero-gear",
+      "sourceSprite": 121,
+      "dimensionality": "2d",
+      "sourceCell": 2
+    },
+    "122": {
+      "atlas": "hero-gear",
+      "rect": [
+        768,
+        0,
+        192,
+        80
+      ],
+      "width": 48,
+      "height": 20,
+      "originX": 12,
+      "originY": 0,
+      "role": "hero-gear",
+      "sourceSprite": 122,
+      "dimensionality": "2d",
+      "sourceCell": 3
+    },
+    "123": {
+      "atlas": "hero-gear",
+      "rect": [
+        0,
+        256,
+        192,
+        92
+      ],
+      "width": 48,
+      "height": 23,
+      "originX": 9,
+      "originY": 0,
+      "role": "hero-gear",
+      "sourceSprite": 123,
+      "dimensionality": "2d",
+      "sourceCell": 4
+    },
+    "124": {
+      "atlas": "hero-gear",
+      "rect": [
+        256,
+        256,
+        192,
+        108
+      ],
+      "width": 48,
+      "height": 27,
+      "originX": 9,
+      "originY": 0,
+      "role": "hero-gear",
+      "sourceSprite": 124,
+      "dimensionality": "2d",
+      "sourceCell": 5
+    },
+    "125": {
+      "atlas": "hero-gear",
+      "rect": [
+        512,
+        256,
+        192,
+        92
+      ],
+      "width": 48,
+      "height": 23,
+      "originX": 15,
+      "originY": 0,
+      "role": "hero-gear",
+      "sourceSprite": 125,
+      "dimensionality": "2d",
+      "sourceCell": 6
+    },
+    "126": {
+      "atlas": "hero-gear",
+      "rect": [
+        768,
+        256,
+        160,
+        108
+      ],
+      "width": 40,
+      "height": 27,
+      "originX": 12,
+      "originY": 0,
+      "role": "hero-gear",
+      "sourceSprite": 126,
+      "dimensionality": "2d",
+      "sourceCell": 7
+    },
+    "127": {
+      "atlas": "hero-gear",
+      "rect": [
+        0,
+        512,
+        160,
+        136
+      ],
+      "width": 40,
+      "height": 34,
+      "originX": 12,
+      "originY": 3,
+      "role": "hero-gear",
+      "sourceSprite": 127,
+      "dimensionality": "2d",
+      "sourceCell": 8
+    },
+    "235": {
+      "atlas": "weapons",
+      "rect": [
+        0,
+        768,
+        96,
+        72
+      ],
+      "width": 24,
+      "height": 18,
+      "originX": 12,
+      "originY": 0,
+      "role": "weapons",
+      "sourceSprite": 235,
+      "dimensionality": "2d",
+      "sourceCell": 12
+    },
+    "236": {
+      "atlas": "weapons",
+      "rect": [
+        256,
+        768,
+        128,
+        164
+      ],
+      "width": 32,
+      "height": 41,
+      "originX": 16,
+      "originY": 0,
+      "role": "weapons",
+      "sourceSprite": 236,
+      "dimensionality": "2d",
+      "sourceCell": 13
+    },
+    "237": {
+      "atlas": "weapons",
+      "rect": [
+        512,
+        768,
+        128,
+        116
+      ],
+      "width": 32,
+      "height": 29,
+      "originX": 16,
+      "originY": 0,
+      "role": "weapons",
+      "sourceSprite": 237,
+      "dimensionality": "2d",
+      "sourceCell": 14
+    },
+    "238": {
+      "atlas": "weapons",
+      "rect": [
+        768,
+        768,
+        96,
+        80
+      ],
+      "width": 24,
+      "height": 20,
+      "originX": 12,
+      "originY": 0,
+      "role": "weapons",
+      "sourceSprite": 238,
+      "dimensionality": "2d",
+      "sourceCell": 15
+    },
+    "239": {
+      "atlas": "weapons",
+      "rect": [
+        0,
+        1024,
+        160,
+        132
+      ],
+      "width": 40,
+      "height": 33,
+      "originX": 20,
+      "originY": 0,
+      "role": "weapons",
+      "sourceSprite": 239,
+      "dimensionality": "2d",
+      "sourceCell": 16
+    },
+    "240": {
+      "atlas": "weapons",
+      "rect": [
+        256,
+        1024,
+        192,
+        104
+      ],
+      "width": 48,
+      "height": 26,
+      "originX": 24,
+      "originY": 0,
+      "role": "weapons",
+      "sourceSprite": 240,
+      "dimensionality": "2d",
+      "sourceCell": 17
+    },
+    "274": {
+      "atlas": "weapons",
+      "rect": [
+        512,
+        1024,
+        192,
+        160
+      ],
+      "width": 48,
+      "height": 40,
+      "originX": 24,
+      "originY": 0,
+      "role": "weapons",
+      "sourceSprite": 274,
+      "dimensionality": "2d",
+      "sourceCell": 18
+    },
+    "275": {
+      "atlas": "weapons",
+      "rect": [
+        768,
+        1024,
+        224,
+        120
+      ],
+      "width": 56,
+      "height": 30,
+      "originX": 28,
+      "originY": 0,
+      "role": "weapons",
+      "sourceSprite": 275,
+      "dimensionality": "2d",
+      "sourceCell": 19
+    },
+    "276": {
+      "atlas": "weapons",
+      "rect": [
+        0,
+        1280,
+        192,
+        192
+      ],
+      "width": 48,
+      "height": 48,
+      "originX": 24,
+      "originY": 0,
+      "role": "weapons",
+      "sourceSprite": 276,
+      "dimensionality": "2d",
+      "sourceCell": 20
+    },
+    "277": {
+      "atlas": "weapons",
+      "rect": [
+        256,
+        1280,
+        128,
+        204
+      ],
+      "width": 32,
+      "height": 51,
+      "originX": 16,
+      "originY": 0,
+      "role": "weapons",
+      "sourceSprite": 277,
+      "dimensionality": "2d",
+      "sourceCell": 21
+    },
+    "312": {
+      "atlas": "bears",
+      "rect": [
+        0,
+        0,
+        96,
+        96
+      ],
+      "width": 24,
+      "height": 24,
+      "originX": 12,
+      "originY": 0,
+      "role": "bear",
+      "sourceSprite": 312,
+      "dimensionality": "2d",
+      "sourceCell": 0
+    },
+    "313": {
+      "atlas": "bears",
+      "rect": [
+        256,
+        0,
+        128,
+        116
+      ],
+      "width": 32,
+      "height": 29,
+      "originX": 16,
+      "originY": 0,
+      "role": "bear",
+      "sourceSprite": 313,
+      "dimensionality": "2d",
+      "sourceCell": 1
+    },
+    "314": {
+      "atlas": "bears",
+      "rect": [
+        512,
+        0,
+        96,
+        120
+      ],
+      "width": 24,
+      "height": 30,
+      "originX": 12,
+      "originY": 0,
+      "role": "bear",
+      "sourceSprite": 314,
+      "dimensionality": "2d",
+      "sourceCell": 2
+    },
+    "315": {
+      "atlas": "bears",
+      "rect": [
+        768,
+        0,
+        128,
+        116
+      ],
+      "width": 32,
+      "height": 29,
+      "originX": 16,
+      "originY": 0,
+      "role": "bear",
+      "sourceSprite": 315,
+      "dimensionality": "2d",
+      "sourceCell": 3
+    },
+    "316": {
+      "atlas": "bears",
+      "rect": [
+        0,
+        256,
+        192,
+        160
+      ],
+      "width": 48,
+      "height": 40,
+      "originX": 24,
+      "originY": 0,
+      "role": "bear",
+      "sourceSprite": 316,
+      "dimensionality": "2d",
+      "sourceCell": 4
+    },
+    "379": {
+      "atlas": "bears",
+      "rect": [
+        256,
+        256,
+        96,
+        72
+      ],
+      "width": 24,
+      "height": 18,
+      "originX": 12,
+      "originY": 0,
+      "role": "bear",
+      "sourceSprite": 379,
+      "dimensionality": "2d",
+      "sourceCell": 5
+    },
+    "380": {
+      "atlas": "bears",
+      "rect": [
+        512,
+        256,
+        96,
+        44
+      ],
+      "width": 24,
+      "height": 11,
+      "originX": 12,
+      "originY": 0,
+      "role": "bear",
+      "sourceSprite": 380,
+      "dimensionality": "2d",
+      "sourceCell": 6
+    },
+    "381": {
+      "atlas": "bears",
+      "rect": [
+        768,
+        256,
+        96,
+        20
+      ],
+      "width": 24,
+      "height": 5,
+      "originX": 12,
+      "originY": 0,
+      "role": "bear",
+      "sourceSprite": 381,
+      "dimensionality": "2d",
+      "sourceCell": 7
+    }
+  },
+  "future3D": {
+    "status": "not-authored",
+    "reference": "../../../docs/VR-ROADMAP.md",
+    "coordinateContract": "scene.js"
+  }
+}

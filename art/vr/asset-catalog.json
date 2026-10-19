@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "target": "full-360-stereoscopic-6dof-world",
+  "status": "source-preparation-only-no-vr-runtime",
+  "coordinates": {"pixelsPerMetre":32,"tileMetres":0.5,"up":"+Y","forward":"-Z","simulationPlane":"XY","depthAxis":"Z","scaleStatus":"provisional"},
+  "assets": [
+    {"id":"hero","sourceSpriteRanges":[[0,52]],"hdInventory":"../hd-v1/inventory.json","model":null,"status":"requires-mesh-uv-rig-360-turnaround","clips":["idle","idle-look","walk","crouch","jump-rise","jump-fall","land","attack-club","attack-hammer","attack-tomahawk","attack-axe","hurt","death","glide"],"sockets":["root","left-hand","right-hand","left-foot","right-foot","glider-grip"]},
+    {"id":"bear","sourceSprites":[312,313,314,315,316,379,380,381],"model":null,"status":"requires-mesh-uv-rig-360-turnaround","clips":["walk","emerge","retreat","defeat"]},
+    {"id":"equipment","sourceSpriteRanges":[[58,69],[119,127],[235,240],[274,277]],"model":null,"status":"requires-prop-meshes","parts":["club","hammer","tomahawk","tethered-axe","glider"]},
+    {"id":"worlds","source":"../../dist/assets/game.json","model":null,"status":"requires-depth-geometry-and-cave-interiors","notes":"Maps describe 2D cross-sections; unseen geometry must be authored, not inferred as recovered fact."}
+  ]
+}

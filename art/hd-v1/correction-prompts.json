@@ -1,0 +1,18 @@
+{
+  "tool": "built-in image_gen",
+  "mode": "edit",
+  "corrections": [
+    {
+      "file": "weapons-clean.png",
+      "prompt": "Use case: background-extraction. Edit this exact weapons sprite atlas. Remove ALL brown/gray gradient backdrop and ALL soft glow/halos/shadows surrounding weapons, leaving only the existing hard-contour weapon and included hand pixels on a truly transparent background. Preserve all 22 weapon drawings EXACTLY, with the same poses, colors, orientations, cell positions, scale, linework, including intentional hands and tethers. The layout is 4 columns by 6 rows, last two cells empty. Keep identical canvas aspect ratio and registration. Do not redraw, invent, move, resize, rotate, add or remove any actual weapon. Every gap and space outside the crisp contours must have zero alpha, not a painted checkerboard or black background. No diffuse shadows, glows or gradient pixels outside silhouettes. PNG RGBA with genuine alpha."
+    },
+    {
+      "file": "club-grips.png",
+      "usedSpriteIDs": [
+        58,
+        64
+      ],
+      "prompt": "Use case: precise-object-edit. Edit Image1 weapons atlas. ONLY CORRECT TWO CELLS: row1 column1 (sprite58) and row2 column3 (sprite64), counted in the 4-column by6-row grid. The brown elongated shapes in these two cells were mistakenly interpreted as bare flesh arms. They must clearly be a WOODEN CLUB: broad rounded brown wood club head with woodgrain held by a small clenched hand with yellow wristband near its narrower grip. Use Image2 as the design reference for the carved wooden club, NOT for adding a body. In each corrected cell preserve its original small silhouette, diagonal orientation, location and scale, showing woodgrain and dark brown wood where it was wrongly fleshy. The small yellow wrist band and hand may remain at the grip, but the broad brown mass must read as WOOD, never an arm or leg. No complete characters. Keep EVERY OTHER cell unchanged. Keep canvas 1024x1536 and the exact 4x6 grid. True transparent background in all spaces and gaps, NO brown/gray backdrop or glow. No text, labels or grid lines. Preserve the approved cartoon style and warm colors."
+    }
+  ]
+}

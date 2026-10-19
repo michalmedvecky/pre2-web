@@ -1,0 +1,2103 @@
+[
+  {
+    "group": "hero-00-15",
+    "rawFile": "hero-00-15.png",
+    "rawSHA256": "211e969da1cbc7928e1a71f0858be2ff0c8511c84365d88058074b483c5b6a5c",
+    "rawSize": [
+      1254,
+      1254
+    ],
+    "cells": [
+      {
+        "id": 0,
+        "rawOverride": null,
+        "rawCell": [
+          0,
+          0,
+          314,
+          314
+        ],
+        "rawInk": [
+          65,
+          83,
+          201,
+          218
+        ],
+        "nativeInk": [
+          3,
+          0,
+          34,
+          36
+        ]
+      },
+      {
+        "id": 1,
+        "rawOverride": null,
+        "rawCell": [
+          314,
+          0,
+          313,
+          314
+        ],
+        "rawInk": [
+          405,
+          84,
+          159,
+          222
+        ],
+        "nativeInk": [
+          2,
+          0,
+          27,
+          35
+        ]
+      },
+      {
+        "id": 2,
+        "rawOverride": null,
+        "rawCell": [
+          627,
+          0,
+          314,
+          314
+        ],
+        "rawInk": [
+          737,
+          81,
+          136,
+          225
+        ],
+        "nativeInk": [
+          1,
+          0,
+          22,
+          36
+        ]
+      },
+      {
+        "id": 3,
+        "rawOverride": null,
+        "rawCell": [
+          941,
+          0,
+          313,
+          314
+        ],
+        "rawInk": [
+          1025,
+          94,
+          174,
+          208
+        ],
+        "nativeInk": [
+          1,
+          0,
+          29,
+          34
+        ]
+      },
+      {
+        "id": 4,
+        "rawOverride": null,
+        "rawCell": [
+          0,
+          314,
+          314,
+          313
+        ],
+        "rawInk": [
+          108,
+          388,
+          143,
+          222
+        ],
+        "nativeInk": [
+          3,
+          0,
+          25,
+          37
+        ]
+      },
+      {
+        "id": 5,
+        "rawOverride": null,
+        "rawCell": [
+          314,
+          314,
+          313,
+          313
+        ],
+        "rawInk": [
+          410,
+          390,
+          158,
+          223
+        ],
+        "nativeInk": [
+          3,
+          0,
+          26,
+          37
+        ]
+      },
+      {
+        "id": 6,
+        "rawOverride": null,
+        "rawCell": [
+          627,
+          314,
+          314,
+          313
+        ],
+        "rawInk": [
+          716,
+          399,
+          169,
+          215
+        ],
+        "nativeInk": [
+          2,
+          0,
+          28,
+          36
+        ]
+      },
+      {
+        "id": 7,
+        "rawOverride": null,
+        "rawCell": [
+          941,
+          314,
+          313,
+          313
+        ],
+        "rawInk": [
+          1037,
+          410,
+          162,
+          205
+        ],
+        "nativeInk": [
+          2,
+          0,
+          27,
+          35
+        ]
+      },
+      {
+        "id": 8,
+        "rawOverride": null,
+        "rawCell": [
+          0,
+          627,
+          314,
+          314
+        ],
+        "rawInk": [
+          89,
+          709,
+          155,
+          212
+        ],
+        "nativeInk": [
+          3,
+          0,
+          26,
+          35
+        ]
+      },
+      {
+        "id": 9,
+        "rawOverride": null,
+        "rawCell": [
+          314,
+          627,
+          313,
+          314
+        ],
+        "rawInk": [
+          410,
+          709,
+          158,
+          213
+        ],
+        "nativeInk": [
+          2,
+          0,
+          27,
+          35
+        ]
+      },
+      {
+        "id": 10,
+        "rawOverride": null,
+        "rawCell": [
+          627,
+          627,
+          314,
+          314
+        ],
+        "rawInk": [
+          733,
+          718,
+          148,
+          204
+        ],
+        "nativeInk": [
+          0,
+          0,
+          24,
+          35
+        ]
+      },
+      {
+        "id": 11,
+        "rawOverride": null,
+        "rawCell": [
+          941,
+          627,
+          313,
+          314
+        ],
+        "rawInk": [
+          1042,
+          693,
+          153,
+          225
+        ],
+        "nativeInk": [
+          3,
+          0,
+          25,
+          38
+        ]
+      },
+      {
+        "id": 12,
+        "rawOverride": null,
+        "rawCell": [
+          0,
+          941,
+          314,
+          313
+        ],
+        "rawInk": [
+          70,
+          1031,
+          197,
+          170
+        ],
+        "nativeInk": [
+          3,
+          0,
+          34,
+          31
+        ]
+      },
+      {
+        "id": 13,
+        "rawOverride": null,
+        "rawCell": [
+          314,
+          941,
+          313,
+          313
+        ],
+        "rawInk": [
+          380,
+          1023,
+          229,
+          176
+        ],
+        "nativeInk": [
+          3,
+          0,
+          42,
+          31
+        ]
+      },
+      {
+        "id": 14,
+        "rawOverride": null,
+        "rawCell": [
+          627,
+          941,
+          314,
+          313
+        ],
+        "rawInk": [
+          715,
+          1031,
+          180,
+          174
+        ],
+        "nativeInk": [
+          1,
+          0,
+          30,
+          31
+        ]
+      },
+      {
+        "id": 15,
+        "rawOverride": null,
+        "rawCell": [
+          941,
+          941,
+          313,
+          313
+        ],
+        "rawInk": [
+          1043,
+          1004,
+          143,
+          204
+        ],
+        "nativeInk": [
+          3,
+          0,
+          25,
+          36
+        ]
+      }
+    ]
+  },
+  {
+    "group": "hero-16-31",
+    "rawFile": "hero-16-31.png",
+    "rawSHA256": "4f5b2d7e63b0e136b7ac6c93ce5e38783cf489ded36fad8632ec83928efdccfd",
+    "rawSize": [
+      1254,
+      1254
+    ],
+    "cells": [
+      {
+        "id": 16,
+        "rawOverride": null,
+        "rawCell": [
+          0,
+          0,
+          314,
+          314
+        ],
+        "rawInk": [
+          83,
+          110,
+          151,
+          172
+        ],
+        "nativeInk": [
+          0,
+          0,
+          24,
+          32
+        ]
+      },
+      {
+        "id": 17,
+        "rawOverride": null,
+        "rawCell": [
+          314,
+          0,
+          313,
+          314
+        ],
+        "rawInk": [
+          389,
+          110,
+          191,
+          173
+        ],
+        "nativeInk": [
+          3,
+          0,
+          34,
+          30
+        ]
+      },
+      {
+        "id": 18,
+        "rawOverride": null,
+        "rawCell": [
+          627,
+          0,
+          314,
+          314
+        ],
+        "rawInk": [
+          699,
+          110,
+          192,
+          173
+        ],
+        "nativeInk": [
+          3,
+          0,
+          34,
+          31
+        ]
+      },
+      {
+        "id": 19,
+        "rawOverride": null,
+        "rawCell": [
+          941,
+          0,
+          313,
+          314
+        ],
+        "rawInk": [
+          1016,
+          110,
+          190,
+          173
+        ],
+        "nativeInk": [
+          3,
+          0,
+          34,
+          31
+        ]
+      },
+      {
+        "id": 20,
+        "rawOverride": null,
+        "rawCell": [
+          0,
+          314,
+          314,
+          313
+        ],
+        "rawInk": [
+          67,
+          426,
+          187,
+          163
+        ],
+        "nativeInk": [
+          0,
+          0,
+          31,
+          30
+        ]
+      },
+      {
+        "id": 21,
+        "rawOverride": null,
+        "rawCell": [
+          314,
+          314,
+          313,
+          313
+        ],
+        "rawInk": [
+          424,
+          406,
+          128,
+          181
+        ],
+        "nativeInk": [
+          1,
+          0,
+          21,
+          30
+        ]
+      },
+      {
+        "id": 22,
+        "rawOverride": null,
+        "rawCell": [
+          627,
+          314,
+          314,
+          313
+        ],
+        "rawInk": [
+          699,
+          408,
+          193,
+          182
+        ],
+        "nativeInk": [
+          1,
+          0,
+          30,
+          31
+        ]
+      },
+      {
+        "id": 23,
+        "rawOverride": null,
+        "rawCell": [
+          941,
+          314,
+          313,
+          313
+        ],
+        "rawInk": [
+          1034,
+          407,
+          140,
+          180
+        ],
+        "nativeInk": [
+          0,
+          0,
+          23,
+          30
+        ]
+      },
+      {
+        "id": 24,
+        "rawOverride": null,
+        "rawCell": [
+          0,
+          627,
+          314,
+          314
+        ],
+        "rawInk": [
+          84,
+          718,
+          142,
+          177
+        ],
+        "nativeInk": [
+          0,
+          0,
+          24,
+          32
+        ]
+      },
+      {
+        "id": 25,
+        "rawOverride": null,
+        "rawCell": [
+          314,
+          627,
+          313,
+          314
+        ],
+        "rawInk": [
+          379,
+          702,
+          201,
+          196
+        ],
+        "nativeInk": [
+          3,
+          0,
+          34,
+          34
+        ]
+      },
+      {
+        "id": 26,
+        "rawOverride": null,
+        "rawCell": [
+          627,
+          627,
+          314,
+          314
+        ],
+        "rawInk": [
+          701,
+          707,
+          185,
+          190
+        ],
+        "nativeInk": [
+          1,
+          0,
+          30,
+          33
+        ]
+      },
+      {
+        "id": 27,
+        "rawOverride": null,
+        "rawCell": [
+          941,
+          627,
+          313,
+          314
+        ],
+        "rawInk": [
+          1031,
+          704,
+          169,
+          193
+        ],
+        "nativeInk": [
+          2,
+          0,
+          28,
+          35
+        ]
+      },
+      {
+        "id": 28,
+        "rawOverride": null,
+        "rawCell": [
+          0,
+          941,
+          314,
+          313
+        ],
+        "rawInk": [
+          83,
+          1016,
+          159,
+          180
+        ],
+        "nativeInk": [
+          2,
+          0,
+          28,
+          34
+        ]
+      },
+      {
+        "id": 29,
+        "rawOverride": null,
+        "rawCell": [
+          314,
+          941,
+          313,
+          313
+        ],
+        "rawInk": [
+          382,
+          1016,
+          191,
+          174
+        ],
+        "nativeInk": [
+          3,
+          0,
+          34,
+          31
+        ]
+      },
+      {
+        "id": 30,
+        "rawOverride": null,
+        "rawCell": [
+          627,
+          941,
+          314,
+          313
+        ],
+        "rawInk": [
+          690,
+          1016,
+          199,
+          174
+        ],
+        "nativeInk": [
+          3,
+          0,
+          34,
+          32
+        ]
+      },
+      {
+        "id": 31,
+        "rawOverride": null,
+        "rawCell": [
+          941,
+          941,
+          313,
+          313
+        ],
+        "rawInk": [
+          1009,
+          1020,
+          191,
+          170
+        ],
+        "nativeInk": [
+          3,
+          0,
+          34,
+          30
+        ]
+      }
+    ]
+  },
+  {
+    "group": "hero-32-38",
+    "rawFile": "hero-32-38.png",
+    "rawSHA256": "c54d00da1a1520259bbdba41e88c23a1b838024d03b0a579532cd445b2f3eb36",
+    "rawSize": [
+      1774,
+      887
+    ],
+    "cells": [
+      {
+        "id": 32,
+        "rawOverride": null,
+        "rawCell": [
+          0,
+          0,
+          444,
+          444
+        ],
+        "rawInk": [
+          70,
+          153,
+          321,
+          259
+        ],
+        "nativeInk": [
+          0,
+          0,
+          39,
+          31
+        ]
+      },
+      {
+        "id": 33,
+        "rawOverride": null,
+        "rawCell": [
+          444,
+          0,
+          443,
+          444
+        ],
+        "rawInk": [
+          514,
+          148,
+          349,
+          264
+        ],
+        "nativeInk": [
+          3,
+          0,
+          42,
+          32
+        ]
+      },
+      {
+        "id": 34,
+        "rawOverride": null,
+        "rawCell": [
+          887,
+          0,
+          444,
+          444
+        ],
+        "rawInk": [
+          1036,
+          124,
+          220,
+          301
+        ],
+        "nativeInk": [
+          3,
+          0,
+          25,
+          36
+        ]
+      },
+      {
+        "id": 35,
+        "rawOverride": null,
+        "rawCell": [
+          1331,
+          0,
+          443,
+          444
+        ],
+        "rawInk": [
+          1479,
+          153,
+          183,
+          272
+        ],
+        "nativeInk": [
+          1,
+          0,
+          22,
+          32
+        ]
+      },
+      {
+        "id": 36,
+        "rawOverride": null,
+        "rawCell": [
+          0,
+          444,
+          444,
+          443
+        ],
+        "rawInk": [
+          122,
+          558,
+          238,
+          261
+        ],
+        "nativeInk": [
+          2,
+          0,
+          28,
+          32
+        ]
+      },
+      {
+        "id": 37,
+        "rawOverride": null,
+        "rawCell": [
+          444,
+          444,
+          443,
+          443
+        ],
+        "rawInk": [
+          573,
+          549,
+          233,
+          275
+        ],
+        "nativeInk": [
+          3,
+          0,
+          26,
+          33
+        ]
+      },
+      {
+        "id": 38,
+        "rawOverride": null,
+        "rawCell": [
+          887,
+          444,
+          444,
+          443
+        ],
+        "rawInk": [
+          1045,
+          567,
+          184,
+          256
+        ],
+        "nativeInk": [
+          1,
+          0,
+          22,
+          29
+        ]
+      }
+    ]
+  },
+  {
+    "group": "hero-legs",
+    "rawFile": "hero-legs.png",
+    "rawSHA256": "e99000db055659044e756350edd549aee341044c356f9da2283737e6ea17dbc1",
+    "rawSize": [
+      1254,
+      1254
+    ],
+    "cells": [
+      {
+        "id": 39,
+        "rawOverride": null,
+        "rawCell": [
+          0,
+          0,
+          314,
+          314
+        ],
+        "rawInk": [
+          96,
+          159,
+          118,
+          120
+        ],
+        "nativeInk": [
+          3,
+          0,
+          18,
+          17
+        ]
+      },
+      {
+        "id": 40,
+        "rawOverride": null,
+        "rawCell": [
+          314,
+          0,
+          313,
+          314
+        ],
+        "rawInk": [
+          417,
+          159,
+          106,
+          128
+        ],
+        "nativeInk": [
+          0,
+          0,
+          16,
+          16
+        ]
+      },
+      {
+        "id": 41,
+        "rawOverride": null,
+        "rawCell": [
+          627,
+          0,
+          314,
+          314
+        ],
+        "rawInk": [
+          698,
+          159,
+          163,
+          127
+        ],
+        "nativeInk": [
+          1,
+          0,
+          21,
+          17
+        ]
+      },
+      {
+        "id": 42,
+        "rawOverride": null,
+        "rawCell": [
+          941,
+          0,
+          313,
+          314
+        ],
+        "rawInk": [
+          985,
+          181,
+          218,
+          105
+        ],
+        "nativeInk": [
+          1,
+          0,
+          29,
+          14
+        ]
+      },
+      {
+        "id": 43,
+        "rawOverride": null,
+        "rawCell": [
+          0,
+          314,
+          314,
+          313
+        ],
+        "rawInk": [
+          78,
+          500,
+          164,
+          101
+        ],
+        "nativeInk": [
+          0,
+          0,
+          23,
+          15
+        ]
+      },
+      {
+        "id": 44,
+        "rawOverride": null,
+        "rawCell": [
+          314,
+          314,
+          313,
+          313
+        ],
+        "rawInk": [
+          424,
+          499,
+          105,
+          103
+        ],
+        "nativeInk": [
+          0,
+          0,
+          16,
+          15
+        ]
+      },
+      {
+        "id": 45,
+        "rawOverride": null,
+        "rawCell": [
+          627,
+          314,
+          314,
+          313
+        ],
+        "rawInk": [
+          724,
+          499,
+          119,
+          97
+        ],
+        "nativeInk": [
+          3,
+          0,
+          18,
+          14
+        ]
+      },
+      {
+        "id": 46,
+        "rawOverride": null,
+        "rawCell": [
+          941,
+          314,
+          313,
+          313
+        ],
+        "rawInk": [
+          993,
+          520,
+          211,
+          80
+        ],
+        "nativeInk": [
+          0,
+          0,
+          31,
+          11
+        ]
+      },
+      {
+        "id": 47,
+        "rawOverride": null,
+        "rawCell": [
+          0,
+          627,
+          314,
+          314
+        ],
+        "rawInk": [
+          78,
+          765,
+          147,
+          124
+        ],
+        "nativeInk": [
+          1,
+          0,
+          22,
+          16
+        ]
+      },
+      {
+        "id": 48,
+        "rawOverride": null,
+        "rawCell": [
+          314,
+          627,
+          313,
+          314
+        ],
+        "rawInk": [
+          362,
+          724,
+          183,
+          153
+        ],
+        "nativeInk": [
+          0,
+          0,
+          31,
+          25
+        ]
+      },
+      {
+        "id": 49,
+        "rawOverride": null,
+        "rawCell": [
+          627,
+          627,
+          314,
+          314
+        ],
+        "rawInk": [
+          720,
+          698,
+          148,
+          183
+        ],
+        "nativeInk": [
+          3,
+          0,
+          25,
+          31
+        ]
+      },
+      {
+        "id": 50,
+        "rawOverride": null,
+        "rawCell": [
+          941,
+          627,
+          313,
+          314
+        ],
+        "rawInk": [
+          1056,
+          692,
+          133,
+          197
+        ],
+        "nativeInk": [
+          1,
+          0,
+          21,
+          33
+        ]
+      },
+      {
+        "id": 51,
+        "rawOverride": null,
+        "rawCell": [
+          0,
+          941,
+          314,
+          313
+        ],
+        "rawInk": [
+          89,
+          1004,
+          153,
+          174
+        ],
+        "nativeInk": [
+          3,
+          0,
+          26,
+          31
+        ]
+      },
+      {
+        "id": 52,
+        "rawOverride": null,
+        "rawCell": [
+          314,
+          941,
+          313,
+          313
+        ],
+        "rawInk": [
+          409,
+          1004,
+          144,
+          172
+        ],
+        "nativeInk": [
+          3,
+          0,
+          25,
+          31
+        ]
+      }
+    ]
+  },
+  {
+    "group": "hero-gear",
+    "rawFile": "hero-gear.png",
+    "rawSHA256": "bcefe27313b4296ff9bd579d6f904f84616c672d748f47139d6d544e70e697be",
+    "rawSize": [
+      1448,
+      1086
+    ],
+    "cells": [
+      {
+        "id": 119,
+        "rawOverride": null,
+        "rawCell": [
+          0,
+          0,
+          362,
+          362
+        ],
+        "rawInk": [
+          37,
+          148,
+          307,
+          186
+        ],
+        "nativeInk": [
+          0,
+          0,
+          47,
+          29
+        ]
+      },
+      {
+        "id": 120,
+        "rawOverride": null,
+        "rawCell": [
+          362,
+          0,
+          362,
+          362
+        ],
+        "rawInk": [
+          408,
+          135,
+          301,
+          200
+        ],
+        "nativeInk": [
+          0,
+          0,
+          47,
+          31
+        ]
+      },
+      {
+        "id": 121,
+        "rawOverride": null,
+        "rawCell": [
+          724,
+          0,
+          362,
+          362
+        ],
+        "rawInk": [
+          756,
+          210,
+          308,
+          126
+        ],
+        "nativeInk": [
+          0,
+          0,
+          47,
+          19
+        ]
+      },
+      {
+        "id": 122,
+        "rawOverride": null,
+        "rawCell": [
+          1086,
+          0,
+          362,
+          362
+        ],
+        "rawInk": [
+          1126,
+          209,
+          294,
+          127
+        ],
+        "nativeInk": [
+          0,
+          0,
+          47,
+          20
+        ]
+      },
+      {
+        "id": 123,
+        "rawOverride": null,
+        "rawCell": [
+          0,
+          362,
+          362,
+          362
+        ],
+        "rawInk": [
+          52,
+          519,
+          301,
+          146
+        ],
+        "nativeInk": [
+          1,
+          0,
+          45,
+          23
+        ]
+      },
+      {
+        "id": 124,
+        "rawOverride": null,
+        "rawCell": [
+          362,
+          362,
+          362,
+          362
+        ],
+        "rawInk": [
+          419,
+          487,
+          272,
+          178
+        ],
+        "nativeInk": [
+          3,
+          0,
+          42,
+          27
+        ]
+      },
+      {
+        "id": 125,
+        "rawOverride": null,
+        "rawCell": [
+          724,
+          362,
+          362,
+          362
+        ],
+        "rawInk": [
+          777,
+          506,
+          269,
+          159
+        ],
+        "nativeInk": [
+          3,
+          0,
+          41,
+          23
+        ]
+      },
+      {
+        "id": 126,
+        "rawOverride": null,
+        "rawCell": [
+          1086,
+          362,
+          362,
+          362
+        ],
+        "rawInk": [
+          1152,
+          471,
+          252,
+          194
+        ],
+        "nativeInk": [
+          0,
+          0,
+          40,
+          27
+        ]
+      },
+      {
+        "id": 127,
+        "rawOverride": null,
+        "rawCell": [
+          0,
+          724,
+          362,
+          362
+        ],
+        "rawInk": [
+          70,
+          781,
+          244,
+          222
+        ],
+        "nativeInk": [
+          3,
+          0,
+          33,
+          34
+        ]
+      }
+    ]
+  },
+  {
+    "group": "weapons",
+    "rawFile": "weapons-clean.png",
+    "rawSHA256": "9a4f56266b332c612b7046c26d3d1b93dcec2705da7bc1d99943b042eec520c5",
+    "rawSize": [
+      1024,
+      1536
+    ],
+    "cells": [
+      {
+        "id": 58,
+        "rawOverride": "club-grips.png",
+        "rawCell": [
+          0,
+          0,
+          256,
+          256
+        ],
+        "rawInk": [
+          72,
+          108,
+          139,
+          130
+        ],
+        "nativeInk": [
+          0,
+          0,
+          16,
+          19
+        ]
+      },
+      {
+        "id": 59,
+        "rawOverride": null,
+        "rawCell": [
+          256,
+          0,
+          256,
+          256
+        ],
+        "rawInk": [
+          315,
+          119,
+          124,
+          122
+        ],
+        "nativeInk": [
+          2,
+          0,
+          19,
+          18
+        ]
+      },
+      {
+        "id": 60,
+        "rawOverride": null,
+        "rawCell": [
+          512,
+          0,
+          256,
+          256
+        ],
+        "rawInk": [
+          573,
+          160,
+          156,
+          70
+        ],
+        "nativeInk": [
+          0,
+          0,
+          23,
+          13
+        ]
+      },
+      {
+        "id": 61,
+        "rawOverride": null,
+        "rawCell": [
+          768,
+          0,
+          256,
+          256
+        ],
+        "rawInk": [
+          891,
+          121,
+          57,
+          121
+        ],
+        "nativeInk": [
+          3,
+          0,
+          10,
+          16
+        ]
+      },
+      {
+        "id": 62,
+        "rawOverride": null,
+        "rawCell": [
+          0,
+          256,
+          256,
+          256
+        ],
+        "rawInk": [
+          75,
+          396,
+          107,
+          99
+        ],
+        "nativeInk": [
+          0,
+          0,
+          15,
+          16
+        ]
+      },
+      {
+        "id": 63,
+        "rawOverride": null,
+        "rawCell": [
+          256,
+          256,
+          256,
+          256
+        ],
+        "rawInk": [
+          334,
+          396,
+          107,
+          99
+        ],
+        "nativeInk": [
+          0,
+          0,
+          15,
+          16
+        ]
+      },
+      {
+        "id": 64,
+        "rawOverride": "club-grips.png",
+        "rawCell": [
+          512,
+          256,
+          256,
+          256
+        ],
+        "rawInk": [
+          596,
+          377,
+          140,
+          120
+        ],
+        "nativeInk": [
+          2,
+          0,
+          11,
+          15
+        ]
+      },
+      {
+        "id": 65,
+        "rawOverride": null,
+        "rawCell": [
+          768,
+          256,
+          256,
+          256
+        ],
+        "rawInk": [
+          850,
+          396,
+          107,
+          99
+        ],
+        "nativeInk": [
+          3,
+          0,
+          17,
+          15
+        ]
+      },
+      {
+        "id": 66,
+        "rawOverride": null,
+        "rawCell": [
+          0,
+          512,
+          256,
+          256
+        ],
+        "rawInk": [
+          74,
+          645,
+          112,
+          108
+        ],
+        "nativeInk": [
+          2,
+          0,
+          19,
+          19
+        ]
+      },
+      {
+        "id": 67,
+        "rawOverride": null,
+        "rawCell": [
+          256,
+          512,
+          256,
+          256
+        ],
+        "rawInk": [
+          335,
+          623,
+          117,
+          125
+        ],
+        "nativeInk": [
+          2,
+          0,
+          20,
+          24
+        ]
+      },
+      {
+        "id": 68,
+        "rawOverride": null,
+        "rawCell": [
+          512,
+          512,
+          256,
+          256
+        ],
+        "rawInk": [
+          571,
+          639,
+          141,
+          111
+        ],
+        "nativeInk": [
+          3,
+          0,
+          26,
+          19
+        ]
+      },
+      {
+        "id": 69,
+        "rawOverride": null,
+        "rawCell": [
+          768,
+          512,
+          256,
+          256
+        ],
+        "rawInk": [
+          847,
+          609,
+          107,
+          140
+        ],
+        "nativeInk": [
+          2,
+          0,
+          19,
+          25
+        ]
+      },
+      {
+        "id": 235,
+        "rawOverride": null,
+        "rawCell": [
+          0,
+          768,
+          256,
+          256
+        ],
+        "rawInk": [
+          72,
+          911,
+          101,
+          98
+        ],
+        "nativeInk": [
+          2,
+          0,
+          19,
+          18
+        ]
+      },
+      {
+        "id": 236,
+        "rawOverride": null,
+        "rawCell": [
+          256,
+          768,
+          256,
+          256
+        ],
+        "rawInk": [
+          309,
+          808,
+          160,
+          202
+        ],
+        "nativeInk": [
+          0,
+          0,
+          31,
+          41
+        ]
+      },
+      {
+        "id": 237,
+        "rawOverride": null,
+        "rawCell": [
+          512,
+          768,
+          256,
+          256
+        ],
+        "rawInk": [
+          558,
+          860,
+          162,
+          148
+        ],
+        "nativeInk": [
+          0,
+          0,
+          31,
+          29
+        ]
+      },
+      {
+        "id": 238,
+        "rawOverride": null,
+        "rawCell": [
+          768,
+          768,
+          256,
+          256
+        ],
+        "rawInk": [
+          829,
+          892,
+          132,
+          119
+        ],
+        "nativeInk": [
+          1,
+          0,
+          22,
+          20
+        ]
+      },
+      {
+        "id": 239,
+        "rawOverride": null,
+        "rawCell": [
+          0,
+          1024,
+          256,
+          256
+        ],
+        "rawInk": [
+          39,
+          1091,
+          177,
+          166
+        ],
+        "nativeInk": [
+          2,
+          0,
+          35,
+          33
+        ]
+      },
+      {
+        "id": 240,
+        "rawOverride": null,
+        "rawCell": [
+          256,
+          1024,
+          256,
+          256
+        ],
+        "rawInk": [
+          299,
+          1125,
+          181,
+          129
+        ],
+        "nativeInk": [
+          3,
+          0,
+          41,
+          26
+        ]
+      },
+      {
+        "id": 274,
+        "rawOverride": null,
+        "rawCell": [
+          512,
+          1024,
+          256,
+          256
+        ],
+        "rawInk": [
+          529,
+          1068,
+          218,
+          189
+        ],
+        "nativeInk": [
+          0,
+          0,
+          48,
+          40
+        ]
+      },
+      {
+        "id": 275,
+        "rawOverride": null,
+        "rawCell": [
+          768,
+          1024,
+          256,
+          256
+        ],
+        "rawInk": [
+          778,
+          1122,
+          230,
+          132
+        ],
+        "nativeInk": [
+          0,
+          0,
+          56,
+          30
+        ]
+      },
+      {
+        "id": 276,
+        "rawOverride": null,
+        "rawCell": [
+          0,
+          1280,
+          256,
+          256
+        ],
+        "rawInk": [
+          31,
+          1297,
+          202,
+          208
+        ],
+        "nativeInk": [
+          2,
+          0,
+          44,
+          48
+        ]
+      },
+      {
+        "id": 277,
+        "rawOverride": null,
+        "rawCell": [
+          256,
+          1280,
+          256,
+          256
+        ],
+        "rawInk": [
+          316,
+          1284,
+          137,
+          222
+        ],
+        "nativeInk": [
+          1,
+          0,
+          29,
+          51
+        ]
+      }
+    ]
+  },
+  {
+    "group": "bears",
+    "rawFile": "bears.png",
+    "rawSHA256": "c633a96ad2784e4ed8723c3a87fde3216b59fbe0e20ed6cd0c7e2bebcf0b9691",
+    "rawSize": [
+      1774,
+      887
+    ],
+    "cells": [
+      {
+        "id": 312,
+        "rawOverride": null,
+        "rawCell": [
+          0,
+          0,
+          444,
+          444
+        ],
+        "rawInk": [
+          144,
+          217,
+          214,
+          201
+        ],
+        "nativeInk": [
+          0,
+          0,
+          23,
+          24
+        ]
+      },
+      {
+        "id": 313,
+        "rawOverride": null,
+        "rawCell": [
+          444,
+          0,
+          443,
+          444
+        ],
+        "rawInk": [
+          586,
+          181,
+          206,
+          237
+        ],
+        "nativeInk": [
+          3,
+          0,
+          26,
+          29
+        ]
+      },
+      {
+        "id": 314,
+        "rawOverride": null,
+        "rawCell": [
+          887,
+          0,
+          444,
+          444
+        ],
+        "rawInk": [
+          1031,
+          182,
+          184,
+          236
+        ],
+        "nativeInk": [
+          0,
+          0,
+          23,
+          30
+        ]
+      },
+      {
+        "id": 315,
+        "rawOverride": null,
+        "rawCell": [
+          1331,
+          0,
+          443,
+          444
+        ],
+        "rawInk": [
+          1452,
+          182,
+          227,
+          236
+        ],
+        "nativeInk": [
+          1,
+          0,
+          29,
+          29
+        ]
+      },
+      {
+        "id": 316,
+        "rawOverride": null,
+        "rawCell": [
+          0,
+          444,
+          444,
+          443
+        ],
+        "rawInk": [
+          107,
+          523,
+          288,
+          271
+        ],
+        "nativeInk": [
+          3,
+          0,
+          41,
+          40
+        ]
+      },
+      {
+        "id": 379,
+        "rawOverride": null,
+        "rawCell": [
+          444,
+          444,
+          443,
+          443
+        ],
+        "rawInk": [
+          606,
+          652,
+          170,
+          138
+        ],
+        "nativeInk": [
+          0,
+          0,
+          23,
+          18
+        ]
+      },
+      {
+        "id": 380,
+        "rawOverride": null,
+        "rawCell": [
+          887,
+          444,
+          444,
+          443
+        ],
+        "rawInk": [
+          1040,
+          703,
+          183,
+          87
+        ],
+        "nativeInk": [
+          0,
+          0,
+          23,
+          11
+        ]
+      },
+      {
+        "id": 381,
+        "rawOverride": null,
+        "rawCell": [
+          1331,
+          444,
+          443,
+          443
+        ],
+        "rawInk": [
+          1483,
+          733,
+          184,
+          57
+        ],
+        "nativeInk": [
+          1,
+          0,
+          22,
+          5
+        ]
+      }
+    ]
+  }
+]
