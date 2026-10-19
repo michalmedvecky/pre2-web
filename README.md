@@ -21,6 +21,8 @@ Open http://127.0.0.1:5775. On macOS, `Play.command` also serves the game using 
 
 Land on enemies while holding jump for a higher bounce. Repeated club hits reveal connected hidden platforms; the first hit may leave them concealed. There is no invincibility or extra-life cheat in this browser version. Completing the original three-item bonus grants temporary enemy-contact power, which is separate from cheats.
 
+Pickups follow the original tables: six bones restore one heart; food and treasure award their individual points, and the collected-food ledger is scored again at stage completion. A spare life is awarded per 250,000 displayed points, up to 99. Some pickups spill energy into recoverable bones. Other pickups defeat enemies, turn them into food, repel following particles, or switch the palette. Weapon pickups do not spend health or score.
+
 Assets are already generated and committed. Building or deploying does not require the original game or analysis workspace. `dist/rules.json` and the data tables in `dist/assets/` are runtime inputs. Do not remove them or regenerate them from guessed formats.
 
 ## Kubernetes deployment — agent runbook
