@@ -24,3 +24,4 @@ test('IDKFA is a separate toggle sequence and does not activate IDDQD',()=>{
   assert.deepEqual([...'IDKFA'].map(k=>c.feed({code:'Key'+k},true)),[null,null,null,null,'IDKFA']);
   assert.deepEqual([...'IDDQD'].map(k=>c.feed({code:'Key'+k},true)),[null,null,null,null,'IDDQD']);
 });
+test('partial cheats reserve D/F/A controls until recognition so IDKFA cannot trigger fullscreen',()=>{const c=new CheatInput();for(const key of 'XIDKF'){c.feed({code:'Key'+key},true);assert.equal(c.pending,key!=='X');}assert.equal(c.feed({code:'KeyA'},true),'IDKFA');assert.equal(c.pending,false);c.feed({code:'KeyF'},true);assert.equal(c.pending,false);c.feed({code:'KeyI'},true);assert.equal(c.pending,true);c.feed({code:'ArrowRight'},true);assert.equal(c.pending,false);});

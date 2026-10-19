@@ -2,6 +2,7 @@
 export class CheatInput {
   constructor(){this.reset();}
   reset(){this.buffer='';}
+  get pending(){return ['IDDQD','IDKFA'].some(code=>[1,2,3,4].some(n=>this.buffer.endsWith(code.slice(0,n))));}
   feed(event,playing){
     if(!playing||event.ctrlKey||event.metaKey||event.altKey){this.reset();return null;}
     if(event.repeat)return null;
