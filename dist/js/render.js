@@ -19,6 +19,7 @@ export class Renderer {
   for(const [m,x,y] of cells){const n=l.overlayIndices?.[m];if(n!==undefined&&n!==65535&&n<163)this.tile(n,x,y,l,true);}
   for(const point of world.ropePoints||[]){const x=point.x-cx,y=point.y-cy;if(x>=0&&x<W&&y>=0&&y<VIEW)this.frame[y*W+x]^=15;}
   for(const point of world.followParticles||[]){if(!point)continue;const x=((point.x<<16)>>19)-cx,y=((point.y<<16)>>19)-cy;if(x>=0&&x<W&&y>=0&&y<VIEW)this.frame[y*W+x]=(point.timer&1)?1:0;}
+  for(const icon of world.bossStatus||[])this.sprite(icon.sprite,icon.x,icon.y);
   this.blit(a.hud,320,23,0,176);this.drawHud(world);this.present();
  }
  glyph(id,x,y){const g=this.glyphs[id];if(g)this.blit(g,16,12,x,y);}

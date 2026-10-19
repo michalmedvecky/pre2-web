@@ -4,7 +4,7 @@ Playable native JavaScript reconstruction using the recovered original graphics,
 
 There is **no server-side application, database, PVC, account service or dependency on Sites hosting**. nginx serves `dist/`. Browser localStorage stores checkpoint progress per browser and origin. Multiple replicas require no session affinity.
 
-All 16 recovered stages are available. Core player animations, jump impulses, weapon timing and glider controls follow recovered routines and data. The 13 generic enemy families, head bounces, combat and connected hidden-platform reveals follow recovered callbacks and tables. Some boss behavior and terrain/platform edge cases remain approximate; a full campaign playthrough and exact original-game behavioral equivalence have not been verified.
+All 16 recovered stages are available. Core player animations, jump impulses, weapon timing and glider controls follow recovered routines and data. The 13 generic enemy families, head bounces, combat and connected hidden-platform reveals follow recovered callbacks and tables. Boss state machines, multipart weak points, scripted attacks and fractional energy damage follow recovered routines. Terrain/platform edge cases and some presentation details remain approximate; a full campaign playthrough and exact original-game behavioral equivalence have not been verified.
 
 ## Local development
 
