@@ -237,7 +237,7 @@ export class World {
         if(sprite===229)continue;
         if(motion>0&&this.floorClass(e.x,e.y)){e.vy=(-e.vy)>>1;const old=e.vx;e.vx-=Math.sign(e.vx)*8;if(Math.sign(e.vx)!==Math.sign(old))e.vx=0;}
         else if(motion<=0&&this.prop('tilePropertiesX',this.tile(e.x,e.y-16))){e.vx=-e.vx;e.x+=sar4(e.vx);}
-        if(!(this.frame&1)&&e.vx&&sprite<=73)e.sprite=(e.sprite&0xe000)|(sprite===73?70:sprite+1);
+        if(!(this.frame&1)&&e.vx&&sprite>=70&&sprite<=73)e.sprite=(e.sprite&0xe000)|(sprite===73?70:sprite+1);
         continue;
       }
       if(e.dust)e.sprite++;e.ttl--;e.y+=(e.vy||0)>>4;if(e.physics){e.x+=(e.vx||0)>>4;e.vy=Math.min(256,(e.vy||0)+9);if(this.solidSupport(e.x,e.y)&&e.vy>0){e.vy=-(e.vy>>1);e.y&=~15;}}
@@ -379,7 +379,12 @@ export class World {
     const repeats=this.byte(0xa3ed+(((a.aux||0)>>>3)&7))||1;
     for(let n=0;n<repeats;n++)this.scoreAward(clamp(a.def.score_candidate||0,0,16),a.x+9*n,a.y+7*n);
     a.state=255;a.hitFlash=true;
-    if(!(a.def.flags&1)){this.spawnFragments(a.x,a.y,0x2046,48,-128,6);return;}
+    // Original bone pool: sprite70..73, six pickups restore one energy unit (0x18804).
+    // Bears also shed bones along their launched defeat animation.
+    const sprite=a.sprite&0x1fff,seed=a.def.sprite&0x1fff;
+    const bear=(sprite>=312&&sprite<=316)||seed===313||(a.type===10&&seed===381);
+    if(bear||!(a.def.flags&1))this.spawnFragments(a.x,a.y,0x2046,48,-128,6,{collectible:true});
+    if(!(a.def.flags&1))return;
     this.enemyDeathAnimation(a);if((a.def.flags&0xc8)!==0x88)a.def.flags&=~8;
     const strength=Math.min(attack.damage??25,25);a.vy=-strength*8;a.vx=(attack.face??this.player.face)*strength*4;
   }
