@@ -16,7 +16,7 @@ export function exitDestination(index,kind){
 
 export class World {
   constructor(assets,{onEvent=()=>{},expert=false}={}){
-    this.assets=assets;this.onEvent=onEvent;this.expert=expert;this.score=0;this.lives=2;this.health=3;this.extraLifeQuotient=0;
+    this.assets=assets;this.onEvent=onEvent;this.expert=expert;this.godMode=false;this.score=0;this.lives=2;this.health=3;this.extraLifeQuotient=0;
     this.presentationTicks=0;this.frame=0;this.inventory=0;this.inventory2=0;this.weapon=0;this.foodHealth=0;this.weaponPower=0;this.transition=null;this.events=[];this.recorded=[];this.loadLevel(0);
   }
   emit(type,data={}){const e={type,...data};this.events.push(e);this.onEvent(e);}
@@ -221,13 +221,15 @@ export class World {
       a.x=s16(a.x+sar4(a.vx));a.y=s16(a.y+sar4(a.vy));this.nextAnimation(a);a.sprite|=a.face<0?0x8000:0;
       a.vy=s16(a.vy+(a.mode===1?-16:32));
     }this.projectiles=this.projectiles.filter(a=>a.ttl>0);}
-  damage(){const p=this.player;if(p.invulnerable||this.deathTimer||this.transition)return;this.emit('sfx',{index:1});
+  toggleGodMode(){this.godMode=!this.godMode;if(this.godMode){this.player.invulnerable=0;if(this.deathTimer){this.deathTimer=0;this.rescuePlayer();}}this.emit('cheat',{enabled:this.godMode});return this.godMode;}
+  rescuePlayer(){Object.assign(this.player,this.checkpoint,{vx:0,vy:0,jumpFrame:0,fallFrames:0,attackActive:false,animationVariant:-1});this.camera.x=clamp(this.player.x-144,0,this.maxCameraX());this.camera.y=clamp(this.player.y-128,0,this.maxCameraY());}
+  damage(){const p=this.player;if(this.godMode||p.invulnerable||this.deathTimer||this.transition)return;this.emit('sfx',{index:1});
     p.invulnerable=44;p.attackActive=false;p.attackTimer=0;p.vx=s16(-4*p.vx);p.vy=-128;p.glideMode=0;p.jumpFrame=9;p.animationVariant=-1;
     this.playerWeapon=null;this.projectiles=this.projectiles.filter(a=>!a.contact);
     if(this.alternate){this.alternate=false;return;}
     if(this.health>0)this.health--;else this.loseLife();
   }
-  loseLife(){if(this.deathTimer||this.transition)return;this.deathTimer=38;this.playerWeapon=null;this.player.sprite=33;this.player.vy=-160;this.emit('sfx',{index:7});this.emit('lifeLost');}
+  loseLife(){if(this.godMode){this.rescuePlayer();return;}if(this.deathTimer||this.transition)return;this.deathTimer=38;this.playerWeapon=null;this.player.sprite=33;this.player.vy=-160;this.emit('sfx',{index:7});this.emit('lifeLost');}
   scoreAward(index,x=this.player.x,y=this.player.y){index=clamp(index,0,16);this.score=(this.score+AWARDS[index])>>>0;this.effects.push({x,y:y-10,sprite:0x4a+index,vy:-8,ttl:44,active:true});}
   floatText(text,x,y,sprite){this.effects.push({x,y,text,sprite:sprite??0xffff,vy:-8,ttl:44,active:true});}
   updateEffects(){for(const e of this.effects){
@@ -251,10 +253,11 @@ export class World {
     this.foodCounts[index]=u8(this.foodCounts[index]+1);this.collectedFood=u16(this.collectedFood+1);if(i.authored)this.collectedAuthoredFood=u16(this.collectedAuthoredFood+1);
     this.scoreAward(this.byte(0xa371+index),i.x,i.y);this.emit('sfx',{index:8});return true;
   }
-  scatterHealth(count=6*this.health+this.foodHealth){this.health=0;this.foodHealth=0;if(count)this.spawnFragments(this.player.x,this.player.y-48,0x2046,48,-128,count,{collectible:true});}
+  scatterHealth(count=6*this.health+this.foodHealth){if(this.godMode)return;this.health=0;this.foodHealth=0;if(count)this.spawnFragments(this.player.x,this.player.y-48,0x2046,48,-128,count,{collectible:true});}
   randomFood(x,y,vx,vy){let n;do{n=this.rng.next()&127;}while(n>=95);this.spawnFragments(x,y,0x2080+n,vx,vy,1,{collectible:true});}
   discardRuntimePickup(i){if(i.authored)return false;i.active=false;return true;}
   pickup(i){const sprite=i.sprite&0x1fff,c=sprite-0x35;let sound=null;
+    if(this.godMode&&[458,459,220,221].includes(sprite)){i.active=false;return true;}
     if(sprite===0x1ca||sprite===0x1cb){if(this.health===0)this.loseLife();else{const remaining=this.health-1;this.scatterHealth(6+this.foodHealth);this.health=remaining;this.player.invulnerable=44;this.player.attackActive=false;this.player.animationVariant=-1;this.emit('sfx',{index:1});}i.active=false;return true;}
     if(c===258){i.active=false;this.complete('bonus');return true;}if(c===226){i.active=false;this.complete('special');return true;}
     if(c===228){this.checkpoint={x:this.player.x,y:this.player.y};for(const j of this.items)if((j.sprite&0x1fff)===0x118)j.sprite=(j.sprite&0xe000)|0x119;i.sprite=(i.sprite&0xe000)|0x118;return false;}
@@ -404,11 +407,9 @@ export class World {
     const repeats=this.byte(0xa3ed+(((a.aux||0)>>>3)&7))||1;
     for(let n=0;n<repeats;n++)this.scoreAward(clamp(a.def.score_candidate||0,0,16),a.x+9*n,a.y+7*n);
     a.state=255;a.hitFlash=true;
-    // Original bone pool: sprite70..73, six pickups restore one energy unit (0x18804).
-    // Bears also shed bones along their launched defeat animation.
-    const sprite=a.sprite&0x1fff,seed=a.def.sprite&0x1fff;
-    const bear=(sprite>=312&&sprite<=316)||seed===313||(a.type===10&&seed===381);
-    if(bear||!(a.def.flags&1))this.spawnFragments(a.x,a.y,0x2046,48,-128,6,{collectible:true});
+    // 0x185c4 clears bit0 on harmful contact; 0x18ee5 checks it at defeat.
+    // Untouched enemies retain their launched death animation without bones.
+    if(!(a.def.flags&1))this.spawnFragments(a.x,a.y,0x2046,48,-128,6,{collectible:true});
     if(!(a.def.flags&1))return;
     this.enemyDeathAnimation(a);if((a.def.flags&0xc8)!==0x88)a.def.flags&=~8;
     const strength=Math.min(attack.damage??25,25);a.vy=-strength*8;a.vx=(attack.face??this.player.face)*strength*4;
@@ -426,7 +427,7 @@ export class World {
         }else{this.emit('sfx',{index:3});const count=(a.aux||0)>>>2;if(count!==11){a.aux=u8((a.aux||0)+4);const next=count+1;if(!(next&1)){const sprite=this.word(0xa3e1+next);this.effects.push({x:a.x,y:a.y,sprite,vy:-8,ttl:44,active:true});}}p.vy=this.input.up?-224:-64;}
         p.jumpLock=0;p.y-=hit.penetration;p.grounded=false;return;
       }
-      a.def.flags&=~1;this.damage();return;
+      if(!this.godMode){a.def.flags&=~1;this.damage();}return;
     }}
   makePlatform(d){const raw=d.raw;const word=p=>raw[p]|raw[p+1]<<8;return {...d,x:d.x,y:d.y,sprite:d.sprite,originX:d.x,originY:d.y,active:true,raw,dx:0,phase:0,mode:raw[14]||0,animation:word(8),min:word(6),max:word(10),speed:s8(raw[12])||1};}
   updatePlatforms(){for(const p of this.platforms){if(!p.active)continue;const old=p.x;p.phase=u8(p.phase+1);const raw=p.raw;const min=p.min,max=p.max;
@@ -479,6 +480,6 @@ export class World {
   complete(kind){if(this.transition)return;if(this.levelIndex===9&&this.finalBoss?.hp===0){this.finish('ending');return;}const next=exitDestination(this.levelIndex,kind);const pct=completionPercent(this.brokenBlocks,this.collectedAuthoredFood,this.totalBlocks,this.totalFood);this.transition={type:'complete',next,percent:pct,delay:58,bonus:this.collectedFood};this.transitionTimer=0;this.emit('complete',{next,percent:pct});}
   finish(type){if(this.transition)return;this.transition={type,delay:36};this.transitionTimer=0;this.emit(type);}
   advance(){if(!this.transition)return;const t=this.transition;if(t.type==='complete'){if(t.next>=this.assets.game.levels.length){this.transition=null;this.finish('ending');return;}this.score=(this.score+this.foodCounts.reduce((sum,count,index)=>sum+count*(AWARDS[this.byte(0xa371+index)]||0),0))>>>0;this.foodCounts.fill(0);this.loadLevel(t.next);}else this.emit('finish',{type:t.type});}
-  snapshot(){const p=this.player;return {level:this.levelIndex,frame:this.frame,x:p.x,y:p.y,vx:p.vx,vy:p.vy,sprite:p.sprite,grounded:p.grounded,playerState:[p.action,p.animationVariant,p.anim,p.marker||0,p.jumpFrame,p.jumpLock,p.fallFrames,p.lastGroundY,p.attackActive?1:0,p.attackCooldown,p.invulnerable,p.glideMode,p.glideEnergy,p.formAngle,p.runTimer,this.alternate?1:0,this.power,this.presentationTicks],projectiles:this.projectiles.map(a=>[a.x,a.y,a.vx,a.vy,a.sprite,a.anim||0,a.ttl]),score:this.score,health:this.health,lives:this.lives,actors:this.actors.map(a=>[a.x,a.y,a.sprite,a.hp,a.state]),rng:[this.rng.a,this.rng.b,this.rng.c,this.rng.w,this.rng.secondary],bossState:bosses.snapshot(this),camera:[this.camera.x,this.camera.y],collected:this.items.filter(i=>!i.active).map(i=>i.index),blocks:this.blocks.filter(b=>!b.active).map(b=>b.index),transition:this.transition?.type||null};}
+  snapshot(){const p=this.player;return {level:this.levelIndex,frame:this.frame,x:p.x,y:p.y,vx:p.vx,vy:p.vy,sprite:p.sprite,grounded:p.grounded,playerState:[p.action,p.animationVariant,p.anim,p.marker||0,p.jumpFrame,p.jumpLock,p.fallFrames,p.lastGroundY,p.attackActive?1:0,p.attackCooldown,p.invulnerable,p.glideMode,p.glideEnergy,p.formAngle,p.runTimer,this.alternate?1:0,this.power,this.presentationTicks,this.godMode?1:0],projectiles:this.projectiles.map(a=>[a.x,a.y,a.vx,a.vy,a.sprite,a.anim||0,a.ttl]),score:this.score,health:this.health,lives:this.lives,actors:this.actors.map(a=>[a.x,a.y,a.sprite,a.hp,a.state]),rng:[this.rng.a,this.rng.b,this.rng.c,this.rng.w,this.rng.secondary],bossState:bosses.snapshot(this),camera:[this.camera.x,this.camera.y],collected:this.items.filter(i=>!i.active).map(i=>i.index),blocks:this.blocks.filter(b=>!b.active).map(b=>b.index),transition:this.transition?.type||null};}
   stateHash(){const s=this.snapshot();return fnv1a([s.level,s.frame,s.x,s.y,s.vx,s.vy,s.sprite,s.score,s.health,s.lives,...s.rng,...s.bossState,...s.camera,...s.playerState,...s.projectiles.flat(),...s.actors.flat(),...s.collected,...s.blocks]);}
 }

@@ -9,7 +9,7 @@ export function initBosses(w){
   if(w.levelIndex===9){w.finalBoss={hp:24,pose:0,active:true,schedule:0xa4f5,repeat:0,script:0,hitCount:3,dead:false};w.camera.x=w.camera.y=0;w.weapon=3;}
 }
 export function activateSpecialBoss(w){w.bossLevelFlags&=1;w.specialBoss={hp:5,stage:0,active:true,hitTimer:0,bodyFrame:0,leftFrame:0,rightFrame:1,attackDelay:110,burst:8,parts:[]};}
-export function energyHit(w,count=1){for(let n=0;n<count;n++){
+export function energyHit(w,count=1){if(w.godMode)return;for(let n=0;n<count;n++){
     if(w.foodHealth)w.foodHealth=u8(w.foodHealth-1);else{w.foodHealth=5;if(w.health)w.health--;else w.loseLife();}
     w.spawnFragments(w.player.x,w.player.y-48,0x2046,(w.foodHealth&1)?-48:48,-128,1,{collectible:true});
   }}
@@ -29,7 +29,7 @@ export function bossPose(w,b){
   for(const p of parts)if(b.mirror)p.sprite^=0x8000;
   b.parts=parts;b.drawn=pose.drawOrder.map(i=>parts[i]);w.bossParts.push(...b.drawn.slice().reverse());
 }
-function genericContact(w,b){if(w.deathTimer||w.transition)return;for(const index of [4,3]){const p=b.parts[index];if(!p||!w.visibleActor(p)||!w.overlap(w.player,p))continue;
+function genericContact(w,b){if(w.deathTimer||w.transition)return;for(const index of [4,3]){const p=b.parts[index];if(w.godMode||!p||!w.visibleActor(p)||!w.overlap(w.player,p))continue;
     b.anger=Math.max(0,b.anger-(4-b.speed));energyHit(w);knockback(w,w.player.x>=b.x?128:-128,-128,true);w.emit('sfx',{index:1});}
   const head=b.parts[2];if(head){const hit=w.collisionDetails(w.player,head);if(hit?.topContact){w.player.vy=w.input.up?-128:-64;if(w.input.up)w.emit('sfx',{index:3});}}
 }
@@ -86,7 +86,7 @@ function specialParts(w,m){
   const parts=[part(body),part(left,3),part(left),part(right,3),part(right)];if(m.stage)parts[0].active=false;if(m.stage>=2)parts[1].active=parts[2].active=false;m.parts=parts;w.bossParts.push(...parts.filter(p=>p.active).reverse());return parts;
 }
 function spawnRock(w){if(w.bossRocks.length>=5)return;const slot=[0,1,2,3,4].find(i=>!w.bossRocks.some(r=>r.slot===i));const value=w.rng.next(),offset=(value&4)?-(value&124):(value&124);w.bossRocks.push({slot,x:w.player.x+offset,y:w.player.y-150,sprite:435,vy:16*(1+(value&3)),wobble:0,acceleration:4,active:true});}
-function rocks(w){for(const r of w.bossRocks){if(!r.active)continue;if(!w.deathTimer&&!w.transition&&w.overlap(w.player,r)){knockback(w,-128,-128);energyHit(w);r.active=false;continue;}
+function rocks(w){for(const r of w.bossRocks){if(!r.active)continue;if(!w.godMode&&!w.deathTimer&&!w.transition&&w.overlap(w.player,r)){knockback(w,-128,-128);energyHit(w);r.active=false;continue;}
     r.y+=sar4(r.vy);r.wobble+=s8(r.acceleration);if(r.wobble>=32||r.wobble< -32)r.acceleration=-r.acceleration;const dx=sar4(r.wobble);r.sprite=435+(dx>0?1:dx<0?2:0);r.x+=dx;if(r.y>2008)r.active=false;
   }w.bossRocks=w.bossRocks.filter(r=>r.active);}
 function special(w,m){meter(w,(2-m.stage)*2);rocks(w);const parts=specialParts(w,m),body=parts[0];w.bossParts.push(...w.bossRocks.slice().sort((a,b)=>(b.slot||0)-(a.slot||0)));if(!(w.frame&3))m.bodyFrame=(m.bodyFrame+1)%3;let advancing=false;
@@ -96,12 +96,12 @@ function special(w,m){meter(w,(2-m.stage)*2);rocks(w);const parts=specialParts(w
     if(!m.burst){m.burst=(w.rng.next()&15)*8;m.attackDelay=(w.rng.next()&15)*8+64;m.leftFrame=0;}
   }
   if(!w.deathTimer&&!w.transition){
-    if(advancing){if(parts.slice(3).some(p=>p.active&&w.overlap(w.player,p))){w.player.vy=-160;if(w.player.y>1979){knockback(w,-128,-160);energyHit(w,3);}}}
+    if(advancing){if(parts.slice(3).some(p=>p.active&&w.overlap(w.player,p))){if(w.player.y<=1979)w.player.vy=-160;else if(!w.godMode){knockback(w,-128,-160);energyHit(w,3);}}}
     else {const hit=w.collisionDetails(w.player,parts[4]);if(hit?.topContact)w.player.vy=w.input.up?-128:-64;}
     const target=parts[m.stage*2];for(const shot of attacks(w)){if(!target?.active||!w.overlap(shot,target,true))continue;shot.ttl=0;target.hitFlash=true;if(m.stage)parts[m.stage*2-1].hitFlash=true;m.hitTimer=6;if(m.stage<2)m.leftFrame=m.rightFrame=3;m.hp--;
       if(!m.hp){m.stage++;m.hp=7;if(m.stage===3){m.active=false;w.bossRocks=[];w.bossParts=[];w.bossStatus=[];victory(w,body.x-200,body.y);}}break;
     }
-    if(w.player.x>984){knockback(w,-160,-144);energyHit(w);}
+    if(w.player.x>984&&!w.godMode){knockback(w,-160,-144);energyHit(w);}
   }
   if(m.attackDelay)m.attackDelay--;
 }
