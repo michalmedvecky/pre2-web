@@ -37,3 +37,23 @@ test('native bush triplets animate through all three distinct poses without chan
  for(let phase=0;phase<3;phase++){r.render({level:l,map,camera:{x:0,y:608},tileAnimationPhase:phase});hashes.add(createHash('sha256').update(r.frame.slice(0,176*320)).digest('hex'));hud.push(r.frame.slice(176*320));}
  assert.equal(hashes.size,3);assert.deepEqual(map,before);assert.deepEqual(hud[0],hud[1]);assert.deepEqual(hud[1],hud[2]);
 });
+
+test('all authored foreground masks in all worlds restore their opaque pixels after overlapping sprites',()=>{
+ const r=renderer();let tiles=0;
+ for(const l of game.levels)for(let id=0;id<256;id++)if(l.tilePropertiesMisc[id]&64){
+  const front=l.overlayIndices[id];assert.ok(front<163);const map=new Uint8Array(256*l.height);map[4*256+6]=id;
+  const sprite=r.sprite;r.sprite=()=>{for(let y=64;y<80;y++)for(let x=96;x<112;x++)r.pixel(x,y,15);};
+  r.render({level:l,map,camera:{x:0,y:0},player:{x:104,y:80,sprite:9}});r.sprite=sprite;
+  for(let y=0;y<16;y++)for(let x=0;x<16;x++){const ink=a.front[front*256+y*16+x];assert.equal(r.frame[(64+y)*320+96+x],ink||15,`stage ${l.id} tile ${id}`);}tiles++;
+ }
+ assert.equal(tiles,124);
+});
+test('unoccupied platforms draw two pixels above their collision origin; ridden platforms keep contact pose',()=>{
+ const r=renderer(),l=game.levels[0],ys=[],sprite=r.sprite;r.sprite=(word,x,y)=>ys.push(y);
+ const p={x:80,y:100,sprite:232,raw:Uint8Array.from([0,0,0,0,0,0,8])};
+ r.render({level:l,map:new Uint8Array(256*l.height),camera:{x:0,y:0},platforms:[p]});assert.equal(ys.pop(),98);
+ p.raw[6]|=64;r.render({level:l,map:new Uint8Array(256*l.height),camera:{x:0,y:0},platforms:[p]});assert.equal(ys.pop(),100);assert.equal(p.y,100);r.sprite=sprite;
+});
+test('rain XORs the completed playfield and leaves every HUD pixel intact',()=>{
+ const r=renderer(),l=game.levels[15],w={level:l,levelIndex:15,map:a.maps[l.id],camera:{x:0,y:0}};r.render(w);const before=r.frame.slice();w.rainPoints=[{x:10,y:10},{x:10,y:10},{x:20,y:20},{x:2,y:176},{x:-1,y:1}];r.render(w);assert.equal(r.frame[10*320+10],before[10*320+10]);assert.equal(r.frame[20*320+20],before[20*320+20]^15);assert.deepEqual(r.frame.slice(176*320),before.slice(176*320));
+});
