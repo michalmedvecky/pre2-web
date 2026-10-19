@@ -58,6 +58,7 @@ node scripts/verify-hd-browser.mjs
 - [x] Browser-check lazy downloads, paused-state preservation, switching, reload persistence and failed-network recovery.
 - [x] Measure warm HD rendering in local headless Chromium: 657 samples during a 5.5s level1 run with IDDQD/IDKFA, p95 about1.4ms, max6ms, camera steps at most2 native pixels/frame in the sampled scrolling section. These desktop results are not Quest performance claims.
 - [x] Prepare [3D/Quest source contracts](../../docs/VR-ROADMAP.md) and the [missing 3D asset catalog](../vr/asset-catalog.json).
+- [x] Publish verified amd64/arm64 image from successful Actions build39272085849; pin its digest in the Kubernetes manifest.
 - [ ] Future: actual 360° meshes, rigs, depth geometry, stereo XR renderer and real headset validation; see the roadmap.
 
 No original DOS executable is executed by the art pipeline or browser checks. The web reconstruction is the only running game.
