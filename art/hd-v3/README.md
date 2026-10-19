@@ -30,7 +30,7 @@ Lives retain the existing display clamp0–9, score retains the seven-digit `(sc
 - [x] Check actual HD subpixel detail in the HUD and distinct rendered outputs for health0–3, lives0/2/9, scores, and BONUS flashing.
 - [x] Browser-test visible map mutation/restoration, cache invalidation, camera reuse, foreground ordering, lazy loading, both mode switches, persistence, mobile control and failed-load fallback. Results: [browser.json](review/browser.json).
 - [x] Measure a5.5-second IDDQD/IDKFA scrolling pass in local headless Chromium; save [performance.json](review/performance.json). This is CPU render-call timing on the development machine, not headset or GPU latency validation.
-- [ ] Publish the tested game image, verify both architectures, and update the Kubernetes digest.
+- [x] Publish the tested game image in [Actions build39302223007](https://github.com/michalmedvecky/pre2-web/actions/runs/39302223007), verify amd64/arm64 and the GHCR index digest, and pin `sha256:0d74a8f37313939e7bd6f21b17a21b3eafe5d8c1112d4145eb3bcf6b4d945b23` in the Kubernetes manifest. No cluster rollout was performed.
 
 Run from the repository root:
 
