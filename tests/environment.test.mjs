@@ -9,9 +9,9 @@ test('every authored moving region follows its swept source rows, four-tick cade
   // The trigger is a packed tile address and an unsigned forward range of eight tiles.
   w.player.x=((d.triggerTile&255)+9)*16;w.player.y=(d.triggerTile>>8)*16;updateMovingBlocks(w);assert.equal(b.trigger,d.triggerTile);
   w.player.x=((d.triggerTile&255)+8)*16;updateMovingBlocks(w);assert.equal(b.trigger,65534);assert.equal(b.step,0);
-  const initial=w.map.slice();w.frame=1;updateMovingBlocks(w);assert.deepEqual(w.map,initial);
+  const initial=w.map.slice();w.frame=2;updateMovingBlocks(w);assert.deepEqual(w.map,initial);
   for(let step=1;step<=travel;step++){
-   w.frame=step*4;updateMovingBlocks(w);assert.equal(b.pos,start-step*256);assert.equal(b.remaining,travel-step);
+   w.frame=step*4+1;updateMovingBlocks(w);assert.equal(b.pos,start-step*256);assert.equal(b.remaining,travel-step);
    for(let y=0;y<height;y++)for(let x=0;x<width;x++){
     const expected=initial[start+y*256+x];
     assert.equal(w.map[b.pos+y*256+x],expected,`stage ${w.level.id} region ${d.index} step ${step} tile ${x},${y}`);

@@ -18,7 +18,8 @@ export function updateMovingBlocks(w){
  for(const b of w.movingBlocks){
   if(b.trigger===65535)continue;
   if(b.trigger!==65534){if(u16(tile-b.trigger)<=8){b.trigger=65534;w.player.landingShake=7;}continue;}
-  w.player.landingShake=7;if(w.frame&3)continue;
+  // Sprite drawing (0x1289a) increments the native frame counter after this call.
+  w.player.landingShake=7;if((w.frame-1)&3)continue;
   for(let y=0;y<b.height;y++)for(let x=0;x<b.width;x++)w.map[u16(b.pos+(y-1)*256+x)]=w.map[u16(b.pos+y*256+x)];
   for(let x=0;x<b.width;x++)w.map[u16(b.pos+(b.height-1)*256+x)]=b.fill[b.step*b.width+x];
   b.pos=u16(b.pos-256);b.step++;if(--b.remaining===0)b.trigger=65535;
