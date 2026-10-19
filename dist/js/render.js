@@ -1,3 +1,4 @@
+import {hintMarkers} from './secrets.js';
 /** Original indexed-pixel renderer at 320x200, gameplay clipped above y176. */
 const W=320,H=200,VIEW=176;
 const FONT={
@@ -20,7 +21,23 @@ export class Renderer {
   for(const point of world.ropePoints||[]){const x=point.x-cx,y=point.y-cy;if(x>=0&&x<W&&y>=0&&y<VIEW)this.frame[y*W+x]^=15;}
   for(const point of world.followParticles||[]){if(!point)continue;const x=((point.x<<16)>>19)-cx,y=((point.y<<16)>>19)-cy;if(x>=0&&x<W&&y>=0&&y<VIEW)this.frame[y*W+x]=(point.timer&1)?1:0;}
   for(const icon of world.bossStatus||[])this.sprite(icon.sprite,icon.x,icon.y);
+  if(world.secretHints)this.drawSecretHints(world);
   this.blit(a.hud,320,23,0,176);this.drawHud(world);this.present();
+ }
+ drawSecretHints(w){const markers=hintMarkers(w),ink=(w.frame&8)?14:15;
+  const dot=(x,y)=>{x=Math.round(x);y=Math.round(y);if(x>=0&&x<W&&y>=0&&y<VIEW)this.frame[y*W+x]=ink;};
+  const line=(x,y,xx,yy)=>{const n=Math.max(Math.abs(xx-x),Math.abs(yy-y),1);for(let i=0;i<=n;i++)dot(x+(xx-x)*i/n,y+(yy-y)*i/n);};
+  let arrows=0;const edges=new Set();
+  for(const m of markers){
+    if(m.kind==='wall')for(const c of m.cells){const x=c.x-w.camera.x,y=c.y-w.camera.y;for(let i=0;i<16;i+=3){dot(x+i,y);dot(x+i,y+15);dot(x,y+i);dot(x+15,y+i);}}
+    if(m.visible){line(m.x-4,m.y,m.x,m.y-4);line(m.x,m.y-4,m.x+4,m.y);line(m.x+4,m.y,m.x,m.y+4);line(m.x,m.y+4,m.x-4,m.y);this.drawText(m.label,Math.max(0,Math.min(320-m.label.length*6,m.x-m.label.length*3)),m.y-13,ink);}
+    else {const edge=Math.round(m.screenX/24)+':'+Math.round(m.screenY/24);if(arrows>=3||edges.has(edge))continue;edges.add(edge);arrows++;
+      const x=m.screenX,y=m.screenY,dx=m.x-x,dy=m.y-y,n=Math.hypot(dx,dy)||1,ux=dx/n,uy=dy/n;
+      line(x-ux*6-uy*3,y-uy*6+ux*3,x,y);line(x-ux*6+uy*3,y-uy*6-ux*3,x,y);
+    }
+  }
+  for(let y=4;y<16;y++)this.frame.fill(0,y*W+4,y*W+Math.min(W,12+(`IDKFA ${markers.length} HINTS`).length*6));
+  this.drawText(`IDKFA ${markers.length} HINTS`,8,6,15);
  }
  glyph(id,x,y){const g=this.glyphs[id];if(g)this.blit(g,16,12,x,y);}
  drawHud(w){this.glyph(Math.min(9,Math.max(0,w.lives||0)),40,185);const score=String((w.score>>>0)*10).padStart(7,'0').slice(-7);for(let i=0;i<score.length;i++)this.glyph(+score[i],72+i*16,185);for(let i=0;i<3;i++)this.glyph(i<(w.health??3)?10:11,200+i*16,185);const bits=w.collectionFlash?((w.frame&1)?31:0):(w.inventory||0);for(let i=0;i<5;i++){const p=0x6f82+i*2;const v=this.assets.tables[p]|(this.assets.tables[p+1]<<8);if(bits&(1<<i))this.glyph(12+i,(v%40)*8,Math.floor(v/40));}}

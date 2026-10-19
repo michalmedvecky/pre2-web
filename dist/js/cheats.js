@@ -3,11 +3,11 @@ export class CheatInput {
   constructor(){this.reset();}
   reset(){this.buffer='';}
   feed(event,playing){
-    if(!playing||event.ctrlKey||event.metaKey||event.altKey){this.reset();return false;}
-    if(event.repeat)return false;
-    if(!/^Key[A-Z]$/.test(event.code)){this.reset();return false;}
+    if(!playing||event.ctrlKey||event.metaKey||event.altKey){this.reset();return null;}
+    if(event.repeat)return null;
+    if(!/^Key[A-Z]$/.test(event.code)){this.reset();return null;}
     this.buffer=(this.buffer+event.code.slice(3)).slice(-5);
-    if(this.buffer!=='IDDQD')return false;
-    this.reset();return true;
+    if(!['IDDQD','IDKFA'].includes(this.buffer))return null;
+    const code=this.buffer;this.reset();return code;
   }
 }

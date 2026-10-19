@@ -1,3 +1,4 @@
+import * as platforms from './platforms.js';
 import * as bosses from './bosses.js';
 import {u8,u16,s8,s16,sar4,clamp,Random,ACTIONS,JUMP,AWARDS,actionIndex,inputMask,fnv1a} from './compat.js';
 
@@ -16,7 +17,7 @@ export function exitDestination(index,kind){
 
 export class World {
   constructor(assets,{onEvent=()=>{},expert=false}={}){
-    this.assets=assets;this.onEvent=onEvent;this.expert=expert;this.godMode=false;this.score=0;this.lives=2;this.health=3;this.extraLifeQuotient=0;
+    this.assets=assets;this.onEvent=onEvent;this.expert=expert;this.godMode=false;this.secretHints=false;this.score=0;this.lives=2;this.health=3;this.extraLifeQuotient=0;
     this.presentationTicks=0;this.frame=0;this.inventory=0;this.inventory2=0;this.weapon=0;this.foodHealth=0;this.weaponPower=0;this.transition=null;this.events=[];this.recorded=[];this.loadLevel(0);
   }
   emit(type,data={}){const e={type,...data};this.events.push(e);this.onEvent(e);}
@@ -100,7 +101,7 @@ export class World {
     if(this.collectionFlash)this.collectionFlash--;if(this.blockCooldown)this.blockCooldown--;if(this.sceneFlash)this.sceneFlash--;if(this.weaponPower)this.weaponPower--;
     // Original broad update order: actors, effects, player, interactions, world changes, presentation counter.
     for(const a of this.actors)a.hitFlash=false;this.checkEnemyAttacks();this.checkBlocks();this.updateBosses();this.updateActors();this.spawnActors();this.updatePlatforms();this.updateEffects();this.updateProjectiles();this.stepPlayer(input);if(this.enemyPowerTimer)this.enemyPowerTimer--;this.checkActorDamage();this.checkPickups();this.updateFollowParticles();this.updatePalette();this.checkGates();this.updateCamera();
-    if(this.levelIndex===14&&this.player.y>=this.level.height*16-8)this.finish('ending');else if(this.player.y>this.level.height*16+32||this.player.y< -320)this.loseLife();
+    if(this.levelIndex===14&&this.player.y>(this.level.height+1)*16)this.finish('ending');else if(this.player.y>this.level.height*16+32||this.player.y< -320)this.loseLife();
     for(const i of this.items)if(i.active&&!(this.frame&1)){i.bob=(i.bob||0)+1;if(i.bob>=4)i.bob=-i.bob+1;i.y+=i.bob;}
     if(this.player.invulnerable)this.player.invulnerable--;if(this.power)this.power--;if(this.player.landingShake)this.player.landingShake--;
     const q=Math.floor((this.score>>>0)/25000);while(this.extraLifeQuotient<q){this.extraLifeQuotient++;this.lives=Math.min(99,this.lives+1);this.emit('sfx',{index:4});this.floatText('1UP',this.player.x,this.player.y-38,0xe3);}
@@ -176,7 +177,7 @@ export class World {
     }
   }
   playerDust(){const existing=this.effects.filter(e=>e.dust);if(existing.length>=5)this.effects.splice(this.effects.indexOf(existing[0]),1);this.effects.push({x:this.player.x,y:this.player.y,sprite:53,vy:-16,ttl:5,dust:true,active:true});}
-  landPlatform(surface){const p=this.player;p.y=surface;p.vy=0;p.grounded=true;p.speedShift=0;p.platformGrip=true;}
+  landPlatform(surface,id=null,vy=0){const p=this.player;p.y=surface;p.vy=vy;p.grounded=true;p.speedShift=0;p.platformGrip=true;p.platformId=id;}
   landPlayer(surface,speedShift=0){const p=this.player,vy=p.vy,fall=p.fallFrames;
     p.y=surface;p.grounded=true;p.speedShift=speedShift;p.glideMode=0;p.landingBounce=false;
     if(fall>4)this.playerDust();
@@ -188,16 +189,16 @@ export class World {
   }
   collidePlayer(oldX,oldY){
     const p=this.player;const dx=p.x-oldX;const sideX=p.x+(dx>0?9:dx<0?-9:0);let hitSide=false;
-    if(dx){const height=this.byte(0x718d+(p.sprite&0x1fff)*2)||36;for(let row=0;row<Math.ceil(height/16);row++){const y=(p.y&0xfff0)-16-row*16,c=this.prop('tilePropertiesX',this.tile(sideX,y));if(c===2){this.loseLife();return;}if(row===0&&c===1){hitSide=true;break;}}}
+    if(dx){const height=this.byte(0x718d+(p.sprite&0x1fff)*2)||36;for(let row=0;row<Math.ceil(height/16);row++){const y=(p.y&0xfff0)-16-row*16,c=this.prop('tilePropertiesX',this.tile(sideX,y));if(c===2&&!this.godMode){this.loseLife();return;}if(row===0&&c===1){hitSide=true;break;}}}
     if(hitSide){p.x=oldX;p.vx=0;}
-    if(p.vy<=0){const top=(p.y&0xfff0)-32;const c=this.prop('tilePropertiesMisc',this.tile(p.x,top))&15;if(c===2){this.loseLife();return;}if(c===1&&p.vy!==0){p.y=(p.y&0xfff0)+16;p.vy=0;}this.hitTileBlocks(this.tilePos(p.x,top),false);}
+    if(p.vy<=0){const top=(p.y&0xfff0)-32;const c=this.prop('tilePropertiesMisc',this.tile(p.x,top))&15;if(c===2&&!this.godMode){this.loseLife();return;}if(c===1&&p.vy!==0){p.y=(p.y&0xfff0)+16;p.vy=0;}this.hitTileBlocks(this.tilePos(p.x,top),false);}
     p.grounded=false;p.platformGrip=false;p.speedShift=0;
-    const c=this.floorClass(p.x,p.y);if(c===6){this.loseLife();return;}
+    const floor=this.floorClass(p.x,p.y),c=floor===6&&this.godMode?1:floor;if(c===6){this.loseLife();return;}
     if(c>=1&&c<=5&&p.vy>=0&&!(c===5&&p.downTimer)){
       const surface=this.surface(p.x,p.y);if(p.y>=surface-12&&oldY<=surface+16){this.landPlayer(surface,c>=2&&c<=4?c-1:0);}
     }
     if(!p.grounded&&p.vy>=0){const nextC=this.floorClass(p.x,p.y+16),nextSlope=this.level.tileSlopes[this.tile(p.x,p.y+16)];if(nextC>=1&&nextC<=5&&nextSlope&&!(nextC===5&&p.downTimer)){let sy=this.surface(p.x,p.y+16);if(sy<=p.y+5){this.landPlayer(sy);}}}
-    for(const q of this.platforms){if(!q.active)continue;const bounds=this.spriteBounds(q);if(p.vy>=0&&p.x>bounds.left-3&&p.x<bounds.right+3&&oldY<=bounds.top+8&&p.y>=bounds.top){this.landPlatform(bounds.top);p.x+=q.dx||0;}}
+    for(const q of this.platforms){if(!q.active)continue;const bounds=this.spriteBounds(q);if((p.vy>=0||this.carriedPlatform===q.index)&&p.x>bounds.left-3&&p.x<bounds.right+3&&oldY<=bounds.top+8&&p.y>=bounds.top){const support=this.platformSupport?.index===q.index?this.platformSupport:{y:p.y>bounds.top?bounds.top+1:bounds.top,vy:p.y>bounds.top?1:(q.dy||0)*16};this.landPlatform(support.y,q.index,support.vy);q.raw[6]|=64;if(this.carriedPlatform!==q.index)p.x+=q.dx||0;}}
   }
   attack(action=3){const p=this.player;p.attackAction=action===6||action===7?action:3;p.attackActive=true;p.attackTimer=this.attackDuration(p.attackAction);}
   advanceAttack(){const p=this.player,w=WEAPON[this.weapon];p.attackFrame=true;this.animatePlayer(p.attackAction);this.friction();p.walkHistory=Math.min(255,p.walkHistory+1);p.attackTimer=Math.max(0,p.attackTimer-1);p.attackActive=!(p.marker&0x4000);
@@ -221,7 +222,8 @@ export class World {
       a.x=s16(a.x+sar4(a.vx));a.y=s16(a.y+sar4(a.vy));this.nextAnimation(a);a.sprite|=a.face<0?0x8000:0;
       a.vy=s16(a.vy+(a.mode===1?-16:32));
     }this.projectiles=this.projectiles.filter(a=>a.ttl>0);}
-  toggleGodMode(){this.godMode=!this.godMode;if(this.godMode){this.player.invulnerable=0;if(this.deathTimer){this.deathTimer=0;this.rescuePlayer();}}this.emit('cheat',{enabled:this.godMode});return this.godMode;}
+  toggleGodMode(){this.godMode=!this.godMode;if(this.godMode){this.player.invulnerable=0;if(this.deathTimer){this.deathTimer=0;this.rescuePlayer();}}this.emit('cheat',{code:'IDDQD',enabled:this.godMode});return this.godMode;}
+  toggleSecretHints(){this.secretHints=!this.secretHints;this.emit('cheat',{code:'IDKFA',enabled:this.secretHints});return this.secretHints;}
   rescuePlayer(){Object.assign(this.player,this.checkpoint,{vx:0,vy:0,jumpFrame:0,fallFrames:0,attackActive:false,animationVariant:-1});this.camera.x=clamp(this.player.x-144,0,this.maxCameraX());this.camera.y=clamp(this.player.y-128,0,this.maxCameraY());}
   damage(){const p=this.player;if(this.godMode||p.invulnerable||this.deathTimer||this.transition)return;this.emit('sfx',{index:1});
     p.invulnerable=44;p.attackActive=false;p.attackTimer=0;p.vx=s16(-4*p.vx);p.vy=-128;p.glideMode=0;p.jumpFrame=9;p.animationVariant=-1;
@@ -429,12 +431,8 @@ export class World {
       }
       if(!this.godMode){a.def.flags&=~1;this.damage();}return;
     }}
-  makePlatform(d){const raw=d.raw;const word=p=>raw[p]|raw[p+1]<<8;return {...d,x:d.x,y:d.y,sprite:d.sprite,originX:d.x,originY:d.y,active:true,raw,dx:0,phase:0,mode:raw[14]||0,animation:word(8),min:word(6),max:word(10),speed:s8(raw[12])||1};}
-  updatePlatforms(){for(const p of this.platforms){if(!p.active)continue;const old=p.x;p.phase=u8(p.phase+1);const raw=p.raw;const min=p.min,max=p.max;
-      if(min<4096&&max<4096&&max>min){p.dir??=1;if(p.x>=max)p.dir=-1;if(p.x<=min)p.dir=1;p.x+=p.dir*Math.max(1,Math.abs(p.speed));}
-      else{const sy=s8(raw[13]||0);if(sy)p.y=p.originY+((s8(this.byte(0x6f8c+p.phase))*Math.abs(sy))>>3);}
-      p.dx=p.x-old;}
-  }
+  makePlatform(d){return platforms.makePlatform(d);}
+  updatePlatforms(){platforms.updatePlatforms(this);}
   checkBlocks(){for(const shot of this.projectiles){if(shot.ttl<=0)continue;const tx=shot.x>>4,sy=shot.y-16;for(const b of this.blocks){if(!b.active)continue;const bx=b.pos&255,by=(b.pos>>8)*16;if(Math.abs(bx-tx)<=1&&Math.abs(by-sy)<16){this.consumeAttack(shot);this.hitBlock(b,shot);break;}}}}
   hitTileBlocks(pos,fromAttack){const b=this.blocks.find(b=>b.active&&b.pos===pos);if(b&&fromAttack)this.hitBlock(b);}
   spawnFragments(x,y,sprite,vx,vy,count,{collectible=false}={}){for(let n=0;n<count&&this.effects.filter(e=>e.nativeObject).length<32;n++){
@@ -477,9 +475,9 @@ export class World {
     if(this.input.look){tx+=p.face*16;}
     c.x=clamp(c.x+clamp(tx-c.x,-16,16),0,this.maxCameraX());c.y=clamp(c.y+clamp(ty-c.y,-16,16),0,this.maxCameraY());
   }
-  complete(kind){if(this.transition)return;if(this.levelIndex===9&&this.finalBoss?.hp===0){this.finish('ending');return;}const next=exitDestination(this.levelIndex,kind);const pct=completionPercent(this.brokenBlocks,this.collectedAuthoredFood,this.totalBlocks,this.totalFood);this.transition={type:'complete',next,percent:pct,delay:58,bonus:this.collectedFood};this.transitionTimer=0;this.emit('complete',{next,percent:pct});}
+  complete(kind){if(this.transition)return;const next=exitDestination(this.levelIndex,kind);const pct=completionPercent(this.brokenBlocks,this.collectedAuthoredFood,this.totalBlocks,this.totalFood);this.transition={type:'complete',next,percent:pct,delay:58,bonus:this.collectedFood};this.transitionTimer=0;this.emit('complete',{next,percent:pct});}
   finish(type){if(this.transition)return;this.transition={type,delay:36};this.transitionTimer=0;this.emit(type);}
   advance(){if(!this.transition)return;const t=this.transition;if(t.type==='complete'){if(t.next>=this.assets.game.levels.length){this.transition=null;this.finish('ending');return;}this.score=(this.score+this.foodCounts.reduce((sum,count,index)=>sum+count*(AWARDS[this.byte(0xa371+index)]||0),0))>>>0;this.foodCounts.fill(0);this.loadLevel(t.next);}else this.emit('finish',{type:t.type});}
-  snapshot(){const p=this.player;return {level:this.levelIndex,frame:this.frame,x:p.x,y:p.y,vx:p.vx,vy:p.vy,sprite:p.sprite,grounded:p.grounded,playerState:[p.action,p.animationVariant,p.anim,p.marker||0,p.jumpFrame,p.jumpLock,p.fallFrames,p.lastGroundY,p.attackActive?1:0,p.attackCooldown,p.invulnerable,p.glideMode,p.glideEnergy,p.formAngle,p.runTimer,this.alternate?1:0,this.power,this.presentationTicks,this.godMode?1:0],projectiles:this.projectiles.map(a=>[a.x,a.y,a.vx,a.vy,a.sprite,a.anim||0,a.ttl]),score:this.score,health:this.health,lives:this.lives,actors:this.actors.map(a=>[a.x,a.y,a.sprite,a.hp,a.state]),rng:[this.rng.a,this.rng.b,this.rng.c,this.rng.w,this.rng.secondary],bossState:bosses.snapshot(this),camera:[this.camera.x,this.camera.y],collected:this.items.filter(i=>!i.active).map(i=>i.index),blocks:this.blocks.filter(b=>!b.active).map(b=>b.index),transition:this.transition?.type||null};}
-  stateHash(){const s=this.snapshot();return fnv1a([s.level,s.frame,s.x,s.y,s.vx,s.vy,s.sprite,s.score,s.health,s.lives,...s.rng,...s.bossState,...s.camera,...s.playerState,...s.projectiles.flat(),...s.actors.flat(),...s.collected,...s.blocks]);}
+  snapshot(){const p=this.player;return {level:this.levelIndex,frame:this.frame,x:p.x,y:p.y,vx:p.vx,vy:p.vy,sprite:p.sprite,grounded:p.grounded,playerState:[p.action,p.animationVariant,p.anim,p.marker||0,p.jumpFrame,p.jumpLock,p.fallFrames,p.lastGroundY,p.attackActive?1:0,p.attackCooldown,p.invulnerable,p.glideMode,p.glideEnergy,p.formAngle,p.runTimer,this.alternate?1:0,this.power,this.presentationTicks,this.godMode?1:0,p.platformId??-1],platformState:this.platforms.flatMap(q=>[q.index,q.x,q.y,q.active?1:0,...q.raw.slice(6)]),projectiles:this.projectiles.map(a=>[a.x,a.y,a.vx,a.vy,a.sprite,a.anim||0,a.ttl]),score:this.score,health:this.health,lives:this.lives,actors:this.actors.map(a=>[a.x,a.y,a.sprite,a.hp,a.state]),rng:[this.rng.a,this.rng.b,this.rng.c,this.rng.w,this.rng.secondary],bossState:bosses.snapshot(this),camera:[this.camera.x,this.camera.y],collected:this.items.filter(i=>!i.active).map(i=>i.index),blocks:this.blocks.filter(b=>!b.active).map(b=>b.index),transition:this.transition?.type||null};}
+  stateHash(){const s=this.snapshot();return fnv1a([s.level,s.frame,s.x,s.y,s.vx,s.vy,s.sprite,s.score,s.health,s.lives,...s.rng,...s.bossState,...s.platformState,...s.camera,...s.playerState,...s.projectiles.flat(),...s.actors.flat(),...s.collected,...s.blocks]);}
 }

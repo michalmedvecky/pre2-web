@@ -4,8 +4,7 @@ import {readFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 const root=new URL('../dist/assets/',import.meta.url);
 const game=JSON.parse(await readFile(new URL('game.json',root),'utf8'));
-const source=await readFile(new URL('../dist/js/render.js',import.meta.url),'utf8');
-const {Renderer}=await import(`data:text/javascript;base64,${Buffer.from(source).toString('base64')}`);
+const {Renderer}=await import('../dist/js/render.js');
 const buf=async n=>new Uint8Array(await readFile(new URL(n,root)));
 const a={game,maps:{},tiles:{},footers:{},backgrounds:{},screens:{}};
 for(const [k,n] of Object.entries({spritesPixels:'sprites.idx',union:'union.idx',front:'front.idx',hud:'hud.idx',fonts:'fonts.bin',tables:'tables.bin'}))a[k]=await buf(n);
@@ -22,3 +21,5 @@ test('separate club layer changes playfield pixels and retains original HUD clip
 test('enemy hit flash uses the original white silhouette and preserves transparent pixels',()=>{const r=renderer();r.frame.fill(3);r.sprite(313|0x4000,100,100);const s=game.sprites[313];for(let y=0;y<s.height;y++)for(let x=0;x<s.width;x++){const pixel=a.spritesPixels[s.pixelOffset+y*s.width+x],out=r.frame[(100+s.originY-s.height+y)*320+100-s.originX+x];assert.equal(out,pixel?15:3);}});
 test('world palette override persists while authored base palette remains immutable',()=>{const r=renderer(),l=game.levels[0],base=game.palettes[0].rgb8_scaled.slice(),palette=base.slice();palette[0]=123;const w={level:l,levelIndex:0,map:a.maps[l.id],camera:{x:0,y:0},paletteOverride:palette};r.render(w);assert.equal(r.palette,palette);assert.deepEqual(game.palettes[0].rgb8_scaled,base);r.render(w);assert.equal(r.palette[0],123);});
 test('all five final boss tile poses use distinct original indexed art without touching the HUD',()=>{const r=renderer(),level=game.levels[9],hashes=new Set();for(let pose=0;pose<5;pose++){r.render({level,levelIndex:9,map:a.maps[level.id],camera:{x:0,y:0},finalBoss:{pose},bossStatus:[{x:8,y:170,sprite:309}]});hashes.add(createHash('sha256').update(r.frame).digest('hex'));assert.equal(r.frame[176*320],a.hud[0]);assert.ok(r.frame.every(v=>v<16));}assert.equal(hashes.size,5);});
+
+test('IDKFA draws a reversible overlay in every world while preserving the original HUD and asset maps',()=>{const r=renderer();for(let i=0;i<game.levels.length;i++){const l=game.levels[i],before=a.maps[l.id].slice(),w={level:l,levelIndex:i,map:a.maps[l.id],camera:{x:0,y:0},player:{x:40,y:100,sprite:9},blocks:[{index:0,pos:5*256+3,active:true}],gates:[],items:[],frame:0};r.render(w);const plain=r.frame.slice();w.secretHints=true;r.render(w);assert.ok(r.frame.some((v,n)=>n<176*320&&v!==plain[n]));assert.deepEqual(r.frame.slice(176*320),plain.slice(176*320));assert.deepEqual(a.maps[l.id],before);w.secretHints=false;r.render(w);assert.deepEqual(r.frame,plain);}});
