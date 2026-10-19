@@ -39,6 +39,7 @@ Normal play loads HD textures only when HD is selected. The complete HD set now 
 - [x] Run 179 Node tests, including campaign/secret input replays and new environment tests.
 - [x] Save side-by-side original/HD review images and machine-readable browser/performance results under `review/`.
 - [x] Sample scrolling with IDDQD/IDKFA in local headless Chromium: 657 frames over 5.5s, render-call p95 about 1.2 ms, max 1.5 ms; sampled camera delta at most 2 native pixels per display frame. These CPU-side desktop measurements are not headset/GPU latency guarantees.
+- [x] Publish and verify amd64/arm64 image from successful Actions build39275924158; pin its digest in the Kubernetes manifest.
 - [ ] Future batches: other environments, other enemies/bosses, HUD/menu graphics, and artist refinement of interior tile continuity. These are outside this delivered increment.
 
 ## Visual review
