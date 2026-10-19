@@ -54,6 +54,17 @@ test('unoccupied platforms draw two pixels above their collision origin; ridden 
  r.render({level:l,map:new Uint8Array(256*l.height),camera:{x:0,y:0},platforms:[p]});assert.equal(ys.pop(),98);
  p.raw[6]|=64;r.render({level:l,map:new Uint8Array(256*l.height),camera:{x:0,y:0},platforms:[p]});assert.equal(ys.pop(),100);assert.equal(p.y,100);r.sprite=sprite;
 });
-test('rain XORs the completed playfield and leaves every HUD pixel intact',()=>{
- const r=renderer(),l=game.levels[15],w={level:l,levelIndex:15,map:a.maps[l.id],camera:{x:0,y:0}};r.render(w);const before=r.frame.slice();w.rainPoints=[{x:10,y:10},{x:10,y:10},{x:20,y:20},{x:2,y:176},{x:-1,y:1}];r.render(w);assert.equal(r.frame[10*320+10],before[10*320+10]);assert.equal(r.frame[20*320+20],before[20*320+20]^15);assert.deepEqual(r.frame.slice(176*320),before.slice(176*320));
+test('rain uses VGA OR so overlapping drops stay white and every HUD pixel stays intact',()=>{
+ const r=renderer(),l=game.levels[15],w={level:l,levelIndex:15,map:a.maps[l.id],camera:{x:0,y:0}};r.render(w);const before=r.frame.slice();w.rainPoints=[{x:10,y:10},{x:10,y:10},{x:20,y:20},{x:2,y:176},{x:-1,y:1}];r.render(w);assert.equal(r.frame[10*320+10],15);assert.equal(r.frame[20*320+20],15);assert.deepEqual(r.frame.slice(176*320),before.slice(176*320));
+});
+
+test('native screen shake shifts scenery downward with a black top strip while the HUD stays fixed',()=>{
+ const r=renderer(),l=game.levels[0],w={level:l,map:a.maps[l.id],camera:{x:0,y:608},screenShake:0};r.render(w);const plain=r.frame.slice();w.screenShake=7;r.render(w);
+ assert.ok(r.frame.slice(0,7*320).every(v=>v===0));assert.deepEqual(r.frame.slice(7*320,176*320),plain.slice(0,169*320));assert.deepEqual(r.frame.slice(176*320),plain.slice(176*320));
+});
+test('shake displaces sprites but native foreground and rain remain in screen coordinates',()=>{
+ const r=renderer(),l=game.levels[1],map=new Uint8Array(256*l.height),positions=[],tile=r.tile.bind(r);map[4*256+6]=148;
+ r.sprite=(word,x,y)=>positions.push([word,x,y]);r.tile=(v,x,y,l,front,...rest)=>{if(front)positions.push(['front',x,y]);return tile(v,x,y,l,front,...rest);};
+ r.render({level:l,map,camera:{x:0,y:0},screenShake:7,shakePlayerNudge:3,player:{sprite:9,x:104,y:80},playerWeapon:{sprite:58,x:94,y:70},actors:[{sprite:313,x:200,y:100}],rainPoints:[{x:20,y:20}]});
+ assert.ok(positions.some(v=>v[0]===313&&v[2]===107));assert.ok(positions.some(v=>v[0]===9&&v[2]===90));assert.ok(positions.some(v=>v[0]===58&&v[2]===77));assert.ok(positions.some(v=>v[0]==='front'&&v[2]===64));assert.equal(r.frame[20*320+20],15);
 });

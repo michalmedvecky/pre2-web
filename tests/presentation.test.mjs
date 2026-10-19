@@ -27,3 +27,8 @@ test('recreated boss and rope geometry interpolate; rope pixels remain integer c
  w.bossParts=[{x:208,y:54}];w.ropePoints=[{x:208,y:54}];const v=p.sample(w,.5,1/60);
  assert.equal(v.bossParts[0].x,204);assert.deepEqual(v.ropePoints,[{x:205,y:53}]);
 });
+
+test('shake lift correction interpolates with the player and keeps the weapon attached',()=>{
+ const w=world(),p=new Presentation();w.shakePlayerNudge=3;p.beforeStep(w);w.player.y=104;w.shakePlayerNudge=0;w.playerWeapon={x:110,y:94,sprite:58};
+ const before=JSON.stringify(w),v=p.sample(w,.5,1/120);assert.equal(v.player.y+v.shakePlayerNudge,103.5);assert.equal(v.playerWeapon.y,93.5);assert.equal(JSON.stringify(w),before);
+});

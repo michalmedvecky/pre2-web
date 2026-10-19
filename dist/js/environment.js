@@ -9,9 +9,13 @@ export function initEnvironment(w){
   return {index:d.index,pos:origin,width,height,remaining:travel,trigger:word(r,4),step:0,fill:Uint8Array.from(fill)};
  });
  w.weather=0;w.weatherTime=0;w.weatherPointer=w.word(0x2d3c+w.levelIndex*2);
- // The rain's initial seed depends on earlier menu activity. Keep a reproducible
- // presentation stream; rain must not depend on monitor refresh rate.
- w.rainRng=new Random();w.rainSeeds=new Uint16Array(256);for(let i=0;i<256;i++)w.rainSeeds[i]=(w.rainRng.next()<<8)|w.rainRng.next();w.rainPoints=[];
+ // 0x15468 makes two calls but stores the second byte in BOTH halves (8a e0).
+ // Level entry then resets the gameplay generator at 0x103f3. A prior world
+ // supplies setup history; fresh starts use the original initialized DS seed.
+ const setup=w.environmentSetupRng||new Random(w.byte(0x2ce8),w.byte(0x2ce9),w.byte(0x2cea),w.word(0x2ceb));
+ w.rainSeeds=new Uint16Array(256);for(let i=0;i<256;i++){setup.next();const v=setup.next();w.rainSeeds[i]=v*257;}
+ w.rainPoints=[];w.screenShake=0;w.nextScreenShake=0;w.shakePlayerNudge=0;
+
 }
 export function updateMovingBlocks(w){
  const tile=w.tilePos(w.player.x,w.player.y);
@@ -37,7 +41,20 @@ export function updateWeather(w){
   const seed=w.rainSeeds[i]=u16(w.rainSeeds[i]+79),shift=((seed&255)<<1|((seed&255)>>>7))&3;
   let pos=u16(seed-(w.camera.x>>4))&8191;if(pos>=7000){pos-=7000;w.rainSeeds[i]=pos;}
   const x=pos%40*8+6-shift,y=Math.floor(pos/40);
-  w.rainPoints.push({x,y});if(w.weather-i>half)w.rainPoints.push({x,y:y+1},{x:x-1,y:y+1});
+  w.rainPoints.push({x,y});if(w.weather-i>half)w.rainPoints.push({x,y:y+1},{x:x+1,y:y+1});
  }
- const index=w.rainRng.next();w.rainSeeds[index]=(w.rainRng.next()<<8)|w.rainRng.next();
+ const index=w.rng.next();w.rainSeeds[index]=(w.rng.next()<<8)|w.rng.next();
+}
+
+// 0x15c6a decrements the timer during the player update; 0x14e24 runs
+// after presentation and prepares the displacement for the FOLLOWING frame.
+export function updateScreenShake(w){
+ const p=w.player,n=p.landingShake;if(!n)return;
+ if(n===1){w.nextScreenShake=0;return;}
+ let offset=0;if(w.frame&1){
+  const state=p.action+(w.alternate?32:0);
+  if(state!==5&&state!==32){p.y=s16(p.y-3);w.shakePlayerNudge=3;}
+  p.landingShake=u8(n+1);offset=p.landingShake;
+ }
+ w.nextScreenShake=offset;
 }

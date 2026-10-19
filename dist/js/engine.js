@@ -1,4 +1,4 @@
-import {initEnvironment,updateMovingBlocks,updateWeather} from './environment.js';
+import {initEnvironment,updateMovingBlocks,updateWeather,updateScreenShake} from './environment.js';
 import {tileAnimation} from './tile-animation.js';
 import * as platforms from './platforms.js';
 import * as bosses from './bosses.js';
@@ -29,7 +29,7 @@ export class World {
   loadLevel(index,{restart=false}={}){
     index=clamp(index,0,this.assets.game.levels.length-1);const prior=restart?this.capturePersistence():null;
     this.levelIndex=index;this.level=this.assets.game.levels[index];this.map=this.assets.maps[this.level.id].slice();this.mem=new Uint8Array(65536);this.mem.set(this.assets.tables.subarray(0,65536));this.mem.set(this.assets.footers[this.level.id],0x7e5a);
-    this.rng=new Random(5,0x22,0x86,0xe58d,this.word(0x28bd));this.frame=0;this.transition=null;this.transitionTimer=0;this.deathTimer=0;this.effects=[];this.projectiles=[];this.playerWeapon=null;this.actors=[];this.items=[];this.platforms=[];this.gates=this.level.gates;this.gateCameraFlag=0;this.spawnCursor=0;this.spawnSide=0;this.enemyPowerTimer=0;this.ropePoints=[];
+    this.environmentSetupRng=this.rng?new Random(this.rng.a,this.rng.b,this.rng.c,this.rng.w,this.rng.secondary):null;this.rng=new Random(5,0x22,0x86,0xe58d,this.word(0x28bd));this.frame=0;this.transition=null;this.transitionTimer=0;this.deathTimer=0;this.effects=[];this.projectiles=[];this.playerWeapon=null;this.actors=[];this.items=[];this.platforms=[];this.gates=this.level.gates;this.gateCameraFlag=0;this.gateDownConsumed=false;this.spawnCursor=0;this.spawnSide=0;this.enemyPowerTimer=0;this.ropePoints=[];
     this.inventory=0;this.inventory2=0;this.foodHealth=0;this.health=3;this.power=0;this.weather=0;this.tileAnimationTick=0;this.tileAnimationPhase=0;this.collectedFood=0;this.collectedAuthoredFood=0;this.brokenBlocks=0;this.foodCounts=new Uint8Array(113);this.paletteMode=0;this.paletteTransition=null;this.paletteOverride=null;this.particleRepel=new Uint8Array(20);this.followParticles=Array(20).fill(null);this.collectionFlash=0;this.alternate=false;this.wind=0;this.sceneFlash=0;this.blockCooldown=0;
     this.definitions=this.level.enemies.filter(d=>!d.expert_flag||this.expert).map((d,index)=>({...d,index,active:false,destroyed:false,timer:d.unknown7||0,flags:d.unknown4||0,extra:Uint8Array.from((d.extra_hex||'').match(/../g)||[],x=>parseInt(x,16))}));
     this.items=this.level.items.filter(d=>d.active).map(d=>({...d,sprite:d.sprite,active:true,originalSprite:d.sprite,bob:s8(d.flags||0),baseY:d.y,permanent:false,authored:true}));
@@ -104,14 +104,16 @@ export class World {
   gravity(){const p=this.player,slow=p.glideMode===1;p.vy=Math.min(s16(p.vy+(slow?4:16)),slow?24:192);}
   step(input={}){
     this.presentationTicks=u16(this.presentationTicks+3);this.events=[];this.input=input;this.recorded.push(inputMask(input));if(this.recorded.length>60000)this.recorded.shift();this.frame=u16(this.frame+1);
+    this.screenShake=this.nextScreenShake;this.shakePlayerNudge=0;
+    if(this.gateDownConsumed&&!input.down){this.gateDownConsumed=false;this.player.downTimer=0;}
     if(this.transition){if(++this.transitionTimer>=this.transition.delay)this.emit('transitionReady',{transition:this.transition});return;}
-    if(this.deathTimer){this.updateEffects();this.player.vy+=8;this.player.y+=sar4(this.player.vy);if(--this.deathTimer===0){if(this.lives>0){this.lives--;this.loadLevel(this.levelIndex,{restart:true});}else{this.transition={type:'gameover',delay:1};this.transitionTimer=0;}}return;}
+    if(this.deathTimer){this.updateEffects();updateWeather(this);this.player.vy+=8;this.player.y+=sar4(this.player.vy);if(--this.deathTimer===0){if(this.lives>0){this.lives--;this.loadLevel(this.levelIndex,{restart:true});}else{this.transition={type:'gameover',delay:1};this.transitionTimer=0;}}return;}
     if(this.collectionFlash)this.collectionFlash--;if(this.blockCooldown)this.blockCooldown--;if(this.sceneFlash)this.sceneFlash--;if(this.weaponPower)this.weaponPower--;
     // Original broad update order: actors, effects, player, interactions, world changes, presentation counter.
-    for(const a of this.actors)a.hitFlash=false;this.checkEnemyAttacks();this.checkBlocks();this.updateBosses();this.updateActors();this.spawnActors();this.updatePlatforms();this.updateEffects();this.updateProjectiles();this.stepPlayer(input);if(this.enemyPowerTimer)this.enemyPowerTimer--;this.checkActorDamage();this.checkPickups();this.updateFollowParticles();this.updatePalette();this.checkGates();updateMovingBlocks(this);this.updateTileAnimation();updateWeather(this);this.updateCamera();
+    for(const a of this.actors)a.hitFlash=false;this.checkEnemyAttacks();this.checkBlocks();this.updateBosses();this.updateActors();this.spawnActors();this.updatePlatforms();this.updateEffects();this.updateProjectiles();this.stepPlayer(input);if(this.enemyPowerTimer)this.enemyPowerTimer--;this.checkActorDamage();this.checkPickups();this.updateFollowParticles();this.updatePalette();this.checkGates();updateMovingBlocks(this);this.updateCamera();this.updateTileAnimation();updateWeather(this);
     if(this.levelIndex===14&&this.player.y>(this.level.height+1)*16)this.finish('ending');else if(this.player.y>this.level.height*16+32||this.player.y< -320)this.loseLife();
     for(const i of this.items)if(i.active&&!(this.frame&1)){i.bob=(i.bob||0)+1;if(i.bob>=4)i.bob=-i.bob+1;i.y+=i.bob;}
-    if(this.player.invulnerable)this.player.invulnerable--;if(this.power)this.power--;if(this.player.landingShake)this.player.landingShake--;
+    if(this.player.invulnerable)this.player.invulnerable--;if(this.power)this.power--;updateScreenShake(this);
     const q=Math.floor((this.score>>>0)/25000);while(this.extraLifeQuotient<q){this.extraLifeQuotient++;this.lives=Math.min(99,this.lives+1);this.emit('sfx',{index:4});this.floatText('1UP',this.player.x,this.player.y-38,0xe3);}
   }
   stepPlayer(input){
@@ -158,7 +160,7 @@ export class World {
     if(alternate)this.updateFormSprite(input);else if(!p.attackFrame)this.playerWeapon=null;
     this.syncContactWeapon();
     p.look=!!input.look;
-    for(const field of ['attackCooldown','downTimer','powerTimer'])if(p[field]>0)p[field]--;
+    for(const field of ['attackCooldown','downTimer','powerTimer','landingShake'])if(p[field]>0)p[field]--;
   }
   idlePlayer(input,baseAction=0){const p=this.player;p.runTimer=0;this.applyWind();this.friction();
     // Releasing jump preserves the rising pose; the fall callback selects a new
@@ -467,9 +469,11 @@ export class World {
   }
   breakBlock(b){if(!b.active)return;b.active=false;this.brokenBlocks++;this.map[b.pos]=b.replacement;}
   // 0x1550e: twenty seven-byte gate records at DS:8363; DS:6bdd buffers Down.
-  checkGates(){if(!this.player.downTimer||this.alternate)return;const pos=this.tilePos(this.player.x,this.player.y);for(const g of this.gates){if(!g.active||g.triggerTile!==pos)continue;
+  // Browser passages are instant; consume held Down until release where DOS
+  // blocked interaction during its VGA wipe. Crouch/drop buffering stays active.
+  checkGates(){if(this.gateDownConsumed||!this.player.downTimer||this.alternate)return;const pos=this.tilePos(this.player.x,this.player.y);for(const g of this.gates){if(!g.active||g.triggerTile!==pos)continue;
       const dest=g.destinationTile,camera=g.cameraTile;this.player.x=(dest&255)*16;this.player.y=(dest>>8)*16;this.player.vx=this.player.vy=0;
-      this.camera.x=(camera&255)*16;this.camera.y=(camera>>8)*16;this.gateCameraFlag=g.cameraFlag;this.player.downTimer=0;
+      this.camera.x=(camera&255)*16;this.camera.y=(camera>>8)*16;this.gateCameraFlag=g.cameraFlag;this.player.downTimer=0;this.gateDownConsumed=true;
       this.emit('sfx',{index:3});this.sceneFlash=4;if(this.levelIndex===5)this.activateSpecialBoss();break;
     }}
   initBosses(){bosses.initBosses(this);}
@@ -486,6 +490,6 @@ export class World {
   complete(kind){if(this.transition)return;const next=exitDestination(this.levelIndex,kind);const pct=completionPercent(this.brokenBlocks,this.collectedAuthoredFood,this.totalBlocks,this.totalFood);this.transition={type:'complete',next,percent:pct,delay:58,bonus:this.collectedFood};this.transitionTimer=0;this.emit('complete',{next,percent:pct});}
   finish(type){if(this.transition)return;this.transition={type,delay:36};this.transitionTimer=0;this.emit(type);}
   advance(){if(!this.transition)return;const t=this.transition;if(t.type==='complete'){if(t.next>=this.assets.game.levels.length){this.transition=null;this.finish('ending');return;}this.score=(this.score+this.foodCounts.reduce((sum,count,index)=>sum+count*(AWARDS[this.byte(0xa371+index)]||0),0))>>>0;this.foodCounts.fill(0);this.loadLevel(t.next);}else this.emit('finish',{type:t.type});}
-  snapshot(){const p=this.player;return {level:this.levelIndex,frame:this.frame,x:p.x,y:p.y,vx:p.vx,vy:p.vy,sprite:p.sprite,grounded:p.grounded,playerState:[p.action,p.animationVariant,p.anim,p.marker||0,p.jumpFrame,p.jumpLock,p.fallFrames,p.lastGroundY,p.attackActive?1:0,p.attackCooldown,p.invulnerable,p.glideMode,p.glideEnergy,p.formAngle,p.runTimer,this.alternate?1:0,this.power,this.presentationTicks,this.godMode?1:0,p.platformId??-1],environmentState:[this.weatherTime,this.weather,this.weatherPointer,...this.movingBlocks.flatMap(b=>[b.index,b.pos,b.trigger,b.remaining])],platformState:this.platforms.flatMap(q=>[q.index,q.x,q.y,q.active?1:0,...q.raw.slice(6)]),projectiles:this.projectiles.map(a=>[a.x,a.y,a.vx,a.vy,a.sprite,a.anim||0,a.ttl]),score:this.score,health:this.health,lives:this.lives,actors:this.actors.map(a=>[a.x,a.y,a.sprite,a.hp,a.state]),rng:[this.rng.a,this.rng.b,this.rng.c,this.rng.w,this.rng.secondary],bossState:bosses.snapshot(this),camera:[this.camera.x,this.camera.y],collected:this.items.filter(i=>!i.active).map(i=>i.index),blocks:this.blocks.filter(b=>!b.active).map(b=>b.index),transition:this.transition?.type||null};}
+  snapshot(){const p=this.player;return {level:this.levelIndex,frame:this.frame,x:p.x,y:p.y,vx:p.vx,vy:p.vy,sprite:p.sprite,grounded:p.grounded,playerState:[p.action,p.animationVariant,p.anim,p.marker||0,p.jumpFrame,p.jumpLock,p.fallFrames,p.lastGroundY,p.attackActive?1:0,p.attackCooldown,p.invulnerable,p.glideMode,p.glideEnergy,p.formAngle,p.runTimer,this.alternate?1:0,this.power,this.presentationTicks,this.godMode?1:0,p.platformId??-1],environmentState:[this.weatherTime,this.weather,this.weatherPointer,this.screenShake,this.nextScreenShake,this.shakePlayerNudge,this.player.landingShake,+this.gateDownConsumed,...this.rainSeeds,...this.movingBlocks.flatMap(b=>[b.index,b.pos,b.trigger,b.remaining])],platformState:this.platforms.flatMap(q=>[q.index,q.x,q.y,q.active?1:0,...q.raw.slice(6)]),projectiles:this.projectiles.map(a=>[a.x,a.y,a.vx,a.vy,a.sprite,a.anim||0,a.ttl]),score:this.score,health:this.health,lives:this.lives,actors:this.actors.map(a=>[a.x,a.y,a.sprite,a.hp,a.state]),rng:[this.rng.a,this.rng.b,this.rng.c,this.rng.w,this.rng.secondary],bossState:bosses.snapshot(this),camera:[this.camera.x,this.camera.y],collected:this.items.filter(i=>!i.active).map(i=>i.index),blocks:this.blocks.filter(b=>!b.active).map(b=>b.index),transition:this.transition?.type||null};}
   stateHash(){const s=this.snapshot();return fnv1a([s.level,s.frame,s.x,s.y,s.vx,s.vy,s.sprite,s.score,s.health,s.lives,...s.rng,...s.bossState,...s.environmentState,...s.platformState,...s.camera,...s.playerState,...s.projectiles.flat(),...s.actors.flat(),...s.collected,...s.blocks]);}
 }

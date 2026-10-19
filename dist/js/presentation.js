@@ -6,7 +6,7 @@ export class Presentation {
  reset(w){this.world=w;this.map=w.map;this.player=w.player;this.previous=null;this.camera={...w.camera};}
  beforeStep(w){
   if(this.world!==w||this.map!==w.map||this.player!==w.player)this.reset(w);
-  this.previous={player:position(w.player),camera:{...w.camera},sceneFlash:w.sceneFlash,objects:new Map(),indexed:{}};
+  this.previous={player:position(w.player),camera:{...w.camera},sceneFlash:w.sceneFlash,shakePlayerNudge:w.shakePlayerNudge||0,objects:new Map(),indexed:{}};
   for(const layer of layers){const list=w[layer]||[];this.previous.indexed[layer]=list.map(position);for(const o of list)this.previous.objects.set(o,position(o));}
  }
  afterStep(w){
@@ -25,7 +25,8 @@ export class Presentation {
   // Exponential decay gives the same tracking at 60, 120 and 144Hz.
   const weight=1-Math.exp(-Math.max(0,dt)/.065);
   for(const axis of ['x','y'])this.camera[axis]+=((prev?mix(prev.camera[axis],w.camera[axis],t):w.camera[axis])-this.camera[axis])*weight;
-  const view={...w,player,camera:{x:Math.round(this.camera.x),y:Math.round(this.camera.y)}};
+  const nudge=prev?mix(prev.shakePlayerNudge,w.shakePlayerNudge||0,t):(w.shakePlayerNudge||0);
+  const view={...w,player,shakePlayerNudge:nudge,camera:{x:Math.round(this.camera.x),y:Math.round(this.camera.y)}};
   for(const layer of layers)view[layer]=(w[layer]||[]).map((o,i)=>{
    const fallback=(layer==='bossParts'||layer==='ropePoints')&&prev?.indexed[layer].length===w[layer].length?prev.indexed[layer][i]:null;
    const p=prev?.objects.get(o)||fallback;
@@ -33,7 +34,7 @@ export class Presentation {
    return layer==='ropePoints'?{...v,x:Math.round(v.x),y:Math.round(v.y)}:v;
   });
   // Weapon frames have authored offsets; keep the current one attached to its owner.
-  if(w.playerWeapon)view.playerWeapon={...w.playerWeapon,x:w.playerWeapon.x+player.x-w.player.x,y:w.playerWeapon.y+player.y-w.player.y};
+  if(w.playerWeapon)view.playerWeapon={...w.playerWeapon,x:w.playerWeapon.x+player.x-w.player.x,y:w.playerWeapon.y+player.y-w.player.y+nudge-(w.shakePlayerNudge||0)};
   return view;
  }
 }

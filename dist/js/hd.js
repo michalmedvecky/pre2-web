@@ -30,7 +30,8 @@ export class HDCompositor {
  }
  atlas(record,x,y,clip=176){if(!record)return false;const image=this.pack.images.get(record.atlas),scale=this.scale;this.clipped(clip,c=>{c.imageSmoothingEnabled=true;c.drawImage(image,...record.rect,x*scale,y*scale,record.width*scale,record.height*scale);});return true;}
  tile(level,bank,id,x,y){return this.atlas(this.pack.manifest.tiles?.[level+':'+bank+':'+id],Math.round(x),Math.round(y));}
- background(level,name){return this.atlas(this.pack.manifest.backgrounds?.[level+':'+name],0,0);}
+ background(level,name,shift=0){return this.atlas(this.pack.manifest.backgrounds?.[level+':'+name],0,shift);}
+ clearTop(height){this.ctx.fillStyle=this.color(0);this.ctx.fillRect(0,0,this.canvas.width,Math.min(176,height)*this.scale);}
  terrain(assets,level,map,cx,cy,animation){
   if(level.id!=='1')return false;
   const size=64,halo=16,width=size+halo*2,columns=width/16,keys=new Set();
