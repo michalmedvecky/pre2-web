@@ -27,7 +27,9 @@ spec:
           type: RuntimeDefault
       containers:
         - name: game
-          image: registry.example.com/games/prehistorik:1.0.0
+          # Successful build: commit 36a596335050bd9e38e6f8f1e5493027556799fd
+          # https://github.com/michalmedvecky/pre2-web/actions/runs/39238652602
+          image: ghcr.io/michalmedvecky/pre2-web@sha256:c53dff47809dae2915ae376e0488be2d350934d36eea0a4950f5ebee4ad5aa16
           ports:
             - name: http
               containerPort: 8080

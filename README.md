@@ -46,8 +46,8 @@ Set values for this deployment (replace every example):
 ```sh
 export KUBE_CONTEXT='your-cluster-context'
 export IMAGE_REPOSITORY='ghcr.io/michalmedvecky/pre2-web'
-export RELEASE="sha-$(git rev-parse HEAD)"
-export IMAGE="$IMAGE_REPOSITORY:$RELEASE"
+# Default to the verified multi-platform digest committed in the manifest.
+export IMAGE="$(awk '$1 == "image:" { print $2; exit }' deploy/kubernetes.yaml)"
 kubectl --context "$KUBE_CONTEXT" cluster-info
 kubectl --context "$KUBE_CONTEXT" get nodes -L kubernetes.io/arch
 npm test
@@ -74,7 +74,7 @@ The workflow authenticates using its automatic `GITHUB_TOKEN` with `contents: re
 export IMAGE='ghcr.io/michalmedvecky/pre2-web@sha256:REPLACE_WITH_PUBLISHED_DIGEST'
 ```
 
-Alternatively, keep the `sha-$(git rev-parse HEAD)` image selected in step 1 if that exact commit was successfully published. Kubernetes selects the node's architecture from the image index. Tags are version identifiers, not enforced immutable registry policy; a digest is the authoritative immutable reference.
+By default, step 1 reads the verified multi-platform digest already pinned in `deploy/kubernetes.yaml`, from successful build [39238652602](https://github.com/michalmedvecky/pre2-web/actions/runs/39238652602) of commit `36a596335050bd9e38e6f8f1e5493027556799fd`. Keep that value to deploy the checked-in release, or override `IMAGE` with another successful build’s digest or full-commit tag. Kubernetes selects the node's architecture from the image index. Tags are version identifiers, not enforced immutable registry policy; a digest is the authoritative immutable reference.
 
 #### GHCR pull access
 
@@ -104,13 +104,13 @@ Open http://localhost:8080 and verify the title, new game, movement, attack, pau
 
 ### 3. Render and apply the workload
 
-The tracked manifest is a template with a deliberately invalid example image. Render a temporary deployment without editing it:
+The tracked manifest pins a verified GHCR image digest supporting both architectures. The commands below preserve that default or render the explicit `IMAGE` override selected above:
 
 ```sh
 kubectl --context "$KUBE_CONTEXT" create namespace prehistorik --dry-run=client -o yaml | \
   kubectl --context "$KUBE_CONTEXT" apply -f -
 MANIFEST="$(mktemp)"
-sed "s|registry.example.com/games/prehistorik:1.0.0|$IMAGE|g" \
+sed -E "s|^([[:space:]]*image:).*|\1 $IMAGE|" \
   deploy/kubernetes.yaml > "$MANIFEST"
 
 kubectl --context "$KUBE_CONTEXT" apply --dry-run=server -f "$MANIFEST"
