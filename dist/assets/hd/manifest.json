@@ -369,6 +369,30 @@
       "height": 128,
       "sha256": "924e2d7778283801b6d3fe36314be0daf5b0830f82af7f4f925a6e126ec0494a",
       "kind": "world-material"
+    },
+    {
+      "id": "v9-column",
+      "file": "v9-column.png",
+      "width": 192,
+      "height": 256,
+      "sha256": "e62c387e52cdeb07ebd8cdd6c7dad3407edce04a191905b79dcb81305d76df07",
+      "kind": "world-decor"
+    },
+    {
+      "id": "v9-spikes",
+      "file": "v9-spikes.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "78ad3cca0878e2d9e267b139da719f8aa9d16a57172b37558fe6d01f85b76d39",
+      "kind": "world-decor"
+    },
+    {
+      "id": "v9-plants",
+      "file": "v9-plants.png",
+      "width": 768,
+      "height": 512,
+      "sha256": "699c759ed0d302a610b4802242610b86c3553f5ef23413716132b38b33607a30",
+      "kind": "world-decor"
     }
   ],
   "sprites": {
@@ -10899,6 +10923,15 @@
         "dist/assets/union.idx": "c59810d54d3dab5fbe9c820003b89937bd3872ea792c4ac2461961ddc8e8f09a",
         "dist/assets/tiles-1.idx": "3eae9d31c984600bf665645ffbc9ba6432c365603e46eac40245a8e5af6a4146"
       }
+    },
+    "transparentDecorV9": {
+      "level": "1",
+      "sourceHashes": {
+        "dist/assets/game.json": "36e0bf5e4b9348e25093402e1d814ff448662aa661146fa8cbb9260001973fcd",
+        "dist/assets/level-1.map": "df435eb287a0bd3fc8f2a592faa723065c5552157e0e5da909061ef4c1d51b64",
+        "dist/assets/union.idx": "c59810d54d3dab5fbe9c820003b89937bd3872ea792c4ac2461961ddc8e8f09a",
+        "dist/assets/tiles-1.idx": "3eae9d31c984600bf665645ffbc9ba6432c365603e46eac40245a8e5af6a4146"
+      }
     }
   },
   "paintTiles": {
@@ -14615,6 +14648,96 @@
       "level": "1",
       "sampling": "world-periodic",
       "originY": 0
+    }
+  },
+  "worldDecor": {
+    "column": {
+      "atlas": "v9-column",
+      "rect": [
+        0,
+        0,
+        192,
+        256
+      ],
+      "width": 48,
+      "height": 64
+    },
+    "spikes": {
+      "atlas": "v9-spikes",
+      "rect": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "width": 16,
+      "height": 16
+    },
+    "plant-tall-0": {
+      "atlas": "v9-plants",
+      "rect": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "width": 32,
+      "height": 32
+    },
+    "plant-tall-1": {
+      "atlas": "v9-plants",
+      "rect": [
+        256,
+        0,
+        128,
+        128
+      ],
+      "width": 32,
+      "height": 32
+    },
+    "plant-tall-2": {
+      "atlas": "v9-plants",
+      "rect": [
+        512,
+        0,
+        128,
+        128
+      ],
+      "width": 32,
+      "height": 32
+    },
+    "plant-low-0": {
+      "atlas": "v9-plants",
+      "rect": [
+        0,
+        256,
+        192,
+        96
+      ],
+      "width": 48,
+      "height": 24
+    },
+    "plant-low-1": {
+      "atlas": "v9-plants",
+      "rect": [
+        256,
+        256,
+        192,
+        96
+      ],
+      "width": 48,
+      "height": 24
+    },
+    "plant-low-2": {
+      "atlas": "v9-plants",
+      "rect": [
+        512,
+        256,
+        192,
+        96
+      ],
+      "width": 48,
+      "height": 24
     }
   }
 }

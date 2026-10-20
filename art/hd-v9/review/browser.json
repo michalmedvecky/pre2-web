@@ -1,0 +1,84 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "scene": "start",
+      "before": {
+        "state": "ea154e6f",
+        "native": 1487416822,
+        "hd": 1636012468
+      },
+      "after": {
+        "state": "ea154e6f",
+        "native": 1487416822,
+        "hd": 2635723603
+      }
+    },
+    {
+      "scene": "column",
+      "before": {
+        "state": "a29387ea",
+        "native": 3528850427,
+        "hd": 2145166007
+      },
+      "after": {
+        "state": "a29387ea",
+        "native": 3528850427,
+        "hd": 1575719207
+      }
+    },
+    {
+      "scene": "spikes",
+      "before": {
+        "state": "9e356b65",
+        "native": 34624237,
+        "hd": 3086598909
+      },
+      "after": {
+        "state": "9e356b65",
+        "native": 34624237,
+        "hd": 3594108576
+      }
+    }
+  ],
+  "coverage": {
+    "objects": [
+      {
+        "kind": "column",
+        "x": 3632,
+        "y": 528,
+        "width": 48,
+        "height": 64
+      },
+      {
+        "kind": "spikes",
+        "x": 3920,
+        "y": 560,
+        "width": 16,
+        "height": 16
+      },
+      {
+        "kind": "column",
+        "x": 576,
+        "y": 624,
+        "width": 48,
+        "height": 64
+      },
+      {
+        "kind": "sign",
+        "x": 96,
+        "y": 640,
+        "width": 48,
+        "height": 32
+      },
+      {
+        "kind": "spikes",
+        "x": 2320,
+        "y": 720,
+        "width": 16,
+        "height": 16
+      }
+    ],
+    "plants": 56
+  }
+}

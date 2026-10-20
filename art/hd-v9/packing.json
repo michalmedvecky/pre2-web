@@ -1,0 +1,90 @@
+[
+  {
+    "id": "column",
+    "rawBounds": [
+      49,
+      8,
+      980,
+      1427
+    ],
+    "source": "column",
+    "rawSHA256": "0b12c5cc7ecc909b3afc7d8eb6bae6c6ed08759be51bfd8d7abb40ba7b4f58b1"
+  },
+  {
+    "id": "spikes",
+    "rawBounds": [
+      214,
+      99,
+      854,
+      1074
+    ],
+    "source": "spikes",
+    "rawSHA256": "9ba02efa41161d744b311dc653616de611c6a40bc51689ead7d5787e15336f3a"
+  },
+  {
+    "id": "plant-tall-0",
+    "rawBounds": [
+      37,
+      154,
+      455,
+      446
+    ],
+    "source": "plants",
+    "rawSHA256": "2c8daf2e06e6f36830a3f241605bf88c523e6053e72ae4bf12e9603799c3a4d5"
+  },
+  {
+    "id": "plant-tall-1",
+    "rawBounds": [
+      544,
+      185,
+      435,
+      415
+    ],
+    "source": "plants",
+    "rawSHA256": "2c8daf2e06e6f36830a3f241605bf88c523e6053e72ae4bf12e9603799c3a4d5"
+  },
+  {
+    "id": "plant-tall-2",
+    "rawBounds": [
+      1050,
+      189,
+      447,
+      412
+    ],
+    "source": "plants",
+    "rawSHA256": "2c8daf2e06e6f36830a3f241605bf88c523e6053e72ae4bf12e9603799c3a4d5"
+  },
+  {
+    "id": "plant-low-0",
+    "rawBounds": [
+      35,
+      706,
+      468,
+      237
+    ],
+    "source": "plants",
+    "rawSHA256": "2c8daf2e06e6f36830a3f241605bf88c523e6053e72ae4bf12e9603799c3a4d5"
+  },
+  {
+    "id": "plant-low-1",
+    "rawBounds": [
+      534,
+      703,
+      469,
+      245
+    ],
+    "source": "plants",
+    "rawSHA256": "2c8daf2e06e6f36830a3f241605bf88c523e6053e72ae4bf12e9603799c3a4d5"
+  },
+  {
+    "id": "plant-low-2",
+    "rawBounds": [
+      1039,
+      711,
+      463,
+      237
+    ],
+    "source": "plants",
+    "rawSHA256": "2c8daf2e06e6f36830a3f241605bf88c523e6053e72ae4bf12e9603799c3a4d5"
+  }
+]

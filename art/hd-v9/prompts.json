@@ -1,0 +1,29 @@
+[
+  {
+    "name": "column",
+    "transparent_background": true,
+    "referenced_image_paths": [
+      "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v9/references/column.png",
+      "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v1/raw/hero-00-15.png"
+    ],
+    "prompt": "Create one complete isolated HD 2D platform game stone totem column, faithful silhouette and arrangement to first reference. First reference is the original DOS object, second is ONLY cel-shaded linework/style reference, do not draw characters. Tall rounded narrow terracotta/ivory carved stone pillar, big curled fossil/face upper right, geometric curled carvings left, sparse small green leaves, planted at flat bottom. Match 3:4 width:height object proportions. Crisp confident dark ink outlines, warm cream highlights, orange rock shadows, expressive hand-painted cartoon style. The entire column must be ONE continuous connected drawing, no tile grid, no cut lines. Preserve irregular rounded top and outer silhouette. TRUE TRANSPARENT BACKGROUND around object and its corners; no black rectangle, wall, ground, cast shadow, text or border. Keep all details fully inside image with transparent margin. Shadows INSIDE pillar stay dark and opaque. Single object only."
+  },
+  {
+    "name": "spikes",
+    "transparent_background": true,
+    "referenced_image_paths": [
+      "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v9/references/spikes.png",
+      "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v1/raw/hero-00-15.png"
+    ],
+    "prompt": "Draw one isolated tiny game hazard as a high detail crisp cartoon sprite: exactly THREE brown wooden pointed stakes, arranged as original first reference, middle tall and side stakes shorter, tightly grouped, flat bottom. Use second reference only for crisp dark ink outlines and warm cel-shading, no characters. Stakes width:height about 1:1, sharp silhouettes, warm orange wood facets and grain. Whole stakes visible, no cropping. TRUE TRANSPARENT BACKGROUND including all corners and between stake tips. No rock wall, ground, shadow outside object, grid, text or frame. A single complete object with small transparent margin."
+  },
+  {
+    "name": "plants",
+    "transparent_background": true,
+    "referenced_image_paths": [
+      "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v9/references/plants.png",
+      "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v1/raw/hero-00-15.png"
+    ],
+    "prompt": "Create transparent sprite sheet of SIX complete isolated leafy bushes for a 2D cartoon prehistoric platform game. Reference one is original plant arrangement, reference two is only crisp ink/celshading style, do NOT draw rocks or characters. Layout EXACTLY 3 columns x 2 rows equally spaced cells. TOP ROW: same tall broadleaf green bush, three gentle breeze animation poses (neutral / leaning slightly left / slightly right), identical scale and stem ground anchor in every cell. BOTTOM ROW: same low wide green bush, three corresponding breeze poses. Tall bush width:height near1:1; low bush width:height near1.6:1. Lush glossy vivid emerald green broad pointed leaves, dark ink outlines, deep green shadows, bright yellow green highlights. Each bush complete with rounded irregular outer silhouette, all leaf tips intact. Generous TRANSPARENT gutters and outer padding so NO leaf touches any cell boundary, no cropped edges. TRUE TRANSPARENT background between leaves and outside bushes, NO black/grey/brown backdrop. No grass/soil, rock, letters, grid, frames or drop shadows. Six bushes total, coherent leaves and branch structure across the three poses; tiny organic motion only."
+  }
+]
