@@ -1,0 +1,173 @@
+{
+  "tracks": [
+    {
+      "name": "BOULA",
+      "file": "dist/assets/music/BOULA.mod",
+      "sha256": "d5e20e0f7384934fc11ff2fd3a7dbb929cf65b96aa23cb9fe00d11f00841bbe4",
+      "bytes": 33706,
+      "orders": 10,
+      "patterns": 10,
+      "nonemptyInstruments": 8,
+      "sampleBytes": 22382,
+      "stages": []
+    },
+    {
+      "name": "BRAVO",
+      "file": "dist/assets/music/BRAVO.mod",
+      "sha256": "026f1e9fc3eca3d7e8c6466da0d6cdf887af19cb06188bd046c3d7facd5f270b",
+      "bytes": 33548,
+      "orders": 6,
+      "patterns": 6,
+      "nonemptyInstruments": 6,
+      "sampleBytes": 26320,
+      "stages": []
+    },
+    {
+      "name": "CARTE",
+      "file": "dist/assets/music/CARTE.mod",
+      "sha256": "44adcbba77c85bbb1d2b61b83e6575cb6d5c8bbdb52be2be664b51e06fafd3cb",
+      "bytes": 6664,
+      "orders": 2,
+      "patterns": 2,
+      "nonemptyInstruments": 1,
+      "sampleBytes": 3532,
+      "stages": []
+    },
+    {
+      "name": "CODE",
+      "file": "dist/assets/music/CODE.mod",
+      "sha256": "7fd085d161c20e8a1bed937e84475fe13d226502de98258475755e96915ac4fd",
+      "bytes": 8012,
+      "orders": 3,
+      "patterns": 3,
+      "nonemptyInstruments": 1,
+      "sampleBytes": 3856,
+      "stages": []
+    },
+    {
+      "name": "FINAL",
+      "file": "dist/assets/music/FINAL.mod",
+      "sha256": "6f330e89f9bf5d9cac834484eaa1cdcec31b773a68349e1ae44859a8f09e7232",
+      "bytes": 55516,
+      "orders": 22,
+      "patterns": 22,
+      "nonemptyInstruments": 9,
+      "sampleBytes": 31904,
+      "stages": [
+        "F"
+      ]
+    },
+    {
+      "name": "GLACE",
+      "file": "dist/assets/music/GLACE.mod",
+      "sha256": "d2b475d215694241375301b2e5c9d56173a8075c009afc9d52185648d9470471",
+      "bytes": 43228,
+      "orders": 17,
+      "patterns": 13,
+      "nonemptyInstruments": 6,
+      "sampleBytes": 28832,
+      "stages": [
+        "7",
+        "8",
+        "G"
+      ]
+    },
+    {
+      "name": "KOOL",
+      "file": "dist/assets/music/KOOL.mod",
+      "sha256": "c60a01aef08cd771d9a1b14a02ac311a269edc0beb1411db355cbe44ad757320",
+      "bytes": 43580,
+      "orders": 15,
+      "patterns": 13,
+      "nonemptyInstruments": 6,
+      "sampleBytes": 29184,
+      "stages": [
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    {
+      "name": "MINES",
+      "file": "dist/assets/music/MINES.mod",
+      "sha256": "6319bf3c055b832b5d825dd5b231701ba51d6201f8767a62c80b54c5387274ab",
+      "bytes": 38764,
+      "orders": 13,
+      "patterns": 13,
+      "nonemptyInstruments": 8,
+      "sampleBytes": 24368,
+      "stages": [
+        "1",
+        "2",
+        "E"
+      ]
+    },
+    {
+      "name": "MONSTER",
+      "file": "dist/assets/music/MONSTER.mod",
+      "sha256": "3b74d9a611670321ca02884369c32a2c1baf2553bd6e9aaf8665191745f80f65",
+      "bytes": 38404,
+      "orders": 10,
+      "patterns": 10,
+      "nonemptyInstruments": 6,
+      "sampleBytes": 27080,
+      "stages": [
+        "6",
+        "A"
+      ]
+    },
+    {
+      "name": "MYSTERY",
+      "file": "dist/assets/music/MYSTERY.mod",
+      "sha256": "051b340dab37a73cd8a781f26613adfabb9c63037fd107898933fdaffd70f392",
+      "bytes": 47414,
+      "orders": 13,
+      "patterns": 16,
+      "nonemptyInstruments": 9,
+      "sampleBytes": 29946,
+      "stages": [
+        "9"
+      ]
+    },
+    {
+      "name": "PRES",
+      "file": "dist/assets/music/PRES.mod",
+      "sha256": "fa61617a7a1499768ae12057901b39fb2766bdb810b43c33fc9742103a9e4ca8",
+      "bytes": 48580,
+      "orders": 13,
+      "patterns": 12,
+      "nonemptyInstruments": 7,
+      "sampleBytes": 35208,
+      "stages": [
+        "3",
+        "4",
+        "5"
+      ]
+    },
+    {
+      "name": "PRESENTA",
+      "file": "dist/assets/music/PRESENTA.mod",
+      "sha256": "ec29029b0be6841d66fed082dc16af345588b2cdd05fd7b2c23c1473fdf01e47",
+      "bytes": 66528,
+      "orders": 13,
+      "patterns": 14,
+      "nonemptyInstruments": 14,
+      "sampleBytes": 51108,
+      "stages": []
+    }
+  ],
+  "reference": {
+    "file": "input/PRES-original-reference.wav",
+    "seconds": 24,
+    "sampleRate": 44100,
+    "sourceMixerRate": 8403.361344537816,
+    "channels": 1,
+    "description": "Original mixer preview with linear output resampling and 20Hz DC removal. Not AI-remastered; no new spectral detail."
+  },
+  "capability": {
+    "nativeAIMusicTool": false,
+    "externalCandidate": "Runway",
+    "connected": false,
+    "musicChanged": false
+  }
+}

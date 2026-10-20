@@ -45,3 +45,12 @@ body.level-map-open{overflow:hidden}
 
 @media(any-pointer:coarse) and (orientation:portrait) and (max-width:360px){.touch-enabled.immersive .thumb-pad,.touch-enabled:fullscreen .thumb-pad{width:130px}.touch-enabled.immersive .gesture-hint,.touch-enabled:fullscreen .gesture-hint{max-width:145px}}
 @media(any-pointer:coarse) and (orientation:portrait){.touch-enabled .screen-toast{top:156px;pointer-events:none}}
+
+/* Full-width landscape play on phones: retain the whole frame, stretch to the
+   display aspect, and float translucent controls above it rather than gutters. */
+@media(any-pointer:coarse) and (orientation:landscape){
+ .touch-enabled.immersive #game,.touch-enabled:fullscreen #game{width:100vw;height:100dvh;max-height:none;object-fit:fill}
+ .touch-enabled.immersive .thumb-pad,.touch-enabled:fullscreen .thumb-pad{width:150px;min-width:0;height:82px;bottom:calc(12dvh + max(8px,env(safe-area-inset-bottom)));background:#16200d55;border-color:#d9c39066;box-shadow:none}
+ .touch-enabled.immersive .gesture-hint,.touch-enabled:fullscreen .gesture-hint{display:none}
+ .touch-hud button{background:#18241066;border-color:#a9b78b66}
+}

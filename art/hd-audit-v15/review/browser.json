@@ -1,0 +1,818 @@
+{
+  "ok": true,
+  "stages": [
+    {
+      "id": "1",
+      "samples": [
+        {
+          "name": "start",
+          "x": 0,
+          "y": 608,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x0.25",
+          "x": 944,
+          "y": 608,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x0.5",
+          "x": 1888,
+          "y": 608,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x0.75",
+          "x": 2832,
+          "y": 608,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x1",
+          "x": 3776,
+          "y": 582,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "passage",
+          "x": 1024,
+          "y": 576,
+          "nativeParity": true,
+          "simulationParity": true
+        }
+      ],
+      "liveNativeTileFallbackCalls": {}
+    },
+    {
+      "id": "2",
+      "samples": [
+        {
+          "name": "start",
+          "x": 0,
+          "y": 1488,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x0.25",
+          "x": 432,
+          "y": 1488,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x0.5",
+          "x": 864,
+          "y": 1488,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x0.75",
+          "x": 1296,
+          "y": 1488,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x1",
+          "x": 1728,
+          "y": 1488,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "passage",
+          "x": 1648,
+          "y": 1392,
+          "nativeParity": true,
+          "simulationParity": true
+        }
+      ],
+      "liveNativeTileFallbackCalls": {
+        "union": 1047,
+        "local": 81
+      }
+    },
+    {
+      "id": "3",
+      "samples": [
+        {
+          "name": "start",
+          "x": 0,
+          "y": 608,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x0.25",
+          "x": 944,
+          "y": 608,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x0.5",
+          "x": 1888,
+          "y": 608,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x0.75",
+          "x": 2832,
+          "y": 608,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x1",
+          "x": 3776,
+          "y": 608,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "passage",
+          "x": 1392,
+          "y": 32,
+          "nativeParity": true,
+          "simulationParity": true
+        }
+      ],
+      "liveNativeTileFallbackCalls": {
+        "union": 826,
+        "local": 262,
+        "front": 154
+      }
+    },
+    {
+      "id": "4",
+      "samples": [
+        {
+          "name": "start",
+          "x": 0,
+          "y": 544,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x0.25",
+          "x": 944,
+          "y": 544,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x0.5",
+          "x": 1888,
+          "y": 544,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x0.75",
+          "x": 2832,
+          "y": 544,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x1",
+          "x": 3776,
+          "y": 544,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "upper/deeper",
+          "x": 1888,
+          "y": 272,
+          "nativeParity": true,
+          "simulationParity": true
+        }
+      ],
+      "liveNativeTileFallbackCalls": {
+        "local": 831,
+        "union": 121
+      }
+    },
+    {
+      "id": "5",
+      "samples": [
+        {
+          "name": "start",
+          "x": 0,
+          "y": 608,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x0.25",
+          "x": 944,
+          "y": 614,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x0.5",
+          "x": 1888,
+          "y": 614,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x0.75",
+          "x": 2832,
+          "y": 614,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x1",
+          "x": 3776,
+          "y": 614,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "passage",
+          "x": 496,
+          "y": 1616,
+          "nativeParity": true,
+          "simulationParity": true
+        }
+      ],
+      "liveNativeTileFallbackCalls": {
+        "local": 896,
+        "union": 251
+      }
+    },
+    {
+      "id": "6",
+      "samples": [
+        {
+          "name": "start",
+          "x": 0,
+          "y": 1808,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x0.25",
+          "x": 184,
+          "y": 1814,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x0.5",
+          "x": 368,
+          "y": 1814,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x0.75",
+          "x": 552,
+          "y": 1872,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x1",
+          "x": 736,
+          "y": 1830,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "passage",
+          "x": 560,
+          "y": 1824,
+          "nativeParity": true,
+          "simulationParity": true
+        }
+      ],
+      "liveNativeTileFallbackCalls": {
+        "union": 411,
+        "local": 443
+      }
+    },
+    {
+      "id": "7",
+      "samples": [
+        {
+          "name": "start",
+          "x": 0,
+          "y": 1872,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x0.25",
+          "x": 944,
+          "y": 1872,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x0.5",
+          "x": 1888,
+          "y": 1872,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x0.75",
+          "x": 2832,
+          "y": 1872,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x1",
+          "x": 3776,
+          "y": 1872,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "passage",
+          "x": 1024,
+          "y": 576,
+          "nativeParity": true,
+          "simulationParity": true
+        }
+      ],
+      "liveNativeTileFallbackCalls": {
+        "union": 1228,
+        "local": 5
+      }
+    },
+    {
+      "id": "8",
+      "samples": [
+        {
+          "name": "start",
+          "x": 1696,
+          "y": 608,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x0.25",
+          "x": 944,
+          "y": 614,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x0.5",
+          "x": 1888,
+          "y": 598,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x0.75",
+          "x": 2832,
+          "y": 614,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x1",
+          "x": 3776,
+          "y": 614,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "passage",
+          "x": 1680,
+          "y": 1040,
+          "nativeParity": true,
+          "simulationParity": true
+        }
+      ],
+      "liveNativeTileFallbackCalls": {
+        "local": 1095,
+        "union": 160
+      }
+    },
+    {
+      "id": "9",
+      "samples": [
+        {
+          "name": "start",
+          "x": 0,
+          "y": 48,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x0.25",
+          "x": 944,
+          "y": 54,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x0.5",
+          "x": 1888,
+          "y": 54,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x0.75",
+          "x": 2832,
+          "y": 54,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x1",
+          "x": 3776,
+          "y": 54,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "passage",
+          "x": 3776,
+          "y": 1472,
+          "nativeParity": true,
+          "simulationParity": true
+        }
+      ],
+      "liveNativeTileFallbackCalls": {
+        "local": 763,
+        "union": 637
+      }
+    },
+    {
+      "id": "A",
+      "samples": [
+        {
+          "name": "boss pose 0",
+          "x": 0,
+          "y": 0,
+          "pose": 0,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "boss pose 1",
+          "x": 0,
+          "y": 0,
+          "pose": 1,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "boss pose 2",
+          "x": 0,
+          "y": 0,
+          "pose": 2,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "boss pose 3",
+          "x": 0,
+          "y": 0,
+          "pose": 3,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "boss pose 4",
+          "x": 0,
+          "y": 0,
+          "pose": 4,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "boss pose 5",
+          "x": 0,
+          "y": 0,
+          "pose": 5,
+          "nativeParity": true,
+          "simulationParity": true
+        }
+      ],
+      "liveNativeTileFallbackCalls": {
+        "union": 834,
+        "local": 738
+      }
+    },
+    {
+      "id": "B",
+      "samples": [
+        {
+          "name": "start",
+          "x": 0,
+          "y": 208,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x0.25",
+          "x": 560,
+          "y": 208,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x0.5",
+          "x": 1120,
+          "y": 208,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x0.75",
+          "x": 1680,
+          "y": 208,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x1",
+          "x": 2240,
+          "y": 208,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "upper/deeper",
+          "x": 1120,
+          "y": 104,
+          "nativeParity": true,
+          "simulationParity": true
+        }
+      ],
+      "liveNativeTileFallbackCalls": {}
+    },
+    {
+      "id": "C",
+      "samples": [
+        {
+          "name": "start",
+          "x": 368,
+          "y": 640,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x0.25",
+          "x": 560,
+          "y": 640,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x0.5",
+          "x": 1120,
+          "y": 486,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x0.75",
+          "x": 1680,
+          "y": 182,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x1",
+          "x": 2240,
+          "y": 640,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "upper/deeper",
+          "x": 1120,
+          "y": 320,
+          "nativeParity": true,
+          "simulationParity": true
+        }
+      ],
+      "liveNativeTileFallbackCalls": {}
+    },
+    {
+      "id": "D",
+      "samples": [
+        {
+          "name": "start",
+          "x": 0,
+          "y": 640,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x0.25",
+          "x": 944,
+          "y": 566,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x0.5",
+          "x": 1888,
+          "y": 566,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x0.75",
+          "x": 2832,
+          "y": 640,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x1",
+          "x": 3776,
+          "y": 54,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "upper/deeper",
+          "x": 1888,
+          "y": 320,
+          "nativeParity": true,
+          "simulationParity": true
+        }
+      ],
+      "liveNativeTileFallbackCalls": {}
+    },
+    {
+      "id": "E",
+      "samples": [
+        {
+          "name": "start",
+          "x": 0,
+          "y": 128,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x0.25",
+          "x": 944,
+          "y": 134,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x0.5",
+          "x": 1888,
+          "y": 166,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x0.75",
+          "x": 2832,
+          "y": 134,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x1",
+          "x": 3776,
+          "y": 134,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "passage",
+          "x": 3088,
+          "y": 144,
+          "nativeParity": true,
+          "simulationParity": true
+        }
+      ],
+      "liveNativeTileFallbackCalls": {
+        "local": 763,
+        "union": 147,
+        "front": 32
+      }
+    },
+    {
+      "id": "F",
+      "samples": [
+        {
+          "name": "start",
+          "x": 0,
+          "y": 2592,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "vertical 0",
+          "x": 0,
+          "y": 0,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "vertical 0.2",
+          "x": 0,
+          "y": 464,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "vertical 0.4",
+          "x": 0,
+          "y": 1008,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "vertical 0.6",
+          "x": 0,
+          "y": 1568,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "vertical 0.8",
+          "x": 0,
+          "y": 2112,
+          "nativeParity": true,
+          "simulationParity": true
+        }
+      ],
+      "liveNativeTileFallbackCalls": {
+        "union": 1001,
+        "local": 319
+      }
+    },
+    {
+      "id": "G",
+      "samples": [
+        {
+          "name": "start",
+          "x": 0,
+          "y": 1168,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x0.25",
+          "x": 944,
+          "y": 1168,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x0.5",
+          "x": 1888,
+          "y": 1168,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x0.75",
+          "x": 2832,
+          "y": 1168,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "x1",
+          "x": 3776,
+          "y": 1168,
+          "nativeParity": true,
+          "simulationParity": true
+        },
+        {
+          "name": "upper/deeper",
+          "x": 1888,
+          "y": 584,
+          "nativeParity": true,
+          "simulationParity": true
+        }
+      ],
+      "liveNativeTileFallbackCalls": {
+        "union": 1340
+      }
+    }
+  ],
+  "errors": [],
+  "note": "Six diagnostic camera samples per stage; not a gameplay completion or exhaustive viewport traversal. Static coverage separately scans all map cells and animation/hidden states."
+}

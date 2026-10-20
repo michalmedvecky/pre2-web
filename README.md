@@ -16,9 +16,9 @@ Environment checks cover all 16 stages: 32 animated tile triplets, 60 authored p
 
 The [360° Quest preparation and roadmap](docs/VR-ROADMAP.md) documents the renderer-neutral scene adapter, asset/rig requirements and future full-3D milestones. This release does not implement VR or contain 3D models.
 
-## Mobile browser release 1.1.0
+## Mobile browser release 1.1.1
 
-Play in landscape for the largest clear view. Start/Continue expands the game automatically on touch devices; the fullscreen button also enters or leaves it. Movement and utility controls sit beside the game in landscape, with portrait support below it. Original and HD graphics both work.
+Play in landscape for the largest clear view. Start/Continue expands the game automatically on touch devices; the fullscreen button also enters or leaves it. Landscape fullscreen fills the entire display with translucent controls over the scene, retaining the full game/HUD while stretching to the phone aspect ratio. Portrait keeps a fitted playfield and controls below it. Fresh browsers start in HD; an explicit saved Original preference remains respected.
 
 - Hold the left/right thumb pad to move; slide across its center to reverse without lifting.
 - Tap elsewhere in the game to attack; hold to repeat attacks.
@@ -26,7 +26,9 @@ Play in landscape for the largest clear view. Start/Continue expands the game au
 - **Ten quick taps in the right half** toggle **IDKFA** secret hints; **ten in the left half** toggle **IDDQD** invulnerability. Each tap must be short, with at most 650ms between taps. Changing sides, dragging, pausing or touching utility controls breaks the sequence. The final tap shows ON/OFF feedback. Ordinary taps retain their attack/movement action.
 - The fullscreen controls include Pause, MAP (tap to teleport), and Original/HD. Leaving fullscreen or switching apps pauses and releases held inputs.
 
-If native fullscreen is unavailable, the game fills the browser viewport. On iPhone/iPad, use Safari's Share → Add to Home Screen and launch the icon for an app view. Browser/OS bars remain platform-controlled. Serve over HTTPS for Home Screen and optional screen-wake/orientation features. This is an online game; the manifest does not provide offline asset caching. See [mobile implementation, checks and limits](art/mobile-v1/README.md).
+If native fullscreen is unavailable, the game fills the browser viewport. On iPhone/iPad, use Safari's Share → Add to Home Screen and launch the icon for an app view. Browser/OS bars remain platform-controlled. Serve over HTTPS for Home Screen and optional screen-wake/orientation features. This is an online game; the manifest does not provide offline asset caching. See [mobile implementation, checks and limits](art/mobile-v1/README.md) and [full-width/default-HD update](art/mobile-v1.1.1/README.md).
+
+The [current all-stage HD audit](art/hd-audit-v15/README.md) lists remaining native terrain and foreground objects with physical tile IDs and diagnostic images. Stage D now recognizes its shared-tile cherry ornament and uses the existing whole HD drawing. [Music remaster preparation](art/music-audit-v1/README.md) inventories the12 MODs; no AI music job has been run and playback remains original.
 
 ## Local development
 

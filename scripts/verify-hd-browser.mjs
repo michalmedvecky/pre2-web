@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 const {chromium}=await import(process.env.PRE2_PLAYWRIGHT_MODULE||'playwright');
 const browser=await chromium.launch({headless:true}),url=process.env.PRE2_QA_URL||'http://127.0.0.1:5775/?qa';
 try{
- const context=await browser.newContext(),page=await context.newPage(),errors=[],requests=[];page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>requests.push(r.url()));await page.goto(url);await page.waitForFunction(()=>window.prehistorik);assert.equal(requests.filter(u=>u.includes('/assets/hd/')).length,0,'HD assets must be lazy');
+ const context=await browser.newContext(),page=await context.newPage(),errors=[],requests=[];page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>requests.push(r.url()));await page.addInitScript(()=>{if(localStorage.getItem('prehistorik2-graphics-v1')===null)localStorage.setItem('prehistorik2-graphics-v1','original');});await page.goto(url);await page.waitForFunction(()=>window.prehistorik);assert.equal(requests.filter(u=>u.includes('/assets/hd/')).length,0,'HD assets must be lazy');
  await page.evaluate(()=>{prehistorik.start();prehistorik.pause();});
  const before=await page.evaluate(()=>prehistorik.world.stateHash());await page.locator('#graphics-button').click();await page.waitForFunction(()=>prehistorik.graphics==='hd');assert.equal(await page.evaluate(()=>prehistorik.world.stateHash()),before,'toggle must preserve paused simulation');assert.equal(await page.locator('#game').getAttribute('width'),'1280');
  const coverage=await page.evaluate(()=>{

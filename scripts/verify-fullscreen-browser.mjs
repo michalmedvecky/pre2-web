@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {mkdir,writeFile}from'node:fs/promises';
 const {chromium}=await import(process.env.PRE2_PLAYWRIGHT_MODULE||'playwright'),browser=await chromium.launch({headless:true}),out=process.env.PRE2_QA_OUTPUT;
 try{
- const page=await browser.newPage({viewport:{width:1600,height:1000}}),errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto(process.env.PRE2_QA_URL||'http://127.0.0.1:5775/?qa');await page.waitForFunction(()=>window.prehistorik);if(out)await mkdir(out,{recursive:true});
+ const page=await browser.newPage({viewport:{width:1600,height:1000}}),errors=[];page.on('pageerror',e=>errors.push(e.message));await page.addInitScript(()=>{if(localStorage.getItem('prehistorik2-graphics-v1')===null)localStorage.setItem('prehistorik2-graphics-v1','original');});await page.goto(process.env.PRE2_QA_URL||'http://127.0.0.1:5775/?qa');await page.waitForFunction(()=>window.prehistorik);if(out)await mkdir(out,{recursive:true});
  await page.evaluate(()=>{prehistorik.start(0);prehistorik.pause();document.querySelector('#dialog').hidden=true;});
  const sample=()=>page.evaluate(()=>{const q=prehistorik,r=q.renderer;r.render(q.world);const hash=a=>{let h=2166136261;for(const v of a)h=Math.imul(h^v,16777619);return h>>>0;};return{mode:q.graphics,fullscreen:!!document.fullscreenElement,canvas:[r.canvas.width,r.canvas.height],pixels:hash(r.ctx.getImageData(0,0,r.canvas.width,r.canvas.height).data),native:hash(r.frame),simulation:q.world.stateHash(),terrainChunks:r.hd?.terrainCache.size||0,css:getComputedStyle(r.canvas).imageRendering};});
  const original=await sample();if(out)await page.locator('#game').screenshot({path:out+'/original.png'});
