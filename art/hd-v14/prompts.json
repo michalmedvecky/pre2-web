@@ -1,0 +1,23 @@
+{
+  "tool": "imagegen",
+  "requests": [
+    {
+      "id": "cherries-rejected",
+      "input": "references/cherries-0.png",
+      "transparent_background": true,
+      "prompt": "Faithful high-resolution redraw of this complete static game platform ornament, preserving exact overall composition, silhouette, positions and relative sizes. Two shiny deep red cherries hang on long very thin green stems under two separate curved pointed green leaves: left leaf lower-left with its cherry directly below, right leaf upper-right with its cherry below. Preserve the asymmetry and long stems and preserve all clear gaps. Rich clean hand-painted 1990s cartoon game art, crisp fine ink, subtle leaf veins, glossy red fruit highlights. No bread, no text, no background, no additional fruit. Output complete isolated object with transparent background, matching reference aspect ratio 80:96. Keep original silhouette and no extra padding."
+    },
+    {
+      "id": "cherries",
+      "input": "raw/cherries-rejected.png",
+      "transparent_background": true,
+      "prompt": "Correct ONLY the right cherry fruit in this transparent game ornament. Its left edge is oddly flattened and its body is lopsided. Make the right fruit a full round plump cherry with a clean smoothly rounded outline on all sides, matching the round shape, size and glossy painting quality of the left cherry (right fruit may be about 90 percent of left fruit size). Keep its stem joining the center of the top. Preserve both leaves, both stems, the left cherry, overall positioning, aspect ratio, colors and transparent gaps exactly. Preserve internal dark red cartoon shading but no notch or flat left flank on the right cherry. Do not add anything. Output transparent background."
+    },
+    {
+      "id": "title",
+      "input": "references/title.png",
+      "transparent_background": false,
+      "prompt": "Create a faithful HD remaster of this original Prehistorik 2 title screen, keeping exact 320:200 composition, layout, logo spelling and branding. Large glossy carved orange-gold PREHISTORIK logo across upper half, prominent numeral 2 centered below it, blue to lavender sky, dense bright prehistoric jungle leaves and palm trees in lower half and big dark branching tree at right. Crisp painted cartoon game art matching the original colors and arrangement, hand-inked details, smooth sharp edges rather than pixels. Remove ONLY the two old menu text lines '1 START LEVEL 1' and '2 PASSWORD' from the lower-middle: browser supplies its own menu controls there, so reconstruct foliage behind those text lines. Preserve small '© 1993 TITUS ALL RIGHTS RESERVED' at bottom if legible. Add a small polished gold-and-emerald jewel badge saying HD in upper-right corner next to logo, without obscuring logo. No new game characters or unrelated elements. Keep every edge filled; no frame or margin. Output landscape aspect ratio 8:5."
+    }
+  ]
+}

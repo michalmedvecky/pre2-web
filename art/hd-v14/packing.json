@@ -1,0 +1,30 @@
+[
+  {
+    "name": "cherries",
+    "rawSHA256": "3226c9c02654b1b0ef387a76530ab6d54c0d7dbd2d3b2fdc06b56b6518226dbf",
+    "outputSHA256": "ba1a481ee574595d13f676483761ab37caa7ae82af4674102be8a97d53fd7485",
+    "rawSize": [
+      1145,
+      1374
+    ],
+    "outputSize": [
+      320,
+      384
+    ],
+    "method": "Full composition premultiplied alpha area averaging"
+  },
+  {
+    "name": "title",
+    "rawSHA256": "2f2a1e7f6ed9670fb6652740831aedf8915d7df4807e2f1f639ccd238e6c792d",
+    "outputSHA256": "c25f85d0ed4389f3c19f3bba84506d15b529cbc68e2d5b63898f5a616beb78c9",
+    "rawSize": [
+      1586,
+      992
+    ],
+    "outputSize": [
+      1280,
+      800
+    ],
+    "method": "Full composition premultiplied alpha area averaging"
+  }
+]

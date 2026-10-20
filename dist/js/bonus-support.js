@@ -1,0 +1,4 @@
+// Source-pixel contact profiles for browser bonus-stage alignment.
+// These deliberately correct the verified binary's /3-versus-art mismatch; not an emulator result.
+export const BONUS_PROFILES={"0":[null,null,null,null,null,null,null,null,null,8,6,4,3,2,2,1],"1":[1,0,0,0,0,0,0,0,1,1,2,2,3,4,6,8],"489":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],"490":[5,4,3,3,4,5,6,7,8,9,10,11,12,13,14,15],"512":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],"513":[15,14,13,12,11,10,9,8,7,6,5,4,3,3,4,5],"514":[15,14,13,12,11,10,9,8,7,6,5,4,3,3,4,5],"518":[15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0],"519":[15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0],"546":[null,null,null,null,null,null,null,null,null,8,6,4,3,2,2,1],"547":[1,0,0,0,0,0,0,0,1,1,2,2,3,4,6,8]};
+export function bonusProfile(level,tile){const v=level.lookup?.[tile];return ['B','C','D'].includes(level.id)&&(v>=256||level.id==='B')?BONUS_PROFILES[v]:undefined;}

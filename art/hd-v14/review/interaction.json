@@ -1,0 +1,80 @@
+{
+  "ok": true,
+  "teleports": [
+    {
+      "fullscreen": false,
+      "state": "play",
+      "x": 999,
+      "y": 219,
+      "vx": 0,
+      "vy": 0,
+      "checkpoint": {
+        "x": 53,
+        "y": 192
+      },
+      "score": 0,
+      "health": 3
+    },
+    {
+      "fullscreen": true,
+      "state": "play",
+      "x": 999,
+      "y": 219,
+      "vx": 0,
+      "vy": 0,
+      "checkpoint": {
+        "x": 53,
+        "y": 192
+      },
+      "score": 0,
+      "health": 3
+    }
+  ],
+  "hidpi": [
+    1499,
+    250
+  ],
+  "fruitDrops": [
+    {
+      "x": 372,
+      "y": 144,
+      "grounded": true
+    },
+    {
+      "x": 404,
+      "y": 144,
+      "grounded": true
+    },
+    {
+      "x": 1380,
+      "y": 224,
+      "grounded": true
+    },
+    {
+      "x": 1412,
+      "y": 224,
+      "grounded": true
+    },
+    {
+      "x": 1476,
+      "y": 240,
+      "grounded": true
+    },
+    {
+      "x": 1508,
+      "y": 240,
+      "grounded": true
+    },
+    {
+      "x": 1652,
+      "y": 272,
+      "grounded": true
+    },
+    {
+      "x": 1684,
+      "y": 272,
+      "grounded": true
+    }
+  ],
+  "titleNativeParity": true
+}

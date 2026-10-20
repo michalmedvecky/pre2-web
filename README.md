@@ -228,3 +228,5 @@ References: [Kubernetes Ingress](https://kubernetes.io/docs/concepts/services-ne
 HD scrolling seams are fixed by assembling terrain before subpixel camera filtering. See [v12 compositor evidence and regression checks](art/hd-v12/README.md).
 
 Bonus-stage bread paint is restricted to actual bread; map cherries/glasses/ramps retain their original identities. The stone LEVEL sign is restored from its native source. See [v13 correction evidence](art/hd-v13/README.md).
+
+HD title and complete bonus-stage cherry ornaments, connected bread material fixes, source-aligned bonus contact and MAP click teleport are documented in [v14 evidence and limits](art/hd-v14/README.md). Type MAP and click to place the player’s feet; any key dismisses without moving.

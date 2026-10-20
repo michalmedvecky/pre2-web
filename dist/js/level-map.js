@@ -8,10 +8,10 @@ export function surveyLevel(w){
   gates:(w.gates||[]).filter(g=>g.active).map(g=>({x:(g.triggerTile&255)*16+8,y:(g.triggerTile>>8)*16+8})),player:{...w.player},camera:{...w.camera}};
 }
 export class LevelMap {
- constructor(parent,onClose){
+ constructor(parent,onClose,onTeleport){
   this.element=document.createElement('section');this.element.className='level-map';this.element.hidden=true;this.element.setAttribute('role','dialog');this.element.setAttribute('aria-modal','true');this.element.setAttribute('aria-label','Complete level map');
-  this.element.innerHTML='<header><strong></strong><button aria-label="Close level map">Back to game</button></header><canvas aria-label="Entire level including concealed terrain, items and passages"></canvas><footer><span>● YOU · □ CAMERA · <b>□ HIDDEN</b> · <i>◇ PASSAGE</i></span><span>ANY KEY OR TAP TO RETURN · GAME PAUSED</span></footer>';
-  parent.append(this.element);this.canvas=this.element.querySelector('canvas');this.element.querySelector('button').onclick=onClose;this.canvas.onclick=onClose;
+  this.element.innerHTML='<header><strong></strong><button aria-label="Close level map">Back to game</button></header><canvas aria-label="Entire level including concealed terrain, items and passages"></canvas><footer><span>● YOU · □ CAMERA · <b>□ HIDDEN</b> · <i>◇ PASSAGE</i></span><span>CLICK MAP TO TELEPORT · ANY KEY TO RETURN · GAME PAUSED</span></footer>';
+  parent.append(this.element);this.canvas=this.element.querySelector('canvas');this.element.querySelector('button').onclick=onClose;this.canvas.onclick=e=>{const point=mapPoint(e.clientX,e.clientY,this.canvas.getBoundingClientRect(),this.canvas,this.view,this.survey?.bounds);if(point)onTeleport?.(point);};
   this.resize=new ResizeObserver(()=>{if(!this.element.hidden)this.draw();});this.resize.observe(this.canvas);
  }
  open(w,a){
@@ -28,6 +28,7 @@ export class LevelMap {
  }
  draw(){
   const box=this.canvas.getBoundingClientRect(),dpr=Math.min(2,devicePixelRatio||1),w=Math.max(1,Math.round(box.width*dpr)),h=Math.max(1,Math.round(box.height*dpr));this.canvas.width=w;this.canvas.height=h;const c=this.canvas.getContext('2d'),s=this.survey,b=s.bounds,scale=Math.min((w-16*dpr)/b.width,(h-16*dpr)/b.height),ox=(w-b.width*scale)/2-b.x*scale,oy=(h-b.height*scale)/2-b.y*scale;
+  this.view={scale,ox,oy};
   c.fillStyle='#0b1013';c.fillRect(0,0,w,h);c.imageSmoothingEnabled=true;c.imageSmoothingQuality='high';c.drawImage(this.full,b.x,b.y,b.width,b.height,ox+b.x*scale,oy+b.y*scale,b.width*scale,b.height*scale);
   c.lineWidth=dpr;c.strokeStyle='#ff68ce';for(const p of s.secrets)c.strokeRect(ox+p.x*scale,oy+p.y*scale,Math.max(2,16*scale),Math.max(2,16*scale));
   c.strokeStyle='#56eaff';for(const p of s.gates){const x=ox+p.x*scale,y=oy+p.y*scale,r=3*dpr;c.beginPath();c.moveTo(x,y-r);c.lineTo(x+r,y);c.lineTo(x,y+r);c.lineTo(x-r,y);c.closePath();c.stroke();}
@@ -35,4 +36,10 @@ export class LevelMap {
   const x=ox+s.player.x*scale,y=oy+s.player.y*scale;c.beginPath();c.arc(x,y,4*dpr,0,Math.PI*2);c.fillStyle='#ff4b32';c.fill();c.lineWidth=2*dpr;c.strokeStyle='#fff';c.stroke();
  }
  close(){this.element.hidden=true;document.body.classList.remove('level-map-open');this.full=null;this.survey=null;}
+}
+
+// Convert CSS coordinates through DPR, fitting and crop offsets, never letterbox clicks.
+export function mapPoint(clientX,clientY,box,canvas,view,bounds){
+ if(!view||!bounds||box.width<=0||box.height<=0)return null;const x=((clientX-box.left)*canvas.width/box.width-view.ox)/view.scale,y=((clientY-box.top)*canvas.height/box.height-view.oy)/view.scale;
+ if(!Number.isFinite(x)||!Number.isFinite(y)||x<bounds.x||x>=bounds.x+bounds.width||y<bounds.y||y>=bounds.y+bounds.height)return null;return{x:Math.round(x),y:Math.round(y)};
 }

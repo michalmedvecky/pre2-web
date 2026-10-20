@@ -1,3 +1,4 @@
+import{bonusProfile}from'./bonus-support.js';
 import {createTally,advanceTally} from './stage-tally.js';
 import {initEnvironment,updateMovingBlocks,updateWeather,updateScreenShake} from './environment.js';
 import {tileAnimation} from './tile-animation.js';
@@ -55,7 +56,7 @@ export class World {
   tile(x,y){const tx=Math.floor(x/16),ty=Math.floor(y/16);if(tx<0||tx>=256||ty<0||ty>=this.level.height)return 0;return this.map[(ty<<8)|tx];}
   tilePos(x,y){return((Math.floor(y/16)&255)<<8)|(Math.floor(x/16)&255);}
   prop(kind,tile){return this.level[kind][tile]||0;}
-  surface(x,y){const tile=this.tile(x,y);return Math.floor(y/16)*16+slopeOffset(this.level.tileSlopes[tile]||0,x);}
+  surface(x,y){const tile=this.tile(x,y);const profile=bonusProfile(this.level,tile),offset=profile?profile[((Math.floor(x)%16)+16)%16]:slopeOffset(this.level.tileSlopes[tile]||0,x);return offset===null?null:Math.floor(y/16)*16+offset;}
   // A floor class is a callback, not a generic "nonzero map tile".
   floorClass(x,y){return this.prop('tilePropertiesY',this.tile(x,y));}
   solidSupport(x,y,down=false){const c=this.floorClass(x,y);return c>=1&&c<=5&&!(c===5&&down);}
@@ -204,17 +205,23 @@ export class World {
     }
     p.vy=0;
   }
+  resolveBonusSupport(oldY,wasGrounded){
+    const p=this.player;if(p.vy<0||!['B','C','D'].includes(this.level.id))return;
+    const min=Math.max(0,Math.floor((Math.min(oldY,p.y)-16)/16)),max=Math.min(this.level.height-1,Math.floor((Math.max(oldY,p.y)+16)/16)),candidates=[];
+    for(let ty=min;ty<=max;ty++){const y=ty*16,tile=this.tile(p.x,y),profile=bonusProfile(this.level,tile),c=this.prop('tilePropertiesY',tile);if(!profile||c<1||c>5||c===5&&p.downTimer)continue;const offset=profile[p.x&15];if(offset===null)continue;const surface=y+offset,crossed=oldY<=surface+1&&p.y>=surface,following=wasGrounded&&Math.abs(oldY-surface)<=6&&Math.abs(p.y-oldY)<=6;if(crossed||following)candidates.push({surface,c});}
+    candidates.sort((a,b)=>a.surface-b.surface);if(candidates.length){const{surface,c}=candidates[0];this.landPlayer(surface,c>=2&&c<=4?c-1:0);}
+  }
   collidePlayer(oldX,oldY){
     const p=this.player;const dx=p.x-oldX;const sideX=p.x+(dx>0?9:dx<0?-9:0);let hitSide=false;
     if(dx){const height=this.byte(0x718d+(p.sprite&0x1fff)*2)||36;for(let row=0;row<Math.ceil(height/16);row++){const y=(p.y&0xfff0)-16-row*16,c=this.prop('tilePropertiesX',this.tile(sideX,y));if(c===2&&!this.godMode){this.loseLife();return;}if(row===0&&c===1){hitSide=true;break;}}}
     if(hitSide){p.x=oldX;p.vx=0;}
     if(p.vy<=0){const top=(p.y&0xfff0)-32;const c=this.prop('tilePropertiesMisc',this.tile(p.x,top))&15;if(c===2&&!this.godMode){this.loseLife();return;}if(c===1&&p.vy!==0){p.y=(p.y&0xfff0)+16;p.vy=0;}this.hitTileBlocks(this.tilePos(p.x,top),false);}
-    p.grounded=false;p.platformGrip=false;p.speedShift=0;
+    const wasGrounded=p.grounded&&!p.platformGrip;p.grounded=false;p.platformGrip=false;p.speedShift=0;this.resolveBonusSupport(oldY,wasGrounded);
     const floor=this.floorClass(p.x,p.y),c=floor===6&&this.godMode?1:floor;if(c===6){this.loseLife();return;}
-    if(c>=1&&c<=5&&p.vy>=0&&!(c===5&&p.downTimer)){
+    if(!p.grounded&&!bonusProfile(this.level,this.tile(p.x,p.y))&&c>=1&&c<=5&&p.vy>=0&&!(c===5&&p.downTimer)){
       const surface=this.surface(p.x,p.y);if(p.y>=surface-12&&oldY<=surface+16){this.landPlayer(surface,c>=2&&c<=4?c-1:0);}
     }
-    if(!p.grounded&&p.vy>=0){const nextC=this.floorClass(p.x,p.y+16),nextSlope=this.level.tileSlopes[this.tile(p.x,p.y+16)];if(nextC>=1&&nextC<=5&&nextSlope&&!(nextC===5&&p.downTimer)){let sy=this.surface(p.x,p.y+16);if(sy<=p.y+5){this.landPlayer(sy);}}}
+    if(!p.grounded&&p.vy>=0){const nextC=this.floorClass(p.x,p.y+16),nextSlope=this.level.tileSlopes[this.tile(p.x,p.y+16)];if(nextC>=1&&nextC<=5&&nextSlope&&!(nextC===5&&p.downTimer)){let sy=this.surface(p.x,p.y+16);if(sy!==null&&sy<=p.y+5&&!bonusProfile(this.level,this.tile(p.x,p.y+16))){this.landPlayer(sy);}}}
     for(const q of this.platforms){if(!q.active)continue;const bounds=this.spriteBounds(q);if((p.vy>=0||this.carriedPlatform===q.index)&&p.x>bounds.left-3&&p.x<bounds.right+3&&oldY<=bounds.top+8&&p.y>=bounds.top){const support=this.platformSupport?.index===q.index?this.platformSupport:{y:p.y>bounds.top?bounds.top+1:bounds.top,vy:p.y>bounds.top?1:(q.dy||0)*16};this.landPlatform(support.y,q.index,support.vy);q.raw[6]|=64;if(this.carriedPlatform!==q.index)p.x+=q.dx||0;}}
   }
   attack(action=3){const p=this.player;p.attackAction=action===6||action===7?action:3;p.attackActive=true;p.attackTimer=this.attackDuration(p.attackAction);}
@@ -243,8 +250,8 @@ export class World {
   toggleSecretHints(){this.secretHints=!this.secretHints;this.emit('cheat',{code:'IDKFA',enabled:this.secretHints});return this.secretHints;}
   // IDDQD rescue is a fresh player/controller pose within the existing world.
   // A cave camera lock and a platform/glider/attack must not survive the fall.
-  rescuePlayer(){
-    const p=this.player;Object.assign(p,this.checkpoint,{vx:0,vy:0,jumpFrame:0,jumpLock:0,fallFrames:0,lastGroundY:this.checkpoint.y,grounded:false,platformGrip:false,platformId:null,speedShift:0,glideMode:0,glideEnergy:0,formAngle:3,runTimer:0,walkHistory:0,landingShake:0,landingBounce:false,attackActive:false,attackFrame:false,attackTimer:0,attackCooldown:0,downTimer:0,powerTimer:0,invulnerable:0,look:false,animationVariant:-1});
+  rescuePlayer(destination=this.checkpoint){
+    const p=this.player;Object.assign(p,destination,{vx:0,vy:0,jumpFrame:0,jumpLock:0,fallFrames:0,lastGroundY:destination.y,grounded:false,platformGrip:false,platformId:null,speedShift:0,glideMode:0,glideEnergy:0,formAngle:3,runTimer:0,walkHistory:0,landingShake:0,landingBounce:false,attackActive:false,attackFrame:false,attackTimer:0,attackCooldown:0,downTimer:0,powerTimer:0,invulnerable:0,look:false,animationVariant:-1});
     this.deathTimer=0;this.formAngle=3;this.gateCameraFlag=0;this.gateDownConsumed=!!this.input?.down;
     this.carriedPlatform=null;this.platformSupport=null;for(const platform of this.platforms)platform.raw[6]&=~64;
     this.screenShake=this.nextScreenShake=this.shakePlayerNudge=0;this.playerWeapon=null;this.projectiles=this.projectiles.filter(shot=>!shot.contact);
@@ -253,6 +260,7 @@ export class World {
     if(this.levelIndex===9)this.camera.x=this.camera.y=0;
     this.sceneFlash=4;this.emit('rescue');
   }
+  teleportPlayer(x,y){if(!Number.isFinite(x)||!Number.isFinite(y))return false;this.rescuePlayer({x:clamp(Math.round(x),8,4087),y:clamp(Math.round(y),0,this.level.height*16-1)});return true;}
   damage(){const p=this.player;if(this.godMode||p.invulnerable||this.deathTimer||this.transition)return;this.emit('sfx',{index:1});
     p.invulnerable=44;p.attackActive=false;p.attackTimer=0;p.vx=s16(-4*p.vx);p.vy=-128;p.glideMode=0;p.jumpFrame=9;p.animationVariant=-1;
     this.playerWeapon=null;this.projectiles=this.projectiles.filter(a=>!a.contact);

@@ -1,3 +1,4 @@
+import{bonusProfile}from'./bonus-support.js';
 // Presentation only: the DOS-rate world and its camera still control all rules.
 const layers=['platforms','items','actors','bossParts','projectiles','effects','ropePoints'];
 const position=o=>({x:o.x,y:o.y});
@@ -6,7 +7,7 @@ const mix=(a,b,t)=>a+(b-a)*t;
 // remove its sub-pixel sawtooth from grounded display poses only.
 export function slopeDisplayY(w,p){
  if(!p.grounded||p.platformGrip||!w.tile||!w.level)return p.y;
- for(const offset of [0,-16,16]){const ty=Math.floor((p.y+offset)/16),tile=w.tile(p.x,p.y+offset),b=w.level.tileSlopes[tile]||0;if(!(b&0x30))continue;const x=((p.x%16)+16)%16,k=Math.floor(x/3),sign=b&0x10?1:-1,native=ty*16+(b&15)+sign*k;if(Math.abs(native-p.y)<.01)return p.y+sign*(x/3-k);}
+ for(const offset of [0,-16,16]){const ty=Math.floor((p.y+offset)/16),tile=w.tile(p.x,p.y+offset),b=w.level.tileSlopes[tile]||0;if(!(b&0x30))continue;if(bonusProfile(w.level,tile))return p.y;const x=((p.x%16)+16)%16,k=Math.floor(x/3),sign=b&0x10?1:-1,native=ty*16+(b&15)+sign*k;if(Math.abs(native-p.y)<.01)return p.y+sign*(x/3-k);}
  return p.y;
 }
 export class Presentation {

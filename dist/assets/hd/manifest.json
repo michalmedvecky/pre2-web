@@ -513,6 +513,22 @@
       "height": 128,
       "sha256": "137846e06c0d64f159c1b0363558472b64c920f509eecaec35e2bc9d7b1c0bbb",
       "kind": "world-material"
+    },
+    {
+      "id": "v14-cherries",
+      "file": "v14-cherries.png",
+      "width": 320,
+      "height": 384,
+      "sha256": "ba1a481ee574595d13f676483761ab37caa7ae82af4674102be8a97d53fd7485",
+      "kind": "world-decor"
+    },
+    {
+      "id": "v14-title",
+      "file": "v14-title.png",
+      "width": 1280,
+      "height": 800,
+      "sha256": "c25f85d0ed4389f3c19f3bba84506d15b529cbc68e2d5b63898f5a616beb78c9",
+      "kind": "screen"
     }
   ],
   "sprites": {
@@ -15141,5 +15157,31 @@
       "C",
       "D"
     ]
+  },
+  "bonusDecor": {
+    "cherries": {
+      "atlas": "v14-cherries",
+      "rect": [
+        0,
+        0,
+        320,
+        384
+      ],
+      "width": 80,
+      "height": 96
+    }
+  },
+  "screens": {
+    "MENU": {
+      "atlas": "v14-title",
+      "rect": [
+        0,
+        0,
+        1280,
+        800
+      ],
+      "width": 320,
+      "height": 200
+    }
   }
 }
