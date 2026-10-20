@@ -1,0 +1,21 @@
+{
+  "ok": true,
+  "before": {
+    "native": 3594069977,
+    "pixels": 574606519,
+    "state": "bdd4958c"
+  },
+  "after": {
+    "native": 3594069977,
+    "pixels": 1046491463,
+    "state": "bdd4958c",
+    "paintedTextures": 2
+  },
+  "checks": [
+    "reported scene at 2048 CSS pixels fullscreen",
+    "continuous materials differ from independently painted tiles",
+    "native indexed frame and simulation identical",
+    "MAP preserves HD on closing H",
+    "mobile map and tap return"
+  ]
+}

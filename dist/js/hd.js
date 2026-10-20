@@ -1,3 +1,4 @@
+import {continuousSampler,terrainMaterial} from './continuous-materials.js';
 import {HDFeedback} from './hd-feedback.js';
 import {connectedTerrain,textureSampler,paintSampler} from './terrain.js';
 import {HDHud} from './hd-hud.js';
@@ -7,14 +8,14 @@ export class HDAssets {
   const response=await fetch(new URL('manifest.json',base));if(!response.ok)throw Error('HD manifest unavailable');
   const manifest=await response.json();if(manifest.version!==1||manifest.scale!==4||!manifest.sprites||!Array.isArray(manifest.atlases))throw Error('Unsupported HD manifest');
   const images=new Map();await Promise.all(manifest.atlases.map(async a=>{const image=new Image();image.src=new URL(a.file,base);await image.decode();if(image.naturalWidth!==a.width||image.naturalHeight!==a.height)throw Error('HD atlas extent mismatch');images.set(a.id,image);}));
-  const records=[...Object.values(manifest.sprites),...Object.values(manifest.tiles||{}),...Object.values(manifest.paintTiles||{}),...Object.values(manifest.backgrounds||{})];
+  const records=[...Object.values(manifest.sprites),...Object.values(manifest.tiles||{}),...Object.values(manifest.paintTiles||{}),...Object.values(manifest.worldMaterials||{}),...Object.values(manifest.backgrounds||{})];
   for(const s of records){const a=manifest.atlases.find(a=>a.id===s.atlas),r=s.rect;if(!a||!r||r.length!==4||r.some(v=>!Number.isFinite(v)||v<0)||r[2]===0||r[3]===0||r[0]+r[2]>a.width||r[1]+r[3]>a.height)throw Error('Invalid HD atlas record');}
 
   return {manifest,images};
  }
 }
 export class HDCompositor {
- constructor(canvas,pack){this.canvas=canvas;this.pack=pack;this.scale=pack.manifest.scale;canvas.width=320*this.scale;canvas.height=200*this.scale;this.ctx=canvas.getContext('2d',{alpha:false});this.ctx.imageSmoothingEnabled=false;this.cache=new WeakMap();this.flash=new Map();this.paletteKey='';this.terrainCache=new Map();this.terrainTextures=new Map();this.hudRenderer=new HDHud(pack);this.feedback=new HDFeedback(pack);}
+ constructor(canvas,pack){this.canvas=canvas;this.pack=pack;this.scale=pack.manifest.scale;canvas.width=320*this.scale;canvas.height=200*this.scale;this.ctx=canvas.getContext('2d',{alpha:false});this.ctx.imageSmoothingEnabled=false;this.cache=new WeakMap();this.flash=new Map();this.paletteKey='';this.terrainCache=new Map();this.terrainTextures=new Map();this.materialImages=new Map();this.hudRenderer=new HDHud(pack);this.feedback=new HDFeedback(pack);}
  setPalette(p){const key=p.join(',');if(key!==this.paletteKey){this.paletteKey=key;this.cache=new WeakMap();this.terrainCache.clear();}this.palette=p;}
  color(i,fade=1){const p=this.palette,k=i*3;return `rgb(${Math.floor((p[k]||0)*fade)},${Math.floor((p[k+1]||0)*fade)},${Math.floor((p[k+2]||0)*fade)})`;}
  begin(){this.ctx.fillStyle=this.color(0);this.ctx.fillRect(0,0,this.canvas.width,this.canvas.height);}
@@ -30,7 +31,11 @@ export class HDCompositor {
   this.clipped(clip,c=>{c.imageSmoothingEnabled=true;if(flip){c.translate((dx+source.width)*scale,dy*scale);c.scale(-1,1);c.drawImage(image,...rect,0,0,source.width*scale,source.height*scale);}else c.drawImage(image,...rect,dx*scale,dy*scale,source.width*scale,source.height*scale);});return true;
  }
  atlas(record,x,y,clip=176){if(!record)return false;const image=this.pack.images.get(record.atlas),scale=this.scale;this.clipped(clip,c=>{c.imageSmoothingEnabled=true;c.drawImage(image,...record.rect,x*scale,y*scale,record.width*scale,record.height*scale);});return true;}
- tile(level,bank,id,x,y){return this.atlas(this.pack.manifest.tiles?.[level+':'+bank+':'+id],Math.round(x),Math.round(y));}
+ tile(level,bank,id,x,y,source,worldX,worldY){
+  if(level==='1'&&bank==='front'&&id===20&&source&&this.pack.manifest.worldMaterials&&Number.isFinite(worldX)){
+   const wall=this.materialImage(this.pack.manifest.worldMaterials.wall),roots=this.materialImage(this.pack.manifest.worldMaterials.roots),paint=continuousSampler({textures:[null],kinds:['wall'],columns:1,originX:worldX,originY:worldY,wall,roots}),rgba=connectedTerrain(source,16,16,this.palette,paint,{paintColor:true}),image=document.createElement('canvas');image.width=image.height=64;image.getContext('2d').putImageData(new ImageData(rgba,64,64),0,0);this.clipped(176,c=>c.drawImage(image,Math.round(x)*4,Math.round(y)*4));return true;
+  }
+  return this.atlas(this.pack.manifest.tiles?.[level+':'+bank+':'+id],Math.round(x),Math.round(y));}
  background(level,name,shift=0){return this.atlas(this.pack.manifest.backgrounds?.[level+':'+name],0,shift);}
  clearTop(height){this.ctx.fillStyle=this.color(0);this.ctx.fillRect(0,0,this.canvas.width,Math.min(176,height)*this.scale);}
  terrain(assets,level,map,cx,cy,animation){
@@ -43,10 +48,11 @@ export class HDCompositor {
    const ox=gx*size,oy=gy*size;let signature='',animated=false;for(let y=oy-16;y<=oy+size;y+=16)for(let x=ox-16;x<=ox+size;x+=16){signature+=valueAt(x,y)+',';if(x>=0&&x<4096&&y>=0&&y<level.height*16&&animation.animated[map[(y>>4)*256+(x>>4)]])animated=true;}const key=gx+':'+gy+':'+(animated?animation.phase:0);keys.add(key);
    let chunk=this.terrainCache.get(key);if(!chunk||chunk.signature!==signature){
     const source=new Uint8Array(width*width);for(let y=0;y<width;y++)for(let x=0;x<width;x++)source[y*width+x]=sample(ox+x-halo,oy+y-halo);
-    const textures=[];for(let y=0;y<columns;y++)for(let x=0;x<columns;x++){
-     const v=valueAt(ox+x*16-halo,oy+y*16-halo),record=(this.pack.manifest.paintTiles||this.pack.manifest.tiles)?.['1:'+(v<256?'local:':'union:')+(v<256?v:v-256)];textures.push(record&&!record.preservedOriginal&&!record.preservedFlat?this.terrainTexture(record):null);
+    const textures=[],kinds=[];for(let y=0;y<columns;y++)for(let x=0;x<columns;x++){
+     const v=valueAt(ox+x*16-halo,oy+y*16-halo),record=(this.pack.manifest.paintTiles||this.pack.manifest.tiles)?.['1:'+(v<256?'local:':'union:')+(v<256?v:v-256)];const bank=bankOf(v),offset=(v<256?v:v-256)*256;kinds.push(v===256||v===65535||v===undefined?'literal':terrainMaterial(bank?.subarray(offset,offset+256)||new Uint8Array(),v));textures.push(record&&!record.preservedOriginal&&!record.preservedFlat?this.terrainTexture(record):null);
     }
-    const rgba=connectedTerrain(source,width,width,this.palette,(this.pack.manifest.paintTiles?paintSampler:textureSampler)(textures,columns),{paintColor:!!this.pack.manifest.paintTiles});
+    const materials=this.pack.manifest.worldMaterials,paint=materials?continuousSampler({textures,kinds,columns,originX:ox-halo,originY:oy-halo,wall:this.materialImage(materials.wall),roots:this.materialImage(materials.roots)}):(this.pack.manifest.paintTiles?paintSampler:textureSampler)(textures,columns);
+    const rgba=connectedTerrain(source,width,width,this.palette,paint,{paintColor:!!this.pack.manifest.paintTiles});
     const image=document.createElement('canvas');image.width=size*4;image.height=size*4;const ctx=image.getContext('2d');ctx.putImageData(new ImageData(rgba,width*4,width*4),-halo*4,-halo*4);chunk={signature,image};this.terrainCache.set(key,chunk);
    }
    c.drawImage(chunk.image,0,0,size*4,size*4,(ox-cx)*4,(oy-cy)*4,size*4,size*4);
@@ -54,6 +60,10 @@ export class HDCompositor {
   // Keep a bounded cache while walking an entire stage.
   for(const key of this.terrainCache.keys())if(this.terrainCache.size>96&&!keys.has(key))this.terrainCache.delete(key);
   return true;
+ }
+ materialImage(record){
+  let value=this.materialImages.get(record.atlas);if(value)return value;
+  const [x,y,width,height]=record.rect,canvas=document.createElement('canvas');canvas.width=width;canvas.height=height;const c=canvas.getContext('2d',{willReadFrequently:true});c.drawImage(this.pack.images.get(record.atlas),x,y,width,height,0,0,width,height);value={width,height,data:c.getImageData(0,0,width,height).data,originY:record.originY||0};this.materialImages.set(record.atlas,value);return value;
  }
  terrainTexture(record){
   const key=record.atlas+':'+record.index;let texture=this.terrainTextures.get(key);if(texture)return texture;

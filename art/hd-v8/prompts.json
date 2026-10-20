@@ -1,0 +1,24 @@
+[
+  {
+    "id": "wall",
+    "args": {
+      "prompt": "Use case: style-transfer. Production seamless 2D game wall material, a SINGLE continuous edge-to-edge drawing, NOT a grid of tiles. Input 1 is original warm limestone wall reference. Input 2 is cartoon line/shading style reference ONLY. Repaint the wall as one coherent field of irregular interlocking stones, medium warm gray/beige limestone with dark brown-black natural crevices. Preserve roughly the stone size/count and angular-to-rounded boulder forms of the original, but use the sharp smooth cartoon outlines and confident cel shading of the HD character. Fill the entire canvas with stones and crevices. Remove the tiny green leaf spot; material contains stone only. No leaves, characters, text, props, ground line, vignette or lighting gradient. Consistent even top-left ambient lighting throughout. No straight horizontal/vertical seams, no rectangular panels, no repeated framed squares, no blur, no pixel mosaic. Full-bleed opaque painted texture with very crisp edges and restrained surface detail. Opposite edges should tile naturally. Keep natural contour details continuous through the interior. High resolution, landscape 6:5 aspect ratio.",
+      "referenced_image_paths": [
+        "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v8/references/wall.png",
+        "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v1/raw/hero-00-15.png"
+      ],
+      "transparent_background": false
+    }
+  },
+  {
+    "id": "roots",
+    "args": {
+      "prompt": "Use case: style-transfer. Production 2D side-scrolling platform game ground material, ONE CONTINUOUS horizontal 3:1 strip. Image 1 is EDIT TARGET, original continuous ground strip: a very thin dense green moss/grass top, orange-brown branching roots hanging into dark earthy crevices beneath. Image 2 is HD cartoon style reference ONLY. Redraw the whole strip at once, with clean confident dark contours, crisp cel shading and rich warm root colors that match the hero art. Keep exact overall layer heights/proportions from image 1: grass at the very top edge, roots occupying most of the height, small dark stone/soil crevices at the bottom. Full bleed left/right, no transparent outside padding, no frame, no grey horizontal border strip, no solid horizontal line at the bottom. Roots must flow naturally through the entire width with no tile grid and no straight seams. Left/right edges should tile naturally. No characters, text, labels, sky, pixel mosaic or blur. Opaque dark earth fills spaces between roots. High-resolution, exactly 3:1 landscape composition.",
+      "referenced_image_paths": [
+        "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v8/references/roots.png",
+        "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v1/raw/hero-00-15.png"
+      ],
+      "transparent_background": false
+    }
+  }
+]
