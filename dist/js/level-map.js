@@ -24,7 +24,7 @@ export class LevelMap {
   for(const o of [...s.platforms,...s.items,...s.enemies,...(w.bossParts||[]),s.player]){const id=(o.sprite??o.spriteId)&8191,m=a.game.sprites[id];if(!m)continue;include(o.x-m.originX,o.y+m.originY-m.height,m.width,m.height);const flip=o.face<0||!!(o.sprite&32768);c.save();c.translate(o.x,o.y);if(flip)c.scale(-1,1);c.drawImage(image('sprites',id,m.width,m.height,m.pixelOffset),-m.originX,m.originY-m.height);c.restore();}
   for(const p of [...s.secrets,...s.gates])include(p.x,p.y);include(s.camera.x,s.camera.y,320,176);s.bounds={x:Math.max(0,left),y:Math.max(0,top),width:Math.min(s.width,right)-Math.max(0,left),height:Math.min(s.height,bottom)-Math.max(0,top)};
   this.element.querySelector('strong').textContent=`MAP · STAGE ${w.level.id} · ${s.secrets.length} CONCEALED BLOCKS`;
-  this.element.hidden=false;this.draw();this.element.querySelector('button').focus({preventScroll:true});
+  document.body.classList.add('level-map-open');this.element.hidden=false;this.draw();this.element.querySelector('button').focus({preventScroll:true});
  }
  draw(){
   const box=this.canvas.getBoundingClientRect(),dpr=Math.min(2,devicePixelRatio||1),w=Math.max(1,Math.round(box.width*dpr)),h=Math.max(1,Math.round(box.height*dpr));this.canvas.width=w;this.canvas.height=h;const c=this.canvas.getContext('2d'),s=this.survey,b=s.bounds,scale=Math.min((w-16*dpr)/b.width,(h-16*dpr)/b.height),ox=(w-b.width*scale)/2-b.x*scale,oy=(h-b.height*scale)/2-b.y*scale;
@@ -34,5 +34,5 @@ export class LevelMap {
   c.strokeStyle='#ffe9ae';c.strokeRect(ox+s.camera.x*scale,oy+s.camera.y*scale,320*scale,176*scale);
   const x=ox+s.player.x*scale,y=oy+s.player.y*scale;c.beginPath();c.arc(x,y,4*dpr,0,Math.PI*2);c.fillStyle='#ff4b32';c.fill();c.lineWidth=2*dpr;c.strokeStyle='#fff';c.stroke();
  }
- close(){this.element.hidden=true;this.full=null;this.survey=null;}
+ close(){this.element.hidden=true;document.body.classList.remove('level-map-open');this.full=null;this.survey=null;}
 }
