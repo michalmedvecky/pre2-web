@@ -1,0 +1,342 @@
+{
+  "sources": [
+    {
+      "file": "art/hd-v2/raw/v2-local.png",
+      "sha256": "79cbcff49ce622c198e75630097b6a3b537caeda49cc37e138cbae37e8808788"
+    },
+    {
+      "file": "art/hd-v2/raw/v2-union-0.png",
+      "sha256": "150852ee1fbed8886f6c1737cb685ea0424e70b7572e7d5a2887a0430e2fcf08"
+    },
+    {
+      "file": "art/hd-v2/raw/v2-union-1.png",
+      "sha256": "a854bf20ed738d4cefeed040aa67539a966530b7a60234a4d0c70b7aaad3dda7"
+    },
+    {
+      "file": "art/hd-v2/raw/v2-union-2.png",
+      "sha256": "4dfe1b8262d9e9fbd3bef51ab7e7b4a006c12727f4cddc87423985e42a288bc9"
+    },
+    {
+      "file": "art/hd-v7/raw/missing-tiles.png",
+      "sha256": "7c4e5b47b6733d149361b280c457887b5028a66420e1718fa9fccdc3b1a4ab9c"
+    }
+  ],
+  "extraCells": [
+    {
+      "key": "1:union:351",
+      "rawInk": [
+        49,
+        100,
+        267,
+        266
+      ]
+    },
+    {
+      "key": "1:union:368",
+      "rawInk": [
+        417,
+        101,
+        265,
+        263
+      ]
+    },
+    {
+      "key": "1:union:465",
+      "rawInk": [
+        771,
+        107,
+        269,
+        255
+      ]
+    },
+    {
+      "key": "1:union:468",
+      "rawInk": [
+        1133,
+        106,
+        265,
+        259
+      ]
+    },
+    {
+      "key": "1:union:447",
+      "rawInk": [
+        49,
+        432,
+        268,
+        262
+      ]
+    },
+    {
+      "key": "1:union:457",
+      "rawInk": [
+        415,
+        429,
+        267,
+        264
+      ]
+    },
+    {
+      "key": "1:union:450",
+      "rawInk": [
+        767,
+        432,
+        270,
+        256
+      ]
+    },
+    {
+      "key": "1:union:451",
+      "rawInk": [
+        1131,
+        432,
+        270,
+        256
+      ]
+    },
+    {
+      "key": "1:union:453",
+      "rawInk": [
+        47,
+        744,
+        263,
+        247
+      ]
+    },
+    {
+      "key": "1:union:454",
+      "rawInk": [
+        414,
+        744,
+        261,
+        245
+      ]
+    },
+    {
+      "key": "1:local:26",
+      "rawInk": [
+        773,
+        794,
+        265,
+        183
+      ]
+    },
+    {
+      "key": "1:local:27",
+      "rawInk": [
+        1141,
+        794,
+        256,
+        180
+      ]
+    }
+  ],
+  "tiles": [
+    "1:local:0",
+    "1:local:1",
+    "1:local:2",
+    "1:local:3",
+    "1:local:4",
+    "1:local:5",
+    "1:local:6",
+    "1:local:7",
+    "1:local:8",
+    "1:local:9",
+    "1:local:10",
+    "1:local:11",
+    "1:local:12",
+    "1:local:13",
+    "1:local:14",
+    "1:local:15",
+    "1:local:16",
+    "1:local:17",
+    "1:local:18",
+    "1:local:19",
+    "1:local:20",
+    "1:local:21",
+    "1:local:22",
+    "1:local:23",
+    "1:local:24",
+    "1:local:25",
+    "1:local:28",
+    "1:union:323",
+    "1:union:324",
+    "1:union:325",
+    "1:union:326",
+    "1:union:327",
+    "1:union:328",
+    "1:union:329",
+    "1:union:330",
+    "1:union:331",
+    "1:union:332",
+    "1:union:333",
+    "1:union:334",
+    "1:union:335",
+    "1:union:336",
+    "1:union:337",
+    "1:union:338",
+    "1:union:339",
+    "1:union:340",
+    "1:union:341",
+    "1:union:342",
+    "1:union:343",
+    "1:union:344",
+    "1:union:345",
+    "1:union:346",
+    "1:union:347",
+    "1:union:348",
+    "1:union:349",
+    "1:union:350",
+    "1:union:352",
+    "1:union:353",
+    "1:union:354",
+    "1:union:355",
+    "1:union:356",
+    "1:union:357",
+    "1:union:358",
+    "1:union:359",
+    "1:union:360",
+    "1:union:361",
+    "1:union:362",
+    "1:union:363",
+    "1:union:364",
+    "1:union:365",
+    "1:union:366",
+    "1:union:367",
+    "1:union:369",
+    "1:union:370",
+    "1:union:371",
+    "1:union:372",
+    "1:union:373",
+    "1:union:374",
+    "1:union:375",
+    "1:union:376",
+    "1:union:377",
+    "1:union:378",
+    "1:union:379",
+    "1:union:380",
+    "1:union:381",
+    "1:union:382",
+    "1:union:383",
+    "1:union:384",
+    "1:union:385",
+    "1:union:386",
+    "1:union:387",
+    "1:union:388",
+    "1:union:389",
+    "1:union:390",
+    "1:union:391",
+    "1:union:392",
+    "1:union:393",
+    "1:union:394",
+    "1:union:395",
+    "1:union:396",
+    "1:union:397",
+    "1:union:398",
+    "1:union:399",
+    "1:union:400",
+    "1:union:401",
+    "1:union:402",
+    "1:union:403",
+    "1:union:404",
+    "1:union:405",
+    "1:union:406",
+    "1:union:407",
+    "1:union:408",
+    "1:union:409",
+    "1:union:410",
+    "1:union:411",
+    "1:union:412",
+    "1:union:413",
+    "1:union:414",
+    "1:union:415",
+    "1:union:416",
+    "1:union:417",
+    "1:union:418",
+    "1:union:419",
+    "1:union:420",
+    "1:union:421",
+    "1:union:422",
+    "1:union:423",
+    "1:union:424",
+    "1:union:425",
+    "1:union:426",
+    "1:union:427",
+    "1:union:428",
+    "1:union:429",
+    "1:union:430",
+    "1:union:431",
+    "1:union:432",
+    "1:union:433",
+    "1:union:434",
+    "1:union:435",
+    "1:union:436",
+    "1:union:437",
+    "1:union:438",
+    "1:union:439",
+    "1:union:440",
+    "1:union:441",
+    "1:union:442",
+    "1:union:443",
+    "1:union:444",
+    "1:union:445",
+    "1:union:446",
+    "1:union:448",
+    "1:union:449",
+    "1:union:452",
+    "1:union:455",
+    "1:union:456",
+    "1:union:458",
+    "1:union:459",
+    "1:union:460",
+    "1:union:461",
+    "1:union:462",
+    "1:union:463",
+    "1:union:464",
+    "1:union:466",
+    "1:union:467",
+    "1:union:501",
+    "1:union:502",
+    "1:union:503",
+    "1:union:504",
+    "1:union:505",
+    "1:union:506",
+    "1:union:507",
+    "1:union:508",
+    "1:union:509",
+    "1:union:510",
+    "1:union:511",
+    "1:union:512",
+    "1:union:513",
+    "1:union:514",
+    "1:union:515",
+    "1:union:516",
+    "1:union:517",
+    "1:union:518",
+    "1:union:521",
+    "1:union:522",
+    "1:union:523",
+    "1:union:524",
+    "1:union:525",
+    "1:union:526",
+    "1:union:527",
+    "1:union:528",
+    "1:union:529",
+    "1:union:530",
+    "1:union:531",
+    "1:union:532",
+    "1:union:533",
+    "1:union:351",
+    "1:union:368",
+    "1:union:465",
+    "1:union:468",
+    "1:union:447",
+    "1:union:457",
+    "1:union:450",
+    "1:union:451",
+    "1:union:453",
+    "1:union:454",
+    "1:local:26",
+    "1:local:27"
+  ]
+}

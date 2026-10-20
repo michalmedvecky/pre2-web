@@ -313,6 +313,46 @@
       "sha256": "4876d0c181a2cf5b5e538ae000d51afb23915fbb4a96dd2b7c709d6347f19e0e",
       "frames": 6,
       "kind": "sprite"
+    },
+    {
+      "id": "v7-local",
+      "file": "v7-local.png",
+      "width": 512,
+      "height": 256,
+      "sha256": "c37ed030ca27f35b74c2cd5d67edc48fff18498e32066eb9423dd5accde110ac",
+      "kind": "paint-tile"
+    },
+    {
+      "id": "v7-union-0",
+      "file": "v7-union-0.png",
+      "width": 512,
+      "height": 512,
+      "sha256": "dda9e2e4d16b1066b5f2afe8af2e708ac3a898600d3a735c563b86afed61533d",
+      "kind": "paint-tile"
+    },
+    {
+      "id": "v7-union-1",
+      "file": "v7-union-1.png",
+      "width": 512,
+      "height": 512,
+      "sha256": "f9b9d42df6ae28759763023253e55e414d0b17e3da06cf0d0ea5194020d00d14",
+      "kind": "paint-tile"
+    },
+    {
+      "id": "v7-union-2",
+      "file": "v7-union-2.png",
+      "width": 512,
+      "height": 512,
+      "sha256": "dea80b7a75056b3a48e6c6772bb9907c2a78ddcc73d024eca586634868c68f53",
+      "kind": "paint-tile"
+    },
+    {
+      "id": "v7-missing-tiles",
+      "file": "v7-missing-tiles.png",
+      "width": 256,
+      "height": 192,
+      "sha256": "f4c51c9c8158c5848d339103199ffd0cd31fcbf38610b8a34d7c8e4a9c6765c6",
+      "kind": "paint-tile"
     }
   ],
   "sprites": {
@@ -10808,6 +10848,3718 @@
         459
       ],
       "completeSpriteBank": true
+    },
+    "paintedTerrainV7": {
+      "level": "1",
+      "source": "existing image_gen artwork, full RGB",
+      "sources": [
+        {
+          "file": "art/hd-v2/raw/v2-local.png",
+          "sha256": "79cbcff49ce622c198e75630097b6a3b537caeda49cc37e138cbae37e8808788"
+        },
+        {
+          "file": "art/hd-v2/raw/v2-union-0.png",
+          "sha256": "150852ee1fbed8886f6c1737cb685ea0424e70b7572e7d5a2887a0430e2fcf08"
+        },
+        {
+          "file": "art/hd-v2/raw/v2-union-1.png",
+          "sha256": "a854bf20ed738d4cefeed040aa67539a966530b7a60234a4d0c70b7aaad3dda7"
+        },
+        {
+          "file": "art/hd-v2/raw/v2-union-2.png",
+          "sha256": "4dfe1b8262d9e9fbd3bef51ab7e7b4a006c12727f4cddc87423985e42a288bc9"
+        },
+        {
+          "file": "art/hd-v7/raw/missing-tiles.png",
+          "sha256": "7c4e5b47b6733d149361b280c457887b5028a66420e1718fa9fccdc3b1a4ab9c"
+        }
+      ]
+    }
+  },
+  "paintTiles": {
+    "1:local:0": {
+      "atlas": "v7-local",
+      "rect": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "local",
+      "index": 0,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:local:1": {
+      "atlas": "v7-local",
+      "rect": [
+        64,
+        0,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "local",
+      "index": 1,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:local:2": {
+      "atlas": "v7-local",
+      "rect": [
+        128,
+        0,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "local",
+      "index": 2,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:local:3": {
+      "atlas": "v7-local",
+      "rect": [
+        192,
+        0,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "local",
+      "index": 3,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:local:4": {
+      "atlas": "v7-local",
+      "rect": [
+        256,
+        0,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "local",
+      "index": 4,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:local:5": {
+      "atlas": "v7-local",
+      "rect": [
+        320,
+        0,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "local",
+      "index": 5,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:local:6": {
+      "atlas": "v7-local",
+      "rect": [
+        384,
+        0,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "local",
+      "index": 6,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:local:7": {
+      "atlas": "v7-local",
+      "rect": [
+        448,
+        0,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "local",
+      "index": 7,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:local:8": {
+      "atlas": "v7-local",
+      "rect": [
+        0,
+        64,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "local",
+      "index": 8,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:local:9": {
+      "atlas": "v7-local",
+      "rect": [
+        64,
+        64,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "local",
+      "index": 9,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:local:10": {
+      "atlas": "v7-local",
+      "rect": [
+        128,
+        64,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "local",
+      "index": 10,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:local:11": {
+      "atlas": "v7-local",
+      "rect": [
+        192,
+        64,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "local",
+      "index": 11,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:local:12": {
+      "atlas": "v7-local",
+      "rect": [
+        256,
+        64,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "local",
+      "index": 12,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:local:13": {
+      "atlas": "v7-local",
+      "rect": [
+        320,
+        64,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "local",
+      "index": 13,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:local:14": {
+      "atlas": "v7-local",
+      "rect": [
+        384,
+        64,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "local",
+      "index": 14,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:local:15": {
+      "atlas": "v7-local",
+      "rect": [
+        448,
+        64,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "local",
+      "index": 15,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:local:16": {
+      "atlas": "v7-local",
+      "rect": [
+        0,
+        128,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "local",
+      "index": 16,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:local:17": {
+      "atlas": "v7-local",
+      "rect": [
+        64,
+        128,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "local",
+      "index": 17,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:local:18": {
+      "atlas": "v7-local",
+      "rect": [
+        128,
+        128,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "local",
+      "index": 18,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:local:19": {
+      "atlas": "v7-local",
+      "rect": [
+        192,
+        128,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "local",
+      "index": 19,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:local:20": {
+      "atlas": "v7-local",
+      "rect": [
+        256,
+        128,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "local",
+      "index": 20,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:local:21": {
+      "atlas": "v7-local",
+      "rect": [
+        320,
+        128,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "local",
+      "index": 21,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:local:22": {
+      "atlas": "v7-local",
+      "rect": [
+        384,
+        128,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "local",
+      "index": 22,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:local:23": {
+      "atlas": "v7-local",
+      "rect": [
+        448,
+        128,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "local",
+      "index": 23,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:local:24": {
+      "atlas": "v7-local",
+      "rect": [
+        0,
+        192,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "local",
+      "index": 24,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:local:25": {
+      "atlas": "v7-local",
+      "rect": [
+        64,
+        192,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "local",
+      "index": 25,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:local:28": {
+      "atlas": "v7-local",
+      "rect": [
+        128,
+        192,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "local",
+      "index": 28,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:323": {
+      "atlas": "v7-union-0",
+      "rect": [
+        64,
+        0,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 323,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:324": {
+      "atlas": "v7-union-0",
+      "rect": [
+        128,
+        0,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 324,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:325": {
+      "atlas": "v7-union-0",
+      "rect": [
+        192,
+        0,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 325,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:326": {
+      "atlas": "v7-union-0",
+      "rect": [
+        256,
+        0,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 326,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:327": {
+      "atlas": "v7-union-0",
+      "rect": [
+        320,
+        0,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 327,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:328": {
+      "atlas": "v7-union-0",
+      "rect": [
+        384,
+        0,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 328,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:329": {
+      "atlas": "v7-union-0",
+      "rect": [
+        448,
+        0,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 329,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:330": {
+      "atlas": "v7-union-0",
+      "rect": [
+        0,
+        64,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 330,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:331": {
+      "atlas": "v7-union-0",
+      "rect": [
+        64,
+        64,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 331,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:332": {
+      "atlas": "v7-union-0",
+      "rect": [
+        128,
+        64,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 332,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:333": {
+      "atlas": "v7-union-0",
+      "rect": [
+        192,
+        64,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 333,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:334": {
+      "atlas": "v7-union-0",
+      "rect": [
+        256,
+        64,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 334,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:335": {
+      "atlas": "v7-union-0",
+      "rect": [
+        320,
+        64,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 335,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:336": {
+      "atlas": "v7-union-0",
+      "rect": [
+        384,
+        64,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 336,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:337": {
+      "atlas": "v7-union-0",
+      "rect": [
+        448,
+        64,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 337,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:338": {
+      "atlas": "v7-union-0",
+      "rect": [
+        0,
+        128,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 338,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:339": {
+      "atlas": "v7-union-0",
+      "rect": [
+        64,
+        128,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 339,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:340": {
+      "atlas": "v7-union-0",
+      "rect": [
+        128,
+        128,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 340,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:341": {
+      "atlas": "v7-union-0",
+      "rect": [
+        192,
+        128,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 341,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:342": {
+      "atlas": "v7-union-0",
+      "rect": [
+        256,
+        128,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 342,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:343": {
+      "atlas": "v7-union-0",
+      "rect": [
+        320,
+        128,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 343,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:344": {
+      "atlas": "v7-union-0",
+      "rect": [
+        384,
+        128,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 344,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:345": {
+      "atlas": "v7-union-0",
+      "rect": [
+        448,
+        128,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 345,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:346": {
+      "atlas": "v7-union-0",
+      "rect": [
+        0,
+        192,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 346,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:347": {
+      "atlas": "v7-union-0",
+      "rect": [
+        64,
+        192,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 347,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:348": {
+      "atlas": "v7-union-0",
+      "rect": [
+        128,
+        192,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 348,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:349": {
+      "atlas": "v7-union-0",
+      "rect": [
+        192,
+        192,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 349,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:350": {
+      "atlas": "v7-union-0",
+      "rect": [
+        256,
+        192,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 350,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:352": {
+      "atlas": "v7-union-0",
+      "rect": [
+        320,
+        192,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 352,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:353": {
+      "atlas": "v7-union-0",
+      "rect": [
+        384,
+        192,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 353,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:354": {
+      "atlas": "v7-union-0",
+      "rect": [
+        448,
+        192,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 354,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:355": {
+      "atlas": "v7-union-0",
+      "rect": [
+        0,
+        256,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 355,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:356": {
+      "atlas": "v7-union-0",
+      "rect": [
+        64,
+        256,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 356,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:357": {
+      "atlas": "v7-union-0",
+      "rect": [
+        128,
+        256,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 357,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:358": {
+      "atlas": "v7-union-0",
+      "rect": [
+        192,
+        256,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 358,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:359": {
+      "atlas": "v7-union-0",
+      "rect": [
+        256,
+        256,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 359,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:360": {
+      "atlas": "v7-union-0",
+      "rect": [
+        320,
+        256,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 360,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:361": {
+      "atlas": "v7-union-0",
+      "rect": [
+        384,
+        256,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 361,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:362": {
+      "atlas": "v7-union-0",
+      "rect": [
+        448,
+        256,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 362,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:363": {
+      "atlas": "v7-union-0",
+      "rect": [
+        0,
+        320,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 363,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:364": {
+      "atlas": "v7-union-0",
+      "rect": [
+        64,
+        320,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 364,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:365": {
+      "atlas": "v7-union-0",
+      "rect": [
+        128,
+        320,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 365,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:366": {
+      "atlas": "v7-union-0",
+      "rect": [
+        192,
+        320,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 366,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:367": {
+      "atlas": "v7-union-0",
+      "rect": [
+        256,
+        320,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 367,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:369": {
+      "atlas": "v7-union-0",
+      "rect": [
+        320,
+        320,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 369,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:370": {
+      "atlas": "v7-union-0",
+      "rect": [
+        384,
+        320,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 370,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:371": {
+      "atlas": "v7-union-0",
+      "rect": [
+        448,
+        320,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 371,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:372": {
+      "atlas": "v7-union-0",
+      "rect": [
+        0,
+        384,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 372,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:373": {
+      "atlas": "v7-union-0",
+      "rect": [
+        64,
+        384,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 373,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:374": {
+      "atlas": "v7-union-0",
+      "rect": [
+        128,
+        384,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 374,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:375": {
+      "atlas": "v7-union-0",
+      "rect": [
+        192,
+        384,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 375,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:376": {
+      "atlas": "v7-union-0",
+      "rect": [
+        256,
+        384,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 376,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:377": {
+      "atlas": "v7-union-0",
+      "rect": [
+        320,
+        384,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 377,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:378": {
+      "atlas": "v7-union-0",
+      "rect": [
+        384,
+        384,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 378,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:379": {
+      "atlas": "v7-union-0",
+      "rect": [
+        448,
+        384,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 379,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:380": {
+      "atlas": "v7-union-0",
+      "rect": [
+        0,
+        448,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 380,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:381": {
+      "atlas": "v7-union-0",
+      "rect": [
+        64,
+        448,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 381,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:382": {
+      "atlas": "v7-union-0",
+      "rect": [
+        128,
+        448,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 382,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:383": {
+      "atlas": "v7-union-0",
+      "rect": [
+        192,
+        448,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 383,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:384": {
+      "atlas": "v7-union-0",
+      "rect": [
+        256,
+        448,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 384,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:385": {
+      "atlas": "v7-union-0",
+      "rect": [
+        320,
+        448,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 385,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:386": {
+      "atlas": "v7-union-0",
+      "rect": [
+        384,
+        448,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 386,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:387": {
+      "atlas": "v7-union-0",
+      "rect": [
+        448,
+        448,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 387,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:388": {
+      "atlas": "v7-union-1",
+      "rect": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 388,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:389": {
+      "atlas": "v7-union-1",
+      "rect": [
+        64,
+        0,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 389,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:390": {
+      "atlas": "v7-union-1",
+      "rect": [
+        128,
+        0,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 390,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:391": {
+      "atlas": "v7-union-1",
+      "rect": [
+        192,
+        0,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 391,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:392": {
+      "atlas": "v7-union-1",
+      "rect": [
+        256,
+        0,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 392,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:393": {
+      "atlas": "v7-union-1",
+      "rect": [
+        320,
+        0,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 393,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:394": {
+      "atlas": "v7-union-1",
+      "rect": [
+        384,
+        0,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 394,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:395": {
+      "atlas": "v7-union-1",
+      "rect": [
+        448,
+        0,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 395,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:396": {
+      "atlas": "v7-union-1",
+      "rect": [
+        0,
+        64,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 396,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:397": {
+      "atlas": "v7-union-1",
+      "rect": [
+        64,
+        64,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 397,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:398": {
+      "atlas": "v7-union-1",
+      "rect": [
+        128,
+        64,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 398,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:399": {
+      "atlas": "v7-union-1",
+      "rect": [
+        192,
+        64,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 399,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:400": {
+      "atlas": "v7-union-1",
+      "rect": [
+        256,
+        64,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 400,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:401": {
+      "atlas": "v7-union-1",
+      "rect": [
+        320,
+        64,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 401,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:402": {
+      "atlas": "v7-union-1",
+      "rect": [
+        384,
+        64,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 402,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:403": {
+      "atlas": "v7-union-1",
+      "rect": [
+        448,
+        64,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 403,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:404": {
+      "atlas": "v7-union-1",
+      "rect": [
+        0,
+        128,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 404,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:405": {
+      "atlas": "v7-union-1",
+      "rect": [
+        64,
+        128,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 405,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:406": {
+      "atlas": "v7-union-1",
+      "rect": [
+        128,
+        128,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 406,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:407": {
+      "atlas": "v7-union-1",
+      "rect": [
+        192,
+        128,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 407,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:408": {
+      "atlas": "v7-union-1",
+      "rect": [
+        256,
+        128,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 408,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:409": {
+      "atlas": "v7-union-1",
+      "rect": [
+        320,
+        128,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 409,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:410": {
+      "atlas": "v7-union-1",
+      "rect": [
+        384,
+        128,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 410,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:411": {
+      "atlas": "v7-union-1",
+      "rect": [
+        448,
+        128,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 411,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:412": {
+      "atlas": "v7-union-1",
+      "rect": [
+        0,
+        192,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 412,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:413": {
+      "atlas": "v7-union-1",
+      "rect": [
+        64,
+        192,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 413,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:414": {
+      "atlas": "v7-union-1",
+      "rect": [
+        128,
+        192,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 414,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:415": {
+      "atlas": "v7-union-1",
+      "rect": [
+        192,
+        192,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 415,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:416": {
+      "atlas": "v7-union-1",
+      "rect": [
+        256,
+        192,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 416,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:417": {
+      "atlas": "v7-union-1",
+      "rect": [
+        320,
+        192,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 417,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:418": {
+      "atlas": "v7-union-1",
+      "rect": [
+        384,
+        192,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 418,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:419": {
+      "atlas": "v7-union-1",
+      "rect": [
+        448,
+        192,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 419,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:420": {
+      "atlas": "v7-union-1",
+      "rect": [
+        0,
+        256,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 420,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:421": {
+      "atlas": "v7-union-1",
+      "rect": [
+        64,
+        256,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 421,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:422": {
+      "atlas": "v7-union-1",
+      "rect": [
+        128,
+        256,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 422,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:423": {
+      "atlas": "v7-union-1",
+      "rect": [
+        192,
+        256,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 423,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:424": {
+      "atlas": "v7-union-1",
+      "rect": [
+        256,
+        256,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 424,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:425": {
+      "atlas": "v7-union-1",
+      "rect": [
+        320,
+        256,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 425,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:426": {
+      "atlas": "v7-union-1",
+      "rect": [
+        384,
+        256,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 426,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:427": {
+      "atlas": "v7-union-1",
+      "rect": [
+        448,
+        256,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 427,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:428": {
+      "atlas": "v7-union-1",
+      "rect": [
+        0,
+        320,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 428,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:429": {
+      "atlas": "v7-union-1",
+      "rect": [
+        64,
+        320,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 429,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:430": {
+      "atlas": "v7-union-1",
+      "rect": [
+        128,
+        320,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 430,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:431": {
+      "atlas": "v7-union-1",
+      "rect": [
+        192,
+        320,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 431,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:432": {
+      "atlas": "v7-union-1",
+      "rect": [
+        256,
+        320,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 432,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:433": {
+      "atlas": "v7-union-1",
+      "rect": [
+        320,
+        320,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 433,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:434": {
+      "atlas": "v7-union-1",
+      "rect": [
+        384,
+        320,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 434,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:435": {
+      "atlas": "v7-union-1",
+      "rect": [
+        448,
+        320,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 435,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:436": {
+      "atlas": "v7-union-1",
+      "rect": [
+        0,
+        384,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 436,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:437": {
+      "atlas": "v7-union-1",
+      "rect": [
+        64,
+        384,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 437,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:438": {
+      "atlas": "v7-union-1",
+      "rect": [
+        128,
+        384,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 438,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:439": {
+      "atlas": "v7-union-1",
+      "rect": [
+        192,
+        384,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 439,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:440": {
+      "atlas": "v7-union-1",
+      "rect": [
+        256,
+        384,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 440,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:441": {
+      "atlas": "v7-union-1",
+      "rect": [
+        320,
+        384,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 441,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:442": {
+      "atlas": "v7-union-1",
+      "rect": [
+        384,
+        384,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 442,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:443": {
+      "atlas": "v7-union-1",
+      "rect": [
+        448,
+        384,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 443,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:444": {
+      "atlas": "v7-union-1",
+      "rect": [
+        0,
+        448,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 444,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:445": {
+      "atlas": "v7-union-1",
+      "rect": [
+        64,
+        448,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 445,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:446": {
+      "atlas": "v7-union-1",
+      "rect": [
+        128,
+        448,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 446,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:448": {
+      "atlas": "v7-union-1",
+      "rect": [
+        192,
+        448,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 448,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:449": {
+      "atlas": "v7-union-1",
+      "rect": [
+        256,
+        448,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 449,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:452": {
+      "atlas": "v7-union-1",
+      "rect": [
+        320,
+        448,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 452,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:455": {
+      "atlas": "v7-union-1",
+      "rect": [
+        384,
+        448,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 455,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:456": {
+      "atlas": "v7-union-1",
+      "rect": [
+        448,
+        448,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 456,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:458": {
+      "atlas": "v7-union-2",
+      "rect": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 458,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:459": {
+      "atlas": "v7-union-2",
+      "rect": [
+        64,
+        0,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 459,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:460": {
+      "atlas": "v7-union-2",
+      "rect": [
+        128,
+        0,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 460,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:461": {
+      "atlas": "v7-union-2",
+      "rect": [
+        192,
+        0,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 461,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:462": {
+      "atlas": "v7-union-2",
+      "rect": [
+        256,
+        0,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 462,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:463": {
+      "atlas": "v7-union-2",
+      "rect": [
+        320,
+        0,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 463,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:464": {
+      "atlas": "v7-union-2",
+      "rect": [
+        384,
+        0,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 464,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:466": {
+      "atlas": "v7-union-2",
+      "rect": [
+        448,
+        0,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 466,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:467": {
+      "atlas": "v7-union-2",
+      "rect": [
+        0,
+        64,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 467,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:501": {
+      "atlas": "v7-union-2",
+      "rect": [
+        64,
+        64,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 501,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:502": {
+      "atlas": "v7-union-2",
+      "rect": [
+        128,
+        64,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 502,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:503": {
+      "atlas": "v7-union-2",
+      "rect": [
+        192,
+        64,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 503,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:504": {
+      "atlas": "v7-union-2",
+      "rect": [
+        256,
+        64,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 504,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:505": {
+      "atlas": "v7-union-2",
+      "rect": [
+        320,
+        64,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 505,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:506": {
+      "atlas": "v7-union-2",
+      "rect": [
+        384,
+        64,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 506,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:507": {
+      "atlas": "v7-union-2",
+      "rect": [
+        448,
+        64,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 507,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:508": {
+      "atlas": "v7-union-2",
+      "rect": [
+        0,
+        128,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 508,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:509": {
+      "atlas": "v7-union-2",
+      "rect": [
+        64,
+        128,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 509,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:510": {
+      "atlas": "v7-union-2",
+      "rect": [
+        128,
+        128,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 510,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:511": {
+      "atlas": "v7-union-2",
+      "rect": [
+        192,
+        128,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 511,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:512": {
+      "atlas": "v7-union-2",
+      "rect": [
+        256,
+        128,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 512,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:513": {
+      "atlas": "v7-union-2",
+      "rect": [
+        320,
+        128,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 513,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:514": {
+      "atlas": "v7-union-2",
+      "rect": [
+        384,
+        128,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 514,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:515": {
+      "atlas": "v7-union-2",
+      "rect": [
+        448,
+        128,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 515,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:516": {
+      "atlas": "v7-union-2",
+      "rect": [
+        0,
+        192,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 516,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:517": {
+      "atlas": "v7-union-2",
+      "rect": [
+        64,
+        192,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 517,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:518": {
+      "atlas": "v7-union-2",
+      "rect": [
+        128,
+        192,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 518,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:521": {
+      "atlas": "v7-union-2",
+      "rect": [
+        320,
+        192,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 521,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:522": {
+      "atlas": "v7-union-2",
+      "rect": [
+        384,
+        192,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 522,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:523": {
+      "atlas": "v7-union-2",
+      "rect": [
+        448,
+        192,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 523,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:524": {
+      "atlas": "v7-union-2",
+      "rect": [
+        0,
+        256,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 524,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:525": {
+      "atlas": "v7-union-2",
+      "rect": [
+        64,
+        256,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 525,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:526": {
+      "atlas": "v7-union-2",
+      "rect": [
+        128,
+        256,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 526,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:527": {
+      "atlas": "v7-union-2",
+      "rect": [
+        192,
+        256,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 527,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:528": {
+      "atlas": "v7-union-2",
+      "rect": [
+        256,
+        256,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 528,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:529": {
+      "atlas": "v7-union-2",
+      "rect": [
+        320,
+        256,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 529,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:530": {
+      "atlas": "v7-union-2",
+      "rect": [
+        384,
+        256,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 530,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:531": {
+      "atlas": "v7-union-2",
+      "rect": [
+        448,
+        256,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 531,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:532": {
+      "atlas": "v7-union-2",
+      "rect": [
+        0,
+        320,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 532,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:533": {
+      "atlas": "v7-union-2",
+      "rect": [
+        64,
+        320,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 533,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0,
+      "preservedFlat": false,
+      "preservedOriginal": false
+    },
+    "1:union:351": {
+      "atlas": "v7-missing-tiles",
+      "rect": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 351,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0
+    },
+    "1:union:368": {
+      "atlas": "v7-missing-tiles",
+      "rect": [
+        64,
+        0,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 368,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0
+    },
+    "1:union:465": {
+      "atlas": "v7-missing-tiles",
+      "rect": [
+        128,
+        0,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 465,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0
+    },
+    "1:union:468": {
+      "atlas": "v7-missing-tiles",
+      "rect": [
+        192,
+        0,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 468,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0
+    },
+    "1:union:447": {
+      "atlas": "v7-missing-tiles",
+      "rect": [
+        0,
+        64,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 447,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0
+    },
+    "1:union:457": {
+      "atlas": "v7-missing-tiles",
+      "rect": [
+        64,
+        64,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 457,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0
+    },
+    "1:union:450": {
+      "atlas": "v7-missing-tiles",
+      "rect": [
+        128,
+        64,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 450,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0
+    },
+    "1:union:451": {
+      "atlas": "v7-missing-tiles",
+      "rect": [
+        192,
+        64,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 451,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0
+    },
+    "1:union:453": {
+      "atlas": "v7-missing-tiles",
+      "rect": [
+        0,
+        128,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 453,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0
+    },
+    "1:union:454": {
+      "atlas": "v7-missing-tiles",
+      "rect": [
+        64,
+        128,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "union",
+      "index": 454,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0
+    },
+    "1:local:26": {
+      "atlas": "v7-missing-tiles",
+      "rect": [
+        128,
+        128,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "local",
+      "index": 26,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0
+    },
+    "1:local:27": {
+      "atlas": "v7-missing-tiles",
+      "rect": [
+        192,
+        128,
+        64,
+        64
+      ],
+      "level": "1",
+      "bank": "local",
+      "index": 27,
+      "width": 16,
+      "height": 16,
+      "mask": "connected-world",
+      "edgePhysicalPixels": 0
     }
   }
 }

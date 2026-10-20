@@ -1,5 +1,5 @@
 import {HDFeedback} from './hd-feedback.js';
-import {connectedTerrain,textureSampler} from './terrain.js';
+import {connectedTerrain,textureSampler,paintSampler} from './terrain.js';
 import {HDHud} from './hd-hud.js';
 // Optional high-resolution presentation. Never owns simulation or collision state.
 export class HDAssets {
@@ -7,7 +7,7 @@ export class HDAssets {
   const response=await fetch(new URL('manifest.json',base));if(!response.ok)throw Error('HD manifest unavailable');
   const manifest=await response.json();if(manifest.version!==1||manifest.scale!==4||!manifest.sprites||!Array.isArray(manifest.atlases))throw Error('Unsupported HD manifest');
   const images=new Map();await Promise.all(manifest.atlases.map(async a=>{const image=new Image();image.src=new URL(a.file,base);await image.decode();if(image.naturalWidth!==a.width||image.naturalHeight!==a.height)throw Error('HD atlas extent mismatch');images.set(a.id,image);}));
-  const records=[...Object.values(manifest.sprites),...Object.values(manifest.tiles||{}),...Object.values(manifest.backgrounds||{})];
+  const records=[...Object.values(manifest.sprites),...Object.values(manifest.tiles||{}),...Object.values(manifest.paintTiles||{}),...Object.values(manifest.backgrounds||{})];
   for(const s of records){const a=manifest.atlases.find(a=>a.id===s.atlas),r=s.rect;if(!a||!r||r.length!==4||r.some(v=>!Number.isFinite(v)||v<0)||r[2]===0||r[3]===0||r[0]+r[2]>a.width||r[1]+r[3]>a.height)throw Error('Invalid HD atlas record');}
 
   return {manifest,images};
@@ -44,9 +44,9 @@ export class HDCompositor {
    let chunk=this.terrainCache.get(key);if(!chunk||chunk.signature!==signature){
     const source=new Uint8Array(width*width);for(let y=0;y<width;y++)for(let x=0;x<width;x++)source[y*width+x]=sample(ox+x-halo,oy+y-halo);
     const textures=[];for(let y=0;y<columns;y++)for(let x=0;x<columns;x++){
-     const v=valueAt(ox+x*16-halo,oy+y*16-halo),record=this.pack.manifest.tiles?.['1:'+(v<256?'local:':'union:')+(v<256?v:v-256)];textures.push(record&&!record.preservedOriginal&&!record.preservedFlat?this.terrainTexture(record):null);
+     const v=valueAt(ox+x*16-halo,oy+y*16-halo),record=(this.pack.manifest.paintTiles||this.pack.manifest.tiles)?.['1:'+(v<256?'local:':'union:')+(v<256?v:v-256)];textures.push(record&&!record.preservedOriginal&&!record.preservedFlat?this.terrainTexture(record):null);
     }
-    const rgba=connectedTerrain(source,width,width,this.palette,textureSampler(textures,columns));
+    const rgba=connectedTerrain(source,width,width,this.palette,(this.pack.manifest.paintTiles?paintSampler:textureSampler)(textures,columns),{paintColor:!!this.pack.manifest.paintTiles});
     const image=document.createElement('canvas');image.width=size*4;image.height=size*4;const ctx=image.getContext('2d');ctx.putImageData(new ImageData(rgba,width*4,width*4),-halo*4,-halo*4);chunk={signature,image};this.terrainCache.set(key,chunk);
    }
    c.drawImage(chunk.image,0,0,size*4,size*4,(ox-cx)*4,(oy-cy)*4,size*4,size*4);
@@ -57,7 +57,7 @@ export class HDCompositor {
  }
  terrainTexture(record){
   const key=record.atlas+':'+record.index;let texture=this.terrainTextures.get(key);if(texture)return texture;
-  const canvas=document.createElement('canvas');canvas.width=64;canvas.height=64;const c=canvas.getContext('2d',{willReadFrequently:true});c.drawImage(this.pack.images.get(record.atlas),...record.rect,0,0,64,64);const data=c.getImageData(0,0,64,64).data,integral=new Float32Array(65*65),luma=new Float32Array(4096);texture=new Float32Array(4096*4);
+  const canvas=document.createElement('canvas');canvas.width=64;canvas.height=64;const c=canvas.getContext('2d',{willReadFrequently:true});c.drawImage(this.pack.images.get(record.atlas),...record.rect,0,0,64,64);const data=c.getImageData(0,0,64,64).data;if(record.mask==='connected-world'){texture=new Float32Array(data);this.terrainTextures.set(key,texture);return texture;}const integral=new Float32Array(65*65),luma=new Float32Array(4096);texture=new Float32Array(4096*4);
   for(let y=0;y<64;y++)for(let x=0;x<64;x++){const i=y*64+x;luma[i]=(data[i*4]+data[i*4+1]+data[i*4+2])/3;integral[(y+1)*65+x+1]=luma[i]+integral[y*65+x+1]+integral[(y+1)*65+x]-integral[y*65+x];}
   // Reuse the painted stone/leaf detail, while keeping incompatible separately
   // painted contours and large lighting changes out of the connected terrain.

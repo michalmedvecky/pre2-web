@@ -29,7 +29,7 @@ export function textureSampler(tiles,columns,tileSize=64){
   return out;
  };
 }
-export function connectedTerrain(source,width,height,palette,texture){
+export function connectedTerrain(source,width,height,palette,texture,{paintColor=false}={}){
  // Reconstruct continuous color from connected contours instead of copying
  // large indexed-color steps into a high-resolution canvas.
  const pixels=scale2x(source,width,height),sw=width*2,sh=height*2,w=width*4,h=height*4,rgba=new Uint8ClampedArray(w*h*4),horizontal=new Float32Array(w*sh*4);
@@ -48,6 +48,17 @@ export function connectedTerrain(source,width,height,palette,texture){
   for(let i=0;i<4;i++){const q=(Math.max(0,Math.min(sh-1,iy+i-1))*w+x)*4,k=kernel[i];r+=horizontal[q]*k;g+=horizontal[q+1]*k;b+=horizontal[q+2]*k;alpha+=horizontal[q+3]*k;}
   if(alpha<=.2)continue;r/=alpha;g/=alpha;b/=alpha;
   const paint=texture?.(x,y),light=paint?paint[0]*Math.min(1,paint[3]):0,coverage=Math.max(0,Math.min(1,(alpha-.2)/.6));
-  rgba[p]=r*(1+light);rgba[p+1]=g*(1+light);rgba[p+2]=b*(1+light);rgba[p+3]=coverage*coverage*(3-2*coverage)*255;
+  if(paintColor&&paint?.[3]>.01){rgba[p]=paint[0];rgba[p+1]=paint[1];rgba[p+2]=paint[2];}else{rgba[p]=r*(1+light);rgba[p+1]=g*(1+light);rgba[p+2]=b*(1+light);}rgba[p+3]=coverage*coverage*(3-2*coverage)*255;
  }return rgba;
+}
+
+// Join neighboring painted edge colors by a local tone correction. Interior
+// gradients stay sharp; no columns are stretched into a blurred seam band.
+export function paintSampler(tiles,columns,tileSize=64){
+ const rows=Math.ceil(tiles.length/columns),w=columns*tileSize,h=rows*tileSize,rgba=new Float32Array(w*h*4),out=new Float32Array(4),band=8;
+ for(let i=0;i<tiles.length;i++){const tile=tiles[i];if(!tile)continue;for(let y=0;y<tileSize;y++)rgba.set(tile.subarray(y*tileSize*4,(y+1)*tileSize*4),(((i/columns|0)*tileSize+y)*w+i%columns*tileSize)*4);}
+ const join=(a,b,step)=>{if(!rgba[a+3]||!rgba[b+3])return;for(let k=0;k<3;k++){const average=(rgba[a+k]+rgba[b+k])/2,da=average-rgba[a+k],db=average-rgba[b+k];for(let d=0;d<band;d++){const t=1-d/band,weight=t*t*(3-2*t);rgba[a-d*step+k]+=da*weight;rgba[b+d*step+k]+=db*weight;}}};
+ for(let x=tileSize;x<w;x+=tileSize)for(let y=0;y<h;y++)join((y*w+x-1)*4,(y*w+x)*4,4);
+ for(let y=tileSize;y<h;y+=tileSize)for(let x=0;x<w;x++)join(((y-1)*w+x)*4,(y*w+x)*4,w*4);
+ return(x,y)=>{const p=(y*w+x)*4;out[0]=rgba[p];out[1]=rgba[p+1];out[2]=rgba[p+2];out[3]=rgba[p+3]/255;return out;};
 }

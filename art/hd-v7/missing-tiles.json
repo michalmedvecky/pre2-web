@@ -1,0 +1,93 @@
+{
+  "records": [
+    {
+      "key": "1:union:351",
+      "bank": "union",
+      "id": 351,
+      "flat": false,
+      "cell": 0
+    },
+    {
+      "key": "1:union:368",
+      "bank": "union",
+      "id": 368,
+      "flat": false,
+      "cell": 1
+    },
+    {
+      "key": "1:union:465",
+      "bank": "union",
+      "id": 465,
+      "flat": false,
+      "cell": 2
+    },
+    {
+      "key": "1:union:468",
+      "bank": "union",
+      "id": 468,
+      "flat": false,
+      "cell": 3
+    },
+    {
+      "key": "1:union:447",
+      "bank": "union",
+      "id": 447,
+      "flat": false,
+      "cell": 4
+    },
+    {
+      "key": "1:union:457",
+      "bank": "union",
+      "id": 457,
+      "flat": false,
+      "cell": 5
+    },
+    {
+      "key": "1:union:450",
+      "bank": "union",
+      "id": 450,
+      "flat": false,
+      "cell": 6
+    },
+    {
+      "key": "1:union:451",
+      "bank": "union",
+      "id": 451,
+      "flat": false,
+      "cell": 7
+    },
+    {
+      "key": "1:union:453",
+      "bank": "union",
+      "id": 453,
+      "flat": false,
+      "cell": 8
+    },
+    {
+      "key": "1:union:454",
+      "bank": "union",
+      "id": 454,
+      "flat": false,
+      "cell": 9
+    },
+    {
+      "key": "1:local:26",
+      "bank": "local",
+      "id": 26,
+      "flat": false,
+      "cell": 10
+    },
+    {
+      "key": "1:local:27",
+      "bank": "local",
+      "id": 27,
+      "flat": false,
+      "cell": 11
+    }
+  ],
+  "sourceHashes": {
+    "dist/assets/game.json": "36e0bf5e4b9348e25093402e1d814ff448662aa661146fa8cbb9260001973fcd",
+    "dist/assets/tiles-1.idx": "3eae9d31c984600bf665645ffbc9ba6432c365603e46eac40245a8e5af6a4146",
+    "dist/assets/union.idx": "c59810d54d3dab5fbe9c820003b89937bd3872ea792c4ac2461961ddc8e8f09a"
+  }
+}

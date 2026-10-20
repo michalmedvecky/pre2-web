@@ -1,0 +1,21 @@
+{
+  "ok": true,
+  "before": {
+    "native": 312264615,
+    "pixels": 2472082992,
+    "state": "55598a1c"
+  },
+  "after": {
+    "native": 312264615,
+    "pixels": 3713436736,
+    "state": "55598a1c",
+    "paintedTextures": 85
+  },
+  "checks": [
+    "reported scene at 2048 CSS pixels fullscreen",
+    "full RGB terrain differs from luma-only path",
+    "native indexed frame and simulation identical",
+    "MAP preserves HD on closing H",
+    "mobile map and tap return"
+  ]
+}

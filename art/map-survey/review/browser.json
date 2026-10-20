@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "stages": 16,
+  "checks": [
+    "MAP key sequence preserves mute and avoids movement/pause",
+    "simulation and timers freeze",
+    "any closing key consumed including repeats",
+    "all 16 whole maps including hidden replacement terrain",
+    "return to previous pause state",
+    "M mute shortcut preserved",
+    "fullscreen overlay"
+  ]
+}

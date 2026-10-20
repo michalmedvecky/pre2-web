@@ -1,0 +1,13 @@
+[
+  {
+    "id": "missing-tiles",
+    "args": {
+      "prompt": "Use case: style-transfer. Production HD 2D platform-game terrain atlas with transparent background. Image 1 is EDIT TARGET: 12 native terrain animation/variation frames in EXACT 4 columns by 3 rows, row-major order. Image 2 is STYLE REFERENCE only: warm cartoon rock and bright green leaf art. Redraw each of the 12 target tiles with the same sharp illustrated quality: smooth confident contours, clean cel shading, crisp material highlights, dark rock crevices, rounded leaves. Preserve target composition and relative positions of rocks and leaves EXACTLY. Cells 7/8 and 9/10 are nearby leaf animation poses in the SAME stone: keep stone contours constant, subtly move only the leaves as referenced. Last 2 cells are small brown soil/wood blocks crossed by green vines, preserve their original proportions. First 2 are dense green leaves with rocks. Keep every tile within its own cell with ample transparent gutters, no inter-cell touching, no border or frame around tiles, no colored guide lines, NO labels/text/numbers/grid. No pixel mosaic, blur or nearest-neighbor texture. Reconstruct drawn shapes rather than retaining pixel stair steps. 4 evenly spaced columns, 3 rows, exactly 12 tiles, transparent background. High-resolution sharp art.",
+      "referenced_image_paths": [
+        "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v7/references/missing-tiles.png",
+        "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v2/raw/v2-union-0.png"
+      ],
+      "transparent_background": true
+    }
+  }
+]
