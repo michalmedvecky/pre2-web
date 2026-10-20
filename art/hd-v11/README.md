@@ -33,4 +33,6 @@ Limits: this fixes first-level layer interpretation and island assembly. It does
 - [x] Separate backdrop masks and small stones from solid wall painting.
 - [x] Replace tiled island art with complete transparent source-based objects.
 - [x] Check partial discovery, all gate views, initial-view parity and all-stage regressions.
-- [ ] Publish verified amd64/arm64 image and update Kubernetes pin.
+- [x] Publish verified amd64/arm64 image and update Kubernetes pin.
+
+Release: code `56bfe370f651f4f96a1f5252668781a16437510f`, [successful build 39412188489](https://github.com/michalmedvecky/pre2-web/actions/runs/39412188489), verified amd64/arm64 GHCR index `sha256:9e93c6f3cb277d08f5e4bf6454c2eb7e72fb68c0d9c631de9dab905c90a1adde`. Both platform revision labels independently checked. Kubernetes manifest/README pins updated; no cluster rollout.
