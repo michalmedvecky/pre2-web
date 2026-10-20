@@ -18,4 +18,6 @@ Verification: **238 passing tests**, all 16-stage HD/native parity checks, all t
 - [x] Retain raw images, prompts, hashes and deterministic packer.
 - [x] Inspect comparable fullscreen screenshot and check original simulation/coverage.
 - [x] Run tests and all-stage/fullscreen integration checks.
-- [ ] Publish verified amd64/arm64 image and update Kubernetes pin.
+- [x] Publish verified amd64/arm64 image and update Kubernetes pin.
+
+Release: code `d9b0d4d211e4c37a43f64a4842f7efe52690275f`, [successful build 39399705654](https://github.com/michalmedvecky/pre2-web/actions/runs/39399705654), verified amd64/arm64 GHCR index `sha256:1da50b4c52a6b07511c2bf5b8aac6dcf51a606adaf52dea1926e89e975984dfb`. Kubernetes pins updated; no cluster rollout.
