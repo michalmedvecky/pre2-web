@@ -12,4 +12,6 @@ Touch fullscreen/viewport mode in landscape now fills the entire phone viewport:
 - [x] Full-width landscape touchscreen presentation and transparent controls.
 - [x] Repair D whole-cherry recognition; preserve original raster and collision behavior.
 - [x] All-stage gap inventory, diagnostic scenes and music preparation.
-- [ ] Publish verified amd64/arm64 image and update Kubernetes pin.
+- [x] Publish verified amd64/arm64 image and update Kubernetes pin.
+
+Published code `425c71a115b7bcb6d1e8a4aa09bfdb3c6c39b41f`; [successful build 39443374986](https://github.com/michalmedvecky/pre2-web/actions/runs/39443374986); GHCR index `sha256:f623fa6df7b6693fe89c692714e5f4fe83f0ca100188c0a5bc33bc2ab9cdd712`. Both architecture revision labels independently verified. Kubernetes pin updated; no cluster rollout. Source tag `v1.1.1` includes the verified pin. [Publication evidence](review/release.json).
