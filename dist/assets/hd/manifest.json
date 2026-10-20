@@ -497,6 +497,14 @@
       "height": 128,
       "sha256": "9acf66f91882d859c99c44dc536a4c02604be428dcf8cb7aa2c8e5cac5111480",
       "kind": "world-material"
+    },
+    {
+      "id": "v11-islands",
+      "file": "v11-islands.png",
+      "width": 600,
+      "height": 136,
+      "sha256": "4ce670088a59b4664bc108cd68b4bb311daa963730f7901bee40528b2baf5b5a",
+      "kind": "world-decor"
     }
   ],
   "sprites": {
@@ -11260,6 +11268,15 @@
         "dist/assets/background-BACK5.idx": "2385dc71ffee3fe80b4e441f28b72ea5277452a674908fb3b8cddfd656d945e4",
         "dist/assets/game.json": "36e0bf5e4b9348e25093402e1d814ff448662aa661146fa8cbb9260001973fcd"
       }
+    },
+    "caveMasksV11": {
+      "level": "1",
+      "sourceHashes": {
+        "dist/assets/game.json": "36e0bf5e4b9348e25093402e1d814ff448662aa661146fa8cbb9260001973fcd",
+        "dist/assets/level-1.map": "df435eb287a0bd3fc8f2a592faa723065c5552157e0e5da909061ef4c1d51b64",
+        "dist/assets/tiles-1.idx": "3eae9d31c984600bf665645ffbc9ba6432c365603e46eac40245a8e5af6a4146",
+        "dist/assets/union.idx": "c59810d54d3dab5fbe9c820003b89937bd3872ea792c4ac2461961ddc8e8f09a"
+      }
     }
   },
   "paintTiles": {
@@ -15066,6 +15083,39 @@
       ],
       "width": 48,
       "height": 24
+    },
+    "island-32": {
+      "atlas": "v11-islands",
+      "rect": [
+        4,
+        4,
+        128,
+        128
+      ],
+      "width": 32,
+      "height": 32
+    },
+    "island-48": {
+      "atlas": "v11-islands",
+      "rect": [
+        140,
+        4,
+        192,
+        128
+      ],
+      "width": 48,
+      "height": 32
+    },
+    "island-64": {
+      "atlas": "v11-islands",
+      "rect": [
+        340,
+        4,
+        256,
+        128
+      ],
+      "width": 64,
+      "height": 32
     }
   },
   "banquetMaterial": {

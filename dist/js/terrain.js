@@ -47,7 +47,7 @@ export function connectedTerrain(source,width,height,palette,texture,{paintColor
   const iy=(y-1)>>1,kernel=kernels[y&1],p=(y*w+x)*4;let r=0,g=0,b=0,alpha=0;
   for(let i=0;i<4;i++){const q=(Math.max(0,Math.min(sh-1,iy+i-1))*w+x)*4,k=kernel[i];r+=horizontal[q]*k;g+=horizontal[q+1]*k;b+=horizontal[q+2]*k;alpha+=horizontal[q+3]*k;}
   if(alpha<=.2)continue;r/=alpha;g/=alpha;b/=alpha;
-  const paint=texture?.(x,y),light=paint?paint[0]*Math.min(1,paint[3]):0,coverage=Math.max(0,Math.min(1,(alpha-.2)/.6));
+  const paint=texture?.(x,y,r,g,b,alpha),light=paint?paint[0]*Math.min(1,paint[3]):0,coverage=Math.max(0,Math.min(1,(alpha-.2)/.6));
   if(paintColor&&paint?.[3]>.01){rgba[p]=paint[0];rgba[p+1]=paint[1];rgba[p+2]=paint[2];}else{rgba[p]=r*(1+light);rgba[p+1]=g*(1+light);rgba[p+2]=b*(1+light);}rgba[p+3]=coverage*coverage*(3-2*coverage)*255;
  }return rgba;
 }

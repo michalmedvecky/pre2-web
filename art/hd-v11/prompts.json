@@ -1,0 +1,8 @@
+{
+  "transparent_background": true,
+  "referenced_image_paths": [
+    "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v11/references/islands.png",
+    "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v1/raw/hero-00-15.png"
+  ],
+  "prompt": "Faithfully remaster EXACTLY the THREE small floating grassy root-rock platforms in first reference. First image is exact composition/identity reference. Second image ONLY supplies sharp dark cartoon outlines and clean celshading; DO NOT draw any characters. Sheet is exactly THREE equal cells in ONE horizontal row, transparent gutters, same row order. Left: narrow roughly square hanging island, flat green grass rim and dangling leaves over warm terracotta root-stones tapering to a point. Middle: 1.5-times-wide island, SAME HEIGHT, fuller rounded lower root-rock base. Right: twice-wide island, SAME HEIGHT, low rounded hanging root-stone base. Preserve native silhouettes, original brown rock/root motifs, flat walkable green top and relative proportions; do not add trees, faces, skulls, fantasy ornaments or new objects. Each is ONE complete continuous drawing, no tile divisions, seams, square fragments or independent chunks. Smooth intentional curves and clear high-detail original brown/green materials, not pixel art, not blurry. All outer corners and the open gaps between hanging roots are TRUE TRANSPARENT, never gray or black backdrop. Dark ink and shadows inside the root shapes stay opaque. Every island fully visible inside its cell, generous transparent margin; no leaf or root clipped. No grid, labels, numbers, text or backgrounds."
+}

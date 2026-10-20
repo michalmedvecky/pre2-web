@@ -1,3 +1,4 @@
+import{terrainShadowRoles,preserveCaveShadows,shadowRoleForMaterial}from'./terrain-semantics.js';
 import{BanquetTerrain}from'./banquet-terrain.js';
 import{discoverDecor,mapFingerprint}from'./world-decor.js';
 import {continuousSampler,terrainMaterial} from './continuous-materials.js';
@@ -45,32 +46,35 @@ export class HDCompositor {
  terrain(assets,level,map,cx,cy,animation){
   if(this.pack.manifest.banquetMaterial?.levels.includes(level.id)){this.banquet||=new BanquetTerrain();return this.banquet.draw(this,assets,level,map,cx,cy);}
   if(level.id!=='1')return false;
-  const decor=this.pack.manifest.worldDecor?this.decorFor(level,map,assets.union):null;
+  const decor=this.pack.manifest.worldDecor?this.decorFor(level,map,assets.union,assets.maps[level.id]):null;
+  if(decor&&!this.decorCache.shadowRoles)this.decorCache.shadowRoles=terrainShadowRoles(level,map,assets.union,assets.tiles[level.id]);
   const size=64,halo=16,width=size+halo*2,columns=width/16,keys=new Set();
   const valueAt=(x,y)=>x<0||x>=4096||y<0||y>=level.height*16?256:level.lookup[animation.remap[map[(y>>4)*256+(x>>4)]]];
   const bankOf=v=>v<256?assets.tiles[level.id]:assets.union;
-  const sample=(x,y)=>{const v=valueAt(x,y);if(v===256||v===65535||v===undefined)return 0;return bankOf(v)?.[(v<256?v:v-256)*256+(y&15)*16+(x&15)]||0;};
+  const sample=(x,y)=>{if(decor?.islandCells.has((y>>4)*256+(x>>4)))return 0;const v=valueAt(x,y);if(v===256||v===65535||v===undefined)return 0;return bankOf(v)?.[(v<256?v:v-256)*256+(y&15)*16+(x&15)]||0;};
   this.clipped(176,c=>{for(let gy=Math.max(0,Math.floor(cy/size));gy<=Math.floor((cy+175)/size);gy++)for(let gx=Math.max(0,Math.floor(cx/size));gx<=Math.floor((cx+319)/size);gx++){
    const ox=gx*size,oy=gy*size;let signature=decor?this.decorCache.hash+':':'',animated=false;for(let y=oy-16;y<=oy+size;y+=16)for(let x=ox-16;x<=ox+size;x+=16){signature+=valueAt(x,y)+',';if(x>=0&&x<4096&&y>=0&&y<level.height*16&&animation.animated[map[(y>>4)*256+(x>>4)]])animated=true;}const key=gx+':'+gy+':'+(animated?animation.phase:0);keys.add(key);
    let chunk=this.terrainCache.get(key);if(!chunk||chunk.signature!==signature){
     const source=new Uint8Array(width*width);for(let y=0;y<width;y++)for(let x=0;x<width;x++)source[y*width+x]=sample(ox+x-halo,oy+y-halo);
-    const textures=[],kinds=[];for(let y=0;y<columns;y++)for(let x=0;x<columns;x++){
-     const v=valueAt(ox+x*16-halo,oy+y*16-halo),record=(this.pack.manifest.paintTiles||this.pack.manifest.tiles)?.['1:'+(v<256?'local:':'union:')+(v<256?v:v-256)];const bank=bankOf(v),offset=(v<256?v:v-256)*256;const cell=((oy+y*16-halo)>>4)*256+((ox+x*16-halo)>>4),covered=decor?.covered.has(cell);kinds.push(covered?(decor.backdrops.get(cell)||'wall'):v===256||v===65535||v===undefined?'literal':terrainMaterial(bank?.subarray(offset,offset+256)||new Uint8Array(),v));textures.push(record&&!record.preservedOriginal&&!record.preservedFlat?this.terrainTexture(record):null);
+    const textures=[],kinds=[],shadowRoles=[];for(let y=0;y<columns;y++)for(let x=0;x<columns;x++){
+     const v=valueAt(ox+x*16-halo,oy+y*16-halo),record=(this.pack.manifest.paintTiles||this.pack.manifest.tiles)?.['1:'+(v<256?'local:':'union:')+(v<256?v:v-256)];const bank=bankOf(v),offset=(v<256?v:v-256)*256;const cell=((oy+y*16-halo)>>4)*256+((ox+x*16-halo)>>4),covered=decor?.covered.has(cell),kind=covered?(decor.backdrops.get(cell)||'wall'):v===256||v===65535||v===undefined?'literal':terrainMaterial(bank?.subarray(offset,offset+256)||new Uint8Array(),v),role=covered?0:(this.decorCache?.shadowRoles?.[cell]||0);shadowRoles.push(shadowRoleForMaterial(role,kind,covered));kinds.push(shadowRoles.at(-1)?'wall':kind);textures.push(record&&!record.preservedOriginal&&!record.preservedFlat?this.terrainTexture(record):null);
     }
     const materials=this.pack.manifest.worldMaterials,paint=materials?continuousSampler({textures,kinds,columns,originX:ox-halo,originY:oy-halo,foliage:!decor,wall:this.materialImage(materials.wall),roots:this.materialImage(materials.roots)}):(this.pack.manifest.paintTiles?paintSampler:textureSampler)(textures,columns);
-    const rgba=connectedTerrain(source,width,width,this.palette,paint,{paintColor:!!this.pack.manifest.paintTiles});
+    const masked=decor?preserveCaveShadows(paint,source,width,shadowRoles,columns,this.palette):paint;
+    const rgba=connectedTerrain(source,width,width,this.palette,masked,{paintColor:!!this.pack.manifest.paintTiles});
     const image=document.createElement('canvas');image.width=size*4;image.height=size*4;const ctx=image.getContext('2d');ctx.putImageData(new ImageData(rgba,width*4,width*4),-halo*4,-halo*4);chunk={signature,image};this.terrainCache.set(key,chunk);
    }
    c.drawImage(chunk.image,0,0,size*4,size*4,(ox-cx)*4,(oy-cy)*4,size*4,size*4);
   }});
-  if(decor)this.drawDecor(decor,cx,cy,animation.phase);
+  if(decor)this.drawDecor(decor,cx,cy,animation.phase,assets);
   // Keep a bounded cache while walking an entire stage.
   for(const key of this.terrainCache.keys())if(this.terrainCache.size>96&&!keys.has(key))this.terrainCache.delete(key);
   return true;
  }
- decorFor(level,map,union){const hash=mapFingerprint(map);if(!this.decorCache||this.decorCache.map!==map||this.decorCache.hash!==hash){this.decorCache={map,hash,decor:discoverDecor(level,map,union)};}return this.decorCache.decor;}
- drawDecor(decor,cx,cy,phase){
+ decorFor(level,map,union,authoredMap){const hash=mapFingerprint(map);if(!this.decorCache||this.decorCache.map!==map||this.decorCache.hash!==hash){this.decorCache={map,hash,decor:discoverDecor(level,map,union,authoredMap)};}return this.decorCache.decor;}
+ drawDecor(decor,cx,cy,phase,assets){
   this.clipped(176,c=>{c.imageSmoothingEnabled=true;for(const o of [...decor.objects,...decor.plants]){if(o.x+o.width<cx||o.x>cx+320||o.y+o.height<cy||o.y>cy+176)continue;const x=(o.x-cx)*4,y=(o.y-cy)*4,w=o.width*4,h=o.height*4;
+   if(o.kind==='island'){if(o.visibleCells){c.save();c.beginPath();for(let j=0;j<o.visibleCells.length;j++)if(o.visibleCells[j])c.rect(x+j%(o.width/16)*64,y+Math.floor(j/(o.width/16))*64,64,64);c.clip();}const full=this.pack.manifest.worldDecor['island-'+o.width];if(full){c.drawImage(this.pack.images.get(full.atlas),...full.rect,x,y,w,h);if(o.visibleCells)c.restore();continue;}const key=o.tiles.join(',')+':'+this.paletteKey;this.islandImages||=new Map();let image=this.islandImages.get(key);if(!image){const source=new Uint8Array(o.width*o.height),bank=assets.tiles['1'];for(let yy=0;yy<o.height;yy++)for(let xx=0;xx<o.width;xx++){const id=o.tiles[(yy>>4)*(o.width>>4)+(xx>>4)],v=bank[id*256+(yy&15)*16+(xx&15)];source[yy*o.width+xx]=v===6?0:v;}const rgba=connectedTerrain(source,o.width,o.height,this.palette);image=document.createElement('canvas');image.width=o.width*4;image.height=o.height*4;image.getContext('2d').putImageData(new ImageData(rgba,image.width,image.height),0,0);this.islandImages.set(key,image);}c.drawImage(image,x,y,w,h);if(o.visibleCells)c.restore();continue;}
    if(o.kind==='sign'){c.save();c.translate(x,y);c.scale(4,4);c.fillStyle='#272017';c.beginPath();c.moveTo(4,5);c.lineTo(43,4);c.quadraticCurveTo(48,9,45,24);c.lineTo(4,25);c.quadraticCurveTo(0,22,2,10);c.closePath();c.fill();c.strokeStyle='#d7c4a0';c.lineWidth=1;c.stroke();c.fillStyle='#b8a182';c.beginPath();c.roundRect(4,7,40,15,3);c.fill();c.font='bold 10px Georgia,serif';c.textAlign='center';c.textBaseline='middle';c.fillStyle='#34281c';c.fillText('LEVEL',24,15,37);c.restore();continue;}
    const record=this.pack.manifest.worldDecor[o.kind==='plant'?'plant-'+o.shape+'-'+phase:o.kind];if(record)c.drawImage(this.pack.images.get(record.atlas),...record.rect,x,y,w,h);
   }});

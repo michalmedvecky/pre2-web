@@ -1,7 +1,8 @@
 // HD presentation anchors recovered from actual map patterns. No world mutation.
 export function mapFingerprint(map){let h=2166136261;for(const b of map)h=Math.imul(h^b,16777619);return h>>>0;}
-export function discoverDecor(level,map,union){
- const width=4096,height=level.height*16,objects=[],covered=new Set(),physical=i=>level.lookup[map[i]],mask=new Uint8Array(width*height);
+export function islandPatterns(level,map){const result=[],physical=i=>level.lookup[map[i]];for(let i=0;i<map.length;i++){const tx=i%256,ty=i>>8;if(physical(i)!==7||ty+1>=level.height)continue;let end=tx+1;while(end<Math.min(256,tx+8)&&[8,9].includes(physical(ty*256+end)))end++;const count=end-tx+1,top=Array.from({length:count},(_,n)=>physical(i+n)),bottom=top.map(v=>({7:18,8:19,9:20,10:21})[v]);if(top.at(-1)===10&&bottom.every((v,n)=>physical(i+256+n)===v))result.push({kind:'island',tiles:[...top,...bottom],x:tx*16,y:ty*16,width:count*16,height:32});}return result;}
+export function discoverDecor(level,map,union,authoredMap=map){
+ const width=4096,height=level.height*16,objects=[],covered=new Set(),islandCells=new Set(),physical=i=>level.lookup[map[i]],mask=new Uint8Array(width*height);
  const mark=(object,tx,ty,w,h)=>{objects.push({...object,x:tx*16,y:ty*16,width:w*16,height:h*16});for(let yy=0;yy<h;yy++)for(let xx=0;xx<w;xx++)covered.add((ty+yy)*256+tx+xx);};
  const column=[654,11,12,667,668,669,651,652,653,664,665,666],sign=[775,776,3,777,778,779];
  for(let i=0;i<map.length;i++){const v=physical(i),tx=i%256,ty=i>>8;
@@ -9,7 +10,12 @@ export function discoverDecor(level,map,union){
   if(v===654&&match(column,3,4))mark({kind:'column'},tx,ty,3,4);
   if(v===775&&match(sign,3,2))mark({kind:'sign'},tx,ty,3,2);
   if(v===633)mark({kind:'spikes'},tx,ty,1,1);
+
+
  }
+ const islands=islandPatterns(level,map),known=new Set(islands.map(o=>o.x+':'+o.y));
+ if(authoredMap!==map)for(const o of islandPatterns(level,authoredMap)){if(known.has(o.x+':'+o.y))continue;const columns=o.width/16,pos=(o.y>>4)*256+(o.x>>4),visibleCells=o.tiles.map((v,j)=>physical(pos+(j/columns|0)*256+j%columns)===v);if(visibleCells.some(Boolean))islands.push({...o,visibleCells});}
+ for(const o of islands){objects.push(o);const columns=o.width/16,pos=(o.y>>4)*256+(o.x>>4);for(let j=0;j<o.tiles.length;j++)if(!o.visibleCells||o.visibleCells[j]){const cell=pos+(j/columns|0)*256+j%columns;covered.add(cell);islandCells.add(cell);}}
  const greenValues=new Set([605,606,607,622,623,624,641,642,701,702,703,705,706,707,708,709,710,711,712,713,719,720,721,722,723,724]);
  // Group original leaf pixels across tile boundaries. Padding joins individual
  // leaflets, but does not impose a rectangular native-tile crop on the HD plant.
@@ -24,5 +30,5 @@ export function discoverDecor(level,map,union){
  }
  const backdrops=new Map(),root=v=>[714,715,716,717,780,781].includes(v)?'root-top':[693,694,695,696,697,698,786,787].includes(v)?'root-bottom':null;
  for(const o of objects)for(let y=o.y>>4;y<(o.y+o.height)>>4;y++){const left=(o.x>>4)-1,right=(o.x+o.width)>>4,kind=root(physical(y*256+left))||root(physical(y*256+right));if(kind)for(let x=o.x>>4;x<(o.x+o.width)>>4;x++)backdrops.set(y*256+x,kind);}
- return{objects,covered,plants,backdrops};
+ return{objects,covered,plants,backdrops,islandCells};
 }
