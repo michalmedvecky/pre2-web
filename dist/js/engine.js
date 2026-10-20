@@ -111,7 +111,11 @@ export class World {
     if(this.collectionFlash)this.collectionFlash--;if(this.blockCooldown)this.blockCooldown--;if(this.sceneFlash)this.sceneFlash--;if(this.weaponPower)this.weaponPower--;
     // Original broad update order: actors, effects, player, interactions, world changes, presentation counter.
     for(const a of this.actors)a.hitFlash=false;this.checkEnemyAttacks();this.checkBlocks();this.updateBosses();this.updateActors();this.spawnActors();this.updatePlatforms();this.updateEffects();this.updateProjectiles();this.stepPlayer(input);if(this.enemyPowerTimer)this.enemyPowerTimer--;this.checkActorDamage();this.checkPickups();this.updateFollowParticles();this.updatePalette();this.checkGates();updateMovingBlocks(this);this.updateCamera();this.updateTileAnimation();updateWeather(this);
-    if(this.levelIndex===14&&this.player.y>(this.level.height+1)*16)this.finish('ending');else if(this.player.y>this.level.height*16+32||this.player.y< -320)this.loseLife();
+    if(this.levelIndex===14&&this.player.y>(this.level.height+1)*16)this.finish('ending');
+    else if(this.player.y>this.level.height*16+32||this.player.y< -320||
+      // Fixed cave views may have more map below them. IDDQD must rescue a
+      // fallen, fully hidden player there too, even if a lower floor stops them.
+      (this.godMode&&(this.gateCameraFlag||this.levelIndex===9)&&this.player.vy>=0&&this.spriteBounds(this.player).top>=this.camera.y+176))this.loseLife();
     for(const i of this.items)if(i.active&&!(this.frame&1)){i.bob=(i.bob||0)+1;if(i.bob>=4)i.bob=-i.bob+1;i.y+=i.bob;}
     if(this.player.invulnerable)this.player.invulnerable--;if(this.power)this.power--;updateScreenShake(this);
     const q=Math.floor((this.score>>>0)/25000);while(this.extraLifeQuotient<q){this.extraLifeQuotient++;this.lives=Math.min(99,this.lives+1);this.emit('sfx',{index:4});this.floatText('1UP',this.player.x,this.player.y-38,0xe3);}

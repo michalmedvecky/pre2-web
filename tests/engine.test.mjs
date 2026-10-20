@@ -165,3 +165,19 @@ test('IDDQD rescue clears falling, glider, platform and attack state without res
 test('every non-ending stage recovers from a real falling update and accepts movement with IDDQD',()=>{
  for(let level=0;level<16;level++){if(level===14)continue;const w=new World(a);w.loadLevel(level);w.toggleGodMode();const lives=w.lives,health=w.health;w.gateCameraFlag=1;Object.assign(w.player,{y:w.level.height*16+33,vy:192,jumpLock:6});w.step({});assert.equal(w.deathTimer,0);assert.equal(w.gateCameraFlag,0);assert.equal(w.player.y,w.checkpoint.y,`stage ${w.level.id}`);assert.equal(w.lives,lives);assert.equal(w.health,health);assert.equal(w.godMode,true);for(let n=0;n<12;n++)w.step({right:true});assert.ok(Number.isFinite(w.player.x)&&Number.isFinite(w.player.y));assert.equal(w.transition,null);}
 });
+
+test('IDDQD catches ordinary falls below authored fixed-room views before the world bottom',()=>{
+ for(const [level,index]of[[0,14],[1,17],[6,14]]){
+  let rescued=0;const w=new World(a,{onEvent:e=>{if(e.type==='rescue')rescued++;}});w.loadLevel(level);w.toggleGodMode();const gate=w.gates[index];Object.assign(w.player,{x:(gate.triggerTile&255)*16,y:(gate.triggerTile>>>8)*16});w.step({down:true});assert.equal(w.gateCameraFlag,1);
+  const before={health:w.health,lives:w.lives},map=w.map,items=w.items;let frames=0;
+  while(!rescued&&frames++<100)w.step({right:true});assert.equal(rescued,1,`stage ${w.level.id}`);assert.ok(frames<40);assert.equal(w.gateCameraFlag,0);assert.equal(w.player.x,w.checkpoint.x);assert.equal(w.player.y,w.checkpoint.y);assert.deepEqual({health:w.health,lives:w.lives},before);assert.equal(w.map,map);assert.equal(w.items,items);
+  for(let n=0;n<60&&(!w.player.grounded||w.player.jumpLock);n++)w.step({});assert.equal(w.player.grounded,true);assert.equal(w.player.jumpLock,0);const y=w.player.y;w.step({up:true});assert.ok(w.player.y<y);assert.equal(rescued,1);
+ }
+});
+test('IDDQD rescues a character already stranded on a lower in-map floor under a locked view',()=>{
+ const w=playerFixture();w.toggleGodMode();w.checkpoint={x:100,y:640};w.gateCameraFlag=1;w.camera={x:0,y:0};Object.assign(w.player,{x:100,y:640,vy:0,grounded:true});w.step({});assert.equal(w.gateCameraFlag,0);assert.equal(w.player.y,640);assert.ok(w.camera.y>=512);assert.equal(w.health,3);assert.equal(w.lives,2);
+});
+test('view-edge rescue excludes ordinary visible falls and upward motion',()=>{
+ const w=playerFixture();w.toggleGodMode();w.camera={x:0,y:544};Object.assign(w.player,{x:100,y:640,vy:0});w.step({});assert.equal(w.sceneFlash,0);assert.equal(w.player.grounded,true);
+ w.gateCameraFlag=1;w.camera.y=0;w.map.fill(0);Object.assign(w.player,{y:250,vy:-128,jumpLock:6,grounded:false});w.step({});assert.ok(w.player.y>200);assert.ok(w.player.vy<0);assert.equal(w.gateCameraFlag,1);
+});

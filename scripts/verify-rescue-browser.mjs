@@ -8,13 +8,15 @@ try{
   const q=prehistorik,r=q.renderer,pack=r.hd.pack,checks=[];
   for(const hd of[false,true]){
    q.start(1);q.pause();const w=q.world;w.toggleGodMode();const gate=w.gates[17];Object.assign(w.player,{x:(gate.triggerTile&255)*16,y:(gate.triggerTile>>>8)*16});q.step(1,{down:true});if(w.gateCameraFlag!==1)throw Error('fixture did not lock cave camera');
-   const health=w.health,lives=w.lives,score=w.score;Object.assign(w.player,{y:w.level.height*16+33,vy:192,jumpLock:6});q.step(1,{});if(w.gateCameraFlag||w.player.jumpLock||w.player.platformGrip)throw Error('rescue retained control locks');
+   const originalRescue=w.rescuePlayer;w.rescuePlayer=function(){const progress=[this.health,this.lives,this.score,this.weapon,this.inventory],map=this.map;originalRescue.call(this);if(progress.some((v,i)=>v!==[this.health,this.lives,this.score,this.weapon,this.inventory][i])||this.map!==map)throw Error('rescue lost live progress');};
+   let rescues=0;const originalEvent=w.onEvent;w.onEvent=e=>{if(e.type==='rescue')rescues++;originalEvent(e);};
+   const health=w.health,lives=w.lives,score=w.score;q.step(35,{right:true});if(rescues!==1||w.gateCameraFlag)throw Error('in-map offscreen fall did not recover');Object.assign(w.player,{y:w.level.height*16+33,vy:192,jumpLock:6});q.step(1,{});if(w.gateCameraFlag||w.player.jumpLock||w.player.platformGrip)throw Error('rescue retained control locks');
    q.step(90,{right:true});if(w.camera.x<=0||w.player.x-w.camera.x>208)throw Error('camera no longer follows');
    q.step(4,{});const y=w.player.y;q.step(1,{up:true});if(w.player.y>=y||w.player.vy>=0)throw Error('cannot jump after rescue');
-   if(!w.godMode||w.health!==health||w.lives!==lives||w.score!==score||w.transition||w.deathTimer)throw Error('rescue changed progress or entered death');
+   if(!w.godMode||w.health!==health||w.lives!==lives||w.score<score||w.transition||w.deathTimer)throw Error('rescue changed progress or entered death');
    r.setHD(hd?pack:null);const before=w.stateHash();r.render(w);if(w.stateHash()!==before)throw Error('render changed simulation');
    const sp=q.assets.game.sprites[w.player.sprite&8191],x=w.player.x-w.camera.x,yScreen=w.player.y-w.camera.y;if(x+sp.width<0||x-sp.width>320||yScreen<0||yScreen-sp.height>176)throw Error('player is offscreen');
-   checks.push({mode:hd?'HD':'Original',camera:{...w.camera},player:{x:w.player.x,y:w.player.y},health,lives,jump:true});
+   checks.push({mode:hd?'HD':'Original',camera:{...w.camera},player:{x:w.player.x,y:w.player.y},health,lives,jump:true,inMapRescues:rescues-1});
   }return checks;
  });assert.deepEqual(errors,[]);console.log(JSON.stringify({ok:true,checks:result},null,2));
 }finally{await browser.close();}
