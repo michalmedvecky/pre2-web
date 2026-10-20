@@ -31,6 +31,8 @@ Run `npm test`. With a local server on5776 and Playwright Chromium/WebKit instal
 - [x] Ten-tap right IDKFA / left IDDQD toggles with cancellation and feedback.
 - [x] Manifest, icons, HTTPS deployment notes and image smoke paths.
 - [x] Node, desktop and mobile browser regression checks; original hashes preserved.
-- [ ] Publish and independently verify linux/amd64 + linux/arm64 GHCR image.
-- [ ] Pin verified image digest in Kubernetes and deployment documentation.
+- [x] Publish and independently verify linux/amd64 + linux/arm64 GHCR image.
+- [x] Pin verified image digest in Kubernetes and deployment documentation.
 - [ ] Physical-device acceptance (Android Chrome / iOS Safari and Home Screen).
+
+Release: code `7bef9a832a527aa93b0199a9dcb025de0615dccd`, [successful build 39439685530](https://github.com/michalmedvecky/pre2-web/actions/runs/39439685530), GHCR index `sha256:9759492fcf8c4a0df47883f250dab5cbb29e9f431676876a1ca93a8d31f0857b`. Both linux/amd64 and linux/arm64 revision labels verified independently. Kubernetes pin updated; no cluster rollout. The annotated `v1.1.0` source tag includes the verified deployment pin. [Machine-readable publication evidence](review/release.json).
