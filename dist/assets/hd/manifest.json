@@ -187,6 +187,132 @@
       "sha256": "12ea68454acb8631cfe7bdb14fa054da6951f8bb5f2eae0606f78598d87991aa",
       "frames": 11,
       "kind": "sprite"
+    },
+    {
+      "id": "v6-actors-0",
+      "file": "v6-actors-0.png",
+      "width": 416,
+      "height": 172,
+      "sha256": "090769d52038edd682dca63402f1973a97b56e6a04fb0e7d56df31bfd2a2cdbe",
+      "frames": 12,
+      "kind": "sprite"
+    },
+    {
+      "id": "v6-actors-1",
+      "file": "v6-actors-1.png",
+      "width": 736,
+      "height": 332,
+      "sha256": "72fe98573e754a32ad144d9c88190c5831d02c8c099dabd39714df42c856a51a",
+      "frames": 12,
+      "kind": "sprite"
+    },
+    {
+      "id": "v6-actors-2",
+      "file": "v6-actors-2.png",
+      "width": 544,
+      "height": 360,
+      "sha256": "6b48004a2da584908a6b76e97068eba52e9dbebff40c0ab224df36938da576e3",
+      "frames": 12,
+      "kind": "sprite"
+    },
+    {
+      "id": "v6-actors-3",
+      "file": "v6-actors-3.png",
+      "width": 576,
+      "height": 296,
+      "sha256": "f31a7b9312d5449ca76725d5b8cbda9114f146563faf697521dd0d72b2cf2f07",
+      "frames": 12,
+      "kind": "sprite"
+    },
+    {
+      "id": "v6-actors-4",
+      "file": "v6-actors-4.png",
+      "width": 640,
+      "height": 340,
+      "sha256": "e4aa38cb63ec892417090f616159e22d4b253ee2df8ce5dbb3000e04cbcd1f08",
+      "frames": 12,
+      "kind": "sprite"
+    },
+    {
+      "id": "v6-actors-5",
+      "file": "v6-actors-5.png",
+      "width": 608,
+      "height": 360,
+      "sha256": "33e9a099db4c89dab7a48bd528f9582335728e8497739ddd540f0bf5342865aa",
+      "frames": 12,
+      "kind": "sprite"
+    },
+    {
+      "id": "v6-actors-6",
+      "file": "v6-actors-6.png",
+      "width": 544,
+      "height": 352,
+      "sha256": "a44376f92891ff8f0ff86e932073749ae1cbbfe59549beb906433c87fc273e1c",
+      "frames": 12,
+      "kind": "sprite"
+    },
+    {
+      "id": "v6-actors-7",
+      "file": "v6-actors-7.png",
+      "width": 1024,
+      "height": 392,
+      "sha256": "586646ba3c7d0811726aa4566ea83d7ccb2f0a4093aa79f10d356e14fefeb2fa",
+      "frames": 12,
+      "kind": "sprite"
+    },
+    {
+      "id": "v6-actors-8",
+      "file": "v6-actors-8.png",
+      "width": 960,
+      "height": 504,
+      "sha256": "e45a2c0245a039c206a6887ccb1a4a566a8088cdb432b929ff6d94419ff13e91",
+      "frames": 12,
+      "kind": "sprite"
+    },
+    {
+      "id": "v6-actors-9",
+      "file": "v6-actors-9.png",
+      "width": 832,
+      "height": 616,
+      "sha256": "d3a54f1b3d77a4b400742e0bae53efb46a93d3e5aeb0a05063d5277635b9a632",
+      "frames": 12,
+      "kind": "sprite"
+    },
+    {
+      "id": "v6-actors-10",
+      "file": "v6-actors-10.png",
+      "width": 992,
+      "height": 416,
+      "sha256": "332f6a3dfdf0d85f00afdf9284db7be2796f53bc05ebbb197a8006122a07040c",
+      "frames": 12,
+      "kind": "sprite"
+    },
+    {
+      "id": "v6-actors-11",
+      "file": "v6-actors-11.png",
+      "width": 1056,
+      "height": 528,
+      "sha256": "e794210b83bc755fb62f1fe1310fd36a636a2bcca97b85d6d0d4af212ade8da3",
+      "frames": 12,
+      "kind": "sprite"
+    },
+    {
+      "id": "v6-actors-12",
+      "file": "v6-actors-12.png",
+      "width": 608,
+      "height": 340,
+      "sha256": "51d1041dcb90d9febbc8121f8dd114058f15b5241d1842773c7e49ac255d2870",
+      "frames": 12,
+      "kind": "sprite"
+    },
+    {
+      "id": "v6-actors-13",
+      "file": "v6-actors-13.png",
+      "width": 832,
+      "height": 272,
+      "sha256": "4876d0c181a2cf5b5e538ae000d51afb23915fbb4a96dd2b7c709d6347f19e0e",
+      "frames": 6,
+      "kind": "sprite"
     }
   ],
   "sprites": {
@@ -1091,6 +1217,91 @@
       "dimensionality": "2d",
       "sourceCell": 13
     },
+    "53": {
+      "atlas": "v6-actors-0",
+      "rect": [
+        4,
+        4,
+        32,
+        24
+      ],
+      "width": 8,
+      "height": 6,
+      "originX": 4,
+      "originY": 0,
+      "sourceSprite": 53,
+      "role": "effect",
+      "sourceCell": 0,
+      "dimensionality": "2d"
+    },
+    "54": {
+      "atlas": "v6-actors-0",
+      "rect": [
+        108,
+        4,
+        32,
+        32
+      ],
+      "width": 8,
+      "height": 8,
+      "originX": 4,
+      "originY": 0,
+      "sourceSprite": 54,
+      "role": "effect",
+      "sourceCell": 1,
+      "dimensionality": "2d"
+    },
+    "55": {
+      "atlas": "v6-actors-0",
+      "rect": [
+        212,
+        4,
+        64,
+        36
+      ],
+      "width": 16,
+      "height": 9,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 55,
+      "role": "effect",
+      "sourceCell": 2,
+      "dimensionality": "2d"
+    },
+    "56": {
+      "atlas": "v6-actors-0",
+      "rect": [
+        316,
+        4,
+        64,
+        44
+      ],
+      "width": 16,
+      "height": 11,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 56,
+      "role": "effect",
+      "sourceCell": 3,
+      "dimensionality": "2d"
+    },
+    "57": {
+      "atlas": "v6-actors-0",
+      "rect": [
+        4,
+        56,
+        64,
+        44
+      ],
+      "width": 16,
+      "height": 11,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 57,
+      "role": "effect",
+      "sourceCell": 4,
+      "dimensionality": "2d"
+    },
     "58": {
       "atlas": "weapons",
       "rect": [
@@ -1363,6 +1574,23 @@
       "dimensionality": "2d",
       "sourceCell": 3
     },
+    "91": {
+      "atlas": "v6-actors-0",
+      "rect": [
+        108,
+        56,
+        96,
+        76
+      ],
+      "width": 24,
+      "height": 19,
+      "originX": 14,
+      "originY": 14,
+      "sourceSprite": 91,
+      "role": "effect",
+      "sourceCell": 5,
+      "dimensionality": "2d"
+    },
     "92": {
       "atlas": "v2-pickups",
       "rect": [
@@ -1566,6 +1794,108 @@
       "sourceSprite": 103,
       "dimensionality": "2d",
       "sourceCell": 15
+    },
+    "104": {
+      "atlas": "v6-actors-0",
+      "rect": [
+        212,
+        56,
+        96,
+        28
+      ],
+      "width": 24,
+      "height": 7,
+      "originX": 11,
+      "originY": 0,
+      "sourceSprite": 104,
+      "role": "effect",
+      "sourceCell": 6,
+      "dimensionality": "2d"
+    },
+    "105": {
+      "atlas": "v6-actors-0",
+      "rect": [
+        316,
+        56,
+        96,
+        28
+      ],
+      "width": 24,
+      "height": 7,
+      "originX": 11,
+      "originY": 0,
+      "sourceSprite": 105,
+      "role": "effect",
+      "sourceCell": 7,
+      "dimensionality": "2d"
+    },
+    "106": {
+      "atlas": "v6-actors-0",
+      "rect": [
+        4,
+        140,
+        96,
+        28
+      ],
+      "width": 24,
+      "height": 7,
+      "originX": 11,
+      "originY": 0,
+      "sourceSprite": 106,
+      "role": "effect",
+      "sourceCell": 8,
+      "dimensionality": "2d"
+    },
+    "107": {
+      "atlas": "v6-actors-0",
+      "rect": [
+        108,
+        140,
+        96,
+        28
+      ],
+      "width": 24,
+      "height": 7,
+      "originX": 11,
+      "originY": 0,
+      "sourceSprite": 107,
+      "role": "effect",
+      "sourceCell": 9,
+      "dimensionality": "2d"
+    },
+    "108": {
+      "atlas": "v6-actors-0",
+      "rect": [
+        212,
+        140,
+        96,
+        28
+      ],
+      "width": 24,
+      "height": 7,
+      "originX": 11,
+      "originY": 0,
+      "sourceSprite": 108,
+      "role": "effect",
+      "sourceCell": 10,
+      "dimensionality": "2d"
+    },
+    "109": {
+      "atlas": "v6-actors-0",
+      "rect": [
+        316,
+        140,
+        96,
+        28
+      ],
+      "width": 24,
+      "height": 7,
+      "originX": 11,
+      "originY": 0,
+      "sourceSprite": 109,
+      "role": "effect",
+      "sourceCell": 11,
+      "dimensionality": "2d"
     },
     "110": {
       "atlas": "v5-items-0",
@@ -3658,6 +3988,23 @@
       "dimensionality": "2d",
       "sourceCell": 17
     },
+    "273": {
+      "atlas": "v6-actors-1",
+      "rect": [
+        4,
+        4,
+        64,
+        48
+      ],
+      "width": 16,
+      "height": 12,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 273,
+      "role": "effect",
+      "sourceCell": 0,
+      "dimensionality": "2d"
+    },
     "274": {
       "atlas": "weapons",
       "rect": [
@@ -3828,6 +4175,159 @@
       "dimensionality": "2d",
       "sourceCell": 20
     },
+    "299": {
+      "atlas": "v6-actors-1",
+      "rect": [
+        140,
+        4,
+        128,
+        84
+      ],
+      "width": 32,
+      "height": 21,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 299,
+      "role": "effect",
+      "sourceCell": 1,
+      "dimensionality": "2d"
+    },
+    "300": {
+      "atlas": "v6-actors-1",
+      "rect": [
+        276,
+        4,
+        32,
+        40
+      ],
+      "width": 8,
+      "height": 10,
+      "originX": 4,
+      "originY": 0,
+      "sourceSprite": 300,
+      "role": "effect",
+      "sourceCell": 2,
+      "dimensionality": "2d"
+    },
+    "304": {
+      "atlas": "v6-actors-1",
+      "rect": [
+        476,
+        4,
+        256,
+        124
+      ],
+      "width": 64,
+      "height": 31,
+      "originX": 32,
+      "originY": 0,
+      "sourceSprite": 304,
+      "role": "effect",
+      "sourceCell": 3,
+      "dimensionality": "2d"
+    },
+    "305": {
+      "atlas": "v6-actors-1",
+      "rect": [
+        4,
+        136,
+        128,
+        64
+      ],
+      "width": 32,
+      "height": 16,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 305,
+      "role": "effect",
+      "sourceCell": 4,
+      "dimensionality": "2d"
+    },
+    "306": {
+      "atlas": "v6-actors-1",
+      "rect": [
+        140,
+        136,
+        32,
+        40
+      ],
+      "width": 8,
+      "height": 10,
+      "originX": 4,
+      "originY": 0,
+      "sourceSprite": 306,
+      "role": "effect",
+      "sourceCell": 5,
+      "dimensionality": "2d"
+    },
+    "307": {
+      "atlas": "v6-actors-1",
+      "rect": [
+        276,
+        136,
+        192,
+        84
+      ],
+      "width": 48,
+      "height": 21,
+      "originX": 24,
+      "originY": 0,
+      "sourceSprite": 307,
+      "role": "effect",
+      "sourceCell": 6,
+      "dimensionality": "2d"
+    },
+    "308": {
+      "atlas": "v6-actors-1",
+      "rect": [
+        476,
+        136,
+        64,
+        48
+      ],
+      "width": 16,
+      "height": 12,
+      "originX": 7,
+      "originY": 1,
+      "sourceSprite": 308,
+      "role": "effect",
+      "sourceCell": 7,
+      "dimensionality": "2d"
+    },
+    "309": {
+      "atlas": "v6-actors-1",
+      "rect": [
+        4,
+        228,
+        32,
+        48
+      ],
+      "width": 8,
+      "height": 12,
+      "originX": 4,
+      "originY": 0,
+      "sourceSprite": 309,
+      "role": "effect",
+      "sourceCell": 8,
+      "dimensionality": "2d"
+    },
+    "310": {
+      "atlas": "v6-actors-1",
+      "rect": [
+        140,
+        228,
+        64,
+        48
+      ],
+      "width": 16,
+      "height": 12,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 310,
+      "role": "effect",
+      "sourceCell": 9,
+      "dimensionality": "2d"
+    },
     "311": {
       "atlas": "v5-special",
       "rect": [
@@ -3930,6 +4430,1060 @@
       "dimensionality": "2d",
       "sourceCell": 4
     },
+    "317": {
+      "atlas": "v6-actors-1",
+      "rect": [
+        276,
+        228,
+        128,
+        76
+      ],
+      "width": 32,
+      "height": 19,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 317,
+      "role": "enemy-component",
+      "sourceCell": 10,
+      "dimensionality": "2d"
+    },
+    "318": {
+      "atlas": "v6-actors-1",
+      "rect": [
+        476,
+        228,
+        128,
+        100
+      ],
+      "width": 32,
+      "height": 25,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 318,
+      "role": "enemy-component",
+      "sourceCell": 11,
+      "dimensionality": "2d"
+    },
+    "319": {
+      "atlas": "v6-actors-2",
+      "rect": [
+        4,
+        4,
+        96,
+        112
+      ],
+      "width": 24,
+      "height": 28,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 319,
+      "role": "enemy-component",
+      "sourceCell": 0,
+      "dimensionality": "2d"
+    },
+    "320": {
+      "atlas": "v6-actors-2",
+      "rect": [
+        140,
+        4,
+        128,
+        56
+      ],
+      "width": 32,
+      "height": 14,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 320,
+      "role": "enemy-component",
+      "sourceCell": 1,
+      "dimensionality": "2d"
+    },
+    "321": {
+      "atlas": "v6-actors-2",
+      "rect": [
+        276,
+        4,
+        128,
+        60
+      ],
+      "width": 32,
+      "height": 15,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 321,
+      "role": "enemy-component",
+      "sourceCell": 2,
+      "dimensionality": "2d"
+    },
+    "322": {
+      "atlas": "v6-actors-2",
+      "rect": [
+        412,
+        4,
+        128,
+        56
+      ],
+      "width": 32,
+      "height": 14,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 322,
+      "role": "enemy-component",
+      "sourceCell": 3,
+      "dimensionality": "2d"
+    },
+    "323": {
+      "atlas": "v6-actors-2",
+      "rect": [
+        4,
+        124,
+        128,
+        60
+      ],
+      "width": 32,
+      "height": 15,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 323,
+      "role": "enemy-component",
+      "sourceCell": 4,
+      "dimensionality": "2d"
+    },
+    "324": {
+      "atlas": "v6-actors-2",
+      "rect": [
+        140,
+        124,
+        64,
+        112
+      ],
+      "width": 16,
+      "height": 28,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 324,
+      "role": "enemy-component",
+      "sourceCell": 5,
+      "dimensionality": "2d"
+    },
+    "325": {
+      "atlas": "v6-actors-2",
+      "rect": [
+        276,
+        124,
+        64,
+        112
+      ],
+      "width": 16,
+      "height": 28,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 325,
+      "role": "enemy-component",
+      "sourceCell": 6,
+      "dimensionality": "2d"
+    },
+    "326": {
+      "atlas": "v6-actors-2",
+      "rect": [
+        412,
+        124,
+        64,
+        112
+      ],
+      "width": 16,
+      "height": 28,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 326,
+      "role": "enemy-component",
+      "sourceCell": 7,
+      "dimensionality": "2d"
+    },
+    "327": {
+      "atlas": "v6-actors-2",
+      "rect": [
+        4,
+        244,
+        64,
+        112
+      ],
+      "width": 16,
+      "height": 28,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 327,
+      "role": "enemy-component",
+      "sourceCell": 8,
+      "dimensionality": "2d"
+    },
+    "328": {
+      "atlas": "v6-actors-2",
+      "rect": [
+        140,
+        244,
+        96,
+        84
+      ],
+      "width": 24,
+      "height": 21,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 328,
+      "role": "enemy-component",
+      "sourceCell": 9,
+      "dimensionality": "2d"
+    },
+    "329": {
+      "atlas": "v6-actors-2",
+      "rect": [
+        276,
+        244,
+        96,
+        100
+      ],
+      "width": 24,
+      "height": 25,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 329,
+      "role": "enemy-component",
+      "sourceCell": 10,
+      "dimensionality": "2d"
+    },
+    "330": {
+      "atlas": "v6-actors-2",
+      "rect": [
+        412,
+        244,
+        128,
+        92
+      ],
+      "width": 32,
+      "height": 23,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 330,
+      "role": "enemy-component",
+      "sourceCell": 11,
+      "dimensionality": "2d"
+    },
+    "331": {
+      "atlas": "v6-actors-3",
+      "rect": [
+        4,
+        4,
+        128,
+        92
+      ],
+      "width": 32,
+      "height": 23,
+      "originX": 17,
+      "originY": 0,
+      "sourceSprite": 331,
+      "role": "enemy-component",
+      "sourceCell": 0,
+      "dimensionality": "2d"
+    },
+    "332": {
+      "atlas": "v6-actors-3",
+      "rect": [
+        172,
+        4,
+        96,
+        128
+      ],
+      "width": 24,
+      "height": 32,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 332,
+      "role": "enemy-component",
+      "sourceCell": 1,
+      "dimensionality": "2d"
+    },
+    "333": {
+      "atlas": "v6-actors-3",
+      "rect": [
+        340,
+        4,
+        96,
+        120
+      ],
+      "width": 24,
+      "height": 30,
+      "originX": 12,
+      "originY": -1,
+      "sourceSprite": 333,
+      "role": "enemy-component",
+      "sourceCell": 2,
+      "dimensionality": "2d"
+    },
+    "334": {
+      "atlas": "v6-actors-3",
+      "rect": [
+        444,
+        4,
+        128,
+        88
+      ],
+      "width": 32,
+      "height": 22,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 334,
+      "role": "enemy-component",
+      "sourceCell": 3,
+      "dimensionality": "2d"
+    },
+    "335": {
+      "atlas": "v6-actors-3",
+      "rect": [
+        4,
+        140,
+        160,
+        56
+      ],
+      "width": 40,
+      "height": 14,
+      "originX": 20,
+      "originY": 0,
+      "sourceSprite": 335,
+      "role": "enemy-component",
+      "sourceCell": 4,
+      "dimensionality": "2d"
+    },
+    "336": {
+      "atlas": "v6-actors-3",
+      "rect": [
+        172,
+        140,
+        160,
+        48
+      ],
+      "width": 40,
+      "height": 12,
+      "originX": 20,
+      "originY": 3,
+      "sourceSprite": 336,
+      "role": "enemy-component",
+      "sourceCell": 5,
+      "dimensionality": "2d"
+    },
+    "337": {
+      "atlas": "v6-actors-3",
+      "rect": [
+        340,
+        140,
+        96,
+        60
+      ],
+      "width": 24,
+      "height": 15,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 337,
+      "role": "enemy-component",
+      "sourceCell": 6,
+      "dimensionality": "2d"
+    },
+    "338": {
+      "atlas": "v6-actors-3",
+      "rect": [
+        444,
+        140,
+        128,
+        44
+      ],
+      "width": 32,
+      "height": 11,
+      "originX": 15,
+      "originY": 0,
+      "sourceSprite": 338,
+      "role": "enemy-component",
+      "sourceCell": 7,
+      "dimensionality": "2d"
+    },
+    "339": {
+      "atlas": "v6-actors-3",
+      "rect": [
+        4,
+        208,
+        96,
+        84
+      ],
+      "width": 24,
+      "height": 21,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 339,
+      "role": "enemy-component",
+      "sourceCell": 8,
+      "dimensionality": "2d"
+    },
+    "340": {
+      "atlas": "v6-actors-3",
+      "rect": [
+        172,
+        208,
+        64,
+        40
+      ],
+      "width": 16,
+      "height": 10,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 340,
+      "role": "enemy-component",
+      "sourceCell": 9,
+      "dimensionality": "2d"
+    },
+    "341": {
+      "atlas": "v6-actors-3",
+      "rect": [
+        340,
+        208,
+        64,
+        36
+      ],
+      "width": 16,
+      "height": 9,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 341,
+      "role": "enemy-component",
+      "sourceCell": 10,
+      "dimensionality": "2d"
+    },
+    "342": {
+      "atlas": "v6-actors-3",
+      "rect": [
+        444,
+        208,
+        32,
+        40
+      ],
+      "width": 8,
+      "height": 10,
+      "originX": 4,
+      "originY": 0,
+      "sourceSprite": 342,
+      "role": "enemy-component",
+      "sourceCell": 11,
+      "dimensionality": "2d"
+    },
+    "343": {
+      "atlas": "v6-actors-4",
+      "rect": [
+        4,
+        4,
+        64,
+        40
+      ],
+      "width": 16,
+      "height": 10,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 343,
+      "role": "enemy-component",
+      "sourceCell": 0,
+      "dimensionality": "2d"
+    },
+    "344": {
+      "atlas": "v6-actors-4",
+      "rect": [
+        140,
+        4,
+        64,
+        40
+      ],
+      "width": 16,
+      "height": 10,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 344,
+      "role": "enemy-component",
+      "sourceCell": 1,
+      "dimensionality": "2d"
+    },
+    "345": {
+      "atlas": "v6-actors-4",
+      "rect": [
+        308,
+        4,
+        96,
+        28
+      ],
+      "width": 24,
+      "height": 7,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 345,
+      "role": "enemy-component",
+      "sourceCell": 2,
+      "dimensionality": "2d"
+    },
+    "346": {
+      "atlas": "v6-actors-4",
+      "rect": [
+        476,
+        4,
+        64,
+        56
+      ],
+      "width": 16,
+      "height": 14,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 346,
+      "role": "enemy-component",
+      "sourceCell": 3,
+      "dimensionality": "2d"
+    },
+    "347": {
+      "atlas": "v6-actors-4",
+      "rect": [
+        4,
+        68,
+        96,
+        48
+      ],
+      "width": 24,
+      "height": 12,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 347,
+      "role": "enemy-component",
+      "sourceCell": 4,
+      "dimensionality": "2d"
+    },
+    "348": {
+      "atlas": "v6-actors-4",
+      "rect": [
+        140,
+        68,
+        96,
+        44
+      ],
+      "width": 24,
+      "height": 11,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 348,
+      "role": "enemy-component",
+      "sourceCell": 5,
+      "dimensionality": "2d"
+    },
+    "349": {
+      "atlas": "v6-actors-4",
+      "rect": [
+        308,
+        68,
+        160,
+        116
+      ],
+      "width": 40,
+      "height": 29,
+      "originX": 20,
+      "originY": 0,
+      "sourceSprite": 349,
+      "role": "enemy-component",
+      "sourceCell": 6,
+      "dimensionality": "2d"
+    },
+    "350": {
+      "atlas": "v6-actors-4",
+      "rect": [
+        476,
+        68,
+        128,
+        112
+      ],
+      "width": 32,
+      "height": 28,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 350,
+      "role": "enemy-component",
+      "sourceCell": 7,
+      "dimensionality": "2d"
+    },
+    "351": {
+      "atlas": "v6-actors-4",
+      "rect": [
+        4,
+        192,
+        128,
+        112
+      ],
+      "width": 32,
+      "height": 28,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 351,
+      "role": "enemy-component",
+      "sourceCell": 8,
+      "dimensionality": "2d"
+    },
+    "352": {
+      "atlas": "v6-actors-4",
+      "rect": [
+        140,
+        192,
+        160,
+        96
+      ],
+      "width": 40,
+      "height": 24,
+      "originX": 20,
+      "originY": 0,
+      "sourceSprite": 352,
+      "role": "enemy-component",
+      "sourceCell": 9,
+      "dimensionality": "2d"
+    },
+    "353": {
+      "atlas": "v6-actors-4",
+      "rect": [
+        308,
+        192,
+        160,
+        144
+      ],
+      "width": 40,
+      "height": 36,
+      "originX": 20,
+      "originY": 0,
+      "sourceSprite": 353,
+      "role": "enemy-component",
+      "sourceCell": 10,
+      "dimensionality": "2d"
+    },
+    "354": {
+      "atlas": "v6-actors-4",
+      "rect": [
+        476,
+        192,
+        160,
+        124
+      ],
+      "width": 40,
+      "height": 31,
+      "originX": 20,
+      "originY": 0,
+      "sourceSprite": 354,
+      "role": "enemy-component",
+      "sourceCell": 11,
+      "dimensionality": "2d"
+    },
+    "355": {
+      "atlas": "v6-actors-5",
+      "rect": [
+        4,
+        4,
+        96,
+        128
+      ],
+      "width": 24,
+      "height": 32,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 355,
+      "role": "enemy-component",
+      "sourceCell": 0,
+      "dimensionality": "2d"
+    },
+    "356": {
+      "atlas": "v6-actors-5",
+      "rect": [
+        172,
+        4,
+        128,
+        124
+      ],
+      "width": 32,
+      "height": 31,
+      "originX": 15,
+      "originY": 0,
+      "sourceSprite": 356,
+      "role": "enemy-component",
+      "sourceCell": 1,
+      "dimensionality": "2d"
+    },
+    "357": {
+      "atlas": "v6-actors-5",
+      "rect": [
+        340,
+        4,
+        128,
+        124
+      ],
+      "width": 32,
+      "height": 31,
+      "originX": 13,
+      "originY": 0,
+      "sourceSprite": 357,
+      "role": "enemy-component",
+      "sourceCell": 2,
+      "dimensionality": "2d"
+    },
+    "358": {
+      "atlas": "v6-actors-5",
+      "rect": [
+        476,
+        4,
+        128,
+        124
+      ],
+      "width": 32,
+      "height": 31,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 358,
+      "role": "enemy-component",
+      "sourceCell": 3,
+      "dimensionality": "2d"
+    },
+    "359": {
+      "atlas": "v6-actors-5",
+      "rect": [
+        4,
+        140,
+        64,
+        84
+      ],
+      "width": 16,
+      "height": 21,
+      "originX": 2,
+      "originY": 0,
+      "sourceSprite": 359,
+      "role": "enemy-component",
+      "sourceCell": 4,
+      "dimensionality": "2d"
+    },
+    "360": {
+      "atlas": "v6-actors-5",
+      "rect": [
+        172,
+        140,
+        64,
+        84
+      ],
+      "width": 16,
+      "height": 21,
+      "originX": 1,
+      "originY": 0,
+      "sourceSprite": 360,
+      "role": "enemy-component",
+      "sourceCell": 5,
+      "dimensionality": "2d"
+    },
+    "361": {
+      "atlas": "v6-actors-5",
+      "rect": [
+        340,
+        140,
+        64,
+        96
+      ],
+      "width": 16,
+      "height": 24,
+      "originX": -1,
+      "originY": 0,
+      "sourceSprite": 361,
+      "role": "enemy-component",
+      "sourceCell": 6,
+      "dimensionality": "2d"
+    },
+    "362": {
+      "atlas": "v6-actors-5",
+      "rect": [
+        476,
+        140,
+        96,
+        96
+      ],
+      "width": 24,
+      "height": 24,
+      "originX": -1,
+      "originY": 0,
+      "sourceSprite": 362,
+      "role": "enemy-component",
+      "sourceCell": 7,
+      "dimensionality": "2d"
+    },
+    "363": {
+      "atlas": "v6-actors-5",
+      "rect": [
+        4,
+        244,
+        160,
+        80
+      ],
+      "width": 40,
+      "height": 20,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 363,
+      "role": "enemy-component",
+      "sourceCell": 8,
+      "dimensionality": "2d"
+    },
+    "364": {
+      "atlas": "v6-actors-5",
+      "rect": [
+        172,
+        244,
+        160,
+        72
+      ],
+      "width": 40,
+      "height": 18,
+      "originX": 16,
+      "originY": -2,
+      "sourceSprite": 364,
+      "role": "enemy-component",
+      "sourceCell": 9,
+      "dimensionality": "2d"
+    },
+    "365": {
+      "atlas": "v6-actors-5",
+      "rect": [
+        340,
+        244,
+        128,
+        112
+      ],
+      "width": 32,
+      "height": 28,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 365,
+      "role": "enemy-component",
+      "sourceCell": 10,
+      "dimensionality": "2d"
+    },
+    "366": {
+      "atlas": "v6-actors-5",
+      "rect": [
+        476,
+        244,
+        32,
+        20
+      ],
+      "width": 8,
+      "height": 5,
+      "originX": 4,
+      "originY": 0,
+      "sourceSprite": 366,
+      "role": "enemy-component",
+      "sourceCell": 11,
+      "dimensionality": "2d"
+    },
+    "367": {
+      "atlas": "v6-actors-6",
+      "rect": [
+        4,
+        4,
+        96,
+        28
+      ],
+      "width": 24,
+      "height": 7,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 367,
+      "role": "enemy-component",
+      "sourceCell": 0,
+      "dimensionality": "2d"
+    },
+    "368": {
+      "atlas": "v6-actors-6",
+      "rect": [
+        172,
+        4,
+        128,
+        48
+      ],
+      "width": 32,
+      "height": 12,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 368,
+      "role": "enemy-component",
+      "sourceCell": 1,
+      "dimensionality": "2d"
+    },
+    "369": {
+      "atlas": "v6-actors-6",
+      "rect": [
+        308,
+        4,
+        128,
+        84
+      ],
+      "width": 32,
+      "height": 21,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 369,
+      "role": "enemy-component",
+      "sourceCell": 2,
+      "dimensionality": "2d"
+    },
+    "370": {
+      "atlas": "v6-actors-6",
+      "rect": [
+        444,
+        4,
+        96,
+        24
+      ],
+      "width": 24,
+      "height": 6,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 370,
+      "role": "enemy-component",
+      "sourceCell": 3,
+      "dimensionality": "2d"
+    },
+    "371": {
+      "atlas": "v6-actors-6",
+      "rect": [
+        4,
+        96,
+        96,
+        32
+      ],
+      "width": 24,
+      "height": 8,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 371,
+      "role": "enemy-component",
+      "sourceCell": 4,
+      "dimensionality": "2d"
+    },
+    "372": {
+      "atlas": "v6-actors-6",
+      "rect": [
+        172,
+        96,
+        96,
+        88
+      ],
+      "width": 24,
+      "height": 22,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 372,
+      "role": "enemy-component",
+      "sourceCell": 5,
+      "dimensionality": "2d"
+    },
+    "373": {
+      "atlas": "v6-actors-6",
+      "rect": [
+        308,
+        96,
+        128,
+        112
+      ],
+      "width": 32,
+      "height": 28,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 373,
+      "role": "enemy-component",
+      "sourceCell": 6,
+      "dimensionality": "2d"
+    },
+    "374": {
+      "atlas": "v6-actors-6",
+      "rect": [
+        444,
+        96,
+        96,
+        124
+      ],
+      "width": 24,
+      "height": 31,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 374,
+      "role": "enemy-component",
+      "sourceCell": 7,
+      "dimensionality": "2d"
+    },
+    "375": {
+      "atlas": "v6-actors-6",
+      "rect": [
+        4,
+        228,
+        160,
+        120
+      ],
+      "width": 40,
+      "height": 30,
+      "originX": 20,
+      "originY": 0,
+      "sourceSprite": 375,
+      "role": "enemy-component",
+      "sourceCell": 8,
+      "dimensionality": "2d"
+    },
+    "376": {
+      "atlas": "v6-actors-6",
+      "rect": [
+        172,
+        228,
+        128,
+        104
+      ],
+      "width": 32,
+      "height": 26,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 376,
+      "role": "enemy-component",
+      "sourceCell": 9,
+      "dimensionality": "2d"
+    },
+    "377": {
+      "atlas": "v6-actors-6",
+      "rect": [
+        308,
+        228,
+        128,
+        76
+      ],
+      "width": 32,
+      "height": 19,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 377,
+      "role": "enemy-component",
+      "sourceCell": 10,
+      "dimensionality": "2d"
+    },
+    "378": {
+      "atlas": "v6-actors-6",
+      "rect": [
+        444,
+        228,
+        64,
+        76
+      ],
+      "width": 16,
+      "height": 19,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 378,
+      "role": "enemy-component",
+      "sourceCell": 11,
+      "dimensionality": "2d"
+    },
     "379": {
       "atlas": "bears",
       "rect": [
@@ -3980,6 +5534,1332 @@
       "sourceSprite": 381,
       "dimensionality": "2d",
       "sourceCell": 7
+    },
+    "382": {
+      "atlas": "v6-actors-7",
+      "rect": [
+        4,
+        4,
+        192,
+        108
+      ],
+      "width": 48,
+      "height": 27,
+      "originX": 24,
+      "originY": 0,
+      "sourceSprite": 382,
+      "role": "enemy-component",
+      "sourceCell": 0,
+      "dimensionality": "2d"
+    },
+    "383": {
+      "atlas": "v6-actors-7",
+      "rect": [
+        236,
+        4,
+        192,
+        116
+      ],
+      "width": 48,
+      "height": 29,
+      "originX": 24,
+      "originY": 0,
+      "sourceSprite": 383,
+      "role": "enemy-component",
+      "sourceCell": 1,
+      "dimensionality": "2d"
+    },
+    "384": {
+      "atlas": "v6-actors-7",
+      "rect": [
+        500,
+        4,
+        192,
+        164
+      ],
+      "width": 48,
+      "height": 41,
+      "originX": 24,
+      "originY": 0,
+      "sourceSprite": 384,
+      "role": "enemy-component",
+      "sourceCell": 2,
+      "dimensionality": "2d"
+    },
+    "385": {
+      "atlas": "v6-actors-7",
+      "rect": [
+        764,
+        4,
+        192,
+        128
+      ],
+      "width": 48,
+      "height": 32,
+      "originX": 24,
+      "originY": 0,
+      "sourceSprite": 385,
+      "role": "enemy-component",
+      "sourceCell": 3,
+      "dimensionality": "2d"
+    },
+    "386": {
+      "atlas": "v6-actors-7",
+      "rect": [
+        4,
+        176,
+        128,
+        12
+      ],
+      "width": 32,
+      "height": 3,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 386,
+      "role": "enemy-component",
+      "sourceCell": 4,
+      "dimensionality": "2d"
+    },
+    "387": {
+      "atlas": "v6-actors-7",
+      "rect": [
+        236,
+        176,
+        128,
+        20
+      ],
+      "width": 32,
+      "height": 5,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 387,
+      "role": "enemy-component",
+      "sourceCell": 5,
+      "dimensionality": "2d"
+    },
+    "388": {
+      "atlas": "v6-actors-7",
+      "rect": [
+        500,
+        176,
+        160,
+        44
+      ],
+      "width": 40,
+      "height": 11,
+      "originX": 20,
+      "originY": 0,
+      "sourceSprite": 388,
+      "role": "enemy-component",
+      "sourceCell": 6,
+      "dimensionality": "2d"
+    },
+    "389": {
+      "atlas": "v6-actors-7",
+      "rect": [
+        764,
+        176,
+        192,
+        76
+      ],
+      "width": 48,
+      "height": 19,
+      "originX": 24,
+      "originY": 0,
+      "sourceSprite": 389,
+      "role": "enemy-component",
+      "sourceCell": 7,
+      "dimensionality": "2d"
+    },
+    "390": {
+      "atlas": "v6-actors-7",
+      "rect": [
+        4,
+        260,
+        224,
+        108
+      ],
+      "width": 56,
+      "height": 27,
+      "originX": 27,
+      "originY": 1,
+      "sourceSprite": 390,
+      "role": "enemy-component",
+      "sourceCell": 8,
+      "dimensionality": "2d"
+    },
+    "391": {
+      "atlas": "v6-actors-7",
+      "rect": [
+        236,
+        260,
+        256,
+        128
+      ],
+      "width": 64,
+      "height": 32,
+      "originX": 32,
+      "originY": 0,
+      "sourceSprite": 391,
+      "role": "enemy-component",
+      "sourceCell": 9,
+      "dimensionality": "2d"
+    },
+    "392": {
+      "atlas": "v6-actors-7",
+      "rect": [
+        500,
+        260,
+        256,
+        124
+      ],
+      "width": 64,
+      "height": 31,
+      "originX": 30,
+      "originY": 0,
+      "sourceSprite": 392,
+      "role": "enemy-component",
+      "sourceCell": 10,
+      "dimensionality": "2d"
+    },
+    "393": {
+      "atlas": "v6-actors-7",
+      "rect": [
+        764,
+        260,
+        256,
+        124
+      ],
+      "width": 64,
+      "height": 31,
+      "originX": 32,
+      "originY": 0,
+      "sourceSprite": 393,
+      "role": "enemy-component",
+      "sourceCell": 11,
+      "dimensionality": "2d"
+    },
+    "394": {
+      "atlas": "v6-actors-8",
+      "rect": [
+        4,
+        4,
+        256,
+        128
+      ],
+      "width": 64,
+      "height": 32,
+      "originX": 33,
+      "originY": 0,
+      "sourceSprite": 394,
+      "role": "enemy-component",
+      "sourceCell": 0,
+      "dimensionality": "2d"
+    },
+    "395": {
+      "atlas": "v6-actors-8",
+      "rect": [
+        268,
+        4,
+        192,
+        156
+      ],
+      "width": 48,
+      "height": 39,
+      "originX": 24,
+      "originY": 0,
+      "sourceSprite": 395,
+      "role": "enemy-component",
+      "sourceCell": 1,
+      "dimensionality": "2d"
+    },
+    "396": {
+      "atlas": "v6-actors-8",
+      "rect": [
+        532,
+        4,
+        192,
+        116
+      ],
+      "width": 48,
+      "height": 29,
+      "originX": 24,
+      "originY": 0,
+      "sourceSprite": 396,
+      "role": "enemy-component",
+      "sourceCell": 2,
+      "dimensionality": "2d"
+    },
+    "397": {
+      "atlas": "v6-actors-8",
+      "rect": [
+        764,
+        4,
+        192,
+        120
+      ],
+      "width": 48,
+      "height": 30,
+      "originX": 21,
+      "originY": 0,
+      "sourceSprite": 397,
+      "role": "enemy-component",
+      "sourceCell": 3,
+      "dimensionality": "2d"
+    },
+    "398": {
+      "atlas": "v6-actors-8",
+      "rect": [
+        4,
+        168,
+        192,
+        108
+      ],
+      "width": 48,
+      "height": 27,
+      "originX": 24,
+      "originY": 0,
+      "sourceSprite": 398,
+      "role": "enemy-component",
+      "sourceCell": 4,
+      "dimensionality": "2d"
+    },
+    "399": {
+      "atlas": "v6-actors-8",
+      "rect": [
+        268,
+        168,
+        256,
+        136
+      ],
+      "width": 64,
+      "height": 34,
+      "originX": 32,
+      "originY": 0,
+      "sourceSprite": 399,
+      "role": "enemy-component",
+      "sourceCell": 5,
+      "dimensionality": "2d"
+    },
+    "400": {
+      "atlas": "v6-actors-8",
+      "rect": [
+        532,
+        168,
+        224,
+        144
+      ],
+      "width": 56,
+      "height": 36,
+      "originX": 28,
+      "originY": 0,
+      "sourceSprite": 400,
+      "role": "enemy-component",
+      "sourceCell": 6,
+      "dimensionality": "2d"
+    },
+    "401": {
+      "atlas": "v6-actors-8",
+      "rect": [
+        764,
+        168,
+        160,
+        128
+      ],
+      "width": 40,
+      "height": 32,
+      "originX": 20,
+      "originY": 0,
+      "sourceSprite": 401,
+      "role": "enemy-component",
+      "sourceCell": 7,
+      "dimensionality": "2d"
+    },
+    "402": {
+      "atlas": "v6-actors-8",
+      "rect": [
+        4,
+        320,
+        256,
+        140
+      ],
+      "width": 64,
+      "height": 35,
+      "originX": 32,
+      "originY": 0,
+      "sourceSprite": 402,
+      "role": "enemy-component",
+      "sourceCell": 8,
+      "dimensionality": "2d"
+    },
+    "403": {
+      "atlas": "v6-actors-8",
+      "rect": [
+        268,
+        320,
+        256,
+        172
+      ],
+      "width": 64,
+      "height": 43,
+      "originX": 32,
+      "originY": 0,
+      "sourceSprite": 403,
+      "role": "enemy-component",
+      "sourceCell": 9,
+      "dimensionality": "2d"
+    },
+    "404": {
+      "atlas": "v6-actors-8",
+      "rect": [
+        532,
+        320,
+        224,
+        180
+      ],
+      "width": 56,
+      "height": 45,
+      "originX": 28,
+      "originY": 0,
+      "sourceSprite": 404,
+      "role": "enemy-component",
+      "sourceCell": 10,
+      "dimensionality": "2d"
+    },
+    "405": {
+      "atlas": "v6-actors-8",
+      "rect": [
+        764,
+        320,
+        128,
+        148
+      ],
+      "width": 32,
+      "height": 37,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 405,
+      "role": "enemy-component",
+      "sourceCell": 11,
+      "dimensionality": "2d"
+    },
+    "406": {
+      "atlas": "v6-actors-9",
+      "rect": [
+        4,
+        4,
+        128,
+        148
+      ],
+      "width": 32,
+      "height": 37,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 406,
+      "role": "enemy-component",
+      "sourceCell": 0,
+      "dimensionality": "2d"
+    },
+    "407": {
+      "atlas": "v6-actors-9",
+      "rect": [
+        236,
+        4,
+        128,
+        136
+      ],
+      "width": 32,
+      "height": 34,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 407,
+      "role": "enemy-component",
+      "sourceCell": 1,
+      "dimensionality": "2d"
+    },
+    "408": {
+      "atlas": "v6-actors-9",
+      "rect": [
+        468,
+        4,
+        128,
+        148
+      ],
+      "width": 32,
+      "height": 37,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 408,
+      "role": "enemy-component",
+      "sourceCell": 2,
+      "dimensionality": "2d"
+    },
+    "409": {
+      "atlas": "v6-actors-9",
+      "rect": [
+        636,
+        4,
+        192,
+        184
+      ],
+      "width": 48,
+      "height": 46,
+      "originX": 24,
+      "originY": 0,
+      "sourceSprite": 409,
+      "role": "enemy-component",
+      "sourceCell": 3,
+      "dimensionality": "2d"
+    },
+    "410": {
+      "atlas": "v6-actors-9",
+      "rect": [
+        4,
+        196,
+        192,
+        172
+      ],
+      "width": 48,
+      "height": 43,
+      "originX": 24,
+      "originY": 0,
+      "sourceSprite": 410,
+      "role": "enemy-component",
+      "sourceCell": 4,
+      "dimensionality": "2d"
+    },
+    "411": {
+      "atlas": "v6-actors-9",
+      "rect": [
+        236,
+        196,
+        224,
+        120
+      ],
+      "width": 56,
+      "height": 30,
+      "originX": 28,
+      "originY": 0,
+      "sourceSprite": 411,
+      "role": "enemy-component",
+      "sourceCell": 5,
+      "dimensionality": "2d"
+    },
+    "412": {
+      "atlas": "v6-actors-9",
+      "rect": [
+        468,
+        196,
+        160,
+        112
+      ],
+      "width": 40,
+      "height": 28,
+      "originX": 20,
+      "originY": 0,
+      "sourceSprite": 412,
+      "role": "enemy-component",
+      "sourceCell": 6,
+      "dimensionality": "2d"
+    },
+    "413": {
+      "atlas": "v6-actors-9",
+      "rect": [
+        636,
+        196,
+        160,
+        96
+      ],
+      "width": 40,
+      "height": 24,
+      "originX": 20,
+      "originY": 0,
+      "sourceSprite": 413,
+      "role": "enemy-component",
+      "sourceCell": 7,
+      "dimensionality": "2d"
+    },
+    "414": {
+      "atlas": "v6-actors-9",
+      "rect": [
+        4,
+        376,
+        224,
+        64
+      ],
+      "width": 56,
+      "height": 16,
+      "originX": 28,
+      "originY": 0,
+      "sourceSprite": 414,
+      "role": "enemy-component",
+      "sourceCell": 8,
+      "dimensionality": "2d"
+    },
+    "415": {
+      "atlas": "v6-actors-9",
+      "rect": [
+        236,
+        376,
+        128,
+        196
+      ],
+      "width": 32,
+      "height": 49,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 415,
+      "role": "enemy-component",
+      "sourceCell": 9,
+      "dimensionality": "2d"
+    },
+    "416": {
+      "atlas": "v6-actors-9",
+      "rect": [
+        468,
+        376,
+        128,
+        236
+      ],
+      "width": 32,
+      "height": 59,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 416,
+      "role": "enemy-component",
+      "sourceCell": 10,
+      "dimensionality": "2d"
+    },
+    "417": {
+      "atlas": "v6-actors-9",
+      "rect": [
+        636,
+        376,
+        128,
+        192
+      ],
+      "width": 32,
+      "height": 48,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 417,
+      "role": "enemy-component",
+      "sourceCell": 11,
+      "dimensionality": "2d"
+    },
+    "418": {
+      "atlas": "v6-actors-10",
+      "rect": [
+        4,
+        4,
+        224,
+        136
+      ],
+      "width": 56,
+      "height": 34,
+      "originX": 28,
+      "originY": 0,
+      "sourceSprite": 418,
+      "role": "enemy-component",
+      "sourceCell": 0,
+      "dimensionality": "2d"
+    },
+    "419": {
+      "atlas": "v6-actors-10",
+      "rect": [
+        236,
+        4,
+        256,
+        108
+      ],
+      "width": 64,
+      "height": 27,
+      "originX": 32,
+      "originY": 0,
+      "sourceSprite": 419,
+      "role": "enemy-component",
+      "sourceCell": 1,
+      "dimensionality": "2d"
+    },
+    "420": {
+      "atlas": "v6-actors-10",
+      "rect": [
+        500,
+        4,
+        128,
+        120
+      ],
+      "width": 32,
+      "height": 30,
+      "originX": 32,
+      "originY": -20,
+      "sourceSprite": 420,
+      "role": "enemy-component",
+      "sourceCell": 2,
+      "dimensionality": "2d"
+    },
+    "421": {
+      "atlas": "v6-actors-10",
+      "rect": [
+        828,
+        4,
+        128,
+        112
+      ],
+      "width": 32,
+      "height": 28,
+      "originX": 40,
+      "originY": -5,
+      "sourceSprite": 421,
+      "role": "enemy-component",
+      "sourceCell": 3,
+      "dimensionality": "2d"
+    },
+    "422": {
+      "atlas": "v6-actors-10",
+      "rect": [
+        4,
+        148,
+        128,
+        128
+      ],
+      "width": 32,
+      "height": 32,
+      "originX": 32,
+      "originY": -8,
+      "sourceSprite": 422,
+      "role": "enemy-component",
+      "sourceCell": 4,
+      "dimensionality": "2d"
+    },
+    "423": {
+      "atlas": "v6-actors-10",
+      "rect": [
+        236,
+        148,
+        160,
+        84
+      ],
+      "width": 40,
+      "height": 21,
+      "originX": 20,
+      "originY": 0,
+      "sourceSprite": 423,
+      "role": "enemy-component",
+      "sourceCell": 5,
+      "dimensionality": "2d"
+    },
+    "424": {
+      "atlas": "v6-actors-10",
+      "rect": [
+        500,
+        148,
+        128,
+        128
+      ],
+      "width": 32,
+      "height": 32,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 424,
+      "role": "enemy-component",
+      "sourceCell": 6,
+      "dimensionality": "2d"
+    },
+    "425": {
+      "atlas": "v6-actors-10",
+      "rect": [
+        828,
+        148,
+        128,
+        124
+      ],
+      "width": 32,
+      "height": 31,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 425,
+      "role": "enemy-component",
+      "sourceCell": 7,
+      "dimensionality": "2d"
+    },
+    "426": {
+      "atlas": "v6-actors-10",
+      "rect": [
+        4,
+        284,
+        128,
+        120
+      ],
+      "width": 32,
+      "height": 30,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 426,
+      "role": "enemy-component",
+      "sourceCell": 8,
+      "dimensionality": "2d"
+    },
+    "427": {
+      "atlas": "v6-actors-10",
+      "rect": [
+        236,
+        284,
+        192,
+        112
+      ],
+      "width": 48,
+      "height": 28,
+      "originX": 24,
+      "originY": 0,
+      "sourceSprite": 427,
+      "role": "enemy-component",
+      "sourceCell": 9,
+      "dimensionality": "2d"
+    },
+    "428": {
+      "atlas": "v6-actors-10",
+      "rect": [
+        500,
+        284,
+        320,
+        128
+      ],
+      "width": 80,
+      "height": 32,
+      "originX": 40,
+      "originY": 0,
+      "sourceSprite": 428,
+      "role": "enemy-component",
+      "sourceCell": 10,
+      "dimensionality": "2d"
+    },
+    "429": {
+      "atlas": "v6-actors-10",
+      "rect": [
+        828,
+        284,
+        160,
+        120
+      ],
+      "width": 40,
+      "height": 30,
+      "originX": 20,
+      "originY": 0,
+      "sourceSprite": 429,
+      "role": "enemy-component",
+      "sourceCell": 11,
+      "dimensionality": "2d"
+    },
+    "430": {
+      "atlas": "v6-actors-11",
+      "rect": [
+        4,
+        4,
+        160,
+        140
+      ],
+      "width": 40,
+      "height": 35,
+      "originX": 20,
+      "originY": 0,
+      "sourceSprite": 430,
+      "role": "enemy-component",
+      "sourceCell": 0,
+      "dimensionality": "2d"
+    },
+    "431": {
+      "atlas": "v6-actors-11",
+      "rect": [
+        428,
+        4,
+        160,
+        248
+      ],
+      "width": 40,
+      "height": 62,
+      "originX": 20,
+      "originY": 0,
+      "sourceSprite": 431,
+      "role": "enemy-component",
+      "sourceCell": 1,
+      "dimensionality": "2d"
+    },
+    "432": {
+      "atlas": "v6-actors-11",
+      "rect": [
+        596,
+        4,
+        224,
+        88
+      ],
+      "width": 56,
+      "height": 22,
+      "originX": 28,
+      "originY": -3,
+      "sourceSprite": 432,
+      "role": "enemy-component",
+      "sourceCell": 2,
+      "dimensionality": "2d"
+    },
+    "433": {
+      "atlas": "v6-actors-11",
+      "rect": [
+        828,
+        4,
+        224,
+        96
+      ],
+      "width": 56,
+      "height": 24,
+      "originX": 28,
+      "originY": -1,
+      "sourceSprite": 433,
+      "role": "enemy-component",
+      "sourceCell": 3,
+      "dimensionality": "2d"
+    },
+    "434": {
+      "atlas": "v6-actors-11",
+      "rect": [
+        4,
+        260,
+        224,
+        92
+      ],
+      "width": 56,
+      "height": 23,
+      "originX": 28,
+      "originY": -2,
+      "sourceSprite": 434,
+      "role": "enemy-component",
+      "sourceCell": 4,
+      "dimensionality": "2d"
+    },
+    "435": {
+      "atlas": "v6-actors-11",
+      "rect": [
+        428,
+        260,
+        160,
+        64
+      ],
+      "width": 40,
+      "height": 16,
+      "originX": 20,
+      "originY": 0,
+      "sourceSprite": 435,
+      "role": "enemy-component",
+      "sourceCell": 5,
+      "dimensionality": "2d"
+    },
+    "436": {
+      "atlas": "v6-actors-11",
+      "rect": [
+        596,
+        260,
+        160,
+        72
+      ],
+      "width": 40,
+      "height": 18,
+      "originX": 20,
+      "originY": 0,
+      "sourceSprite": 436,
+      "role": "enemy-component",
+      "sourceCell": 6,
+      "dimensionality": "2d"
+    },
+    "437": {
+      "atlas": "v6-actors-11",
+      "rect": [
+        828,
+        260,
+        128,
+        56
+      ],
+      "width": 32,
+      "height": 14,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 437,
+      "role": "enemy-component",
+      "sourceCell": 7,
+      "dimensionality": "2d"
+    },
+    "438": {
+      "atlas": "v6-actors-11",
+      "rect": [
+        4,
+        360,
+        416,
+        164
+      ],
+      "width": 104,
+      "height": 41,
+      "originX": 52,
+      "originY": 0,
+      "sourceSprite": 438,
+      "role": "enemy-component",
+      "sourceCell": 8,
+      "dimensionality": "2d"
+    },
+    "439": {
+      "atlas": "v6-actors-11",
+      "rect": [
+        428,
+        360,
+        64,
+        88
+      ],
+      "width": 16,
+      "height": 22,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 439,
+      "role": "enemy-component",
+      "sourceCell": 9,
+      "dimensionality": "2d"
+    },
+    "440": {
+      "atlas": "v6-actors-11",
+      "rect": [
+        596,
+        360,
+        96,
+        92
+      ],
+      "width": 24,
+      "height": 23,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 440,
+      "role": "enemy-component",
+      "sourceCell": 10,
+      "dimensionality": "2d"
+    },
+    "441": {
+      "atlas": "v6-actors-11",
+      "rect": [
+        828,
+        360,
+        96,
+        92
+      ],
+      "width": 24,
+      "height": 23,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 441,
+      "role": "enemy-component",
+      "sourceCell": 11,
+      "dimensionality": "2d"
+    },
+    "442": {
+      "atlas": "v6-actors-12",
+      "rect": [
+        4,
+        4,
+        96,
+        92
+      ],
+      "width": 24,
+      "height": 23,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 442,
+      "role": "enemy-component",
+      "sourceCell": 0,
+      "dimensionality": "2d"
+    },
+    "443": {
+      "atlas": "v6-actors-12",
+      "rect": [
+        140,
+        4,
+        128,
+        92
+      ],
+      "width": 32,
+      "height": 23,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 443,
+      "role": "enemy-component",
+      "sourceCell": 1,
+      "dimensionality": "2d"
+    },
+    "444": {
+      "atlas": "v6-actors-12",
+      "rect": [
+        276,
+        4,
+        96,
+        96
+      ],
+      "width": 24,
+      "height": 24,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 444,
+      "role": "enemy-component",
+      "sourceCell": 2,
+      "dimensionality": "2d"
+    },
+    "445": {
+      "atlas": "v6-actors-12",
+      "rect": [
+        412,
+        4,
+        128,
+        96
+      ],
+      "width": 32,
+      "height": 24,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 445,
+      "role": "enemy-component",
+      "sourceCell": 3,
+      "dimensionality": "2d"
+    },
+    "446": {
+      "atlas": "v6-actors-12",
+      "rect": [
+        4,
+        108,
+        128,
+        96
+      ],
+      "width": 32,
+      "height": 24,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 446,
+      "role": "enemy-component",
+      "sourceCell": 4,
+      "dimensionality": "2d"
+    },
+    "447": {
+      "atlas": "v6-actors-12",
+      "rect": [
+        140,
+        108,
+        128,
+        92
+      ],
+      "width": 32,
+      "height": 23,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 447,
+      "role": "enemy-component",
+      "sourceCell": 5,
+      "dimensionality": "2d"
+    },
+    "448": {
+      "atlas": "v6-actors-12",
+      "rect": [
+        276,
+        108,
+        128,
+        108
+      ],
+      "width": 32,
+      "height": 27,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 448,
+      "role": "enemy-component",
+      "sourceCell": 6,
+      "dimensionality": "2d"
+    },
+    "449": {
+      "atlas": "v6-actors-12",
+      "rect": [
+        412,
+        108,
+        128,
+        108
+      ],
+      "width": 32,
+      "height": 27,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 449,
+      "role": "enemy-component",
+      "sourceCell": 7,
+      "dimensionality": "2d"
+    },
+    "450": {
+      "atlas": "v6-actors-12",
+      "rect": [
+        4,
+        224,
+        128,
+        96
+      ],
+      "width": 32,
+      "height": 24,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 450,
+      "role": "enemy-component",
+      "sourceCell": 8,
+      "dimensionality": "2d"
+    },
+    "451": {
+      "atlas": "v6-actors-12",
+      "rect": [
+        140,
+        224,
+        96,
+        96
+      ],
+      "width": 24,
+      "height": 24,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 451,
+      "role": "enemy-component",
+      "sourceCell": 9,
+      "dimensionality": "2d"
+    },
+    "452": {
+      "atlas": "v6-actors-12",
+      "rect": [
+        276,
+        224,
+        128,
+        80
+      ],
+      "width": 32,
+      "height": 20,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 452,
+      "role": "enemy-component",
+      "sourceCell": 10,
+      "dimensionality": "2d"
+    },
+    "453": {
+      "atlas": "v6-actors-12",
+      "rect": [
+        412,
+        224,
+        192,
+        112
+      ],
+      "width": 48,
+      "height": 28,
+      "originX": 25,
+      "originY": 0,
+      "sourceSprite": 453,
+      "role": "enemy-component",
+      "sourceCell": 11,
+      "dimensionality": "2d"
+    },
+    "454": {
+      "atlas": "v6-actors-13",
+      "rect": [
+        4,
+        4,
+        256,
+        112
+      ],
+      "width": 64,
+      "height": 28,
+      "originX": 32,
+      "originY": 1,
+      "sourceSprite": 454,
+      "role": "enemy-component",
+      "sourceCell": 0,
+      "dimensionality": "2d"
+    },
+    "455": {
+      "atlas": "v6-actors-13",
+      "rect": [
+        268,
+        4,
+        192,
+        124
+      ],
+      "width": 48,
+      "height": 31,
+      "originX": 24,
+      "originY": 2,
+      "sourceSprite": 455,
+      "role": "enemy-component",
+      "sourceCell": 1,
+      "dimensionality": "2d"
+    },
+    "456": {
+      "atlas": "v6-actors-13",
+      "rect": [
+        468,
+        4,
+        192,
+        152
+      ],
+      "width": 48,
+      "height": 38,
+      "originX": 24,
+      "originY": 0,
+      "sourceSprite": 456,
+      "role": "enemy-component",
+      "sourceCell": 2,
+      "dimensionality": "2d"
+    },
+    "457": {
+      "atlas": "v6-actors-13",
+      "rect": [
+        668,
+        4,
+        160,
+        136
+      ],
+      "width": 40,
+      "height": 34,
+      "originX": 20,
+      "originY": 0,
+      "sourceSprite": 457,
+      "role": "enemy-component",
+      "sourceCell": 3,
+      "dimensionality": "2d"
+    },
+    "458": {
+      "atlas": "v6-actors-13",
+      "rect": [
+        4,
+        164,
+        128,
+        104
+      ],
+      "width": 32,
+      "height": 26,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 458,
+      "role": "enemy-component",
+      "sourceCell": 4,
+      "dimensionality": "2d"
+    },
+    "459": {
+      "atlas": "v6-actors-13",
+      "rect": [
+        268,
+        164,
+        192,
+        92
+      ],
+      "width": 48,
+      "height": 23,
+      "originX": 23,
+      "originY": 0,
+      "sourceSprite": 459,
+      "role": "enemy-component",
+      "sourceCell": 5,
+      "dimensionality": "2d"
     }
   },
   "future3D": {
@@ -7757,6 +10637,177 @@
         303
       ],
       "renderer": "hd-feedback.js"
+    },
+    "actorsV6": {
+      "sourceHashes": {
+        "dist/assets/sprites.idx": "575f271e68501aaa1a728ddd25c511aae00d87edcbb746af8af355f9b24eef77",
+        "dist/assets/game.json": "36e0bf5e4b9348e25093402e1d814ff448662aa661146fa8cbb9260001973fcd"
+      },
+      "ids": [
+        53,
+        54,
+        55,
+        56,
+        57,
+        91,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        273,
+        299,
+        300,
+        304,
+        305,
+        306,
+        307,
+        308,
+        309,
+        310,
+        317,
+        318,
+        319,
+        320,
+        321,
+        322,
+        323,
+        324,
+        325,
+        326,
+        327,
+        328,
+        329,
+        330,
+        331,
+        332,
+        333,
+        334,
+        335,
+        336,
+        337,
+        338,
+        339,
+        340,
+        341,
+        342,
+        343,
+        344,
+        345,
+        346,
+        347,
+        348,
+        349,
+        350,
+        351,
+        352,
+        353,
+        354,
+        355,
+        356,
+        357,
+        358,
+        359,
+        360,
+        361,
+        362,
+        363,
+        364,
+        365,
+        366,
+        367,
+        368,
+        369,
+        370,
+        371,
+        372,
+        373,
+        374,
+        375,
+        376,
+        377,
+        378,
+        382,
+        383,
+        384,
+        385,
+        386,
+        387,
+        388,
+        389,
+        390,
+        391,
+        392,
+        393,
+        394,
+        395,
+        396,
+        397,
+        398,
+        399,
+        400,
+        401,
+        402,
+        403,
+        404,
+        405,
+        406,
+        407,
+        408,
+        409,
+        410,
+        411,
+        412,
+        413,
+        414,
+        415,
+        416,
+        417,
+        418,
+        419,
+        420,
+        421,
+        422,
+        423,
+        424,
+        425,
+        426,
+        427,
+        428,
+        429,
+        430,
+        431,
+        432,
+        433,
+        434,
+        435,
+        436,
+        437,
+        438,
+        439,
+        440,
+        441,
+        442,
+        443,
+        444,
+        445,
+        446,
+        447,
+        448,
+        449,
+        450,
+        451,
+        452,
+        453,
+        454,
+        455,
+        456,
+        457,
+        458,
+        459
+      ],
+      "completeSpriteBank": true
     }
   }
 }

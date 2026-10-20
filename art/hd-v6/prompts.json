@@ -1,0 +1,156 @@
+[
+  {
+    "id": "v6-actors-0",
+    "args": {
+      "prompt": "Use case: style-transfer. Production transparent 2D game sprite atlas. Image 1 is the EDIT TARGET: original sprite poses in a regular 4-column by 3-row grid, row-major order. Image 2 is STYLE REFERENCE ONLY: crisp HD caveman. Redraw EVERY occupied cell of image 1 as polished HD hand-drawn cartoon art at the SAME clear quality as image 2: confident dark contour, clean curved silhouettes, sharp cel shading, vivid material highlights, NO pixel steps, NO pixel mosaic, NO blurry interpolation, NO haze. Subjects: Four tiny beige dust puff animation frames then dissipating dust flecks, one small stone-and-wood hammer projectile, six black open rectangular treasure container animation frames with colored treasure inside. Keep their empty black spaces opaque where present. Preserve each individual pose, orientation, proportions, dominant colors, and empty internal holes. Keep exact cell count and positions, one separate sprite per original occupied cell, ample transparent margins; never merge across cells. Retain native relative sizes across frames. 4 evenly spaced columns. No labels, text, grid lines, backdrop, ground shadows or extra props. Use fully transparent background. New detailed drawn edges rather than retaining pixel outlines. Tiny particles must stay tiny/simple; don't invent full characters for partial sprites. Output a sharp high-resolution sheet.",
+      "referenced_image_paths": [
+        "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v6/references/v6-actors-0.png",
+        "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v1/raw/hero-00-15.png"
+      ],
+      "transparent_background": true
+    }
+  },
+  {
+    "id": "v6-actors-1",
+    "args": {
+      "prompt": "Use case: style-transfer. Production transparent 2D game sprite atlas. Image 1 is the EDIT TARGET: original sprite poses in a regular 4-column by 3-row grid, row-major order. Image 2 is STYLE REFERENCE ONLY: crisp HD caveman. Redraw EVERY occupied cell of image 1 as polished HD hand-drawn cartoon art at the SAME clear quality as image 2: confident dark contour, clean curved silhouettes, sharp cel shading, vivid material highlights, NO pixel steps, NO pixel mosaic, NO blurry interpolation, NO haze. Subjects: Small brown-green debris, snowy stone overhang with icicles, single icicle, hollow hanging skull-like icy overhang, horizontal hollow wooden log, brown stone chip, stone platform with green inset eyes, yellow star, narrow vertical green beam, red star, delicate white spiderweb, large brown spider. Preserve each individual pose, orientation, proportions, dominant colors, and empty internal holes. Keep exact cell count and positions, one separate sprite per original occupied cell, ample transparent margins; never merge across cells. Retain native relative sizes across frames. 4 evenly spaced columns. No labels, text, grid lines, backdrop, ground shadows or extra props. Use fully transparent background. New detailed drawn edges rather than retaining pixel outlines. Tiny particles must stay tiny/simple; don't invent full characters for partial sprites. Output a sharp high-resolution sheet.",
+      "referenced_image_paths": [
+        "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v6/references/v6-actors-1.png",
+        "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v1/raw/hero-00-15.png"
+      ],
+      "transparent_background": true
+    }
+  },
+  {
+    "id": "v6-actors-2",
+    "args": {
+      "prompt": "Use case: style-transfer. Production transparent 2D game sprite atlas. Image 1 is the EDIT TARGET: original sprite poses in a regular 4-column by 3-row grid, row-major order. Image 2 is STYLE REFERENCE ONLY: crisp HD caveman. Redraw EVERY occupied cell of image 1 as polished HD hand-drawn cartoon art at the SAME clear quality as image 2: confident dark contour, clean curved silhouettes, sharp cel shading, vivid material highlights, NO pixel steps, NO pixel mosaic, NO blurry interpolation, NO haze. Subjects: Brown spiders in EXACT reference poses; first one hangs vertically with legs around its gray abdomen, then side walking poses, then upright walking poses, then turning poses; last cell yellow-black flying bee. Same spider proportions throughout. Preserve each individual pose, orientation, proportions, dominant colors, and empty internal holes. Keep exact cell count and positions, one separate sprite per original occupied cell, ample transparent margins; never merge across cells. Retain native relative sizes across frames. 4 evenly spaced columns. No labels, text, grid lines, backdrop, ground shadows or extra props. Use fully transparent background. New detailed drawn edges rather than retaining pixel outlines. Tiny particles must stay tiny/simple; don't invent full characters for partial sprites. Output a sharp high-resolution sheet.",
+      "referenced_image_paths": [
+        "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v6/references/v6-actors-2.png",
+        "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v1/raw/hero-00-15.png"
+      ],
+      "transparent_background": true
+    }
+  },
+  {
+    "id": "v6-actors-3",
+    "args": {
+      "prompt": "Use case: style-transfer. Production transparent 2D game sprite atlas. Image 1 is the EDIT TARGET: original sprite poses in a regular 4-column by 3-row grid, row-major order. Image 2 is STYLE REFERENCE ONLY: crisp HD caveman. Redraw EVERY occupied cell of image 1 as polished HD hand-drawn cartoon art at the SAME clear quality as image 2: confident dark contour, clean curved silhouettes, sharp cel shading, vivid material highlights, NO pixel steps, NO pixel mosaic, NO blurry interpolation, NO haze. Subjects: Yellow-black bees in the exact flight and curled death poses, then two small brown ball projectiles and a slender pale projectile. Preserve each individual pose, orientation, proportions, dominant colors, and empty internal holes. Keep exact cell count and positions, one separate sprite per original occupied cell, ample transparent margins; never merge across cells. Retain native relative sizes across frames. 4 evenly spaced columns. No labels, text, grid lines, backdrop, ground shadows or extra props. Use fully transparent background. New detailed drawn edges rather than retaining pixel outlines. Tiny particles must stay tiny/simple; don't invent full characters for partial sprites. Output a sharp high-resolution sheet.",
+      "referenced_image_paths": [
+        "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v6/references/v6-actors-3.png",
+        "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v1/raw/hero-00-15.png"
+      ],
+      "transparent_background": true
+    }
+  },
+  {
+    "id": "v6-actors-4",
+    "args": {
+      "prompt": "Use case: style-transfer. Production transparent 2D game sprite atlas. Image 1 is the EDIT TARGET: original sprite poses in a regular 4-column by 3-row grid, row-major order. Image 2 is STYLE REFERENCE ONLY: crisp HD caveman. Redraw EVERY occupied cell of image 1 as polished HD hand-drawn cartoon art at the SAME clear quality as image 2: confident dark contour, clean curved silhouettes, sharp cel shading, vivid material highlights, NO pixel steps, NO pixel mosaic, NO blurry interpolation, NO haze. Subjects: Two thin pale projectiles, four small green flying lizards in different poses, then SIX green dinosaur frames with yellow back spikes, cream belly, large eyes, same character throughout, exact leaning/walking/hurt poses. Preserve each individual pose, orientation, proportions, dominant colors, and empty internal holes. Keep exact cell count and positions, one separate sprite per original occupied cell, ample transparent margins; never merge across cells. Retain native relative sizes across frames. 4 evenly spaced columns. No labels, text, grid lines, backdrop, ground shadows or extra props. Use fully transparent background. New detailed drawn edges rather than retaining pixel outlines. Tiny particles must stay tiny/simple; don't invent full characters for partial sprites. Output a sharp high-resolution sheet.",
+      "referenced_image_paths": [
+        "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v6/references/v6-actors-4.png",
+        "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v1/raw/hero-00-15.png"
+      ],
+      "transparent_background": true
+    }
+  },
+  {
+    "id": "v6-actors-5",
+    "args": {
+      "prompt": "Use case: style-transfer. Production transparent 2D game sprite atlas. Image 1 is the EDIT TARGET: original sprite poses in a regular 4-column by 3-row grid, row-major order. Image 2 is STYLE REFERENCE ONLY: crisp HD caveman. Redraw EVERY occupied cell of image 1 as polished HD hand-drawn cartoon art at the SAME clear quality as image 2: confident dark contour, clean curved silhouettes, sharp cel shading, vivid material highlights, NO pixel steps, NO pixel mosaic, NO blurry interpolation, NO haze. Subjects: Four muscular caveman enemy poses, seven brown owl flight and hurt poses, one tiny crushed spider death frame. Preserve each individual pose, orientation, proportions, dominant colors, and empty internal holes. Keep exact cell count and positions, one separate sprite per original occupied cell, ample transparent margins; never merge across cells. Retain native relative sizes across frames. 4 evenly spaced columns. No labels, text, grid lines, backdrop, ground shadows or extra props. Use fully transparent background. New detailed drawn edges rather than retaining pixel outlines. Tiny particles must stay tiny/simple; don't invent full characters for partial sprites. Output a sharp high-resolution sheet.",
+      "referenced_image_paths": [
+        "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v6/references/v6-actors-5.png",
+        "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v1/raw/hero-00-15.png"
+      ],
+      "transparent_background": true
+    }
+  },
+  {
+    "id": "v6-actors-6",
+    "args": {
+      "prompt": "Use case: style-transfer. Production transparent 2D game sprite atlas. Image 1 is the EDIT TARGET: original sprite poses in a regular 4-column by 3-row grid, row-major order. Image 2 is STYLE REFERENCE ONLY: crisp HD caveman. Redraw EVERY occupied cell of image 1 as polished HD hand-drawn cartoon art at the SAME clear quality as image 2: confident dark contour, clean curved silhouettes, sharp cel shading, vivid material highlights, NO pixel steps, NO pixel mosaic, NO blurry interpolation, NO haze. Subjects: Four spider squashed/flattened death poses, then eight striped green-brown snake emergence/walk/retreat poses. Preserve flattened silhouettes and varying emergence heights. Preserve each individual pose, orientation, proportions, dominant colors, and empty internal holes. Keep exact cell count and positions, one separate sprite per original occupied cell, ample transparent margins; never merge across cells. Retain native relative sizes across frames. 4 evenly spaced columns. No labels, text, grid lines, backdrop, ground shadows or extra props. Use fully transparent background. New detailed drawn edges rather than retaining pixel outlines. Tiny particles must stay tiny/simple; don't invent full characters for partial sprites. Output a sharp high-resolution sheet.",
+      "referenced_image_paths": [
+        "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v6/references/v6-actors-6.png",
+        "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v1/raw/hero-00-15.png"
+      ],
+      "transparent_background": true
+    }
+  },
+  {
+    "id": "v6-actors-7",
+    "args": {
+      "prompt": "Use case: style-transfer. Production transparent 2D game sprite atlas. Image 1 is the EDIT TARGET: original sprite poses in a regular 4-column by 3-row grid, row-major order. Image 2 is STYLE REFERENCE ONLY: crisp HD caveman. Redraw EVERY occupied cell of image 1 as polished HD hand-drawn cartoon art at the SAME clear quality as image 2: confident dark contour, clean curved silhouettes, sharp cel shading, vivid material highlights, NO pixel steps, NO pixel mosaic, NO blurry interpolation, NO haze. Subjects: Four brown eagle flight/hurt poses, then eight green turtle emergence/walk frames, brown shell, preserve deeply buried flattened first frames. Preserve each individual pose, orientation, proportions, dominant colors, and empty internal holes. Keep exact cell count and positions, one separate sprite per original occupied cell, ample transparent margins; never merge across cells. Retain native relative sizes across frames. 4 evenly spaced columns. No labels, text, grid lines, backdrop, ground shadows or extra props. Use fully transparent background. New detailed drawn edges rather than retaining pixel outlines. Tiny particles must stay tiny/simple; don't invent full characters for partial sprites. Output a sharp high-resolution sheet.",
+      "referenced_image_paths": [
+        "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v6/references/v6-actors-7.png",
+        "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v1/raw/hero-00-15.png"
+      ],
+      "transparent_background": true
+    }
+  },
+  {
+    "id": "v6-actors-8",
+    "args": {
+      "prompt": "Use case: style-transfer. Production transparent 2D game sprite atlas. Image 1 is the EDIT TARGET: original sprite poses in a regular 4-column by 3-row grid, row-major order. Image 2 is STYLE REFERENCE ONLY: crisp HD caveman. Redraw EVERY occupied cell of image 1 as polished HD hand-drawn cartoon art at the SAME clear quality as image 2: confident dark contour, clean curved silhouettes, sharp cel shading, vivid material highlights, NO pixel steps, NO pixel mosaic, NO blurry interpolation, NO haze. Subjects: Last turtle walk and turtle upside-down hurt pose; six yellow spotted saber-toothed cats running/hurt exact poses; three brown-green pterodactyl flight poses; one gorilla boss head only. Preserve each individual pose, orientation, proportions, dominant colors, and empty internal holes. Keep exact cell count and positions, one separate sprite per original occupied cell, ample transparent margins; never merge across cells. Retain native relative sizes across frames. 4 evenly spaced columns. No labels, text, grid lines, backdrop, ground shadows or extra props. Use fully transparent background. New detailed drawn edges rather than retaining pixel outlines. Tiny particles must stay tiny/simple; don't invent full characters for partial sprites. Output a sharp high-resolution sheet.",
+      "referenced_image_paths": [
+        "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v6/references/v6-actors-8.png",
+        "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v1/raw/hero-00-15.png"
+      ],
+      "transparent_background": true
+    }
+  },
+  {
+    "id": "v6-actors-9",
+    "args": {
+      "prompt": "Use case: style-transfer. Production transparent 2D game sprite atlas. Image 1 is the EDIT TARGET: original sprite poses in a regular 4-column by 3-row grid, row-major order. Image 2 is STYLE REFERENCE ONLY: crisp HD caveman. Redraw EVERY occupied cell of image 1 as polished HD hand-drawn cartoon art at the SAME clear quality as image 2: confident dark contour, clean curved silhouettes, sharp cel shading, vivid material highlights, NO pixel steps, NO pixel mosaic, NO blurry interpolation, NO haze. Subjects: Three gorilla boss head expressions with cream fur and brown face; three gray boulder frames; six detached gorilla boss hand/arm/leg pieces. These are component sprites, MUST NOT turn detached arms into whole characters, preserve cut attachment edges and directions. Preserve each individual pose, orientation, proportions, dominant colors, and empty internal holes. Keep exact cell count and positions, one separate sprite per original occupied cell, ample transparent margins; never merge across cells. Retain native relative sizes across frames. 4 evenly spaced columns. No labels, text, grid lines, backdrop, ground shadows or extra props. Use fully transparent background. New detailed drawn edges rather than retaining pixel outlines. Tiny particles must stay tiny/simple; don't invent full characters for partial sprites. Output a sharp high-resolution sheet.",
+      "referenced_image_paths": [
+        "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v6/references/v6-actors-9.png",
+        "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v1/raw/hero-00-15.png"
+      ],
+      "transparent_background": true
+    }
+  },
+  {
+    "id": "v6-actors-10",
+    "args": {
+      "prompt": "Use case: style-transfer. Production transparent 2D game sprite atlas. Image 1 is the EDIT TARGET: original sprite poses in a regular 4-column by 3-row grid, row-major order. Image 2 is STYLE REFERENCE ONLY: crisp HD caveman. Redraw EVERY occupied cell of image 1 as polished HD hand-drawn cartoon art at the SAME clear quality as image 2: confident dark contour, clean curved silhouettes, sharp cel shading, vivid material highlights, NO pixel steps, NO pixel mosaic, NO blurry interpolation, NO haze. Subjects: Two bent gorilla boss leg pieces; ten detached brown tree monster limb/branch segments with pale blue/cream knots, exact curves and attachment cut edges, no added faces or whole trees. Preserve each individual pose, orientation, proportions, dominant colors, and empty internal holes. Keep exact cell count and positions, one separate sprite per original occupied cell, ample transparent margins; never merge across cells. Retain native relative sizes across frames. 4 evenly spaced columns. No labels, text, grid lines, backdrop, ground shadows or extra props. Use fully transparent background. New detailed drawn edges rather than retaining pixel outlines. Tiny particles must stay tiny/simple; don't invent full characters for partial sprites. Output a sharp high-resolution sheet.",
+      "referenced_image_paths": [
+        "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v6/references/v6-actors-10.png",
+        "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v1/raw/hero-00-15.png"
+      ],
+      "transparent_background": true
+    }
+  },
+  {
+    "id": "v6-actors-11",
+    "args": {
+      "prompt": "Use case: style-transfer. Production transparent 2D game sprite atlas. Image 1 is the EDIT TARGET: original sprite poses in a regular 4-column by 3-row grid, row-major order. Image 2 is STYLE REFERENCE ONLY: crisp HD caveman. Redraw EVERY occupied cell of image 1 as polished HD hand-drawn cartoon art at the SAME clear quality as image 2: confident dark contour, clean curved silhouettes, sharp cel shading, vivid material highlights, NO pixel steps, NO pixel mosaic, NO blurry interpolation, NO haze. Subjects: Two remaining tree monster branch/foot pieces; three dense green bush animation frames; three green flying leaf/seed forms with red tip; one paired tree branch piece; one brown tree bark chip; two black mole poses with cream belly and red scarf. Preserve each individual pose, orientation, proportions, dominant colors, and empty internal holes. Keep exact cell count and positions, one separate sprite per original occupied cell, ample transparent margins; never merge across cells. Retain native relative sizes across frames. 4 evenly spaced columns. No labels, text, grid lines, backdrop, ground shadows or extra props. Use fully transparent background. New detailed drawn edges rather than retaining pixel outlines. Tiny particles must stay tiny/simple; don't invent full characters for partial sprites. Output a sharp high-resolution sheet.",
+      "referenced_image_paths": [
+        "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v6/references/v6-actors-11.png",
+        "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v1/raw/hero-00-15.png"
+      ],
+      "transparent_background": true
+    }
+  },
+  {
+    "id": "v6-actors-12",
+    "args": {
+      "prompt": "Use case: style-transfer. Production transparent 2D game sprite atlas. Image 1 is the EDIT TARGET: original sprite poses in a regular 4-column by 3-row grid, row-major order. Image 2 is STYLE REFERENCE ONLY: crisp HD caveman. Redraw EVERY occupied cell of image 1 as polished HD hand-drawn cartoon art at the SAME clear quality as image 2: confident dark contour, clean curved silhouettes, sharp cel shading, vivid material highlights, NO pixel steps, NO pixel mosaic, NO blurry interpolation, NO haze. Subjects: TEN black mole poses with cream belly and red scarf, exact facing/running/falling/back poses including back-facing plain black silhouette; last frame one gray owl wings extended. Preserve each individual pose, orientation, proportions, dominant colors, and empty internal holes. Keep exact cell count and positions, one separate sprite per original occupied cell, ample transparent margins; never merge across cells. Retain native relative sizes across frames. 4 evenly spaced columns. No labels, text, grid lines, backdrop, ground shadows or extra props. Use fully transparent background. New detailed drawn edges rather than retaining pixel outlines. Tiny particles must stay tiny/simple; don't invent full characters for partial sprites. Output a sharp high-resolution sheet.",
+      "referenced_image_paths": [
+        "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v6/references/v6-actors-12.png",
+        "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v1/raw/hero-00-15.png"
+      ],
+      "transparent_background": true
+    }
+  },
+  {
+    "id": "v6-actors-13",
+    "args": {
+      "prompt": "Use case: style-transfer. Production transparent 2D game sprite atlas. Image 1 is the EDIT TARGET: original sprite poses in a regular 4-column by 2-row grid, row-major order. Image 2 is STYLE REFERENCE ONLY: crisp HD caveman. Redraw EVERY occupied cell of image 1 as polished HD hand-drawn cartoon art at the SAME clear quality as image 2: confident dark contour, clean curved silhouettes, sharp cel shading, vivid material highlights, NO pixel steps, NO pixel mosaic, NO blurry interpolation, NO haze. Subjects: Three gray owl flight/hurt poses, one caveman with red flying headband, one round cracked gray stone with green patches, one low stone platform with two small flame shapes. Last two cells of bottom row EMPTY TRANSPARENT. Preserve each individual pose, orientation, proportions, dominant colors, and empty internal holes. Keep exact cell count and positions, one separate sprite per original occupied cell, ample transparent margins; never merge across cells. Retain native relative sizes across frames. 4 evenly spaced columns. No labels, text, grid lines, backdrop, ground shadows or extra props. Use fully transparent background. New detailed drawn edges rather than retaining pixel outlines. Tiny particles must stay tiny/simple; don't invent full characters for partial sprites. Output a sharp high-resolution sheet.",
+      "referenced_image_paths": [
+        "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v6/references/v6-actors-13.png",
+        "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v1/raw/hero-00-15.png"
+      ],
+      "transparent_background": true
+    }
+  }
+]

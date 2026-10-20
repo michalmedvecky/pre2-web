@@ -1,0 +1,28 @@
+import{readFile,writeFile}from'node:fs/promises';import{createHash}from'node:crypto';import{decodePNG,encodePNG}from'./png.mjs';import{FEEDBACK_SPRITES}from'../dist/js/hd-feedback.js';
+const root=new URL('../',import.meta.url),art=new URL('art/hd-v6/',root),out=new URL('dist/assets/hd/',root),inventory=JSON.parse(await readFile(new URL('inventory.json',art))),manifest=JSON.parse(await readFile(new URL('manifest.json',out))),hash=b=>createHash('sha256').update(b).digest('hex');
+for(const[file,digest]of Object.entries(inventory.sourceHashes))if(hash(await readFile(new URL(file,root)))!==digest)throw Error('Source changed '+file);
+manifest.atlases=manifest.atlases.filter(a=>!a.id.startsWith('v6-'));for(const[id,s]of Object.entries(manifest.sprites))if(s.atlas.startsWith('v6-'))delete manifest.sprites[id];const packing=[];
+// Components, not clipped cell boxes: a generated pole can extend slightly past
+// a row boundary. Keep the entire connected object and exclude the adjacent item.
+function boundsByCell(im,g){const{width:w,height:h,pixels}=im,seen=new Uint8Array(w*h),queue=new Int32Array(w*h),bounds=Array(g.ids.length).fill(null);let rejected=0;
+ // Generated sheets preserve pose order but may shift small first-row objects
+ // below the mathematical cell boundary. Locate actual transparent row gaps.
+ const rowInk=Array(h).fill(0);for(let y=0;y<h;y++)for(let x=0;x<w;x++)if(pixels[(y*w+x)*4+3]>=24)rowInk[y]++;
+ const cuts=Array.from({length:g.rows-1},(_,i)=>{const nominal=(i+1)*h/g.rows,band=h/g.rows*.4;let best=Math.round(nominal);for(let y=Math.max(1,Math.floor(nominal-band));y<Math.min(h-1,nominal+band);y++)if(rowInk[y]<rowInk[best]||rowInk[y]===rowInk[best]&&Math.abs(y-nominal)<Math.abs(best-nominal))best=y;return best;});
+ g.rawRowCuts=cuts;
+ for(let start=0;start<w*h;start++){if(seen[start]||pixels[start*4+3]<24)continue;let head=0,tail=1;queue[0]=start;seen[start]=1;let left=w,top=h,right=0,bottom=0;
+  while(head<tail){const p=queue[head++],x=p%w,y=Math.floor(p/w);left=Math.min(left,x);top=Math.min(top,y);right=Math.max(right,x+1);bottom=Math.max(bottom,y+1);for(const next of[x?p-1:-1,x<w-1?p+1:-1,y?p-w:-1,y<h-1?p+w:-1])if(next>=0&&!seen[next]&&pixels[next*4+3]>=24){seen[next]=1;queue[tail++]=next;}}
+  if(tail<6)continue;const col=Math.min(g.columns-1,Math.floor((left+right)/2/w*g.columns)),row=cuts.filter(c=>(top+bottom)/2>=c).length,cell=row*g.columns+col;if(cell>=bounds.length){if(tail>100)throw Error('Unexpected art in empty cell '+g.id);rejected++;continue;}const b=bounds[cell];bounds[cell]=b?[Math.min(b[0],left),Math.min(b[1],top),Math.max(b[2],right),Math.max(b[3],bottom)]:[left,top,right,bottom];
+ }return bounds.map(b=>b&&[b[0],b[1],b[2]-b[0],b[3]-b[1]]);}
+function sample(im,x,y,b){const[sx,sy,sw,sh]=b;x=Math.max(sx,Math.min(sx+sw-1,x));y=Math.max(sy,Math.min(sy+sh-1,y));const ix=Math.floor(x),iy=Math.floor(y),fx=x-ix,fy=y-iy,out=[0,0,0,0];for(let j=0;j<2;j++)for(let i=0;i<2;i++){const p=(Math.min(im.height-1,iy+j)*im.width+Math.min(im.width-1,ix+i))*4,a=im.pixels[p+3]/255*(i?fx:1-fx)*(j?fy:1-fy);for(let k=0;k<3;k++)out[k]+=im.pixels[p+k]*a;out[3]+=a;}if(out[3])for(let k=0;k<3;k++)out[k]/=out[3];out[3]*=255;return out;}
+for(const g of inventory.groups){const raw=await readFile(new URL('raw/'+g.id+'.png',art)),im=decodePNG(raw),bounds=boundsByCell(im,g),gap=4,colWidths=Array.from({length:g.columns},(_,col)=>Math.max(...g.ids.filter((_,i)=>i%g.columns===col).map(id=>inventory.sprites[id].width*4),0)+gap*2),rowHeights=Array.from({length:g.rows},(_,row)=>Math.max(...g.ids.slice(row*g.columns,(row+1)*g.columns).map(id=>inventory.sprites[id].height*4))+gap*2),lefts=colWidths.map((_,i)=>gap+colWidths.slice(0,i).reduce((a,b)=>a+b,0)),tops=rowHeights.map((_,i)=>gap+rowHeights.slice(0,i).reduce((a,b)=>a+b,0)),width=colWidths.reduce((a,b)=>a+b,0),height=rowHeights.reduce((a,b)=>a+b,0),pixels=new Uint8Array(width*height*4),cells=[];
+ for(const[i,id]of g.ids.entries()){const s=inventory.sprites[id],b=bounds[i];if(!b)throw Error('Missing object '+id);const[nx,ny,nw,nh]=s.ink,[sx,sy,sw,sh]=b;
+  for(let y=0;y<nh*4;y++)for(let x=0;x<nw*4;x++){const value=sample(im,sx+(x+.5)*sw/(nw*4)-.5,sy+(y+.5)*sh/(nh*4)-.5,b),p=((tops[Math.floor(i/g.columns)]+ny*4+y)*width+lefts[i%g.columns]+nx*4+x)*4;for(let k=0;k<4;k++)pixels[p+k]=Math.round(value[k]);}
+  manifest.sprites[id]={atlas:g.id,rect:[lefts[i%g.columns],tops[Math.floor(i/g.columns)],s.width*4,s.height*4],width:s.width,height:s.height,originX:s.originX,originY:s.originY,sourceSprite:id,role:id>=312?'enemy-component':'effect',sourceCell:i,dimensionality:'2d'};cells.push({id,rawInk:b,nativeInk:s.ink});
+ }
+ const png=encodePNG(width,height,pixels);await writeFile(new URL(g.id+'.png',out),png);manifest.atlases.push({id:g.id,file:g.id+'.png',width,height,sha256:hash(png),frames:g.ids.length,kind:'sprite'});packing.push({id:g.id,rawSHA256:hash(raw),rawSize:[im.width,im.height],colWidths,rowHeights,gap,rawRowCuts:g.rawRowCuts,cells});
+}
+manifest.extensions={...manifest.extensions,actorsV6:{sourceHashes:inventory.sourceHashes,ids:Object.keys(inventory.sprites).map(Number),completeSpriteBank:true}};
+const covered=new Set([...Object.keys(manifest.sprites).map(Number),...FEEDBACK_SPRITES]);
+for(let id=0;id<460;id++)if(!covered.has(id))throw Error('Uncovered native sprite '+id);
+await writeFile(new URL('manifest.json',out),JSON.stringify(manifest,null,2)+'\n');await writeFile(new URL('packing.json',art),JSON.stringify(packing,null,2)+'\n');console.log({sprites:Object.keys(manifest.sprites).length,newSprites:Object.keys(inventory.sprites).length,feedback:FEEDBACK_SPRITES.length});
