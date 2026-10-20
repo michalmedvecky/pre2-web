@@ -1,0 +1,48 @@
+{
+  "ok": true,
+  "checks": [
+    {
+      "mode": "Original",
+      "ticks": 305,
+      "food": 12,
+      "score": 32760,
+      "phases": [
+        "iris",
+        "approach",
+        "arrive",
+        "brake",
+        "tally",
+        "settle",
+        "leave",
+        "done"
+      ],
+      "canvas": [
+        320,
+        200
+      ],
+      "hudCleared": true
+    },
+    {
+      "mode": "HD",
+      "ticks": 305,
+      "food": 12,
+      "score": 32760,
+      "phases": [
+        "iris",
+        "approach",
+        "arrive",
+        "brake",
+        "tally",
+        "settle",
+        "leave",
+        "done"
+      ],
+      "canvas": [
+        1280,
+        800
+      ],
+      "hudCleared": true
+    }
+  ],
+  "realRAFContinue": true
+}

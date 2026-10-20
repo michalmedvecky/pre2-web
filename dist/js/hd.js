@@ -1,3 +1,4 @@
+import {HDFeedback} from './hd-feedback.js';
 import {connectedTerrain,textureSampler} from './terrain.js';
 import {HDHud} from './hd-hud.js';
 // Optional high-resolution presentation. Never owns simulation or collision state.
@@ -13,7 +14,7 @@ export class HDAssets {
  }
 }
 export class HDCompositor {
- constructor(canvas,pack){this.canvas=canvas;this.pack=pack;this.scale=pack.manifest.scale;canvas.width=320*this.scale;canvas.height=200*this.scale;this.ctx=canvas.getContext('2d',{alpha:false});this.ctx.imageSmoothingEnabled=false;this.cache=new WeakMap();this.flash=new Map();this.paletteKey='';this.terrainCache=new Map();this.terrainTextures=new Map();this.hudRenderer=new HDHud(pack);}
+ constructor(canvas,pack){this.canvas=canvas;this.pack=pack;this.scale=pack.manifest.scale;canvas.width=320*this.scale;canvas.height=200*this.scale;this.ctx=canvas.getContext('2d',{alpha:false});this.ctx.imageSmoothingEnabled=false;this.cache=new WeakMap();this.flash=new Map();this.paletteKey='';this.terrainCache=new Map();this.terrainTextures=new Map();this.hudRenderer=new HDHud(pack);this.feedback=new HDFeedback(pack);}
  setPalette(p){const key=p.join(',');if(key!==this.paletteKey){this.paletteKey=key;this.cache=new WeakMap();this.terrainCache.clear();}this.palette=p;}
  color(i,fade=1){const p=this.palette,k=i*3;return `rgb(${Math.floor((p[k]||0)*fade)},${Math.floor((p[k+1]||0)*fade)},${Math.floor((p[k+2]||0)*fade)})`;}
  begin(){this.ctx.fillStyle=this.color(0);this.ctx.fillRect(0,0,this.canvas.width,this.canvas.height);}
@@ -23,8 +24,8 @@ export class HDCompositor {
   if(!image){image=document.createElement('canvas');image.width=sw;image.height=sh;const ctx=image.getContext('2d'),rgba=ctx.createImageData(sw,sh);for(let i=0;i<sw*sh;i++){const index=src[offset+i];if(index===undefined||transparent&&index===0)continue;const v=(ink??index)*3,j=i*4;for(let k=0;k<3;k++)rgba.data[j+k]=(this.palette[v+k]||0)*fade;rgba.data[j+3]=255;}ctx.putImageData(rgba,0,0);cache.set(key,image);}
   const scale=this.scale;this.clipped(clip,c=>{if(flip){c.translate((dx+sw)*scale,dy*scale);c.scale(-1,1);c.drawImage(image,0,0,sw*scale,sh*scale);}else c.drawImage(image,dx*scale,dy*scale,sw*scale,sh*scale);});
  }
- sprite(word,x,y,flip,clip,source){const id=word&0x1fff,s=this.pack.manifest.sprites[id];if(!s)return false;let image=this.pack.images.get(s.atlas),rect=s.rect;
-  if(word&0x4000){if(!this.flash.has(id)){const white=document.createElement('canvas');white.width=rect[2];white.height=rect[3];const c=white.getContext('2d');c.drawImage(image,...rect,0,0,white.width,white.height);c.globalCompositeOperation='source-in';c.fillStyle='white';c.fillRect(0,0,white.width,white.height);this.flash.set(id,white);}image=this.flash.get(id);rect=[0,0,image.width,image.height];}
+ sprite(word,x,y,flip,clip,source){const id=word&0x1fff,s=this.pack.manifest.sprites[id],feedback=this.feedback.image(id,source,!!(word&0x4000));if(!s&&!feedback)return false;let image=feedback||this.pack.images.get(s.atlas),rect=feedback?[0,0,feedback.width,feedback.height]:s.rect;
+  if((word&0x4000)&&!feedback){if(!this.flash.has(id)){const white=document.createElement('canvas');white.width=rect[2];white.height=rect[3];const c=white.getContext('2d');c.drawImage(image,...rect,0,0,white.width,white.height);c.globalCompositeOperation='source-in';c.fillStyle='white';c.fillRect(0,0,white.width,white.height);this.flash.set(id,white);}image=this.flash.get(id);rect=[0,0,image.width,image.height];}
   const ox=flip?source.width-source.originX:source.originX,dx=x-ox,dy=y+source.originY-source.height,scale=this.scale;
   this.clipped(clip,c=>{c.imageSmoothingEnabled=true;if(flip){c.translate((dx+source.width)*scale,dy*scale);c.scale(-1,1);c.drawImage(image,...rect,0,0,source.width*scale,source.height*scale);}else c.drawImage(image,...rect,dx*scale,dy*scale,source.width*scale,source.height*scale);});return true;
  }
@@ -62,6 +63,10 @@ export class HDCompositor {
   // painted contours and large lighting changes out of the connected terrain.
   for(let y=0;y<64;y++)for(let x=0;x<64;x++){const x0=Math.max(0,x-4),y0=Math.max(0,y-4),x1=Math.min(64,x+5),y1=Math.min(64,y+5),sum=integral[y1*65+x1]-integral[y0*65+x1]-integral[y1*65+x0]+integral[y0*65+x0],i=(y*64+x)*4;texture[i]=Math.max(-.32,Math.min(.32,(luma[y*64+x]-sum/((x1-x0)*(y1-y0)))/128));texture[i+3]=data[i+3];}
   this.terrainTextures.set(key,texture);return texture;
+ }
+ text(value,x,y,color=15,cellWidth=6,height=7){
+  const c=this.ctx,scale=this.scale;c.save();c.scale(scale,scale);c.font=`900 ${height*.98}px Georgia, "Times New Roman", serif`;c.textAlign='center';c.textBaseline='alphabetic';c.lineJoin='round';c.lineWidth=.6;c.strokeStyle='#282117';c.fillStyle=typeof color==='string'?color:this.color(color);
+  let row=0,column=0;for(const ch of String(value).toUpperCase()){if(ch==='\n'){row++;column=0;continue;}const px=x+(column+.5)*cellWidth,py=y+row*(height+2)+height*.86;c.strokeText(ch,px,py,cellWidth-1);c.fillText(ch,px,py,cellWidth-1);column++;}c.restore();
  }
  hud(world,tables){return this.hudRenderer.draw(this.ctx,world,tables);}
  pixel(x,y,index){if(x<0||x>=320||y<0||y>=200)return;this.ctx.fillStyle=this.color(index);this.ctx.fillRect(x*this.scale,y*this.scale,this.scale,this.scale);}

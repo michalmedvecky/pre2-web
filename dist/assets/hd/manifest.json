@@ -133,6 +133,60 @@
       "height": 800,
       "sha256": "f9e08934bcd52a6ca0edca2c265a44f17c1cf5a1e8707e7225a728195afa99bf",
       "kind": "background"
+    },
+    {
+      "id": "v5-items-0",
+      "file": "v5-items-0.png",
+      "width": 1280,
+      "height": 1280,
+      "sha256": "7b194cc91e6b6d0302f24e4569828c604c666e893fd42dea05142e6a9a6d2844",
+      "frames": 16,
+      "kind": "sprite"
+    },
+    {
+      "id": "v5-items-1",
+      "file": "v5-items-1.png",
+      "width": 1024,
+      "height": 1024,
+      "sha256": "888c53a5584d565e2bd273860110c8064801f0a35c94abec4f0a9d6fd4c1c123",
+      "frames": 16,
+      "kind": "sprite"
+    },
+    {
+      "id": "v5-items-2",
+      "file": "v5-items-2.png",
+      "width": 1024,
+      "height": 1024,
+      "sha256": "25763be1fb1e61d43e716a3b94f3dd0c63c0165959b332eba8aa4f93ce383b15",
+      "frames": 16,
+      "kind": "sprite"
+    },
+    {
+      "id": "v5-items-3",
+      "file": "v5-items-3.png",
+      "width": 1024,
+      "height": 1024,
+      "sha256": "64bcb15750c04560b154fe2c31fd2a833f8aea5ebb55007316568d48fcf28464",
+      "frames": 16,
+      "kind": "sprite"
+    },
+    {
+      "id": "v5-items-4",
+      "file": "v5-items-4.png",
+      "width": 1024,
+      "height": 512,
+      "sha256": "38196dab720b9bebbfda13e787bc78b01693415d733503e6a9a01a7deacc9a5b",
+      "frames": 5,
+      "kind": "sprite"
+    },
+    {
+      "id": "v5-special",
+      "file": "v5-special.png",
+      "width": 1280,
+      "height": 960,
+      "sha256": "12ea68454acb8631cfe7bdb14fa054da6951f8bb5f2eae0606f78598d87991aa",
+      "frames": 11,
+      "kind": "sprite"
     }
   ],
   "sprites": {
@@ -1513,6 +1567,40 @@
       "dimensionality": "2d",
       "sourceCell": 15
     },
+    "110": {
+      "atlas": "v5-items-0",
+      "rect": [
+        0,
+        0,
+        192,
+        260
+      ],
+      "width": 48,
+      "height": 65,
+      "originX": 25,
+      "originY": 0,
+      "sourceSprite": 110,
+      "role": "collectible",
+      "sourceCell": 0,
+      "dimensionality": "2d"
+    },
+    "111": {
+      "atlas": "v5-items-0",
+      "rect": [
+        320,
+        0,
+        160,
+        176
+      ],
+      "width": 40,
+      "height": 44,
+      "originX": 22,
+      "originY": 0,
+      "sourceSprite": 111,
+      "role": "collectible",
+      "sourceCell": 1,
+      "dimensionality": "2d"
+    },
     "112": {
       "atlas": "v2-food-a",
       "rect": [
@@ -1546,6 +1634,91 @@
       "sourceSprite": 113,
       "dimensionality": "2d",
       "sourceCell": 1
+    },
+    "114": {
+      "atlas": "v5-items-0",
+      "rect": [
+        640,
+        0,
+        128,
+        152
+      ],
+      "width": 32,
+      "height": 38,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 114,
+      "role": "collectible",
+      "sourceCell": 2,
+      "dimensionality": "2d"
+    },
+    "115": {
+      "atlas": "v5-items-0",
+      "rect": [
+        960,
+        0,
+        160,
+        140
+      ],
+      "width": 40,
+      "height": 35,
+      "originX": 19,
+      "originY": 0,
+      "sourceSprite": 115,
+      "role": "collectible",
+      "sourceCell": 3,
+      "dimensionality": "2d"
+    },
+    "116": {
+      "atlas": "v5-items-0",
+      "rect": [
+        0,
+        320,
+        192,
+        132
+      ],
+      "width": 48,
+      "height": 33,
+      "originX": 17,
+      "originY": 0,
+      "sourceSprite": 116,
+      "role": "collectible",
+      "sourceCell": 4,
+      "dimensionality": "2d"
+    },
+    "117": {
+      "atlas": "v5-items-0",
+      "rect": [
+        320,
+        320,
+        160,
+        132
+      ],
+      "width": 40,
+      "height": 33,
+      "originX": 20,
+      "originY": 0,
+      "sourceSprite": 117,
+      "role": "collectible",
+      "sourceCell": 5,
+      "dimensionality": "2d"
+    },
+    "118": {
+      "atlas": "v5-special",
+      "rect": [
+        0,
+        0,
+        192,
+        56
+      ],
+      "width": 48,
+      "height": 14,
+      "originX": 24,
+      "originY": 0,
+      "sourceSprite": 118,
+      "role": "collectible",
+      "sourceCell": 0,
+      "dimensionality": "2d"
     },
     "119": {
       "atlas": "hero-gear",
@@ -1700,6 +1873,125 @@
       "dimensionality": "2d",
       "sourceCell": 8
     },
+    "128": {
+      "atlas": "v5-items-0",
+      "rect": [
+        640,
+        320,
+        96,
+        56
+      ],
+      "width": 24,
+      "height": 14,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 128,
+      "role": "collectible",
+      "sourceCell": 6,
+      "dimensionality": "2d"
+    },
+    "129": {
+      "atlas": "v5-items-0",
+      "rect": [
+        960,
+        320,
+        64,
+        60
+      ],
+      "width": 16,
+      "height": 15,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 129,
+      "role": "collectible",
+      "sourceCell": 7,
+      "dimensionality": "2d"
+    },
+    "130": {
+      "atlas": "v5-items-0",
+      "rect": [
+        0,
+        640,
+        96,
+        76
+      ],
+      "width": 24,
+      "height": 19,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 130,
+      "role": "collectible",
+      "sourceCell": 8,
+      "dimensionality": "2d"
+    },
+    "131": {
+      "atlas": "v5-items-0",
+      "rect": [
+        320,
+        640,
+        64,
+        72
+      ],
+      "width": 16,
+      "height": 18,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 131,
+      "role": "collectible",
+      "sourceCell": 9,
+      "dimensionality": "2d"
+    },
+    "132": {
+      "atlas": "v5-items-0",
+      "rect": [
+        640,
+        640,
+        64,
+        72
+      ],
+      "width": 16,
+      "height": 18,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 132,
+      "role": "collectible",
+      "sourceCell": 10,
+      "dimensionality": "2d"
+    },
+    "133": {
+      "atlas": "v5-items-0",
+      "rect": [
+        960,
+        640,
+        96,
+        48
+      ],
+      "width": 24,
+      "height": 12,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 133,
+      "role": "collectible",
+      "sourceCell": 11,
+      "dimensionality": "2d"
+    },
+    "134": {
+      "atlas": "v5-items-0",
+      "rect": [
+        0,
+        960,
+        96,
+        76
+      ],
+      "width": 24,
+      "height": 19,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 134,
+      "role": "collectible",
+      "sourceCell": 12,
+      "dimensionality": "2d"
+    },
     "135": {
       "atlas": "v2-food-a",
       "rect": [
@@ -1802,6 +2094,91 @@
       "dimensionality": "2d",
       "sourceCell": 7
     },
+    "141": {
+      "atlas": "v5-items-0",
+      "rect": [
+        320,
+        960,
+        64,
+        84
+      ],
+      "width": 16,
+      "height": 21,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 141,
+      "role": "collectible",
+      "sourceCell": 13,
+      "dimensionality": "2d"
+    },
+    "142": {
+      "atlas": "v5-items-0",
+      "rect": [
+        640,
+        960,
+        96,
+        44
+      ],
+      "width": 24,
+      "height": 11,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 142,
+      "role": "collectible",
+      "sourceCell": 14,
+      "dimensionality": "2d"
+    },
+    "143": {
+      "atlas": "v5-items-0",
+      "rect": [
+        960,
+        960,
+        96,
+        44
+      ],
+      "width": 24,
+      "height": 11,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 143,
+      "role": "collectible",
+      "sourceCell": 15,
+      "dimensionality": "2d"
+    },
+    "144": {
+      "atlas": "v5-items-1",
+      "rect": [
+        0,
+        0,
+        64,
+        88
+      ],
+      "width": 16,
+      "height": 22,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 144,
+      "role": "collectible",
+      "sourceCell": 0,
+      "dimensionality": "2d"
+    },
+    "145": {
+      "atlas": "v5-items-1",
+      "rect": [
+        256,
+        0,
+        64,
+        88
+      ],
+      "width": 16,
+      "height": 22,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 145,
+      "role": "collectible",
+      "sourceCell": 1,
+      "dimensionality": "2d"
+    },
     "146": {
       "atlas": "v2-food-a",
       "rect": [
@@ -1818,6 +2195,108 @@
       "sourceSprite": 146,
       "dimensionality": "2d",
       "sourceCell": 8
+    },
+    "147": {
+      "atlas": "v5-items-1",
+      "rect": [
+        512,
+        0,
+        64,
+        72
+      ],
+      "width": 16,
+      "height": 18,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 147,
+      "role": "collectible",
+      "sourceCell": 2,
+      "dimensionality": "2d"
+    },
+    "148": {
+      "atlas": "v5-items-1",
+      "rect": [
+        768,
+        0,
+        64,
+        72
+      ],
+      "width": 16,
+      "height": 18,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 148,
+      "role": "collectible",
+      "sourceCell": 3,
+      "dimensionality": "2d"
+    },
+    "149": {
+      "atlas": "v5-items-1",
+      "rect": [
+        0,
+        256,
+        64,
+        76
+      ],
+      "width": 16,
+      "height": 19,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 149,
+      "role": "collectible",
+      "sourceCell": 4,
+      "dimensionality": "2d"
+    },
+    "150": {
+      "atlas": "v5-items-1",
+      "rect": [
+        256,
+        256,
+        64,
+        116
+      ],
+      "width": 16,
+      "height": 29,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 150,
+      "role": "collectible",
+      "sourceCell": 5,
+      "dimensionality": "2d"
+    },
+    "151": {
+      "atlas": "v5-items-1",
+      "rect": [
+        512,
+        256,
+        64,
+        84
+      ],
+      "width": 16,
+      "height": 21,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 151,
+      "role": "collectible",
+      "sourceCell": 6,
+      "dimensionality": "2d"
+    },
+    "152": {
+      "atlas": "v5-items-1",
+      "rect": [
+        768,
+        256,
+        64,
+        112
+      ],
+      "width": 16,
+      "height": 28,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 152,
+      "role": "collectible",
+      "sourceCell": 7,
+      "dimensionality": "2d"
     },
     "153": {
       "atlas": "v2-food-a",
@@ -1836,6 +2315,278 @@
       "dimensionality": "2d",
       "sourceCell": 9
     },
+    "154": {
+      "atlas": "v5-items-1",
+      "rect": [
+        0,
+        512,
+        96,
+        60
+      ],
+      "width": 24,
+      "height": 15,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 154,
+      "role": "collectible",
+      "sourceCell": 8,
+      "dimensionality": "2d"
+    },
+    "155": {
+      "atlas": "v5-items-1",
+      "rect": [
+        256,
+        512,
+        64,
+        60
+      ],
+      "width": 16,
+      "height": 15,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 155,
+      "role": "collectible",
+      "sourceCell": 9,
+      "dimensionality": "2d"
+    },
+    "156": {
+      "atlas": "v5-items-1",
+      "rect": [
+        512,
+        512,
+        64,
+        76
+      ],
+      "width": 16,
+      "height": 19,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 156,
+      "role": "collectible",
+      "sourceCell": 10,
+      "dimensionality": "2d"
+    },
+    "157": {
+      "atlas": "v5-items-1",
+      "rect": [
+        768,
+        512,
+        64,
+        84
+      ],
+      "width": 16,
+      "height": 21,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 157,
+      "role": "collectible",
+      "sourceCell": 11,
+      "dimensionality": "2d"
+    },
+    "158": {
+      "atlas": "v5-items-1",
+      "rect": [
+        0,
+        768,
+        64,
+        84
+      ],
+      "width": 16,
+      "height": 21,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 158,
+      "role": "collectible",
+      "sourceCell": 12,
+      "dimensionality": "2d"
+    },
+    "159": {
+      "atlas": "v5-items-1",
+      "rect": [
+        256,
+        768,
+        96,
+        68
+      ],
+      "width": 24,
+      "height": 17,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 159,
+      "role": "collectible",
+      "sourceCell": 13,
+      "dimensionality": "2d"
+    },
+    "160": {
+      "atlas": "v5-items-1",
+      "rect": [
+        512,
+        768,
+        96,
+        48
+      ],
+      "width": 24,
+      "height": 12,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 160,
+      "role": "collectible",
+      "sourceCell": 14,
+      "dimensionality": "2d"
+    },
+    "161": {
+      "atlas": "v5-items-1",
+      "rect": [
+        768,
+        768,
+        96,
+        52
+      ],
+      "width": 24,
+      "height": 13,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 161,
+      "role": "collectible",
+      "sourceCell": 15,
+      "dimensionality": "2d"
+    },
+    "162": {
+      "atlas": "v5-items-2",
+      "rect": [
+        0,
+        0,
+        96,
+        52
+      ],
+      "width": 24,
+      "height": 13,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 162,
+      "role": "collectible",
+      "sourceCell": 0,
+      "dimensionality": "2d"
+    },
+    "163": {
+      "atlas": "v5-items-2",
+      "rect": [
+        256,
+        0,
+        96,
+        68
+      ],
+      "width": 24,
+      "height": 17,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 163,
+      "role": "collectible",
+      "sourceCell": 1,
+      "dimensionality": "2d"
+    },
+    "164": {
+      "atlas": "v5-items-2",
+      "rect": [
+        512,
+        0,
+        96,
+        88
+      ],
+      "width": 24,
+      "height": 22,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 164,
+      "role": "collectible",
+      "sourceCell": 2,
+      "dimensionality": "2d"
+    },
+    "165": {
+      "atlas": "v5-items-2",
+      "rect": [
+        768,
+        0,
+        64,
+        52
+      ],
+      "width": 16,
+      "height": 13,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 165,
+      "role": "collectible",
+      "sourceCell": 3,
+      "dimensionality": "2d"
+    },
+    "166": {
+      "atlas": "v5-items-2",
+      "rect": [
+        0,
+        256,
+        64,
+        64
+      ],
+      "width": 16,
+      "height": 16,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 166,
+      "role": "collectible",
+      "sourceCell": 4,
+      "dimensionality": "2d"
+    },
+    "167": {
+      "atlas": "v5-items-2",
+      "rect": [
+        256,
+        256,
+        64,
+        96
+      ],
+      "width": 16,
+      "height": 24,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 167,
+      "role": "collectible",
+      "sourceCell": 5,
+      "dimensionality": "2d"
+    },
+    "168": {
+      "atlas": "v5-items-2",
+      "rect": [
+        512,
+        256,
+        64,
+        68
+      ],
+      "width": 16,
+      "height": 17,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 168,
+      "role": "collectible",
+      "sourceCell": 6,
+      "dimensionality": "2d"
+    },
+    "169": {
+      "atlas": "v5-items-2",
+      "rect": [
+        768,
+        256,
+        96,
+        44
+      ],
+      "width": 24,
+      "height": 11,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 169,
+      "role": "collectible",
+      "sourceCell": 7,
+      "dimensionality": "2d"
+    },
     "170": {
       "atlas": "v2-food-a",
       "rect": [
@@ -1852,6 +2603,23 @@
       "sourceSprite": 170,
       "dimensionality": "2d",
       "sourceCell": 10
+    },
+    "171": {
+      "atlas": "v5-items-2",
+      "rect": [
+        0,
+        512,
+        96,
+        72
+      ],
+      "width": 24,
+      "height": 18,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 171,
+      "role": "collectible",
+      "sourceCell": 8,
+      "dimensionality": "2d"
     },
     "172": {
       "atlas": "v2-food-a",
@@ -1870,6 +2638,57 @@
       "dimensionality": "2d",
       "sourceCell": 11
     },
+    "173": {
+      "atlas": "v5-items-2",
+      "rect": [
+        256,
+        512,
+        96,
+        60
+      ],
+      "width": 24,
+      "height": 15,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 173,
+      "role": "collectible",
+      "sourceCell": 9,
+      "dimensionality": "2d"
+    },
+    "174": {
+      "atlas": "v5-items-2",
+      "rect": [
+        512,
+        512,
+        96,
+        60
+      ],
+      "width": 24,
+      "height": 15,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 174,
+      "role": "collectible",
+      "sourceCell": 10,
+      "dimensionality": "2d"
+    },
+    "175": {
+      "atlas": "v5-items-2",
+      "rect": [
+        768,
+        512,
+        64,
+        76
+      ],
+      "width": 16,
+      "height": 19,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 175,
+      "role": "collectible",
+      "sourceCell": 11,
+      "dimensionality": "2d"
+    },
     "176": {
       "atlas": "v2-food-a",
       "rect": [
@@ -1887,6 +2706,91 @@
       "dimensionality": "2d",
       "sourceCell": 12
     },
+    "177": {
+      "atlas": "v5-items-2",
+      "rect": [
+        0,
+        768,
+        64,
+        72
+      ],
+      "width": 16,
+      "height": 18,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 177,
+      "role": "collectible",
+      "sourceCell": 12,
+      "dimensionality": "2d"
+    },
+    "178": {
+      "atlas": "v5-items-2",
+      "rect": [
+        256,
+        768,
+        32,
+        92
+      ],
+      "width": 8,
+      "height": 23,
+      "originX": 4,
+      "originY": 0,
+      "sourceSprite": 178,
+      "role": "collectible",
+      "sourceCell": 13,
+      "dimensionality": "2d"
+    },
+    "179": {
+      "atlas": "v5-items-2",
+      "rect": [
+        512,
+        768,
+        64,
+        84
+      ],
+      "width": 16,
+      "height": 21,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 179,
+      "role": "collectible",
+      "sourceCell": 14,
+      "dimensionality": "2d"
+    },
+    "180": {
+      "atlas": "v5-items-2",
+      "rect": [
+        768,
+        768,
+        64,
+        72
+      ],
+      "width": 16,
+      "height": 18,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 180,
+      "role": "collectible",
+      "sourceCell": 15,
+      "dimensionality": "2d"
+    },
+    "181": {
+      "atlas": "v5-items-3",
+      "rect": [
+        0,
+        0,
+        64,
+        48
+      ],
+      "width": 16,
+      "height": 12,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 181,
+      "role": "collectible",
+      "sourceCell": 0,
+      "dimensionality": "2d"
+    },
     "182": {
       "atlas": "v2-food-a",
       "rect": [
@@ -1903,6 +2807,23 @@
       "sourceSprite": 182,
       "dimensionality": "2d",
       "sourceCell": 13
+    },
+    "183": {
+      "atlas": "v5-items-3",
+      "rect": [
+        256,
+        0,
+        64,
+        48
+      ],
+      "width": 16,
+      "height": 12,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 183,
+      "role": "collectible",
+      "sourceCell": 1,
+      "dimensionality": "2d"
     },
     "184": {
       "atlas": "v2-food-a",
@@ -2040,6 +2961,40 @@
       "dimensionality": "2d",
       "sourceCell": 5
     },
+    "192": {
+      "atlas": "v5-items-3",
+      "rect": [
+        512,
+        0,
+        64,
+        52
+      ],
+      "width": 16,
+      "height": 13,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 192,
+      "role": "collectible",
+      "sourceCell": 2,
+      "dimensionality": "2d"
+    },
+    "193": {
+      "atlas": "v5-items-3",
+      "rect": [
+        768,
+        0,
+        96,
+        56
+      ],
+      "width": 24,
+      "height": 14,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 193,
+      "role": "collectible",
+      "sourceCell": 3,
+      "dimensionality": "2d"
+    },
     "194": {
       "atlas": "v2-food-b",
       "rect": [
@@ -2125,6 +3080,74 @@
       "dimensionality": "2d",
       "sourceCell": 10
     },
+    "199": {
+      "atlas": "v5-items-3",
+      "rect": [
+        0,
+        256,
+        96,
+        64
+      ],
+      "width": 24,
+      "height": 16,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 199,
+      "role": "collectible",
+      "sourceCell": 4,
+      "dimensionality": "2d"
+    },
+    "200": {
+      "atlas": "v5-items-3",
+      "rect": [
+        256,
+        256,
+        96,
+        72
+      ],
+      "width": 24,
+      "height": 18,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 200,
+      "role": "collectible",
+      "sourceCell": 5,
+      "dimensionality": "2d"
+    },
+    "201": {
+      "atlas": "v5-items-3",
+      "rect": [
+        512,
+        256,
+        96,
+        52
+      ],
+      "width": 24,
+      "height": 13,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 201,
+      "role": "collectible",
+      "sourceCell": 6,
+      "dimensionality": "2d"
+    },
+    "202": {
+      "atlas": "v5-items-3",
+      "rect": [
+        768,
+        256,
+        64,
+        60
+      ],
+      "width": 16,
+      "height": 15,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 202,
+      "role": "collectible",
+      "sourceCell": 7,
+      "dimensionality": "2d"
+    },
     "203": {
       "atlas": "v2-food-b",
       "rect": [
@@ -2159,6 +3182,125 @@
       "dimensionality": "2d",
       "sourceCell": 12
     },
+    "205": {
+      "atlas": "v5-items-3",
+      "rect": [
+        0,
+        512,
+        64,
+        96
+      ],
+      "width": 16,
+      "height": 24,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 205,
+      "role": "collectible",
+      "sourceCell": 8,
+      "dimensionality": "2d"
+    },
+    "206": {
+      "atlas": "v5-items-3",
+      "rect": [
+        256,
+        512,
+        96,
+        72
+      ],
+      "width": 24,
+      "height": 18,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 206,
+      "role": "collectible",
+      "sourceCell": 9,
+      "dimensionality": "2d"
+    },
+    "207": {
+      "atlas": "v5-items-3",
+      "rect": [
+        512,
+        512,
+        128,
+        80
+      ],
+      "width": 32,
+      "height": 20,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 207,
+      "role": "collectible",
+      "sourceCell": 10,
+      "dimensionality": "2d"
+    },
+    "208": {
+      "atlas": "v5-items-3",
+      "rect": [
+        768,
+        512,
+        128,
+        68
+      ],
+      "width": 32,
+      "height": 17,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 208,
+      "role": "collectible",
+      "sourceCell": 11,
+      "dimensionality": "2d"
+    },
+    "209": {
+      "atlas": "v5-items-3",
+      "rect": [
+        0,
+        768,
+        64,
+        44
+      ],
+      "width": 16,
+      "height": 11,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 209,
+      "role": "collectible",
+      "sourceCell": 12,
+      "dimensionality": "2d"
+    },
+    "210": {
+      "atlas": "v5-items-3",
+      "rect": [
+        256,
+        768,
+        64,
+        104
+      ],
+      "width": 16,
+      "height": 26,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 210,
+      "role": "collectible",
+      "sourceCell": 13,
+      "dimensionality": "2d"
+    },
+    "211": {
+      "atlas": "v5-items-3",
+      "rect": [
+        512,
+        768,
+        96,
+        72
+      ],
+      "width": 24,
+      "height": 18,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 211,
+      "role": "collectible",
+      "sourceCell": 14,
+      "dimensionality": "2d"
+    },
     "212": {
       "atlas": "v2-food-b",
       "rect": [
@@ -2176,6 +3318,91 @@
       "dimensionality": "2d",
       "sourceCell": 13
     },
+    "213": {
+      "atlas": "v5-items-3",
+      "rect": [
+        768,
+        768,
+        96,
+        48
+      ],
+      "width": 24,
+      "height": 12,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 213,
+      "role": "collectible",
+      "sourceCell": 15,
+      "dimensionality": "2d"
+    },
+    "214": {
+      "atlas": "v5-items-4",
+      "rect": [
+        0,
+        0,
+        64,
+        60
+      ],
+      "width": 16,
+      "height": 15,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 214,
+      "role": "collectible",
+      "sourceCell": 0,
+      "dimensionality": "2d"
+    },
+    "215": {
+      "atlas": "v5-items-4",
+      "rect": [
+        256,
+        0,
+        64,
+        76
+      ],
+      "width": 16,
+      "height": 19,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 215,
+      "role": "collectible",
+      "sourceCell": 1,
+      "dimensionality": "2d"
+    },
+    "216": {
+      "atlas": "v5-items-4",
+      "rect": [
+        512,
+        0,
+        64,
+        76
+      ],
+      "width": 16,
+      "height": 19,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 216,
+      "role": "collectible",
+      "sourceCell": 2,
+      "dimensionality": "2d"
+    },
+    "217": {
+      "atlas": "v5-items-4",
+      "rect": [
+        768,
+        0,
+        64,
+        76
+      ],
+      "width": 16,
+      "height": 19,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 217,
+      "role": "collectible",
+      "sourceCell": 3,
+      "dimensionality": "2d"
+    },
     "218": {
       "atlas": "v2-food-b",
       "rect": [
@@ -2192,6 +3419,142 @@
       "sourceSprite": 218,
       "dimensionality": "2d",
       "sourceCell": 14
+    },
+    "219": {
+      "atlas": "v5-items-4",
+      "rect": [
+        0,
+        256,
+        64,
+        76
+      ],
+      "width": 16,
+      "height": 19,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 219,
+      "role": "collectible",
+      "sourceCell": 4,
+      "dimensionality": "2d"
+    },
+    "220": {
+      "atlas": "v5-special",
+      "rect": [
+        320,
+        0,
+        96,
+        64
+      ],
+      "width": 24,
+      "height": 16,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 220,
+      "role": "collectible",
+      "sourceCell": 1,
+      "dimensionality": "2d"
+    },
+    "221": {
+      "atlas": "v5-special",
+      "rect": [
+        640,
+        0,
+        96,
+        88
+      ],
+      "width": 24,
+      "height": 22,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 221,
+      "role": "collectible",
+      "sourceCell": 2,
+      "dimensionality": "2d"
+    },
+    "222": {
+      "atlas": "v5-special",
+      "rect": [
+        960,
+        0,
+        64,
+        72
+      ],
+      "width": 16,
+      "height": 18,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 222,
+      "role": "collectible",
+      "sourceCell": 3,
+      "dimensionality": "2d"
+    },
+    "223": {
+      "atlas": "v5-special",
+      "rect": [
+        0,
+        320,
+        96,
+        64
+      ],
+      "width": 24,
+      "height": 16,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 223,
+      "role": "collectible",
+      "sourceCell": 4,
+      "dimensionality": "2d"
+    },
+    "232": {
+      "atlas": "v5-special",
+      "rect": [
+        320,
+        320,
+        128,
+        52
+      ],
+      "width": 32,
+      "height": 13,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 232,
+      "role": "collectible",
+      "sourceCell": 5,
+      "dimensionality": "2d"
+    },
+    "233": {
+      "atlas": "v5-special",
+      "rect": [
+        640,
+        320,
+        64,
+        72
+      ],
+      "width": 16,
+      "height": 18,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 233,
+      "role": "collectible",
+      "sourceCell": 6,
+      "dimensionality": "2d"
+    },
+    "234": {
+      "atlas": "v5-special",
+      "rect": [
+        960,
+        320,
+        64,
+        72
+      ],
+      "width": 16,
+      "height": 18,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 234,
+      "role": "collectible",
+      "sourceCell": 7,
+      "dimensionality": "2d"
     },
     "235": {
       "atlas": "weapons",
@@ -2363,6 +3726,40 @@
       "dimensionality": "2d",
       "sourceCell": 21
     },
+    "278": {
+      "atlas": "v5-special",
+      "rect": [
+        0,
+        640,
+        192,
+        280
+      ],
+      "width": 48,
+      "height": 70,
+      "originX": 34,
+      "originY": 0,
+      "sourceSprite": 278,
+      "role": "collectible",
+      "sourceCell": 8,
+      "dimensionality": "2d"
+    },
+    "279": {
+      "atlas": "v5-special",
+      "rect": [
+        320,
+        640,
+        192,
+        280
+      ],
+      "width": 48,
+      "height": 70,
+      "originX": 19,
+      "originY": 0,
+      "sourceSprite": 279,
+      "role": "collectible",
+      "sourceCell": 9,
+      "dimensionality": "2d"
+    },
     "280": {
       "atlas": "v2-pickups",
       "rect": [
@@ -2430,6 +3827,23 @@
       "sourceSprite": 284,
       "dimensionality": "2d",
       "sourceCell": 20
+    },
+    "311": {
+      "atlas": "v5-special",
+      "rect": [
+        640,
+        640,
+        64,
+        104
+      ],
+      "width": 16,
+      "height": 26,
+      "originX": 8,
+      "originY": 0,
+      "sourceSprite": 311,
+      "role": "collectible",
+      "sourceCell": 10,
+      "dimensionality": "2d"
     },
     "312": {
       "atlas": "bears",
@@ -6172,6 +7586,177 @@
         "1:union:519",
         "1:union:520"
       ]
+    },
+    "itemsV5": {
+      "sourceHashes": {
+        "dist/assets/sprites.idx": "575f271e68501aaa1a728ddd25c511aae00d87edcbb746af8af355f9b24eef77",
+        "dist/assets/game.json": "36e0bf5e4b9348e25093402e1d814ff448662aa661146fa8cbb9260001973fcd"
+      },
+      "ids": [
+        110,
+        111,
+        114,
+        115,
+        116,
+        117,
+        118,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        141,
+        142,
+        143,
+        144,
+        145,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        169,
+        171,
+        173,
+        174,
+        175,
+        177,
+        178,
+        179,
+        180,
+        181,
+        183,
+        192,
+        193,
+        199,
+        200,
+        201,
+        202,
+        205,
+        206,
+        207,
+        208,
+        209,
+        210,
+        211,
+        213,
+        214,
+        215,
+        216,
+        217,
+        219,
+        220,
+        221,
+        222,
+        223,
+        232,
+        233,
+        234,
+        278,
+        279,
+        311
+      ],
+      "allScorePickups": true
+    },
+    "feedbackV5": {
+      "spriteIds": [
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        224,
+        225,
+        226,
+        227,
+        228,
+        229,
+        230,
+        231,
+        241,
+        242,
+        243,
+        244,
+        245,
+        246,
+        247,
+        248,
+        249,
+        250,
+        251,
+        252,
+        253,
+        254,
+        255,
+        256,
+        257,
+        258,
+        259,
+        260,
+        261,
+        262,
+        263,
+        264,
+        265,
+        266,
+        267,
+        268,
+        269,
+        270,
+        271,
+        272,
+        282,
+        283,
+        284,
+        285,
+        286,
+        287,
+        288,
+        289,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        301,
+        302,
+        303
+      ],
+      "renderer": "hd-feedback.js"
     }
   }
 }

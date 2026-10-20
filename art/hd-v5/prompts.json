@@ -1,0 +1,90 @@
+{
+  "tool": "built-in image_gen",
+  "mode": "edit",
+  "jobs": [
+    {
+      "id": "v5-items-0",
+      "rows": 4,
+      "n": 16,
+      "specific": "Row1: open refrigerator full of food, ice cream sundae, red carton of fries with its existing yellow W symbol, ring doughnut. Row2: ham joint, large burger, small banana bunch, lemon. Row3: strawberry, green striped fruit, red apple, watermelon slice. Row4: white/radish-like root vegetable with green leaf, green lollipop, yellow/green wrapped candy, red/green wrapped candy.",
+      "args": {
+        "referenced_image_paths": [
+          "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v5/references/v5-items-0.png",
+          "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v1/raw/hero-00-15.png"
+        ],
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Asset type: production transparent HD sprite atlas for a cartoon platform game. Image1 is the exact edit target, image2 is STYLE ONLY: match its crisp dark outlines and clean cel shading, DO NOT insert any hero/body/limbs from image2. Redraw the objects in image1 in this sharp hand-painted cartoon style. Keep exactly4 equal columns by 4 equal rows, 16 occupied cells, same row-major order and original relative object size, position, silhouette, orientation, colors, transparent padding. Each object stays entirely inside its original cell. Row1: open refrigerator full of food, ice cream sundae, red carton of fries with its existing yellow W symbol, ring doughnut. Row2: ham joint, large burger, small banana bunch, lemon. Row3: strawberry, green striped fruit, red apple, watermelon slice. Row4: white/radish-like root vegetable with green leaf, green lollipop, yellow/green wrapped candy, red/green wrapped candy. Replace pixel stair steps with crisp detailed curves and material highlights, no blur, no soft-focus, no photorealism. True alpha outside each object, no backdrop, checkerboard, drop shadow, grid, captions, cell numbers or new text. Preserve ONLY existing intentional marks/text. Entire canvas aspect ratio matches target."
+      }
+    },
+    {
+      "id": "v5-items-1",
+      "rows": 4,
+      "n": 16,
+      "specific": "Preserve these exact16 collectible objects and sizes in row-major order: green-striped candy cane, red-striped candy cane, yellow ice pop, red ice pop; wrapped chocolate bar, double scoop cone, green single scoop cone, white soft-serve cone; small cupcake, small ring doughnut, handheld game device, green-topped drink carton; gray-topped orange drink carton, medium hamburger, small hamburger, small ham joint. Keep the handheld screen's original green and red marks, no new characters.",
+      "args": {
+        "referenced_image_paths": [
+          "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v5/references/v5-items-1.png",
+          "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v1/raw/hero-00-15.png"
+        ],
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Asset type: production transparent HD sprite atlas for a cartoon platform game. Image1 is the exact edit target, image2 is STYLE ONLY: match its crisp dark outlines and clean cel shading, DO NOT insert any hero/body/limbs from image2. Redraw the objects in image1 in this sharp hand-painted cartoon style. Keep exactly4 equal columns by 4 equal rows, 16 occupied cells, same row-major order and original relative object size, position, silhouette, orientation, colors, transparent padding. Each object stays entirely inside its original cell. Preserve these exact16 collectible objects and sizes in row-major order: green-striped candy cane, red-striped candy cane, yellow ice pop, red ice pop; wrapped chocolate bar, double scoop cone, green single scoop cone, white soft-serve cone; small cupcake, small ring doughnut, handheld game device, green-topped drink carton; gray-topped orange drink carton, medium hamburger, small hamburger, small ham joint. Keep the handheld screen's original green and red marks, no new characters. Replace pixel stair steps with crisp detailed curves and material highlights, no blur, no soft-focus, no photorealism. True alpha outside each object, no backdrop, checkerboard, drop shadow, grid, captions, cell numbers or new text. Preserve ONLY existing intentional marks/text. Entire canvas aspect ratio matches target."
+      }
+    },
+    {
+      "id": "v5-items-2",
+      "rows": 4,
+      "n": 16,
+      "specific": "Preserve all16 food/drink objects and original identities, colors and scale: a small meat/steak portion, fried egg, sausage, cheese wedge; fries carton with its existing yellow W, drink cup with its existing symbol and straw, red soda can, butter on a plate; patterned tea mug with lemon, green teacup with spoon, white/gray teacup with spoon, green cocktail glass with lemon; small white milk bottle, tall white bottle, tall amber drink flute, amber goblet.",
+      "args": {
+        "referenced_image_paths": [
+          "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v5/references/v5-items-2.png",
+          "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v1/raw/hero-00-15.png"
+        ],
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Asset type: production transparent HD sprite atlas for a cartoon platform game. Image1 is the exact edit target, image2 is STYLE ONLY: match its crisp dark outlines and clean cel shading, DO NOT insert any hero/body/limbs from image2. Redraw the objects in image1 in this sharp hand-painted cartoon style. Keep exactly4 equal columns by 4 equal rows, 16 occupied cells, same row-major order and original relative object size, position, silhouette, orientation, colors, transparent padding. Each object stays entirely inside its original cell. Preserve all16 food/drink objects and original identities, colors and scale: a small meat/steak portion, fried egg, sausage, cheese wedge; fries carton with its existing yellow W, drink cup with its existing symbol and straw, red soda can, butter on a plate; patterned tea mug with lemon, green teacup with spoon, white/gray teacup with spoon, green cocktail glass with lemon; small white milk bottle, tall white bottle, tall amber drink flute, amber goblet. Replace pixel stair steps with crisp detailed curves and material highlights, no blur, no soft-focus, no photorealism. True alpha outside each object, no backdrop, checkerboard, drop shadow, grid, captions, cell numbers or new text. Preserve ONLY existing intentional marks/text. Entire canvas aspect ratio matches target."
+      }
+    },
+    {
+      "id": "v5-items-3",
+      "rows": 4,
+      "n": 16,
+      "specific": "Preserve16 treasure/toy/household objects and row-major order: green gemstone, pale gemstone, floppy disk, rotary telephone; suitcase, joystick, gray cassette tape, yellow round wedge-shaped toy; magician top hat with white rabbit ears, toy taxi, toy steamship, red double decker bus; little gold coin, toy multicolored construction, toy gift/drum object with green/red pattern, pale gray folded/boat-shaped object. Retain identities, do not add faces/limbs.",
+      "args": {
+        "referenced_image_paths": [
+          "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v5/references/v5-items-3.png",
+          "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v1/raw/hero-00-15.png"
+        ],
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Asset type: production transparent HD sprite atlas for a cartoon platform game. Image1 is the exact edit target, image2 is STYLE ONLY: match its crisp dark outlines and clean cel shading, DO NOT insert any hero/body/limbs from image2. Redraw the objects in image1 in this sharp hand-painted cartoon style. Keep exactly4 equal columns by 4 equal rows, 16 occupied cells, same row-major order and original relative object size, position, silhouette, orientation, colors, transparent padding. Each object stays entirely inside its original cell. Preserve16 treasure/toy/household objects and row-major order: green gemstone, pale gemstone, floppy disk, rotary telephone; suitcase, joystick, gray cassette tape, yellow round wedge-shaped toy; magician top hat with white rabbit ears, toy taxi, toy steamship, red double decker bus; little gold coin, toy multicolored construction, toy gift/drum object with green/red pattern, pale gray folded/boat-shaped object. Retain identities, do not add faces/limbs. Replace pixel stair steps with crisp detailed curves and material highlights, no blur, no soft-focus, no photorealism. True alpha outside each object, no backdrop, checkerboard, drop shadow, grid, captions, cell numbers or new text. Preserve ONLY existing intentional marks/text. Entire canvas aspect ratio matches target."
+      }
+    },
+    {
+      "id": "v5-items-4",
+      "rows": 2,
+      "n": 5,
+      "specific": "Exactly5 occupied cells: first row a diagonally folded pale paper/paper-plane object, playing card RED HEART, playing card RED DIAMOND, playing card BLACK SPADE; second row first cell a red crosshatched playing-card BACK. The remaining3 cells are completely empty transparent. Preserve exact suits, do not add numbers/letters.",
+      "args": {
+        "referenced_image_paths": [
+          "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v5/references/v5-items-4.png",
+          "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v1/raw/hero-00-15.png"
+        ],
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Asset type: production transparent HD sprite atlas for a cartoon platform game. Image1 is the exact edit target, image2 is STYLE ONLY: match its crisp dark outlines and clean cel shading, DO NOT insert any hero/body/limbs from image2. Redraw the objects in image1 in this sharp hand-painted cartoon style. Keep exactly4 equal columns by 2 equal rows, 5 occupied cells, same row-major order and original relative object size, position, silhouette, orientation, colors, transparent padding. Each object stays entirely inside its original cell. Exactly5 occupied cells: first row a diagonally folded pale paper/paper-plane object, playing card RED HEART, playing card RED DIAMOND, playing card BLACK SPADE; second row first cell a red crosshatched playing-card BACK. The remaining3 cells are completely empty transparent. Preserve exact suits, do not add numbers/letters. Replace pixel stair steps with crisp detailed curves and material highlights, no blur, no soft-focus, no photorealism. True alpha outside each object, no backdrop, checkerboard, drop shadow, grid, captions, cell numbers or new text. Preserve ONLY existing intentional marks/text. Entire canvas aspect ratio matches target."
+      }
+    },
+    {
+      "id": "v5-special",
+      "rows": 3,
+      "n": 11,
+      "specific": "Exactly11 occupied cells. Row1: yellow spinning rotor/equipment part, squat skull-and-crossbones, tall skull-and-crossbones, dark gray pineapple grenade. Row2: small black bomb, original paired root/stone scenery fragment, original small yellow sun placard with verbatim ON, matching placard OFF. Row3: tall red-light closed exit pole with red circular hand sign, matching green-light open exit pole with white arrow/hand sign, green-jewel-on-brown-pedestal bonus marker, final cell completely empty. Preserve exact pointers/orientations and every small prop; no game character or head added.",
+      "args": {
+        "referenced_image_paths": [
+          "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v5/references/v5-special.png",
+          "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v1/raw/hero-00-15.png"
+        ],
+        "transparent_background": true,
+        "prompt": "Use case: identity-preserve. Asset type: production transparent HD sprite atlas for a cartoon platform game. Image1 is the exact edit target, image2 is STYLE ONLY: match its crisp dark outlines and clean cel shading, DO NOT insert any hero/body/limbs from image2. Redraw the objects in image1 in this sharp hand-painted cartoon style. Keep exactly4 equal columns by 3 equal rows, 11 occupied cells, same row-major order and original relative object size, position, silhouette, orientation, colors, transparent padding. Each object stays entirely inside its original cell. Exactly11 occupied cells. Row1: yellow spinning rotor/equipment part, squat skull-and-crossbones, tall skull-and-crossbones, dark gray pineapple grenade. Row2: small black bomb, original paired root/stone scenery fragment, original small yellow sun placard with verbatim ON, matching placard OFF. Row3: tall red-light closed exit pole with red circular hand sign, matching green-light open exit pole with white arrow/hand sign, green-jewel-on-brown-pedestal bonus marker, final cell completely empty. Preserve exact pointers/orientations and every small prop; no game character or head added. Replace pixel stair steps with crisp detailed curves and material highlights, no blur, no soft-focus, no photorealism. True alpha outside each object, no backdrop, checkerboard, drop shadow, grid, captions, cell numbers or new text. Preserve ONLY existing intentional marks/text. Entire canvas aspect ratio matches target."
+      }
+    }
+  ]
+}

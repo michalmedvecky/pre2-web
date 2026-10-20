@@ -33,17 +33,19 @@ export function connectedTerrain(source,width,height,palette,texture){
  // Reconstruct continuous color from connected contours instead of copying
  // large indexed-color steps into a high-resolution canvas.
  const pixels=scale2x(source,width,height),sw=width*2,sh=height*2,w=width*4,h=height*4,rgba=new Uint8ClampedArray(w*h*4),horizontal=new Float32Array(w*sh*4);
- const kernels=[.75,.25].map(f=>{const k=Float32Array.from({length:6},(_,i)=>Math.exp(-((i-2-f)**2)/(2*.8**2))),sum=k.reduce((a,b)=>a+b,0);return k.map(v=>v/sum);});
+ // Interpolating cubic weights preserve sharp material boundaries. The prior
+ // Gaussian kernel blurred every rock/leaf while characters stayed crisp.
+ const kernels=[.75,.25].map(f=>{const f2=f*f,f3=f2*f;return [-.5*f+f2-.5*f3,1-2.5*f2+1.5*f3,.5*f+2*f2-1.5*f3,-.5*f2+.5*f3];});
  for(let y=0;y<sh;y++)for(let x=0;x<w;x++){
   const ix=(x-1)>>1,kernel=kernels[x&1],p=(y*w+x)*4;
-  for(let i=0;i<6;i++){
-   const v=pixels[y*sw+Math.max(0,Math.min(sw-1,ix+i-2))];if(!v)continue;const k=kernel[i];
+  for(let i=0;i<4;i++){
+   const v=pixels[y*sw+Math.max(0,Math.min(sw-1,ix+i-1))];if(!v)continue;const k=kernel[i];
    horizontal[p]+=palette[v*3]*k;horizontal[p+1]+=palette[v*3+1]*k;horizontal[p+2]+=palette[v*3+2]*k;horizontal[p+3]+=k;
   }
  }
  for(let y=0;y<h;y++)for(let x=0;x<w;x++){
   const iy=(y-1)>>1,kernel=kernels[y&1],p=(y*w+x)*4;let r=0,g=0,b=0,alpha=0;
-  for(let i=0;i<6;i++){const q=(Math.max(0,Math.min(sh-1,iy+i-2))*w+x)*4,k=kernel[i];r+=horizontal[q]*k;g+=horizontal[q+1]*k;b+=horizontal[q+2]*k;alpha+=horizontal[q+3]*k;}
+  for(let i=0;i<4;i++){const q=(Math.max(0,Math.min(sh-1,iy+i-1))*w+x)*4,k=kernel[i];r+=horizontal[q]*k;g+=horizontal[q+1]*k;b+=horizontal[q+2]*k;alpha+=horizontal[q+3]*k;}
   if(alpha<=.2)continue;r/=alpha;g/=alpha;b/=alpha;
   const paint=texture?.(x,y),light=paint?paint[0]*Math.min(1,paint[3]):0,coverage=Math.max(0,Math.min(1,(alpha-.2)/.6));
   rgba[p]=r*(1+light);rgba[p+1]=g*(1+light);rgba[p+2]=b*(1+light);rgba[p+3]=coverage*coverage*(3-2*coverage)*255;

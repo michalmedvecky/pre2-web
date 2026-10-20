@@ -36,3 +36,7 @@ test('HD texture detail blends continuously at atlas cuts and across world-space
  for(let y=8;y<120;y+=3)for(let x=8;x<120;x+=3)assert.deepEqual([...part(x,y)],[...whole(x+128,y+128)]);
  for(let y=16;y<112;y++)assert.ok(Math.abs(whole(63,y)[0]-whole(64,y)[0])<.01,'visible square edge');
 });
+
+test('terrain material edges remain sharp instead of spreading through a wide blur',()=>{
+ const src=new Uint8Array(12*12);for(let y=0;y<12;y++)for(let x=0;x<12;x++)src[y*12+x]=x<6?1:2;const rgba=connectedTerrain(src,12,12,palette);let transition=0;for(let x=0;x<48;x++){const v=rgba[(24*48+x)*4];if(v>102&&v<198)transition++;}assert.ok(transition<=2,'blurred transition occupies '+transition+' HD pixels');
+});

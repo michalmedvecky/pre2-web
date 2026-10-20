@@ -1,5 +1,7 @@
 # Fullscreen and continuous HD terrain
 
+The subsequent [v5 sharpness/item update](../hd-v5/README.md) replaces this Gaussian reconstruction with a sharper interpolating kernel and adds missing item/feedback coverage. This document retains the v4 baseline and its screenshots.
+
 The reported level-one scenery issue was reproduced and investigated using the actual Fullscreen API. The original v3 compositor produced exactly the same1280×800 pixels in a window and fullscreen, including after toggling H twice. Fullscreen itself did not disable terrain or background textures. The scene looked coarse because v3 retained an indexed Scale2x×2 base and only a weak luminance residual from the painted tiles, while characters used complete HD artwork.
 
 This update reconstructs continuous color from the connected terrain contours, rather than enlarging hard DOS palette steps. It applies one Scale2x contour pass followed by a small separable reconstruction kernel (sigma0.8 at2×). Color and alpha are premultiplied through reconstruction, then alpha coverage is sharpened to retain readable silhouettes. Fine detail from existing painted tile sheets is retained at up to±32% luminance. Detail at atlas borders is sampled from both neighboring interiors across a16-HD-pixel band instead of fading each tile to its native-colored rim. Both the contour kernel and detail sampling have sufficient neighbor halo to produce identical pixels across cached world regions.
