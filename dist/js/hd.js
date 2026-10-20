@@ -1,7 +1,7 @@
 import{TerrainLayer}from'./terrain-layer.js';
 import{terrainShadowRoles,preserveCaveShadows,shadowRoleForMaterial}from'./terrain-semantics.js';
 import{BanquetTerrain}from'./banquet-terrain.js';
-import{discoverDecor,mapFingerprint}from'./world-decor.js';
+import{discoverDecor,mapFingerprint,stoneSignSource}from'./world-decor.js';
 import {continuousSampler,terrainMaterial} from './continuous-materials.js';
 import {HDFeedback} from './hd-feedback.js';
 import {connectedTerrain,textureSampler,paintSampler} from './terrain.js';
@@ -20,7 +20,7 @@ export class HDAssets {
 }
 export class HDCompositor {
  constructor(canvas,pack){this.canvas=canvas;this.pack=pack;this.scale=pack.manifest.scale;canvas.width=320*this.scale;canvas.height=200*this.scale;this.ctx=canvas.getContext('2d',{alpha:false});this.ctx.imageSmoothingEnabled=false;this.cache=new WeakMap();this.flash=new Map();this.paletteKey='';this.terrainCache=new Map();this.terrainTextures=new Map();this.materialImages=new Map();this.hudRenderer=new HDHud(pack);this.feedback=new HDFeedback(pack);}
- setPalette(p){const key=p.join(',');if(key!==this.paletteKey){this.paletteKey=key;this.cache=new WeakMap();this.terrainCache.clear();}this.palette=p;}
+ setPalette(p){const key=p.join(',');if(key!==this.paletteKey){this.paletteKey=key;this.cache=new WeakMap();this.terrainCache.clear();this.stoneSign=null;}this.palette=p;}
  color(i,fade=1){const p=this.palette,k=i*3;return `rgb(${Math.floor((p[k]||0)*fade)},${Math.floor((p[k+1]||0)*fade)},${Math.floor((p[k+2]||0)*fade)})`;}
  begin(){this.ctx.fillStyle=this.color(0);this.ctx.fillRect(0,0,this.canvas.width,this.canvas.height);}
  clipped(clip,draw){const c=this.ctx;c.save();c.beginPath();c.rect(this.worldDX||0,this.worldDY||0,this.canvas.width,clip*this.scale);c.clip();draw(c);c.restore();}
@@ -77,7 +77,7 @@ export class HDCompositor {
  drawDecor(decor,cx,cy,phase,assets){
   this.clipped(176,c=>{c.imageSmoothingEnabled=true;for(const o of [...decor.objects,...decor.plants]){if(o.x+o.width<cx||o.x>cx+320||o.y+o.height<cy||o.y>cy+176)continue;const x=(o.x-cx)*4,y=(o.y-cy)*4,w=o.width*4,h=o.height*4;
    if(o.kind==='island'){if(o.visibleCells){c.save();c.beginPath();for(let j=0;j<o.visibleCells.length;j++)if(o.visibleCells[j])c.rect(x+j%(o.width/16)*64,y+Math.floor(j/(o.width/16))*64,64,64);c.clip();}const full=this.pack.manifest.worldDecor['island-'+o.width];if(full){c.drawImage(this.pack.images.get(full.atlas),...full.rect,x,y,w,h);if(o.visibleCells)c.restore();continue;}const key=o.tiles.join(',')+':'+this.paletteKey;this.islandImages||=new Map();let image=this.islandImages.get(key);if(!image){const source=new Uint8Array(o.width*o.height),bank=assets.tiles['1'];for(let yy=0;yy<o.height;yy++)for(let xx=0;xx<o.width;xx++){const id=o.tiles[(yy>>4)*(o.width>>4)+(xx>>4)],v=bank[id*256+(yy&15)*16+(xx&15)];source[yy*o.width+xx]=v===6?0:v;}const rgba=connectedTerrain(source,o.width,o.height,this.palette);image=document.createElement('canvas');image.width=o.width*4;image.height=o.height*4;image.getContext('2d').putImageData(new ImageData(rgba,image.width,image.height),0,0);this.islandImages.set(key,image);}c.drawImage(image,x,y,w,h);if(o.visibleCells)c.restore();continue;}
-   if(o.kind==='sign'){c.save();c.translate(x,y);c.scale(4,4);c.fillStyle='#272017';c.beginPath();c.moveTo(4,5);c.lineTo(43,4);c.quadraticCurveTo(48,9,45,24);c.lineTo(4,25);c.quadraticCurveTo(0,22,2,10);c.closePath();c.fill();c.strokeStyle='#d7c4a0';c.lineWidth=1;c.stroke();c.fillStyle='#b8a182';c.beginPath();c.roundRect(4,7,40,15,3);c.fill();c.font='bold 10px Georgia,serif';c.textAlign='center';c.textBaseline='middle';c.fillStyle='#34281c';c.fillText('LEVEL',24,15,37);c.restore();continue;}
+   if(o.kind==='sign'){if(!this.stoneSign){const source=stoneSignSource(assets),rgba=connectedTerrain(source,48,32,this.palette);this.stoneSign=document.createElement('canvas');this.stoneSign.width=192;this.stoneSign.height=128;this.stoneSign.getContext('2d').putImageData(new ImageData(rgba,192,128),0,0);}c.drawImage(this.stoneSign,x,y,w,h);continue;}
    const record=this.pack.manifest.worldDecor[o.kind==='plant'?'plant-'+o.shape+'-'+phase:o.kind];if(record)c.drawImage(this.pack.images.get(record.atlas),...record.rect,x,y,w,h);
   }});
  }

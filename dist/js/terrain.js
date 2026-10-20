@@ -29,7 +29,7 @@ export function textureSampler(tiles,columns,tileSize=64){
   return out;
  };
 }
-export function connectedTerrain(source,width,height,palette,texture,{paintColor=false}={}){
+export function connectedTerrain(source,width,height,palette,texture,{paintColor=false,paintAlpha=false}={}){
  // Reconstruct continuous color from connected contours instead of copying
  // large indexed-color steps into a high-resolution canvas.
  const pixels=scale2x(source,width,height),sw=width*2,sh=height*2,w=width*4,h=height*4,rgba=new Uint8ClampedArray(w*h*4),horizontal=new Float32Array(w*sh*4);
@@ -48,7 +48,7 @@ export function connectedTerrain(source,width,height,palette,texture,{paintColor
   for(let i=0;i<4;i++){const q=(Math.max(0,Math.min(sh-1,iy+i-1))*w+x)*4,k=kernel[i];r+=horizontal[q]*k;g+=horizontal[q+1]*k;b+=horizontal[q+2]*k;alpha+=horizontal[q+3]*k;}
   if(alpha<=.2)continue;r/=alpha;g/=alpha;b/=alpha;
   const paint=texture?.(x,y,r,g,b,alpha),light=paint?paint[0]*Math.min(1,paint[3]):0,coverage=Math.max(0,Math.min(1,(alpha-.2)/.6));
-  if(paintColor&&paint?.[3]>.01){rgba[p]=paint[0];rgba[p+1]=paint[1];rgba[p+2]=paint[2];}else{rgba[p]=r*(1+light);rgba[p+1]=g*(1+light);rgba[p+2]=b*(1+light);}rgba[p+3]=coverage*coverage*(3-2*coverage)*255;
+  if(paintColor&&paint?.[3]>.01){rgba[p]=paint[0];rgba[p+1]=paint[1];rgba[p+2]=paint[2];}else{rgba[p]=r*(1+light);rgba[p+1]=g*(1+light);rgba[p+2]=b*(1+light);}rgba[p+3]=coverage*coverage*(3-2*coverage)*255*(paintAlpha&&paint?Math.max(0,Math.min(1,paint[3])):1);
  }return rgba;
 }
 

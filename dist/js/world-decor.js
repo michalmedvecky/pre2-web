@@ -32,3 +32,16 @@ export function discoverDecor(level,map,union,authoredMap=map){
  for(const o of objects)for(let y=o.y>>4;y<(o.y+o.height)>>4;y++){const left=(o.x>>4)-1,right=(o.x+o.width)>>4,kind=root(physical(y*256+left))||root(physical(y*256+right));if(kind)for(let x=o.x>>4;x<(o.x+o.width)>>4;x++)backdrops.set(y*256+x,kind);}
  return{objects,covered,plants,backdrops,islandCells};
 }
+
+// Recover the actual stone sign, clearing only the exterior backing, not dark lettering.
+export function stoneSignSource(assets){
+ const width=48,height=32,ids=[775,776,3,777,778,779],source=new Uint8Array(width*height);
+ for(let y=0;y<height;y++)for(let x=0;x<width;x++){const v=ids[(y>>4)*3+(x>>4)],bank=v<256?assets.tiles['1']:assets.union;source[y*width+x]=bank[(v<256?v:v-256)*256+(y&15)*16+(x&15)];}
+ const seen=new Set(),queue=[];const add=p=>{if(p>=0&&p<source.length&&!seen.has(p)&&[0,6].includes(source[p])){seen.add(p);queue.push(p);}};
+ for(let x=0;x<width;x++){add(x);add((height-1)*width+x);}for(let y=0;y<height;y++){add(y*width);add(y*width+width-1);}
+ for(let i=0;i<queue.length;i++){const p=queue[i],x=p%width;source[p]=0;if(x)add(p-1);if(x+1<width)add(p+1);add(p-width);add(p+width);}
+ // The six map cells also contain unrelated wall stones. These row spans
+ // trace the original oval's perimeter; those stones belong to the wall layer.
+ const spans=[null,[12,22],[6,30],[4,34],[3,39],[2,42],[2,44],[1,45],[1,45],[1,45],[1,45],[1,46],[1,46],[1,46],[1,45],[1,45],[1,44],[2,41],[2,38],[3,36],[5,32],[12,20]];
+ for(let y=0;y<height;y++)for(let x=0;x<width;x++)if(!spans[y]||x<spans[y][0]||x>spans[y][1])source[y*width+x]=0;return source;
+}

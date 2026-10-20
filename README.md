@@ -226,3 +226,5 @@ Original assets retain their original authorship; this repository does not grant
 References: [Kubernetes Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/), [official nginx image](https://hub.docker.com/_/nginx), [GitHub container registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry), [Docker multi-platform Actions](https://docs.docker.com/build/ci/github-actions/multi-platform/).
 
 HD scrolling seams are fixed by assembling terrain before subpixel camera filtering. See [v12 compositor evidence and regression checks](art/hd-v12/README.md).
+
+Bonus-stage bread paint is restricted to actual bread; map cherries/glasses/ramps retain their original identities. The stone LEVEL sign is restored from its native source. See [v13 correction evidence](art/hd-v13/README.md).

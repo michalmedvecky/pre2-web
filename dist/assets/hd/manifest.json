@@ -505,6 +505,14 @@
       "height": 136,
       "sha256": "4ce670088a59b4664bc108cd68b4bb311daa963730f7901bee40528b2baf5b5a",
       "kind": "world-decor"
+    },
+    {
+      "id": "v13-banquet",
+      "file": "v13-banquet.png",
+      "width": 384,
+      "height": 128,
+      "sha256": "137846e06c0d64f159c1b0363558472b64c920f509eecaec35e2bc9d7b1c0bbb",
+      "kind": "world-material"
     }
   ],
   "sprites": {
@@ -15119,7 +15127,7 @@
     }
   },
   "banquetMaterial": {
-    "atlas": "v10-banquet",
+    "atlas": "v13-banquet",
     "rect": [
       0,
       0,

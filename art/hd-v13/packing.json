@@ -1,0 +1,13 @@
+{
+  "rawSHA256": "67a2957c24f9188cb9379d0027b8d691fd2cdfe822ce57c5c6e5089a3ca8ac44",
+  "outputSHA256": "137846e06c0d64f159c1b0363558472b64c920f509eecaec35e2bc9d7b1c0bbb",
+  "rawSize": [
+    2172,
+    724
+  ],
+  "outputSize": [
+    384,
+    128
+  ],
+  "method": "Premultiplied alpha area averaging; no background recoloring"
+}

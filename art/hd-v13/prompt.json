@@ -1,0 +1,6 @@
+{
+  "tool": "imagegen",
+  "input": "dist/assets/hd/v10-banquet.png",
+  "transparent_background": true,
+  "prompt": "Edit this existing game platform texture only by removing the solid black exterior background and the black background visible between the dangling lettuce leaves along the bottom. Preserve the exact bread, cheese and green lettuce drawing, colors, layout, and all internal dark ink/shadows belonging to the food. Do not add or rearrange objects, do not redesign or create new food. Keep the horizontal full-width repeating strip composition; no extra transparent margins at left or right. Output RGBA with truly transparent exterior and gaps between leaves, not black or a checkerboard painted into the image."
+}
