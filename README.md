@@ -1,3 +1,5 @@
+> **VR development branch:** the first playable 360° Quest pilot is at `/vr/`. See [VR setup, controls and validation](docs/vr/README.md). The desktop game and main deployment are maintained in the separate web worktree.
+
 # Prehistorik 2 — web game
 
 Playable native JavaScript reconstruction using the recovered original graphics, levels, music and sound effects. Original graphics render at 320×200; optional HD graphics use a 1280×800 presentation canvas. Gameplay and audio run entirely in the browser. The repository contains the web game and deployment configuration. Original DOS executables, decompiled code and reverse-engineering reports are managed separately.

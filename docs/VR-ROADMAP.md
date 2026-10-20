@@ -1,6 +1,6 @@
 # Full 360° Quest conversion: source contract and roadmap
 
-The intended future result is an explorable, stereoscopic 3D world around the player, with head tracking and spatial interaction. A flat game canvas on a virtual screen, panoramic video, or camera-facing character billboards alone do **not** meet that goal. This release adds HD 2D character art and prepares source contracts; it does not ship VR or claim headset testing.
+The intended future result is an explorable, stereoscopic 3D world around the player, with head tracking and spatial interaction. A flat game canvas on a virtual screen, panoramic video, or camera-facing character billboards alone do **not** meet that goal. The original preparation release added HD 2D character art and source contracts. This `vr/quest-360` branch now includes the [first playable pilot](vr/README.md) at `/vr/`: procedural 360° geometry, tracked club combat, free-depth movement, button jumping and checkpoint rescue. Desktop playthrough validation is complete; actual Quest stereo, tracking, comfort and performance acceptance remain pending.
 
 ## Sources prepared now
 
@@ -30,7 +30,7 @@ A visually complete 3D version can first keep campaign interactions on the origi
 
 ## Browser/XR and deployment
 
-Proposed runtime: an isolated WebXR/WebGL2 renderer with a scene/asset adapter and a logical input adapter; select a maintained 3D engine when implementation begins. Keep desktop original and HD modes operational. Avoid adding an untested engine dependency or an “Enter VR” button before a working stereo scene exists.
+The pilot uses locally vendored Three.js 0.186.1, WebGL2 and WebXR with an isolated 3D simulation/input adapter. It reads the recovered level data directly; it does not change the DOS-derived `World` to simulate movement in depth. Keep desktop original and HD modes operational. Avoid adding an untested engine dependency or an “Enter VR” button before a working stereo scene exists.
 
 Use HTTPS and runtime feature detection (`navigator.xr` / `isSessionSupported('immersive-vr')`); request an immersive session from a user gesture. Drive stereo presentation with the XR session's animation loop and query supported refresh rates rather than hard-coding a model-specific rate. The existing HTTPS Kubernetes ingress can serve a future WebXR build; a server-side GPU is not required for client rendering. Determine any cross-origin isolation/asset-hosting needs from actual chosen features before adding restrictive headers.
 
@@ -40,8 +40,8 @@ References checked 2026-10-19: [MDN requestSession](https://developer.mozilla.or
 
 1. **Current:** complete opt-in HD 2D atlas coverage, original fallback, reproducible source manifests, coordinate/scene export, unchanged gameplay replay hashes.
 2. **3D art pilot:** rigged hero/bear + first cave/terrain section; inspect from front/back/above and arbitrary 360° views, no billboard stand-ins for core actors/environment.
-3. **Quest vertical slice:** room-scale stereo scene, controller actions, spatial sound and UI, comfort/recenter/pause behavior, first-level traversal and combat. Profile a real target headset before expanding.
+3. **Quest vertical slice (in progress; desktop pilot playable, headset acceptance pending):** room-scale stereo scene, controller actions, spatial sound and UI, comfort/recenter/pause behavior, first-level traversal and combat. Profile a real target headset before expanding.
 4. **3D campaign:** author all stage interiors, bosses, pickups and secret paths; decide on lateral-route or free-depth rules explicitly. Add route, save, combat and transition acceptance tests for that mode.
 5. **Hardware release:** test the actual target Quest models and supported frame rates; measure CPU/GPU frame time, dropped frames, texture memory, thermal stability and load time over long sessions. Budget against the negotiated display rate (e.g. 72Hz allows about 13.9ms total frame time, 90Hz about 11.1ms), with room for tracking and compositor work. Verify stereoscopy, controller handedness, lost tracking, interrupted sessions and HTTPS asset loads.
 
-Open decisions: target Quest model(s), seated/standing/third-person vs first-person, free-depth traversal, comfort locomotion, how physical club swings map to native attack events, art/mesh pipeline, and 3D environment interpretation. These affect a future VR build; they do not block the present HD desktop feature.
+The pilot selects first-person viewing, free-depth traversal on an authored route, snap turning, button jumping and motion-qualified swept club contact. Open decisions: target Quest model(s), seated/standing calibration, comfort locomotion alternatives, further melee tuning, art/mesh pipeline, and expanded 3D environment interpretation. These affect a future VR build; they do not block the present HD desktop feature.

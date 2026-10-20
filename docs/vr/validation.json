@@ -1,0 +1,396 @@
+{
+  "date": "2026-10-20",
+  "branch": "vr/quest-360",
+  "baseCommit": "dfe0ff87201ef24a690d02f10cdc8fa1b40a0adb",
+  "unitAndRegressionTests": {
+    "passed": 221,
+    "failed": 0,
+    "newVRTests": 12
+  },
+  "originalFiles": {
+    "count": 54,
+    "allSHA256Unchanged": true
+  },
+  "browser": {
+    "base": "http://127.0.0.1:5776/vr/",
+    "combat": {
+      "player": {
+        "x": 12.925833333333212,
+        "y": 0,
+        "z": -7.111115747048928e-16,
+        "vy": 0,
+        "grounded": true,
+        "health": 2,
+        "invulnerable": 0.9888888888888907
+      },
+      "checkpoint": {
+        "x": 1.3125,
+        "y": 0,
+        "z": 0
+      },
+      "bear": {
+        "x": 13.467555555555695,
+        "y": 0,
+        "z": 0,
+        "hp": -10,
+        "alive": false,
+        "face": -1,
+        "hurt": 0.03333333333333326,
+        "stoleHeart": true,
+        "phase": 4.888888888888874,
+        "defeat": 0.3666666666666667
+      },
+      "score": 500,
+      "complete": false,
+      "rescue": 0,
+      "bones": [
+        {
+          "x": 14.167555555555694,
+          "y": 0.25,
+          "z": 0,
+          "age": 0.3666666666666667,
+          "collected": false
+        },
+        {
+          "x": 13.817555555555694,
+          "y": 0.25,
+          "z": 0.606217782649107,
+          "age": 0.3666666666666667,
+          "collected": false
+        },
+        {
+          "x": 13.117555555555695,
+          "y": 0.25,
+          "z": 0.6062177826491071,
+          "age": 0.3666666666666667,
+          "collected": false
+        },
+        {
+          "x": 12.767555555555695,
+          "y": 0.25,
+          "z": 8.572527594031472e-17,
+          "age": 0.011111111111111112,
+          "collected": true
+        },
+        {
+          "x": 13.117555555555695,
+          "y": 0.25,
+          "z": -0.6062177826491069,
+          "age": 0.3666666666666667,
+          "collected": false
+        },
+        {
+          "x": 13.817555555555694,
+          "y": 0.25,
+          "z": -0.606217782649107,
+          "age": 0.3666666666666667,
+          "collected": false
+        }
+      ],
+      "ready": true,
+      "paused": false,
+      "tracking": true,
+      "renderer": {
+        "calls": 53,
+        "triangles": 16032
+      },
+      "mode": "desktop"
+    },
+    "checkpoint": {
+      "player": {
+        "x": 22.243333333333418,
+        "y": 0,
+        "z": -1.278939473909538e-15,
+        "vy": 0,
+        "grounded": true,
+        "health": 2,
+        "invulnerable": 0
+      },
+      "checkpoint": {
+        "x": 22,
+        "y": 0,
+        "z": 0
+      },
+      "bear": {
+        "x": 13.467555555555695,
+        "y": 0,
+        "z": 0,
+        "hp": -10,
+        "alive": false,
+        "face": -1,
+        "hurt": 0,
+        "stoleHeart": true,
+        "phase": 4.888888888888874,
+        "defeat": 4.12222222222221
+      },
+      "score": 500,
+      "complete": false,
+      "rescue": 0,
+      "bones": [
+        {
+          "x": 14.167555555555694,
+          "y": 0.25,
+          "z": 0,
+          "age": 0.8111111111111102,
+          "collected": true
+        },
+        {
+          "x": 13.817555555555694,
+          "y": 0.25,
+          "z": 0.606217782649107,
+          "age": 4.12222222222221,
+          "collected": false
+        },
+        {
+          "x": 13.117555555555695,
+          "y": 0.25,
+          "z": 0.6062177826491071,
+          "age": 4.12222222222221,
+          "collected": false
+        },
+        {
+          "x": 12.767555555555695,
+          "y": 0.25,
+          "z": 8.572527594031472e-17,
+          "age": 0.011111111111111112,
+          "collected": true
+        },
+        {
+          "x": 13.117555555555695,
+          "y": 0.25,
+          "z": -0.6062177826491069,
+          "age": 4.12222222222221,
+          "collected": false
+        },
+        {
+          "x": 13.817555555555694,
+          "y": 0.25,
+          "z": -0.606217782649107,
+          "age": 4.12222222222221,
+          "collected": false
+        }
+      ],
+      "ready": true,
+      "paused": false,
+      "tracking": true,
+      "renderer": {
+        "calls": 31,
+        "triangles": 14756
+      },
+      "mode": "desktop"
+    },
+    "rescue": {
+      "player": {
+        "x": 22,
+        "y": 0,
+        "z": 0,
+        "vy": 0,
+        "grounded": true,
+        "health": 1,
+        "invulnerable": 1.533333333333335
+      },
+      "checkpoint": {
+        "x": 22,
+        "y": 0,
+        "z": 0
+      },
+      "bear": {
+        "x": 13.467555555555695,
+        "y": 0,
+        "z": 0,
+        "hp": -10,
+        "alive": false,
+        "face": -1,
+        "hurt": 0,
+        "stoleHeart": true,
+        "phase": 4.888888888888874,
+        "defeat": 5.811111111111093
+      },
+      "score": 500,
+      "complete": false,
+      "rescue": 0,
+      "bones": [
+        {
+          "x": 14.167555555555694,
+          "y": 0.25,
+          "z": 0,
+          "age": 0.8111111111111102,
+          "collected": true
+        },
+        {
+          "x": 13.817555555555694,
+          "y": 0.25,
+          "z": 0.606217782649107,
+          "age": 5.811111111111093,
+          "collected": false
+        },
+        {
+          "x": 13.117555555555695,
+          "y": 0.25,
+          "z": 0.6062177826491071,
+          "age": 5.811111111111093,
+          "collected": false
+        },
+        {
+          "x": 12.767555555555695,
+          "y": 0.25,
+          "z": 8.572527594031472e-17,
+          "age": 0.011111111111111112,
+          "collected": true
+        },
+        {
+          "x": 13.117555555555695,
+          "y": 0.25,
+          "z": -0.6062177826491069,
+          "age": 5.811111111111093,
+          "collected": false
+        },
+        {
+          "x": 13.817555555555694,
+          "y": 0.25,
+          "z": -0.606217782649107,
+          "age": 5.811111111111093,
+          "collected": false
+        }
+      ],
+      "ready": true,
+      "paused": false,
+      "tracking": true,
+      "renderer": {
+        "calls": 32,
+        "triangles": 14780
+      },
+      "mode": "desktop"
+    },
+    "complete": {
+      "player": {
+        "x": 30.840000000000295,
+        "y": 0,
+        "z": -5.412938852231298e-16,
+        "vy": 0,
+        "grounded": true,
+        "health": 1,
+        "invulnerable": 0
+      },
+      "checkpoint": {
+        "x": 22,
+        "y": 0,
+        "z": 0
+      },
+      "bear": {
+        "x": 13.467555555555695,
+        "y": 0,
+        "z": 0,
+        "hp": -10,
+        "alive": false,
+        "face": -1,
+        "hurt": 0,
+        "stoleHeart": true,
+        "phase": 4.888888888888874,
+        "defeat": 9.211111111111082
+      },
+      "score": 500,
+      "complete": true,
+      "rescue": 0,
+      "bones": [
+        {
+          "x": 14.167555555555694,
+          "y": 0.25,
+          "z": 0,
+          "age": 0.8111111111111102,
+          "collected": true
+        },
+        {
+          "x": 13.817555555555694,
+          "y": 0.25,
+          "z": 0.606217782649107,
+          "age": 9.211111111111082,
+          "collected": false
+        },
+        {
+          "x": 13.117555555555695,
+          "y": 0.25,
+          "z": 0.6062177826491071,
+          "age": 9.211111111111082,
+          "collected": false
+        },
+        {
+          "x": 12.767555555555695,
+          "y": 0.25,
+          "z": 8.572527594031472e-17,
+          "age": 0.011111111111111112,
+          "collected": true
+        },
+        {
+          "x": 13.117555555555695,
+          "y": 0.25,
+          "z": -0.6062177826491069,
+          "age": 9.211111111111082,
+          "collected": false
+        },
+        {
+          "x": 13.817555555555694,
+          "y": 0.25,
+          "z": -0.606217782649107,
+          "age": 9.211111111111082,
+          "collected": false
+        }
+      ],
+      "ready": true,
+      "paused": false,
+      "tracking": true,
+      "renderer": {
+        "calls": 17,
+        "triangles": 14696
+      },
+      "mode": "desktop"
+    },
+    "restart": {
+      "player": {
+        "x": 1.3125,
+        "y": 0,
+        "z": 0,
+        "vy": 0,
+        "grounded": true,
+        "health": 3,
+        "invulnerable": 0
+      },
+      "checkpoint": {
+        "x": 1.3125,
+        "y": 0,
+        "z": 0
+      },
+      "bear": {
+        "x": 12.03466666666667,
+        "y": 0,
+        "z": 0,
+        "hp": 15,
+        "alive": true,
+        "face": 1,
+        "hurt": 0,
+        "stoleHeart": false,
+        "phase": 0.06666666666666667,
+        "defeat": 0
+      },
+      "score": 0,
+      "complete": false,
+      "rescue": 0,
+      "bones": [],
+      "ready": true,
+      "paused": false,
+      "tracking": true,
+      "renderer": {
+        "calls": 69,
+        "triangles": 17376
+      },
+      "mode": "desktop"
+    },
+    "errors": [],
+    "hardware": "desktop software WebGL only; actual Quest tracking, haptics, comfort and stereo pending"
+  },
+  "pending": [
+    "physical Quest headset: stereo, grip alignment, haptics, tracking/session interruptions, comfort",
+    "real-device frame timing and thermal profiling",
+    "production GLB/UV/rig/LOD art"
+  ]
+}

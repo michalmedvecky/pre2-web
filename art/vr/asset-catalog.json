@@ -1,7 +1,7 @@
 {
   "version": 1,
   "target": "full-360-stereoscopic-6dof-world",
-  "status": "source-preparation-only-no-vr-runtime",
+  "status": "quest-pilot-procedural-meshes-desktop-tested-headset-pending",
   "coordinates": {
     "pixelsPerMetre": 32,
     "tileMetres": 0.5,
@@ -46,7 +46,8 @@
         "left-foot",
         "right-foot",
         "glider-grip"
-      ]
+      ],
+      "prototypeStatus": "tracked-hands; desktop-only-simple-body; full-hero-rig-pending"
     },
     {
       "id": "bear",
@@ -67,7 +68,9 @@
         "emerge",
         "retreat",
         "defeat"
-      ]
+      ],
+      "prototypeModelSource": "../../dist/vr/js/models.js",
+      "prototypeStatus": "partial-procedural-360-mesh-pilot; production-GLB-UV-LOD-pipeline-pending"
     },
     {
       "id": "equipment",
@@ -97,7 +100,9 @@
         "tomahawk",
         "tethered-axe",
         "glider"
-      ]
+      ],
+      "prototypeModelSource": "../../dist/vr/js/models.js",
+      "prototypeStatus": "partial-procedural-360-mesh-pilot; production-GLB-UV-LOD-pipeline-pending"
     },
     {
       "id": "worlds",
@@ -115,7 +120,10 @@
         "kind": "2d-color-reference-only",
         "pbr": false,
         "geometry": null
-      }
+      },
+      "prototypeModelSource": "../../dist/vr/js/models.js",
+      "prototypeStatus": "partial-procedural-360-mesh-pilot; production-GLB-UV-LOD-pipeline-pending"
     }
-  ]
+  ],
+  "pilotDocumentation": "../../docs/vr/README.md"
 }
