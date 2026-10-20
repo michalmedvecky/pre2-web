@@ -1,0 +1,61 @@
+{
+  "ok": true,
+  "original": {
+    "mode": "original",
+    "fullscreen": false,
+    "canvas": [
+      320,
+      200
+    ],
+    "pixels": 2355278713,
+    "native": 1409887170,
+    "simulation": "3e6792d7",
+    "terrainChunks": 0,
+    "css": "crisp-edges"
+  },
+  "firstHD": {
+    "mode": "hd",
+    "fullscreen": true,
+    "canvas": [
+      1280,
+      800
+    ],
+    "pixels": 1419930811,
+    "native": 1409887170,
+    "simulation": "3e6792d7",
+    "terrainChunks": 24,
+    "css": "auto"
+  },
+  "windowHD": {
+    "mode": "hd",
+    "fullscreen": false,
+    "canvas": [
+      1280,
+      800
+    ],
+    "pixels": 1419930811,
+    "native": 1409887170,
+    "simulation": "3e6792d7",
+    "terrainChunks": 24,
+    "css": "auto"
+  },
+  "retoggleHD": {
+    "mode": "hd",
+    "fullscreen": true,
+    "canvas": [
+      1280,
+      800
+    ],
+    "pixels": 1419930811,
+    "native": 1409887170,
+    "simulation": "3e6792d7",
+    "terrainChunks": 24,
+    "css": "auto"
+  },
+  "performance": {
+    "warmMs": 165.30000007152557,
+    "p50": 1.600000023841858,
+    "p95": 6.300000071525574,
+    "cache": 56
+  }
+}

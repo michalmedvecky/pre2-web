@@ -6,7 +6,7 @@ There is **no server-side application, database, PVC, account service or depende
 
 All 16 recovered stages are available. Core player animations, jump impulses, weapon timing and glider controls follow recovered routines and data. The 13 generic enemy families, head bounces, combat and connected hidden-platform reveals follow recovered callbacks and tables. Boss state machines, multipart weak points, scripted attacks and fractional energy damage follow recovered routines. Input-only IDDQD replays verify completion of all 16 stages, bosses and selected secret branches. Original-game equivalence, every collection route and some terrain/platform presentation edges remain unverified.
 
-Type **MAP** during play, or use the toolbar **Map** button, to pause and fit the entire current level on one screen. Concealed blocks are shown with their revealed terrain and pink outlines, items/enemies appear beyond the current camera, cyan diamonds mark passages, and the player/camera are highlighted. Any key or tap closes the map and returns to the exact previous position; the closing key cannot move, attack or toggle another feature. Separate bonus stages have their own maps. Map details use original assets in both graphics modes.
+Type **MAP** during play, or use the toolbar **Map** button, to pause and fit the entire current level on one screen. Concealed blocks are shown with their revealed terrain and pink outlines, items/enemies appear beyond the current camera, cyan diamonds mark passages, and the player/camera are highlighted. Tap/click a location on the map to teleport there. Any key or the Back button closes the map and returns to the previous position; the closing key cannot move, attack or toggle another feature. Separate bonus stages have their own maps. Map details use original assets in both graphics modes.
 
 Use the toolbar **Original / HD** button or **H** to switch graphics instantly. HD uses a 1280×800 canvas and covers all 460 native sprite IDs through painted frames or precise vector feedback, including player forms/weapons, enemies, bosses and collectibles. Art loads only when requested; failed loading leaves Original available. See [sprite sources](art/hd-v6/README.md), [item sources](art/hd-v5/README.md), and the locally served `/hd-preview.html` to inspect animation frames.
 
@@ -15,6 +15,18 @@ All 16 gameplay scenes now have painted HD background variants, including the ro
 Environment checks cover all 16 stages: 32 animated tile triplets, 60 authored platforms and 124 foreground masks. Seven rising map regions in stages 9 and E now move with their original triggers and cadence, updating both scenery and collisions; empty platforms use the original contact-dependent display offset. Bonus stage G includes its recovered rain intensity schedule. Rain now uses the native shared RNG, duplicated-byte initialization and VGA OR masks, with the original direction and intensity schedule. Screen shake follows the native alternating offsets, fixed HUD, black top strip and player lift rules. Fresh starts use the initialized DOS seed; an exact menu-dependent random history still depends on the preceding session. Run `node scripts/verify-environment-browser.mjs` with an installed Playwright and the local server for optional Original/HD and secret-route integration checks. `node scripts/verify-shake-rain-browser.mjs` additionally checks actual keyboard holds, weather and shake.
 
 The [360° Quest preparation and roadmap](docs/VR-ROADMAP.md) documents the renderer-neutral scene adapter, asset/rig requirements and future full-3D milestones. This release does not implement VR or contain 3D models.
+
+## Mobile browser release 1.1.0
+
+Play in landscape for the largest clear view. Start/Continue expands the game automatically on touch devices; the fullscreen button also enters or leaves it. Movement and utility controls sit beside the game in landscape, with portrait support below it. Original and HD graphics both work.
+
+- Hold the left/right thumb pad to move; slide across its center to reverse without lifting.
+- Tap elsewhere in the game to attack; hold to repeat attacks.
+- Swipe up to jump, down to crouch or enter a passage. Keep that finger down to sustain the action while the other thumb moves.
+- **Ten quick taps in the right half** toggle **IDKFA** secret hints; **ten in the left half** toggle **IDDQD** invulnerability. Each tap must be short, with at most 650ms between taps. Changing sides, dragging, pausing or touching utility controls breaks the sequence. The final tap shows ON/OFF feedback. Ordinary taps retain their attack/movement action.
+- The fullscreen controls include Pause, MAP (tap to teleport), and Original/HD. Leaving fullscreen or switching apps pauses and releases held inputs.
+
+If native fullscreen is unavailable, the game fills the browser viewport. On iPhone/iPad, use Safari's Share → Add to Home Screen and launch the icon for an app view. Browser/OS bars remain platform-controlled. Serve over HTTPS for Home Screen and optional screen-wake/orientation features. This is an online game; the manifest does not provide offline asset caching. See [mobile implementation, checks and limits](art/mobile-v1/README.md).
 
 ## Local development
 

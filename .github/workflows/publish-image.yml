@@ -86,7 +86,7 @@ jobs:
           trap 'docker logs game-smoke; docker rm -f game-smoke' EXIT
           curl --fail --connect-timeout 2 --max-time 5 \
             --retry 15 --retry-all-errors --retry-delay 1 http://127.0.0.1:8080/healthz
-          for path in / /assets/game.json /js/audio.js; do
+          for path in / /assets/game.json /js/audio.js /js/touch-input.js /js/screen-mode.js /manifest.webmanifest /icons/icon-192.png; do
             curl --fail --connect-timeout 2 --max-time 5 \
               --retry 5 --retry-all-errors --retry-delay 1 --output /dev/null "http://127.0.0.1:8080$path"
           done
