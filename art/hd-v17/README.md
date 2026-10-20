@@ -27,3 +27,5 @@ Open `/terrain-review.html` on the local server for deterministic visible browse
 -288 Node tests pass, including material selection, chunk-independent coordinates, cavity semantics, stable boss base, isolated lettering and image hashes.
 
 Native repeated motifs and intentional architectural joints are retained where they are part of the design. This release does not claim every artistically interpreted pixel matches the DOS game. Original mode remains available and uses the same unchanged indexed resources and game rules.
+
+Published code `9bad57e057f6e8ef08f8de6505cf9ec122b1ff6c`; [successful build39504189334](https://github.com/michalmedvecky/pre2-web/actions/runs/39504189334). Both linux/amd64 and linux/arm64 revision labels verified. Kubernetes pin: `ghcr.io/michalmedvecky/pre2-web@sha256:06a0a8c2c1c309ed6a08f465c27a5346c167528c03e072fab2b8f8fbe56375b4`.
