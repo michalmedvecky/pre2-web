@@ -1,3 +1,4 @@
+import{TerrainLayer}from'./terrain-layer.js';
 import{terrainShadowRoles,preserveCaveShadows,shadowRoleForMaterial}from'./terrain-semantics.js';
 import{BanquetTerrain}from'./banquet-terrain.js';
 import{discoverDecor,mapFingerprint}from'./world-decor.js';
@@ -43,6 +44,7 @@ export class HDCompositor {
   return this.atlas(this.pack.manifest.tiles?.[level+':'+bank+':'+id],Math.round(x),Math.round(y));}
  background(level,name,shift=0){return this.atlas(this.pack.manifest.backgrounds?.[level+':'+name],0,shift);}
  clearTop(height){this.ctx.fillStyle=this.color(0);this.ctx.fillRect(0,0,this.canvas.width,Math.min(176,height)*this.scale);}
+ connectedLayer(cx,cy,draw){this.terrainLayer||=new TerrainLayer();this.terrainLayer.draw(this,cx,cy,draw);}
  terrain(assets,level,map,cx,cy,animation){
   if(this.pack.manifest.banquetMaterial?.levels.includes(level.id)){this.banquet||=new BanquetTerrain();return this.banquet.draw(this,assets,level,map,cx,cy);}
   if(level.id!=='1')return false;
@@ -52,7 +54,7 @@ export class HDCompositor {
   const valueAt=(x,y)=>x<0||x>=4096||y<0||y>=level.height*16?256:level.lookup[animation.remap[map[(y>>4)*256+(x>>4)]]];
   const bankOf=v=>v<256?assets.tiles[level.id]:assets.union;
   const sample=(x,y)=>{if(decor?.islandCells.has((y>>4)*256+(x>>4)))return 0;const v=valueAt(x,y);if(v===256||v===65535||v===undefined)return 0;return bankOf(v)?.[(v<256?v:v-256)*256+(y&15)*16+(x&15)]||0;};
-  this.clipped(176,c=>{for(let gy=Math.max(0,Math.floor(cy/size));gy<=Math.floor((cy+175)/size);gy++)for(let gx=Math.max(0,Math.floor(cx/size));gx<=Math.floor((cx+319)/size);gx++){
+  this.connectedLayer(cx,cy,(c,b)=>{for(let gy=b.y0;gy<=b.y1;gy++)for(let gx=b.x0;gx<=b.x1;gx++){
    const ox=gx*size,oy=gy*size;let signature=decor?this.decorCache.hash+':':'',animated=false;for(let y=oy-16;y<=oy+size;y+=16)for(let x=ox-16;x<=ox+size;x+=16){signature+=valueAt(x,y)+',';if(x>=0&&x<4096&&y>=0&&y<level.height*16&&animation.animated[map[(y>>4)*256+(x>>4)]])animated=true;}const key=gx+':'+gy+':'+(animated?animation.phase:0);keys.add(key);
    let chunk=this.terrainCache.get(key);if(!chunk||chunk.signature!==signature){
     const source=new Uint8Array(width*width);for(let y=0;y<width;y++)for(let x=0;x<width;x++)source[y*width+x]=sample(ox+x-halo,oy+y-halo);
@@ -64,7 +66,7 @@ export class HDCompositor {
     const rgba=connectedTerrain(source,width,width,this.palette,masked,{paintColor:!!this.pack.manifest.paintTiles});
     const image=document.createElement('canvas');image.width=size*4;image.height=size*4;const ctx=image.getContext('2d');ctx.putImageData(new ImageData(rgba,width*4,width*4),-halo*4,-halo*4);chunk={signature,image};this.terrainCache.set(key,chunk);
    }
-   c.drawImage(chunk.image,0,0,size*4,size*4,(ox-cx)*4,(oy-cy)*4,size*4,size*4);
+   c.drawImage(chunk.image,0,0,size*4,size*4,ox*4,oy*4,size*4,size*4);
   }});
   if(decor)this.drawDecor(decor,cx,cy,animation.phase,assets);
   // Keep a bounded cache while walking an entire stage.

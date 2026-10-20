@@ -224,3 +224,5 @@ kubectl --context "$KUBE_CONTEXT" -n prehistorik get events --sort-by=.lastTimes
 Original assets retain their original authorship; this repository does not grant a new license to the 1993 TITUS artwork or music.
 
 References: [Kubernetes Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/), [official nginx image](https://hub.docker.com/_/nginx), [GitHub container registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry), [Docker multi-platform Actions](https://docs.docker.com/build/ci/github-actions/multi-platform/).
+
+HD scrolling seams are fixed by assembling terrain before subpixel camera filtering. See [v12 compositor evidence and regression checks](art/hd-v12/README.md).
