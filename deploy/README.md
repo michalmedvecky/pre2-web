@@ -5,5 +5,5 @@ Follow the complete [Kubernetes agent runbook in the root README](../README.md#k
 Image repository: `ghcr.io/michalmedvecky/pre2-web`. Deploy a successful build’s `sha-<full-commit-SHA>` tag or its digest from the Actions run summary. No local Docker build is required.
 
 - `nginx.conf`: non-root static server on port 8080, `/healthz`, revalidating cache headers.
-- `kubernetes.yaml`: namespace `prehistorik`, two-replica Deployment and ClusterIP Service. The image is pinned to the verified multi-platform digest from successful build [39374622081](https://github.com/michalmedvecky/pre2-web/actions/runs/39374622081); it can be deployed as-is.
+- `kubernetes.yaml`: namespace `prehistorik`, two-replica Deployment and ClusterIP Service. The image is pinned to the verified multi-platform digest from successful build [39375599976](https://github.com/michalmedvecky/pre2-web/actions/runs/39375599976); it can be deployed as-is.
 - `ingress.yaml`: optional HTTPS route template. Set your existing IngressClass, hostname and TLS Secret. Preserve the requested access policy.
