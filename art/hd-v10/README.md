@@ -27,4 +27,6 @@ This is **not a complete terrain remaster**. Native tile artwork remains in stag
 - [x] Paint connected B–D platform material without modifying physics.
 - [x] Smooth displayed slope height and HD camera; verify actual pixels and full B route.
 - [x] Record remaining native terrain/UI coverage rather than claiming total recovery.
-- [ ] Publish verified amd64/arm64 image and update Kubernetes pin.
+- [x] Publish verified amd64/arm64 image and update Kubernetes pin.
+
+Release: code `b977dc8feafbf8f3400ea8e0f6233d03afc24492`, [successful build 39407023820](https://github.com/michalmedvecky/pre2-web/actions/runs/39407023820), verified amd64/arm64 index `sha256:bac1c046e56b453fc28d7d5d760f914cb44a6ffa2f1aa7b117e0f1f5a33303a9`. Both platform revision labels checked; Kubernetes pins updated. No cluster rollout.
