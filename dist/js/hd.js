@@ -1,3 +1,4 @@
+import{PaintedTerrain}from'./painted-terrain.js';
 import{TerrainLayer}from'./terrain-layer.js';
 import{terrainShadowRoles,preserveCaveShadows,shadowRoleForMaterial}from'./terrain-semantics.js';
 import{BanquetTerrain}from'./banquet-terrain.js';
@@ -12,7 +13,7 @@ export class HDAssets {
   const response=await fetch(new URL('manifest.json',base));if(!response.ok)throw Error('HD manifest unavailable');
   const manifest=await response.json();if(manifest.version!==1||manifest.scale!==4||!manifest.sprites||!Array.isArray(manifest.atlases))throw Error('Unsupported HD manifest');
   const images=new Map();await Promise.all(manifest.atlases.map(async a=>{const image=new Image();image.src=new URL(a.file,base);await image.decode();if(image.naturalWidth!==a.width||image.naturalHeight!==a.height)throw Error('HD atlas extent mismatch');images.set(a.id,image);}));
-  const records=[...Object.values(manifest.sprites),...Object.values(manifest.tiles||{}),...Object.values(manifest.paintTiles||{}),...Object.values(manifest.worldMaterials||{}),...Object.values(manifest.worldDecor||{}),...Object.values(manifest.backgrounds||{}),...Object.values(manifest.bonusDecor||{}),...Object.values(manifest.screens||{}),...(manifest.banquetMaterial?[manifest.banquetMaterial]:[])];
+  const records=[...Object.values(manifest.sprites),...Object.values(manifest.tiles||{}),...Object.values(manifest.paintTiles||{}),...Object.values(manifest.worldMaterials||{}),...Object.values(manifest.worldDecor||{}),...Object.values(manifest.backgrounds||{}),...Object.values(manifest.bonusDecor||{}),...Object.values(manifest.screens||{}),...Object.values(manifest.bossPoses||{}),...(manifest.worldMap?[manifest.worldMap]:[]),...(manifest.banquetMaterial?[manifest.banquetMaterial]:[])];
   for(const s of records){const a=manifest.atlases.find(a=>a.id===s.atlas),r=s.rect;if(!a||!r||r.length!==4||r.some(v=>!Number.isFinite(v)||v<0)||r[2]===0||r[3]===0||r[0]+r[2]>a.width||r[1]+r[3]>a.height)throw Error('Invalid HD atlas record');}
 
   return {manifest,images};
@@ -20,7 +21,7 @@ export class HDAssets {
 }
 export class HDCompositor {
  constructor(canvas,pack){this.canvas=canvas;this.pack=pack;this.scale=pack.manifest.scale;canvas.width=320*this.scale;canvas.height=200*this.scale;this.ctx=canvas.getContext('2d',{alpha:false});this.ctx.imageSmoothingEnabled=false;this.cache=new WeakMap();this.flash=new Map();this.paletteKey='';this.terrainCache=new Map();this.terrainTextures=new Map();this.materialImages=new Map();this.hudRenderer=new HDHud(pack);this.feedback=new HDFeedback(pack);}
- setPalette(p){const key=p.join(',');if(key!==this.paletteKey){this.paletteKey=key;this.cache=new WeakMap();this.terrainCache.clear();this.stoneSign=null;}this.palette=p;}
+ setPalette(p){const key=p.join(',');if(key!==this.paletteKey){this.paletteKey=key;this.cache=new WeakMap();this.terrainCache.clear();this.paintedTerrain?.cache.clear();this.banquet?.chunks.clear();this.stoneSign=null;}this.palette=p;}
  color(i,fade=1){const p=this.palette,k=i*3;return `rgb(${Math.floor((p[k]||0)*fade)},${Math.floor((p[k+1]||0)*fade)},${Math.floor((p[k+2]||0)*fade)})`;}
  begin(){this.ctx.fillStyle=this.color(0);this.ctx.fillRect(0,0,this.canvas.width,this.canvas.height);}
  clipped(clip,draw){const c=this.ctx;c.save();c.beginPath();c.rect(this.worldDX||0,this.worldDY||0,this.canvas.width,clip*this.scale);c.clip();draw(c);c.restore();}
@@ -38,16 +39,21 @@ export class HDCompositor {
  }
  atlas(record,x,y,clip=176){if(!record)return false;const image=this.pack.images.get(record.atlas),scale=this.scale;this.clipped(clip,c=>{c.imageSmoothingEnabled=true;c.drawImage(image,...record.rect,x*scale,y*scale,record.width*scale,record.height*scale);});return true;}
  tile(level,bank,id,x,y,source,worldX,worldY){
+  const literal=this.pack.manifest.terrainV16?.literalTiles.find(t=>t.key===level+':'+bank+':'+id);if(literal){if(literal.index)this.clipped(176,c=>{c.fillStyle=this.color(literal.index);c.fillRect(Math.round(x)*4,Math.round(y)*4,64,64);});return true;}
   if(level==='1'&&bank==='front'&&id===20&&source&&this.pack.manifest.worldMaterials&&Number.isFinite(worldX)){
    const wall=this.materialImage(this.pack.manifest.worldMaterials.wall),roots=this.materialImage(this.pack.manifest.worldMaterials.roots),paint=continuousSampler({textures:[null],kinds:['wall'],columns:1,originX:worldX,originY:worldY,wall,roots}),rgba=connectedTerrain(source,16,16,this.palette,paint,{paintColor:true}),image=document.createElement('canvas');image.width=image.height=64;image.getContext('2d').putImageData(new ImageData(rgba,64,64),0,0);this.clipped(176,c=>c.drawImage(image,Math.round(x)*4,Math.round(y)*4));return true;
   }
   return this.atlas(this.pack.manifest.tiles?.[level+':'+bank+':'+id],Math.round(x),Math.round(y));}
  screen(name,fade=1){const record=this.pack.manifest.screens?.[name];if(!record)return false;this.ctx.save();this.ctx.globalAlpha=fade;this.atlas(record,0,0,200);this.ctx.restore();return true;}
+ map(x){return this.atlas(this.pack.manifest.worldMap,x,0,200);}
+ finalBossPose(pose,x,y){return this.atlas(this.pack.manifest.bossPoses?.[pose],x,y);}
  background(level,name,shift=0){return this.atlas(this.pack.manifest.backgrounds?.[level+':'+name],0,shift);}
  clearTop(height){this.ctx.fillStyle=this.color(0);this.ctx.fillRect(0,0,this.canvas.width,Math.min(176,height)*this.scale);}
  connectedLayer(cx,cy,draw){this.terrainLayer||=new TerrainLayer();this.terrainLayer.draw(this,cx,cy,draw);}
  terrain(assets,level,map,cx,cy,animation){
+  if(this.terrainLevel!==level.id){this.terrainLevel=level.id;this.terrainTextures.clear();this.paintedTerrain?.cache.clear();}
   if(this.pack.manifest.banquetMaterial?.levels.includes(level.id)){this.banquet||=new BanquetTerrain();return this.banquet.draw(this,assets,level,map,cx,cy);}
+  if(this.pack.manifest.terrainV16?.levels.includes(level.id)){this.paintedTerrain||=new PaintedTerrain();return this.paintedTerrain.draw(this,assets,level,map,cx,cy,animation);}
   if(level.id!=='1')return false;
   const decor=this.pack.manifest.worldDecor?this.decorFor(level,map,assets.union,assets.maps[level.id]):null;
   if(decor&&!this.decorCache.shadowRoles)this.decorCache.shadowRoles=terrainShadowRoles(level,map,assets.union,assets.tiles[level.id]);
@@ -78,7 +84,7 @@ export class HDCompositor {
  drawDecor(decor,cx,cy,phase,assets){
   this.clipped(176,c=>{c.imageSmoothingEnabled=true;for(const o of [...decor.objects,...decor.plants]){if(o.x+o.width<cx||o.x>cx+320||o.y+o.height<cy||o.y>cy+176)continue;const x=(o.x-cx)*4,y=(o.y-cy)*4,w=o.width*4,h=o.height*4;
    if(o.kind==='island'){if(o.visibleCells){c.save();c.beginPath();for(let j=0;j<o.visibleCells.length;j++)if(o.visibleCells[j])c.rect(x+j%(o.width/16)*64,y+Math.floor(j/(o.width/16))*64,64,64);c.clip();}const full=this.pack.manifest.worldDecor['island-'+o.width];if(full){c.drawImage(this.pack.images.get(full.atlas),...full.rect,x,y,w,h);if(o.visibleCells)c.restore();continue;}const key=o.tiles.join(',')+':'+this.paletteKey;this.islandImages||=new Map();let image=this.islandImages.get(key);if(!image){const source=new Uint8Array(o.width*o.height),bank=assets.tiles['1'];for(let yy=0;yy<o.height;yy++)for(let xx=0;xx<o.width;xx++){const id=o.tiles[(yy>>4)*(o.width>>4)+(xx>>4)],v=bank[id*256+(yy&15)*16+(xx&15)];source[yy*o.width+xx]=v===6?0:v;}const rgba=connectedTerrain(source,o.width,o.height,this.palette);image=document.createElement('canvas');image.width=o.width*4;image.height=o.height*4;image.getContext('2d').putImageData(new ImageData(rgba,image.width,image.height),0,0);this.islandImages.set(key,image);}c.drawImage(image,x,y,w,h);if(o.visibleCells)c.restore();continue;}
-   if(o.kind==='sign'){if(!this.stoneSign){const source=stoneSignSource(assets),rgba=connectedTerrain(source,48,32,this.palette);this.stoneSign=document.createElement('canvas');this.stoneSign.width=192;this.stoneSign.height=128;this.stoneSign.getContext('2d').putImageData(new ImageData(rgba,192,128),0,0);}c.drawImage(this.stoneSign,x,y,w,h);continue;}
+   if(o.kind==='sign'){const painted=this.pack.manifest.worldDecor['sign-v16'];if(painted){c.drawImage(this.pack.images.get(painted.atlas),...painted.rect,x,y,w,h);continue;}if(!this.stoneSign){const source=stoneSignSource(assets),rgba=connectedTerrain(source,48,32,this.palette);this.stoneSign=document.createElement('canvas');this.stoneSign.width=192;this.stoneSign.height=128;this.stoneSign.getContext('2d').putImageData(new ImageData(rgba,192,128),0,0);}c.drawImage(this.stoneSign,x,y,w,h);continue;}
    const record=this.pack.manifest.worldDecor[o.kind==='plant'?'plant-'+o.shape+'-'+phase:o.kind];if(record)c.drawImage(this.pack.images.get(record.atlas),...record.rect,x,y,w,h);
   }});
  }
@@ -88,7 +94,7 @@ export class HDCompositor {
  }
  terrainTexture(record){
   const key=record.atlas+':'+record.index;let texture=this.terrainTextures.get(key);if(texture)return texture;
-  const canvas=document.createElement('canvas');canvas.width=64;canvas.height=64;const c=canvas.getContext('2d',{willReadFrequently:true});c.drawImage(this.pack.images.get(record.atlas),...record.rect,0,0,64,64);const data=c.getImageData(0,0,64,64).data;if(record.mask==='connected-world'){texture=new Float32Array(data);this.terrainTextures.set(key,texture);return texture;}const integral=new Float32Array(65*65),luma=new Float32Array(4096);texture=new Float32Array(4096*4);
+  const canvas=document.createElement('canvas');canvas.width=64;canvas.height=64;const c=canvas.getContext('2d',{willReadFrequently:true});c.drawImage(this.pack.images.get(record.atlas),...record.rect,0,0,64,64);const data=c.getImageData(0,0,64,64).data;if(record.mask==='connected-world'){texture=record.atlas.startsWith('v16-')?new Uint8ClampedArray(data):new Float32Array(data);this.terrainTextures.set(key,texture);return texture;}const integral=new Float32Array(65*65),luma=new Float32Array(4096);texture=new Float32Array(4096*4);
   for(let y=0;y<64;y++)for(let x=0;x<64;x++){const i=y*64+x;luma[i]=(data[i*4]+data[i*4+1]+data[i*4+2])/3;integral[(y+1)*65+x+1]=luma[i]+integral[y*65+x+1]+integral[(y+1)*65+x]-integral[y*65+x];}
   // Reuse the painted stone/leaf detail, while keeping incompatible separately
   // painted contours and large lighting changes out of the connected terrain.

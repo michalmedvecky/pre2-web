@@ -1,0 +1,9 @@
+# Requested violin and piano arrangement
+
+User direction: serious, dramatic violin and piano. Preserve recognizable original game melodies; this is an alternate arrangement rather than a claim about the original soundtrack.
+
+First proof:24-second PRES excerpt from input/PRES-original-reference.wav, matching the original phrase and tempo. Lead: expressive solo violin, bowed legato with accented runs and controlled vibrato. Piano: dark low-register pulse and arpeggiated harmony, clear transient articulation, building restrained tension. Serious cinematic chamber-music mood, dynamic contrast, spacious but readable mix, no vocals, no spoken audio, no added intro or bars. Keep melody pitches, bass/harmony, rhythmic accents and phrase timing identifiable. Avoid excessive reverb, trailer booms or full orchestra drowning game sound effects.
+
+After a reviewed comparison, arrange the12 original MODs in the same ensemble with level-specific intensity. Export stereo48kHz masters and exact loop points. Menu and tally can retain their distinct character within the same palette. Make Original / Violin & Piano a separate music setting, with lazy loading and original fallback; graphics mode must not choose music automatically. Actual music generation remains pending a connected music tool and verified audio-reference/arrangement capability. Search found unconnected Runway; its listing includes music generation, but audio-conditioned melody-preserving arrangement has not been verified yet.
+
+Connection: open Plugins, find Runway, open details and select+, then complete the authentication/permissions flow. Start a new chat/session if the tools do not appear in this session. No API key or credentials should be pasted into chat. Official instructions: https://learn.chatgpt.com/docs/plugins#install-and-use-a-plugin .

@@ -1,0 +1,30 @@
+[
+  {
+    "name": "screen-TITUS",
+    "rawSHA256": "28622d80ce03e0edae524b0818bf56de3801405dc04ae88855fed5067dbfdd21"
+  },
+  {
+    "name": "screen-CASTLE",
+    "rawSHA256": "cc46bb78b6c3c7e4d63e2fda774bd86c9b2f02fed90494198be6e36808dfb2ac"
+  },
+  {
+    "name": "screen-THEEND",
+    "rawSHA256": "386a43b22051e5dfd9a7a5756f667c619d2a33cbe2801412b483bdbc3a27c8bc"
+  },
+  {
+    "name": "screen-PRESENT",
+    "rawSHA256": "fe227adcc8c114e4b9576f81d9021a39c54733d3e42773190b7b08e243922b54"
+  },
+  {
+    "name": "world-map",
+    "rawSHA256": "4db67f3bee9e1efb500c7acb1205179dcf2cbef001329663b33095965a0a658c"
+  },
+  {
+    "name": "stone-sign",
+    "rawSHA256": "1dcda4b312b1124f82ff8b78d9c2f7469855af92d3f8c1be71360571418097e3"
+  },
+  {
+    "name": "boss-poses",
+    "rawSHA256": "cc5f47bfd4adad25fa9d6daa92ac5fce839087670609466992b876b3553f9222"
+  }
+]

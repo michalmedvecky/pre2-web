@@ -1,0 +1,195 @@
+{
+  "screens": [
+    "TITUS",
+    "CASTLE",
+    "THEEND",
+    "PRESENT"
+  ],
+  "worldMapSelections": [
+    0,
+    10
+  ],
+  "stability": [
+    {
+      "level": "2",
+      "phase": 0,
+      "cacheStable": true
+    },
+    {
+      "level": "2",
+      "phase": 1,
+      "cacheStable": true
+    },
+    {
+      "level": "2",
+      "phase": 2,
+      "cacheStable": true
+    },
+    {
+      "level": "3",
+      "phase": 0,
+      "cacheStable": true
+    },
+    {
+      "level": "3",
+      "phase": 1,
+      "cacheStable": true
+    },
+    {
+      "level": "3",
+      "phase": 2,
+      "cacheStable": true
+    },
+    {
+      "level": "4",
+      "phase": 0,
+      "cacheStable": true
+    },
+    {
+      "level": "4",
+      "phase": 1,
+      "cacheStable": true
+    },
+    {
+      "level": "4",
+      "phase": 2,
+      "cacheStable": true
+    },
+    {
+      "level": "5",
+      "phase": 0,
+      "cacheStable": true
+    },
+    {
+      "level": "5",
+      "phase": 1,
+      "cacheStable": true
+    },
+    {
+      "level": "5",
+      "phase": 2,
+      "cacheStable": true
+    },
+    {
+      "level": "6",
+      "phase": 0,
+      "cacheStable": true
+    },
+    {
+      "level": "6",
+      "phase": 1,
+      "cacheStable": true
+    },
+    {
+      "level": "6",
+      "phase": 2,
+      "cacheStable": true
+    },
+    {
+      "level": "7",
+      "phase": 0,
+      "cacheStable": true
+    },
+    {
+      "level": "7",
+      "phase": 1,
+      "cacheStable": true
+    },
+    {
+      "level": "7",
+      "phase": 2,
+      "cacheStable": true
+    },
+    {
+      "level": "8",
+      "phase": 0,
+      "cacheStable": true
+    },
+    {
+      "level": "8",
+      "phase": 1,
+      "cacheStable": true
+    },
+    {
+      "level": "8",
+      "phase": 2,
+      "cacheStable": true
+    },
+    {
+      "level": "9",
+      "phase": 0,
+      "cacheStable": true
+    },
+    {
+      "level": "9",
+      "phase": 1,
+      "cacheStable": true
+    },
+    {
+      "level": "9",
+      "phase": 2,
+      "cacheStable": true
+    },
+    {
+      "level": "A",
+      "phase": 0,
+      "cacheStable": true
+    },
+    {
+      "level": "A",
+      "phase": 1,
+      "cacheStable": true
+    },
+    {
+      "level": "A",
+      "phase": 2,
+      "cacheStable": true
+    },
+    {
+      "level": "E",
+      "phase": 0,
+      "cacheStable": true
+    },
+    {
+      "level": "E",
+      "phase": 1,
+      "cacheStable": true
+    },
+    {
+      "level": "E",
+      "phase": 2,
+      "cacheStable": true
+    },
+    {
+      "level": "F",
+      "phase": 0,
+      "cacheStable": true
+    },
+    {
+      "level": "F",
+      "phase": 1,
+      "cacheStable": true
+    },
+    {
+      "level": "F",
+      "phase": 2,
+      "cacheStable": true
+    },
+    {
+      "level": "G",
+      "phase": 0,
+      "cacheStable": true
+    },
+    {
+      "level": "G",
+      "phase": 1,
+      "cacheStable": true
+    },
+    {
+      "level": "G",
+      "phase": 2,
+      "cacheStable": true
+    }
+  ],
+  "errors": []
+}

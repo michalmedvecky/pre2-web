@@ -2,7 +2,7 @@ import assert from'node:assert/strict';
 import{mkdir,writeFile}from'node:fs/promises';
 const{chromium}=await import(process.env.PRE2_PLAYWRIGHT_MODULE||'playwright'),out=process.env.PRE2_QA_OUTPUT||'art/hd-v12/review',browser=await chromium.launch({headless:true});
 try{
- await mkdir(out,{recursive:true});const page=await browser.newPage({viewport:{width:1280,height:800}}),errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('http://127.0.0.1:5775/?qa');await page.waitForFunction(()=>window.prehistorik);await page.clock.install();await page.clock.pauseAt(new Date());
+ await mkdir(out,{recursive:true});const page=await browser.newPage({viewport:{width:1280,height:800}}),errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto(process.env.PRE2_QA_URL||'http://127.0.0.1:5775/?qa');await page.waitForFunction(()=>window.prehistorik);await page.clock.install();await page.clock.pauseAt(new Date());
  const synthetic=await page.evaluate(async()=>{
   const{TerrainLayer}=await import('./js/terrain-layer.js'),make=(w,h)=>{const c=document.createElement('canvas');c.width=w;c.height=h;return c;},source=make(2048,1536),sc=source.getContext('2d'),data=sc.createImageData(source.width,source.height);
   for(let y=0;y<source.height;y++)for(let x=0;x<source.width;x++){const p=(y*source.width+x)*4;data.data.set([x%251,y%239,(x+y)%233,(Math.floor(x/19)+Math.floor(y/23))%3?255:80],p);}sc.putImageData(data,0,0);
@@ -15,7 +15,7 @@ try{
  });assert.equal(synthetic.mismatches,0,'Chunked scrolling must match a single continuous image, including translucent pixels and viewport edges');
  await page.evaluate(async()=>{prehistorik.start();prehistorik.pause();await prehistorik.setGraphics('hd');document.querySelector('#dialog').hidden=true;});
  const scenes=[];
- for(const level of [0,10,11,12]){
+ for(const level of (process.env.PRE2_QA_LEVELS?process.env.PRE2_QA_LEVELS.split(',').map(Number):[0,10,11,12])){
   const result=await page.evaluate(level=>{
    const q=prehistorik;q.start(level);q.pause();const w=q.world,r=q.renderer,hd=r.hd,hash=a=>{let h=2166136261;for(const v of a)h=Math.imul(h^v,16777619);return h>>>0;};w.player.x=864;w.player.y=96;
    const fixed=hd.connectedLayer,legacy=function(cx,cy,draw){this.clipped(176,c=>{c.save();c.translate(-cx*4,-cy*4);draw(c,{x0:Math.max(0,Math.floor(cx/64)),x1:Math.floor((cx+319)/64),y0:Math.max(0,Math.floor(cy/64)),y1:Math.floor((cy+175)/64)});c.restore();});};

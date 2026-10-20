@@ -1,0 +1,1 @@
+Background removal only. Keep this exact oval carved LEVEL stone pixel-for-pixel in appearance and location. Remove ALL dark brown glow and gradient outside stone silhouette. Make the background genuinely transparent alpha=0, including all four corners. No backdrop, no shadow or glow. Do not change stone or lettering.
