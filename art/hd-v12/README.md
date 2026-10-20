@@ -21,4 +21,6 @@ Start the server on5775 first. `PRE2_QA_OUTPUT` changes the evidence destination
 - [x] Reproduce subpixel-only cave stripe.
 - [x] Assemble terrain before resampling; include viewport margins.
 - [x] Check transparent pixels, horizontal/vertical camera boundaries, stationary parity and all-stage regressions.
-- [ ] Publish verified amd64/arm64 image and update Kubernetes pin.
+- [x] Publish verified amd64/arm64 image and update Kubernetes pin.
+
+Release: code `0bef5e614a07337be451fe8348d4db84ca8bd750`, [successful build 39417020393](https://github.com/michalmedvecky/pre2-web/actions/runs/39417020393), GHCR index `sha256:41a863d5eb6f861eed94f1bb95a8d957204972dcbf5e7aa62ff02b78093b65f3`. Both linux/amd64 and linux/arm64 revision labels verified independently. Kubernetes pin updated; no cluster rollout.
