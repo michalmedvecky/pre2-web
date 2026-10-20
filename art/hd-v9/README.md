@@ -20,4 +20,6 @@ Visual comparisons: [opening after](review/start-after.png), [opening before](re
 - [x] Generate and retain complete transparent assets and animation poses.
 - [x] Preserve collision/raster/state, map mutations and interior dark ink.
 - [x] Inspect fullscreen captures and run all checks.
-- [ ] Publish verified amd64/arm64 image and update Kubernetes pin.
+- [x] Publish verified amd64/arm64 image and update Kubernetes pin.
+
+Release: code `cc7e39284fa1015dd2d5aef9040585f41e31bdf5`, [successful build 39402957619](https://github.com/michalmedvecky/pre2-web/actions/runs/39402957619), verified amd64/arm64 index `sha256:9652ea1739cfc5bdce35725cbd8ad89debf313a4b95b52e15ca12b7feb11f495`. Kubernetes manifest and READMEs pinned. No cluster rollout.
