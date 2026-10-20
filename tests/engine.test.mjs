@@ -150,3 +150,18 @@ test('bear rebound retains the descending jump lock and follows one gravity upda
 });
 
 test('consuming passage Down does not block crouch or dropping through a one-way floor',()=>{const w=playerFixture();w.gateDownConsumed=true;w.level.tilePropertiesY[1]=5;for(let n=0;n<8;n++)w.step({down:true});assert.equal(w.gateDownConsumed,true);assert.ok(w.player.downTimer>0);assert.ok(w.player.y>640);});
+
+test('IDDQD pit rescue releases an authored cave camera and keeps following normal movement',()=>{
+ const w=new World(a);w.loadLevel(1);w.toggleGodMode();const gate=w.gates[17];Object.assign(w.player,{x:(gate.triggerTile&255)*16,y:(gate.triggerTile>>>8)*16});w.step({down:true});assert.equal(w.gateCameraFlag,1);
+ const before={health:w.health,lives:w.lives,score:w.score};w.player.y=w.level.height*16+33;w.player.vy=192;w.step({});assert.equal(w.gateCameraFlag,0);assert.equal(w.player.x,w.checkpoint.x);assert.equal(w.player.y,w.checkpoint.y);
+ for(let n=0;n<90;n++)w.step({right:true});assert.ok(w.camera.x>0);assert.ok(w.player.x-w.camera.x>=0&&w.player.x-w.camera.x<=208);assert.deepEqual({health:w.health,lives:w.lives,score:w.score},before);assert.equal(w.godMode,true);assert.equal(w.transition,null);
+});
+test('IDDQD rescue clears falling, glider, platform and attack state without restarting the world',()=>{
+ const w=new World(a);w.toggleGodMode();const map=w.map.slice(),items=w.items,boss=w.boss;w.alternate=true;w.input={down:true};
+ Object.assign(w.player,{y:9999,vy:192,jumpLock:6,fallFrames:50,lastGroundY:9000,grounded:true,platformGrip:true,platformId:15,glideMode:3,glideEnergy:255,attackActive:true,attackTimer:20,attackCooldown:99,downTimer:3,landingShake:7,speedShift:3});w.gateCameraFlag=1;w.carriedPlatform=15;w.platformSupport={index:15,y:9999};w.screenShake=w.nextScreenShake=9;
+ w.projectiles=[{contact:true},{ranged:true}];w.rescuePlayer();assert.equal(w.player.jumpLock,0);assert.equal(w.player.fallFrames,0);assert.equal(w.player.lastGroundY,w.checkpoint.y);assert.equal(w.player.platformGrip,false);assert.equal(w.player.platformId,null);assert.equal(w.player.glideMode,0);assert.equal(w.player.attackActive,false);assert.equal(w.player.attackCooldown,0);assert.equal(w.player.downTimer,0);assert.equal(w.gateDownConsumed,true);assert.equal(w.carriedPlatform,null);assert.equal(w.platformSupport,null);assert.equal(w.nextScreenShake,0);assert.ok(w.platforms.every(p=>!(p.raw[6]&64)));assert.equal(w.projectiles.length,1);assert.equal(w.projectiles[0].ranged,true);assert.equal(w.alternate,true);assert.deepEqual(w.map,map);assert.equal(w.items,items);assert.equal(w.boss,boss);
+ w.alternate=false;for(let n=0;n<4;n++)w.step({});const y=w.player.y;w.step({up:true});assert.ok(w.player.y<y);assert.ok(w.player.vy<0);
+});
+test('every non-ending stage recovers from a real falling update and accepts movement with IDDQD',()=>{
+ for(let level=0;level<16;level++){if(level===14)continue;const w=new World(a);w.loadLevel(level);w.toggleGodMode();const lives=w.lives,health=w.health;w.gateCameraFlag=1;Object.assign(w.player,{y:w.level.height*16+33,vy:192,jumpLock:6});w.step({});assert.equal(w.deathTimer,0);assert.equal(w.gateCameraFlag,0);assert.equal(w.player.y,w.checkpoint.y,`stage ${w.level.id}`);assert.equal(w.lives,lives);assert.equal(w.health,health);assert.equal(w.godMode,true);for(let n=0;n<12;n++)w.step({right:true});assert.ok(Number.isFinite(w.player.x)&&Number.isFinite(w.player.y));assert.equal(w.transition,null);}
+});

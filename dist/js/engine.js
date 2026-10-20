@@ -234,7 +234,18 @@ export class World {
     }this.projectiles=this.projectiles.filter(a=>a.ttl>0);}
   toggleGodMode(){this.godMode=!this.godMode;if(this.godMode){this.player.invulnerable=0;if(this.deathTimer){this.deathTimer=0;this.rescuePlayer();}}this.emit('cheat',{code:'IDDQD',enabled:this.godMode});return this.godMode;}
   toggleSecretHints(){this.secretHints=!this.secretHints;this.emit('cheat',{code:'IDKFA',enabled:this.secretHints});return this.secretHints;}
-  rescuePlayer(){Object.assign(this.player,this.checkpoint,{vx:0,vy:0,jumpFrame:0,fallFrames:0,attackActive:false,animationVariant:-1});this.camera.x=clamp(this.player.x-144,0,this.maxCameraX());this.camera.y=clamp(this.player.y-128,0,this.maxCameraY());}
+  // IDDQD rescue is a fresh player/controller pose within the existing world.
+  // A cave camera lock and a platform/glider/attack must not survive the fall.
+  rescuePlayer(){
+    const p=this.player;Object.assign(p,this.checkpoint,{vx:0,vy:0,jumpFrame:0,jumpLock:0,fallFrames:0,lastGroundY:this.checkpoint.y,grounded:false,platformGrip:false,platformId:null,speedShift:0,glideMode:0,glideEnergy:0,formAngle:3,runTimer:0,walkHistory:0,landingShake:0,landingBounce:false,attackActive:false,attackFrame:false,attackTimer:0,attackCooldown:0,downTimer:0,powerTimer:0,invulnerable:0,look:false,animationVariant:-1});
+    this.deathTimer=0;this.formAngle=3;this.gateCameraFlag=0;this.gateDownConsumed=!!this.input?.down;
+    this.carriedPlatform=null;this.platformSupport=null;for(const platform of this.platforms)platform.raw[6]&=~64;
+    this.screenShake=this.nextScreenShake=this.shakePlayerNudge=0;this.playerWeapon=null;this.projectiles=this.projectiles.filter(shot=>!shot.contact);
+    this.animatePlayer(0,this.alternate?32:0);if(this.alternate)this.updateFormSprite({});else this.updatePlayerWeapon();
+    this.camera.x=clamp((Math.floor(p.x/16)-9)*16,0,this.maxCameraX());this.camera.y=clamp((Math.floor(p.y/16)-8)*16,0,this.maxCameraY());
+    if(this.levelIndex===9)this.camera.x=this.camera.y=0;
+    this.sceneFlash=4;this.emit('rescue');
+  }
   damage(){const p=this.player;if(this.godMode||p.invulnerable||this.deathTimer||this.transition)return;this.emit('sfx',{index:1});
     p.invulnerable=44;p.attackActive=false;p.attackTimer=0;p.vx=s16(-4*p.vx);p.vy=-128;p.glideMode=0;p.jumpFrame=9;p.animationVariant=-1;
     this.playerWeapon=null;this.projectiles=this.projectiles.filter(a=>!a.contact);
