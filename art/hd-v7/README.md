@@ -17,6 +17,8 @@ Scope: level-one surfaces are improved. Other stages' terrain still uses origina
 - [x] Inspect full-color terrain and source extraction.
 - [x] Complete every level-one terrain animation member.
 - [x] Test native coverage/state parity, map/secret mutations and fullscreen.
-- [ ] Publish a verified amd64/arm64 image and update Kubernetes pin.
+- [x] Publish a verified amd64/arm64 image and update Kubernetes pin.
 
 Final checks: **234 tests pass**, both complete-map and all-stage HD browser suites pass, and the 2048-pixel fullscreen before/after comparison preserves the native raster and simulation hash. All 54 original files remain unchanged.
+
+Release: code `0d568b47ed8891bdf422d452f275806e6d893191`, [successful build 39395892823](https://github.com/michalmedvecky/pre2-web/actions/runs/39395892823), GHCR index `sha256:a778c47831c9b0c73e368c2273e53d9a213131c54259a14a8080971b3870d345`, with both amd64/arm64 platform revision labels independently verified. Kubernetes manifest and README pins updated; no cluster rollout performed.
