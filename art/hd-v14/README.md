@@ -34,4 +34,6 @@ Remaining artwork: static glasses/brackets/straws and other native terrain still
 - [x] Reconcile visible support, document binary/art discrepancy and test all fruit contacts.
 - [x] Add MAP click teleport with keyboard dismissal and Retina/fullscreen tests.
 - [x] Replay B/C/D to completion; pass campaign and rendering regressions.
-- [ ] Publish verified amd64/arm64 image and update Kubernetes pin.
+- [x] Publish verified amd64/arm64 image and update Kubernetes pin.
+
+Release: code `6598889334836484ae402b451b3ef17c3019ab29`, [successful build 39428224413](https://github.com/michalmedvecky/pre2-web/actions/runs/39428224413), GHCR index `sha256:21328dd076495533494ac35ca0445ad2d9fb8d85878e2f1182439df11638969f`. Both linux/amd64 and linux/arm64 revision labels independently verified. Kubernetes pin updated; no cluster rollout.
