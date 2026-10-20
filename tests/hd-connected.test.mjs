@@ -21,3 +21,18 @@ test('HD HUD follows native score, lives, hearts and all five authored inventory
  assert.equal(hudState({lives:99,score:12345678},tables).lives,9);assert.equal(hudState({score:12345678},tables).score,'3456780');
  assert.ok(hudState({collectionFlash:1,frame:1},tables).slots.every(s=>s.active));assert.ok(hudState({collectionFlash:1,frame:2,inventory:31},tables).slots.every(s=>!s.active));
 });
+
+test('HD terrain reconstructs subpixel colors rather than copying DOS palette blocks',()=>{
+ const src=new Uint8Array(12*12);for(let y=0;y<12;y++)for(let x=0;x<12;x++)src[y*12+x]=x+y<12?1:2;
+ const rgba=connectedTerrain(src,12,12,palette),colors=new Set();for(let i=0;i<rgba.length;i+=4)if(rgba[i+3]===255)colors.add([...rgba.slice(i,i+3)].join(','));
+ assert.ok(colors.size>8);assert.ok([...colors].some(c=>c!==palette.slice(3,6).join(',')&&c!==palette.slice(6,9).join(',')));
+ const texture=()=>Float32Array.of(.25,0,0,1),painted=connectedTerrain(src,12,12,palette,texture);assert.notDeepEqual(painted,rgba);for(let i=3;i<rgba.length;i+=4)assert.equal(painted[i],rgba[i],'texture cannot change reconstructed coverage');
+});
+test('HD texture detail blends continuously at atlas cuts and across world-space cache regions',async()=>{
+ const {textureSampler}=await import('../dist/js/terrain.js'),tiles=[];for(let i=0;i<36;i++){const t=new Float32Array(64*64*4);for(let y=0;y<64;y++)for(let x=0;x<64;x++){const p=(y*64+x)*4;t[p]=(i%6)*.03+Math.sin(x/7+y/9)*.02;t[p+3]=255;}tiles.push(t);}
+ const whole=textureSampler(tiles,6),part=textureSampler([tiles[14],tiles[15],tiles[20],tiles[21]],2);
+ // A cached region's halo covers the blend support; its interior is independent
+ // of which chunk requested it, including the shared tile boundary.
+ for(let y=8;y<120;y+=3)for(let x=8;x<120;x+=3)assert.deepEqual([...part(x,y)],[...whole(x+128,y+128)]);
+ for(let y=16;y<112;y++)assert.ok(Math.abs(whole(63,y)[0]-whole(64,y)[0])<.01,'visible square edge');
+});

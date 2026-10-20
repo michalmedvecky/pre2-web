@@ -1,5 +1,7 @@
 # Connected terrain and high-resolution HUD
 
+The terrain color reconstruction/detail sampling was subsequently updated; see [fullscreen and continuous terrain follow-up](../hd-v4/README.md). The text below describes the v3 baseline.
+
 This correction replaces the level-one terrain color composition and adds a complete HD HUD. Use **H** or **Original / HD**. The original mode and all recovered indexed assets are unchanged.
 
 ## Why the previous scenery showed squares

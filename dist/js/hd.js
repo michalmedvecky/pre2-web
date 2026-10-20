@@ -1,4 +1,4 @@
-import {connectedTerrain} from './terrain.js';
+import {connectedTerrain,textureSampler} from './terrain.js';
 import {HDHud} from './hd-hud.js';
 // Optional high-resolution presentation. Never owns simulation or collision state.
 export class HDAssets {
@@ -13,7 +13,7 @@ export class HDAssets {
  }
 }
 export class HDCompositor {
- constructor(canvas,pack){this.canvas=canvas;this.pack=pack;this.scale=pack.manifest.scale;canvas.width=320*this.scale;canvas.height=200*this.scale;this.ctx=canvas.getContext('2d',{alpha:false});this.ctx.imageSmoothingEnabled=false;this.cache=new WeakMap();this.flash=new Map();this.paletteKey='';this.terrainCache=new Map();this.terrainDetails=new Map();this.hudRenderer=new HDHud(pack);}
+ constructor(canvas,pack){this.canvas=canvas;this.pack=pack;this.scale=pack.manifest.scale;canvas.width=320*this.scale;canvas.height=200*this.scale;this.ctx=canvas.getContext('2d',{alpha:false});this.ctx.imageSmoothingEnabled=false;this.cache=new WeakMap();this.flash=new Map();this.paletteKey='';this.terrainCache=new Map();this.terrainTextures=new Map();this.hudRenderer=new HDHud(pack);}
  setPalette(p){const key=p.join(',');if(key!==this.paletteKey){this.paletteKey=key;this.cache=new WeakMap();this.terrainCache.clear();}this.palette=p;}
  color(i,fade=1){const p=this.palette,k=i*3;return `rgb(${Math.floor((p[k]||0)*fade)},${Math.floor((p[k+1]||0)*fade)},${Math.floor((p[k+2]||0)*fade)})`;}
  begin(){this.ctx.fillStyle=this.color(0);this.ctx.fillRect(0,0,this.canvas.width,this.canvas.height);}
@@ -42,10 +42,10 @@ export class HDCompositor {
    const ox=gx*size,oy=gy*size;let signature='',animated=false;for(let y=oy-16;y<=oy+size;y+=16)for(let x=ox-16;x<=ox+size;x+=16){signature+=valueAt(x,y)+',';if(x>=0&&x<4096&&y>=0&&y<level.height*16&&animation.animated[map[(y>>4)*256+(x>>4)]])animated=true;}const key=gx+':'+gy+':'+(animated?animation.phase:0);keys.add(key);
    let chunk=this.terrainCache.get(key);if(!chunk||chunk.signature!==signature){
     const source=new Uint8Array(width*width);for(let y=0;y<width;y++)for(let x=0;x<width;x++)source[y*width+x]=sample(ox+x-halo,oy+y-halo);
-    const details=[];for(let y=0;y<columns;y++)for(let x=0;x<columns;x++){
-     const v=valueAt(ox+x*16-halo,oy+y*16-halo),record=this.pack.manifest.tiles?.['1:'+(v<256?'local:':'union:')+(v<256?v:v-256)];details.push(record&&!record.preservedOriginal&&!record.preservedFlat?this.terrainDetail(record):null);
+    const textures=[];for(let y=0;y<columns;y++)for(let x=0;x<columns;x++){
+     const v=valueAt(ox+x*16-halo,oy+y*16-halo),record=this.pack.manifest.tiles?.['1:'+(v<256?'local:':'union:')+(v<256?v:v-256)];textures.push(record&&!record.preservedOriginal&&!record.preservedFlat?this.terrainTexture(record):null);
     }
-    const rgba=connectedTerrain(source,width,width,this.palette,(x,y)=>details[(y>>6)*columns+(x>>6)]?.[(y&63)*64+(x&63)]||0);
+    const rgba=connectedTerrain(source,width,width,this.palette,textureSampler(textures,columns));
     const image=document.createElement('canvas');image.width=size*4;image.height=size*4;const ctx=image.getContext('2d');ctx.putImageData(new ImageData(rgba,width*4,width*4),-halo*4,-halo*4);chunk={signature,image};this.terrainCache.set(key,chunk);
    }
    c.drawImage(chunk.image,0,0,size*4,size*4,(ox-cx)*4,(oy-cy)*4,size*4,size*4);
@@ -54,12 +54,14 @@ export class HDCompositor {
   for(const key of this.terrainCache.keys())if(this.terrainCache.size>96&&!keys.has(key))this.terrainCache.delete(key);
   return true;
  }
- terrainDetail(record){
-  const key=record.atlas+':'+record.index;let detail=this.terrainDetails.get(key);if(detail)return detail;
-  const canvas=document.createElement('canvas');canvas.width=64;canvas.height=64;const c=canvas.getContext('2d',{willReadFrequently:true});c.drawImage(this.pack.images.get(record.atlas),...record.rect,0,0,64,64);const data=c.getImageData(0,0,64,64).data,luma=new Float32Array(4096);detail=new Float32Array(4096);
-  const integral=new Float32Array(65*65);for(let y=0;y<64;y++)for(let x=0;x<64;x++){const i=y*64+x;luma[i]=(data[i*4]+data[i*4+1]+data[i*4+2])/3;integral[(y+1)*65+x+1]=luma[i]+integral[y*65+x+1]+integral[(y+1)*65+x]-integral[y*65+x];}
-  for(let y=0;y<64;y++)for(let x=0;x<64;x++){const x0=Math.max(0,x-4),y0=Math.max(0,y-4),x1=Math.min(64,x+5),y1=Math.min(64,y+5),sum=integral[y1*65+x1]-integral[y0*65+x1]-integral[y1*65+x0]+integral[y0*65+x0],fade=Math.min(1,Math.min(x,y,63-x,63-y)/12);detail[y*64+x]=Math.max(-.16,Math.min(.16,(luma[y*64+x]-sum/((x1-x0)*(y1-y0)))/160))*fade;}
-  this.terrainDetails.set(key,detail);return detail;
+ terrainTexture(record){
+  const key=record.atlas+':'+record.index;let texture=this.terrainTextures.get(key);if(texture)return texture;
+  const canvas=document.createElement('canvas');canvas.width=64;canvas.height=64;const c=canvas.getContext('2d',{willReadFrequently:true});c.drawImage(this.pack.images.get(record.atlas),...record.rect,0,0,64,64);const data=c.getImageData(0,0,64,64).data,integral=new Float32Array(65*65),luma=new Float32Array(4096);texture=new Float32Array(4096*4);
+  for(let y=0;y<64;y++)for(let x=0;x<64;x++){const i=y*64+x;luma[i]=(data[i*4]+data[i*4+1]+data[i*4+2])/3;integral[(y+1)*65+x+1]=luma[i]+integral[y*65+x+1]+integral[(y+1)*65+x]-integral[y*65+x];}
+  // Reuse the painted stone/leaf detail, while keeping incompatible separately
+  // painted contours and large lighting changes out of the connected terrain.
+  for(let y=0;y<64;y++)for(let x=0;x<64;x++){const x0=Math.max(0,x-4),y0=Math.max(0,y-4),x1=Math.min(64,x+5),y1=Math.min(64,y+5),sum=integral[y1*65+x1]-integral[y0*65+x1]-integral[y1*65+x0]+integral[y0*65+x0],i=(y*64+x)*4;texture[i]=Math.max(-.32,Math.min(.32,(luma[y*64+x]-sum/((x1-x0)*(y1-y0)))/128));texture[i+3]=data[i+3];}
+  this.terrainTextures.set(key,texture);return texture;
  }
  hud(world,tables){return this.hudRenderer.draw(this.ctx,world,tables);}
  pixel(x,y,index){if(x<0||x>=320||y<0||y>=200)return;this.ctx.fillStyle=this.color(index);this.ctx.fillRect(x*this.scale,y*this.scale,this.scale,this.scale);}
