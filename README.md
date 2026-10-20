@@ -1,3 +1,5 @@
+> **VR image automation:** pushes to `vr/quest-360` publish the tested multi-platform GHCR tag `vr-quest`. [One-command Kubernetes deployment](docs/vr/README.md#automatic-ghcr-build-and-kubernetes-deployment).
+
 > **VR development branch:** the first playable 360° Quest pilot is at `/vr/`. See [VR setup, controls and validation](docs/vr/README.md). The desktop game and main deployment are maintained in the separate web worktree.
 
 # Prehistorik 2 — web game

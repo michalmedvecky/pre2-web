@@ -34,49 +34,43 @@ Objective: defeat the practice bear, cross the native first rock, reach the camp
 
 Button jumping is the default for a predictable action in both seated and standing play. It produces a game-space jump of the locomotion rig; comfort must be tested on the device. Optional physical jumping is deferred, rather than guessing intent from ordinary head motion.
 
-## Host separately from the web release
+## Automatic GHCR build and Kubernetes deployment
 
-The existing Dockerfile also serves `/vr/`. **The main branch's pinned GHCR web image does not contain this unmerged prototype.** Build this worktree and deploy a separate image/application; do not replace the web deployment while testing VR.
+Every push to **`vr/quest-360`** runs [Publish Quest VR image](../../.github/workflows/publish-vr-image.yml). It runs all tests, builds `linux/amd64` + `linux/arm64`, verifies the OCI index and smoke-tests `/healthz`, `/vr/`, the 3D modules and recovered map assets inside the published container.
+
+Images use the existing `ghcr.io/michalmedvecky/pre2-web` package with separate VR tags:
+
+- `vr-sha-<full-commit-SHA>`: a specific build; consult its successful workflow result.
+- **`vr-quest`**: rolling alias published only after the tests and container smoke check pass.
+- The run summary records the exact `@sha256:...` image. Artifact **`quest-vr-deploy`** contains digest-pinned `kubernetes.yaml`, `image.txt`, `commit.txt` and an optional `ingress.example.yaml` template.
+
+The web workflow, web image tags and namespace `prehistorik` are independent. No Docker build is needed on your computer. GitHub uses its built-in `GITHUB_TOKEN` with `packages: write`; no registry PAT is needed in repository secrets. The package must allow pull access from the cluster.
+
+### One-command rollout or update
+
+Prerequisites: Node 22+, kubectl, a working kubeconfig, an existing ingress controller, and a trusted certificate/TLS secret in namespace **`pre2-vr`**. Point DNS at that ingress. Provision the certificate with your existing cluster mechanism; the script does not create a certificate issuer or request cluster credentials from GitHub.
+
+Run from this worktree (or a checkout of `vr/quest-360`):
 
 ```sh
-# Set this to a registry/repository you can push to.
-VR_IMAGE=registry.example.com/games/pre2-vr:quest-pilot
-# Pick the architecture of the cluster nodes; arm64 is also supported by the base image.
-docker build --platform linux/amd64 -t "$VR_IMAGE" .
-docker push "$VR_IMAGE"
-
-kubectl create namespace pre2-vr --dry-run=client -o yaml | kubectl apply -f -
-kubectl -n pre2-vr create deployment pre2-vr --image="$VR_IMAGE" --port=8080 --dry-run=client -o yaml | kubectl apply -f -
-kubectl -n pre2-vr expose deployment pre2-vr --port=80 --target-port=8080 --dry-run=client -o yaml | kubectl apply -f -
+node scripts/deploy-vr.mjs \
+  --context YOUR_CLUSTER_CONTEXT \
+  --host pre2-vr.your-domain.cz \
+  --ingress-class nginx \
+  --tls-secret pre2-vr-tls
 ```
 
-Route your HTTPS ingress to service `pre2-vr`, port `80`, in namespace `pre2-vr`. For an nginx ingress, replace the hostname and provision the TLS secret using your cluster's certificate mechanism, then apply:
+The script resolves the tested public `vr-quest` tag to its OCI digest, verifies both architectures, renders isolated manifests, applies them to the explicit context and waits for rollout. Re-run the same command after the next successful build. Changed digests update the Deployment automatically; it does not rely on restarting pods behind a reused mutable tag. Open **`https://pre2-vr.your-domain.cz/vr/`** on Quest.
 
-```yaml
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: pre2-vr
-  namespace: pre2-vr
-spec:
-  ingressClassName: nginx
-  tls:
-    - hosts: [vr.example.com]
-      secretName: pre2-vr-tls
-  rules:
-    - host: vr.example.com
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: pre2-vr
-                port:
-                  number: 80
-```
+For an existing ingress you want to preserve, use `--no-ingress` instead of `--host`. For rollback or an exact release, pass `--image ghcr.io/michalmedvecky/pre2-web@sha256:<digest-from-successful-run>`. For a private package, also pass `--pull-secret YOUR_EXISTING_SECRET` and an explicit image digest; automatic anonymous tag resolution requires a public package. The pull secret must exist in namespace `pre2-vr` before the workload starts.
 
-No GPU is needed on the cluster; the headset renders locally. The root path serves the desktop build and `/vr/` the pilot. Use a dedicated hostname with `/` forwarding, preserving the relative `../assets/` paths. The deployment is not automated or published by this prototype task.
+To inspect the resulting files before applying, append `--render-only /tmp/pre2-vr-rendered`. This performs no cluster writes. Alternatively, download `quest-vr-deploy` from the successful Actions run and apply its pinned `kubernetes.yaml`, then adapt/apply `ingress.example.yaml` once.
+
+Static templates live in [deploy/vr/](../../deploy/vr/): a separate namespace, two replicas, Service, health probes, non-root security context, read-only root filesystem and writable `/tmp`. The ingress routes the whole hostname's `/` so that `/assets/` and `/vr/` both remain accessible. The template uses `vr-quest`; prefer the script or CI artifact for a digest-pinned rollout.
+
+This automates image publication and renders deployment-ready configuration. Cluster rollout runs where you invoke the script, not inside GitHub. Your own CD can invoke the same command using its kubeconfig. No cluster deployment was performed when preparing this feature.
+
+No GPU is needed on the cluster; the headset renders locally. HTTPS with a browser-trusted certificate is required for WebXR.
 
 ## Evidence and interpretation
 

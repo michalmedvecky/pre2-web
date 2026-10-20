@@ -1,0 +1,23 @@
+# Optional: adapt host, ingressClassName and TLS secret to your cluster.
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: pre2-vr
+  namespace: pre2-vr
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - pre2-vr.example.com
+      secretName: pre2-vr-tls
+  rules:
+    - host: pre2-vr.example.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: pre2-vr
+                port:
+                  number: 80
