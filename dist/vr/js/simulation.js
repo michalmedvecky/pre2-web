@@ -1,5 +1,5 @@
 // New 3D rules for the Quest pilot. Native game rules remain in ../.. /js/engine.js.
-import {AWARDS} from '../../js/compat.js';
+import {AWARDS} from './compat.js';
 export const RULES=Object.freeze({radius:.23,height:1.45,speed:2.6,gravity:14,jump:6.9,step:.16,clubDamage:25,bearHP:15,swingSpeed:1.35,swingTravel:.12,respawnSeconds:.9});
 const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
 export function segmentDistance(a,b,p){const dx=b.x-a.x,dy=b.y-a.y,dz=b.z-a.z,den=dx*dx+dy*dy+dz*dz,t=den?clamp(((p.x-a.x)*dx+(p.y-a.y)*dy+(p.z-a.z)*dz)/den,0,1):0;return Math.hypot(a.x+t*dx-p.x,a.y+t*dy-p.y,a.z+t*dz-p.z);}

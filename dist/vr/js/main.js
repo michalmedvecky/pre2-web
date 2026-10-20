@@ -63,7 +63,7 @@ function draw(time,frame){const seconds=time/1000,dt=previousTime?Math.min((time
  updateHUD();renderer.render(scene,camera);
 }
 async function init(){
- const game=await json('../assets/game.json'),l=game.levels[0],data=await Promise.all([bytes('../assets/'+l.map),bytes('../assets/'+l.tiles),bytes('../assets/union.idx')]);layout=openingLayout(game,data[0]);pilot=new Pilot(layout);
+ const game=await json('assets/game.json'),l=game.levels[0],data=await Promise.all([bytes('assets/'+l.map),bytes('assets/'+l.tiles),bytes('assets/union.idx')]);layout=openingLayout(game,data[0]);pilot=new Pilot(layout);
  renderer=new T.WebGLRenderer({antialias:true,powerPreference:'high-performance'});renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));renderer.setSize(innerWidth,innerHeight);renderer.xr.enabled=true;renderer.xr.setReferenceSpaceType('local-floor');renderer.xr.setFramebufferScaleFactor(1);renderer.outputColorSpace=T.SRGBColorSpace;document.body.prepend(renderer.domElement);
  scene=new T.Scene();scene.background=new T.Color('#adcfcd');scene.fog=new T.Fog('#adcfcd',16,52);scene.add(new T.HemisphereLight('#fff2ce','#334f46',2.5));const sun=new T.DirectionalLight('#ffe6ba',2.3);sun.position.set(-5,12,8);scene.add(sun);
  rig=new T.Group();scene.add(rig);camera=new T.PerspectiveCamera(72,innerWidth/innerHeight,.05,80);camera.position.y=1.65;camera.rotation.x=pitch;rig.add(camera);rig.position.set(pilot.player.x,pilot.player.y,pilot.player.z);rig.rotation.y=yaw;

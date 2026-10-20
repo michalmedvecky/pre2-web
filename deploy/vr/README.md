@@ -15,3 +15,5 @@ node scripts/deploy-vr.mjs --context YOUR_CONTEXT --host vr.your-domain.cz --ing
 The script resolves the tested alias to an immutable digest and deploys only `pre2-vr`. `--render-only DIRECTORY` renders without applying. `--image ghcr.io/michalmedvecky/pre2-web@sha256:...` selects an exact release or rollback. `--no-ingress` preserves your existing ingress. For private packages, pass the exact image plus `--pull-secret NAME` (an existing secret in `pre2-vr`).
 
 CI also saves a `quest-vr-deploy` artifact with the build's digest-pinned workloads and image/commit identifiers. Neither GitHub workflow nor these manifests grant access to your cluster. The web deployment in namespace `prehistorik` remains separate.
+
+Path routing next to another web build: every VR module and data file is loaded from under `/vr/` (`/vr/js/compat.js` and `/vr/assets/` are symlinks inside this image to the same build's `/js/compat.js` and `/assets/`). An ingress can therefore send only the `/vr` prefix to `pre2-vr` and leave `/` on a separately versioned web deployment without mixing files from two builds.
