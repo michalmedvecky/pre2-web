@@ -12,7 +12,7 @@ export class SceneAdapter {
  for(const [layer,kind] of ['platforms','items','actors','bossParts','projectiles'].entries())for(const o of w[kind]||[])add(o,kind,layer+1);
  if(w.player&&(!(w.player.invulnerable>0)||((w.frame||0)&2)===0)){add(w.player,'player',6,'player');if(w.playerWeapon){add(w.playerWeapon,'equipment',7,'player:equipment');const e=entities.at(-1);if(e?.id==='player:equipment')e.attachment={owner:'player',offsetPixels:{x:w.playerWeapon.x-w.player.x,y:w.playerWeapon.y-w.player.y}};}}
  for(const o of w.effects||[])add(o,'effect',8);
- return {version:1,simulation:'dos-2d',stage:w.level.id,tick:w.frame,coordinateSystem:{handedness:'right',up:'+Y',forward:'-Z',pixelsPerMetre:this.options.pixelsPerMetre,simulationPlaneZ:this.options.depth||0},entities,gameplay:{health:w.health,lives:w.lives,score:w.score,transition:w.transition?{...w.transition}:null},cameraPolicy:'owned-by-renderer; never apply 2D scrolling camera to an XR head pose'};
+ return {version:1,simulation:'dos-2d',stage:w.level.id,tick:w.frame,coordinateSystem:{handedness:'right',up:'+Y',forward:'-Z',pixelsPerMetre:this.options.pixelsPerMetre,simulationPlaneZ:this.options.depth||0},entities,gameplay:{health:w.health,lives:w.lives,score:w.score,transition:w.transition?structuredClone(w.transition):null},cameraPolicy:'owned-by-renderer; never apply 2D scrolling camera to an XR head pose'};
  }
  describeLevel(w){return {version:1,id:w.level.id,width:256,height:w.level.height,tilePixels:16,map:Array.from(w.map),tileLookup:[...w.level.lookup],tilePropertiesX:[...(w.level.tilePropertiesX||[])],tilePropertiesY:[...(w.level.tilePropertiesY||[])],gates:(w.gates||[]).map(g=>({...g})),depthGeometry:null,meshStatus:'requires-authored-3d-level'};}
 }

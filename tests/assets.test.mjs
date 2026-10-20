@@ -68,3 +68,15 @@ test('shake displaces sprites but native foreground and rain remain in screen co
  r.render({level:l,map,camera:{x:0,y:0},screenShake:7,shakePlayerNudge:3,player:{sprite:9,x:104,y:80},playerWeapon:{sprite:58,x:94,y:70},actors:[{sprite:313,x:200,y:100}],rainPoints:[{x:20,y:20}]});
  assert.ok(positions.some(v=>v[0]===313&&v[2]===107));assert.ok(positions.some(v=>v[0]===9&&v[2]===90));assert.ok(positions.some(v=>v[0]===58&&v[2]===77));assert.ok(positions.some(v=>v[0]==='front'&&v[2]===64));assert.equal(r.frame[20*320+20],15);
 });
+
+test('stage tally uses its original 16x11 font and sprite layers, never the gameplay HUD',()=>{
+ const r=renderer(),l=game.levels[0],t={phase:'tally',score:123,percent:37,player:{x:91,y:175,sprite:9},props:[{x:153,y:175,sprite:100},{x:153,y:148,sprite:98},{x:153,y:155,sprite:105}],falling:[{x:155,y:80,sprite:110}]},w={level:l,levelIndex:0,transition:{tally:t},score:123};const before=JSON.stringify(t);
+ r.render(w);assert.equal(JSON.stringify(t),before);assert.ok(r.frame.slice(176*320).every(n=>n===0));
+ const positions=[];const draw=r.drawTallyText.bind(r);r.drawTallyText=(text,x,y)=>{positions.push([text,x,y]);draw(text,x,y);};r.render(w);assert.deepEqual(positions,[['SCORE',0,14],['0001230',96,14],['LEVEL COMPLETED',0,26],['37%',256,26]]);
+ for(let y=0;y<11;y++)for(let x=0;x<16;x++){let expected=0;for(let k=0;k<4;k++)expected|=((a.fonts[0x1c70+k*22+y*2+(x>>3)]>>(7-(x&7)))&1)<<k;assert.equal(r.frame[(14+y)*320+96+x],expected);}
+ const full=r.frame.slice();t.falling=[];r.render(w);assert.ok(r.frame.some((v,i)=>v!==full[i]&&i<120*320));
+});
+test('native-table iris closes around the torso, including the former HUD, without changing state',()=>{
+ const r=renderer(),iris={cx:140,cy:100,radius:24},before=JSON.stringify(iris);r.frame.fill(15);r.drawStageIris(iris);assert.equal(JSON.stringify(iris),before);assert.equal(r.frame[100*320+140],15);assert.equal(r.frame[100*320+100],0);assert.ok(r.frame.slice(176*320).every(n=>n===0));assert.equal(r.frame[10],0);
+ iris.radius=0;r.drawStageIris(iris);assert.ok(r.frame.every(n=>n===0));
+});

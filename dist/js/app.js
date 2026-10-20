@@ -1,3 +1,4 @@
+import {pendingTallyScore} from './stage-tally.js';
 import {CheatInput} from './cheats.js';
 import {Assets} from './assets.js';
 import {Renderer} from './render.js';
@@ -44,12 +45,13 @@ function difficulty(){state='menu';card('CHOOSE YOUR ADVENTURE','How hungry are 
 function event(e){if(e.type==='level'){sound(audio.setTrack(tracks[e.index]));$('#stage-label').textContent=`STAGE ${e.id} · ${world?.expert?'EXPERT':'BEGINNER'}`;$('#status-label').textContent=cheatStatus();}
  if(e.type==='cheat'){toast(`${e.code} — ${e.code==='IDKFA'?'secret hints':'invulnerability'} ${e.enabled?'ON':'OFF'}`);$('#status-label').textContent=cheatStatus();}
  if(e.type==='sfx')sound(audio.sfx(e.index));if(e.type==='exitOpen')toast('The exit is open!');if(e.type==='weapon')toast('New weapon!');if(e.type==='bossDefeated')toast('Boss defeated — find the exit!');if(e.type==='lifeLost')toast('One more try…');
- if(e.type==='complete'){completed.add(world.level.id);save();}
- if(e.type==='transitionReady'&&state==='play'){state='result';const t=e.transition;save();if(t.type==='complete')card('A PREHISTORIC FEAST','Stage complete',`<p>${t.percent}% collected · Score ${(world.score*10).toLocaleString()}</p><p>Next: stage ${assets.game.levels[t.next]?.id||'finale'}<br>Browser password: <b>${passwordFor(Math.min(t.next,9),world.expert)}</b></p>`,[['Keep going',()=>{world.advance();state='play';hide();save();}],['World map',stages,'secondary']]);else if(t.type==='ending'){renderer.renderScreen('THEEND');card('THE ADVENTURE IS COMPLETE','A feast well earned.',`<p>Final score ${(world.score*10).toLocaleString()}<br>Explore the remaining secret stages from the world map.</p>`,[['Explore stages',stages],['Title screen',title,'secondary']]);}else{sound(audio.setTrack('GAMEOVER'));card('THE STONE AGE IS TOUGH','Game over',`<p>Score ${(world.score*10).toLocaleString()}</p>`,[['Try again',()=>start(world.levelIndex,world.expert)],['Title screen',title,'secondary']]);}}
+ if(e.type==='complete'){completed.add(world.level.id);$('#status-label').textContent=world.transition.tally?'STAGE COMPLETE · COUNTING THE FEAST':'PASSAGE TO THE NEXT WORLD';save();}
+ if(e.type==='tallyStart')sound(audio.setTrack('BRAVO'));
+ if(e.type==='transitionReady'&&state==='play'){state='result';const t=e.transition;save();if(t.type==='complete'){renderer.render(world);card('A PREHISTORIC FEAST','Stage complete',`<p>${t.percent}% collected · Score ${(world.score*10).toLocaleString()}</p><p>Next: stage ${assets.game.levels[t.next]?.id||'finale'}<br>Browser password: <b>${passwordFor(Math.min(t.next,9),world.expert)}</b></p>`,[['Keep going',()=>{world.advance();state='play';hide();save();}],['World map',stages,'secondary']]);}else if(t.type==='ending'){renderer.renderScreen('THEEND');card('THE ADVENTURE IS COMPLETE','A feast well earned.',`<p>Final score ${(world.score*10).toLocaleString()}<br>Explore the remaining secret stages from the world map.</p>`,[['Explore stages',stages],['Title screen',title,'secondary']]);}else{sound(audio.setTrack('GAMEOVER'));card('THE STONE AGE IS TOUGH','Game over',`<p>Score ${(world.score*10).toLocaleString()}</p>`,[['Try again',()=>start(world.levelIndex,world.expert)],['Title screen',title,'secondary']]);}}
 }
 function start(index=0,expert=false){state='play';world=new World(assets,{expert,onEvent:event});$('#status-label').textContent='FIND THE KEY · UNCOVER THE FEAST';if(index)world.loadLevel(index);$('#stage-label').textContent=`STAGE ${world.level.id} · ${expert?'EXPERT':'BEGINNER'}`;hide();save();}
-function save(){if(!world||state==='demo')return;const w=world;saved={version:1,level:w.levelIndex,expert:w.expert,score:w.score,lives:w.lives,extraLifeQuotient:w.extraLifeQuotient,persistence:w.capturePersistence(),completed:[...completed]};try{localStorage.setItem(STORAGE,JSON.stringify(saved));}catch{}}
-function resume(){const s=saved;start(s.level,s.expert);world.restoreScoreProgress(s);world.restorePersistence(s.persistence);Object.assign(world.player,world.checkpoint,{vx:0,vy:0,invulnerable:24});world.camera.x=Math.max(0,Math.min(world.maxCameraX(),world.player.x-144));world.camera.y=Math.max(0,Math.min(world.maxCameraY(),world.player.y-128));save();toast('Resumed at your checkpoint');}
+function save(){if(!world||state==='demo')return;const w=world,t=w.transition,complete=t?.type==='complete',score=complete&&t.tally?(w.score+pendingTallyScore(w))>>>0:w.score,q=Math.max(w.extraLifeQuotient,Math.floor(score/25000));saved={version:1,level:complete?t.next:w.levelIndex,expert:w.expert,score,lives:Math.min(99,w.lives+q-w.extraLifeQuotient),extraLifeQuotient:q,persistence:complete?null:w.capturePersistence(),foodCounts:complete&&t.tally?null:Array.from(w.foodCounts),completed:[...completed]};try{localStorage.setItem(STORAGE,JSON.stringify(saved));}catch{}}
+function resume(){const s=saved;start(s.level,s.expert);world.restoreScoreProgress(s);if(s.persistence)world.restorePersistence(s.persistence);if(s.foodCounts)world.foodCounts.set(s.foodCounts);Object.assign(world.player,world.checkpoint,{vx:0,vy:0,invulnerable:24});world.camera.x=Math.max(0,Math.min(world.maxCameraX(),world.player.x-144));world.camera.y=Math.max(0,Math.min(world.maxCameraY(),world.player.y-128));save();toast('Resumed at your checkpoint');}
 function pause(){if(state==='play'||state==='demo'){previous=state;state='pause';save();card('TAKE A BREATHER','Adventure paused','<p>Your stage and checkpoint are saved in this browser.</p>',[['Keep playing',()=>{state=previous;hide();}],['Restart stage',()=>{world.loadLevel(world.levelIndex,{restart:true});state='play';hide();}],['World map',stages,'secondary'],['Title screen',title,'secondary']]);}else if(state==='pause'){state=previous;hide();}}
 function help(){const back=state,priorHTML=dialog.innerHTML,priorClass=dialog.className,wasHidden=dialog.hidden;state='help';card('KNOW YOUR MOVES','Ready, caveman?','<div class="help-grid"><span><kbd>← →</kbd> Move</span><span><kbd>↑ / Z</kbd> Hold to jump</span><span><kbd>SPACE</kbd> Swing / throw</span><span><kbd>↓</kbd> Crouch / passage</span><span><kbd>X</kbd> Look ahead</span><span><kbd>P</kbd> Pause</span><span><kbd>H</kbd> Original / HD graphics</span></div><p>Collect food for points and six bones to restore a heart. Type <kbd>IDDQD</kbd> during play to toggle invulnerability (browser-only cheat). Spikes cannot hurt you; falling out of the map returns you to your checkpoint without losing a life. Type <kbd>IDKFA</kbd> to toggle outlines of concealed blocks, passage markers and bonus exits, with arrows toward nearby hints beyond the screen. Some pickups spill your stored energy; collect the bones to recover it. Land on enemies and hold jump for a higher bounce. Strike hidden scenery repeatedly to reveal treasure and platforms. Pick up the key to open exits. Hold down at passages to travel.</p><p class="fine">A native browser reconstruction using recovered original assets. Some enemy and boss behavior remains approximate.</p>',[['Got it',()=>{state=back;if(back==='title')title();else if(back==='play'||back==='demo')hide();else if(back==='pause'){state='play';pause();}else if(back==='stages')stages();else if(back==='password')password();else if(back==='menu')difficulty();else{dialog.innerHTML=priorHTML;dialog.className=priorClass;dialog.hidden=wasHidden;state='play';pause();}}]]);}
 function stages(){const back=world?'play':'title';state='stages';renderer.renderMap(world?.levelIndex||0,16);card('THE ORIGINAL WORLDS','Choose your next adventure','<p>Campaign stages 1–9 and A, five bonus worlds and the finale. Stage selection starts a fresh practice run.</p><div class="stage-grid"></div>',[['Back',()=>{if(world){state=back;hide();}else title();},'secondary']]);dialog.querySelector('.dialog-card').classList.add('stages');const grid=dialog.querySelector('.stage-grid');assets.game.levels.forEach((l,i)=>{const b=button(l.id,()=>start(i,world?.expert||false),'stage-button'+(world?.levelIndex===i?' current':'')+(completed.has(l.id)?' completed':''));b.setAttribute('aria-label',`Play stage ${l.id}`);grid.append(b);});}
@@ -62,7 +64,12 @@ window.addEventListener('keyup',e=>{if(keys[e.code])held[keys[e.code]]=false;});
 for(const b of document.querySelectorAll('[data-control]')){const release=()=>{held[b.dataset.control]=false;b.classList.remove('held');};b.onpointerdown=e=>{e.preventDefault();gesture();b.setPointerCapture(e.pointerId);held[b.dataset.control]=true;if(state==='play')pressed[b.dataset.control]=true;b.classList.add('held');};b.onpointerup=release;b.onpointercancel=release;b.onlostpointercapture=release;}
 function frame(now){
  const dt=last?Math.min(.25,(now-last)/1000):0;last=now;
- if(state==='play'||state==='demo'){
+ if((state==='play'||state==='demo')&&world?.transition?.tally){
+  // Completion has its own PIT/retrace clocks; sample it on every RAF.
+  acc=0;world.stepTally(dt);presentation.reset(world);
+  if(state==='play'||state==='demo')renderer.render(world);
+  if((saveClock+=dt)>5){saveClock=0;save();}
+ }else if(state==='play'||state==='demo'){
   acc+=dt;
   while(acc>=1/TICK_HZ){
    acc-=1/TICK_HZ;
@@ -70,10 +77,10 @@ function frame(now){
    presentation.beforeStep(world);
    world.step(state==='demo'?inputFromMask(demo.next()):input);
    presentation.afterStep(world);
-   if(state!=='play'&&state!=='demo')break;
+   if((state!=='play'&&state!=='demo')||world.transition?.tally)break;
   }
   if(state==='play'||state==='demo'){
-   renderer.render(presentation.sample(world,acc*TICK_HZ,dt));
+   renderer.render(world.transition?.tally?world:presentation.sample(world,acc*TICK_HZ,dt));
    if(qa)canvas.dataset.pose=JSON.stringify({frame:world.frame,x:world.player.x,y:world.player.y,vx:world.player.vx,vy:world.player.vy,sprite:world.player.sprite,variant:world.player.animationVariant,weapon:world.playerWeapon?.sprite??null,form:world.alternate,glide:world.player.glideMode});
   }
   if((saveClock+=dt)>5){saveClock=0;save();}

@@ -9,6 +9,8 @@ const FONT={
 export class Renderer {
  constructor(canvas,assets){this.canvas=canvas;this.assets=assets;canvas.width=W;canvas.height=H;this.ctx=canvas.getContext('2d',{alpha:false});this.ctx.imageSmoothingEnabled=false;this.frame=new Uint8Array(W*H);this.imageData=this.ctx.createImageData(W,H);this.palette=assets.game.palettes[0].rgb8_scaled;this.fade=1;this.glyphs=[];
   for(let i=0;i<50;i++){const p=0x1610+i*96;if(p+96>assets.fonts.length)break;const idx=new Uint8Array(192);for(let y=0;y<12;y++)for(let x=0;x<16;x++){let v=0;for(let k=0;k<4;k++)v|=((assets.fonts[p+k*24+y*2+(x>>3)]>>(7-(x&7)))&1)<<k;idx[y*16+x]=v;}this.glyphs.push(idx);}
+  // 0x14974 uses the separate 16x11 score font, not the 16x12 HUD bank.
+  this.tallyDigits=[];for(let i=0;i<10;i++){const p=0x1c70+i*88;if(p+88>assets.fonts.length)break;const idx=new Uint8Array(176);for(let y=0;y<11;y++)for(let x=0;x<16;x++)for(let k=0;k<4;k++)idx[y*16+x]|=((assets.fonts[p+k*22+y*2+(x>>3)]>>(7-(x&7)))&1)<<k;this.tallyDigits.push(idx);}
  }
  setHD(pack){this.hd=pack?new HDCompositor(this.canvas,pack):null;if(!pack){this.canvas.width=W;this.canvas.height=H;}this.ctx=this.canvas.getContext('2d',{alpha:false});this.ctx.imageSmoothingEnabled=false;this.hd?.setPalette(this.palette);this.canvas.style&&(this.canvas.style.imageRendering=pack?'auto':'pixelated');}
  setPalette(p){this.palette=p;this.hd?.setPalette(p);}
@@ -16,7 +18,7 @@ export class Renderer {
  blit(src,sw,sh,dx,dy,{transparent=false,flip=false,clip=H,offset=0,ink,hdSkip=false}={}){dx=Math.round(dx);dy=Math.round(dy);if(!hdSkip)this.hd?.blit(src,sw,sh,dx,dy,{transparent,flip,clip,offset,ink,fade:this.fade});for(let sy=Math.max(0,-dy);sy<sh&&sy+dy<clip;sy++){for(let sx=Math.max(0,-dx);sx<sw&&sx+dx<W;sx++){const v=src[offset+sy*sw+(flip?sw-1-sx:sx)];if(v!==undefined&&(!transparent||v!==0))this.frame[(dy+sy)*W+dx+sx]=ink??v;}}}
  sprite(word,x,y,flip=false,clip=VIEW){if(word==null||word===65535||word<0)return;flip=flip||!!(word&0x8000);const s=this.assets.game.sprites[word&0x1fff];if(!s)return;const hdSkip=this.hd?.sprite(word,x,y,flip,clip,s);const ox=flip?s.width-s.originX:s.originX;this.blit(this.assets.spritesPixels,s.width,s.height,x-ox,y+s.originY-s.height,{transparent:true,flip,clip,offset:s.pixelOffset,ink:word&0x4000?15:undefined,hdSkip});}
  tile(value,x,y,level,front=false,connected=false){if(value===256||value===65535)return;let bank,id;if(front){bank=this.assets.front;id=value;}else if(value<256){bank=this.assets.tiles[level.id];id=value;}else{bank=this.assets.union;id=value-256;}if(!bank||id<0||id*256+256>bank.length)return;const hdSkip=connected||this.hd?.tile(level.id,front?'front':value<256?'local':'union',id,x,y);this.blit(bank,16,16,x,y,{offset:id*256,transparent:true,clip:VIEW,hdSkip});}
- render(world){const a=this.assets,l=world.level;const li=world.levelIndex??a.game.levels.findIndex(v=>v.id===l.id);this.setPalette(world.paletteOverride||a.game.palettes[Math.max(0,li)]?.rgb8_scaled||a.game.palettes[0].rgb8_scaled);this.fade=1;this.frame.fill(0);this.hd?.begin();const cam=world.camera||{x:0,y:0};const cx=Math.floor(cam.x),cy=Math.floor(cam.y),shake=world.screenShake||0;const bg=a.backgrounds[l.background||'BACK0'];if(bg){const hdSkip=this.hd?.background(l.id,l.background||'BACK0',shake);this.blit(bg,320,200,0,shake,{clip:VIEW,hdSkip});}
+ render(world){const a=this.assets,l=world.level;const li=world.levelIndex??a.game.levels.findIndex(v=>v.id===l.id);this.setPalette(world.paletteOverride||a.game.palettes[Math.max(0,li)]?.rgb8_scaled||a.game.palettes[0].rgb8_scaled);this.fade=1;this.frame.fill(0);this.hd?.begin();const tally=world.transition?.tally;if(tally&&tally.phase!=='iris'){this.drawStageTally(world,tally);this.present();return;}const cam=world.camera||{x:0,y:0};const cx=Math.floor(cam.x),cy=Math.floor(cam.y),shake=world.screenShake||0;const bg=a.backgrounds[l.background||'BACK0'];if(bg){const hdSkip=this.hd?.background(l.id,l.background||'BACK0',shake);this.blit(bg,320,200,0,shake,{clip:VIEW,hdSkip});}
   const map=world.map||a.maps[l.id];const animation=tileAnimation(l,world.tileAnimationPhase||0);const connected=this.hd?.terrain(a,l,map,cx,cy-shake,animation);const cells=[];for(let ty=Math.max(0,Math.floor(cy/16));ty<Math.min(l.height,Math.ceil((cy+VIEW)/16));ty++)for(let tx=Math.max(0,Math.floor(cx/16));tx<Math.min(256,Math.ceil((cx+W)/16));tx++){const m=map[ty*256+tx],x=tx*16-cx,y=ty*16-cy;this.tile(l.lookup[animation.remap[m]],x,y+shake,l,false,connected);cells.push([m,x,y]);}
   if(world.finalBoss){const pose=world.finalBoss.pose||0;for(let yy=0;yy<7;yy++)for(let xx=0;xx<6;xx++){const id=map[yy*256+20+pose*6+xx];this.tile(l.lookup[id],192+xx*16-cx,yy*16-cy+shake,l);}}
   if(shake){this.frame.fill(0,0,Math.min(shake,VIEW)*W);this.hd?.clearTop(shake);}
@@ -29,7 +31,30 @@ export class Renderer {
   for(const point of world.rainPoints||[]){const {x,y}=point;if(x>=0&&x<W&&y>=0&&y<VIEW)this.pixel(x,y,15);}
   for(const icon of world.bossStatus||[])this.sprite(icon.sprite,icon.x,icon.y);
   if(world.secretHints)this.drawSecretHints(world);
-  this.blit(a.hud,320,23,0,176);this.drawHud(world);this.hd?.hud(world,a.tables);this.present();
+  this.blit(a.hud,320,23,0,176);this.drawHud(world);this.hd?.hud(world,a.tables);if(tally?.iris)this.drawStageIris(tally.iris);this.present();
+ }
+ drawStageTally(world,tally){
+  // 0x15391 / 0x15327: VGA offsets 0230/023c and 0410/0430.
+  const label=(offset,fallback)=>{let text='';for(let i=offset;i<this.assets.tables.length&&text.length<32;i++){const c=this.assets.tables[i];if(c===36)break;text+=String.fromCharCode(c);}return text||fallback;};
+  this.drawTallyText(label(0x7d8b,'SCORE'),0,14);
+  this.drawTallyText(String((tally.score??world.score)>>>0).padStart(6,'0').slice(-6)+'0',96,14);
+  this.drawTallyText(label(0x7d7b,'LEVEL COMPLETED'),0,26);
+  this.drawTallyText(String(tally.percent??world.transition.percent??0).padStart(2,'0')+'%',256,26);
+  for(const o of tally.props||[])this.sprite(o.sprite,o.x,o.y,o.flip??false,H);
+  if(tally.player)this.sprite(tally.player.sprite,tally.player.x,tally.player.y,tally.player.flip??false,H);
+  for(const o of tally.falling||[])this.sprite(o.sprite,o.x,o.y,o.flip??false,H);
+ }
+ drawTallyText(text,x,y){for(const char of text){if(char>='0'&&char<='9'){const glyph=this.tallyDigits[+char];if(glyph)this.blit(glyph,16,11,x,y);}else if(char!==' '){const id=char==='%'?267:241+char.charCodeAt(0)-65,s=this.assets.game.sprites[id];if(s)this.blit(this.assets.spritesPixels,16,11,x,y,{offset:s.pixelOffset});}x+=16;}}
+ drawStageIris({cx,cy,radius}){
+  // 0x13350 walks the recovered quarter-circle tables, then mirrors the
+  // horizontal spans around the player's screen position. Keep its integer
+  // table geometry in both presentation modes rather than a smooth CSS iris.
+  radius=Math.max(0,Math.floor(radius));cx=Math.floor(cx);cy=Math.floor(cy);
+  const edges=new Map(),tables=this.assets.tables;
+  for(let i=0;i<=64;i++){const y=(tables[0x708c+i]*radius)>>6;if(!edges.has(y))edges.set(y,(tables[0x6f8c+i]*radius)>>6);}
+  const widths=new Map();let width=0;for(let y=radius;y>=0;y--){if(edges.has(y))width=edges.get(y);widths.set(y,width);}
+  const black=(x,y,count)=>{if(count<=0)return;this.frame.fill(0,y*W+x,y*W+x+count);if(this.hd){const {ctx,scale}=this.hd;ctx.fillStyle=this.hd.color(0);ctx.fillRect(x*scale,y*scale,count*scale,scale);}};
+  for(let y=0;y<H;y++){const half=widths.get(Math.abs(y-cy));if(half===undefined){black(0,y,W);continue;}const left=Math.max(0,Math.min(W,cx-half)),right=Math.max(0,Math.min(W,cx+half));black(0,y,left);black(right,y,W-right);}
  }
  drawSecretHints(w){const markers=hintMarkers(w),ink=(w.frame&8)?14:15;
   const dot=(x,y)=>{x=Math.round(x);y=Math.round(y);if(x>=0&&x<W&&y>=0&&y<VIEW)this.pixel(x,y,ink);};

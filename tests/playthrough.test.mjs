@@ -17,7 +17,7 @@ for(const f of fixtures.stages)test(`input-only IDDQD completion: stage ${f.id},
  if([2,8].includes(f.level)){assert.equal(w.boss.active,false);assert.ok(w.boss.hp<0);assert.ok(w.inventory2&2);}
  if(f.level===5){assert.equal(w.specialBoss.stage,3);assert.equal(w.specialBoss.active,false);assert.ok(w.inventory2&2);}
  if(f.level===9)assert.equal(w.finalBoss.hp,0);
- if(f.transition.type==='complete'){for(let i=0;i<w.transition.delay;i++)w.step({});w.advance();assert.equal(w.levelIndex,f.transition.next);assert.equal(w.godMode,true);}
+ if(f.transition.type==='complete'){for(let n=0;!w.transition.ready&&n<10000;n++)w.step({});assert.equal(w.transition.ready,true);w.advance();assert.equal(w.levelIndex,f.transition.next);assert.equal(w.godMode,true);}
 });
 for(const f of fixtures.branches)test(`input-only secret branch: ${f.source}`,()=>{const {w}=replay(f);if(f.next!==undefined){assert.equal(w.transition.type,'complete');assert.equal(w.transition.next,f.next);}if(f.source==='qa8g-room3-edge.json')assert.ok(w.brokenBlocks>=19);});
 

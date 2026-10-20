@@ -1,3 +1,4 @@
+import {createTally,advanceTally} from './stage-tally.js';
 import {initEnvironment,updateMovingBlocks,updateWeather,updateScreenShake} from './environment.js';
 import {tileAnimation} from './tile-animation.js';
 import * as platforms from './platforms.js';
@@ -10,7 +11,7 @@ const NON_PICKUPS = new Set([0xe5,0x12c,0x132,0x134,0x136,0x118]);
 export const isScorePickup = sprite => {const id=sprite&0x1fff;return (id>=110&&id<=117)||(id>=128&&id<=219);};
 const WEAPON = [{damage:25,cooldown:2,flags:0},{damage:30,cooldown:6,flags:0},{damage:20,cooldown:6,flags:1},{damage:30,cooldown:12,flags:3}];
 export function slopeOffset(encoded,x){const b=u8(encoded);if(!(b&0x30))return s8(b);const k=Math.floor((x&15)/3);return s8((b&15)+((b&0x10)?k:-k));}
-export function completionPercent(blocks,food,totalBlocks,totalFood){const d=u16(totalBlocks+totalFood);return d?Math.floor((u16(blocks+food)*100)/d):100;}
+export function completionPercent(blocks,food,totalBlocks,totalFood){const d=u16(totalBlocks+totalFood);return d?Math.floor(((u16(blocks+food)&255)*100)/d):100;}
 export function exitDestination(index,kind){
   if(kind==='special'){if(index===2)return 13;if(index===13)return 3;if(index===6)return 15;if(index===15)return 7;return index+1;}
   if(index<10)return BONUS[index]===255?index+1:BONUS[index];
@@ -106,7 +107,7 @@ export class World {
     this.presentationTicks=u16(this.presentationTicks+3);this.events=[];this.input=input;this.recorded.push(inputMask(input));if(this.recorded.length>60000)this.recorded.shift();this.frame=u16(this.frame+1);
     this.screenShake=this.nextScreenShake;this.shakePlayerNudge=0;
     if(this.gateDownConsumed&&!input.down){this.gateDownConsumed=false;this.player.downTimer=0;}
-    if(this.transition){if(++this.transitionTimer>=this.transition.delay)this.emit('transitionReady',{transition:this.transition});return;}
+    if(this.transition){this.transitionTimer++;if(this.transition.tally)this.stepTally();else if(!this.transition.ready&&this.transitionTimer>=this.transition.delay){this.transition.ready=true;this.emit('transitionReady',{transition:this.transition});}return;}
     if(this.deathTimer){this.updateEffects();updateWeather(this);this.player.vy+=8;this.player.y+=sar4(this.player.vy);if(--this.deathTimer===0){if(this.lives>0){this.lives--;this.loadLevel(this.levelIndex,{restart:true});}else{this.transition={type:'gameover',delay:1};this.transitionTimer=0;}}return;}
     if(this.collectionFlash)this.collectionFlash--;if(this.blockCooldown)this.blockCooldown--;if(this.sceneFlash)this.sceneFlash--;if(this.weaponPower)this.weaponPower--;
     // Original broad update order: actors, effects, player, interactions, world changes, presentation counter.
@@ -119,6 +120,8 @@ export class World {
     for(const i of this.items)if(i.active&&!(this.frame&1)){i.bob=(i.bob||0)+1;if(i.bob>=4)i.bob=-i.bob+1;i.y+=i.bob;}
     if(this.player.invulnerable)this.player.invulnerable--;if(this.power)this.power--;updateScreenShake(this);
     const q=Math.floor((this.score>>>0)/25000);while(this.extraLifeQuotient<q){this.extraLifeQuotient++;this.lives=Math.min(99,this.lives+1);this.emit('sfx',{index:4});this.floatText('1UP',this.player.x,this.player.y-38,0xe3);}
+    // Pickups request completion before the last camera update of this frame.
+    if(this.transition?.tally&&this.transitionTimer===0)this.transition.tally=createTally(this);
   }
   stepPlayer(input){
     const p=this.player;p.attackFrame=false;this.input=input;const oldX=p.x,oldY=p.y;
@@ -502,9 +505,20 @@ export class World {
     if(this.input.look){tx+=p.face*16;}
     c.x=clamp(c.x+clamp(tx-c.x,-16,16),0,this.maxCameraX());c.y=clamp(c.y+clamp(ty-c.y,-16,16),0,this.maxCameraY());
   }
-  complete(kind){if(this.transition)return;const next=exitDestination(this.levelIndex,kind);const pct=completionPercent(this.brokenBlocks,this.collectedAuthoredFood,this.totalBlocks,this.totalFood);this.transition={type:'complete',next,percent:pct,delay:58,bonus:this.collectedFood};this.transitionTimer=0;this.emit('complete',{next,percent:pct});}
+  complete(kind){
+    if(this.transition)return;
+    const next=exitDestination(this.levelIndex,kind),pct=completionPercent(this.brokenBlocks,this.collectedAuthoredFood,this.totalBlocks,this.totalFood);
+    this.transition={type:'complete',next,percent:pct,delay:58,bonus:this.collectedFood,kind};
+    // 0x18a54 remaps flag-1 doors before 0x14e5d tests level<10.
+    // Flag-FF entries into bonus worlds carry the ledger until their return.
+    const effective=({2:12,13:2,6:14,15:6})[this.levelIndex]??this.levelIndex;
+    const show=kind==='bonus'?this.levelIndex>=10&&BONUS.includes(this.levelIndex):effective<10;
+    if(show)this.transition.tally=createTally(this);
+    this.transitionTimer=0;this.emit('complete',{next,percent:pct});
+  }
+  stepTally(seconds){const t=this.transition;if(!t?.tally||t.ready)return;advanceTally(this,seconds);if(t.tally.phase==='done'){t.ready=true;this.emit('transitionReady',{transition:t});}}
   finish(type){if(this.transition)return;this.transition={type,delay:36};this.transitionTimer=0;this.emit(type);}
-  advance(){if(!this.transition)return;const t=this.transition;if(t.type==='complete'){if(t.next>=this.assets.game.levels.length){this.transition=null;this.finish('ending');return;}this.score=(this.score+this.foodCounts.reduce((sum,count,index)=>sum+count*(AWARDS[this.byte(0xa371+index)]||0),0))>>>0;this.foodCounts.fill(0);this.loadLevel(t.next);}else this.emit('finish',{type:t.type});}
+  advance(){if(!this.transition?.ready)return;const t=this.transition;if(t.type==='complete'){if(t.next>=this.assets.game.levels.length){this.transition=null;this.finish('ending');return;}const ledger=t.tally?null:this.foodCounts.slice();this.loadLevel(t.next);if(ledger)this.foodCounts.set(ledger);}else this.emit('finish',{type:t.type});}
   snapshot(){const p=this.player;return {level:this.levelIndex,frame:this.frame,x:p.x,y:p.y,vx:p.vx,vy:p.vy,sprite:p.sprite,grounded:p.grounded,playerState:[p.action,p.animationVariant,p.anim,p.marker||0,p.jumpFrame,p.jumpLock,p.fallFrames,p.lastGroundY,p.attackActive?1:0,p.attackCooldown,p.invulnerable,p.glideMode,p.glideEnergy,p.formAngle,p.runTimer,this.alternate?1:0,this.power,this.presentationTicks,this.godMode?1:0,p.platformId??-1],environmentState:[this.weatherTime,this.weather,this.weatherPointer,this.screenShake,this.nextScreenShake,this.shakePlayerNudge,this.player.landingShake,+this.gateDownConsumed,...this.rainSeeds,...this.movingBlocks.flatMap(b=>[b.index,b.pos,b.trigger,b.remaining])],platformState:this.platforms.flatMap(q=>[q.index,q.x,q.y,q.active?1:0,...q.raw.slice(6)]),projectiles:this.projectiles.map(a=>[a.x,a.y,a.vx,a.vy,a.sprite,a.anim||0,a.ttl]),score:this.score,health:this.health,lives:this.lives,actors:this.actors.map(a=>[a.x,a.y,a.sprite,a.hp,a.state]),rng:[this.rng.a,this.rng.b,this.rng.c,this.rng.w,this.rng.secondary],bossState:bosses.snapshot(this),camera:[this.camera.x,this.camera.y],collected:this.items.filter(i=>!i.active).map(i=>i.index),blocks:this.blocks.filter(b=>!b.active).map(b=>b.index),transition:this.transition?.type||null};}
   stateHash(){const s=this.snapshot();return fnv1a([s.level,s.frame,s.x,s.y,s.vx,s.vy,s.sprite,s.score,s.health,s.lives,...s.rng,...s.bossState,...s.environmentState,...s.platformState,...s.camera,...s.playerState,...s.projectiles.flat(),...s.actors.flat(),...s.collected,...s.blocks]);}
 }
