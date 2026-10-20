@@ -20,4 +20,6 @@ Rebuild after previous asset packs with `node scripts/build-hd-v13.mjs`. Run `no
 - [x] Preserve transparent gaps in bread artwork.
 - [x] Restore actual stone oval, carved lettering and exterior silhouette.
 - [x] Visually inspect paired scenes; verify rules and scrolling regressions.
-- [ ] Publish verified amd64/arm64 image and update Kubernetes pin.
+- [x] Publish verified amd64/arm64 image and update Kubernetes pin.
+
+Release: code `88fda080f64d1632b2dd1dac4e47eb849a8e6376`, [successful build 39418925085](https://github.com/michalmedvecky/pre2-web/actions/runs/39418925085), GHCR index `sha256:1e3d2a02f21f1feb14cdf701922ce3fca96df46cf969caceada2b66096463194`. Both linux/amd64 and linux/arm64 revision labels independently verified. Kubernetes pin updated; no cluster rollout.
