@@ -1,3 +1,4 @@
+import{BanquetTerrain}from'./banquet-terrain.js';
 import{discoverDecor,mapFingerprint}from'./world-decor.js';
 import {continuousSampler,terrainMaterial} from './continuous-materials.js';
 import {HDFeedback} from './hd-feedback.js';
@@ -9,7 +10,7 @@ export class HDAssets {
   const response=await fetch(new URL('manifest.json',base));if(!response.ok)throw Error('HD manifest unavailable');
   const manifest=await response.json();if(manifest.version!==1||manifest.scale!==4||!manifest.sprites||!Array.isArray(manifest.atlases))throw Error('Unsupported HD manifest');
   const images=new Map();await Promise.all(manifest.atlases.map(async a=>{const image=new Image();image.src=new URL(a.file,base);await image.decode();if(image.naturalWidth!==a.width||image.naturalHeight!==a.height)throw Error('HD atlas extent mismatch');images.set(a.id,image);}));
-  const records=[...Object.values(manifest.sprites),...Object.values(manifest.tiles||{}),...Object.values(manifest.paintTiles||{}),...Object.values(manifest.worldMaterials||{}),...Object.values(manifest.worldDecor||{}),...Object.values(manifest.backgrounds||{})];
+  const records=[...Object.values(manifest.sprites),...Object.values(manifest.tiles||{}),...Object.values(manifest.paintTiles||{}),...Object.values(manifest.worldMaterials||{}),...Object.values(manifest.worldDecor||{}),...Object.values(manifest.backgrounds||{}),...(manifest.banquetMaterial?[manifest.banquetMaterial]:[])];
   for(const s of records){const a=manifest.atlases.find(a=>a.id===s.atlas),r=s.rect;if(!a||!r||r.length!==4||r.some(v=>!Number.isFinite(v)||v<0)||r[2]===0||r[3]===0||r[0]+r[2]>a.width||r[1]+r[3]>a.height)throw Error('Invalid HD atlas record');}
 
   return {manifest,images};
@@ -20,7 +21,9 @@ export class HDCompositor {
  setPalette(p){const key=p.join(',');if(key!==this.paletteKey){this.paletteKey=key;this.cache=new WeakMap();this.terrainCache.clear();}this.palette=p;}
  color(i,fade=1){const p=this.palette,k=i*3;return `rgb(${Math.floor((p[k]||0)*fade)},${Math.floor((p[k+1]||0)*fade)},${Math.floor((p[k+2]||0)*fade)})`;}
  begin(){this.ctx.fillStyle=this.color(0);this.ctx.fillRect(0,0,this.canvas.width,this.canvas.height);}
- clipped(clip,draw){const c=this.ctx;c.save();c.beginPath();c.rect(0,0,this.canvas.width,clip*this.scale);c.clip();draw(c);c.restore();}
+ clipped(clip,draw){const c=this.ctx;c.save();c.beginPath();c.rect(this.worldDX||0,this.worldDY||0,this.canvas.width,clip*this.scale);c.clip();draw(c);c.restore();}
+ worldOffset(x,y){this.worldDX=x*this.scale;this.worldDY=y*this.scale;this.ctx.save();this.ctx.translate(-this.worldDX,-this.worldDY);this.ctx.imageSmoothingEnabled=true;}
+ endWorldOffset(){this.ctx.restore();this.worldDX=this.worldDY=0;}
  blit(src,sw,sh,dx,dy,{transparent=false,flip=false,clip=200,offset=0,ink,fade=1}={}){
   let cache=this.cache.get(src);if(!cache){cache=new Map();this.cache.set(src,cache);}const key=[sw,sh,offset,transparent,ink,fade].join(':');let image=cache.get(key);
   if(!image){image=document.createElement('canvas');image.width=sw;image.height=sh;const ctx=image.getContext('2d'),rgba=ctx.createImageData(sw,sh);for(let i=0;i<sw*sh;i++){const index=src[offset+i];if(index===undefined||transparent&&index===0)continue;const v=(ink??index)*3,j=i*4;for(let k=0;k<3;k++)rgba.data[j+k]=(this.palette[v+k]||0)*fade;rgba.data[j+3]=255;}ctx.putImageData(rgba,0,0);cache.set(key,image);}
@@ -40,6 +43,7 @@ export class HDCompositor {
  background(level,name,shift=0){return this.atlas(this.pack.manifest.backgrounds?.[level+':'+name],0,shift);}
  clearTop(height){this.ctx.fillStyle=this.color(0);this.ctx.fillRect(0,0,this.canvas.width,Math.min(176,height)*this.scale);}
  terrain(assets,level,map,cx,cy,animation){
+  if(this.pack.manifest.banquetMaterial?.levels.includes(level.id)){this.banquet||=new BanquetTerrain();return this.banquet.draw(this,assets,level,map,cx,cy);}
   if(level.id!=='1')return false;
   const decor=this.pack.manifest.worldDecor?this.decorFor(level,map,assets.union):null;
   const size=64,halo=16,width=size+halo*2,columns=width/16,keys=new Set();

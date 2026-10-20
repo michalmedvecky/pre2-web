@@ -1,0 +1,126 @@
+{
+  "backgrounds": [
+    {
+      "id": "scene-1",
+      "name": "BACK0",
+      "levels": [
+        "1"
+      ],
+      "nativeHash": "3ff6ea9cf135a03f151d9865d16a36b11cc6d5539cddf4f66dce7434aa706cee",
+      "reference": "art/hd-v10/references/scene-1.png"
+    },
+    {
+      "id": "scene-2",
+      "name": "BACK0",
+      "levels": [
+        "2"
+      ],
+      "nativeHash": "e398fc50c9cfa708826a6bdcc35e3abd8a8e68fdf34a5c7fd85ec52c6e09758b",
+      "reference": "art/hd-v10/references/scene-2.png"
+    },
+    {
+      "id": "scene-3",
+      "name": "BACK0",
+      "levels": [
+        "3"
+      ],
+      "nativeHash": "c177f90be5cd43ad009e82da9b77b10b076070c6c2837e5f393e8b60b9a2f9a5",
+      "reference": "art/hd-v10/references/scene-3.png"
+    },
+    {
+      "id": "scene-4",
+      "name": "BACK1",
+      "levels": [
+        "4"
+      ],
+      "nativeHash": "cc00182dee036e6e7b7ae27d7cd5f176b9210701adc95129f0cd8cafc5c80679",
+      "reference": "art/hd-v10/references/scene-4.png"
+    },
+    {
+      "id": "scene-5",
+      "name": "BACK1",
+      "levels": [
+        "5"
+      ],
+      "nativeHash": "0685e17b32794f50e21d4b5d1d75fadd36c0b33d67f721e55aa5d04d82a46c8f",
+      "reference": "art/hd-v10/references/scene-5.png"
+    },
+    {
+      "id": "scene-6",
+      "name": "BACK1",
+      "levels": [
+        "6"
+      ],
+      "nativeHash": "70ab115bb10e66e9cb88bf81987b92ee0e6d41b0f68c8a05663416f1a7aa52b4",
+      "reference": "art/hd-v10/references/scene-6.png"
+    },
+    {
+      "id": "scene-7",
+      "name": "BACK2",
+      "levels": [
+        "7",
+        "G"
+      ],
+      "nativeHash": "fd3d04a3e889aac4da60a78e8488eedf505648c49270aebf36e3407648419a5e",
+      "reference": "art/hd-v10/references/scene-7.png"
+    },
+    {
+      "id": "scene-8",
+      "name": "BACK3",
+      "levels": [
+        "8"
+      ],
+      "nativeHash": "3cf862e1e0c572e65f8aaf98865d0794d8c2c65eda29faf80630a58e44b1a3e7",
+      "reference": "art/hd-v10/references/scene-8.png"
+    },
+    {
+      "id": "scene-9",
+      "name": "BACK3",
+      "levels": [
+        "9"
+      ],
+      "nativeHash": "1cb3531a278f90ab13fbafe7f0f3d8f61f33aff827b672948f5c1cccaedf5582",
+      "reference": "art/hd-v10/references/scene-9.png"
+    },
+    {
+      "id": "scene-A",
+      "name": "BACK0",
+      "levels": [
+        "A",
+        "F"
+      ],
+      "nativeHash": "e4a244ead08c2fd56265dea07c3031346772d348aba59115036fb324cf3de1fc",
+      "reference": "art/hd-v10/references/scene-A.png"
+    },
+    {
+      "id": "scene-B",
+      "name": "BACK4",
+      "levels": [
+        "B",
+        "C",
+        "D"
+      ],
+      "nativeHash": "c3a87cd3f5ba42bc43ea93fc8bf26989f5e3f1a15c7070ed9604329d42a8604e",
+      "reference": "art/hd-v10/references/scene-B.png"
+    },
+    {
+      "id": "scene-E",
+      "name": "BACK5",
+      "levels": [
+        "E"
+      ],
+      "nativeHash": "53ec1aacf0ebdba5be53c913e73f664a4afc580d3cf06d4ba0bcbe3cde8d005c",
+      "reference": "art/hd-v10/references/scene-E.png"
+    }
+  ],
+  "sourceHashes": {
+    "dist/assets/background-BACK0.idx": "bf34654123093c8d0c9ee906ec71de5df2852369b946f6d03901ec5778c2656b",
+    "dist/assets/background-BACK1.idx": "f64ddf1c1acbe4d16e308789789985aa18ca0f4b562063ca2550ae84d4e1f66e",
+    "dist/assets/background-BACK2.idx": "0f41975b4ad8a46342b19e0f42237c12acd2325c5e1525cd3022d656188b8722",
+    "dist/assets/background-BACK3.idx": "21c677e941df5ca029c5579712936d8bd6fcd95c2a5de9618d7d0dd2a2a98d93",
+    "dist/assets/background-BACK4.idx": "a9ecdcc59fb5f208f1f43ef86f0f83649abd49d7b6144e35d64ba9e3fcd8f0a9",
+    "dist/assets/background-BACK5.idx": "2385dc71ffee3fe80b4e441f28b72ea5277452a674908fb3b8cddfd656d945e4",
+    "dist/assets/game.json": "36e0bf5e4b9348e25093402e1d814ff448662aa661146fa8cbb9260001973fcd"
+  },
+  "notes": "460 sprite IDs covered by painted or vector assets; missing whole-scene art is separate from sprite coverage. Remaining native terrain inventoried separately."
+}

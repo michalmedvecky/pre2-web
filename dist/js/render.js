@@ -19,6 +19,7 @@ export class Renderer {
  sprite(word,x,y,flip=false,clip=VIEW){if(word==null||word===65535||word<0)return;flip=flip||!!(word&0x8000);const s=this.assets.game.sprites[word&0x1fff];if(!s)return;const hdSkip=this.hd?.sprite(word,x,y,flip,clip,s);const ox=flip?s.width-s.originX:s.originX;this.blit(this.assets.spritesPixels,s.width,s.height,x-ox,y+s.originY-s.height,{transparent:true,flip,clip,offset:s.pixelOffset,ink:word&0x4000?15:undefined,hdSkip});}
  tile(value,x,y,level,front=false,connected=false,worldX,worldY){if(value===256||value===65535)return;let bank,id;if(front){bank=this.assets.front;id=value;}else if(value<256){bank=this.assets.tiles[level.id];id=value;}else{bank=this.assets.union;id=value-256;}if(!bank||id<0||id*256+256>bank.length)return;const hdSkip=connected||this.hd?.tile(level.id,front?'front':value<256?'local':'union',id,x,y,bank.subarray(id*256,id*256+256),worldX,worldY);this.blit(bank,16,16,x,y,{offset:id*256,transparent:true,clip:VIEW,hdSkip});}
  render(world){const a=this.assets,l=world.level;const li=world.levelIndex??a.game.levels.findIndex(v=>v.id===l.id);this.setPalette(world.paletteOverride||a.game.palettes[Math.max(0,li)]?.rgb8_scaled||a.game.palettes[0].rgb8_scaled);this.fade=1;this.frame.fill(0);this.hd?.begin();const tally=world.transition?.tally;if(tally&&tally.phase!=='iris'){this.drawStageTally(world,tally);this.present();return;}const cam=world.camera||{x:0,y:0};const cx=Math.floor(cam.x),cy=Math.floor(cam.y),shake=world.screenShake||0;const bg=a.backgrounds[l.background||'BACK0'];if(bg){const hdSkip=this.hd?.background(l.id,l.background||'BACK0',shake);this.blit(bg,320,200,0,shake,{clip:VIEW,hdSkip});}
+  this.hd?.worldOffset((world.renderCamera?.x??cam.x)-cx,(world.renderCamera?.y??cam.y)-cy);
   const map=world.map||a.maps[l.id];const animation=tileAnimation(l,world.tileAnimationPhase||0);const connected=this.hd?.terrain(a,l,map,cx,cy-shake,animation);const cells=[];for(let ty=Math.max(0,Math.floor(cy/16));ty<Math.min(l.height,Math.ceil((cy+VIEW)/16));ty++)for(let tx=Math.max(0,Math.floor(cx/16));tx<Math.min(256,Math.ceil((cx+W)/16));tx++){const m=map[ty*256+tx],x=tx*16-cx,y=ty*16-cy;this.tile(l.lookup[animation.remap[m]],x,y+shake,l,false,connected);cells.push([m,x,y]);}
   if(world.finalBoss){const pose=world.finalBoss.pose||0;for(let yy=0;yy<7;yy++)for(let xx=0;xx<6;xx++){const id=map[yy*256+20+pose*6+xx];this.tile(l.lookup[id],192+xx*16-cx,yy*16-cy+shake,l);}}
   if(shake){this.frame.fill(0,0,Math.min(shake,VIEW)*W);this.hd?.clearTop(shake);}
@@ -31,6 +32,7 @@ export class Renderer {
   for(const point of world.rainPoints||[]){const {x,y}=point;if(x>=0&&x<W&&y>=0&&y<VIEW)this.pixel(x,y,15);}
   for(const icon of world.bossStatus||[])this.sprite(icon.sprite,icon.x,icon.y);
   if(world.secretHints)this.drawSecretHints(world);
+  this.hd?.endWorldOffset();
   this.blit(a.hud,320,23,0,176);this.drawHud(world);this.hd?.hud(world,a.tables);if(tally?.iris)this.drawStageIris(tally.iris);this.present();
  }
  drawStageTally(world,tally){

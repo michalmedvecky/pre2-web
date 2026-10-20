@@ -1,0 +1,115 @@
+[
+  {
+    "name": "scene-2",
+    "prompt": "Redraw the FIRST reference as a production HD background for a 2D cartoon platform game. Preserve its exact 8:5 composition, all major silhouettes, object positions, horizon, negative space and colors. The second reference is STYLE ONLY: crisp ink contours and clean cel shading consistent with that hero, do not insert characters from it. Replace coarse pixel steps with confident sharp hand-painted curves and controlled texture. No blur, no pixel-art rendering, no labels, new objects, borders or UI. Keep intentionally black silhouettes and bottom negative space. Opaque full-canvas image. Blue sky, swirling ivory clouds over charcoal-gray mountain ridges; large bottom region remains black.",
+    "referenced_image_paths": [
+      "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v10/references/scene-2.png",
+      "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v1/raw/hero-00-15.png"
+    ],
+    "transparent_background": false
+  },
+  {
+    "name": "scene-3",
+    "prompt": "Redraw the FIRST reference as a production HD background for a 2D cartoon platform game. Preserve its exact 8:5 composition, all major silhouettes, object positions, horizon, negative space and colors. The second reference is STYLE ONLY: crisp ink contours and clean cel shading consistent with that hero, do not insert characters from it. Replace coarse pixel steps with confident sharp hand-painted curves and controlled texture. No blur, no pixel-art rendering, no labels, new objects, borders or UI. Keep intentionally black silhouettes and bottom negative space. Opaque full-canvas image. Pale blue sky, pale mint clouds over dark olive-gray mountain ridges; large bottom region remains black.",
+    "referenced_image_paths": [
+      "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v10/references/scene-3.png",
+      "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v1/raw/hero-00-15.png"
+    ],
+    "transparent_background": false
+  },
+  {
+    "name": "scene-A",
+    "prompt": "Redraw the FIRST reference as a production HD background for a 2D cartoon platform game. Preserve its exact 8:5 composition, all major silhouettes, object positions, horizon, negative space and colors. The second reference is STYLE ONLY: crisp ink contours and clean cel shading consistent with that hero, do not insert characters from it. Replace coarse pixel steps with confident sharp hand-painted curves and controlled texture. No blur, no pixel-art rendering, no labels, new objects, borders or UI. Keep intentionally black silhouettes and bottom negative space. Opaque full-canvas image. Deep purple sky and ivory cloud wisps over olive charcoal mountains; large bottom region stays black.",
+    "referenced_image_paths": [
+      "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v10/references/scene-A.png",
+      "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v1/raw/hero-00-15.png"
+    ],
+    "transparent_background": false
+  },
+  {
+    "name": "scene-4",
+    "prompt": "Redraw the FIRST reference as a production HD background for a 2D cartoon platform game. Preserve its exact 8:5 composition, all major silhouettes, object positions, horizon, negative space and colors. The second reference is STYLE ONLY: crisp ink contours and clean cel shading consistent with that hero, do not insert characters from it. Replace coarse pixel steps with confident sharp hand-painted curves and controlled texture. No blur, no pixel-art rendering, no labels, new objects, borders or UI. Keep intentionally black silhouettes and bottom negative space. Opaque full-canvas image. Dense layered blue enchanted forest: huge warm brown trunks at left and right, crooked limbs, turquoise vines, rich green canopy. Exact source framing.",
+    "referenced_image_paths": [
+      "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v10/references/scene-4.png",
+      "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v1/raw/hero-00-15.png"
+    ],
+    "transparent_background": false
+  },
+  {
+    "name": "scene-5",
+    "prompt": "Redraw the FIRST reference as a production HD background for a 2D cartoon platform game. Preserve its exact 8:5 composition, all major silhouettes, object positions, horizon, negative space and colors. The second reference is STYLE ONLY: crisp ink contours and clean cel shading consistent with that hero, do not insert characters from it. Replace coarse pixel steps with confident sharp hand-painted curves and controlled texture. No blur, no pixel-art rendering, no labels, new objects, borders or UI. Keep intentionally black silhouettes and bottom negative space. Opaque full-canvas image. Dense purple enchanted forest, warm dark trunks, orange red overhead leaves and reddish vines. Preserve original palette and exact arrangement.",
+    "referenced_image_paths": [
+      "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v10/references/scene-5.png",
+      "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v1/raw/hero-00-15.png"
+    ],
+    "transparent_background": false
+  },
+  {
+    "name": "scene-6",
+    "prompt": "Redraw the FIRST reference as a production HD background for a 2D cartoon platform game. Preserve its exact 8:5 composition, all major silhouettes, object positions, horizon, negative space and colors. The second reference is STYLE ONLY: crisp ink contours and clean cel shading consistent with that hero, do not insert characters from it. Replace coarse pixel steps with confident sharp hand-painted curves and controlled texture. No blur, no pixel-art rendering, no labels, new objects, borders or UI. Keep intentionally black silhouettes and bottom negative space. Opaque full-canvas image. Dense layered lavender pink forest, warm brown trunks and green canopy/vines. Exact source framing and palette.",
+    "referenced_image_paths": [
+      "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v10/references/scene-6.png",
+      "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v1/raw/hero-00-15.png"
+    ],
+    "transparent_background": false
+  },
+  {
+    "name": "scene-7",
+    "prompt": "Redraw the FIRST reference as a production HD background for a 2D cartoon platform game. Preserve its exact 8:5 composition, all major silhouettes, object positions, horizon, negative space and colors. The second reference is STYLE ONLY: crisp ink contours and clean cel shading consistent with that hero, do not insert characters from it. Replace coarse pixel steps with confident sharp hand-painted curves and controlled texture. No blur, no pixel-art rendering, no labels, new objects, borders or UI. Keep intentionally black silhouettes and bottom negative space. Opaque full-canvas image. Snowy mountainous valley, icy blue distant peaks and dark sharp foreground rocks capped in white, pale blue sky, tiny bare trees at right. Preserve all source slopes.",
+    "referenced_image_paths": [
+      "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v10/references/scene-7.png",
+      "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v1/raw/hero-00-15.png"
+    ],
+    "transparent_background": false
+  },
+  {
+    "name": "scene-8",
+    "prompt": "Redraw the FIRST reference as a production HD background for a 2D cartoon platform game. Preserve its exact 8:5 composition, all major silhouettes, object positions, horizon, negative space and colors. The second reference is STYLE ONLY: crisp ink contours and clean cel shading consistent with that hero, do not insert characters from it. Replace coarse pixel steps with confident sharp hand-painted curves and controlled texture. No blur, no pixel-art rendering, no labels, new objects, borders or UI. Keep intentionally black silhouettes and bottom negative space. Opaque full-canvas image. Dark cave with jagged teal turquoise crystal ridges, pitch-black negative space. Preserve sparse silhouettes and every major vertical ridge.",
+    "referenced_image_paths": [
+      "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v10/references/scene-8.png",
+      "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v1/raw/hero-00-15.png"
+    ],
+    "transparent_background": false
+  },
+  {
+    "name": "scene-9",
+    "prompt": "Redraw the FIRST reference as a production HD background for a 2D cartoon platform game. Preserve its exact 8:5 composition, all major silhouettes, object positions, horizon, negative space and colors. The second reference is STYLE ONLY: crisp ink contours and clean cel shading consistent with that hero, do not insert characters from it. Replace coarse pixel steps with confident sharp hand-painted curves and controlled texture. No blur, no pixel-art rendering, no labels, new objects, borders or UI. Keep intentionally black silhouettes and bottom negative space. Opaque full-canvas image. Dark cave with jagged olive/emerald green crystal ridges, pitch-black negative space. Same source silhouettes and composition.",
+    "referenced_image_paths": [
+      "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v10/references/scene-9.png",
+      "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v1/raw/hero-00-15.png"
+    ],
+    "transparent_background": false
+  },
+  {
+    "name": "scene-B",
+    "prompt": "Redraw the FIRST reference as a production HD background for a 2D cartoon platform game. Preserve its exact 8:5 composition, all major silhouettes, object positions, horizon, negative space and colors. The second reference is STYLE ONLY: crisp ink contours and clean cel shading consistent with that hero, do not insert characters from it. Replace coarse pixel steps with confident sharp hand-painted curves and controlled texture. No blur, no pixel-art rendering, no labels, new objects, borders or UI. Keep intentionally black silhouettes and bottom negative space. Opaque full-canvas image. A comical golden roasted pig on a food platter, facing right/front with large eyes, ears raised, round snout with two nostrils and apple in mouth. A small FOOD placard stuck in its back. Garnish vegetables and fruit including sliced radishes/lemons and green scallions across bottom. Black silhouettes of bottles, fork and cookware behind, sky-blue flat background, black strip at very bottom. Preserve pig's friendly funny expression, exact position and all platter contents. Only original FOOD word allowed; no new lettering. This is still-life food illustration, NOT moving enemy.",
+    "referenced_image_paths": [
+      "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v10/references/scene-B.png",
+      "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v1/raw/hero-00-15.png"
+    ],
+    "transparent_background": false
+  },
+  {
+    "name": "scene-E",
+    "prompt": "Redraw the FIRST reference as a production HD background for a 2D cartoon platform game. Preserve its exact 8:5 composition, all major silhouettes, object positions, horizon, negative space and colors. The second reference is STYLE ONLY: crisp ink contours and clean cel shading consistent with that hero, do not insert characters from it. Replace coarse pixel steps with confident sharp hand-painted curves and controlled texture. No blur, no pixel-art rendering, no labels, new objects, borders or UI. Keep intentionally black silhouettes and bottom negative space. Opaque full-canvas image. Jagged warm brown prehistoric mountains against blue sky. Across the bottom: a continuous field of curved pale dinosaur rib cages, long pale bones, skulls and sparse small green palms on black ground. Preserve arrangement and scale of skeletons.",
+    "referenced_image_paths": [
+      "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v10/references/scene-E.png",
+      "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v1/raw/hero-00-15.png"
+    ],
+    "transparent_background": false
+  },
+  {
+    "name": "banquet-platform",
+    "prompt": "Draw a horizontal seamless 3:1 texture strip for a cartoon food-platform game. First reference shows a continuous sandwich platform: warm golden brown bread crust top, sesame crumbs and toasted facets; beneath it vivid hanging green lettuce leaves and thin golden cheese strands. Second reference is style only for crisp black ink contours and warm cel shading, no characters. Single continuous strip, NOT separate rolls, NO grid or tiles or frames. Full width filled with horizontally repeating bread and lettuce, motifs at left and right naturally connect. Broad bread at top half, green lettuce draping through lower half; soft shape details crisp, not blurry. Opaque dark crevice background, no text. Keep the same proportions and source food identity. New detail and smooth drawn curves, not upscaled pixel blocks.",
+    "referenced_image_paths": [
+      "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v10/references/banquet-platform.png",
+      "/Users/misko/Documents/ChatGPT/Prehistorik/web/art/hd-v1/raw/hero-00-15.png"
+    ],
+    "transparent_background": false
+  },
+  {
+    "name": "cherries",
+    "prompt": "Create a single polished cartoon game collectible of TWO glossy ripe red cherries joined by two curved green stems and one small green leaf, fully isolated on TRUE TRANSPARENT background. Match the crisp dark ink outlines, red-orange shine and clean cel shading of established Prehistorik HD collectibles; do not draw any character, face, ground, glow, shadow, letters or frame. Complete tiny rounded silhouettes with generous transparent margin. Pair is 8:7 wide:tall proportion. Distinct dark red shaded undersides and bright cream specular glints, visually legible at small size. No pixel art and no soft focus.",
+    "transparent_background": true
+  }
+]

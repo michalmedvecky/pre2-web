@@ -393,6 +393,110 @@
       "height": 512,
       "sha256": "699c759ed0d302a610b4802242610b86c3553f5ef23413716132b38b33607a30",
       "kind": "world-decor"
+    },
+    {
+      "id": "v10-scene-2",
+      "file": "v10-scene-2.png",
+      "width": 1280,
+      "height": 800,
+      "sha256": "d875d8cc7f630346a3ca2e121c5baf24d7403444f6a8ff99dd0dd9b38b64f8d7",
+      "kind": "background"
+    },
+    {
+      "id": "v10-scene-3",
+      "file": "v10-scene-3.png",
+      "width": 1280,
+      "height": 800,
+      "sha256": "104843921161ac3ee73f54b09f2e7557ef5a78c402f165379ddd63df0a24bc49",
+      "kind": "background"
+    },
+    {
+      "id": "v10-scene-4",
+      "file": "v10-scene-4.png",
+      "width": 1280,
+      "height": 800,
+      "sha256": "e0b6ec1551b07590c6eab0d2df8ca438ba2e0e1bd7c269bd93821eea8bb01b16",
+      "kind": "background"
+    },
+    {
+      "id": "v10-scene-5",
+      "file": "v10-scene-5.png",
+      "width": 1280,
+      "height": 800,
+      "sha256": "f067f1135fde53e9e831997dc7cb56373a7598c28374e619d950831a9d2b0c4d",
+      "kind": "background"
+    },
+    {
+      "id": "v10-scene-6",
+      "file": "v10-scene-6.png",
+      "width": 1280,
+      "height": 800,
+      "sha256": "0e1e2ea1ed9b7398042963e802c52079d8b8208b8a2cd3167328241beab28ee9",
+      "kind": "background"
+    },
+    {
+      "id": "v10-scene-7",
+      "file": "v10-scene-7.png",
+      "width": 1280,
+      "height": 800,
+      "sha256": "d5d09b885a2bc52524f6c2d583b50acff8596194f54d3302dce0d1ec42b4c9a0",
+      "kind": "background"
+    },
+    {
+      "id": "v10-scene-8",
+      "file": "v10-scene-8.png",
+      "width": 1280,
+      "height": 800,
+      "sha256": "28d3b6bf74f3a8072dff1dba90a6450f387ae069fd060e2d150c47e0daebf8af",
+      "kind": "background"
+    },
+    {
+      "id": "v10-scene-9",
+      "file": "v10-scene-9.png",
+      "width": 1280,
+      "height": 800,
+      "sha256": "a594425f3aca1ac2e0e6eba01c82c8779d5576ba4fcc4fd9bc0fe3d309ae1d32",
+      "kind": "background"
+    },
+    {
+      "id": "v10-scene-A",
+      "file": "v10-scene-A.png",
+      "width": 1280,
+      "height": 800,
+      "sha256": "34750d4fcd93fc8a3c2f1fa3620133b788db1f8af3edd2efefa4ed108868580e",
+      "kind": "background"
+    },
+    {
+      "id": "v10-scene-B",
+      "file": "v10-scene-B.png",
+      "width": 1280,
+      "height": 800,
+      "sha256": "0dbabba2a40d8a72ee2762dd56af6c75ffd8a0d9b14aea79a94e03b1846d6b07",
+      "kind": "background"
+    },
+    {
+      "id": "v10-scene-E",
+      "file": "v10-scene-E.png",
+      "width": 1280,
+      "height": 800,
+      "sha256": "61bfb2d57c398cb3a46896bd7e9bb474c8c15af4bf24c3f19a67db89377716e9",
+      "kind": "background"
+    },
+    {
+      "id": "v10-cherries",
+      "file": "v10-cherries.png",
+      "width": 96,
+      "height": 84,
+      "sha256": "08ebac6cab9c81a13e3459d5c9c40307ef4ebf337db8e98b6646b28cbd667139",
+      "kind": "sprite"
+    },
+    {
+      "id": "v10-banquet",
+      "file": "v10-banquet.png",
+      "width": 384,
+      "height": 128,
+      "sha256": "9acf66f91882d859c99c44dc536a4c02604be428dcf8cb7aa2c8e5cac5111480",
+      "kind": "world-material"
     }
   ],
   "sprites": {
@@ -2420,9 +2524,9 @@
       "sourceCell": 2
     },
     "136": {
-      "atlas": "v2-food-a",
+      "atlas": "v10-cherries",
       "rect": [
-        768,
+        0,
         0,
         96,
         84
@@ -10526,6 +10630,201 @@
       "name": "BACK0",
       "width": 320,
       "height": 200
+    },
+    "2:BACK0": {
+      "atlas": "v10-scene-2",
+      "rect": [
+        0,
+        0,
+        1280,
+        800
+      ],
+      "level": "2",
+      "name": "BACK0",
+      "width": 320,
+      "height": 200
+    },
+    "3:BACK0": {
+      "atlas": "v10-scene-3",
+      "rect": [
+        0,
+        0,
+        1280,
+        800
+      ],
+      "level": "3",
+      "name": "BACK0",
+      "width": 320,
+      "height": 200
+    },
+    "4:BACK1": {
+      "atlas": "v10-scene-4",
+      "rect": [
+        0,
+        0,
+        1280,
+        800
+      ],
+      "level": "4",
+      "name": "BACK1",
+      "width": 320,
+      "height": 200
+    },
+    "5:BACK1": {
+      "atlas": "v10-scene-5",
+      "rect": [
+        0,
+        0,
+        1280,
+        800
+      ],
+      "level": "5",
+      "name": "BACK1",
+      "width": 320,
+      "height": 200
+    },
+    "6:BACK1": {
+      "atlas": "v10-scene-6",
+      "rect": [
+        0,
+        0,
+        1280,
+        800
+      ],
+      "level": "6",
+      "name": "BACK1",
+      "width": 320,
+      "height": 200
+    },
+    "7:BACK2": {
+      "atlas": "v10-scene-7",
+      "rect": [
+        0,
+        0,
+        1280,
+        800
+      ],
+      "level": "7",
+      "name": "BACK2",
+      "width": 320,
+      "height": 200
+    },
+    "G:BACK2": {
+      "atlas": "v10-scene-7",
+      "rect": [
+        0,
+        0,
+        1280,
+        800
+      ],
+      "level": "G",
+      "name": "BACK2",
+      "width": 320,
+      "height": 200
+    },
+    "8:BACK3": {
+      "atlas": "v10-scene-8",
+      "rect": [
+        0,
+        0,
+        1280,
+        800
+      ],
+      "level": "8",
+      "name": "BACK3",
+      "width": 320,
+      "height": 200
+    },
+    "9:BACK3": {
+      "atlas": "v10-scene-9",
+      "rect": [
+        0,
+        0,
+        1280,
+        800
+      ],
+      "level": "9",
+      "name": "BACK3",
+      "width": 320,
+      "height": 200
+    },
+    "A:BACK0": {
+      "atlas": "v10-scene-A",
+      "rect": [
+        0,
+        0,
+        1280,
+        800
+      ],
+      "level": "A",
+      "name": "BACK0",
+      "width": 320,
+      "height": 200
+    },
+    "F:BACK0": {
+      "atlas": "v10-scene-A",
+      "rect": [
+        0,
+        0,
+        1280,
+        800
+      ],
+      "level": "F",
+      "name": "BACK0",
+      "width": 320,
+      "height": 200
+    },
+    "B:BACK4": {
+      "atlas": "v10-scene-B",
+      "rect": [
+        0,
+        0,
+        1280,
+        800
+      ],
+      "level": "B",
+      "name": "BACK4",
+      "width": 320,
+      "height": 200
+    },
+    "C:BACK4": {
+      "atlas": "v10-scene-B",
+      "rect": [
+        0,
+        0,
+        1280,
+        800
+      ],
+      "level": "C",
+      "name": "BACK4",
+      "width": 320,
+      "height": 200
+    },
+    "D:BACK4": {
+      "atlas": "v10-scene-B",
+      "rect": [
+        0,
+        0,
+        1280,
+        800
+      ],
+      "level": "D",
+      "name": "BACK4",
+      "width": 320,
+      "height": 200
+    },
+    "E:BACK5": {
+      "atlas": "v10-scene-E",
+      "rect": [
+        0,
+        0,
+        1280,
+        800
+      ],
+      "level": "E",
+      "name": "BACK5",
+      "width": 320,
+      "height": 200
     }
   },
   "extensions": {
@@ -10931,6 +11230,35 @@
         "dist/assets/level-1.map": "df435eb287a0bd3fc8f2a592faa723065c5552157e0e5da909061ef4c1d51b64",
         "dist/assets/union.idx": "c59810d54d3dab5fbe9c820003b89937bd3872ea792c4ac2461961ddc8e8f09a",
         "dist/assets/tiles-1.idx": "3eae9d31c984600bf665645ffbc9ba6432c365603e46eac40245a8e5af6a4146"
+      }
+    },
+    "scenesV10": {
+      "levels": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ],
+      "sourceHashes": {
+        "dist/assets/background-BACK0.idx": "bf34654123093c8d0c9ee906ec71de5df2852369b946f6d03901ec5778c2656b",
+        "dist/assets/background-BACK1.idx": "f64ddf1c1acbe4d16e308789789985aa18ca0f4b562063ca2550ae84d4e1f66e",
+        "dist/assets/background-BACK2.idx": "0f41975b4ad8a46342b19e0f42237c12acd2325c5e1525cd3022d656188b8722",
+        "dist/assets/background-BACK3.idx": "21c677e941df5ca029c5579712936d8bd6fcd95c2a5de9618d7d0dd2a2a98d93",
+        "dist/assets/background-BACK4.idx": "a9ecdcc59fb5f208f1f43ef86f0f83649abd49d7b6144e35d64ba9e3fcd8f0a9",
+        "dist/assets/background-BACK5.idx": "2385dc71ffee3fe80b4e441f28b72ea5277452a674908fb3b8cddfd656d945e4",
+        "dist/assets/game.json": "36e0bf5e4b9348e25093402e1d814ff448662aa661146fa8cbb9260001973fcd"
       }
     }
   },
@@ -14739,5 +15067,21 @@
       "width": 48,
       "height": 24
     }
+  },
+  "banquetMaterial": {
+    "atlas": "v10-banquet",
+    "rect": [
+      0,
+      0,
+      384,
+      128
+    ],
+    "width": 96,
+    "height": 32,
+    "levels": [
+      "B",
+      "C",
+      "D"
+    ]
   }
 }

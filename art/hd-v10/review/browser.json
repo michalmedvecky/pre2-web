@@ -1,0 +1,153 @@
+{
+  "ok": true,
+  "scenes": [
+    {
+      "id": "1",
+      "native": 1409887170,
+      "expected": 1409887170,
+      "state": "3e6792d7",
+      "after": "3e6792d7",
+      "background": true
+    },
+    {
+      "id": "2",
+      "native": 3808239329,
+      "expected": 3808239329,
+      "state": "db91e811",
+      "after": "db91e811",
+      "background": true
+    },
+    {
+      "id": "3",
+      "native": 2894878142,
+      "expected": 2894878142,
+      "state": "a5e5ac2e",
+      "after": "a5e5ac2e",
+      "background": true
+    },
+    {
+      "id": "4",
+      "native": 1054450380,
+      "expected": 1054450380,
+      "state": "c6fbe979",
+      "after": "c6fbe979",
+      "background": true
+    },
+    {
+      "id": "5",
+      "native": 3792923341,
+      "expected": 3792923341,
+      "state": "f7838821",
+      "after": "f7838821",
+      "background": true
+    },
+    {
+      "id": "6",
+      "native": 265721578,
+      "expected": 265721578,
+      "state": "2dab0ffd",
+      "after": "2dab0ffd",
+      "background": true
+    },
+    {
+      "id": "7",
+      "native": 2676356585,
+      "expected": 2676356585,
+      "state": "999f1bc4",
+      "after": "999f1bc4",
+      "background": true
+    },
+    {
+      "id": "8",
+      "native": 775074641,
+      "expected": 775074641,
+      "state": "e9d70715",
+      "after": "e9d70715",
+      "background": true
+    },
+    {
+      "id": "9",
+      "native": 4036449682,
+      "expected": 4036449682,
+      "state": "e7c3e452",
+      "after": "e7c3e452",
+      "background": true
+    },
+    {
+      "id": "A",
+      "native": 91176651,
+      "expected": 91176651,
+      "state": "2ece2c12",
+      "after": "2ece2c12",
+      "background": true
+    },
+    {
+      "id": "B",
+      "native": 105512656,
+      "expected": 105512656,
+      "state": "39627117",
+      "after": "39627117",
+      "background": true
+    },
+    {
+      "id": "C",
+      "native": 977378648,
+      "expected": 977378648,
+      "state": "d7c05149",
+      "after": "d7c05149",
+      "background": true
+    },
+    {
+      "id": "D",
+      "native": 60627314,
+      "expected": 60627314,
+      "state": "0a80e911",
+      "after": "0a80e911",
+      "background": true
+    },
+    {
+      "id": "E",
+      "native": 1607646307,
+      "expected": 1607646307,
+      "state": "7098401a",
+      "after": "7098401a",
+      "background": true
+    },
+    {
+      "id": "F",
+      "native": 518307672,
+      "expected": 518307672,
+      "state": "58377a08",
+      "after": "58377a08",
+      "background": true
+    },
+    {
+      "id": "G",
+      "native": 2676356585,
+      "expected": 2676356585,
+      "state": "2241d879",
+      "after": "2241d879",
+      "background": true
+    }
+  ],
+  "replay": {
+    "renders": 2232,
+    "fractional": 2231,
+    "slopes": 364,
+    "transition": "complete",
+    "next": 4,
+    "state": "ab0d73b1"
+  },
+  "cameraCheck": {
+    "baseline": {
+      "native": 2368736223,
+      "world": 2837995341,
+      "hud": 3594952292
+    },
+    "shifted": {
+      "native": 2368736223,
+      "world": 2247198919,
+      "hud": 3594952292
+    }
+  }
+}
