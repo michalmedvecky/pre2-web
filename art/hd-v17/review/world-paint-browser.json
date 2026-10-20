@@ -1,0 +1,144 @@
+{
+  "samples": [
+    {
+      "id": "5-wood",
+      "level": 4,
+      "x": 0,
+      "y": 608,
+      "nativeParity": true,
+      "simulationParity": true,
+      "cacheStable": true
+    },
+    {
+      "id": "6-wood",
+      "level": 5,
+      "x": 0,
+      "y": 1808,
+      "nativeParity": true,
+      "simulationParity": true,
+      "cacheStable": true
+    },
+    {
+      "id": "6-boss",
+      "level": 5,
+      "x": 736,
+      "y": 1840,
+      "boss": true,
+      "nativeParity": true,
+      "simulationParity": true,
+      "cacheStable": true
+    },
+    {
+      "id": "8-cavities",
+      "level": 7,
+      "x": 1888,
+      "y": 512,
+      "nativeParity": true,
+      "simulationParity": true,
+      "cacheStable": true
+    },
+    {
+      "id": "9-diagonal",
+      "level": 8,
+      "x": 352,
+      "y": 704,
+      "nativeParity": true,
+      "simulationParity": true,
+      "cacheStable": true
+    },
+    {
+      "id": "F-glyphs",
+      "level": 14,
+      "x": 0,
+      "y": 2592,
+      "nativeParity": true,
+      "simulationParity": true,
+      "cacheStable": true
+    },
+    {
+      "id": "A-pose-0",
+      "level": 9,
+      "x": 0,
+      "y": 0,
+      "pose": 0,
+      "nativeParity": true,
+      "simulationParity": true,
+      "cacheStable": true
+    },
+    {
+      "id": "A-pose-1",
+      "level": 9,
+      "x": 0,
+      "y": 0,
+      "pose": 1,
+      "nativeParity": true,
+      "simulationParity": true,
+      "cacheStable": true
+    },
+    {
+      "id": "A-pose-2",
+      "level": 9,
+      "x": 0,
+      "y": 0,
+      "pose": 2,
+      "nativeParity": true,
+      "simulationParity": true,
+      "cacheStable": true
+    },
+    {
+      "id": "A-pose-3",
+      "level": 9,
+      "x": 0,
+      "y": 0,
+      "pose": 3,
+      "nativeParity": true,
+      "simulationParity": true,
+      "cacheStable": true
+    },
+    {
+      "id": "A-pose-4",
+      "level": 9,
+      "x": 0,
+      "y": 0,
+      "pose": 4,
+      "nativeParity": true,
+      "simulationParity": true,
+      "cacheStable": true
+    },
+    {
+      "id": "A-pose-5",
+      "level": 9,
+      "x": 0,
+      "y": 0,
+      "pose": 5,
+      "nativeParity": true,
+      "simulationParity": true,
+      "cacheStable": true
+    }
+  ],
+  "cavities": [
+    {
+      "stage": "8",
+      "x": 1784,
+      "y": 8,
+      "pixel": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "stage": "9",
+      "x": 1208,
+      "y": 40,
+      "pixel": [
+        0,
+        0,
+        0,
+        255
+      ]
+    }
+  ],
+  "errors": []
+}

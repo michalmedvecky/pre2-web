@@ -905,6 +905,54 @@
       "height": 512,
       "sha256": "b8202e8e65848ecdcd88a9aa964ccad69e725fb0e9d9b7e2c42bf694f970e59a",
       "kind": "terrain-redraw"
+    },
+    {
+      "id": "v17-wood",
+      "file": "v17-wood.png",
+      "width": 1024,
+      "height": 1024,
+      "kind": "continuous-repair",
+      "sha256": "a33144281bc77428b7751e972b03c0b1d888e2b9413439bc53406c63eb270637"
+    },
+    {
+      "id": "v17-autumn-wood",
+      "file": "v17-autumn-wood.png",
+      "width": 1024,
+      "height": 1024,
+      "kind": "continuous-repair",
+      "sha256": "eee716be359535daee9e9eb73607620adb791c7c07a8bc5652560dea5966ef5b"
+    },
+    {
+      "id": "v17-purple-stone",
+      "file": "v17-purple-stone.png",
+      "width": 1024,
+      "height": 1024,
+      "kind": "continuous-repair",
+      "sha256": "36c6311574ae81b8d7e7b264f5105029fe1d72e382ce7468c68ea0bdf21f0bc8"
+    },
+    {
+      "id": "v17-green-stone",
+      "file": "v17-green-stone.png",
+      "width": 1024,
+      "height": 1024,
+      "kind": "continuous-repair",
+      "sha256": "dd337658620fbe6c61cc1eb10c92c49b28e385e4d3c2fe593ff185dd0dca9d97"
+    },
+    {
+      "id": "v17-tree-body",
+      "file": "v17-tree-body.png",
+      "width": 384,
+      "height": 576,
+      "kind": "continuous-repair",
+      "sha256": "c948e4e83f0461d68c2bcb0cec51677416a871ab8a3d29312c3ebfd0f85ad95c"
+    },
+    {
+      "id": "v17-final-boss-complete",
+      "file": "v17-final-boss-complete.png",
+      "width": 1152,
+      "height": 1408,
+      "kind": "continuous-repair",
+      "sha256": "3d3d436f1d2bd6bb2bb80e9d293ac358cfe2a78536f3f1a77095105741202320"
     }
   ],
   "sprites": {
@@ -64235,70 +64283,138 @@
   },
   "bossPoses": [
     {
-      "atlas": "v16-boss-poses",
+      "atlas": "v17-final-boss-complete",
       "rect": [
         0,
         0,
         384,
-        448
+        704
       ],
       "width": 96,
-      "height": 112
+      "height": 176
     },
     {
-      "atlas": "v16-boss-poses",
+      "atlas": "v17-final-boss-complete",
       "rect": [
         384,
         0,
         384,
-        448
+        704
       ],
       "width": 96,
-      "height": 112
+      "height": 176
     },
     {
-      "atlas": "v16-boss-poses",
+      "atlas": "v17-final-boss-complete",
       "rect": [
         768,
         0,
         384,
-        448
+        704
       ],
       "width": 96,
-      "height": 112
+      "height": 176
     },
     {
-      "atlas": "v16-boss-poses",
+      "atlas": "v17-final-boss-complete",
       "rect": [
         0,
-        448,
+        704,
         384,
-        448
+        704
       ],
       "width": 96,
-      "height": 112
+      "height": 176
     },
     {
-      "atlas": "v16-boss-poses",
+      "atlas": "v17-final-boss-complete",
       "rect": [
         384,
-        448,
+        704,
         384,
-        448
+        704
       ],
       "width": 96,
-      "height": 112
+      "height": 176
     },
     {
-      "atlas": "v16-boss-poses",
+      "atlas": "v17-final-boss-complete",
       "rect": [
         768,
-        448,
+        704,
         384,
-        448
+        704
       ],
       "width": 96,
-      "height": 112
+      "height": 176
     }
-  ]
+  ],
+  "worldPaint": {
+    "materials": {
+      "wood": {
+        "atlas": "v17-wood",
+        "rect": [
+          0,
+          0,
+          1024,
+          1024
+        ],
+        "width": 256,
+        "height": 256
+      },
+      "autumn-wood": {
+        "atlas": "v17-autumn-wood",
+        "rect": [
+          0,
+          0,
+          1024,
+          1024
+        ],
+        "width": 256,
+        "height": 256
+      },
+      "purple-stone": {
+        "atlas": "v17-purple-stone",
+        "rect": [
+          0,
+          0,
+          1024,
+          1024
+        ],
+        "width": 256,
+        "height": 256
+      },
+      "green-stone": {
+        "atlas": "v17-green-stone",
+        "rect": [
+          0,
+          0,
+          1024,
+          1024
+        ],
+        "width": 256,
+        "height": 256
+      }
+    },
+    "objects": {
+      "tree": {
+        "atlas": "v17-tree-body",
+        "rect": [
+          0,
+          0,
+          384,
+          576
+        ],
+        "width": 96,
+        "height": 144,
+        "level": "6",
+        "x": 960,
+        "y": 1872
+      }
+    },
+    "transparentCavities": [
+      "8"
+    ],
+    "completeFinalBoss": true
+  }
 }

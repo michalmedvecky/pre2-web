@@ -1,3 +1,4 @@
+import{worldMaterial,mirrorCoordinate}from'./world-paint.js';
 import{PaintedTerrain}from'./painted-terrain.js';
 import{TerrainLayer}from'./terrain-layer.js';
 import{terrainShadowRoles,preserveCaveShadows,shadowRoleForMaterial}from'./terrain-semantics.js';
@@ -13,7 +14,7 @@ export class HDAssets {
   const response=await fetch(new URL('manifest.json',base));if(!response.ok)throw Error('HD manifest unavailable');
   const manifest=await response.json();if(manifest.version!==1||manifest.scale!==4||!manifest.sprites||!Array.isArray(manifest.atlases))throw Error('Unsupported HD manifest');
   const images=new Map();await Promise.all(manifest.atlases.map(async a=>{const image=new Image();image.src=new URL(a.file,base);await image.decode();if(image.naturalWidth!==a.width||image.naturalHeight!==a.height)throw Error('HD atlas extent mismatch');images.set(a.id,image);}));
-  const records=[...Object.values(manifest.sprites),...Object.values(manifest.tiles||{}),...Object.values(manifest.paintTiles||{}),...Object.values(manifest.worldMaterials||{}),...Object.values(manifest.worldDecor||{}),...Object.values(manifest.backgrounds||{}),...Object.values(manifest.bonusDecor||{}),...Object.values(manifest.screens||{}),...Object.values(manifest.bossPoses||{}),...(manifest.worldMap?[manifest.worldMap]:[]),...(manifest.banquetMaterial?[manifest.banquetMaterial]:[])];
+  const records=[...Object.values(manifest.sprites),...Object.values(manifest.tiles||{}),...Object.values(manifest.paintTiles||{}),...Object.values(manifest.worldMaterials||{}),...Object.values(manifest.worldDecor||{}),...Object.values(manifest.backgrounds||{}),...Object.values(manifest.bonusDecor||{}),...Object.values(manifest.screens||{}),...Object.values(manifest.bossPoses||{}),...Object.values(manifest.worldPaint?.materials||{}),...Object.values(manifest.worldPaint?.objects||{}),...(manifest.worldMap?[manifest.worldMap]:[]),...(manifest.banquetMaterial?[manifest.banquetMaterial]:[])];
   for(const s of records){const a=manifest.atlases.find(a=>a.id===s.atlas),r=s.rect;if(!a||!r||r.length!==4||r.some(v=>!Number.isFinite(v)||v<0)||r[2]===0||r[3]===0||r[0]+r[2]>a.width||r[1]+r[3]>a.height)throw Error('Invalid HD atlas record');}
 
   return {manifest,images};
@@ -43,6 +44,8 @@ export class HDCompositor {
   if(level==='1'&&bank==='front'&&id===20&&source&&this.pack.manifest.worldMaterials&&Number.isFinite(worldX)){
    const wall=this.materialImage(this.pack.manifest.worldMaterials.wall),roots=this.materialImage(this.pack.manifest.worldMaterials.roots),paint=continuousSampler({textures:[null],kinds:['wall'],columns:1,originX:worldX,originY:worldY,wall,roots}),rgba=connectedTerrain(source,16,16,this.palette,paint,{paintColor:true}),image=document.createElement('canvas');image.width=image.height=64;image.getContext('2d').putImageData(new ImageData(rgba,64,64),0,0);this.clipped(176,c=>c.drawImage(image,Math.round(x)*4,Math.round(y)*4));return true;
   }
+  if(bank==='front'&&this.pack.manifest.worldPaint&&Number.isFinite(worldX)){
+   const kind=worldMaterial(level,source,id),record=this.pack.manifest.worldPaint.materials[kind];if(record){const material=this.materialImage(record),paint=(x,y)=>{const p=(mirrorCoordinate(worldY*4+y,material.height)*material.width+mirrorCoordinate(worldX*4+x,material.width))*4;return[material.data[p],material.data[p+1],material.data[p+2],1];},rgba=connectedTerrain(source,16,16,this.palette,paint,{paintColor:true}),image=document.createElement('canvas');image.width=image.height=64;image.getContext('2d').putImageData(new ImageData(rgba,64,64),0,0);this.clipped(176,c=>c.drawImage(image,Math.round(x)*4,Math.round(y)*4));return true;}}
   return this.atlas(this.pack.manifest.tiles?.[level+':'+bank+':'+id],Math.round(x),Math.round(y));}
  screen(name,fade=1){const record=this.pack.manifest.screens?.[name];if(!record)return false;this.ctx.save();this.ctx.globalAlpha=fade;this.atlas(record,0,0,200);this.ctx.restore();return true;}
  map(x){return this.atlas(this.pack.manifest.worldMap,x,0,200);}

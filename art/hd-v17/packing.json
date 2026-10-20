@@ -1,0 +1,32 @@
+[
+  {
+    "id": "v17-wood",
+    "rawSHA256": "0bafe32975843a7f107125cc3f418c287ca1349e8b4d770a399c0736a77f53b0",
+    "sha256": "a33144281bc77428b7751e972b03c0b1d888e2b9413439bc53406c63eb270637"
+  },
+  {
+    "id": "v17-autumn-wood",
+    "rawSHA256": "7e8e3e03544c979122847e84cb1661024ac3a80c97eccb1d9b8e900c3a064497",
+    "sha256": "eee716be359535daee9e9eb73607620adb791c7c07a8bc5652560dea5966ef5b"
+  },
+  {
+    "id": "v17-purple-stone",
+    "rawSHA256": "5a413f11269daa9b816a36b99bfb51b292a5df2c06f9df7b1edf666370650e02",
+    "sha256": "36c6311574ae81b8d7e7b264f5105029fe1d72e382ce7468c68ea0bdf21f0bc8"
+  },
+  {
+    "id": "v17-green-stone",
+    "rawSHA256": "d7ff4a030676f91b099fbc926e5568d5dfef25d18e0c962dfb01c3ce7702cba1",
+    "sha256": "dd337658620fbe6c61cc1eb10c92c49b28e385e4d3c2fe593ff185dd0dca9d97"
+  },
+  {
+    "id": "v17-tree-body",
+    "rawSHA256": "2403b7cbdbf7db1e7789dc2c0a17c5fc94724f851234f37442b897f59112e9b8",
+    "sha256": "c948e4e83f0461d68c2bcb0cec51677416a871ab8a3d29312c3ebfd0f85ad95c"
+  },
+  {
+    "id": "v17-final-boss-complete",
+    "rawSHA256": "0b54636ba23e875830b3c57a8d5aacf07c5e25a0ea62849800b1784b753f2e24",
+    "sha256": "3d3d436f1d2bd6bb2bb80e9d293ac358cfe2a78536f3f1a77095105741202320"
+  }
+]
