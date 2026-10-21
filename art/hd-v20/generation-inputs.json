@@ -1,0 +1,17 @@
+[
+  {
+    "prompt": "prompts/cave-first.txt",
+    "reference": "references/atlas-E.png",
+    "referenceSHA256": "8d9e521fc1057abd7c6d7475c5c6c4e8a2547fb307ce0258dfb7ccc862e4440a"
+  },
+  {
+    "prompt": "prompts/cave-fancy.txt",
+    "reference": "references/cave-user-edit-target.png",
+    "referenceSHA256": "0c871421c4a75f8d06e5963360a52ef88836c2a528ae55dfe9a883759b9eda9d"
+  },
+  {
+    "prompt": "prompts/gate9.txt",
+    "reference": "references/gate-9-native.png",
+    "referenceSHA256": "dd93d97ee4acb8e257831ad24600bfffa1a9e4efd5d6a7ed0c6e4c3143d5dd39"
+  }
+]

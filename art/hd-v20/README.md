@@ -29,4 +29,8 @@ Built-in ImageGen produced the two consumed drawings. Exact prompts are in `prom
 - [x] Separate rooted ground, horizontal beams, trunks and carved masonry.
 - [x] Inspect whole browser scenes and the previous stage6 fix.
 - [x] Verify all tests, worker/native parity, scrolling and originals.
-- [ ] Publish multiarch image and pin its verified digest.
+- [x] Publish multiarch image and pin its verified digest.
+
+## Published release1.2.4
+
+Game commit`ab008aa08a8e64cff1540e559f6de9500c2c94e0`; successful[build39570888223](https://github.com/michalmedvecky/pre2-web/actions/runs/39570888223). Verified linux/amd64 andlinux/arm64 image revision labels; index digest`sha256:7dec8867cc4bc3f512bf17baa0556a32983e1f9ab468cda94aa90eaa43bafedf`. The subsequent release metadata/tag commit carries this verified pin in the Kubernetes manifest. No cluster rollout was performed.
