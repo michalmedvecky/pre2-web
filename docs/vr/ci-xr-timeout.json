@@ -1,0 +1,115 @@
+{
+  "run": "https://github.com/michalmedvecky/pre2-web/actions/runs/39623600462",
+  "commit": "bdfb55a3cfb443ffcaeaeefd6beed7e050d59c94",
+  "artifact": "quest-vr-xr-test",
+  "artifact_sha256": "2ad56fc16a5bdb3c11ba1a6a9225fd53c82068d4fc02e3447427329b2545ec6b",
+  "failure": {
+    "stage": "club",
+    "message": "page.waitForFunction: Timeout 60000ms exceeded.",
+    "stack": "page.waitForFunction: Timeout 60000ms exceeded.\n    at /home/runner/work/pre2-web/pre2-web/scripts/verify-vr-xr-browser.mjs:16:78",
+    "diagnostics": {
+      "state": {
+        "player": {
+          "x": 10.932499999999935,
+          "y": 0,
+          "z": 0.19999999999999993,
+          "vy": 0,
+          "grounded": true,
+          "health": 3,
+          "invulnerable": 0
+        },
+        "checkpoint": {
+          "x": 1.3125,
+          "y": 0,
+          "z": 0
+        },
+        "bear": {
+          "x": 12.265777777777803,
+          "y": 0,
+          "z": 0,
+          "hp": 15,
+          "alive": true,
+          "face": -1,
+          "hurt": 0,
+          "stoleHeart": false,
+          "phase": 7.199999999999977,
+          "defeat": 0
+        },
+        "score": 0,
+        "complete": false,
+        "rescue": 0,
+        "bones": [],
+        "ready": true,
+        "paused": false,
+        "testMenuOpen": false,
+        "magic": {
+          "active": false,
+          "message": "Magie: podr\u017e oba triggery\u2026"
+        },
+        "tracking": true,
+        "audio": {
+          "track": "MINES",
+          "ready": true,
+          "enabled": true,
+          "muted": false
+        },
+        "impact": {
+          "remaining": 0,
+          "renderedFrames": 0,
+          "eyes": 0
+        },
+        "turning": {
+          "mode": "snap",
+          "radiansPerSecond": 0,
+          "yaw": -1.5707963267948966
+        },
+        "renderer": {
+          "calls": 84,
+          "triangles": 48936
+        },
+        "headOffset": {
+          "x": 0,
+          "z": 0
+        },
+        "mode": "immersive-vr"
+      },
+      "mock": {
+        "frames": 532,
+        "position": {
+          "x": 6,
+          "y": 1.65,
+          "z": 3
+        },
+        "grips": {
+          "left": {
+            "x": -0.28,
+            "y": -0.42,
+            "z": -0.4
+          },
+          "right": {
+            "x": 0.28,
+            "y": -0.42,
+            "z": -0.4
+          }
+        }
+      },
+      "swing": {
+        "previous": {
+          "relative": {
+            "x": 6.2800002098083505,
+            "y": 1.2300000190734866,
+            "z": 1.8399999046325686
+          },
+          "world": {
+            "x": 12.092500095367368,
+            "y": 1.2300000190734866,
+            "z": 0.4800002098083505
+          },
+          "time": 7.981599999999917
+        },
+        "travel": 0,
+        "spent": false
+      }
+    }
+  }
+}
