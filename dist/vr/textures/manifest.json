@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "size": 256,
+  "source": "authored deterministic seamless textures; original level-one RGB palette reference only",
+  "generator": "scripts/build-vr-textures.mjs",
+  "assets": {
+    "grass": {
+      "file": "grass.png",
+      "sha256": "2e48a7aa483c2b954c40b3200af09f04d7f879a25c1cf0890d5bebd67daeb034",
+      "colorSpace": "sRGB",
+      "repeat": true
+    },
+    "earth": {
+      "file": "earth.png",
+      "sha256": "52343596bc64be5367eb9a203ffefa9cae3649010e4298150cc5c1614d345498",
+      "colorSpace": "sRGB",
+      "repeat": true
+    },
+    "stone": {
+      "file": "stone.png",
+      "sha256": "949c1d8210a723378d1d9fa6a34ac6432236c41a1d525c4b31427625de6d9403",
+      "colorSpace": "sRGB",
+      "repeat": true
+    },
+    "bark": {
+      "file": "bark.png",
+      "sha256": "7e3d26d9e98a7f9bde92d46949bccbff26121f0ad749011dc2375b6df3358ed6",
+      "colorSpace": "sRGB",
+      "repeat": true
+    },
+    "foliage": {
+      "file": "foliage.png",
+      "sha256": "918c94b8432bb59e171b83845a15ff2444464ec5447be4df06a0efe5df978048",
+      "colorSpace": "sRGB",
+      "repeat": true
+    }
+  }
+}

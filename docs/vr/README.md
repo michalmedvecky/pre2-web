@@ -6,7 +6,7 @@ This branch (`vr/quest-360`) contains a first-person, stereoscopic WebXR pilot a
 
 ![Desktop view of the playable 3D opening](opening-view.png)
 
-Recorded verification: [validation.json](validation.json), 221 passing tests (209 existing + 12 VR), normal browser course completion, deliberate pit rescue and restart.
+Initial pilot verification: [validation.json](validation.json). The [2026-10-21 movement/texture correction](CONTROLS-TEXTURES-FIX.md) adds XR regression coverage and updated visual evidence.
 
 ## Run locally
 
@@ -24,7 +24,7 @@ Desktop controls: **WASD** move, drag the mouse to look, **Q/E** turn 30°, **Sp
 
 Serve this branch's `dist/` through trusted **HTTPS**, open `https://YOUR_HOST/vr/` in Meta Quest Browser, choose the club hand and press **Enter VR**. The application requests `immersive-vr` with `local-floor`, and detects support before entry. HTTP localhost works on the development machine; a LAN HTTP URL on the headset is not a substitute for trusted HTTPS.
 
-- Left stick: movement relative to the horizontal head direction, including depth.
+- Left stick: movement relative to the horizontal head direction, including depth. Release it to the centre once after entering/resuming VR or reconnecting; a radial deadzone filters small drift. Neutral means no automatic movement.
 - Right stick: 30° snap turns with a neutral rearm threshold, pivoting about the tracked head.
 - Right **A**: jump. Physical head movement is tracked for viewing and body placement, but is not interpreted as an automatic jump.
 - Club: swing the selected controller. No trigger press causes an instant attack. The club follows the grip pose; no pose means no attack. Loss of tracking, long frame gaps, recentering, turning and disconnection reset motion history.
@@ -85,15 +85,18 @@ Native references retained from `dist/js/engine.js` and the recovered level data
 
 New authored choices: a 6.4m-deep route with elevated rocks narrowed to 2.2m depth, bounding scenery, a practice bear relocated to X=12m (the source bear record is farther into the native level and on another elevation), a 25–27m practice gap, campfire/checkpoint at 22m and finish at 31m. The route is not a claim that the original opening contained this bear or pit. Floor shapes are boxed approximations; upper decorative collision surfaces remain from the source map. Trees, rock rear faces, hands, club and bear depth are new procedural interpretations of the original palette/silhouettes, not reconstructed unseen surfaces.
 
-The isolated `Pilot` simulation runs at 90 fixed updates/second; the original DOS-derived `World` and its tick rate remain unchanged. New 3D tuning is explicit in `RULES`: 2.6m/s walk, 14m/s² gravity, 6.9m/s jump impulse, .23m body radius, 1.45m collision height. The tracked head determines horizontal body placement; rescue compensates physical offsets so room-scale movement does not strand the player outside the floor. Head/body collision height is currently fixed; configurable seated calibration and crouching are pending.
+The isolated `Pilot` simulation runs at 90 fixed updates/second; the original DOS-derived `World` and its tick rate remain unchanged. New 3D tuning is explicit in `RULES`: 2.6m/s walk, 14m/s² gravity, 6.9m/s jump impulse, .23m body radius, 1.45m collision height. The tracked head determines horizontal body placement; rescue compensates physical offsets so room-scale movement does not strand the player outside the floor. Tracking coordinates are anchored from the current `XRViewerPose`; renderer-owned camera world matrices are never read back as player motion. Head/body collision height is currently fixed; configurable seated calibration and crouching are pending.
 
 Club samples measure motion in rig space to exclude stick locomotion and teleport displacement. A swing needs 1.35m/s and .12m travel, rearms below .55m/s, rejects frame gaps above .1s and pose jumps above 18m/s. Contact tests sweep the tip between frames and check the current shaft against two bear body volumes. A consumed swing cannot hit again until rearmed. These are intentionally new reach and motion rules for 3D.
 
 ## Source layout
 
 - `dist/vr/js/simulation.js`: pure, testable 3D traversal, collision, swing recognition, combat, checkpoint and finish rules.
-- `dist/vr/js/models.js`: editable procedural mesh/animation construction and instanced scenery; textured soil derives colors from a native tile, with softened contrast. No core actor/environment billboards.
+- `dist/vr/js/models.js`: editable procedural mesh/animation construction and instanced scenery; terrain, stone, bark and foliage use five small authored seamless palette-referenced textures with world-space triplanar mapping, so geometry boundaries do not become texture cuts. No core actor/environment billboards.
 - `dist/vr/js/main.js`: Three.js/WebXR presentation, grip sampling, controls, wrist UI, synthesized spatial hit sound, best-effort vibration and fade.
+- `dist/vr/js/xr-input.js`: tracking origin, head heading, neutral arming and standard Quest joystick/A mapping.
+- `dist/vr/js/surfaces.js`, `dist/vr/textures/` and `scripts/build-vr-textures.mjs`: repeatable authored 256px textures and world-space mapping, independent of native asset pixels.
+- `scripts/verify-vr-xr-browser.mjs`: test-only emulated XR session through the real Three.js stereo/grip path; verifies idle, joystick, A jump, tracking loss/recenter and actual club motion. This is also a CI gate before image publication.
 - `tests/vr.test.mjs`: meaningful unit/integration coverage, including normal course completion and room-scale rescue.
 - `scripts/verify-vr-browser.mjs`: browser playthrough using keys and the real animated club, fall/return/completion, pause/restart and 360° rear-view capture. It saves evidence outside the repository by default.
 

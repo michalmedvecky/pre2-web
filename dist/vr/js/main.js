@@ -1,11 +1,14 @@
 import * as T from '../vendor/three.module.js';
 import {VRButton} from '../vendor/VRButton.js';
+import {TrackingSpace,XRControls} from './xr-input.js';
+import {loadSurfaces} from './surfaces.js';
 import {Pilot,openingLayout,SwingTracker,RULES} from './simulation.js';
 import {makeClub,makeBear,animateBear,makeBone,makeBody,buildEnvironment} from './models.js';
 const $=id=>document.getElementById(id),keys=new Set(),query=new URLSearchParams(location.search);
 let renderer,scene,rig,camera,pilot,layout,scenery,bear,body,desktopClub,fade,hud,hudCanvas,hudContext,hudTexture;
-let active=false,paused=true,yaw=-Math.PI/2,pitch=-.12,accumulator=0,previousTime=0,desktopSwing=-1,snapHeld=false,jumpPulse=false,hand='right',audio=null,tracking=true,lastStatus='';
-const controllers=[],swing=new SwingTracker(),boneMeshes=[],temp=new T.Vector3(),temp2=new T.Vector3(),head=new T.Vector3(),clubBase=new T.Vector3(),forward=new T.Vector3(),quat=new T.Quaternion();
+let active=false,paused=true,yaw=-Math.PI/2,pitch=-.12,accumulator=0,previousTime=0,desktopSwing=-1,jumpPulse=false,hand='right',audio=null,tracking=true,lastStatus='';
+const trackingSpace=new TrackingSpace(),xrControls=new XRControls();
+const controllers=[],swing=new SwingTracker(),boneMeshes=[],temp=new T.Vector3(),temp2=new T.Vector3(),clubBase=new T.Vector3(),forward=new T.Vector3();
 function showError(error){$('error').hidden=false;$('error').textContent='Prototyp se nepodařilo spustit: '+error.message;console.error(error);}
 async function json(url){const r=await fetch(url);if(!r.ok)throw Error(`${url}: HTTP ${r.status}`);return r.json();}
 async function bytes(url){const r=await fetch(url);if(!r.ok)throw Error(`${url}: HTTP ${r.status}`);return new Uint8Array(await r.arrayBuffer());}
@@ -14,7 +17,8 @@ function sound(frequency,duration=.09,position){if(!audio||audio.state!=='runnin
 function haptics(value,ms,both=false){for(const c of controllers){if(!both&&c.source?.handedness!==hand)continue;const actuator=c.source?.gamepad?.hapticActuators?.[0];try{actuator?.pulse(value,ms)?.catch(()=>{});}catch{}}}
 function pause(value){paused=value;accumulator=0;swing.reset();keys.clear();desktopSwing=-1;jumpPulse=false;document.body.classList.toggle('playing',!paused);$('help').hidden=paused;if(!paused){unlockAudio();active=true;}}
 function turn(amount){const before=headOffset(),c=Math.cos(amount),s=Math.sin(amount),after={x:before.x*c+before.z*s,z:-before.x*s+before.z*c};yaw+=amount;rig.rotation.y=yaw;pilot.player.x+=before.x-after.x;pilot.player.z+=before.z-after.z;swing.reset();}
-function headOffset(){if(!renderer.xr.isPresenting)return {x:0,z:0};renderer.xr.getCamera().getWorldPosition(head);return {x:head.x-rig.position.x,z:head.z-rig.position.z};}
+function headOffset(){return renderer.xr.isPresenting?trackingSpace.offset(yaw):{x:0,z:0};}
+function syncRig(){const p=renderer.xr.isPresenting?trackingSpace.rigPosition(pilot.player,yaw):pilot.player;rig.position.set(p.x,p.y,p.z);rig.rotation.y=yaw;rig.updateMatrixWorld(true);}
 function sampleClub(relative,world,time,base){const sweep=swing.sample(relative,world,time);if(sweep&&base)sweep.base={...base};if(sweep&&pilot.strike(sweep)){swing.consume();haptics(.7,80);}}
 function handleEvents(){for(const e of pilot.events.splice(0)){
  if(e.type==='hit')sound(115,.13,e);
@@ -32,17 +36,14 @@ function updateHUD(){const p=pilot.player,status=`${'♥'.repeat(Math.max(0,p.he
 }
 function readInput(){let x=0,z=0,jump=keys.has('Space')||jumpPulse;
  if(!renderer.xr.isPresenting){x=+keys.has('KeyD')-+keys.has('KeyA');z=+keys.has('KeyS')-+keys.has('KeyW');return {x,z,jump,yaw,headX:0,headZ:0};}
- let turnAxis=0,turnCorrection=0;for(const c of controllers){const gp=c.source?.gamepad;if(!gp)continue;const a=gp.axes||[],ax=a.length>=4?a[2]:(a[0]||0),ay=a.length>=4?a[3]:(a[1]||0);
-  if(c.source.handedness==='left'){x=Math.abs(ax)>.18?ax:0;z=Math.abs(ay)>.18?ay:0;}
-  if(c.source.handedness==='right'){turnAxis=ax;jump||=!!gp.buttons[4]?.pressed;}
- }
- if(Math.abs(turnAxis)>.65&&!snapHeld){turnCorrection=-Math.sign(turnAxis)*Math.PI/6;turn(turnCorrection);snapHeld=true;}if(Math.abs(turnAxis)<.25)snapHeld=false;
- renderer.xr.getCamera().getWorldDirection(forward);const heading=Math.atan2(-forward.x,-forward.z)+turnCorrection,oldOffset=headOffset(),c=Math.cos(turnCorrection),s=Math.sin(turnCorrection),offset={x:oldOffset.x*c+oldOffset.z*s,z:-oldOffset.x*s+oldOffset.z*c};return {x,z,jump,yaw:heading,headX:offset.x,headZ:offset.z};
+ const controls=xrControls.sample(renderer.xr.getSession().inputSources);
+ if(controls.turn)turn(controls.turn);
+ const offset=headOffset();return {x:controls.x,z:controls.z,jump:controls.jump,yaw:trackingSpace.heading(yaw),headX:offset.x,headZ:offset.z};
 }
 function draw(time,frame){const seconds=time/1000,dt=previousTime?Math.min((time-previousTime)/1000,.05):0;previousTime=time;
- let visible=true;if(renderer.xr.isPresenting){const session=renderer.xr.getSession();visible=session.visibilityState==='visible';tracking=!!frame?.getViewerPose(renderer.xr.getReferenceSpace());}
+ let visible=true;if(renderer.xr.isPresenting){const session=renderer.xr.getSession();visible=session.visibilityState==='visible';tracking=trackingSpace.update(frame?.getViewerPose(renderer.xr.getReferenceSpace()));}
  if(active&&!paused&&visible&&tracking){const input=readInput();accumulator+=dt;while(accumulator>=1/90){pilot.step(1/90,input);accumulator-=1/90;jumpPulse=false;}
-  rig.position.set(pilot.player.x,pilot.player.y,pilot.player.z);rig.rotation.y=yaw;rig.updateMatrixWorld(true);
+  syncRig();
   if(renderer.xr.isPresenting){desktopClub.visible=false;body.visible=false;for(const c of controllers){c.club.visible=c.source?.handedness===hand&&c.grip.visible;const live=c.source?.handedness===hand&&c.source.gripSpace&&frame?.getPose(c.source.gripSpace,renderer.xr.getReferenceSpace());if(!live){if(c.source?.handedness===hand)swing.reset();continue;}
     c.club.updateWorldMatrix(true,true);c.club.localToWorld(temp.set(0,.76,0)); // club local +Y is its long axis
     // The model has its own -90° rotation; localToWorld includes it.
@@ -54,12 +55,12 @@ function draw(time,frame){const seconds=time/1000,dt=previousTime?Math.min((time
    desktopClub.updateWorldMatrix(true,true);desktopClub.userData.model.localToWorld(temp.set(0,.76,0));temp2.copy(temp);rig.worldToLocal(temp2);desktopClub.userData.model.localToWorld(clubBase.set(0,.1,0));sampleClub(temp2,temp,seconds,clubBase);
   }
   handleEvents();
- }else{accumulator=0;swing.reset();}
+ }else{accumulator=0;swing.reset();if(renderer.xr.isPresenting)xrControls.reset();}
  animateBear(bear,pilot.bear,pilot.time);scenery.fire.scale.y=.3+Math.sin(seconds*8)*.035;
  while(boneMeshes.length<pilot.bones.length){const m=makeBone();boneMeshes.push(m);scene.add(m);}boneMeshes.forEach((m,i)=>{const b=pilot.bones[i];m.visible=!!b&&!b.collected;if(b){m.position.set(b.x,b.y+.12+Math.abs(Math.sin(Math.min(b.age,1)*Math.PI))* .55,b.z);m.rotation.y=seconds;}});
  // Fade is rendered in both eye cameras at their near plane; never move the tracked head.
  const r=pilot.rescue,alpha=r?(r>.6?(.9-r)/.3:r>.4?1:r/.4):0;fade.material.opacity=alpha;fade.visible=alpha>.001;
- if(audio?.state==='running'){const cam=renderer.xr.isPresenting?renderer.xr.getCamera():camera;cam.getWorldPosition(temp);cam.getWorldDirection(forward);const l=audio.listener;if(l.positionX){l.positionX.value=temp.x;l.positionY.value=temp.y;l.positionZ.value=temp.z;l.forwardX.value=forward.x;l.forwardY.value=forward.y;l.forwardZ.value=forward.z;l.upX.value=0;l.upY.value=1;l.upZ.value=0;}}
+ if(audio?.state==='running'){if(renderer.xr.isPresenting&&trackingSpace.position){const o=headOffset();temp.set(pilot.player.x+o.x,pilot.player.y+trackingSpace.position.y,pilot.player.z+o.z);const a=trackingSpace.heading(yaw);forward.set(-Math.sin(a),0,-Math.cos(a));}else{camera.getWorldPosition(temp);camera.getWorldDirection(forward);}const l=audio.listener;if(l.positionX){l.positionX.value=temp.x;l.positionY.value=temp.y;l.positionZ.value=temp.z;l.forwardX.value=forward.x;l.forwardY.value=forward.y;l.forwardZ.value=forward.z;l.upX.value=0;l.upY.value=1;l.upZ.value=0;}}
  updateHUD();renderer.render(scene,camera);
 }
 async function init(){
@@ -69,21 +70,21 @@ async function init(){
  rig=new T.Group();scene.add(rig);camera=new T.PerspectiveCamera(72,innerWidth/innerHeight,.05,80);camera.position.y=1.65;camera.rotation.x=pitch;rig.add(camera);rig.position.set(pilot.player.x,pilot.player.y,pilot.player.z);rig.rotation.y=yaw;
  body=makeBody();body.position.set(0,0,0);rig.add(body);desktopClub=new T.Group();desktopClub.position.set(.32,-.4,-.45);const club=makeClub();desktopClub.add(club);desktopClub.userData.model=club;camera.add(desktopClub);
  fade=new T.Mesh(new T.SphereGeometry(.12,16,12),new T.MeshBasicMaterial({color:0x081114,side:T.BackSide,transparent:true,opacity:0,depthTest:false,depthWrite:false}));fade.frustumCulled=false;fade.renderOrder=999;camera.add(fade);
- scenery=buildEnvironment(scene,layout,game,data[1],data[2]);bear=makeBear();scene.add(bear);makeHUD();
+ const textures=await loadSurfaces(renderer);scenery=buildEnvironment(scene,layout,game,data[1],data[2],textures);bear=makeBear();scene.add(bear);makeHUD();
  for(let i=0;i<2;i++){const grip=renderer.xr.getControllerGrip(i),c={grip,source:null,club:makeClub()};controllers.push(c);rig.add(grip);grip.add(c.club);c.club.visible=false;
   const handMesh=new T.Mesh(new T.IcosahedronGeometry(.06,1),new T.MeshStandardMaterial({color:'#dda579'}));grip.add(handMesh);
   grip.addEventListener('connected',e=>{c.source=e.data;if(c.source.handedness==='left')grip.add(hud);swing.reset();});grip.addEventListener('disconnected',()=>{c.source=null;swing.reset();});
  }
  const vrButton=VRButton.createButton(renderer,{requiredFeatures:['local-floor'],optionalFeatures:['bounded-floor']});vrButton.style.position='static';vrButton.style.width='auto';vrButton.style.margin='0';vrButton.style.transform='none';$('launch').append(vrButton);vrButton.addEventListener('click',unlockAudio,{capture:true});
  const supported=isSecureContext&&!!navigator.xr&&await navigator.xr.isSessionSupported('immersive-vr').catch(()=>false);$('xr-status').textContent=supported?'Quest připraven: Vstoupit do VR spustí prostorový režim.':!isSecureContext?'Pro Quest otevři tuto stránku přes HTTPS. Desktopový náhled funguje i zde.':'WebXR zde není dostupné. Na Questu otevři stejnou HTTPS adresu v Meta Quest Browseru.';
- renderer.xr.addEventListener('sessionstart',()=>{camera.rotation.set(0,0,0);camera.position.set(0,0,0);pause(false);snapHeld=false;tracking=true;renderer.xr.getReferenceSpace()?.addEventListener('reset',()=>swing.reset());$('status').hidden=true;$('help').hidden=true;});
- renderer.xr.addEventListener('sessionend',()=>{camera.position.set(0,1.65,0);camera.rotation.set(pitch,0,0);$('status').hidden=false;pause(true);hud.removeFromParent();});
+ renderer.xr.addEventListener('sessionstart',()=>{trackingSpace.reset();xrControls.reset();camera.rotation.set(0,0,0);camera.position.set(0,0,0);pause(false);tracking=true;renderer.xr.getReferenceSpace()?.addEventListener('reset',()=>{const o=headOffset();pilot.player.x+=o.x;pilot.player.z+=o.z;trackingSpace.reset();xrControls.reset();swing.reset();});$('status').hidden=true;$('help').hidden=true;});
+ renderer.xr.addEventListener('sessionend',()=>{const o=trackingSpace.offset(yaw);pilot.player.x+=o.x;pilot.player.z+=o.z;trackingSpace.reset();xrControls.reset();camera.position.set(0,1.65,0);camera.rotation.set(pitch,0,0);$('status').hidden=false;pause(true);hud.removeFromParent();syncRig();});
  $('desktop').disabled=false;$('desktop').textContent='Hrát na monitoru';$('desktop').onclick=()=>pause(false);$('help').onclick=()=>pause(true);$('hand').onchange=e=>{hand=e.target.value;desktopClub.position.x=hand==='left'?-.32:.32;swing.reset();};
  addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);});
- addEventListener('keydown',e=>{if(['Space','ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.code))e.preventDefault();if(e.code==='Escape'){if(!renderer.xr.isPresenting)pause(!paused);return;}if(paused)return;keys.add(e.code);if(e.repeat)return;if(e.code==='Space')jumpPulse=true;if(e.code==='KeyQ')turn(Math.PI/6);if(e.code==='KeyE')turn(-Math.PI/6);if(e.code==='KeyF'&&!renderer.xr.isPresenting)startDesktopSwing();if(e.code==='KeyR'){pilot.reset();swing.reset();yaw=-Math.PI/2;lastStatus='';for(const m of boneMeshes)m.removeFromParent();boneMeshes.length=0;}});
+ addEventListener('keydown',e=>{if(['Space','ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.code))e.preventDefault();if(e.code==='Escape'){if(!renderer.xr.isPresenting)pause(!paused);return;}if(paused)return;keys.add(e.code);if(e.repeat)return;if(e.code==='Space')jumpPulse=true;if(e.code==='KeyQ')turn(Math.PI/6);if(e.code==='KeyE')turn(-Math.PI/6);if(e.code==='KeyF'&&!renderer.xr.isPresenting)startDesktopSwing();if(e.code==='KeyR'){trackingSpace.reset();xrControls.reset();pilot.reset();swing.reset();yaw=-Math.PI/2;lastStatus='';for(const m of boneMeshes)m.removeFromParent();boneMeshes.length=0;}});
  addEventListener('keyup',e=>keys.delete(e.code));addEventListener('blur',()=>{if(!renderer.xr.isPresenting)pause(true);});document.addEventListener('visibilitychange',()=>{if(document.hidden&&!renderer.xr.isPresenting)pause(true);swing.reset();accumulator=0;});
  let drag=null;renderer.domElement.addEventListener('pointerdown',e=>{if(paused||e.button!==0)return;drag={x:e.clientX,y:e.clientY,moved:0};renderer.domElement.setPointerCapture(e.pointerId);});renderer.domElement.addEventListener('pointermove',e=>{if(!drag||renderer.xr.isPresenting)return;const dx=e.clientX-drag.x,dy=e.clientY-drag.y;drag.moved+=Math.abs(dx)+Math.abs(dy);yaw-=dx*.004;pitch=Math.max(-1.35,Math.min(1.35,pitch-dy*.004));camera.rotation.x=pitch;drag.x=e.clientX;drag.y=e.clientY;swing.reset();});renderer.domElement.addEventListener('pointerup',()=>{if(drag?.moved<6)startDesktopSwing();drag=null;});renderer.domElement.addEventListener('pointercancel',()=>drag=null);
- window.questPilot={snapshot:()=>({...pilot.snapshot(),ready:true,paused,tracking,renderer:{calls:renderer.info.render.calls,triangles:renderer.info.render.triangles},mode:renderer.xr.isPresenting?'immersive-vr':'desktop'})};
+ window.questPilot={snapshot:()=>({...pilot.snapshot(),ready:true,paused,tracking,renderer:{calls:renderer.info.render.calls,triangles:renderer.info.render.triangles},headOffset:headOffset(),mode:renderer.xr.isPresenting?'immersive-vr':'desktop'})};
  if(query.has('qa'))Object.assign(window.questPilot,{pilot,layout,scene,rig,renderer,sampleClub,swing});
  renderer.setAnimationLoop(draw);
 }

@@ -1,0 +1,810 @@
+{
+  "date": "2026-10-21",
+  "unitAndRegressionTests": {
+    "passed": 232,
+    "failed": 0
+  },
+  "desktop": {
+    "base": "http://127.0.0.1:5777/vr/",
+    "combat": {
+      "player": {
+        "x": 12.896944444444324,
+        "y": 0,
+        "z": -7.093426404394578e-16,
+        "vy": 0,
+        "grounded": true,
+        "health": 2,
+        "invulnerable": 1.0888888888888903
+      },
+      "checkpoint": {
+        "x": 1.3125,
+        "y": 0,
+        "z": 0
+      },
+      "bear": {
+        "x": 13.31155555555568,
+        "y": 0,
+        "z": 0,
+        "hp": -10,
+        "alive": false,
+        "face": -1,
+        "hurt": 0.4,
+        "stoleHeart": true,
+        "phase": 5.188888888888873,
+        "defeat": 0
+      },
+      "score": 500,
+      "complete": false,
+      "rescue": 0,
+      "bones": [
+        {
+          "x": 14.01155555555568,
+          "y": 0.25,
+          "z": 0,
+          "age": 0,
+          "collected": false
+        },
+        {
+          "x": 13.66155555555568,
+          "y": 0.25,
+          "z": 0.606217782649107,
+          "age": 0,
+          "collected": false
+        },
+        {
+          "x": 12.96155555555568,
+          "y": 0.25,
+          "z": 0.6062177826491071,
+          "age": 0,
+          "collected": false
+        },
+        {
+          "x": 12.61155555555568,
+          "y": 0.25,
+          "z": 8.572527594031472e-17,
+          "age": 0,
+          "collected": false
+        },
+        {
+          "x": 12.96155555555568,
+          "y": 0.25,
+          "z": -0.6062177826491069,
+          "age": 0,
+          "collected": false
+        },
+        {
+          "x": 13.66155555555568,
+          "y": 0.25,
+          "z": -0.606217782649107,
+          "age": 0,
+          "collected": false
+        }
+      ],
+      "ready": true,
+      "paused": false,
+      "tracking": true,
+      "renderer": {
+        "calls": 35,
+        "triangles": 14824
+      },
+      "headOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "mode": "desktop"
+    },
+    "checkpoint": {
+      "player": {
+        "x": 22.272222222222307,
+        "y": 0,
+        "z": -1.282477342440408e-15,
+        "vy": 0,
+        "grounded": true,
+        "health": 2,
+        "invulnerable": 0
+      },
+      "checkpoint": {
+        "x": 22,
+        "y": 0,
+        "z": 0
+      },
+      "bear": {
+        "x": 13.31155555555568,
+        "y": 0,
+        "z": 0,
+        "hp": -10,
+        "alive": false,
+        "face": -1,
+        "hurt": 0,
+        "stoleHeart": true,
+        "phase": 5.188888888888873,
+        "defeat": 3.8999999999999884
+      },
+      "score": 500,
+      "complete": false,
+      "rescue": 0,
+      "bones": [
+        {
+          "x": 14.01155555555568,
+          "y": 0.25,
+          "z": 0,
+          "age": 0.5000000000000002,
+          "collected": true
+        },
+        {
+          "x": 13.66155555555568,
+          "y": 0.25,
+          "z": 0.606217782649107,
+          "age": 3.8999999999999884,
+          "collected": false
+        },
+        {
+          "x": 12.96155555555568,
+          "y": 0.25,
+          "z": 0.6062177826491071,
+          "age": 3.8999999999999884,
+          "collected": false
+        },
+        {
+          "x": 12.61155555555568,
+          "y": 0.25,
+          "z": 8.572527594031472e-17,
+          "age": 0.011111111111111112,
+          "collected": true
+        },
+        {
+          "x": 12.96155555555568,
+          "y": 0.25,
+          "z": -0.6062177826491069,
+          "age": 3.8999999999999884,
+          "collected": false
+        },
+        {
+          "x": 13.66155555555568,
+          "y": 0.25,
+          "z": -0.606217782649107,
+          "age": 3.8999999999999884,
+          "collected": false
+        }
+      ],
+      "ready": true,
+      "paused": false,
+      "tracking": true,
+      "renderer": {
+        "calls": 31,
+        "triangles": 14756
+      },
+      "headOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "mode": "desktop"
+    },
+    "rescue": {
+      "player": {
+        "x": 22,
+        "y": 0,
+        "z": 0,
+        "vy": 0,
+        "grounded": true,
+        "health": 1,
+        "invulnerable": 1.5111111111111128
+      },
+      "checkpoint": {
+        "x": 22,
+        "y": 0,
+        "z": 0
+      },
+      "bear": {
+        "x": 13.31155555555568,
+        "y": 0,
+        "z": 0,
+        "hp": -10,
+        "alive": false,
+        "face": -1,
+        "hurt": 0,
+        "stoleHeart": true,
+        "phase": 5.188888888888873,
+        "defeat": 5.599999999999983
+      },
+      "score": 500,
+      "complete": false,
+      "rescue": 0,
+      "bones": [
+        {
+          "x": 14.01155555555568,
+          "y": 0.25,
+          "z": 0,
+          "age": 0.5000000000000002,
+          "collected": true
+        },
+        {
+          "x": 13.66155555555568,
+          "y": 0.25,
+          "z": 0.606217782649107,
+          "age": 5.599999999999983,
+          "collected": false
+        },
+        {
+          "x": 12.96155555555568,
+          "y": 0.25,
+          "z": 0.6062177826491071,
+          "age": 5.599999999999983,
+          "collected": false
+        },
+        {
+          "x": 12.61155555555568,
+          "y": 0.25,
+          "z": 8.572527594031472e-17,
+          "age": 0.011111111111111112,
+          "collected": true
+        },
+        {
+          "x": 12.96155555555568,
+          "y": 0.25,
+          "z": -0.6062177826491069,
+          "age": 5.599999999999983,
+          "collected": false
+        },
+        {
+          "x": 13.66155555555568,
+          "y": 0.25,
+          "z": -0.606217782649107,
+          "age": 5.599999999999983,
+          "collected": false
+        }
+      ],
+      "ready": true,
+      "paused": false,
+      "tracking": true,
+      "renderer": {
+        "calls": 32,
+        "triangles": 14780
+      },
+      "headOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "mode": "desktop"
+    },
+    "complete": {
+      "player": {
+        "x": 30.811111111111405,
+        "y": 0,
+        "z": -5.395249509576947e-16,
+        "vy": 0,
+        "grounded": true,
+        "health": 1,
+        "invulnerable": 0
+      },
+      "checkpoint": {
+        "x": 22,
+        "y": 0,
+        "z": 0
+      },
+      "bear": {
+        "x": 13.31155555555568,
+        "y": 0,
+        "z": 0,
+        "hp": -10,
+        "alive": false,
+        "face": -1,
+        "hurt": 0,
+        "stoleHeart": true,
+        "phase": 5.188888888888873,
+        "defeat": 8.98888888888886
+      },
+      "score": 500,
+      "complete": true,
+      "rescue": 0,
+      "bones": [
+        {
+          "x": 14.01155555555568,
+          "y": 0.25,
+          "z": 0,
+          "age": 0.5000000000000002,
+          "collected": true
+        },
+        {
+          "x": 13.66155555555568,
+          "y": 0.25,
+          "z": 0.606217782649107,
+          "age": 8.98888888888886,
+          "collected": false
+        },
+        {
+          "x": 12.96155555555568,
+          "y": 0.25,
+          "z": 0.6062177826491071,
+          "age": 8.98888888888886,
+          "collected": false
+        },
+        {
+          "x": 12.61155555555568,
+          "y": 0.25,
+          "z": 8.572527594031472e-17,
+          "age": 0.011111111111111112,
+          "collected": true
+        },
+        {
+          "x": 12.96155555555568,
+          "y": 0.25,
+          "z": -0.6062177826491069,
+          "age": 8.98888888888886,
+          "collected": false
+        },
+        {
+          "x": 13.66155555555568,
+          "y": 0.25,
+          "z": -0.606217782649107,
+          "age": 8.98888888888886,
+          "collected": false
+        }
+      ],
+      "ready": true,
+      "paused": false,
+      "tracking": true,
+      "renderer": {
+        "calls": 17,
+        "triangles": 14696
+      },
+      "headOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "mode": "desktop"
+    },
+    "restart": {
+      "player": {
+        "x": 1.3125,
+        "y": 0,
+        "z": 0,
+        "vy": 0,
+        "grounded": true,
+        "health": 3,
+        "invulnerable": 0
+      },
+      "checkpoint": {
+        "x": 1.3125,
+        "y": 0,
+        "z": 0
+      },
+      "bear": {
+        "x": 12.046222222222227,
+        "y": 0,
+        "z": 0,
+        "hp": 15,
+        "alive": true,
+        "face": 1,
+        "hurt": 0,
+        "stoleHeart": false,
+        "phase": 0.08888888888888889,
+        "defeat": 0
+      },
+      "score": 0,
+      "complete": false,
+      "rescue": 0,
+      "bones": [],
+      "ready": true,
+      "paused": false,
+      "tracking": true,
+      "renderer": {
+        "calls": 69,
+        "triangles": 17376
+      },
+      "headOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "mode": "desktop"
+    },
+    "errors": [],
+    "hardware": "desktop software WebGL only; actual Quest tracking, haptics, comfort and stereo pending"
+  },
+  "xrMock": {
+    "passed": true,
+    "start": {
+      "player": {
+        "x": 1.3125,
+        "y": 0,
+        "z": 0,
+        "vy": 0,
+        "grounded": true,
+        "health": 3,
+        "invulnerable": 0
+      },
+      "checkpoint": {
+        "x": 1.3125,
+        "y": 0,
+        "z": 0
+      },
+      "bear": {
+        "x": 13.149777777777887,
+        "y": 0,
+        "z": 0,
+        "hp": 15,
+        "alive": true,
+        "face": 1,
+        "hurt": 0,
+        "stoleHeart": false,
+        "phase": 2.2111111111111055,
+        "defeat": 0
+      },
+      "score": 0,
+      "complete": false,
+      "rescue": 0,
+      "bones": [],
+      "ready": true,
+      "paused": false,
+      "tracking": true,
+      "renderer": {
+        "calls": 134,
+        "triangles": 34216
+      },
+      "headOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "mode": "immersive-vr"
+    },
+    "idle": {
+      "player": {
+        "x": 1.3125,
+        "y": 0,
+        "z": 0,
+        "vy": 0,
+        "grounded": true,
+        "health": 3,
+        "invulnerable": 0
+      },
+      "checkpoint": {
+        "x": 1.3125,
+        "y": 0,
+        "z": 0
+      },
+      "bear": {
+        "x": 12.392888888888926,
+        "y": 0,
+        "z": 0,
+        "hp": 15,
+        "alive": true,
+        "face": -1,
+        "hurt": 0,
+        "stoleHeart": false,
+        "phase": 6.9555555555555335,
+        "defeat": 0
+      },
+      "score": 0,
+      "complete": false,
+      "rescue": 0,
+      "bones": [],
+      "ready": true,
+      "paused": false,
+      "tracking": true,
+      "renderer": {
+        "calls": 134,
+        "triangles": 34216
+      },
+      "headOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "mode": "immersive-vr"
+    },
+    "stopped": {
+      "player": {
+        "x": 2.872500000000004,
+        "y": 0,
+        "z": -9.552245033349366e-17,
+        "vy": 0,
+        "grounded": true,
+        "health": 3,
+        "invulnerable": 0
+      },
+      "checkpoint": {
+        "x": 1.3125,
+        "y": 0,
+        "z": 0
+      },
+      "bear": {
+        "x": 12.052000000000005,
+        "y": 0,
+        "z": 0,
+        "hp": 15,
+        "alive": true,
+        "face": -1,
+        "hurt": 0,
+        "stoleHeart": false,
+        "phase": 7.611111111111087,
+        "defeat": 0
+      },
+      "score": 0,
+      "complete": false,
+      "rescue": 0,
+      "bones": [],
+      "ready": true,
+      "paused": false,
+      "tracking": true,
+      "renderer": {
+        "calls": 134,
+        "triangles": 34216
+      },
+      "headOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "mode": "immersive-vr"
+    },
+    "jump": {
+      "player": {
+        "x": 2.872500000000004,
+        "y": 0.2893827160493827,
+        "z": -9.552245033349366e-17,
+        "vy": 6.277777777777777,
+        "grounded": false,
+        "health": 3,
+        "invulnerable": 0
+      },
+      "checkpoint": {
+        "x": 1.3125,
+        "y": 0,
+        "z": 0
+      },
+      "bear": {
+        "x": 11.924888888888882,
+        "y": 0,
+        "z": 0,
+        "hp": 15,
+        "alive": true,
+        "face": -1,
+        "hurt": 0,
+        "stoleHeart": false,
+        "phase": 7.85555555555553,
+        "defeat": 0
+      },
+      "score": 0,
+      "complete": false,
+      "rescue": 0,
+      "bones": [],
+      "ready": true,
+      "paused": false,
+      "tracking": true,
+      "renderer": {
+        "calls": 134,
+        "triangles": 34216
+      },
+      "headOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "mode": "immersive-vr"
+    },
+    "lost": {
+      "player": {
+        "x": 2.872500000000004,
+        "y": 0,
+        "z": -9.552245033349366e-17,
+        "vy": 0,
+        "grounded": true,
+        "health": 3,
+        "invulnerable": 0
+      },
+      "checkpoint": {
+        "x": 1.3125,
+        "y": 0,
+        "z": 0
+      },
+      "bear": {
+        "x": 11.427999999999946,
+        "y": 0,
+        "z": 0,
+        "hp": 15,
+        "alive": true,
+        "face": -1,
+        "hurt": 0,
+        "stoleHeart": false,
+        "phase": 8.811111111111083,
+        "defeat": 0
+      },
+      "score": 0,
+      "complete": false,
+      "rescue": 0,
+      "bones": [],
+      "ready": true,
+      "paused": false,
+      "tracking": false,
+      "renderer": {
+        "calls": 124,
+        "triangles": 33856
+      },
+      "headOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "mode": "immersive-vr"
+    },
+    "beforeReset": {
+      "player": {
+        "x": 2.872500000000004,
+        "y": 0,
+        "z": -8.326672684688674e-17,
+        "vy": 0,
+        "grounded": true,
+        "health": 3,
+        "invulnerable": 0
+      },
+      "checkpoint": {
+        "x": 1.3125,
+        "y": 0,
+        "z": 0
+      },
+      "bear": {
+        "x": 11.352888888888828,
+        "y": 0,
+        "z": 0,
+        "hp": 15,
+        "alive": true,
+        "face": -1,
+        "hurt": 0,
+        "stoleHeart": false,
+        "phase": 8.955555555555527,
+        "defeat": 0
+      },
+      "score": 0,
+      "complete": false,
+      "rescue": 0,
+      "bones": [],
+      "ready": true,
+      "paused": false,
+      "tracking": true,
+      "renderer": {
+        "calls": 134,
+        "triangles": 34216
+      },
+      "headOffset": {
+        "x": 1.2246467991473533e-17,
+        "z": 0.2
+      },
+      "mode": "immersive-vr"
+    },
+    "afterReset": {
+      "player": {
+        "x": 2.872500000000004,
+        "y": 0,
+        "z": 0.19999999999999993,
+        "vy": 0,
+        "grounded": true,
+        "health": 3,
+        "invulnerable": 0
+      },
+      "checkpoint": {
+        "x": 1.3125,
+        "y": 0,
+        "z": 0
+      },
+      "bear": {
+        "x": 11.300888888888823,
+        "y": 0,
+        "z": 0,
+        "hp": 15,
+        "alive": true,
+        "face": -1,
+        "hurt": 0,
+        "stoleHeart": false,
+        "phase": 9.055555555555527,
+        "defeat": 0
+      },
+      "score": 0,
+      "complete": false,
+      "rescue": 0,
+      "bones": [],
+      "ready": true,
+      "paused": false,
+      "tracking": true,
+      "renderer": {
+        "calls": 134,
+        "triangles": 34216
+      },
+      "headOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "mode": "immersive-vr"
+    },
+    "combat": {
+      "player": {
+        "x": 8.852499999999994,
+        "y": 0,
+        "z": 0.19999999999999993,
+        "vy": 0,
+        "grounded": true,
+        "health": 3,
+        "invulnerable": 0
+      },
+      "checkpoint": {
+        "x": 1.3125,
+        "y": 0,
+        "z": 0
+      },
+      "bear": {
+        "x": 10.081777777777596,
+        "y": 0,
+        "z": 0,
+        "hp": -10,
+        "alive": false,
+        "face": -1,
+        "hurt": 0.33333333333333326,
+        "stoleHeart": false,
+        "phase": 11.399999999999963,
+        "defeat": 0.06666666666666667
+      },
+      "score": 500,
+      "complete": false,
+      "rescue": 0,
+      "bones": [],
+      "ready": true,
+      "paused": false,
+      "tracking": true,
+      "renderer": {
+        "calls": 96,
+        "triangles": 31080
+      },
+      "headOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "mode": "immersive-vr"
+    },
+    "ended": {
+      "player": {
+        "x": 8.852499999999994,
+        "y": 0,
+        "z": 0.19999999999999993,
+        "vy": 0,
+        "grounded": true,
+        "health": 3,
+        "invulnerable": 0
+      },
+      "checkpoint": {
+        "x": 1.3125,
+        "y": 0,
+        "z": 0
+      },
+      "bear": {
+        "x": 10.081777777777596,
+        "y": 0,
+        "z": 0,
+        "hp": -10,
+        "alive": false,
+        "face": -1,
+        "hurt": 0.07777777777777771,
+        "stoleHeart": false,
+        "phase": 11.399999999999963,
+        "defeat": 0.3222222222222222
+      },
+      "score": 500,
+      "complete": false,
+      "rescue": 0,
+      "bones": [],
+      "ready": true,
+      "paused": true,
+      "tracking": true,
+      "renderer": {
+        "calls": 88,
+        "triangles": 30648
+      },
+      "headOffset": {
+        "x": 0,
+        "z": 0
+      },
+      "mode": "desktop"
+    },
+    "errors": [],
+    "limitation": "Mock WebXR with real Three.js stereo/controller path. No physical headset or hardware haptics tested."
+  },
+  "originalFiles": {
+    "count": 54,
+    "allSHA256Unchanged": true
+  },
+  "hardware": "User confirmed club on Quest before this change. This correction is validated with a test-only XR facade and real Three.js stereo rendering; physical-headset confirmation remains pending."
+}
