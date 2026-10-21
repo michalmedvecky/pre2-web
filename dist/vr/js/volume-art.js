@@ -1,5 +1,6 @@
 // Authored closed 3D surfaces reconstructed from the HD silhouettes. Depth is a VR interpretation.
 import * as T from '../vendor/three.module.js';
+import {foodFamily,foodGeometry} from './food-models.js';
 import {creatureFamily,creatureGeometry} from './creature-models.js';
 export function roundedVolume(image,rect,source,{depth=.4,step=4}={}){
  const [rx,ry,w,h]=rect,nx=Math.ceil(w/step),ny=Math.ceil(h/step),sx=w/nx,sy=h/ny,mask=new Uint8Array(nx*ny),distance=new Float32Array(nx*ny);
@@ -23,7 +24,7 @@ export function makeVolumeArt(hd,assets,pack,sprites,tiles){
  const spriteMaterial=hd.spriteMaterial.clone(),tileMaterial=hd.material.clone();spriteMaterial.alphaTest=tileMaterial.alphaTest=0;
  const creatureMaterial=new T.MeshStandardMaterial({vertexColors:true,roughness:.9}),cache=new Map(),stats={...hd.stats,geometryBuilds:0,model:'rounded-volume',volumeSprites:0,volumeTiles:0};
  function cached(key,build){if(!cache.has(key)){cache.set(key,build());stats.geometryBuilds++;}return cache.get(key);}
- function sprite(word,{depth}={}){const id=word&0x1fff,s=assets.game.sprites[id],r=pack.sprites[id];if(!s||!r)return new T.Group();depth??=Math.max(.18,Math.min(.72,Math.min(s.width,s.height)/32*.85));const geometry=cached('s:'+id+':'+depth,()=>{stats.volumeSprites++;return creatureFamily(id)?creatureGeometry(id,s,{depth}):roundedVolume(sprites,r.rect,s,{depth,step:4});});const m=new T.Mesh(geometry,creatureFamily(id)?creatureMaterial:spriteMaterial);m.name='volume-sprite:'+id;m.userData={sourceSprite:id,hdScale:4,model:geometry.userData.reconstruction,method:r.method};if(word&0x8000)m.scale.x=-1;return m;}
+ function sprite(word,{depth}={}){const id=word&0x1fff,s=assets.game.sprites[id],r=pack.sprites[id];if(!s||!r)return new T.Group();depth??=Math.max(.18,Math.min(.72,Math.min(s.width,s.height)/32*.85));const geometry=cached('s:'+id+':'+depth,()=>{stats.volumeSprites++;return foodFamily(id)?foodGeometry(id,s):creatureFamily(id)?creatureGeometry(id,s,{depth}):roundedVolume(sprites,r.rect,s,{depth,step:4});});const m=new T.Mesh(geometry,(creatureFamily(id)||foodFamily(id))?creatureMaterial:spriteMaterial);m.name='volume-sprite:'+id;m.userData={sourceSprite:id,hdScale:4,model:geometry.userData.reconstruction,method:r.method};if(word&0x8000)m.scale.x=-1;return m;}
  function tileMesh(id,{depth=.5}={}){const rect=[(id&15)*pack.tiles.cell+pack.tiles.padding,(id>>4)*pack.tiles.cell+pack.tiles.padding,64,64],geometry=cached('t:'+id+':'+depth,()=>{stats.volumeTiles++;return roundedVolume(tiles,rect,{width:16,height:16,originX:8,originY:0},{depth,step:8});});const m=new T.Mesh(geometry,tileMaterial);m.userData={sourceTile:id,model:'rounded-volume'};return m;}
  return {...hd,material:tileMaterial,spriteMaterial,stats,sprite,tileMesh,warmMeshes:()=>[...cache.entries()].map(([key,g])=>new T.Mesh(g,g.attributes.color?creatureMaterial:key[0]==='s'?spriteMaterial:tileMaterial))};
 }

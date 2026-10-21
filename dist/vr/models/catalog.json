@@ -2,7 +2,7 @@
   "version": 1,
   "scope": "Complete VR object atlas; first-level tile terrain and animation poses are prewarmed. Unused atlas poses do not imply a completed campaign.",
   "sourceAtlasSHA256": "088c5796c654abc4d056fe853f7d0201189fe222279cdc9a3e512a1a5442cf3d",
-  "geometry": "Runtime closed rounded silhouettes with HD UVs; anatomical spider/frog/bird/platform recipes; existing jointed upright bear.",
+  "geometry": "Runtime closed rounded silhouettes with HD UVs; anatomical spider/dinosaur/sauropod/bird/platform recipes, handcrafted food recipes; existing jointed upright bear.",
   "modelCount": 407,
   "models": [
     {
@@ -1187,40 +1187,40 @@
     },
     {
       "sprite": 112,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-fruit",
       "sourcePixels": "web-hd",
-      "vertices": 2210,
-      "triangles": 4416,
+      "vertices": 1854,
+      "triangles": 3000,
       "bounds": [
         [
-          -0.65625,
-          0,
-          -0.35916322469711304
+          -0.591698408126831,
+          0.16629134118556976,
+          -0.26982975006103516
         ],
         [
-          0.78125,
-          1,
-          0.35916322469711304
+          0.716698408126831,
+          0.7696088552474976,
+          0.27674999833106995
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 113,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-fruit",
       "sourcePixels": "web-hd",
-      "vertices": 1526,
-      "triangles": 3044,
+      "vertices": 3568,
+      "triangles": 5504,
       "bounds": [
         [
-          -0.53125,
-          0,
-          -0.3595682978630066
+          -0.4498991370201111,
+          0.014374999329447746,
+          -0.4361168146133423
         ],
         [
-          0.5625,
-          1.4375,
-          0.3595682978630066
+          0.5169687271118164,
+          1.3482394218444824,
+          0.38983818888664246
         ]
       ],
       "units": "metres; original anchors at 32px/m"
@@ -1507,560 +1507,560 @@
     },
     {
       "sprite": 128,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-burger",
       "sourcePixels": "connected-scale4",
-      "vertices": 462,
-      "triangles": 920,
+      "vertices": 9604,
+      "triangles": 14668,
       "bounds": [
         [
-          -0.3125,
-          0,
-          -0.18420203030109406
+          -0.38877856731414795,
+          0.013124999590218067,
+          -0.31049999594688416
         ],
         [
-          0.3125,
-          0.4375,
-          0.18420203030109406
+          0.38877856731414795,
+          0.4148601293563843,
+          0.31049999594688416
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 129,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-fruit",
       "sourcePixels": "connected-scale4",
-      "vertices": 440,
-      "triangles": 876,
+      "vertices": 508,
+      "triangles": 704,
       "bounds": [
         [
-          -0.25,
-          0,
-          -0.19890743494033813
+          -0.1732187569141388,
+          0.01406249962747097,
+          -0.13808009028434753
         ],
         [
-          0.21875,
-          0.46875,
-          0.19890743494033813
+          0.1732187569141388,
+          0.4537057876586914,
+          0.13808009028434753
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 130,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-fruit",
       "sourcePixels": "connected-scale4",
-      "vertices": 496,
-      "triangles": 988,
+      "vertices": 508,
+      "triangles": 704,
       "bounds": [
         [
-          -0.3125,
-          0,
-          -0.2515382766723633
+          -0.2598281502723694,
+          0.017812499776482582,
+          -0.2071201354265213
         ],
         [
-          0.28125,
-          0.59375,
-          0.2515382766723633
+          0.2598281502723694,
+          0.574694037437439,
+          0.2071201354265213
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 131,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-fruit",
       "sourcePixels": "connected-scale4",
-      "vertices": 446,
-      "triangles": 888,
+      "vertices": 10796,
+      "triangles": 16192,
       "bounds": [
         [
-          -0.25,
+          -0.17481635510921478,
           0,
-          -0.21051661670207977
+          -0.12341584265232086
         ],
         [
-          0.21875,
-          0.5625,
-          0.21051661670207977
+          0.17481635510921478,
+          0.5815495848655701,
+          0.12341584265232086
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 132,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-fruit",
       "sourcePixels": "connected-scale4",
-      "vertices": 450,
-      "triangles": 896,
+      "vertices": 508,
+      "triangles": 704,
       "bounds": [
         [
-          -0.25,
-          0,
-          -0.21141420304775238
+          -0.1732187569141388,
+          0.016874998807907104,
+          -0.13808009028434753
         ],
         [
-          0.21875,
-          0.5625,
-          0.21141420304775238
+          0.1732187569141388,
+          0.5444469451904297,
+          0.13808009028434753
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 133,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-fruit",
       "sourcePixels": "connected-scale4",
-      "vertices": 478,
-      "triangles": 952,
+      "vertices": 508,
+      "triangles": 704,
       "bounds": [
         [
-          -0.34375,
-          0,
-          -0.15937499701976776
+          -0.2598281502723694,
+          0.011249999515712261,
+          -0.2071201354265213
         ],
         [
-          0.3125,
-          0.375,
-          0.15937499701976776
+          0.2598281502723694,
+          0.3629646301269531,
+          0.2071201354265213
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 134,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-fruit",
       "sourcePixels": "connected-scale4",
-      "vertices": 496,
-      "triangles": 988,
+      "vertices": 508,
+      "triangles": 704,
       "bounds": [
         [
-          -0.3125,
-          0,
-          -0.2515382766723633
+          -0.2598281502723694,
+          0.017812499776482582,
+          -0.2071201354265213
         ],
         [
-          0.28125,
-          0.59375,
-          0.2515382766723633
+          0.2598281502723694,
+          0.574694037437439,
+          0.2071201354265213
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 135,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-fruit",
       "sourcePixels": "web-hd",
-      "vertices": 474,
-      "triangles": 944,
+      "vertices": 712,
+      "triangles": 1024,
       "bounds": [
         [
-          -0.21875,
-          0,
-          -0.21051661670207977
+          -0.21281160414218903,
+          -0.015625,
+          -0.16035108268260956
         ],
         [
-          0.1875,
-          0.78125,
-          0.21051661670207977
+          0.21281160414218903,
+          0.7561763525009155,
+          0.16035108268260956
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 136,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-fruit",
       "sourcePixels": "web-hd",
-      "vertices": 492,
-      "triangles": 984,
+      "vertices": 812,
+      "triangles": 1088,
       "bounds": [
         [
-          -0.28125,
-          0,
-          -0.27424636483192444
+          -0.34316784143447876,
+          0.03281250223517418,
+          -0.15366977453231812
         ],
         [
-          0.28125,
-          0.65625,
-          0.27424636483192444
+          0.34316784143447876,
+          0.6159917116165161,
+          0.15366977453231812
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 137,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-fruit",
       "sourcePixels": "web-hd",
-      "vertices": 360,
-      "triangles": 716,
+      "vertices": 3568,
+      "triangles": 5504,
       "bounds": [
         [
-          -0.28125,
-          0,
-          -0.3035884201526642
+          -0.2886894941329956,
+          0.007187499664723873,
+          -0.2616700828075409
         ],
         [
-          0.25,
-          0.46875,
-          0.3035884201526642
+          0.2914312481880188,
+          0.6741197109222412,
+          0.2339029163122177
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 138,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-fruit",
       "sourcePixels": "web-hd",
-      "vertices": 636,
-      "triangles": 1268,
+      "vertices": 10796,
+      "triangles": 16192,
       "bounds": [
         [
-          -0.25,
-          0,
-          -0.21189549565315247
+          -0.17481635510921478,
+          0.025312500074505806,
+          -0.14603175222873688
         ],
         [
-          0.21875,
-          0.6875,
-          0.21189549565315247
+          0.17481635510921478,
+          0.8723243474960327,
+          0.14603887498378754
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 139,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-fruit",
       "sourcePixels": "web-hd",
-      "vertices": 490,
-      "triangles": 976,
+      "vertices": 7444,
+      "triangles": 11584,
       "bounds": [
         [
-          -0.25,
-          0,
-          -0.21091581881046295
+          -0.1804724633693695,
+          0.01874999888241291,
+          -0.14007067680358887
         ],
         [
-          0.21875,
-          0.625,
-          0.21091581881046295
+          0.1732187569141388,
+          0.6049410700798035,
+          0.14315128326416016
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 140,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-dessert",
       "sourcePixels": "web-hd",
-      "vertices": 496,
-      "triangles": 988,
+      "vertices": 707,
+      "triangles": 816,
       "bounds": [
         [
-          -0.25,
-          0,
-          -0.2115563005208969
+          -0.14847321808338165,
+          -8.568167508826718e-9,
+          -0.13049998879432678
         ],
         [
-          0.25,
-          0.71875,
-          0.2115563005208969
+          0.14847321808338165,
+          0.7259374856948853,
+          0.13049998879432678
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 141,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-dessert",
       "sourcePixels": "connected-scale4",
-      "vertices": 360,
-      "triangles": 716,
+      "vertices": 304,
+      "triangles": 384,
       "bounds": [
         [
-          -0.1875,
-          0,
-          -0.2119808942079544
+          -0.14847321808338165,
+          0.013124999590218067,
+          -0.06681294739246368
         ],
         [
-          0.1875,
+          0.14847321808338165,
           0.65625,
-          0.2119808942079544
+          0.06681294739246368
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 142,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-dessert",
       "sourcePixels": "connected-scale4",
-      "vertices": 448,
-      "triangles": 892,
+      "vertices": 266,
+      "triangles": 348,
       "bounds": [
         [
-          -0.3125,
-          0,
-          -0.14519445598125458
+          -0.375,
+          0.09281250089406967,
+          -0.15366977453231812
         ],
         [
-          0.3125,
-          0.34375,
-          0.14519445598125458
+          0.375,
+          0.2509375214576721,
+          0.15366977453231812
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 143,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-dessert",
       "sourcePixels": "connected-scale4",
-      "vertices": 448,
-      "triangles": 892,
+      "vertices": 266,
+      "triangles": 348,
       "bounds": [
         [
-          -0.3125,
-          0,
-          -0.14519445598125458
+          -0.375,
+          0.09281250089406967,
+          -0.15366977453231812
         ],
         [
-          0.3125,
-          0.34375,
-          0.14519445598125458
+          0.375,
+          0.2509375214576721,
+          0.15366977453231812
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 144,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-dessert",
       "sourcePixels": "connected-scale4",
-      "vertices": 392,
-      "triangles": 780,
+      "vertices": 1270,
+      "triangles": 2032,
       "bounds": [
         [
-          -0.21875,
-          0,
-          -0.21250000596046448
+          -0.09543530642986298,
+          0.020623711869120598,
+          -0.030733954161405563
         ],
         [
-          0.1875,
-          0.6875,
-          0.21250000596046448
+          0.16263574361801147,
+          0.6790341734886169,
+          0.030733954161405563
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 145,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-dessert",
       "sourcePixels": "connected-scale4",
-      "vertices": 392,
-      "triangles": 780,
+      "vertices": 1270,
+      "triangles": 2032,
       "bounds": [
         [
-          -0.21875,
-          0,
-          -0.21250000596046448
+          -0.09543530642986298,
+          0.020623711869120598,
+          -0.030733954161405563
         ],
         [
-          0.1875,
-          0.6875,
-          0.21250000596046448
+          0.16263574361801147,
+          0.6790341734886169,
+          0.030733954161405563
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 146,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-dessert",
       "sourcePixels": "web-hd",
-      "vertices": 486,
-      "triangles": 968,
+      "vertices": 1344,
+      "triangles": 1980,
       "bounds": [
         [
-          -0.25,
-          0,
-          -0.21051661670207977
+          -0.18938928842544556,
+          0.017812499776482582,
+          -0.1237500011920929
         ],
         [
-          0.25,
-          0.59375,
-          0.21051661670207977
+          0.18938928842544556,
+          0.6293749809265137,
+          0.1237500011920929
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 147,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-dessert",
       "sourcePixels": "connected-scale4",
-      "vertices": 374,
-      "triangles": 744,
+      "vertices": 304,
+      "triangles": 384,
       "bounds": [
         [
-          -0.1875,
-          0,
-          -0.20979532599449158
+          -0.14847321808338165,
+          0.011249999515712261,
+          -0.06681294739246368
         ],
         [
-          0.15625,
+          0.14847321808338165,
           0.5625,
-          0.20979532599449158
+          0.06681294739246368
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 148,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-dessert",
       "sourcePixels": "connected-scale4",
-      "vertices": 374,
-      "triangles": 744,
+      "vertices": 304,
+      "triangles": 384,
       "bounds": [
         [
-          -0.1875,
-          0,
-          -0.20979532599449158
+          -0.14847321808338165,
+          0.011249999515712261,
+          -0.06681294739246368
         ],
         [
-          0.15625,
+          0.14847321808338165,
           0.5625,
-          0.20979532599449158
+          0.06681294739246368
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 149,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-dessert",
       "sourcePixels": "connected-scale4",
-      "vertices": 552,
-      "triangles": 1100,
+      "vertices": 1344,
+      "triangles": 1980,
       "bounds": [
         [
-          -0.21875,
-          0,
-          -0.21051661670207977
+          -0.18938928842544556,
+          0.017812499776482582,
+          -0.1237500011920929
         ],
         [
-          0.1875,
-          0.59375,
-          0.21051661670207977
+          0.18938928842544556,
+          0.6293749809265137,
+          0.1237500011920929
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 150,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-dessert",
       "sourcePixels": "connected-scale4",
-      "vertices": 544,
-      "triangles": 1084,
+      "vertices": 711,
+      "triangles": 1008,
       "bounds": [
         [
-          -0.1875,
-          0,
-          -0.21201105415821075
+          -0.14847321808338165,
+          -1.0803342220810919e-8,
+          -0.13049998879432678
         ],
         [
-          0.1875,
-          0.90625,
-          0.21201105415821075
+          0.14847321808338165,
+          1.069374918937683,
+          0.13049998879432678
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 151,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-dessert",
       "sourcePixels": "connected-scale4",
-      "vertices": 384,
-      "triangles": 764,
+      "vertices": 507,
+      "triangles": 688,
       "bounds": [
         [
-          -0.1875,
-          0,
-          -0.21201105415821075
+          -0.14847321808338165,
+          -7.823110159677071e-9,
+          -0.13049998879432678
         ],
         [
-          0.1875,
-          0.65625,
-          0.21201105415821075
+          0.14847321808338165,
+          0.6628124713897705,
+          0.13049998879432678
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 152,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-dessert",
       "sourcePixels": "connected-scale4",
-      "vertices": 514,
-      "triangles": 1024,
+      "vertices": 507,
+      "triangles": 688,
       "bounds": [
         [
-          -0.1875,
-          0,
-          -0.21201105415821075
+          -0.14847321808338165,
+          -1.0430812658057675e-8,
+          -0.13049998879432678
         ],
         [
-          0.1875,
-          0.875,
-          0.21201105415821075
+          0.14847321808338165,
+          0.8837499618530273,
+          0.13049998879432678
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 153,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-dessert",
       "sourcePixels": "web-hd",
-      "vertices": 418,
-      "triangles": 828,
+      "vertices": 452,
+      "triangles": 480,
       "bounds": [
         [
-          -0.375,
-          0,
-          -0.26369160413742065
+          -0.35999998450279236,
+          0.03125,
+          -0.3240000009536743
         ],
         [
-          0.34375,
-          0.625,
-          0.26369160413742065
+          0.35999998450279236,
+          0.5093749761581421,
+          0.3240000009536743
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 154,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-dessert",
       "sourcePixels": "connected-scale4",
-      "vertices": 454,
-      "triangles": 904,
+      "vertices": 452,
+      "triangles": 480,
       "bounds": [
         [
-          -0.3125,
-          0,
-          -0.19833403825759888
+          -0.35999998450279236,
+          0.0234375,
+          -0.3240000009536743
         ],
         [
-          0.28125,
-          0.46875,
-          0.19833403825759888
+          0.35999998450279236,
+          0.38203126192092896,
+          0.3240000009536743
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 155,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-dessert",
       "sourcePixels": "connected-scale4",
-      "vertices": 408,
-      "triangles": 816,
+      "vertices": 450,
+      "triangles": 768,
       "bounds": [
         [
-          -0.25,
-          0,
-          -0.193462073802948
+          -0.20177999138832092,
+          0.15843750536441803,
+          -0.18160198628902435
         ],
         [
-          0.21875,
-          0.46875,
-          0.193462073802948
+          0.20177999138832092,
+          0.31593751907348633,
+          0.18160198628902435
         ]
       ],
       "units": "metres; original anchors at 32px/m"
@@ -2087,480 +2087,480 @@
     },
     {
       "sprite": 157,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-meal",
       "sourcePixels": "connected-scale4",
-      "vertices": 560,
-      "triangles": 1116,
+      "vertices": 242,
+      "triangles": 168,
       "bounds": [
         [
-          -0.21875,
-          0,
-          -0.21250000596046448
+          -0.12960000336170197,
+          0.031171875074505806,
+          -0.11664000153541565
         ],
         [
-          0.21875,
-          0.65625,
-          0.21250000596046448
+          0.12960000336170197,
+          0.5706093907356262,
+          0.11664000153541565
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 158,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-meal",
       "sourcePixels": "connected-scale4",
-      "vertices": 516,
-      "triangles": 1028,
+      "vertices": 242,
+      "triangles": 168,
       "bounds": [
         [
-          -0.1875,
-          0,
-          -0.21250000596046448
+          -0.12960000336170197,
+          0.031171875074505806,
+          -0.11664000153541565
         ],
         [
-          0.1875,
-          0.65625,
-          0.21250000596046448
+          0.12960000336170197,
+          0.5706093907356262,
+          0.11664000153541565
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 159,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-burger",
       "sourcePixels": "connected-scale4",
-      "vertices": 668,
-      "triangles": 1332,
+      "vertices": 12376,
+      "triangles": 18712,
       "bounds": [
         [
-          -0.3125,
-          0,
-          -0.22450903058052063
+          -0.38877856731414795,
+          0.015937499701976776,
+          -0.31049999594688416
         ],
         [
-          0.28125,
-          0.53125,
-          0.22450903058052063
+          0.38877856731414795,
+          0.5568837523460388,
+          0.31049999594688416
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 160,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-burger",
       "sourcePixels": "connected-scale4",
-      "vertices": 472,
-      "triangles": 940,
+      "vertices": 9604,
+      "triangles": 14668,
       "bounds": [
         [
-          -0.3125,
-          0,
-          -0.15937499701976776
+          -0.38877856731414795,
+          0.011249999515712261,
+          -0.31049999594688416
         ],
         [
-          0.28125,
-          0.375,
-          0.15937499701976776
+          0.38877856731414795,
+          0.3555943965911865,
+          0.31049999594688416
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 161,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-meal",
       "sourcePixels": "connected-scale4",
-      "vertices": 448,
-      "triangles": 892,
+      "vertices": 712,
+      "triangles": 1024,
       "bounds": [
         [
-          -0.34375,
-          0,
-          -0.1710447520017624
+          -0.31240445375442505,
+          0.04062500223517418,
+          -0.20043884217739105
         ],
         [
-          0.3125,
-          0.40625,
-          0.1710447520017624
+          0.34438928961753845,
+          0.35749998688697815,
+          0.20043884217739105
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 162,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-meal",
       "sourcePixels": "connected-scale4",
-      "vertices": 456,
-      "triangles": 908,
+      "vertices": 712,
+      "triangles": 1024,
       "bounds": [
         [
-          -0.34375,
-          0,
-          -0.1710447520017624
+          -0.31240445375442505,
+          0.04062500223517418,
+          -0.20043884217739105
         ],
         [
-          0.34375,
-          0.40625,
-          0.1710447520017624
+          0.34438928961753845,
+          0.35749998688697815,
+          0.20043884217739105
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 163,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-meal",
       "sourcePixels": "connected-scale4",
-      "vertices": 498,
-      "triangles": 992,
+      "vertices": 408,
+      "triangles": 640,
       "bounds": [
         [
-          -0.3125,
-          0,
-          -0.2241981327533722
+          -0.3489120602607727,
+          0.1301562488079071,
+          -0.2338453233242035
         ],
         [
-          0.28125,
-          0.53125,
-          0.2241981327533722
+          0.3489120602607727,
+          0.2549999952316284,
+          0.2338453233242035
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 164,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-meal",
       "sourcePixels": "connected-scale4",
-      "vertices": 472,
-      "triangles": 940,
+      "vertices": 273,
+      "triangles": 480,
       "bounds": [
         [
-          -0.34375,
-          0,
-          -0.2870694100856781
+          -0.3707350492477417,
+          0.04620303586125374,
+          -0.08774999529123306
         ],
         [
-          0.34375,
-          0.6875,
-          0.2870694100856781
+          0.2707771956920624,
+          0.523810863494873,
+          0.08774999529123306
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 165,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-meal",
       "sourcePixels": "connected-scale4",
-      "vertices": 456,
-      "triangles": 908,
+      "vertices": 1452,
+      "triangles": 2252,
       "bounds": [
         [
-          -0.25,
-          0,
-          -0.1710447520017624
+          -0.20000000298023224,
+          0.05078125,
+          -0.13500000536441803
         ],
         [
-          0.25,
-          0.40625,
-          0.1710447520017624
+          0.20000000298023224,
+          0.27421876788139343,
+          0.14081335067749023
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 166,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-fries",
       "sourcePixels": "connected-scale4",
-      "vertices": 466,
-      "triangles": 928,
+      "vertices": 1027,
+      "triangles": 788,
       "bounds": [
         [
-          -0.21875,
+          -0.16758710145950317,
           0,
-          -0.21250000596046448
+          -0.1495530754327774
         ],
         [
-          0.21875,
-          0.5,
-          0.21250000596046448
+          0.1685970425605774,
+          0.5697976350784302,
+          0.1649700105190277
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 167,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-meal",
       "sourcePixels": "connected-scale4",
-      "vertices": 450,
-      "triangles": 896,
+      "vertices": 342,
+      "triangles": 232,
       "bounds": [
         [
-          -0.21875,
-          0,
-          -0.20979532599449158
+          -0.12960000336170197,
+          0.035624999552965164,
+          -0.11664000153541565
         ],
         [
-          0.1875,
-          0.75,
-          0.20979532599449158
+          0.12960000336170197,
+          0.7388349175453186,
+          0.11664000153541565
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 168,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-meal",
       "sourcePixels": "connected-scale4",
-      "vertices": 424,
-      "triangles": 844,
+      "vertices": 242,
+      "triangles": 168,
       "bounds": [
         [
-          -0.1875,
-          0,
-          -0.20979532599449158
+          -0.12960000336170197,
+          0.025234375149011612,
+          -0.11664000153541565
         ],
         [
-          0.15625,
-          0.53125,
-          0.20979532599449158
+          0.12960000336170197,
+          0.46192190051078796,
+          0.11664000153541565
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 169,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-meal",
       "sourcePixels": "connected-scale4",
-      "vertices": 424,
-      "triangles": 844,
+      "vertices": 124,
+      "triangles": 76,
       "bounds": [
         [
-          -0.375,
-          0,
-          -0.1442342847585678
+          -0.3675000071525574,
+          0.024062499403953552,
+          -0.3307500183582306
         ],
         [
-          0.34375,
-          0.34375,
-          0.1442342847585678
+          0.3675000071525574,
+          0.23203125596046448,
+          0.3307500183582306
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 170,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-meal",
       "sourcePixels": "web-hd",
-      "vertices": 392,
-      "triangles": 780,
+      "vertices": 342,
+      "triangles": 232,
       "bounds": [
         [
-          -0.25,
-          0,
-          -0.20859302580356598
+          -0.12960000336170197,
+          0.03414062410593033,
+          -0.11664000153541565
         ],
         [
-          0.25,
-          0.53125,
-          0.20859302580356598
+          0.12960000336170197,
+          0.7080501317977905,
+          0.11664000153541565
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 171,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-meal",
       "sourcePixels": "connected-scale4",
-      "vertices": 602,
-      "triangles": 1200,
+      "vertices": 467,
+      "triangles": 552,
       "bounds": [
         [
-          -0.34375,
-          0,
-          -0.23906250298023224
+          -0.19440001249313354,
+          0.026718750596046448,
+          -0.17496000230312347
         ],
         [
-          0.34375,
-          0.5625,
-          0.23906250298023224
+          0.3714659810066223,
+          0.4890937805175781,
+          0.17496000230312347
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 172,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-meal",
       "sourcePixels": "web-hd",
-      "vertices": 388,
-      "triangles": 776,
+      "vertices": 567,
+      "triangles": 616,
       "bounds": [
         [
-          -0.28125,
-          0,
-          -0.1966831088066101
+          -0.3449999988079071,
+          0.012890624813735485,
+          -0.31049999594688416
         ],
         [
-          0.25,
-          0.46875,
-          0.1966831088066101
+          0.4402559995651245,
+          0.3327375054359436,
+          0.31049999594688416
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 173,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-meal",
       "sourcePixels": "connected-scale4",
-      "vertices": 420,
-      "triangles": 836,
+      "vertices": 567,
+      "triangles": 616,
       "bounds": [
         [
-          -0.28125,
-          0,
-          -0.1966831088066101
+          -0.3449999988079071,
+          0.012890624813735485,
+          -0.31049999594688416
         ],
         [
-          0.25,
-          0.46875,
-          0.1966831088066101
+          0.4402559995651245,
+          0.3327375054359436,
+          0.31049999594688416
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 174,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-meal",
       "sourcePixels": "connected-scale4",
-      "vertices": 426,
-      "triangles": 848,
+      "vertices": 567,
+      "triangles": 616,
       "bounds": [
         [
-          -0.28125,
-          0,
-          -0.1966831088066101
+          -0.3449999988079071,
+          0.012890624813735485,
+          -0.31049999594688416
         ],
         [
-          0.25,
-          0.46875,
-          0.1966831088066101
+          0.4402559995651245,
+          0.3327375054359436,
+          0.31049999594688416
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 175,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-meal",
       "sourcePixels": "connected-scale4",
-      "vertices": 396,
-      "triangles": 792,
+      "vertices": 342,
+      "triangles": 232,
       "bounds": [
         [
-          -0.25,
-          0,
-          -0.21232202649116516
+          -0.12960000336170197,
+          0.028203124180436134,
+          -0.11664000153541565
         ],
         [
-          0.21875,
-          0.59375,
-          0.21232202649116516
+          0.12960000336170197,
+          0.5849109888076782,
+          0.11664000153541565
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 176,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-meal",
       "sourcePixels": "web-hd",
-      "vertices": 676,
-      "triangles": 1352,
+      "vertices": 2915,
+      "triangles": 4392,
       "bounds": [
         [
-          -0.3125,
-          0,
-          -0.26372912526130676
+          -0.21391382813453674,
+          0.02968749962747097,
+          -0.19392071664333344
         ],
         [
-          0.3125,
-          0.625,
-          0.26372912526130676
+          0.3714659810066223,
+          0.620458722114563,
+          0.19020339846611023
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 177,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-meal",
       "sourcePixels": "connected-scale4",
-      "vertices": 380,
-      "triangles": 756,
+      "vertices": 242,
+      "triangles": 168,
       "bounds": [
         [
-          -0.1875,
-          0,
-          -0.20979532599449158
+          -0.12960000336170197,
+          0.026718750596046448,
+          -0.11664000153541565
         ],
         [
-          0.15625,
-          0.5625,
-          0.20979532599449158
+          0.12960000336170197,
+          0.4890937805175781,
+          0.11664000153541565
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 178,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-meal",
       "sourcePixels": "connected-scale4",
-      "vertices": 392,
-      "triangles": 780,
+      "vertices": 242,
+      "triangles": 168,
       "bounds": [
         [
-          -0.125,
-          0,
-          -0.10625000298023224
+          -0.06480000168085098,
+          0.03414062410593033,
+          -0.058320000767707825
         ],
         [
-          0.125,
-          0.71875,
-          0.10625000298023224
+          0.06480000168085098,
+          0.6249531507492065,
+          0.058320000767707825
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 179,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-meal",
       "sourcePixels": "connected-scale4",
-      "vertices": 436,
-      "triangles": 868,
+      "vertices": 242,
+      "triangles": 168,
       "bounds": [
         [
-          -0.15625,
-          0,
-          -0.21250000596046448
+          -0.12960000336170197,
+          0.031171875074505806,
+          -0.11664000153541565
         ],
         [
-          0.15625,
-          0.65625,
-          0.21250000596046448
+          0.12960000336170197,
+          0.5706093907356262,
+          0.11664000153541565
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 180,
-      "recipe": "rounded-volume",
+      "recipe": "crafted-meal",
       "sourcePixels": "connected-scale4",
-      "vertices": 346,
-      "triangles": 688,
+      "vertices": 242,
+      "triangles": 168,
       "bounds": [
         [
-          -0.1875,
-          0,
-          -0.20859302580356598
+          -0.12960000336170197,
+          0.026718750596046448,
+          -0.11664000153541565
         ],
         [
-          0.15625,
-          0.5625,
-          0.20859302580356598
+          0.12960000336170197,
+          0.4890937805175781,
+          0.11664000153541565
         ]
       ],
       "units": "metres; original anchors at 32px/m"
@@ -3589,18 +3589,18 @@
       "sprite": 232,
       "recipe": "anatomical-platform",
       "sourcePixels": "connected-scale4",
-      "vertices": 1644,
-      "triangles": 1596,
+      "vertices": 1742,
+      "triangles": 1824,
       "bounds": [
         [
-          -0.48951247334480286,
-          0.028437500819563866,
-          -0.17890127003192902
+          -0.5099999904632568,
+          0.21937501430511475,
+          -0.17610937356948853
         ],
         [
-          0.5082168579101562,
-          0.3984557092189789,
-          0.1775200217962265
+          0.5099999904632568,
+          0.4191376566886902,
+          0.17610937356948853
         ]
       ],
       "units": "metres; original anchors at 32px/m"
@@ -5927,120 +5927,120 @@
     },
     {
       "sprite": 349,
-      "recipe": "anatomical-frog",
+      "recipe": "anatomical-dinosaur",
       "sourcePixels": "connected-scale4",
-      "vertices": 1240,
-      "triangles": 1552,
+      "vertices": 1968,
+      "triangles": 2104,
       "bounds": [
         [
-          -0.568105161190033,
-          -0.004111668560653925,
-          -0.41636765003204346
+          -0.7431039214134216,
+          -0.027187500149011612,
+          -0.34126538038253784
         ],
         [
-          0.5546649694442749,
-          0.7793750166893005,
-          0.4204361140727997
+          0.631231963634491,
+          0.8609374761581421,
+          0.34126538038253784
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 350,
-      "recipe": "anatomical-frog",
+      "recipe": "anatomical-dinosaur",
       "sourcePixels": "connected-scale4",
-      "vertices": 1240,
-      "triangles": 1552,
+      "vertices": 1968,
+      "triangles": 2104,
       "bounds": [
         [
-          -0.45448413491249084,
-          0,
-          -0.3316219449043274
+          -0.5944831371307373,
+          -0.026249999180436134,
+          -0.27301231026649475
         ],
         [
-          0.44373196363449097,
-          0.7524999976158142,
-          0.3349047005176544
+          0.5049855709075928,
+          0.831250011920929,
+          0.27301231026649475
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 351,
-      "recipe": "anatomical-frog",
+      "recipe": "anatomical-dinosaur",
       "sourcePixels": "connected-scale4",
-      "vertices": 1240,
-      "triangles": 1552,
+      "vertices": 1968,
+      "triangles": 2104,
       "bounds": [
         [
-          -0.45448413491249084,
-          0,
-          -0.331285685300827
+          -0.5944831371307373,
+          -0.026249999180436134,
+          -0.27301231026649475
         ],
         [
-          0.44373196363449097,
-          0.7524999976158142,
-          0.33446672558784485
+          0.5049855709075928,
+          0.831250011920929,
+          0.27301231026649475
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 352,
-      "recipe": "rounded-volume",
+      "recipe": "anatomical-dinosaur",
       "sourcePixels": "connected-scale4",
-      "vertices": 1398,
-      "triangles": 2792,
+      "vertices": 1968,
+      "triangles": 2104,
       "bounds": [
         [
-          -0.625,
-          0,
-          -0.3181668519973755
+          -0.7431039214134216,
+          -0.022499999031424522,
+          -0.34126538038253784
         ],
         [
-          0.625,
-          0.75,
-          0.3181668519973755
+          0.631231963634491,
+          0.7124999761581421,
+          0.34126538038253784
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 353,
-      "recipe": "rounded-volume",
+      "recipe": "anatomical-dinosaur",
       "sourcePixels": "connected-scale4",
-      "vertices": 1566,
-      "triangles": 3128,
+      "vertices": 1968,
+      "triangles": 2104,
       "bounds": [
         [
-          -0.59375,
-          0,
-          -0.35800325870513916
+          -0.7431039214134216,
+          -0.03374999761581421,
+          -0.34126538038253784
         ],
         [
-          0.59375,
-          1.125,
-          0.35800325870513916
+          0.631231963634491,
+          1.068750023841858,
+          0.34126538038253784
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 354,
-      "recipe": "rounded-volume",
+      "recipe": "anatomical-dinosaur",
       "sourcePixels": "connected-scale4",
-      "vertices": 1642,
-      "triangles": 3276,
+      "vertices": 1968,
+      "triangles": 2104,
       "bounds": [
         [
-          -0.625,
-          0,
-          -0.359197735786438
+          -0.7431039214134216,
+          -0.029062500223517418,
+          -0.34126538038253784
         ],
         [
-          0.625,
-          0.96875,
-          0.359197735786438
+          0.631231963634491,
+          0.9203124642372131,
+          0.34126538038253784
         ]
       ],
       "units": "metres; original anchors at 32px/m"
@@ -6707,160 +6707,160 @@
     },
     {
       "sprite": 388,
-      "recipe": "rounded-volume",
+      "recipe": "anatomical-sauropod",
       "sourcePixels": "connected-scale4",
-      "vertices": 710,
-      "triangles": 1416,
+      "vertices": 892,
+      "triangles": 1008,
       "bounds": [
         [
-          -0.5625,
-          0,
-          -0.1442342847585678
+          -0.7339909076690674,
+          0.01461190078407526,
+          -0.25093039870262146
         ],
         [
-          0.53125,
-          0.34375,
-          0.1442342847585678
+          0.6568587422370911,
+          0.3162499964237213,
+          0.2537371814250946
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 389,
-      "recipe": "rounded-volume",
+      "recipe": "anatomical-sauropod",
       "sourcePixels": "connected-scale4",
-      "vertices": 1254,
-      "triangles": 2504,
+      "vertices": 892,
+      "triangles": 1008,
       "bounds": [
         [
-          -0.75,
-          0,
-          -0.2509218752384186
+          -0.880789041519165,
+          0.024717574939131737,
+          -0.30396825075149536
         ],
         [
-          0.71875,
-          0.59375,
-          0.2509218752384186
+          0.7882305383682251,
+          0.5462499856948853,
+          0.30478671193122864
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 390,
-      "recipe": "rounded-volume",
+      "recipe": "anatomical-sauropod",
       "sourcePixels": "connected-scale4",
-      "vertices": 1786,
-      "triangles": 3568,
+      "vertices": 892,
+      "triangles": 1008,
       "bounds": [
         [
-          -0.84375,
-          -0.03125,
-          -0.35748064517974854
+          -0.9963372945785522,
+          0.004300523549318314,
+          -0.3532853424549103
         ],
         [
-          0.875,
-          0.8125,
-          0.35748064517974854
+          0.9508522748947144,
+          0.7450000047683716,
+          0.3558187782764435
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 391,
-      "recipe": "rounded-volume",
+      "recipe": "anatomical-sauropod",
       "sourcePixels": "connected-scale4",
-      "vertices": 2086,
-      "triangles": 4168,
+      "vertices": 892,
+      "triangles": 1008,
       "bounds": [
         [
-          -0.96875,
-          0,
-          -0.35956573486328125
+          -1.17438542842865,
+          0.04221152514219284,
+          -0.40097135305404663
         ],
         [
-          0.96875,
-          1,
-          0.35956573486328125
+          1.0509740114212036,
+          0.9200000166893005,
+          0.40658506751060486
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 392,
-      "recipe": "rounded-volume",
+      "recipe": "anatomical-sauropod",
       "sourcePixels": "connected-scale4",
-      "vertices": 2130,
-      "triangles": 4260,
+      "vertices": 892,
+      "triangles": 1008,
       "bounds": [
         [
-          -0.90625,
-          0,
-          -0.35956573486328125
+          -1.11188542842865,
+          0.040613073855638504,
+          -0.4062584340572357
         ],
         [
-          1,
-          0.96875,
-          0.35956573486328125
+          1.1134740114212036,
+          0.8912500143051147,
+          0.40661901235580444
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 393,
-      "recipe": "rounded-volume",
+      "recipe": "anatomical-sauropod",
       "sourcePixels": "connected-scale4",
-      "vertices": 2178,
-      "triangles": 4352,
+      "vertices": 892,
+      "triangles": 1008,
       "bounds": [
         [
-          -0.9375,
-          0,
-          -0.3594374358654022
+          -1.17438542842865,
+          0.04108447954058647,
+          -0.40049710869789124
         ],
         [
-          0.9375,
-          0.96875,
-          0.3594374358654022
+          1.0509740114212036,
+          0.8912500143051147,
+          0.4061528742313385
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 394,
-      "recipe": "rounded-volume",
+      "recipe": "anatomical-sauropod",
       "sourcePixels": "connected-scale4",
-      "vertices": 2094,
-      "triangles": 4184,
+      "vertices": 892,
+      "triangles": 1008,
       "bounds": [
         [
-          -1,
-          0,
-          -0.3588341772556305
+          -1.20563542842865,
+          0.04192784056067467,
+          -0.4062293469905853
         ],
         [
-          0.9375,
-          1,
-          0.3588341772556305
+          1.0197240114212036,
+          0.9200000166893005,
+          0.40662115812301636
         ]
       ],
       "units": "metres; original anchors at 32px/m"
     },
     {
       "sprite": 395,
-      "recipe": "rounded-volume",
+      "recipe": "anatomical-sauropod",
       "sourcePixels": "connected-scale4",
-      "vertices": 2180,
-      "triangles": 4356,
+      "vertices": 892,
+      "triangles": 1008,
       "bounds": [
         [
-          -0.6875,
-          0,
-          -0.3588605225086212
+          -0.880789041519165,
+          0.05144114047288895,
+          -0.3008061349391937
         ],
         [
-          0.6875,
-          1.21875,
-          0.3588605225086212
+          0.7882305383682251,
+          1.121250033378601,
+          0.3049418032169342
         ]
       ],
       "units": "metres; original anchors at 32px/m"

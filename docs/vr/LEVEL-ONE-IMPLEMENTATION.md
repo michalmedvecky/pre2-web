@@ -61,3 +61,8 @@ Deployment remains the existing GHCR branch workflow; building/publishing an ima
 ## Spatial art and turning update
 
 See [SPATIAL-ART-AND-TURNING.md](SPATIAL-ART-AND-TURNING.md) for the resumable checklist, model coverage, generated panorama provenance, occlusion changes and physical Quest acceptance still required.
+
+
+## Traversal and presentation update
+
+See [RAILS-IMPACTS-MUSIC-BONUS.md](RAILS-IMPACTS-MUSIC-BONUS.md) for the current checklist, lower-stash route proof, corrected source collision classification, new models and remaining Quest checks.

@@ -10,10 +10,10 @@ const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
 export function levelOneLayout(world){
  const boxes=[],columns=Array.from({length:256},()=>[]),level=world.level;
  for(let row=0;row<level.height;row++)for(let x=0;x<256;x++){
-  const tile=world.map[row*256+x],c=level.tilePropertiesY[tile],wall=level.tilePropertiesX[tile];
+  const tile=world.map[row*256+x],c=level.tilePropertiesY[tile],wall=level.tilePropertiesX[tile],ceiling=(level.tilePropertiesMisc[tile]||0)&15;
   if(!(c>=1&&c<=5)&&!wall)continue;
   const offset=(level.tileSlopes[tile]||0)/32,top=nativeY(row*16+offset*32);
-  const box={minX:x*.5,maxX:(x+1)*.5,minY:top-.5,maxY:top,minZ:-1.8,maxZ:1.8,tile,row,column:x,area:areaForY(row*16),floor:c>=1&&c<=5,source:'level-1'};
+  const box={minX:x*.5,maxX:(x+1)*.5,minY:top-.5,maxY:top,minZ:-1.8,maxZ:1.8,tile,row,column:x,area:areaForY(row*16),floor:c>=1&&c<=5,wall:!!wall,ceiling:ceiling===1,ceilingHazard:ceiling===2,oneWay:!wall&&ceiling!==1&&ceiling!==2,source:'level-1'};
   boxes.push(box);columns[x].push(box);
  }
  return {boxes,columns,length:128,width:3.6,start:{x:world.level.start.x/32,y:nativeY(world.level.start.y),z:0},sourceSHA256:level.sourceSHA256};
@@ -63,14 +63,14 @@ export class LevelOne {
   if(Math.abs(dx)>.00001)this.face=Math.sign(dx);
   const resolve=(axis,delta)=>{
    let x=p.x+ox+(axis==='x'?delta:0),z=p.z+oz+(axis==='z'?delta:0);x=clamp(x,r,128-r);z=clamp(z,-1.8+r,1.8-r);
-   for(const b of this.nearby(x)){if(b.platform||p.y>=b.maxY-.001||p.y+LEVEL_RULES.height<=b.minY+.01)continue;
+   for(const b of this.nearby(x)){if(b.platform||!b.wall||p.y>=b.maxY-.001||p.y+LEVEL_RULES.height<=b.minY+.01)continue;
     if(x+r>b.minX&&x-r<b.maxX&&z+r>b.minZ&&z-r<b.maxZ){if(p.grounded&&b.maxY-p.y<=LEVEL_RULES.step){p.y=b.maxY;continue;}if(axis==='x')x=x<(b.minX+b.maxX)/2?b.minX-r:b.maxX+r;else z=z<0?b.minZ-r:b.maxZ+r;}
    }p[axis]=axis==='x'?x-ox:z-oz;
   };resolve('x',dx);resolve('z',dz);
   if(input.jump&&!this.jumpHeld&&p.grounded){p.vy=LEVEL_RULES.jump;p.grounded=false;this.emit('jump');}this.jumpHeld=!!input.jump;
   p.vy-=LEVEL_RULES.gravity*dt;const next=p.y+p.vy*dt,floor=this.support(p.x+ox,p.z+oz,p.y+.04);
   if(p.vy<=0&&next<=floor&&p.y>=floor-.03){p.y=floor;p.vy=0;p.grounded=true;}else{p.y=next;p.grounded=false;}
-  for(const b of this.nearby(p.x+ox))if(!b.platform&&p.vy>0&&p.x+ox+r>b.minX&&p.x+ox-r<b.maxX&&p.z+oz+r>b.minZ&&p.z+oz-r<b.maxZ&&oldY+LEVEL_RULES.height<=b.minY&&p.y+LEVEL_RULES.height>=b.minY){p.y=b.minY-LEVEL_RULES.height;p.vy=0;}
+  for(const b of this.nearby(p.x+ox))if(!b.platform&&(b.ceiling||(b.ceilingHazard&&!this.world.godMode))&&p.vy>0&&p.x+ox+r>b.minX&&p.x+ox-r<b.maxX&&p.z+oz+r>b.minZ&&p.z+oz-r<b.maxZ&&oldY+LEVEL_RULES.height<=b.minY&&p.y+LEVEL_RULES.height>=b.minY){this.emit('head-hit');if(b.ceilingHazard){this.startRescue('ceiling-hazard');return;}p.y=b.minY-LEVEL_RULES.height;p.vy=0;}
   if(p.y<(this.area==='caves'?12.5:LEVEL_RULES.fallY)){this.startRescue('pit');return;}
   this.project(input);this.interact(input);
   this.clock+=dt;while(this.clock>=1/NATIVE_HZ){this.nativeTick(input);this.clock-=1/NATIVE_HZ;}

@@ -22,7 +22,7 @@ export class XRControls {
  sample(sources,{turnMode='snap'}={}){const out={x:0,z:0,jump:false,turn:0};for(const source of sources){if(!source||source.targetRayMode!=='tracked-pointer'||!source.gripSpace||source.gamepad?.mapping!=='xr-standard')continue;
   let state=this.sources.get(source);if(!state){state={moveReady:false,turnReady:false,jumpReady:false};this.sources.set(source,state);}
   const stick=thumbstick(source),neutral=stick.x===0&&stick.z===0;
-  if(source.handedness==='left'){const menu=source.gamepad.buttons[5]?.pressed===true;if(!menu)state.menuReady=true;if(menu&&state.menuReady){out.menu=true;state.menuReady=false;}if(neutral)state.moveReady=true;if(state.moveReady){out.x=stick.x;out.z=stick.z;}}
+  if(source.handedness==='left'){const music=source.gamepad.buttons[4]?.pressed===true;if(!music)state.musicReady=true;if(music&&state.musicReady){out.music=true;state.musicReady=false;}const menu=source.gamepad.buttons[5]?.pressed===true;if(!menu)state.menuReady=true;if(menu&&state.menuReady){out.menu=true;state.menuReady=false;}if(neutral)state.moveReady=true;if(state.moveReady){out.x=stick.x;out.z=stick.z;}}
   if(source.handedness==='right'){
    if(neutral)state.turnReady=true;if(turnMode==='smooth'&&state.turnReady)out.turnAxis=-stick.x;if(turnMode==='snap'&&Math.abs(stick.x)>.65&&state.turnReady){out.turn=-Math.sign(stick.x)*Math.PI/6;state.turnReady=false;}
    const pressed=source.gamepad.buttons[4]?.pressed===true;if(!pressed)state.jumpReady=true;out.jump=state.jumpReady&&pressed;const interact=source.gamepad.buttons[5]?.pressed===true;if(!interact)state.interactReady=true;if(state.interactReady&&interact)out.interact=true;

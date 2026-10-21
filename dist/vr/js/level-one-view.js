@@ -3,6 +3,7 @@ import * as T from '../vendor/three.module.js';
 import {makeNativeArt} from './native-art.js';
 import {makeBear,animateBear} from './bear-model.js';
 import {isBear,bearPresentation,nativeY,areaForY} from './level-one.js';
+import {floorEdges,railMeshes,naturalLedge} from './trail.js';
 import {headOcclusion} from './occlusion.js';
 import {tileAnimation} from '../native/tile-animation.js';
 import {surfaceMaterial} from './surfaces.js';
@@ -12,6 +13,7 @@ export function buildLevelOne(scene,pilot,textures,hdArt=null){
  const hints=new T.Group();hints.name='secret-hints';root.add(hints);
  const secretGhosts=new T.InstancedMesh(new T.BoxGeometry(.5,.5,3.6),new T.MeshBasicMaterial({color:'#53ffff',wireframe:true,transparent:true,opacity:.8,depthTest:false,depthWrite:false}),48);secretGhosts.frustumCulled=false;secretGhosts.renderOrder=10;hints.add(secretGhosts);
  const gateGhosts=new T.InstancedMesh(new T.IcosahedronGeometry(.36,1),new T.MeshBasicMaterial({color:'#ffda62',wireframe:true,depthTest:false,depthWrite:false}),8);gateGhosts.frustumCulled=false;gateGhosts.renderOrder=10;hints.add(gateGhosts);
+ const railRopeMaterial=new T.MeshStandardMaterial({color:'#cfaf79',roughness:1});
  const rope=new T.InstancedMesh(new T.IcosahedronGeometry(.018,0),new T.MeshStandardMaterial({color:'#e7d5ac',roughness:1}),20);rope.frustumCulled=false;props.add(rope);
  const earth=surfaceMaterial('earth',textures),grass=surfaceMaterial('grass',textures),stone=surfaceMaterial('stone',textures),bark=surfaceMaterial('bark',textures),foliage=surfaceMaterial('foliage',textures);
  const atlasMaterial=new T.MeshStandardMaterial({map:art.tileAtlas(),alphaTest:.3,roughness:1,side:T.DoubleSide});
@@ -29,7 +31,11 @@ export function buildLevelOne(scene,pilot,textures,hdArt=null){
    else{if(!g.decor.has(id))g.decor.set(id,[]);g.decor.get(id).push({p:[x*.5+.25,y-.5,-2.15],s:[1,1,1]});}
   }
   const remap=tileAnimation(level,w.tileAnimationPhase).remap,group=new T.Group();group.name='source-chunk:'+key;group.userData={chunk,area:targetArea,animated:[]};terrain.add(group);chunks.set(key,group);
-   instances(group,cube,[stone,stone,grass,earth,stone,stone],g.solid);
+   const solidAt=(x,row)=>{if(x<0||x>=256||row<0||row>=level.height)return false;const t=w.map[row*256+x],c=level.tilePropertiesY[t];return (c>=1&&c<=5)||!!level.tilePropertiesX[t];},floating=new Set();
+   for(let row=0;row<level.height;row++){const cells=g.tiles.filter(t=>t.row===row&&!solidAt(t.x*2,row-1)&&!solidAt(t.x*2,row+1)).sort((a,b)=>a.x-b.x);for(let i=0;i<cells.length;){let end=i+1;while(end<cells.length&&Math.abs(cells[end].x-cells[end-1].x-.5)<.001)end++;if(end-i<=10){const width=(end-i)*.5,geo=naturalLedge(width),mesh=new T.Mesh(geo,[stone,grass]);mesh.name='natural-ledge';mesh.position.set(cells[i].x+width/2,cells[i].y,0);mesh.userData.ownedGeometry=true;group.add(mesh);for(let j=i;j<end;j++)floating.add(cells[j].row*256+cells[j].x*2);}i=end;}}
+   instances(group,cube,[stone,stone,grass,earth,stone,stone],g.solid.filter(r=>!floating.has(Math.round((21-r.p[1]-.25)*2)*256+Math.round((r.p[0]-.25)*2))));
+   g.tiles=g.tiles.filter(t=>!floating.has(t.row*256+t.x*2));
+   group.add(railMeshes(floorEdges(pilot.layout,w).filter(e=>e.area===targetArea&&(e.column>>4)===chunk),bark,railRopeMaterial));
    const positions=[],uvs=[],normals=[],indices=[];
    for(const t of g.tiles)for(const z of [-1.806,1.806]){
     const i=positions.length/3,r=art.tileUV(remap[t.id]);positions.push(t.x,t.y-.5,z,t.x+.5,t.y-.5,z,t.x+.5,t.y,z,t.x,t.y,z);uvs.push(r.u0,r.v0,r.u1,r.v0,r.u1,r.v1,r.u0,r.v1);normals.push(0,0,Math.sign(z),0,0,Math.sign(z),0,0,Math.sign(z),0,0,Math.sign(z));indices.push(i,i+1,i+2,i,i+2,i+3);
@@ -56,10 +62,11 @@ export function buildLevelOne(scene,pilot,textures,hdArt=null){
  const caveBackdrop=new T.Mesh(new T.BoxGeometry(128,12,.7),stone);caveBackdrop.position.set(64,16,-4);root.add(caveBackdrop);
  const caveFront=caveBackdrop.clone();caveFront.position.z=4;caveFront.scale.y=2;root.add(caveFront);caveBackdrop.scale.y=2;
  const caveRoof=new T.Mesh(new T.BoxGeometry(128,.5,10),stone);caveRoof.position.set(64,23.5,0);root.add(caveRoof);
+ const lowerWalls=new T.Group();lowerWalls.name='underground-bonus-shell';root.add(lowerWalls);for(const z of [-2.7,2.7]){const wall=new T.Mesh(new T.BoxGeometry(17.5,5,.35),stone);wall.position.set(119.5,-.45,z);lowerWalls.add(wall);}
  const caveEnds=new T.Group();root.add(caveEnds);for(const x of [-.5,128.5]){const wall=new T.Mesh(new T.BoxGeometry(1,26,10),stone);wall.position.set(x,11,0);caveEnds.add(wall);}
  function setSprite(key,word,x,y,z=0,depth){let m=dynamic.get(key);if(!m||m.userData.word!==word){if(m)m.removeFromParent();m=(key.text&&art.label?.(key.text))||((word&0x1fff)>=74&&(word&0x1fff)<=90&&art.score?.(word&0x1fff))||art.sprite(word,{depth});m.userData.word=word;dynamic.set(key,m);props.add(m);}m.visible=true;m.position.set(x,y,z);m.rotation.y=m.userData.model?.startsWith('anatomical-')?0:Math.PI/2;return m;}
  function update(view={}){
-  const w=pilot.world;if(boundWorld!==w||revision!==pilot.revision)refresh();area=pilot.area;forest.visible=area==='outdoors';caveEnds.visible=caveFront.visible=caveBackdrop.visible=caveRoof.visible=area==='caves';scene.background.set(area==='caves'?'#26302b':'#adcfcd');scene.fog.color.copy(scene.background);stats.headOccluded=headOcclusion(view.position,pilot.layout.boxes,area);
+  const w=pilot.world;if(boundWorld!==w||revision!==pilot.revision)refresh();area=pilot.area;stats.underground=area==='outdoors'&&pilot.player.x>=111&&pilot.player.y<2;forest.visible=area==='outdoors'&&!stats.underground;lowerWalls.visible=area==='outdoors';caveEnds.visible=caveFront.visible=caveBackdrop.visible=caveRoof.visible=area==='caves';scene.background.set(area==='caves'||stats.underground?'#26302b':'#adcfcd');scene.fog.color.copy(scene.background);stats.headOccluded=headOcclusion(view.position,pilot.layout.boxes,area);
   for(const c of terrain.children)c.visible=c.userData.area===area&&Math.abs((c.userData.chunk*8+4)-pilot.player.x)<26;
   if(phase!==w.tileAnimationPhase){phase=w.tileAnimationPhase;const remap=tileAnimation(w.level,phase).remap;for(const entry of animated){if(entry.instances){entry.instances.geometry=art.tileMesh(remap[entry.id],{depth:art.stats?.model==='rounded-volume'?.5:.32}).geometry;continue;}const array=entry.geo.attributes.uv.array;entry.tiles.forEach((t,i)=>{const r=art.tileUV(remap[t.id]),v=[r.u0,r.v0,r.u1,r.v0,r.u1,r.v1,r.u0,r.v1];array.set(v,i*16);array.set(v,i*16+8);});entry.geo.attributes.uv.needsUpdate=true;}}
   hints.visible=w.secretHints;let secretCount=0,gateCount=0;if(w.secretHints){for(const b of w.blocks){const x=((b.pos&255)*16+8)/32,y=(b.pos>>8)*16;if(!b.active||areaForY(y)!==area||Math.abs(x-pilot.player.x)>22)continue;dummy.position.set(x,nativeY(y+8),0);dummy.scale.set(1,1,1);dummy.rotation.set(0,0,0);dummy.updateMatrix();secretGhosts.setMatrixAt(secretCount++,dummy.matrix);}for(const gate of w.gates){const x=((gate.triggerTile&255)*16+8)/32,y=(gate.triggerTile>>8)*16;if(!gate.active||areaForY(y)!==area||Math.abs(x-pilot.player.x)>22)continue;dummy.position.set(x,nativeY(y)+.7,area==='caves'?1.6:-1.6);dummy.updateMatrix();gateGhosts.setMatrixAt(gateCount++,dummy.matrix);}}secretGhosts.count=secretCount;gateGhosts.count=gateCount;secretGhosts.instanceMatrix.needsUpdate=gateGhosts.instanceMatrix.needsUpdate=true;stats.hints={secrets:secretCount,passages:gateCount};
