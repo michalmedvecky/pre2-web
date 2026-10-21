@@ -1009,6 +1009,22 @@
       "height": 1024,
       "kind": "continuous-material",
       "sha256": "5219466c31e956ed03cc38a9e329961b98877050c64a0ed4c85ee6b9f98f578f"
+    },
+    {
+      "id": "v20-cave-flowstone",
+      "file": "v20-cave-flowstone.png",
+      "width": 1280,
+      "height": 1280,
+      "kind": "continuous-repair",
+      "sha256": "d74ec99c361fbe754633853c557c35f6418b78a237569c743fe1ccd2ffaec768"
+    },
+    {
+      "id": "v20-gate9",
+      "file": "v20-gate9.png",
+      "width": 512,
+      "height": 576,
+      "kind": "continuous-repair",
+      "sha256": "d5403eb8afc7b0263366f7744e549c1992025d69e861dea9160d87ab9b761e1e"
     }
   ],
   "sprites": {
@@ -64522,6 +64538,45 @@
         "width": 256,
         "height": 256,
         "uv": "repeat"
+      },
+      "cave-flowstone": {
+        "atlas": "v20-cave-flowstone",
+        "rect": [
+          0,
+          0,
+          1280,
+          1280
+        ],
+        "width": 320,
+        "height": 320,
+        "uv": "repeat"
+      },
+      "root-surface": {
+        "atlas": "v8-roots",
+        "rect": [
+          0,
+          0,
+          384,
+          128
+        ],
+        "width": 96,
+        "height": 32,
+        "level": "1",
+        "sampling": "world-periodic",
+        "originY": 0,
+        "uv": "repeat"
+      },
+      "platform-wood": {
+        "atlas": "v19-forest-bark",
+        "rect": [
+          0,
+          0,
+          1024,
+          1024
+        ],
+        "width": 256,
+        "height": 256,
+        "uv": "repeat"
       }
     },
     "objects": {
@@ -64553,6 +64608,22 @@
         "x": 704,
         "y": 1840,
         "feather": 16
+      },
+      "gate9": {
+        "atlas": "v20-gate9",
+        "rect": [
+          0,
+          0,
+          512,
+          576
+        ],
+        "width": 128,
+        "height": 144,
+        "uv": "repeat",
+        "level": "9",
+        "x": 0,
+        "y": 1632,
+        "feather": 8
       }
     },
     "transparentCavities": [
@@ -64563,7 +64634,8 @@
       "2",
       "3",
       "4",
-      "5"
+      "5",
+      "E"
     ]
   }
 }

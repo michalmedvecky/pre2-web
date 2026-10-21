@@ -1,0 +1,18 @@
+[
+  {
+    "name": "cave-flowstone",
+    "rawSHA256": "b94aa1633f0dd92f6fd4fabcf161b6dd38a7d9e3fb1c118e9c53ee63b69fd4eb",
+    "sha256": "d74ec99c361fbe754633853c557c35f6418b78a237569c743fe1ccd2ffaec768",
+    "width": 1280,
+    "height": 1280,
+    "edgeOverlap": 64
+  },
+  {
+    "name": "gate9",
+    "rawSHA256": "c9f78f19feccb105b6aaef2691238245e1fc01f6c029fee15d8d78f179257f26",
+    "sha256": "d5403eb8afc7b0263366f7744e549c1992025d69e861dea9160d87ab9b761e1e",
+    "width": 512,
+    "height": 576,
+    "edgeOverlap": 0
+  }
+]

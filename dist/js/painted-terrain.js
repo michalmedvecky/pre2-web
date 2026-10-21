@@ -15,9 +15,10 @@ export class PaintedTerrain{
   const identity=l.id+':'+hd.paletteKey;if(this.identity===identity)return;this.stop();this.identity=identity;this.cache.clear();
   const config=hd.pack.manifest.worldPaint,materials={},textures={},kinds={};
   if(config)for(const[k,rec]of Object.entries(config.materials))if(EARLY_MATERIALS[l.id]?EARLY_MATERIALS[l.id].includes(k):l.id==='6'?k==='wood':['9','A','F'].includes(l.id)&&['purple-stone','green-stone'].includes(k))materials[k]=hd.materialImage(rec);
-  const tree=config?.objects?.arena||config?.objects?.tree,object=tree?.level===l.id?{...hd.materialImage(tree),x:tree.x,y:tree.y,feather:tree.feather??8}:null;
+  const tree=config?.objects?.arena?.level===l.id?config.objects.arena:Object.values(config?.objects||{}).find(o=>o.level===l.id),object=tree?{...hd.materialImage(tree),x:tree.x,y:tree.y,feather:tree.feather??8}:null;
   for(const v of new Set(l.lookup)){if(v===256||v===65535)continue;const off=(v<256?v:v-256)*256,bank=v<256?a.tiles[l.id]:a.union;kinds[v]=config?worldMaterial(l.id,bank.subarray(off,off+256),v):null;const rec=hd.pack.manifest.tiles?.[l.id+':'+(v<256?'local:':'union:')+(v<256?v:v-256)];if(rec?.atlas.startsWith('v16-'))textures[v]=hd.terrainTexture(rec);}
-  this.environment={level:l.id,local:a.tiles[l.id],union:a.union,palette:hd.palette,textures,kinds,materials,object,config};
+  const floors={};for(let i=0;i<l.lookup.length;i++)floors[l.lookup[i]]=Math.max(floors[l.lookup[i]]||0,l.tilePropertiesY[i]||0);
+  this.environment={floors,level:l.id,local:a.tiles[l.id],union:a.union,palette:hd.palette,textures,kinds,materials,object,config};
   if(typeof Worker!=='undefined')try{this.worker=new Worker(new URL('./terrain-worker.js',import.meta.url),{type:'module'});this.worker.onmessage=({data})=>{const p=this.pending.get(data.id);if(!p)return;this.pending.delete(data.id);if(!data.error){this.workerBuilds++;this.store(p.job,data.rgba);}p.resolve(!data.error);};this.worker.onerror=()=>this.stop();this.worker.postMessage({environment:this.environment});}catch{this.stop();}
  }
  stop(){this.worker?.terminate();this.worker=null;for(const p of this.pending.values())p.resolve(false);this.pending.clear();}

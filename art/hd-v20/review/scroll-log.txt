@@ -1,0 +1,39 @@
+{
+  "ok": true,
+  "synthetic": {
+    "samples": 90,
+    "mismatches": 0
+  },
+  "scenes": [
+    {
+      "level": "2",
+      "movingDifferences": 59206,
+      "stationaryDifferences": 0,
+      "cache": 0
+    },
+    {
+      "level": "3",
+      "movingDifferences": 0,
+      "stationaryDifferences": 0,
+      "cache": 0
+    },
+    {
+      "level": "4",
+      "movingDifferences": 181125,
+      "stationaryDifferences": 0,
+      "cache": 0
+    },
+    {
+      "level": "9",
+      "movingDifferences": 225420,
+      "stationaryDifferences": 0,
+      "cache": 0
+    },
+    {
+      "level": "E",
+      "movingDifferences": 49965,
+      "stationaryDifferences": 0,
+      "cache": 0
+    }
+  ]
+}

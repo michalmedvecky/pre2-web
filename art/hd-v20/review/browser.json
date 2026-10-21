@@ -1,0 +1,210 @@
+{
+  "chromium": {
+    "scenes": [
+      {
+        "level": 1,
+        "x": 0,
+        "y": 32,
+        "id": "2-initial",
+        "workerParity": true,
+        "nativeParity": true,
+        "simulationParity": true
+      },
+      {
+        "level": 1,
+        "x": 0,
+        "y": 1488,
+        "id": "2-cave",
+        "workerParity": true,
+        "nativeParity": true,
+        "simulationParity": true
+      },
+      {
+        "level": 2,
+        "x": 0,
+        "y": 608,
+        "id": "3-start",
+        "workerParity": true,
+        "nativeParity": true,
+        "simulationParity": true
+      },
+      {
+        "level": 3,
+        "x": 0,
+        "y": 448,
+        "id": "4-root",
+        "workerParity": true,
+        "nativeParity": true,
+        "simulationParity": true
+      },
+      {
+        "level": 3,
+        "x": 0,
+        "y": 128,
+        "id": "4-start",
+        "workerParity": true,
+        "nativeParity": true,
+        "simulationParity": true
+      },
+      {
+        "level": 3,
+        "x": 352,
+        "y": 0,
+        "id": "4-trunk",
+        "workerParity": true,
+        "nativeParity": true,
+        "simulationParity": true
+      },
+      {
+        "level": 8,
+        "x": 0,
+        "y": 1600,
+        "id": "9-gate",
+        "workerParity": true,
+        "nativeParity": true,
+        "simulationParity": true
+      },
+      {
+        "level": 5,
+        "x": 736,
+        "y": 1840,
+        "id": "6-regression",
+        "workerParity": true,
+        "nativeParity": true,
+        "simulationParity": true
+      },
+      {
+        "level": 13,
+        "x": 0,
+        "y": 192,
+        "id": "E-start",
+        "workerParity": true,
+        "nativeParity": true,
+        "simulationParity": true
+      },
+      {
+        "level": 13,
+        "x": 384,
+        "y": 224,
+        "id": "E-cave",
+        "workerParity": true,
+        "nativeParity": true,
+        "simulationParity": true
+      },
+      {
+        "level": 13,
+        "x": 0,
+        "y": 432,
+        "id": "E-deep",
+        "workerParity": true,
+        "nativeParity": true,
+        "simulationParity": true
+      }
+    ],
+    "errors": []
+  },
+  "webkit": {
+    "scenes": [
+      {
+        "level": 1,
+        "x": 0,
+        "y": 32,
+        "id": "2-initial",
+        "workerParity": true,
+        "nativeParity": true,
+        "simulationParity": true
+      },
+      {
+        "level": 1,
+        "x": 0,
+        "y": 1488,
+        "id": "2-cave",
+        "workerParity": true,
+        "nativeParity": true,
+        "simulationParity": true
+      },
+      {
+        "level": 2,
+        "x": 0,
+        "y": 608,
+        "id": "3-start",
+        "workerParity": true,
+        "nativeParity": true,
+        "simulationParity": true
+      },
+      {
+        "level": 3,
+        "x": 0,
+        "y": 448,
+        "id": "4-root",
+        "workerParity": true,
+        "nativeParity": true,
+        "simulationParity": true
+      },
+      {
+        "level": 3,
+        "x": 0,
+        "y": 128,
+        "id": "4-start",
+        "workerParity": true,
+        "nativeParity": true,
+        "simulationParity": true
+      },
+      {
+        "level": 3,
+        "x": 352,
+        "y": 0,
+        "id": "4-trunk",
+        "workerParity": true,
+        "nativeParity": true,
+        "simulationParity": true
+      },
+      {
+        "level": 8,
+        "x": 0,
+        "y": 1600,
+        "id": "9-gate",
+        "workerParity": true,
+        "nativeParity": true,
+        "simulationParity": true
+      },
+      {
+        "level": 5,
+        "x": 736,
+        "y": 1840,
+        "id": "6-regression",
+        "workerParity": true,
+        "nativeParity": true,
+        "simulationParity": true
+      },
+      {
+        "level": 13,
+        "x": 0,
+        "y": 192,
+        "id": "E-start",
+        "workerParity": true,
+        "nativeParity": true,
+        "simulationParity": true
+      },
+      {
+        "level": 13,
+        "x": 384,
+        "y": 224,
+        "id": "E-cave",
+        "workerParity": true,
+        "nativeParity": true,
+        "simulationParity": true
+      },
+      {
+        "level": 13,
+        "x": 0,
+        "y": 432,
+        "id": "E-deep",
+        "workerParity": true,
+        "nativeParity": true,
+        "simulationParity": true
+      }
+    ],
+    "errors": []
+  }
+}
