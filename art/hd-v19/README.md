@@ -46,3 +46,7 @@ Stage6 hazard tiles that include bark now reconstruct the trunk behind their spi
 Mobile regression passed after moving the test clock installation before page load, so it captures the initial animation-frame registration. The old harness registered the fake clock after HD startup and froze the test's frame counter at0; touch pointers were present. No production touch controls were changed. Results are in `mobile/browser.json`.
 
 Stage6 graphics regression captures3 locations and12 boss hand/body combinations per engine (`review/stage6-final/stage6-composite-browser.json`), including exact worker/synchronous and native raster/state parity. The compositor uses the saved v18 artwork; no new model output was required for this follow-up.
+
+## Published release1.2.3
+
+Game commit`3550c546428fcb712f8160888ba3f95c66c44905`; successful[build39565055834](https://github.com/michalmedvecky/pre2-web/actions/runs/39565055834). Bothlinux/amd64 andlinux/arm64 OCI revision labels match this game commit. GHCR index`sha256:7df9d462a77aed6342b707d272a401199bea730a91f5c1440f372cbba0d53f66` is pinned in the Kubernetes manifest. The release tag points at the subsequent metadata commit carrying that verified pin.

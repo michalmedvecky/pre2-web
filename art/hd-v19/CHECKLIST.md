@@ -10,4 +10,4 @@
 - [x] Run the full unit/replay suite and verify original54 hashes.
 - [x] Restore stage5 platform readability and rounded doorway.
 - [x] Repair stage6 spike/arena layering and tree-boss jumping.
-- [ ] Publish amd64/arm64 image and update the Kubernetes digest pin.
+- [x] Publish amd64/arm64 image and update the Kubernetes digest pin.

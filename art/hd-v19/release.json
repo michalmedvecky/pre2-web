@@ -1,0 +1,28 @@
+{
+  "commit": "3550c546428fcb712f8160888ba3f95c66c44905",
+  "run": 39565055834,
+  "url": "https://github.com/michalmedvecky/pre2-web/actions/runs/39565055834",
+  "digest": "sha256:7df9d462a77aed6342b707d272a401199bea730a91f5c1440f372cbba0d53f66",
+  "platforms": [
+    {
+      "architecture": "amd64",
+      "os": "linux"
+    },
+    {
+      "architecture": "arm64",
+      "os": "linux"
+    },
+    {
+      "architecture": "unknown",
+      "os": "unknown"
+    },
+    {
+      "architecture": "unknown",
+      "os": "unknown"
+    }
+  ],
+  "revisionVerified": [
+    "amd64",
+    "arm64"
+  ]
+}
