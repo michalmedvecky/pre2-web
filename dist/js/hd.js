@@ -17,7 +17,7 @@ export class HDAssets {
   const response=await fetch(new URL('manifest.json',base));if(!response.ok)throw Error('HD manifest unavailable');
   const manifest=await response.json();if(manifest.version!==1||manifest.scale!==4||!manifest.sprites||!Array.isArray(manifest.atlases))throw Error('Unsupported HD manifest');
   const images=new Map();await Promise.all(manifest.atlases.map(async a=>{const image=new Image();image.src=new URL(a.file,base);await image.decode();if(image.naturalWidth!==a.width||image.naturalHeight!==a.height)throw Error('HD atlas extent mismatch');images.set(a.id,image);}));
-  const records=[...Object.values(manifest.sprites),...Object.values(manifest.tiles||{}),...Object.values(manifest.paintTiles||{}),...Object.values(manifest.worldMaterials||{}),...Object.values(manifest.worldDecor||{}),...Object.values(manifest.backgrounds||{}),...Object.values(manifest.bonusDecor||{}),...Object.values(manifest.screens||{}),...Object.values(manifest.bossPoses||{}),...Object.values(manifest.worldPaint?.materials||{}),...Object.values(manifest.worldPaint?.objects||{}),...(manifest.worldMap?[manifest.worldMap]:[]),...(manifest.banquetMaterial?[manifest.banquetMaterial]:[])];
+  const records=[...Object.values(manifest.sprites),...Object.values(manifest.tiles||{}),...Object.values(manifest.paintTiles||{}),...Object.values(manifest.worldMaterials||{}),...Object.values(manifest.worldDecor||{}),...Object.values(manifest.backgrounds||{}),...Object.values(manifest.bonusDecor||{}),...Object.values(manifest.screens||{}),...Object.values(manifest.bossPoses||{}),...Object.values(manifest.gliderPoses||{}),...Object.values(manifest.worldPaint?.materials||{}),...Object.values(manifest.worldPaint?.objects||{}),...(manifest.worldMap?[manifest.worldMap]:[]),...(manifest.banquetMaterial?[manifest.banquetMaterial]:[])];
   for(const s of records){const a=manifest.atlases.find(a=>a.id===s.atlas),r=s.rect;if(!a||!r||r.length!==4||r.some(v=>!Number.isFinite(v)||v<0)||r[2]===0||r[3]===0||r[0]+r[2]>a.width||r[1]+r[3]>a.height)throw Error('Invalid HD atlas record');}
 
   return {manifest,images};
@@ -39,6 +39,12 @@ export class HDCompositor {
   let cache=this.cache.get(src);if(!cache){cache=new Map();this.cache.set(src,cache);}const key=[sw,sh,offset,transparent,ink,fade].join(':');let image=cache.get(key);
   if(!image){image=document.createElement('canvas');image.width=sw;image.height=sh;const ctx=image.getContext('2d'),rgba=ctx.createImageData(sw,sh);for(let i=0;i<sw*sh;i++){const index=src[offset+i];if(index===undefined||transparent&&index===0)continue;const v=(ink??index)*3,j=i*4;for(let k=0;k<3;k++)rgba.data[j+k]=(this.palette[v+k]||0)*fade;rgba.data[j+3]=255;}ctx.putImageData(rgba,0,0);cache.set(key,image);}
   const scale=this.scale;this.clipped(clip,c=>{if(flip){c.translate((dx+sw)*scale,dy*scale);c.scale(-1,1);c.drawImage(image,0,0,sw*scale,sh*scale);}else c.drawImage(image,dx*scale,dy*scale,sw*scale,sh*scale);});
+ }
+ glider(world,x,y,flip){
+  if(!world.alternate||!world.playerWeapon)return false;
+  const body=world.player.sprite&8191,angle=body>=48?Math.max(0,Math.min(6,world.player.formAngle|0)):3,rec=this.pack.manifest.gliderPoses?.[body+':'+angle];if(!rec)return false;
+  const scale=this.scale,dx=flip?x-(rec.width-rec.originX):x-rec.originX,dy=y+rec.originY-rec.height;
+  this.clipped(176,c=>{c.imageSmoothingEnabled=true;if(flip){c.translate((dx+rec.width)*scale,dy*scale);c.scale(-1,1);c.drawImage(this.pack.images.get(rec.atlas),...rec.rect,0,0,rec.width*scale,rec.height*scale);}else c.drawImage(this.pack.images.get(rec.atlas),...rec.rect,dx*scale,dy*scale,rec.width*scale,rec.height*scale);});return true;
  }
  sprite(word,x,y,flip,clip,source){const id=word&0x1fff,s=this.pack.manifest.sprites[id],feedback=this.feedback.image(id,source,!!(word&0x4000));if(!s&&!feedback)return false;let image=feedback||this.pack.images.get(s.atlas),rect=feedback?[0,0,feedback.width,feedback.height]:s.rect;
   if((word&0x4000)&&!feedback){if(!this.flash.has(id)){const white=document.createElement('canvas');white.width=rect[2];white.height=rect[3];const c=white.getContext('2d');c.drawImage(image,...rect,0,0,white.width,white.height);c.globalCompositeOperation='source-in';c.fillStyle='white';c.fillRect(0,0,white.width,white.height);this.flash.set(id,white);}image=this.flash.get(id);rect=[0,0,image.width,image.height];}

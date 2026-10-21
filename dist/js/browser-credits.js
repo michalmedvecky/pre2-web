@@ -1,0 +1,2 @@
+// Added after the original credits; original1993 credits remain in the level map.
+export function browserCredits(){return '<section class="credits-addition" aria-label="Browser edition credits"><h3>THE BROWSER EDITION</h3><p><b>Codex · OpenAI</b><br>Browser reconstruction, HD artwork, touch controls &amp; testing</p><p><b>Misko</b><br>Project direction, playtesting &amp; relentless bug hunting</p><p>Original game · TITUS · 1993</p></section>';}

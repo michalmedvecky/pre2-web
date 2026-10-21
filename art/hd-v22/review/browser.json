@@ -1,0 +1,51 @@
+{
+  "chromium": {
+    "run": {
+      "x": 197,
+      "y": 224,
+      "runTimer": 32
+    },
+    "flight": {
+      "x": 237,
+      "y": 193,
+      "energy": 17,
+      "vy": -60
+    },
+    "keyboardRelease": true,
+    "poses": {
+      "tested": 88,
+      "nativeParity": true,
+      "stateParity": true
+    },
+    "footerMetadataFixture": true,
+    "credits": true,
+    "errors": []
+  },
+  "mobile": {
+    "touchRelease": true,
+    "targetHeight": 44,
+    "fullscreen": true
+  },
+  "webkit": {
+    "run": {
+      "x": 197,
+      "y": 224,
+      "runTimer": 32
+    },
+    "flight": {
+      "x": 237,
+      "y": 193,
+      "energy": 17,
+      "vy": -60
+    },
+    "keyboardRelease": true,
+    "poses": {
+      "tested": 88,
+      "nativeParity": true,
+      "stateParity": true
+    },
+    "footerMetadataFixture": true,
+    "credits": true,
+    "errors": []
+  }
+}

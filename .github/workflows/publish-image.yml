@@ -56,6 +56,8 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
+          build-args: |
+            VCS_REF=${{ github.sha }}
           tags: |
             ${{ env.IMAGE }}:sha-${{ github.sha }}
             ${{ env.IMAGE }}:latest
@@ -86,10 +88,12 @@ jobs:
           trap 'docker logs game-smoke; docker rm -f game-smoke' EXIT
           curl --fail --connect-timeout 2 --max-time 5 \
             --retry 15 --retry-all-errors --retry-delay 1 http://127.0.0.1:8080/healthz
-          for path in / /assets/game.json /js/audio.js /js/touch-input.js /js/screen-mode.js /manifest.webmanifest /icons/icon-192.png; do
+          for path in / /assets/game.json /js/build-info.js /js/browser-credits.js /js/audio.js /js/touch-input.js /js/screen-mode.js /manifest.webmanifest /icons/icon-192.png; do
             curl --fail --connect-timeout 2 --max-time 5 \
               --retry 5 --retry-all-errors --retry-delay 1 --output /dev/null "http://127.0.0.1:8080$path"
           done
+          curl --fail --connect-timeout 2 --max-time 5 http://127.0.0.1:8080/build.json > /tmp/game-build.json
+          jq -e --arg sha "$GITHUB_SHA" '.commit == $sha' /tmp/game-build.json
 
       - name: Record deployment image
         env:

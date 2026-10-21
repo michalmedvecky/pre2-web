@@ -279,6 +279,14 @@ export class World {
     this.sceneFlash=4;this.emit('rescue');
   }
   teleportPlayer(x,y){if(!Number.isFinite(x)||!Number.isFinite(y))return false;this.rescuePlayer({x:clamp(Math.round(x),8,4087),y:clamp(Math.round(y),0,this.level.height*16-1)});return true;}
+  // Browser convenience: voluntarily release the kite without taking damage.
+  releaseGlider(){
+    if(!this.alternate||this.transition||this.deathTimer)return false;
+    const p=this.player;this.alternate=false;this.playerWeapon=null;
+    Object.assign(p,{glideMode:0,glideEnergy:0,runTimer:0,attackActive:false,attackFrame:false,attackCooldown:0,animationVariant:-1,action:-1,downTimer:0,jumpFrame:p.grounded?0:9,jumpLock:p.grounded?0:6});
+    this.animatePlayer(p.grounded?0:2);if(!p.grounded)p.sprite=p.vy<0?11:12;
+    this.emit('gliderReleased');return true;
+  }
   damage(){const p=this.player;if(this.godMode||p.invulnerable||this.deathTimer||this.transition)return;this.emit('sfx',{index:1});
     p.invulnerable=44;p.attackActive=false;p.attackTimer=0;p.vx=s16(-4*p.vx);p.vy=-128;p.glideMode=0;p.jumpFrame=9;p.animationVariant=-1;
     this.playerWeapon=null;this.projectiles=this.projectiles.filter(a=>!a.contact);
@@ -323,7 +331,7 @@ export class World {
     else if(c>=39&&c<=43){this.inventory|=1<<(c-39);sound=8;if(this.inventory===31){this.spawnFragments(this.player.x,this.player.y-112,110,0,0,1,{collectible:true});this.inventory=0;this.collectionFlash=44;}}
     else if(c>=45&&c<=50){this.inventory2|=1<<(c-45);sound=8;if(c===46)this.unlockExits();if((this.inventory2&0x38)===0x38){this.inventory2&=~0x38;this.enemyPowerTimer=660;}}
     else if(c>=51&&c<=64){if((i.vy||0)>=128){i.vy=-i.vy;i.vx=(this.rng.next()&1)?-32:32;this.emit('sfx',{index:4});return false;}if(!this.scorePickup(i))return false;}
-    else if(c>=65&&c<=74){if(this.alternate)return this.discardRuntimePickup(i);this.alternate=true;this.player.action=-1;this.player.animationVariant=-1;sound=8;}
+    else if(c>=65&&c<=74){if(this.alternate)return this.discardRuntimePickup(i);this.alternate=true;this.player.action=-1;this.player.animationVariant=-1;this.emit('gliderEquipped');sound=8;}
     else if(c===145){this.particleRepel.fill(7);this.emit('repelParticles',{states:Array.from(this.particleRepel)});this.scorePickup(i);}
     else if(c>=75&&c<=166)this.scorePickup(i);
     else if(c===173){if(this.health>=3)return this.discardRuntimePickup(i);this.health++;sound=4;this.popup(0xe2,i.x,i.y);}
