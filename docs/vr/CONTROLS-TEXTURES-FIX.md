@@ -20,7 +20,7 @@ Five authored seamless 256×256 PNG surfaces cover grass, earth, stone, bark and
 
 - **232 unit/integration tests passed**, including a full minute of stationary simulation at a nonzero tracking origin, deliberate thumbstick movement/release, A-button mapping, neutral arming, snap-turn pivot math and seamless PNG boundary checks.
 - The existing browser course passed: animated club defeat, rock jump, checkpoint, deliberate pit fall/rescue, gap jump, finish, pause and restart.
-- A new test-only WebXR facade exercises the actual Three.js stereo/controller path: 140 idle frames at tracking origin zero, move/stop on the left stick, jump on A, frozen movement during tracking loss, neutral rearming, a reference-space reset and a real moving grip/club defeating the bear. It checks the haptic request, not physical motor output.
+- A new test-only WebXR facade exercises the actual Three.js stereo/controller path: 140 idle frames at tracking origin zero, move/stop on the left stick, jump on A, frozen movement during tracking loss, neutral rearming, a reference-space reset and a real moving grip/club defeating the bear. It checks the haptic request, not physical motor output. The facade advances a deterministic 72Hz device clock and assertions wait for frames, so software-GPU rendering speed does not become simulated hand speed or a false input delay.
 - This XR browser regression is now a required CI step before publishing a VR image. Its screenshots/report are saved as `quest-vr-xr-test` Actions artifacts; the container smoke test also fetches the new modules/textures.
 - Original 54 file SHA256 hashes unchanged; the web worktree was not edited.
 
