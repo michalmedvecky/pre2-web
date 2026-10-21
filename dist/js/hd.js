@@ -1,3 +1,4 @@
+import{tileAnimation}from'./tile-animation.js';
 import{worldMaterial,mirrorCoordinate}from'./world-paint.js';
 import{PaintedTerrain}from'./painted-terrain.js';
 import{TerrainLayer}from'./terrain-layer.js';
@@ -53,8 +54,16 @@ export class HDCompositor {
  background(level,name,shift=0){return this.atlas(this.pack.manifest.backgrounds?.[level+':'+name],0,shift);}
  clearTop(height){this.ctx.fillStyle=this.color(0);this.ctx.fillRect(0,0,this.canvas.width,Math.min(176,height)*this.scale);}
  connectedLayer(cx,cy,draw){this.terrainLayer||=new TerrainLayer();this.terrainLayer.draw(this,cx,cy,draw);}
+ async prepareWorld(assets,w){
+  if(this.preparedMap===w.map)return;if(this.preparingMap===w.map)return this.preparation;
+  const map=w.map;this.preparingMap=map;
+  this.preparation=(async()=>{this.setPalette(w.paletteOverride||assets.game.palettes[w.levelIndex].rgb8_scaled);if(this.terrainLevel!==w.level.id){this.terrainLevel=w.level.id;this.terrainTextures.clear();this.paintedTerrain?.stop();this.paintedTerrain=null;}
+   if(this.pack.manifest.terrainV16?.levels.includes(w.level.id)&&!this.pack.manifest.banquetMaterial?.levels.includes(w.level.id)){this.paintedTerrain||=new PaintedTerrain();await this.paintedTerrain.prepare(this,assets,w.level,map,w.camera.x,w.camera.y,tileAnimation(w.level,w.tileAnimationPhase||0));}else for(let phase=0;phase<3;phase++)this.terrain(assets,w.level,map,w.camera.x,w.camera.y,tileAnimation(w.level,phase));
+   if(this.preparingMap===map)this.preparedMap=map;
+  })();return this.preparation;
+ }
  terrain(assets,level,map,cx,cy,animation){
-  if(this.terrainLevel!==level.id){this.terrainLevel=level.id;this.terrainTextures.clear();this.paintedTerrain?.cache.clear();}
+  if(this.terrainLevel!==level.id){this.terrainLevel=level.id;this.terrainTextures.clear();this.paintedTerrain?.stop();this.paintedTerrain=null;}
   if(this.pack.manifest.banquetMaterial?.levels.includes(level.id)){this.banquet||=new BanquetTerrain();return this.banquet.draw(this,assets,level,map,cx,cy);}
   if(this.pack.manifest.terrainV16?.levels.includes(level.id)){this.paintedTerrain||=new PaintedTerrain();return this.paintedTerrain.draw(this,assets,level,map,cx,cy,animation);}
   if(level.id!=='1')return false;

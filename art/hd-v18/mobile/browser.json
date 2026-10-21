@@ -1,0 +1,123 @@
+{
+  "ok": true,
+  "chromium": {
+    "nativeFullscreen": true,
+    "defaultHD": true,
+    "landscapeFillsViewport": true,
+    "tenTapCheats": true,
+    "multiTouchWalkJump": true,
+    "reverseWithoutLifting": true,
+    "tapAttack": true,
+    "repeatedHits": 3,
+    "swipeDuck": true,
+    "cancelAndPauseRelease": true,
+    "portrait": {
+      "overflow": false,
+      "controls": [
+        {
+          "x": 291,
+          "y": 8,
+          "width": 44,
+          "height": 44,
+          "top": 8,
+          "right": 335,
+          "bottom": 52,
+          "left": 291
+        },
+        {
+          "x": 341,
+          "y": 8,
+          "width": 44,
+          "height": 44,
+          "top": 8,
+          "right": 385,
+          "bottom": 52,
+          "left": 341
+        },
+        {
+          "x": 291,
+          "y": 58,
+          "width": 44,
+          "height": 44,
+          "top": 58,
+          "right": 335,
+          "bottom": 102,
+          "left": 291
+        },
+        {
+          "x": 341,
+          "y": 58,
+          "width": 44,
+          "height": 44,
+          "top": 58,
+          "right": 385,
+          "bottom": 102,
+          "left": 341
+        }
+      ],
+      "pad": {
+        "x": 10,
+        "y": 736,
+        "width": 150,
+        "height": 88,
+        "top": 736,
+        "right": 160,
+        "bottom": 824,
+        "left": 10
+      },
+      "game": {
+        "x": 0,
+        "y": 303.1875,
+        "width": 393,
+        "height": 245.625,
+        "top": 303.1875,
+        "right": 393,
+        "bottom": 548.8125,
+        "left": 0
+      }
+    },
+    "errors": []
+  },
+  "preferences": {
+    "freshHD": true,
+    "savedOriginal": true,
+    "savedHD": true
+  },
+  "manifest": {
+    "ok": true,
+    "icons": 2
+  },
+  "webkit": {
+    "viewportFallback": true,
+    "touchMap": true,
+    "sizes": [
+      {
+        "width": 320,
+        "height": 568,
+        "ok": true
+      },
+      {
+        "width": 568,
+        "height": 320,
+        "ok": true
+      },
+      {
+        "width": 1024,
+        "height": 768,
+        "ok": true
+      },
+      {
+        "width": 768,
+        "height": 1024,
+        "ok": true
+      }
+    ],
+    "tapAttack": true,
+    "portraitAndLandscape": true,
+    "resumeReenters": true,
+    "errors": []
+  },
+  "homeScreen": {
+    "emulatedStandaloneAutoExpand": true
+  }
+}

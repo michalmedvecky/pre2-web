@@ -1,0 +1,215 @@
+{
+  "chromium": {
+    "samples": [
+      {
+        "level": 5,
+        "x": 0,
+        "y": 240,
+        "id": "6-spikes",
+        "preparation": 524.1999999284744,
+        "workerChunks": 56,
+        "workerParity": true,
+        "nativeParity": true,
+        "simulationParity": true
+      },
+      {
+        "level": 5,
+        "x": 736,
+        "y": 1840,
+        "id": "6-boss",
+        "preparation": 253.89999997615814,
+        "workerChunks": 52,
+        "workerParity": true,
+        "nativeParity": true,
+        "simulationParity": true
+      },
+      {
+        "level": 14,
+        "x": 0,
+        "y": 2592,
+        "id": "F-credits",
+        "preparation": 520,
+        "workerChunks": 42,
+        "workerParity": true,
+        "nativeParity": true,
+        "simulationParity": true
+      }
+    ],
+    "starts": [
+      {
+        "stage": "1",
+        "startToPlayMs": 407
+      },
+      {
+        "stage": "2",
+        "startToPlayMs": 385
+      },
+      {
+        "stage": "3",
+        "startToPlayMs": 372
+      },
+      {
+        "stage": "4",
+        "startToPlayMs": 392
+      },
+      {
+        "stage": "5",
+        "startToPlayMs": 475
+      },
+      {
+        "stage": "6",
+        "startToPlayMs": 508
+      },
+      {
+        "stage": "7",
+        "startToPlayMs": 367
+      },
+      {
+        "stage": "8",
+        "startToPlayMs": 483
+      },
+      {
+        "stage": "9",
+        "startToPlayMs": 550
+      },
+      {
+        "stage": "A",
+        "startToPlayMs": 346
+      },
+      {
+        "stage": "B",
+        "startToPlayMs": 183
+      },
+      {
+        "stage": "C",
+        "startToPlayMs": 149
+      },
+      {
+        "stage": "D",
+        "startToPlayMs": 141
+      },
+      {
+        "stage": "E",
+        "startToPlayMs": 324
+      },
+      {
+        "stage": "F",
+        "startToPlayMs": 575
+      },
+      {
+        "stage": "G",
+        "startToPlayMs": 358
+      }
+    ],
+    "cancelAndChangeStage": true,
+    "graphicsSwitchWhilePreparing": true,
+    "errors": []
+  },
+  "fallbackWithoutWorkers": true,
+  "webkit": {
+    "samples": [
+      {
+        "level": 5,
+        "x": 0,
+        "y": 240,
+        "id": "6-spikes",
+        "preparation": 565,
+        "workerChunks": 56,
+        "workerParity": true,
+        "nativeParity": true,
+        "simulationParity": true
+      },
+      {
+        "level": 5,
+        "x": 736,
+        "y": 1840,
+        "id": "6-boss",
+        "preparation": 237,
+        "workerChunks": 52,
+        "workerParity": true,
+        "nativeParity": true,
+        "simulationParity": true
+      },
+      {
+        "level": 14,
+        "x": 0,
+        "y": 2592,
+        "id": "F-credits",
+        "preparation": 630,
+        "workerChunks": 42,
+        "workerParity": true,
+        "nativeParity": true,
+        "simulationParity": true
+      }
+    ],
+    "starts": [
+      {
+        "stage": "1",
+        "startToPlayMs": 399
+      },
+      {
+        "stage": "2",
+        "startToPlayMs": 532
+      },
+      {
+        "stage": "3",
+        "startToPlayMs": 516
+      },
+      {
+        "stage": "4",
+        "startToPlayMs": 532
+      },
+      {
+        "stage": "5",
+        "startToPlayMs": 532
+      },
+      {
+        "stage": "6",
+        "startToPlayMs": 583
+      },
+      {
+        "stage": "7",
+        "startToPlayMs": 566
+      },
+      {
+        "stage": "8",
+        "startToPlayMs": 633
+      },
+      {
+        "stage": "9",
+        "startToPlayMs": 733
+      },
+      {
+        "stage": "A",
+        "startToPlayMs": 449
+      },
+      {
+        "stage": "B",
+        "startToPlayMs": 250
+      },
+      {
+        "stage": "C",
+        "startToPlayMs": 167
+      },
+      {
+        "stage": "D",
+        "startToPlayMs": 149
+      },
+      {
+        "stage": "E",
+        "startToPlayMs": 332
+      },
+      {
+        "stage": "F",
+        "startToPlayMs": 699
+      },
+      {
+        "stage": "G",
+        "startToPlayMs": 583
+      }
+    ],
+    "cancelAndChangeStage": true,
+    "graphicsSwitchWhilePreparing": true,
+    "errors": []
+  }
+}

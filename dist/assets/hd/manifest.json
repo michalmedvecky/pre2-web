@@ -953,6 +953,14 @@
       "height": 1408,
       "kind": "continuous-repair",
       "sha256": "3d3d436f1d2bd6bb2bb80e9d293ac358cfe2a78536f3f1a77095105741202320"
+    },
+    {
+      "id": "v18-boss-arena",
+      "file": "v18-boss-arena.png",
+      "width": 1536,
+      "height": 832,
+      "kind": "continuous-repair",
+      "sha256": "10ee6d86b843f7046d2f8bbec3f58153a8b032a64b6f8c47170bc318be70de62"
     }
   ],
   "sprites": {
@@ -64410,6 +64418,21 @@
         "level": "6",
         "x": 960,
         "y": 1872
+      },
+      "arena": {
+        "atlas": "v18-boss-arena",
+        "rect": [
+          0,
+          0,
+          1536,
+          832
+        ],
+        "width": 384,
+        "height": 208,
+        "level": "6",
+        "x": 704,
+        "y": 1840,
+        "feather": 16
       }
     },
     "transparentCavities": [

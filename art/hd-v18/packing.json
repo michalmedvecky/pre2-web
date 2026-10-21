@@ -1,0 +1,11 @@
+{
+  "rawSHA256": "0c53b8b9f5e15429da3508e3f8be77c1318a1b80120e6612c0488f6113fdc51e",
+  "sha256": "10ee6d86b843f7046d2f8bbec3f58153a8b032a64b6f8c47170bc318be70de62",
+  "source": {
+    "x": 704,
+    "y": 1840,
+    "width": 384,
+    "height": 208
+  },
+  "mask": "native nonzero indices; alpha retained from raw plate; 16 native px feather into surrounding terrain"
+}

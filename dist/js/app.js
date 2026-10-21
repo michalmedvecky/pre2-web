@@ -32,7 +32,7 @@ async function setGraphics(mode){
  if(graphicsBusy||!renderer)return;const b=$('#graphics-button');graphicsBusy=true;b.disabled=true;
  try{
   if(mode==='hd'&&!hdPack){$('#graphics-label').textContent='Loading HD…';hdPack=await HDAssets.load();}
-  renderer.setHD(mode==='hd'?hdPack:null);graphicsMode=mode;
+  renderer.setHD(mode==='hd'?hdPack:null);if(mode==='hd'&&world)await renderer.hd.prepareWorld(assets,world);graphicsMode=mode;if(mode==='original'&&state==='preparing'){state='play';last=0;hide();}
   try{localStorage.setItem(GRAPHICS_STORAGE,mode);}catch{}
   repaint();
  }catch(e){console.warn('HD graphics unavailable',e);toast('HD graphics could not load. Original graphics remain available.');}
@@ -79,7 +79,13 @@ const keys={ArrowLeft:'left',KeyA:'left',ArrowRight:'right',KeyD:'right',ArrowUp
 window.addEventListener('keydown',e=>{if(qa)canvas.dataset.lastKey=JSON.stringify({key:e.key,code:e.code});if(blockedKeys.has(e.code)){e.preventDefault();return;}if(state==='level-map'){e.preventDefault();if(!e.repeat){blockedKeys.add(e.code);closeLevelMap();}return;}if(!e.repeat)clearTimeout(muteTimer);if(e.target.tagName==='INPUT'){cheatInput.reset();if(e.code==='Enter'){e.preventDefault();dialog.querySelector('.primary')?.click();}return;}const cheat=cheatInput.feed(e,state==='play');if(cheat){if(cheat==='MAP')openLevelMap();else if(cheat==='IDKFA')world.toggleSecretHints();else world.toggleGodMode();held={};pressed={};e.preventDefault();return;}if(cheatInput.pending){if(!e.repeat&&cheatInput.buffer.endsWith('M'))muteTimer=setTimeout(()=>{if(state==='play'&&cheatInput.buffer.endsWith('M')){cheatInput.reset();toggleSound();}},700);e.preventDefault();return;}if(keys[e.code]){e.preventDefault();held[keys[e.code]]=true;if(state==='play')pressed[keys[e.code]]=true;gesture();}if(e.repeat)return;if(e.code==='KeyP'||e.code==='Escape'){e.preventDefault();pause();}if(e.code==='KeyH'){e.preventDefault();setGraphics(graphicsMode==='hd'?'original':'hd');}if(e.code==='KeyM'||e.code==='F3'){e.preventDefault();toggleSound();}if(e.code==='KeyF')$('#fullscreen-button').click();if(e.code==='Enter'&&state!=='play'){e.preventDefault();dialog.querySelector('.primary')?.click();}});
 window.addEventListener('resize',()=>touchControls.reset());
 window.addEventListener('keyup',e=>{blockedKeys.delete(e.code);if(keys[e.code])held[keys[e.code]]=false;});window.addEventListener('blur',()=>{blockedKeys.clear();clearTimeout(muteTimer);cheatInput.reset();clearInputs();if(state==='play')pause();});document.addEventListener('visibilitychange',()=>{if(document.hidden){clearInputs();if(state==='play')pause();}});
+function prepareStage(){
+ const target=world,map=world.map,hd=renderer.hd;state='preparing';clearInputs();acc=0;
+ panel('<div class="dialog-card"><small>GET READY</small><h2>Preparing the adventure…</h2></div>');
+ hd.prepareWorld(assets,target).then(()=>{if(world===target&&world.map===map&&renderer.hd===hd&&state==='preparing'){renderer.render(world);presentation.reset(world);state='play';last=0;hide();}}).catch(e=>{console.warn('Terrain preparation unavailable',e);if(world===target&&world.map===map&&renderer.hd===hd&&state==='preparing'){hd.preparedMap=map;state='play';last=0;hide();}});
+}
 function frame(now){
+ if(state==='play'&&world&&renderer.hd&&renderer.hd.preparedMap!==world.map){prepareStage();requestAnimationFrame(frame);return;}
  touchControls.update(state);const gl=graphicsMode==='hd'?'SD':'HD',fl=gameScreen.active?'Leave full screen':'Full screen';if(gl!==touchLabel){touchLabel=gl;$('#touch-graphics').textContent=gl;}if(fl!==touchFullLabel){touchFullLabel=fl;$('#touch-fullscreen').setAttribute('aria-label',fl);}
  const dt=last?Math.min(.25,(now-last)/1000):0;last=now;
  if((state==='play'||state==='demo')&&world?.transition?.tally){
@@ -97,7 +103,7 @@ function frame(now){
    presentation.afterStep(world);
    if((state!=='play'&&state!=='demo')||world.transition?.tally)break;
   }
-  if(state==='play'||state==='demo'){
+  if((state==='play'||state==='demo')&&(!renderer.hd||renderer.hd.preparedMap===world.map)){
    renderer.render(world.transition?.tally?world:presentation.sample(world,acc*TICK_HZ,dt));
    if(qa)canvas.dataset.pose=JSON.stringify({frame:world.frame,x:world.player.x,y:world.player.y,vx:world.player.vx,vy:world.player.vy,sprite:world.player.sprite,variant:world.player.animationVariant,weapon:world.playerWeapon?.sprite??null,form:world.alternate,glide:world.player.glideMode});
   }

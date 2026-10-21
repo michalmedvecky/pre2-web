@@ -12,7 +12,7 @@ export class Renderer {
   // 0x14974 uses the separate 16x11 score font, not the 16x12 HUD bank.
   this.tallyDigits=[];for(let i=0;i<10;i++){const p=0x1c70+i*88;if(p+88>assets.fonts.length)break;const idx=new Uint8Array(176);for(let y=0;y<11;y++)for(let x=0;x<16;x++)for(let k=0;k<4;k++)idx[y*16+x]|=((assets.fonts[p+k*22+y*2+(x>>3)]>>(7-(x&7)))&1)<<k;this.tallyDigits.push(idx);}
  }
- setHD(pack){this.hd=pack?new HDCompositor(this.canvas,pack):null;if(!pack){this.canvas.width=W;this.canvas.height=H;}this.ctx=this.canvas.getContext('2d',{alpha:false});this.ctx.imageSmoothingEnabled=false;this.hd?.setPalette(this.palette);this.canvas.style&&(this.canvas.style.imageRendering=pack?'auto':'pixelated');}
+ setHD(pack){this.hd?.paintedTerrain?.stop();this.hd=pack?new HDCompositor(this.canvas,pack):null;if(!pack){this.canvas.width=W;this.canvas.height=H;}this.ctx=this.canvas.getContext('2d',{alpha:false});this.ctx.imageSmoothingEnabled=false;this.hd?.setPalette(this.palette);this.canvas.style&&(this.canvas.style.imageRendering=pack?'auto':'pixelated');}
  setPalette(p){this.palette=p;this.hd?.setPalette(p);}
  pixel(x,y,index){if(x>=0&&x<W&&y>=0&&y<H){this.frame[y*W+x]=index;this.hd?.pixel(x,y,index);}}
  blit(src,sw,sh,dx,dy,{transparent=false,flip=false,clip=H,offset=0,ink,hdSkip=false}={}){dx=Math.round(dx);dy=Math.round(dy);if(!hdSkip)this.hd?.blit(src,sw,sh,dx,dy,{transparent,flip,clip,offset,ink,fade:this.fade});for(let sy=Math.max(0,-dy);sy<sh&&sy+dy<clip;sy++){for(let sx=Math.max(0,-dx);sx<sw&&sx+dx<W;sx++){const v=src[offset+sy*sw+(flip?sw-1-sx:sx)];if(v!==undefined&&(!transparent||v!==0))this.frame[(dy+sy)*W+dx+sx]=ink??v;}}}
