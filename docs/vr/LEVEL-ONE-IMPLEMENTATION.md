@@ -1,5 +1,7 @@
 # First-level VR implementation and resumable checklist
 
+Follow-up: [HD/performance/passage/cheat corrections](HD-PERFORMANCE-CHEATS.md) supersede the original presentation details below.
+
 2026-10-21. Branch `vr/quest-360`. This replaces the practice course as the default `/vr/` game. The older pilot remains a regression fixture only.
 
 ## Source-to-runtime chain

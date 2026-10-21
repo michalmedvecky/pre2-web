@@ -4,9 +4,11 @@ The `vr/quest-360` branch runs the first level at **`/vr/`** as a stereoscopic 3
 
 The upright bear follows the original walking and ground-emergence families. The full level includes the mountain, late chasms, bonus rooms, 65 authored item/marker records, 48 secret cells, all eight passage records, 13 normal enemy definitions, three moving/falling platforms, two checkpoints, the key and the locked exit. See [source audit](LEVEL-ONE-SOURCE-AUDIT.md), [bear reference](BEAR-REFERENCE.md) and [implementation/acceptance record](LEVEL-ONE-IMPLEMENTATION.md).
 
-**Status:** automated simulation, desktop WebGL and mocked WebXR checks pass. Physical Quest performance, stereo comfort, grip alignment and haptics still require device acceptance. The bear and terrain are editable procedural 3D interpretations. Other enemies and pickups currently use closed extrusions of the exact indexed original art; production sculpted/rigged GLB replacements remain future work.
+**Status:** automated simulation, desktop WebGL and mocked WebXR checks pass. Physical Quest performance, stereo comfort, grip alignment and haptics still require device acceptance. The bear and terrain are editable procedural 3D interpretations. Other enemies and pickups use closed4× HD textured extrusions: approved web HD art where available and connected4× enlargement for the remaining poses; production sculpted/rigged GLB replacements remain future work.
 
 ![Upright bear in the complete source-map level](level-one-bear.png)
+
+Latest: [secret-hit performance fixes, HD art, walking caves and IDDQD/IDKFA controls](HD-PERFORMANCE-CHEATS.md).
 
 ## Run and play
 
@@ -21,13 +23,15 @@ Open <http://127.0.0.1:5777/vr/> on the development machine. On Quest, open the 
 - **Left stick:** move relative to head direction. Centre it once after entering/resuming VR. Neutral stops immediately.
 - **Right stick:** snap turn 30° around the tracked head.
 - **Right A:** jump. Holding it during a bear head bounce gives the higher rebound. Physical jumping is not required.
-- **Right B:** use a nearby passage. Release before using its return. After completion/game over, B restarts.
+- **Passages:** walk into the visible mouth with the left stick; movement follows the current look direction. Right B is an alternative. After completion/game over, B restarts.
+- **Magic controller combination:** hold both index triggers until a short vibration (about0.7s), keep holding and tap right **A three times** for IDDQD or **B three times** for IDKFA. Release both triggers afterward. Repeat to disable. Gameplay pauses during the combination.
+- **Left Y:** alternative paused test menu. Right A toggles IDDQD; right B toggles IDKFA; Y closes it. Release sticks/buttons to resume.
 - **Club:** swing the selected controller. A button cannot substitute for a physical strike.
 - **Wrist panel:** hearts, spare lives, score, key objective and passage prompt.
 
 Find the key near the far-right exit. Killing a bear is optional. Club blows reveal original hidden terrain and rewards, with original durability/cooldown rules. Only enemies that actually took a heart release recovery bones; six bones return a heart. Falls vibrate, fade and return to the latest checkpoint. After spare lives are exhausted, restart with B.
 
-Desktop: **WASD**, drag to look, **Q/E** snap turn, **Space** jump, **F/click** swing, **G/↓** passage, **Esc** pause, **R** restart. B/keyboard passage also restarts after finishing. The old practice course remains only as `?qa&pilot=1` for controller regression fixtures.
+Desktop: **WASD/arrow keys**, drag to look, **Q/E** snap turn, **Space** jump, **F/click** swing, **G** alternative passage action, **Esc** pause, **R** restart. Type **IDDQD** / **IDKFA**, or use **F2** for the paused test menu. B/keyboard passage also restarts after finishing. The old practice course remains only as `?qa&pilot=1` for controller regression fixtures.
 
 ## Automatic GHCR build and Kubernetes deployment
 
@@ -77,7 +81,7 @@ VR tuning: speed2.6m/s, gravity14m/s², fixed jump8m/s (~2.24m maximum rise), co
 
 Club sampling requires1.35m/s and0.12m relative travel, rearms below0.55m/s and rejects tracking gaps/pose jumps. A sweep tests tip travel plus the current shaft. Gate/checkpoint relocation resets sweep history before contact detection, preventing attacks across a teleport. Passage interaction has a deliberately broader near-feet window than exact native tile matching; fresh B consumption prevents ping-pong.
 
-Native tile faces, animation triplets and palette colours are retained; closed depth, stone/grass/forest backs, cave enclosures, arch mouths and lighting are authored. Native sprite silhouettes become closed coloured meshes with merged equal-colour runs, not transparent flat PNG planes. Small source sprites are oriented for readability along the first-person route. Terrain/decor use spatial chunks and batches. No unflagged foreground-table junk is rendered.
+Native tile faces, animation triplets and palette colours are retained; closed depth, stone/grass/forest backs, cave enclosures, arch mouths and lighting are authored. Native sprite silhouettes become closed HD textured meshes, with cached faces and silhouette side walls. There are no per-pixel front/back polygons to regenerate during a hit. Small source sprites are oriented for readability along the first-person route. Terrain/decor use spatial chunks and batches. No unflagged foreground-table junk is rendered.
 
 The first level has no boss. The exit reports completion; level two is not yet implemented in VR. There is no claim of finished campaign parity, production 3D art, physical Quest validation or original DOS runtime observation. No DOS executable was run.
 
@@ -88,6 +92,8 @@ node --test tests/*.test.mjs
 PRE2_VR_URL=http://127.0.0.1:5777/vr/ node scripts/verify-vr-level-one-browser.mjs
 PRE2_VR_URL=http://127.0.0.1:5777/vr/ node scripts/verify-vr-xr-browser.mjs
 ```
+
+`node scripts/verify-vr-hd-browser.mjs` also verifies the reported secret stalls, score orientation, walking passages and keyboard/Quest cheat menus.
 
 The browser scripts require Playwright1.62.1/Chromium installed separately, or `PRE2_PLAYWRIGHT_MODULE=/absolute/path/to/playwright/index.mjs`. Both run before the GHCR alias is promoted. Reports and screenshots default to a temporary directory; checked evidence is retained in this folder.
 

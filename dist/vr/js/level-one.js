@@ -28,22 +28,28 @@ export const isBear=a=>a.type===9||(a.type===10&&(a.def.sprite&0x1fff)===381);
 export class LevelOne {
  constructor(assets){this.assets=assets;this.reset();}
  reset(){
-  this.world=new World(this.assets);for(const o of [...this.world.items,...this.world.platforms])o.vrArea=areaForY(o.y);this.layout=levelOneLayout(this.world);this.area='outdoors';this.player={...this.layout.start,vy:0,grounded:true,health:3,invulnerable:0};this.checkpoint={...this.layout.start,area:'outdoors'};
-  this.time=0;this.clock=0;this.portalFade=0;this.events=[];this.complete=false;this.gameOver=false;this.rescue=0;this.rescueMoved=false;this.jumpHeld=false;this.interactHeld=false;this.gatesVisited=[];this.revision=0;this.score=0;this.bones=[];this.bear={alive:false};this.platformBoxes=[];this.lastInput={};this.nearGate=null;
+  const cheats={godMode:this.world?.godMode||false,secretHints:this.world?.secretHints||false};this.world=new World(this.assets);Object.assign(this.world,cheats);for(const o of [...this.world.items,...this.world.platforms])o.vrArea=areaForY(o.y);this.layout=levelOneLayout(this.world);this.area='outdoors';this.player={...this.layout.start,vy:0,grounded:true,health:3,invulnerable:0};this.checkpoint={...this.layout.start,area:'outdoors'};
+  this.time=0;this.clock=0;this.portalFade=0;this.events=[];this.complete=false;this.gameOver=false;this.rescue=0;this.rescueMoved=false;this.jumpHeld=false;this.interactHeld=false;this.gateWalkReady=true;this.gatesVisited=[];this.revision=0;this.score=0;this.bones=[];this.bear={alive:false};this.platformBoxes=[];this.lastInput={};this.nearGate=null;
  }
+ toggleCheat(code){if(code==='IDDQD'){this.world.godMode=!this.world.godMode;if(this.world.godMode){this.world.health=this.player.health=3;this.player.invulnerable=0;}}else if(code==='IDKFA')this.world.secretHints=!this.world.secretHints;else return null;this.emit('cheat',{code,enabled:code==='IDDQD'?this.world.godMode:this.world.secretHints});return code==='IDDQD'?this.world.godMode:this.world.secretHints;}
  nearby(x){const out=[];for(let col=Math.max(0,Math.floor(x*2)-2);col<=Math.min(255,Math.floor(x*2)+2);col++)for(const b of this.layout.columns[col])if(b.area===this.area)out.push(b);return out.concat(this.platformBoxes);}
  support(x,z,above=Infinity){let y=-Infinity;for(const b of this.nearby(x))if(b.floor!==false&&x>=b.minX&&x<=b.maxX&&z>=b.minZ&&z<=b.maxZ&&b.maxY<=above+.02)y=Math.max(y,b.maxY);return y;}
  emit(type,data={}){this.events.push({type,...data});}
  project(input={}){const p=this.player,n=this.world.player;n.x=Math.round((p.x+(input.headX||0))*32);n.y=Math.round(672-p.y*32);n.vy=Math.round(-p.vy*32/NATIVE_HZ*16);n.grounded=p.grounded;n.face=this.face||1;n.sprite=9;n.invulnerable=Math.ceil(p.invulnerable*NATIVE_HZ);}
  startRescue(reason){if(this.rescue)return;this.rescue=.9;this.rescueMoved=false;if(!this.world.godMode){if(this.world.lives===0)this.gameOver=true;else this.world.lives--;this.world.health=3;}this.emit('fall',{reason});}
- teleport(x,y,{headX=0,headZ=0}={}){this.portalFade=.18;this.area=areaForY(y);Object.assign(this.player,{x:x/32-headX,y:nativeY(y),z:-headZ,vy:0,grounded:false});this.platformBoxes=[];this.emit('passage',{x,y,area:this.area});}
+ teleport(x,y,{headX=0,headZ=0}={}){this.portalFade=.18;this.gateWalkReady=false;this.area=areaForY(y);Object.assign(this.player,{x:x/32-headX,y:nativeY(y),z:-headZ,vy:0,grounded:false});this.platformBoxes=[];this.emit('passage',{x,y,area:this.area});}
  interact(input){
   const w=this.world,p=this.player,px=(p.x+(input.headX||0))*32,py=672-p.y*32;
   const candidates=w.gates.filter(g=>g.active&&areaForY((g.triggerTile>>8)*16)===this.area).map(g=>({g,x:(g.triggerTile&255)*16,y:(g.triggerTile>>8)*16}));
   const near=candidates.find(g=>Math.abs(px-(g.x+8))<27&&Math.abs(py-g.y)<30&&Math.abs(p.z+(input.headZ||0))<1.25);
   this.nearGate=near?.g.index??null;
-  if(!input.interact){this.interactHeld=false;w.gateDownConsumed=false;return;}
-  if(this.interactHeld)return;this.interactHeld=true;if(!near)return;
+  const depth=p.z+(input.headZ||0),toward=this.area==='caves'?1:-1,mx=input.x||0,mz=input.z||0,yaw=input.yaw||0,worldZ=-mx*Math.sin(yaw)+mz*Math.cos(yaw);
+  if((Math.hypot(mx,mz)<.22&&Math.abs(depth)<.65)||depth*toward<-.3)this.gateWalkReady=true;
+  const walking=near&&this.gateWalkReady&&depth*toward>.85&&worldZ*toward>.3;
+  if(!input.interact){this.interactHeld=false;w.gateDownConsumed=false;if(!walking)return;}
+  else {if(this.interactHeld)return;this.interactHeld=true;}
+  if(!near)return;
+
   const old={x:w.player.x,y:w.player.y};w.player.x=near.x+1;w.player.y=near.y+1;w.player.downTimer=1;w.checkGates();
   if(w.gateDownConsumed){this.gatesVisited.push(near.g.index);this.teleport(w.player.x,w.player.y,input);}else Object.assign(w.player,old);
  }
@@ -118,5 +124,5 @@ export class LevelOne {
   if(block){const before=w.brokenBlocks;w.hitBlock(block,{face:this.face||1});this.tagEffects();if(before!==w.brokenBlocks){this.layout=levelOneLayout(w);this.revision++;}this.emit('hit',{x:sweep.to.x,y:sweep.to.y,z:sweep.to.z});return true;}return false;
  }
  bears(){return this.world.actors.filter(a=>a.active&&isBear(a)&&(a.vrArea??areaForY(a.y))===this.area).map(a=>bearPresentation(a,this.time));}
- snapshot(){return {player:{...this.player},checkpoint:{...this.checkpoint},area:this.area,score:this.score,lives:this.world.lives,complete:this.complete,gameOver:this.gameOver,rescue:this.rescue,bear:{...this.bear},bones:[],key:!!(this.world.inventory2&2),gatesVisited:[...this.gatesVisited],nearGate:this.nearGate,source:{columns:256,items:this.world.items.length,secrets:this.world.blocks.length,platforms:this.world.platforms.length,enemies:this.world.definitions.length},native:this.world.snapshot()};}
+ snapshot(){return {player:{...this.player},checkpoint:{...this.checkpoint},area:this.area,score:this.score,lives:this.world.lives,complete:this.complete,gameOver:this.gameOver,cheats:{iddqd:this.world.godMode,idkfa:this.world.secretHints},rescue:this.rescue,bear:{...this.bear},bones:[],key:!!(this.world.inventory2&2),gatesVisited:[...this.gatesVisited],nearGate:this.nearGate,source:{columns:256,items:this.world.items.length,secrets:this.world.blocks.length,platforms:this.world.platforms.length,enemies:this.world.definitions.length},native:this.world.snapshot()};}
 }

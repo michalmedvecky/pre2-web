@@ -1,0 +1,3697 @@
+{
+  "version": 1,
+  "scale": 4,
+  "width": 2048,
+  "height": 4096,
+  "file": "objects-hd.png",
+  "sprites": {
+    "53": {
+      "rect": [
+        4,
+        4,
+        32,
+        24
+      ],
+      "method": "connected-scale4"
+    },
+    "54": {
+      "rect": [
+        40,
+        4,
+        32,
+        32
+      ],
+      "method": "connected-scale4"
+    },
+    "55": {
+      "rect": [
+        76,
+        4,
+        64,
+        36
+      ],
+      "method": "connected-scale4"
+    },
+    "56": {
+      "rect": [
+        144,
+        4,
+        64,
+        44
+      ],
+      "method": "connected-scale4"
+    },
+    "57": {
+      "rect": [
+        212,
+        4,
+        64,
+        44
+      ],
+      "method": "connected-scale4"
+    },
+    "58": {
+      "rect": [
+        280,
+        4,
+        64,
+        76
+      ],
+      "method": "web-hd"
+    },
+    "59": {
+      "rect": [
+        348,
+        4,
+        96,
+        72
+      ],
+      "method": "web-hd"
+    },
+    "60": {
+      "rect": [
+        448,
+        4,
+        96,
+        52
+      ],
+      "method": "web-hd"
+    },
+    "61": {
+      "rect": [
+        548,
+        4,
+        64,
+        64
+      ],
+      "method": "web-hd"
+    },
+    "62": {
+      "rect": [
+        616,
+        4,
+        64,
+        64
+      ],
+      "method": "web-hd"
+    },
+    "63": {
+      "rect": [
+        684,
+        4,
+        64,
+        64
+      ],
+      "method": "web-hd"
+    },
+    "64": {
+      "rect": [
+        752,
+        4,
+        64,
+        60
+      ],
+      "method": "web-hd"
+    },
+    "65": {
+      "rect": [
+        820,
+        4,
+        96,
+        60
+      ],
+      "method": "web-hd"
+    },
+    "66": {
+      "rect": [
+        920,
+        4,
+        96,
+        76
+      ],
+      "method": "web-hd"
+    },
+    "67": {
+      "rect": [
+        1020,
+        4,
+        96,
+        96
+      ],
+      "method": "web-hd"
+    },
+    "68": {
+      "rect": [
+        1120,
+        4,
+        128,
+        76
+      ],
+      "method": "web-hd"
+    },
+    "69": {
+      "rect": [
+        1252,
+        4,
+        96,
+        100
+      ],
+      "method": "web-hd"
+    },
+    "70": {
+      "rect": [
+        1352,
+        4,
+        64,
+        60
+      ],
+      "method": "web-hd"
+    },
+    "71": {
+      "rect": [
+        1420,
+        4,
+        64,
+        60
+      ],
+      "method": "web-hd"
+    },
+    "72": {
+      "rect": [
+        1488,
+        4,
+        64,
+        36
+      ],
+      "method": "web-hd"
+    },
+    "73": {
+      "rect": [
+        1556,
+        4,
+        64,
+        60
+      ],
+      "method": "web-hd"
+    },
+    "74": {
+      "rect": [
+        1624,
+        4,
+        96,
+        36
+      ],
+      "method": "connected-scale4"
+    },
+    "75": {
+      "rect": [
+        1724,
+        4,
+        96,
+        36
+      ],
+      "method": "connected-scale4"
+    },
+    "76": {
+      "rect": [
+        1824,
+        4,
+        96,
+        36
+      ],
+      "method": "connected-scale4"
+    },
+    "77": {
+      "rect": [
+        1924,
+        4,
+        96,
+        36
+      ],
+      "method": "connected-scale4"
+    },
+    "78": {
+      "rect": [
+        4,
+        108,
+        96,
+        36
+      ],
+      "method": "connected-scale4"
+    },
+    "79": {
+      "rect": [
+        104,
+        108,
+        96,
+        36
+      ],
+      "method": "connected-scale4"
+    },
+    "80": {
+      "rect": [
+        204,
+        108,
+        96,
+        36
+      ],
+      "method": "connected-scale4"
+    },
+    "81": {
+      "rect": [
+        304,
+        108,
+        96,
+        36
+      ],
+      "method": "connected-scale4"
+    },
+    "82": {
+      "rect": [
+        404,
+        108,
+        96,
+        36
+      ],
+      "method": "connected-scale4"
+    },
+    "83": {
+      "rect": [
+        504,
+        108,
+        96,
+        36
+      ],
+      "method": "connected-scale4"
+    },
+    "84": {
+      "rect": [
+        604,
+        108,
+        96,
+        36
+      ],
+      "method": "connected-scale4"
+    },
+    "85": {
+      "rect": [
+        704,
+        108,
+        96,
+        36
+      ],
+      "method": "connected-scale4"
+    },
+    "86": {
+      "rect": [
+        804,
+        108,
+        160,
+        52
+      ],
+      "method": "connected-scale4"
+    },
+    "87": {
+      "rect": [
+        968,
+        108,
+        192,
+        52
+      ],
+      "method": "connected-scale4"
+    },
+    "88": {
+      "rect": [
+        1164,
+        108,
+        192,
+        52
+      ],
+      "method": "connected-scale4"
+    },
+    "89": {
+      "rect": [
+        1360,
+        108,
+        192,
+        52
+      ],
+      "method": "connected-scale4"
+    },
+    "90": {
+      "rect": [
+        1556,
+        108,
+        224,
+        68
+      ],
+      "method": "connected-scale4"
+    },
+    "91": {
+      "rect": [
+        1784,
+        108,
+        96,
+        76
+      ],
+      "method": "connected-scale4"
+    },
+    "92": {
+      "rect": [
+        1884,
+        108,
+        64,
+        52
+      ],
+      "method": "web-hd"
+    },
+    "93": {
+      "rect": [
+        1952,
+        108,
+        64,
+        52
+      ],
+      "method": "web-hd"
+    },
+    "94": {
+      "rect": [
+        4,
+        188,
+        64,
+        52
+      ],
+      "method": "web-hd"
+    },
+    "95": {
+      "rect": [
+        72,
+        188,
+        64,
+        52
+      ],
+      "method": "web-hd"
+    },
+    "96": {
+      "rect": [
+        140,
+        188,
+        64,
+        52
+      ],
+      "method": "web-hd"
+    },
+    "97": {
+      "rect": [
+        208,
+        188,
+        96,
+        76
+      ],
+      "method": "web-hd"
+    },
+    "98": {
+      "rect": [
+        308,
+        188,
+        128,
+        88
+      ],
+      "method": "web-hd"
+    },
+    "99": {
+      "rect": [
+        440,
+        188,
+        96,
+        120
+      ],
+      "method": "web-hd"
+    },
+    "100": {
+      "rect": [
+        540,
+        188,
+        96,
+        116
+      ],
+      "method": "web-hd"
+    },
+    "101": {
+      "rect": [
+        640,
+        188,
+        96,
+        132
+      ],
+      "method": "web-hd"
+    },
+    "102": {
+      "rect": [
+        740,
+        188,
+        64,
+        132
+      ],
+      "method": "web-hd"
+    },
+    "103": {
+      "rect": [
+        808,
+        188,
+        96,
+        132
+      ],
+      "method": "web-hd"
+    },
+    "104": {
+      "rect": [
+        908,
+        188,
+        96,
+        28
+      ],
+      "method": "connected-scale4"
+    },
+    "105": {
+      "rect": [
+        1008,
+        188,
+        96,
+        28
+      ],
+      "method": "connected-scale4"
+    },
+    "106": {
+      "rect": [
+        1108,
+        188,
+        96,
+        28
+      ],
+      "method": "connected-scale4"
+    },
+    "107": {
+      "rect": [
+        1208,
+        188,
+        96,
+        28
+      ],
+      "method": "connected-scale4"
+    },
+    "108": {
+      "rect": [
+        1308,
+        188,
+        96,
+        28
+      ],
+      "method": "connected-scale4"
+    },
+    "109": {
+      "rect": [
+        1408,
+        188,
+        96,
+        28
+      ],
+      "method": "connected-scale4"
+    },
+    "110": {
+      "rect": [
+        1508,
+        188,
+        192,
+        260
+      ],
+      "method": "connected-scale4"
+    },
+    "111": {
+      "rect": [
+        1704,
+        188,
+        160,
+        176
+      ],
+      "method": "connected-scale4"
+    },
+    "112": {
+      "rect": [
+        4,
+        452,
+        192,
+        128
+      ],
+      "method": "web-hd"
+    },
+    "113": {
+      "rect": [
+        200,
+        452,
+        160,
+        184
+      ],
+      "method": "web-hd"
+    },
+    "114": {
+      "rect": [
+        364,
+        452,
+        128,
+        152
+      ],
+      "method": "connected-scale4"
+    },
+    "115": {
+      "rect": [
+        496,
+        452,
+        160,
+        140
+      ],
+      "method": "connected-scale4"
+    },
+    "116": {
+      "rect": [
+        660,
+        452,
+        192,
+        132
+      ],
+      "method": "connected-scale4"
+    },
+    "117": {
+      "rect": [
+        856,
+        452,
+        160,
+        132
+      ],
+      "method": "connected-scale4"
+    },
+    "118": {
+      "rect": [
+        1020,
+        452,
+        192,
+        56
+      ],
+      "method": "connected-scale4"
+    },
+    "119": {
+      "rect": [
+        1216,
+        452,
+        192,
+        116
+      ],
+      "method": "web-hd"
+    },
+    "120": {
+      "rect": [
+        1412,
+        452,
+        192,
+        124
+      ],
+      "method": "web-hd"
+    },
+    "121": {
+      "rect": [
+        1608,
+        452,
+        192,
+        76
+      ],
+      "method": "web-hd"
+    },
+    "122": {
+      "rect": [
+        1804,
+        452,
+        192,
+        80
+      ],
+      "method": "web-hd"
+    },
+    "123": {
+      "rect": [
+        4,
+        640,
+        192,
+        92
+      ],
+      "method": "web-hd"
+    },
+    "124": {
+      "rect": [
+        200,
+        640,
+        192,
+        108
+      ],
+      "method": "web-hd"
+    },
+    "125": {
+      "rect": [
+        396,
+        640,
+        192,
+        92
+      ],
+      "method": "web-hd"
+    },
+    "126": {
+      "rect": [
+        592,
+        640,
+        160,
+        108
+      ],
+      "method": "web-hd"
+    },
+    "127": {
+      "rect": [
+        756,
+        640,
+        160,
+        136
+      ],
+      "method": "web-hd"
+    },
+    "128": {
+      "rect": [
+        920,
+        640,
+        96,
+        56
+      ],
+      "method": "connected-scale4"
+    },
+    "129": {
+      "rect": [
+        1020,
+        640,
+        64,
+        60
+      ],
+      "method": "connected-scale4"
+    },
+    "130": {
+      "rect": [
+        1088,
+        640,
+        96,
+        76
+      ],
+      "method": "connected-scale4"
+    },
+    "131": {
+      "rect": [
+        1188,
+        640,
+        64,
+        72
+      ],
+      "method": "connected-scale4"
+    },
+    "132": {
+      "rect": [
+        1256,
+        640,
+        64,
+        72
+      ],
+      "method": "connected-scale4"
+    },
+    "133": {
+      "rect": [
+        1324,
+        640,
+        96,
+        48
+      ],
+      "method": "connected-scale4"
+    },
+    "134": {
+      "rect": [
+        1424,
+        640,
+        96,
+        76
+      ],
+      "method": "connected-scale4"
+    },
+    "135": {
+      "rect": [
+        1524,
+        640,
+        64,
+        100
+      ],
+      "method": "web-hd"
+    },
+    "136": {
+      "rect": [
+        1592,
+        640,
+        96,
+        84
+      ],
+      "method": "web-hd"
+    },
+    "137": {
+      "rect": [
+        1692,
+        640,
+        96,
+        92
+      ],
+      "method": "web-hd"
+    },
+    "138": {
+      "rect": [
+        1792,
+        640,
+        64,
+        108
+      ],
+      "method": "web-hd"
+    },
+    "139": {
+      "rect": [
+        1860,
+        640,
+        64,
+        80
+      ],
+      "method": "web-hd"
+    },
+    "140": {
+      "rect": [
+        1928,
+        640,
+        64,
+        92
+      ],
+      "method": "web-hd"
+    },
+    "141": {
+      "rect": [
+        4,
+        780,
+        64,
+        84
+      ],
+      "method": "connected-scale4"
+    },
+    "142": {
+      "rect": [
+        72,
+        780,
+        96,
+        44
+      ],
+      "method": "connected-scale4"
+    },
+    "143": {
+      "rect": [
+        172,
+        780,
+        96,
+        44
+      ],
+      "method": "connected-scale4"
+    },
+    "144": {
+      "rect": [
+        272,
+        780,
+        64,
+        88
+      ],
+      "method": "connected-scale4"
+    },
+    "145": {
+      "rect": [
+        340,
+        780,
+        64,
+        88
+      ],
+      "method": "connected-scale4"
+    },
+    "146": {
+      "rect": [
+        408,
+        780,
+        64,
+        76
+      ],
+      "method": "web-hd"
+    },
+    "147": {
+      "rect": [
+        476,
+        780,
+        64,
+        72
+      ],
+      "method": "connected-scale4"
+    },
+    "148": {
+      "rect": [
+        544,
+        780,
+        64,
+        72
+      ],
+      "method": "connected-scale4"
+    },
+    "149": {
+      "rect": [
+        612,
+        780,
+        64,
+        76
+      ],
+      "method": "connected-scale4"
+    },
+    "150": {
+      "rect": [
+        680,
+        780,
+        64,
+        116
+      ],
+      "method": "connected-scale4"
+    },
+    "151": {
+      "rect": [
+        748,
+        780,
+        64,
+        84
+      ],
+      "method": "connected-scale4"
+    },
+    "152": {
+      "rect": [
+        816,
+        780,
+        64,
+        112
+      ],
+      "method": "connected-scale4"
+    },
+    "153": {
+      "rect": [
+        884,
+        780,
+        96,
+        80
+      ],
+      "method": "web-hd"
+    },
+    "154": {
+      "rect": [
+        984,
+        780,
+        96,
+        60
+      ],
+      "method": "connected-scale4"
+    },
+    "155": {
+      "rect": [
+        1084,
+        780,
+        64,
+        60
+      ],
+      "method": "connected-scale4"
+    },
+    "156": {
+      "rect": [
+        1152,
+        780,
+        64,
+        76
+      ],
+      "method": "connected-scale4"
+    },
+    "157": {
+      "rect": [
+        1220,
+        780,
+        64,
+        84
+      ],
+      "method": "connected-scale4"
+    },
+    "158": {
+      "rect": [
+        1288,
+        780,
+        64,
+        84
+      ],
+      "method": "connected-scale4"
+    },
+    "159": {
+      "rect": [
+        1356,
+        780,
+        96,
+        68
+      ],
+      "method": "connected-scale4"
+    },
+    "160": {
+      "rect": [
+        1456,
+        780,
+        96,
+        48
+      ],
+      "method": "connected-scale4"
+    },
+    "161": {
+      "rect": [
+        1556,
+        780,
+        96,
+        52
+      ],
+      "method": "connected-scale4"
+    },
+    "162": {
+      "rect": [
+        1656,
+        780,
+        96,
+        52
+      ],
+      "method": "connected-scale4"
+    },
+    "163": {
+      "rect": [
+        1756,
+        780,
+        96,
+        68
+      ],
+      "method": "connected-scale4"
+    },
+    "164": {
+      "rect": [
+        1856,
+        780,
+        96,
+        88
+      ],
+      "method": "connected-scale4"
+    },
+    "165": {
+      "rect": [
+        1956,
+        780,
+        64,
+        52
+      ],
+      "method": "connected-scale4"
+    },
+    "166": {
+      "rect": [
+        4,
+        900,
+        64,
+        64
+      ],
+      "method": "connected-scale4"
+    },
+    "167": {
+      "rect": [
+        72,
+        900,
+        64,
+        96
+      ],
+      "method": "connected-scale4"
+    },
+    "168": {
+      "rect": [
+        140,
+        900,
+        64,
+        68
+      ],
+      "method": "connected-scale4"
+    },
+    "169": {
+      "rect": [
+        208,
+        900,
+        96,
+        44
+      ],
+      "method": "connected-scale4"
+    },
+    "170": {
+      "rect": [
+        308,
+        900,
+        64,
+        92
+      ],
+      "method": "web-hd"
+    },
+    "171": {
+      "rect": [
+        376,
+        900,
+        96,
+        72
+      ],
+      "method": "connected-scale4"
+    },
+    "172": {
+      "rect": [
+        476,
+        900,
+        96,
+        60
+      ],
+      "method": "web-hd"
+    },
+    "173": {
+      "rect": [
+        576,
+        900,
+        96,
+        60
+      ],
+      "method": "connected-scale4"
+    },
+    "174": {
+      "rect": [
+        676,
+        900,
+        96,
+        60
+      ],
+      "method": "connected-scale4"
+    },
+    "175": {
+      "rect": [
+        776,
+        900,
+        64,
+        76
+      ],
+      "method": "connected-scale4"
+    },
+    "176": {
+      "rect": [
+        844,
+        900,
+        96,
+        80
+      ],
+      "method": "web-hd"
+    },
+    "177": {
+      "rect": [
+        944,
+        900,
+        64,
+        72
+      ],
+      "method": "connected-scale4"
+    },
+    "178": {
+      "rect": [
+        1012,
+        900,
+        32,
+        92
+      ],
+      "method": "connected-scale4"
+    },
+    "179": {
+      "rect": [
+        1048,
+        900,
+        64,
+        84
+      ],
+      "method": "connected-scale4"
+    },
+    "180": {
+      "rect": [
+        1116,
+        900,
+        64,
+        72
+      ],
+      "method": "connected-scale4"
+    },
+    "181": {
+      "rect": [
+        1184,
+        900,
+        64,
+        48
+      ],
+      "method": "connected-scale4"
+    },
+    "182": {
+      "rect": [
+        1252,
+        900,
+        64,
+        48
+      ],
+      "method": "web-hd"
+    },
+    "183": {
+      "rect": [
+        1320,
+        900,
+        64,
+        48
+      ],
+      "method": "connected-scale4"
+    },
+    "184": {
+      "rect": [
+        1388,
+        900,
+        96,
+        92
+      ],
+      "method": "web-hd"
+    },
+    "185": {
+      "rect": [
+        1488,
+        900,
+        64,
+        72
+      ],
+      "method": "web-hd"
+    },
+    "186": {
+      "rect": [
+        1556,
+        900,
+        64,
+        64
+      ],
+      "method": "web-hd"
+    },
+    "187": {
+      "rect": [
+        1624,
+        900,
+        64,
+        56
+      ],
+      "method": "web-hd"
+    },
+    "188": {
+      "rect": [
+        1692,
+        900,
+        64,
+        88
+      ],
+      "method": "web-hd"
+    },
+    "189": {
+      "rect": [
+        1760,
+        900,
+        128,
+        52
+      ],
+      "method": "web-hd"
+    },
+    "190": {
+      "rect": [
+        1892,
+        900,
+        96,
+        64
+      ],
+      "method": "web-hd"
+    },
+    "191": {
+      "rect": [
+        4,
+        1000,
+        96,
+        72
+      ],
+      "method": "web-hd"
+    },
+    "192": {
+      "rect": [
+        104,
+        1000,
+        64,
+        52
+      ],
+      "method": "connected-scale4"
+    },
+    "193": {
+      "rect": [
+        172,
+        1000,
+        96,
+        56
+      ],
+      "method": "connected-scale4"
+    },
+    "194": {
+      "rect": [
+        272,
+        1000,
+        64,
+        76
+      ],
+      "method": "web-hd"
+    },
+    "195": {
+      "rect": [
+        340,
+        1000,
+        64,
+        100
+      ],
+      "method": "web-hd"
+    },
+    "196": {
+      "rect": [
+        408,
+        1000,
+        32,
+        88
+      ],
+      "method": "web-hd"
+    },
+    "197": {
+      "rect": [
+        444,
+        1000,
+        64,
+        52
+      ],
+      "method": "web-hd"
+    },
+    "198": {
+      "rect": [
+        512,
+        1000,
+        64,
+        76
+      ],
+      "method": "web-hd"
+    },
+    "199": {
+      "rect": [
+        580,
+        1000,
+        96,
+        64
+      ],
+      "method": "connected-scale4"
+    },
+    "200": {
+      "rect": [
+        680,
+        1000,
+        96,
+        72
+      ],
+      "method": "connected-scale4"
+    },
+    "201": {
+      "rect": [
+        780,
+        1000,
+        96,
+        52
+      ],
+      "method": "connected-scale4"
+    },
+    "202": {
+      "rect": [
+        880,
+        1000,
+        64,
+        60
+      ],
+      "method": "connected-scale4"
+    },
+    "203": {
+      "rect": [
+        948,
+        1000,
+        64,
+        112
+      ],
+      "method": "web-hd"
+    },
+    "204": {
+      "rect": [
+        1016,
+        1000,
+        64,
+        56
+      ],
+      "method": "web-hd"
+    },
+    "205": {
+      "rect": [
+        1084,
+        1000,
+        64,
+        96
+      ],
+      "method": "connected-scale4"
+    },
+    "206": {
+      "rect": [
+        1152,
+        1000,
+        96,
+        72
+      ],
+      "method": "connected-scale4"
+    },
+    "207": {
+      "rect": [
+        1252,
+        1000,
+        128,
+        80
+      ],
+      "method": "connected-scale4"
+    },
+    "208": {
+      "rect": [
+        1384,
+        1000,
+        128,
+        68
+      ],
+      "method": "connected-scale4"
+    },
+    "209": {
+      "rect": [
+        1516,
+        1000,
+        64,
+        44
+      ],
+      "method": "connected-scale4"
+    },
+    "210": {
+      "rect": [
+        1584,
+        1000,
+        64,
+        104
+      ],
+      "method": "connected-scale4"
+    },
+    "211": {
+      "rect": [
+        1652,
+        1000,
+        96,
+        72
+      ],
+      "method": "connected-scale4"
+    },
+    "212": {
+      "rect": [
+        1752,
+        1000,
+        96,
+        52
+      ],
+      "method": "web-hd"
+    },
+    "213": {
+      "rect": [
+        1852,
+        1000,
+        96,
+        48
+      ],
+      "method": "connected-scale4"
+    },
+    "214": {
+      "rect": [
+        1952,
+        1000,
+        64,
+        60
+      ],
+      "method": "connected-scale4"
+    },
+    "215": {
+      "rect": [
+        4,
+        1116,
+        64,
+        76
+      ],
+      "method": "connected-scale4"
+    },
+    "216": {
+      "rect": [
+        72,
+        1116,
+        64,
+        76
+      ],
+      "method": "connected-scale4"
+    },
+    "217": {
+      "rect": [
+        140,
+        1116,
+        64,
+        76
+      ],
+      "method": "connected-scale4"
+    },
+    "218": {
+      "rect": [
+        208,
+        1116,
+        64,
+        76
+      ],
+      "method": "web-hd"
+    },
+    "219": {
+      "rect": [
+        276,
+        1116,
+        64,
+        76
+      ],
+      "method": "connected-scale4"
+    },
+    "220": {
+      "rect": [
+        344,
+        1116,
+        96,
+        64
+      ],
+      "method": "connected-scale4"
+    },
+    "221": {
+      "rect": [
+        444,
+        1116,
+        96,
+        88
+      ],
+      "method": "connected-scale4"
+    },
+    "222": {
+      "rect": [
+        544,
+        1116,
+        64,
+        72
+      ],
+      "method": "connected-scale4"
+    },
+    "223": {
+      "rect": [
+        612,
+        1116,
+        96,
+        64
+      ],
+      "method": "connected-scale4"
+    },
+    "224": {
+      "rect": [
+        712,
+        1116,
+        64,
+        48
+      ],
+      "method": "connected-scale4"
+    },
+    "225": {
+      "rect": [
+        780,
+        1116,
+        64,
+        48
+      ],
+      "method": "connected-scale4"
+    },
+    "226": {
+      "rect": [
+        848,
+        1116,
+        64,
+        44
+      ],
+      "method": "connected-scale4"
+    },
+    "227": {
+      "rect": [
+        916,
+        1116,
+        128,
+        64
+      ],
+      "method": "connected-scale4"
+    },
+    "228": {
+      "rect": [
+        1048,
+        1116,
+        160,
+        56
+      ],
+      "method": "connected-scale4"
+    },
+    "229": {
+      "rect": [
+        1212,
+        1116,
+        160,
+        56
+      ],
+      "method": "connected-scale4"
+    },
+    "230": {
+      "rect": [
+        1376,
+        1116,
+        160,
+        56
+      ],
+      "method": "connected-scale4"
+    },
+    "231": {
+      "rect": [
+        1540,
+        1116,
+        128,
+        56
+      ],
+      "method": "connected-scale4"
+    },
+    "232": {
+      "rect": [
+        1672,
+        1116,
+        128,
+        52
+      ],
+      "method": "connected-scale4"
+    },
+    "233": {
+      "rect": [
+        1804,
+        1116,
+        64,
+        72
+      ],
+      "method": "connected-scale4"
+    },
+    "234": {
+      "rect": [
+        1872,
+        1116,
+        64,
+        72
+      ],
+      "method": "connected-scale4"
+    },
+    "235": {
+      "rect": [
+        1940,
+        1116,
+        96,
+        72
+      ],
+      "method": "web-hd"
+    },
+    "236": {
+      "rect": [
+        4,
+        1208,
+        128,
+        164
+      ],
+      "method": "web-hd"
+    },
+    "237": {
+      "rect": [
+        136,
+        1208,
+        128,
+        116
+      ],
+      "method": "web-hd"
+    },
+    "238": {
+      "rect": [
+        268,
+        1208,
+        96,
+        80
+      ],
+      "method": "web-hd"
+    },
+    "239": {
+      "rect": [
+        368,
+        1208,
+        160,
+        132
+      ],
+      "method": "web-hd"
+    },
+    "240": {
+      "rect": [
+        532,
+        1208,
+        192,
+        104
+      ],
+      "method": "web-hd"
+    },
+    "241": {
+      "rect": [
+        728,
+        1208,
+        64,
+        44
+      ],
+      "method": "connected-scale4"
+    },
+    "242": {
+      "rect": [
+        796,
+        1208,
+        64,
+        44
+      ],
+      "method": "connected-scale4"
+    },
+    "243": {
+      "rect": [
+        864,
+        1208,
+        64,
+        44
+      ],
+      "method": "connected-scale4"
+    },
+    "244": {
+      "rect": [
+        932,
+        1208,
+        64,
+        44
+      ],
+      "method": "connected-scale4"
+    },
+    "245": {
+      "rect": [
+        1000,
+        1208,
+        64,
+        44
+      ],
+      "method": "connected-scale4"
+    },
+    "246": {
+      "rect": [
+        1068,
+        1208,
+        64,
+        44
+      ],
+      "method": "connected-scale4"
+    },
+    "247": {
+      "rect": [
+        1136,
+        1208,
+        64,
+        44
+      ],
+      "method": "connected-scale4"
+    },
+    "248": {
+      "rect": [
+        1204,
+        1208,
+        64,
+        44
+      ],
+      "method": "connected-scale4"
+    },
+    "249": {
+      "rect": [
+        1272,
+        1208,
+        64,
+        44
+      ],
+      "method": "connected-scale4"
+    },
+    "250": {
+      "rect": [
+        1340,
+        1208,
+        64,
+        44
+      ],
+      "method": "connected-scale4"
+    },
+    "251": {
+      "rect": [
+        1408,
+        1208,
+        64,
+        44
+      ],
+      "method": "connected-scale4"
+    },
+    "252": {
+      "rect": [
+        1476,
+        1208,
+        64,
+        44
+      ],
+      "method": "connected-scale4"
+    },
+    "253": {
+      "rect": [
+        1544,
+        1208,
+        64,
+        44
+      ],
+      "method": "connected-scale4"
+    },
+    "254": {
+      "rect": [
+        1612,
+        1208,
+        64,
+        44
+      ],
+      "method": "connected-scale4"
+    },
+    "255": {
+      "rect": [
+        1680,
+        1208,
+        64,
+        44
+      ],
+      "method": "connected-scale4"
+    },
+    "256": {
+      "rect": [
+        1748,
+        1208,
+        64,
+        44
+      ],
+      "method": "connected-scale4"
+    },
+    "257": {
+      "rect": [
+        1816,
+        1208,
+        64,
+        44
+      ],
+      "method": "connected-scale4"
+    },
+    "258": {
+      "rect": [
+        1884,
+        1208,
+        64,
+        44
+      ],
+      "method": "connected-scale4"
+    },
+    "259": {
+      "rect": [
+        1952,
+        1208,
+        64,
+        44
+      ],
+      "method": "connected-scale4"
+    },
+    "260": {
+      "rect": [
+        4,
+        1376,
+        64,
+        44
+      ],
+      "method": "connected-scale4"
+    },
+    "261": {
+      "rect": [
+        72,
+        1376,
+        64,
+        44
+      ],
+      "method": "connected-scale4"
+    },
+    "262": {
+      "rect": [
+        140,
+        1376,
+        64,
+        44
+      ],
+      "method": "connected-scale4"
+    },
+    "263": {
+      "rect": [
+        208,
+        1376,
+        64,
+        44
+      ],
+      "method": "connected-scale4"
+    },
+    "264": {
+      "rect": [
+        276,
+        1376,
+        64,
+        44
+      ],
+      "method": "connected-scale4"
+    },
+    "265": {
+      "rect": [
+        344,
+        1376,
+        64,
+        44
+      ],
+      "method": "connected-scale4"
+    },
+    "266": {
+      "rect": [
+        412,
+        1376,
+        64,
+        44
+      ],
+      "method": "connected-scale4"
+    },
+    "267": {
+      "rect": [
+        480,
+        1376,
+        64,
+        44
+      ],
+      "method": "connected-scale4"
+    },
+    "268": {
+      "rect": [
+        548,
+        1376,
+        32,
+        32
+      ],
+      "method": "connected-scale4"
+    },
+    "269": {
+      "rect": [
+        584,
+        1376,
+        64,
+        44
+      ],
+      "method": "connected-scale4"
+    },
+    "270": {
+      "rect": [
+        652,
+        1376,
+        32,
+        44
+      ],
+      "method": "connected-scale4"
+    },
+    "271": {
+      "rect": [
+        688,
+        1376,
+        32,
+        20
+      ],
+      "method": "connected-scale4"
+    },
+    "272": {
+      "rect": [
+        724,
+        1376,
+        32,
+        20
+      ],
+      "method": "connected-scale4"
+    },
+    "273": {
+      "rect": [
+        760,
+        1376,
+        64,
+        48
+      ],
+      "method": "connected-scale4"
+    },
+    "274": {
+      "rect": [
+        828,
+        1376,
+        192,
+        160
+      ],
+      "method": "web-hd"
+    },
+    "275": {
+      "rect": [
+        1024,
+        1376,
+        224,
+        120
+      ],
+      "method": "web-hd"
+    },
+    "276": {
+      "rect": [
+        1252,
+        1376,
+        192,
+        192
+      ],
+      "method": "web-hd"
+    },
+    "277": {
+      "rect": [
+        1448,
+        1376,
+        128,
+        204
+      ],
+      "method": "web-hd"
+    },
+    "278": {
+      "rect": [
+        1580,
+        1376,
+        192,
+        280
+      ],
+      "method": "connected-scale4"
+    },
+    "279": {
+      "rect": [
+        1776,
+        1376,
+        192,
+        280
+      ],
+      "method": "connected-scale4"
+    },
+    "280": {
+      "rect": [
+        4,
+        1660,
+        160,
+        108
+      ],
+      "method": "web-hd"
+    },
+    "281": {
+      "rect": [
+        168,
+        1660,
+        192,
+        116
+      ],
+      "method": "web-hd"
+    },
+    "282": {
+      "rect": [
+        364,
+        1660,
+        224,
+        56
+      ],
+      "method": "connected-scale4"
+    },
+    "283": {
+      "rect": [
+        592,
+        1660,
+        64,
+        48
+      ],
+      "method": "web-hd"
+    },
+    "284": {
+      "rect": [
+        660,
+        1660,
+        64,
+        48
+      ],
+      "method": "web-hd"
+    },
+    "285": {
+      "rect": [
+        728,
+        1660,
+        64,
+        48
+      ],
+      "method": "connected-scale4"
+    },
+    "286": {
+      "rect": [
+        796,
+        1660,
+        64,
+        48
+      ],
+      "method": "connected-scale4"
+    },
+    "287": {
+      "rect": [
+        864,
+        1660,
+        64,
+        48
+      ],
+      "method": "connected-scale4"
+    },
+    "288": {
+      "rect": [
+        932,
+        1660,
+        64,
+        48
+      ],
+      "method": "connected-scale4"
+    },
+    "289": {
+      "rect": [
+        1000,
+        1660,
+        64,
+        48
+      ],
+      "method": "connected-scale4"
+    },
+    "290": {
+      "rect": [
+        1068,
+        1660,
+        64,
+        48
+      ],
+      "method": "connected-scale4"
+    },
+    "291": {
+      "rect": [
+        1136,
+        1660,
+        64,
+        48
+      ],
+      "method": "connected-scale4"
+    },
+    "292": {
+      "rect": [
+        1204,
+        1660,
+        64,
+        48
+      ],
+      "method": "connected-scale4"
+    },
+    "293": {
+      "rect": [
+        1272,
+        1660,
+        64,
+        48
+      ],
+      "method": "connected-scale4"
+    },
+    "294": {
+      "rect": [
+        1340,
+        1660,
+        64,
+        48
+      ],
+      "method": "connected-scale4"
+    },
+    "295": {
+      "rect": [
+        1408,
+        1660,
+        64,
+        48
+      ],
+      "method": "connected-scale4"
+    },
+    "296": {
+      "rect": [
+        1476,
+        1660,
+        64,
+        48
+      ],
+      "method": "connected-scale4"
+    },
+    "297": {
+      "rect": [
+        1544,
+        1660,
+        64,
+        48
+      ],
+      "method": "connected-scale4"
+    },
+    "298": {
+      "rect": [
+        1612,
+        1660,
+        64,
+        48
+      ],
+      "method": "connected-scale4"
+    },
+    "299": {
+      "rect": [
+        1680,
+        1660,
+        128,
+        84
+      ],
+      "method": "connected-scale4"
+    },
+    "300": {
+      "rect": [
+        1812,
+        1660,
+        32,
+        40
+      ],
+      "method": "connected-scale4"
+    },
+    "301": {
+      "rect": [
+        1848,
+        1660,
+        64,
+        48
+      ],
+      "method": "connected-scale4"
+    },
+    "302": {
+      "rect": [
+        1916,
+        1660,
+        64,
+        48
+      ],
+      "method": "connected-scale4"
+    },
+    "303": {
+      "rect": [
+        4,
+        1780,
+        64,
+        48
+      ],
+      "method": "connected-scale4"
+    },
+    "304": {
+      "rect": [
+        72,
+        1780,
+        256,
+        124
+      ],
+      "method": "connected-scale4"
+    },
+    "305": {
+      "rect": [
+        332,
+        1780,
+        128,
+        64
+      ],
+      "method": "connected-scale4"
+    },
+    "306": {
+      "rect": [
+        464,
+        1780,
+        32,
+        40
+      ],
+      "method": "connected-scale4"
+    },
+    "307": {
+      "rect": [
+        500,
+        1780,
+        192,
+        84
+      ],
+      "method": "connected-scale4"
+    },
+    "308": {
+      "rect": [
+        696,
+        1780,
+        64,
+        48
+      ],
+      "method": "connected-scale4"
+    },
+    "309": {
+      "rect": [
+        764,
+        1780,
+        32,
+        48
+      ],
+      "method": "connected-scale4"
+    },
+    "310": {
+      "rect": [
+        800,
+        1780,
+        64,
+        48
+      ],
+      "method": "connected-scale4"
+    },
+    "311": {
+      "rect": [
+        868,
+        1780,
+        64,
+        104
+      ],
+      "method": "connected-scale4"
+    },
+    "312": {
+      "rect": [
+        936,
+        1780,
+        96,
+        96
+      ],
+      "method": "web-hd"
+    },
+    "313": {
+      "rect": [
+        1036,
+        1780,
+        128,
+        116
+      ],
+      "method": "web-hd"
+    },
+    "314": {
+      "rect": [
+        1168,
+        1780,
+        96,
+        120
+      ],
+      "method": "web-hd"
+    },
+    "315": {
+      "rect": [
+        1268,
+        1780,
+        128,
+        116
+      ],
+      "method": "web-hd"
+    },
+    "316": {
+      "rect": [
+        1400,
+        1780,
+        192,
+        160
+      ],
+      "method": "web-hd"
+    },
+    "317": {
+      "rect": [
+        1596,
+        1780,
+        128,
+        76
+      ],
+      "method": "connected-scale4"
+    },
+    "318": {
+      "rect": [
+        1728,
+        1780,
+        128,
+        100
+      ],
+      "method": "connected-scale4"
+    },
+    "319": {
+      "rect": [
+        1860,
+        1780,
+        96,
+        112
+      ],
+      "method": "connected-scale4"
+    },
+    "320": {
+      "rect": [
+        4,
+        1944,
+        128,
+        56
+      ],
+      "method": "connected-scale4"
+    },
+    "321": {
+      "rect": [
+        136,
+        1944,
+        128,
+        60
+      ],
+      "method": "connected-scale4"
+    },
+    "322": {
+      "rect": [
+        268,
+        1944,
+        128,
+        56
+      ],
+      "method": "connected-scale4"
+    },
+    "323": {
+      "rect": [
+        400,
+        1944,
+        128,
+        60
+      ],
+      "method": "connected-scale4"
+    },
+    "324": {
+      "rect": [
+        532,
+        1944,
+        64,
+        112
+      ],
+      "method": "connected-scale4"
+    },
+    "325": {
+      "rect": [
+        600,
+        1944,
+        64,
+        112
+      ],
+      "method": "connected-scale4"
+    },
+    "326": {
+      "rect": [
+        668,
+        1944,
+        64,
+        112
+      ],
+      "method": "connected-scale4"
+    },
+    "327": {
+      "rect": [
+        736,
+        1944,
+        64,
+        112
+      ],
+      "method": "connected-scale4"
+    },
+    "328": {
+      "rect": [
+        804,
+        1944,
+        96,
+        84
+      ],
+      "method": "connected-scale4"
+    },
+    "329": {
+      "rect": [
+        904,
+        1944,
+        96,
+        100
+      ],
+      "method": "connected-scale4"
+    },
+    "330": {
+      "rect": [
+        1004,
+        1944,
+        128,
+        92
+      ],
+      "method": "connected-scale4"
+    },
+    "331": {
+      "rect": [
+        1136,
+        1944,
+        128,
+        92
+      ],
+      "method": "connected-scale4"
+    },
+    "332": {
+      "rect": [
+        1268,
+        1944,
+        96,
+        128
+      ],
+      "method": "connected-scale4"
+    },
+    "333": {
+      "rect": [
+        1368,
+        1944,
+        96,
+        120
+      ],
+      "method": "connected-scale4"
+    },
+    "334": {
+      "rect": [
+        1468,
+        1944,
+        128,
+        88
+      ],
+      "method": "connected-scale4"
+    },
+    "335": {
+      "rect": [
+        1600,
+        1944,
+        160,
+        56
+      ],
+      "method": "connected-scale4"
+    },
+    "336": {
+      "rect": [
+        1764,
+        1944,
+        160,
+        48
+      ],
+      "method": "connected-scale4"
+    },
+    "337": {
+      "rect": [
+        1928,
+        1944,
+        96,
+        60
+      ],
+      "method": "connected-scale4"
+    },
+    "338": {
+      "rect": [
+        4,
+        2076,
+        128,
+        44
+      ],
+      "method": "connected-scale4"
+    },
+    "339": {
+      "rect": [
+        136,
+        2076,
+        96,
+        84
+      ],
+      "method": "connected-scale4"
+    },
+    "340": {
+      "rect": [
+        236,
+        2076,
+        64,
+        40
+      ],
+      "method": "connected-scale4"
+    },
+    "341": {
+      "rect": [
+        304,
+        2076,
+        64,
+        36
+      ],
+      "method": "connected-scale4"
+    },
+    "342": {
+      "rect": [
+        372,
+        2076,
+        32,
+        40
+      ],
+      "method": "connected-scale4"
+    },
+    "343": {
+      "rect": [
+        408,
+        2076,
+        64,
+        40
+      ],
+      "method": "connected-scale4"
+    },
+    "344": {
+      "rect": [
+        476,
+        2076,
+        64,
+        40
+      ],
+      "method": "connected-scale4"
+    },
+    "345": {
+      "rect": [
+        544,
+        2076,
+        96,
+        28
+      ],
+      "method": "connected-scale4"
+    },
+    "346": {
+      "rect": [
+        644,
+        2076,
+        64,
+        56
+      ],
+      "method": "connected-scale4"
+    },
+    "347": {
+      "rect": [
+        712,
+        2076,
+        96,
+        48
+      ],
+      "method": "connected-scale4"
+    },
+    "348": {
+      "rect": [
+        812,
+        2076,
+        96,
+        44
+      ],
+      "method": "connected-scale4"
+    },
+    "349": {
+      "rect": [
+        912,
+        2076,
+        160,
+        116
+      ],
+      "method": "connected-scale4"
+    },
+    "350": {
+      "rect": [
+        1076,
+        2076,
+        128,
+        112
+      ],
+      "method": "connected-scale4"
+    },
+    "351": {
+      "rect": [
+        1208,
+        2076,
+        128,
+        112
+      ],
+      "method": "connected-scale4"
+    },
+    "352": {
+      "rect": [
+        1340,
+        2076,
+        160,
+        96
+      ],
+      "method": "connected-scale4"
+    },
+    "353": {
+      "rect": [
+        1504,
+        2076,
+        160,
+        144
+      ],
+      "method": "connected-scale4"
+    },
+    "354": {
+      "rect": [
+        1668,
+        2076,
+        160,
+        124
+      ],
+      "method": "connected-scale4"
+    },
+    "355": {
+      "rect": [
+        1832,
+        2076,
+        96,
+        128
+      ],
+      "method": "connected-scale4"
+    },
+    "356": {
+      "rect": [
+        4,
+        2224,
+        128,
+        124
+      ],
+      "method": "connected-scale4"
+    },
+    "357": {
+      "rect": [
+        136,
+        2224,
+        128,
+        124
+      ],
+      "method": "connected-scale4"
+    },
+    "358": {
+      "rect": [
+        268,
+        2224,
+        128,
+        124
+      ],
+      "method": "connected-scale4"
+    },
+    "359": {
+      "rect": [
+        400,
+        2224,
+        64,
+        84
+      ],
+      "method": "connected-scale4"
+    },
+    "360": {
+      "rect": [
+        468,
+        2224,
+        64,
+        84
+      ],
+      "method": "connected-scale4"
+    },
+    "361": {
+      "rect": [
+        536,
+        2224,
+        64,
+        96
+      ],
+      "method": "connected-scale4"
+    },
+    "362": {
+      "rect": [
+        604,
+        2224,
+        96,
+        96
+      ],
+      "method": "connected-scale4"
+    },
+    "363": {
+      "rect": [
+        704,
+        2224,
+        160,
+        80
+      ],
+      "method": "connected-scale4"
+    },
+    "364": {
+      "rect": [
+        868,
+        2224,
+        160,
+        72
+      ],
+      "method": "connected-scale4"
+    },
+    "365": {
+      "rect": [
+        1032,
+        2224,
+        128,
+        112
+      ],
+      "method": "connected-scale4"
+    },
+    "366": {
+      "rect": [
+        1164,
+        2224,
+        32,
+        20
+      ],
+      "method": "connected-scale4"
+    },
+    "367": {
+      "rect": [
+        1200,
+        2224,
+        96,
+        28
+      ],
+      "method": "connected-scale4"
+    },
+    "368": {
+      "rect": [
+        1300,
+        2224,
+        128,
+        48
+      ],
+      "method": "connected-scale4"
+    },
+    "369": {
+      "rect": [
+        1432,
+        2224,
+        128,
+        84
+      ],
+      "method": "connected-scale4"
+    },
+    "370": {
+      "rect": [
+        1564,
+        2224,
+        96,
+        24
+      ],
+      "method": "connected-scale4"
+    },
+    "371": {
+      "rect": [
+        1664,
+        2224,
+        96,
+        32
+      ],
+      "method": "connected-scale4"
+    },
+    "372": {
+      "rect": [
+        1764,
+        2224,
+        96,
+        88
+      ],
+      "method": "connected-scale4"
+    },
+    "373": {
+      "rect": [
+        1864,
+        2224,
+        128,
+        112
+      ],
+      "method": "connected-scale4"
+    },
+    "374": {
+      "rect": [
+        4,
+        2352,
+        96,
+        124
+      ],
+      "method": "connected-scale4"
+    },
+    "375": {
+      "rect": [
+        104,
+        2352,
+        160,
+        120
+      ],
+      "method": "connected-scale4"
+    },
+    "376": {
+      "rect": [
+        268,
+        2352,
+        128,
+        104
+      ],
+      "method": "connected-scale4"
+    },
+    "377": {
+      "rect": [
+        400,
+        2352,
+        128,
+        76
+      ],
+      "method": "connected-scale4"
+    },
+    "378": {
+      "rect": [
+        532,
+        2352,
+        64,
+        76
+      ],
+      "method": "connected-scale4"
+    },
+    "379": {
+      "rect": [
+        600,
+        2352,
+        96,
+        72
+      ],
+      "method": "web-hd"
+    },
+    "380": {
+      "rect": [
+        700,
+        2352,
+        96,
+        44
+      ],
+      "method": "web-hd"
+    },
+    "381": {
+      "rect": [
+        800,
+        2352,
+        96,
+        20
+      ],
+      "method": "web-hd"
+    },
+    "382": {
+      "rect": [
+        900,
+        2352,
+        192,
+        108
+      ],
+      "method": "connected-scale4"
+    },
+    "383": {
+      "rect": [
+        1096,
+        2352,
+        192,
+        116
+      ],
+      "method": "connected-scale4"
+    },
+    "384": {
+      "rect": [
+        1292,
+        2352,
+        192,
+        164
+      ],
+      "method": "connected-scale4"
+    },
+    "385": {
+      "rect": [
+        1488,
+        2352,
+        192,
+        128
+      ],
+      "method": "connected-scale4"
+    },
+    "386": {
+      "rect": [
+        1684,
+        2352,
+        128,
+        12
+      ],
+      "method": "connected-scale4"
+    },
+    "387": {
+      "rect": [
+        1816,
+        2352,
+        128,
+        20
+      ],
+      "method": "connected-scale4"
+    },
+    "388": {
+      "rect": [
+        4,
+        2520,
+        160,
+        44
+      ],
+      "method": "connected-scale4"
+    },
+    "389": {
+      "rect": [
+        168,
+        2520,
+        192,
+        76
+      ],
+      "method": "connected-scale4"
+    },
+    "390": {
+      "rect": [
+        364,
+        2520,
+        224,
+        108
+      ],
+      "method": "connected-scale4"
+    },
+    "391": {
+      "rect": [
+        592,
+        2520,
+        256,
+        128
+      ],
+      "method": "connected-scale4"
+    },
+    "392": {
+      "rect": [
+        852,
+        2520,
+        256,
+        124
+      ],
+      "method": "connected-scale4"
+    },
+    "393": {
+      "rect": [
+        1112,
+        2520,
+        256,
+        124
+      ],
+      "method": "connected-scale4"
+    },
+    "394": {
+      "rect": [
+        1372,
+        2520,
+        256,
+        128
+      ],
+      "method": "connected-scale4"
+    },
+    "395": {
+      "rect": [
+        1632,
+        2520,
+        192,
+        156
+      ],
+      "method": "connected-scale4"
+    },
+    "396": {
+      "rect": [
+        1828,
+        2520,
+        192,
+        116
+      ],
+      "method": "connected-scale4"
+    },
+    "397": {
+      "rect": [
+        4,
+        2680,
+        192,
+        120
+      ],
+      "method": "connected-scale4"
+    },
+    "398": {
+      "rect": [
+        200,
+        2680,
+        192,
+        108
+      ],
+      "method": "connected-scale4"
+    },
+    "399": {
+      "rect": [
+        396,
+        2680,
+        256,
+        136
+      ],
+      "method": "connected-scale4"
+    },
+    "400": {
+      "rect": [
+        656,
+        2680,
+        224,
+        144
+      ],
+      "method": "connected-scale4"
+    },
+    "401": {
+      "rect": [
+        884,
+        2680,
+        160,
+        128
+      ],
+      "method": "connected-scale4"
+    },
+    "402": {
+      "rect": [
+        1048,
+        2680,
+        256,
+        140
+      ],
+      "method": "connected-scale4"
+    },
+    "403": {
+      "rect": [
+        1308,
+        2680,
+        256,
+        172
+      ],
+      "method": "connected-scale4"
+    },
+    "404": {
+      "rect": [
+        1568,
+        2680,
+        224,
+        180
+      ],
+      "method": "connected-scale4"
+    },
+    "405": {
+      "rect": [
+        1796,
+        2680,
+        128,
+        148
+      ],
+      "method": "connected-scale4"
+    },
+    "406": {
+      "rect": [
+        4,
+        2864,
+        128,
+        148
+      ],
+      "method": "connected-scale4"
+    },
+    "407": {
+      "rect": [
+        136,
+        2864,
+        128,
+        136
+      ],
+      "method": "connected-scale4"
+    },
+    "408": {
+      "rect": [
+        268,
+        2864,
+        128,
+        148
+      ],
+      "method": "connected-scale4"
+    },
+    "409": {
+      "rect": [
+        400,
+        2864,
+        192,
+        184
+      ],
+      "method": "connected-scale4"
+    },
+    "410": {
+      "rect": [
+        596,
+        2864,
+        192,
+        172
+      ],
+      "method": "connected-scale4"
+    },
+    "411": {
+      "rect": [
+        792,
+        2864,
+        224,
+        120
+      ],
+      "method": "connected-scale4"
+    },
+    "412": {
+      "rect": [
+        1020,
+        2864,
+        160,
+        112
+      ],
+      "method": "connected-scale4"
+    },
+    "413": {
+      "rect": [
+        1184,
+        2864,
+        160,
+        96
+      ],
+      "method": "connected-scale4"
+    },
+    "414": {
+      "rect": [
+        1348,
+        2864,
+        224,
+        64
+      ],
+      "method": "connected-scale4"
+    },
+    "415": {
+      "rect": [
+        1576,
+        2864,
+        128,
+        196
+      ],
+      "method": "connected-scale4"
+    },
+    "416": {
+      "rect": [
+        1708,
+        2864,
+        128,
+        236
+      ],
+      "method": "connected-scale4"
+    },
+    "417": {
+      "rect": [
+        1840,
+        2864,
+        128,
+        192
+      ],
+      "method": "connected-scale4"
+    },
+    "418": {
+      "rect": [
+        4,
+        3104,
+        224,
+        136
+      ],
+      "method": "connected-scale4"
+    },
+    "419": {
+      "rect": [
+        232,
+        3104,
+        256,
+        108
+      ],
+      "method": "connected-scale4"
+    },
+    "420": {
+      "rect": [
+        492,
+        3104,
+        128,
+        120
+      ],
+      "method": "connected-scale4"
+    },
+    "421": {
+      "rect": [
+        624,
+        3104,
+        128,
+        112
+      ],
+      "method": "connected-scale4"
+    },
+    "422": {
+      "rect": [
+        756,
+        3104,
+        128,
+        128
+      ],
+      "method": "connected-scale4"
+    },
+    "423": {
+      "rect": [
+        888,
+        3104,
+        160,
+        84
+      ],
+      "method": "connected-scale4"
+    },
+    "424": {
+      "rect": [
+        1052,
+        3104,
+        128,
+        128
+      ],
+      "method": "connected-scale4"
+    },
+    "425": {
+      "rect": [
+        1184,
+        3104,
+        128,
+        124
+      ],
+      "method": "connected-scale4"
+    },
+    "426": {
+      "rect": [
+        1316,
+        3104,
+        128,
+        120
+      ],
+      "method": "connected-scale4"
+    },
+    "427": {
+      "rect": [
+        1448,
+        3104,
+        192,
+        112
+      ],
+      "method": "connected-scale4"
+    },
+    "428": {
+      "rect": [
+        1644,
+        3104,
+        320,
+        128
+      ],
+      "method": "connected-scale4"
+    },
+    "429": {
+      "rect": [
+        4,
+        3244,
+        160,
+        120
+      ],
+      "method": "connected-scale4"
+    },
+    "430": {
+      "rect": [
+        168,
+        3244,
+        160,
+        140
+      ],
+      "method": "connected-scale4"
+    },
+    "431": {
+      "rect": [
+        332,
+        3244,
+        160,
+        248
+      ],
+      "method": "connected-scale4"
+    },
+    "432": {
+      "rect": [
+        496,
+        3244,
+        224,
+        88
+      ],
+      "method": "connected-scale4"
+    },
+    "433": {
+      "rect": [
+        724,
+        3244,
+        224,
+        96
+      ],
+      "method": "connected-scale4"
+    },
+    "434": {
+      "rect": [
+        952,
+        3244,
+        224,
+        92
+      ],
+      "method": "connected-scale4"
+    },
+    "435": {
+      "rect": [
+        1180,
+        3244,
+        160,
+        64
+      ],
+      "method": "connected-scale4"
+    },
+    "436": {
+      "rect": [
+        1344,
+        3244,
+        160,
+        72
+      ],
+      "method": "connected-scale4"
+    },
+    "437": {
+      "rect": [
+        1508,
+        3244,
+        128,
+        56
+      ],
+      "method": "connected-scale4"
+    },
+    "438": {
+      "rect": [
+        4,
+        3496,
+        416,
+        164
+      ],
+      "method": "connected-scale4"
+    },
+    "439": {
+      "rect": [
+        424,
+        3496,
+        64,
+        88
+      ],
+      "method": "connected-scale4"
+    },
+    "440": {
+      "rect": [
+        492,
+        3496,
+        96,
+        92
+      ],
+      "method": "connected-scale4"
+    },
+    "441": {
+      "rect": [
+        592,
+        3496,
+        96,
+        92
+      ],
+      "method": "connected-scale4"
+    },
+    "442": {
+      "rect": [
+        692,
+        3496,
+        96,
+        92
+      ],
+      "method": "connected-scale4"
+    },
+    "443": {
+      "rect": [
+        792,
+        3496,
+        128,
+        92
+      ],
+      "method": "connected-scale4"
+    },
+    "444": {
+      "rect": [
+        924,
+        3496,
+        96,
+        96
+      ],
+      "method": "connected-scale4"
+    },
+    "445": {
+      "rect": [
+        1024,
+        3496,
+        128,
+        96
+      ],
+      "method": "connected-scale4"
+    },
+    "446": {
+      "rect": [
+        1156,
+        3496,
+        128,
+        96
+      ],
+      "method": "connected-scale4"
+    },
+    "447": {
+      "rect": [
+        1288,
+        3496,
+        128,
+        92
+      ],
+      "method": "connected-scale4"
+    },
+    "448": {
+      "rect": [
+        1420,
+        3496,
+        128,
+        108
+      ],
+      "method": "connected-scale4"
+    },
+    "449": {
+      "rect": [
+        1552,
+        3496,
+        128,
+        108
+      ],
+      "method": "connected-scale4"
+    },
+    "450": {
+      "rect": [
+        1684,
+        3496,
+        128,
+        96
+      ],
+      "method": "connected-scale4"
+    },
+    "451": {
+      "rect": [
+        1816,
+        3496,
+        96,
+        96
+      ],
+      "method": "connected-scale4"
+    },
+    "452": {
+      "rect": [
+        1916,
+        3496,
+        128,
+        80
+      ],
+      "method": "connected-scale4"
+    },
+    "453": {
+      "rect": [
+        4,
+        3664,
+        192,
+        112
+      ],
+      "method": "connected-scale4"
+    },
+    "454": {
+      "rect": [
+        200,
+        3664,
+        256,
+        112
+      ],
+      "method": "connected-scale4"
+    },
+    "455": {
+      "rect": [
+        460,
+        3664,
+        192,
+        124
+      ],
+      "method": "connected-scale4"
+    },
+    "456": {
+      "rect": [
+        656,
+        3664,
+        192,
+        152
+      ],
+      "method": "connected-scale4"
+    },
+    "457": {
+      "rect": [
+        852,
+        3664,
+        160,
+        136
+      ],
+      "method": "connected-scale4"
+    },
+    "458": {
+      "rect": [
+        1016,
+        3664,
+        128,
+        104
+      ],
+      "method": "connected-scale4"
+    },
+    "459": {
+      "rect": [
+        1148,
+        3664,
+        192,
+        92
+      ],
+      "method": "connected-scale4"
+    }
+  },
+  "tiles": {
+    "file": "tiles-hd.png",
+    "width": 1152,
+    "height": 1152,
+    "cell": 72,
+    "padding": 4,
+    "webHDCount": 198,
+    "method": "web connected contour colours with approved HD luminance detail and padded cells"
+  },
+  "sourceHashes": {
+    "sprites.idx": "575f271e68501aaa1a728ddd25c511aae00d87edcbb746af8af355f9b24eef77",
+    "weapons.png": "5354b7ba937b4de5eb1cb6402e31372c759290868d3e29abeb12b5167f27ec3b",
+    "v2-pickups.png": "8407f02046ea9a06ce101428f774122b3e84725ca6b5b63c802e7aea8985ffc1",
+    "v2-food-a.png": "a4cde86bf8cee38590275112afc39d1e58623d1a3f46e1fae55fc881159ae165",
+    "hero-gear.png": "f5a11fa1174ee7b032829c80430e0792d6985626920d5f3105d23f4c8f6b467c",
+    "v2-food-b.png": "d2b748d622de9766a5ecbdaafac789f64f3fd3d1a210aec832fabef25008b527",
+    "bears.png": "b1caf28e334c7fb6f14e1659362b3da795f3647a6399d4521c39ff2d35fb3c2e",
+    "v2-union-0.png": "0bd7fb6458d6cee7636e0f22ab7d9298427481e669473fdf337ccd41c5b2f73e",
+    "v2-union-2.png": "35a509f2d821c402c8503b9cedce15fd2f51a5eb1b85a9f8acc15466d5ddc1fb",
+    "v2-local.png": "2f567e675afbb99c75766e386d8abb6bf809e563ae4f36df6ca2157dee575eb5",
+    "v2-union-1.png": "15f9fbb806e3870e73eaf64d9645153db857fbb27611d83bef855f04a3e03914"
+  },
+  "sha256": "088c5796c654abc4d056fe853f7d0201189fe222279cdc9a3e512a1a5442cf3d",
+  "tilesSHA256": "dfecf533b6521d51d425d1fcec95e8db6600a01c2f2b4d9c97feef84f5267afe",
+  "fallback": "connectedTerrain/scale2x twice; no new AI-generated claims"
+}

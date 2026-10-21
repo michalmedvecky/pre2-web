@@ -1,17 +1,21 @@
 import * as T from '../vendor/three.module.js';
 import {VRButton} from '../vendor/VRButton.js';
-import {TrackingSpace,XRControls} from './xr-input.js';
+import {TrackingSpace,XRControls,XRMagicCodes} from './xr-input.js';
 import {loadSurfaces} from './surfaces.js';
 import {Pilot,openingLayout,SwingTracker,RULES} from './simulation.js';
 import {makeClub,makeBone,makeBody,buildEnvironment} from './models.js';
 import {makeBear,animateBear} from './bear-model.js';
 import {LevelOne} from './level-one.js';
+import {loadHDArt} from './hd-art.js';
 import {buildLevelOne} from './level-one-view.js';
+import {CheatInput} from '../native/cheats.js';
 import {Assets} from '../native/assets.js';
 const $=id=>document.getElementById(id),keys=new Set(),query=new URLSearchParams(location.search);
 const practice=query.has('pilot');
 let renderer,scene,rig,camera,pilot,layout,scenery,bear,body,desktopClub,fade,hud,hudCanvas,hudContext,hudTexture;
 let active=false,paused=true,yaw=-Math.PI/2,pitch=-.12,accumulator=0,previousTime=0,desktopSwing=-1,jumpPulse=false,hand='right',audio=null,tracking=true,lastStatus='';
+const magicCodes=new XRMagicCodes();let magicSuppress=false,magicMessage='',magicWasSuppressed=false;
+const cheatInput=new CheatInput();let testMenuOpen=false,menuAReady=false,menuBReady=false;
 const trackingSpace=new TrackingSpace(),xrControls=new XRControls();
 const controllers=[],swing=new SwingTracker(),boneMeshes=[],temp=new T.Vector3(),temp2=new T.Vector3(),clubBase=new T.Vector3(),forward=new T.Vector3();
 function showError(error){$('error').hidden=false;$('error').textContent='Prototyp se nepodařilo spustit: '+error.message;console.error(error);}
@@ -20,11 +24,17 @@ async function bytes(url){const r=await fetch(url);if(!r.ok)throw Error(`${url}:
 function unlockAudio(){try{if(!audio)audio=new AudioContext();audio.resume().catch(()=>{});}catch{}}
 function sound(frequency,duration=.09,position){if(!audio||audio.state!=='running')return;const o=audio.createOscillator(),g=audio.createGain();o.type='triangle';o.frequency.setValueAtTime(frequency,audio.currentTime);o.frequency.exponentialRampToValueAtTime(Math.max(25,frequency/2),audio.currentTime+duration);g.gain.setValueAtTime(.07,audio.currentTime);g.gain.exponentialRampToValueAtTime(.001,audio.currentTime+duration);o.connect(g);if(position){const p=audio.createPanner();p.panningModel='HRTF';p.refDistance=2;p.positionX.value=position.x;p.positionY.value=position.y;p.positionZ.value=position.z;g.connect(p);p.connect(audio.destination);}else g.connect(audio.destination);o.start();o.stop(audio.currentTime+duration);}
 function haptics(value,ms,both=false){for(const c of controllers){if(!both&&c.source?.handedness!==hand)continue;const actuator=c.source?.gamepad?.hapticActuators?.[0];try{actuator?.pulse(value,ms)?.catch(()=>{});}catch{}}}
-function pause(value){paused=value;accumulator=0;swing.reset();keys.clear();desktopSwing=-1;jumpPulse=false;document.body.classList.toggle('playing',!paused);$('help').hidden=paused;if(!paused){unlockAudio();active=true;}}
+function pause(value){if(value&&testMenuOpen)toggleTestMenu(false);cheatInput.reset();magicCodes.reset();magicSuppress=magicWasSuppressed=false;magicMessage='';paused=value;accumulator=0;swing.reset();keys.clear();desktopSwing=-1;jumpPulse=false;document.body.classList.toggle('playing',!paused);$('help').hidden=paused;$('testing').hidden=paused||practice;if(!paused){unlockAudio();active=true;}}
+function toggleTestMenu(value=!testMenuOpen){
+ if(practice)return;cheatInput.reset();testMenuOpen=value;menuAReady=menuBReady=false;accumulator=0;keys.clear();jumpPulse=false;desktopSwing=-1;swing.reset();xrControls.reset();lastStatus='';
+ $('test-panel').hidden=!value||renderer.xr.isPresenting;
+ if(value&&renderer.xr.isPresenting){camera.add(hud);hud.position.set(0,0,-.85);hud.rotation.set(0,0,0);hud.scale.setScalar(1.7);hud.material.depthTest=false;hud.renderOrder=900;}else if(!value){hud.removeFromParent();if(renderer.xr.isPresenting)controllers.find(c=>c.source?.handedness==='left')?.grip.add(hud);hud.position.set(0,.15,.05);hud.rotation.set(-.6,0,0);hud.scale.setScalar(1);hud.material.depthTest=true;hud.renderOrder=0;}
+}
+function toggleCheat(code){if(practice)return;pilot.toggleCheat(code);lastStatus='';keys.clear();cheatInput.reset();swing.reset();sound(660,.1);haptics(.2,50,true);}
 function turn(amount){const before=headOffset(),c=Math.cos(amount),s=Math.sin(amount),after={x:before.x*c+before.z*s,z:-before.x*s+before.z*c};yaw+=amount;rig.rotation.y=yaw;pilot.player.x+=before.x-after.x;pilot.player.z+=before.z-after.z;swing.reset();}
 function headOffset(){return renderer.xr.isPresenting?trackingSpace.offset(yaw):{x:0,z:0};}
 function syncRig(){const p=renderer.xr.isPresenting?trackingSpace.rigPosition(pilot.player,yaw):pilot.player;rig.position.set(p.x,p.y,p.z);rig.rotation.y=yaw;rig.updateMatrixWorld(true);}
-function sampleClub(relative,world,time,base){const sweep=swing.sample(relative,world,time);if(sweep&&base)sweep.base={...base};if(sweep&&pilot.strike(sweep)){swing.consume();haptics(.7,80);}}
+function sampleClub(relative,world,time,base){if(testMenuOpen||magicSuppress){swing.reset();return;}const sweep=swing.sample(relative,world,time);if(sweep&&base)sweep.base={...base};if(sweep&&pilot.strike(sweep)){swing.consume();haptics(.7,80);}}
 function handleEvents(){for(const e of pilot.events.splice(0)){
  if(e.type==='hit')sound(115,.13,e);
  if(e.type==='hurt'){haptics(.65,140,true);sound(70,.2);}
@@ -36,28 +46,32 @@ function handleEvents(){for(const e of pilot.events.splice(0)){
  }}
 function makeHUD(){hudCanvas=document.createElement('canvas');hudCanvas.width=768;hudCanvas.height=320;hudContext=hudCanvas.getContext('2d');hudTexture=new T.CanvasTexture(hudCanvas);hudTexture.colorSpace=T.SRGBColorSpace;hud=new T.Mesh(new T.PlaneGeometry(.42,.175),new T.MeshBasicMaterial({map:hudTexture,transparent:true,side:T.DoubleSide}));hud.position.set(0,.15,.05);hud.rotation.x=-.6;}
 function updateLevelHUD(){
- const p=pilot.player,w=pilot.world,key=!!(w.inventory2&2);
- const objective=pilot.gameOver?'Konec hry. B / R: znovu':pilot.complete?'První level dokončen! B / R: znovu':pilot.nearGate!==null?'B / ↓: projít jeskyní':key?'Klíč nalezen — najdi východ →':'Prozkoumej první level a najdi klíč k východu';
+ const p=pilot.player,w=pilot.world,key=!!(w.inventory2&2);$('god-toggle').textContent='IDDQD · nesmrtelnost: '+(w.godMode?'ZAP':'VYP');$('hints-toggle').textContent='IDKFA · tajná místa: '+(w.secretHints?'ZAP':'VYP');
+ if(testMenuOpen){const cache='menu:'+w.godMode+':'+w.secretHints;if(cache===lastStatus)return;lastStatus=cache;const c=hudContext;c.clearRect(0,0,768,320);c.fillStyle='#102c2a';c.fillRect(0,0,768,320);c.fillStyle='#ffe5b0';c.font='bold 38px system-ui';c.fillText('TESTOVANI — HRA POZASTAVENA',24,58);c.font='34px system-ui';c.fillText('A: IDDQD  '+(w.godMode?'ZAP':'VYP'),28,130);c.fillText('B: IDKFA  '+(w.secretHints?'ZAP':'VYP'),28,204);c.font='28px system-ui';c.fillText('Leve Y: zavrit · pak uvolni packy',28,280);hudTexture.needsUpdate=true;$('status').textContent='Testování — hra pozastavena';return;}
+ const objective=magicSuppress?magicMessage:pilot.gameOver?'Konec hry. B / R: znovu':pilot.complete?'První level dokončen! B / R: znovu':pilot.nearGate!==null?'Vejdi do otvoru průchodu · B / G':key?'Klíč nalezen — najdi východ →':'Prozkoumej první level a najdi klíč k východu';
  const hearts='♥'.repeat(Math.max(0,p.health))+'♡'.repeat(Math.max(0,3-p.health));
- const status=`${hearts} · životy: ${w.lives} · ${pilot.score} bodů\n${objective}`,cacheKey=status+':'+pilot.area;
+ const status=`${hearts} · životy: ${w.lives} · ${pilot.score} bodů\n${objective}${w.godMode?' · IDDQD':''}${w.secretHints?' · IDKFA':''}`,cacheKey=status+':'+pilot.area;
  if(cacheKey===lastStatus)return;lastStatus=cacheKey;$('status').textContent=status;
  const c=hudContext;c.clearRect(0,0,768,320);c.fillStyle='#153c36ee';c.fillRect(0,0,768,320);c.fillStyle='#ffe5b0';c.font='bold 64px system-ui';c.fillText(`${hearts}  ${pilot.score}`,28,96);c.font='32px system-ui';
- c.fillText(pilot.gameOver?'KONEC HRY — B: ZNOVU':pilot.complete?'HOTOVO — B: ZNOVU':pilot.nearGate!==null?'B: VSTOUPIT / ODEJIT':key?'KLIC: ANO — K VYCHODU':'NAJDI KLIC A VYCHOD',28,192);
- c.fillText(`ZIVOTY: ${w.lives} · ${pilot.area==='caves'?'JESKYNE':'LEVEL 1'}`,28,265);hudTexture.needsUpdate=true;
+ c.fillText(magicSuppress?'MAGIE: 3x A / 3x B':pilot.gameOver?'KONEC HRY — B: ZNOVU':pilot.complete?'HOTOVO — B: ZNOVU':pilot.nearGate!==null?'VEJDI DO PRUCHODU / B':key?'KLIC: ANO — K VYCHODU':'NAJDI KLIC A VYCHOD',28,192);
+ c.fillText(`ZIVOTY: ${w.lives} ${w.godMode?' · IDDQD':''}${w.secretHints?' · IDKFA':''}`,28,265);hudTexture.needsUpdate=true;
 }
 function updateHUD(){const p=pilot.player;if(!practice){updateLevelHUD();return;}const status=`${'♥'.repeat(Math.max(0,p.health))}${'♡'.repeat(Math.max(0,3-p.health))}  ·  ${pilot.score} bodů\n${pilot.complete?'Hotovo! První VR trasa dokončena. R: znovu':pilot.bear.alive?'Poraz medvěda skutečným švihem kyje':pilot.checkpoint.x>20?'Přeskoč jámu a dojdi k cíli':'Medvěd poražen. Pokračuj k ohništi →'}`;
  if(status===lastStatus)return;lastStatus=status;$('status').textContent=status;
  const c=hudContext;c.clearRect(0,0,768,320);c.fillStyle='#153c36ee';c.fillRect(0,0,768,320);c.strokeStyle='#dcb272';c.lineWidth=12;c.strokeRect(6,6,756,308);c.fillStyle='#ffe5b0';c.font='bold 72px system-ui';c.fillText(`${'♥'.repeat(Math.max(0,p.health))}   ${pilot.score}`,28,108);c.font='32px system-ui';c.fillText(pilot.complete?'CIL DOSAZEN':pilot.bear.alive?'SVIHNI KYJEM':'K OHNISTI A PRES JAMU',28,198);c.fillText(pilot.checkpoint.x>20?'CHECKPOINT U OHNISTE':'CHECKPOINT: START',28,262);hudTexture.needsUpdate=true;
 }
-function readInput(){let x=0,z=0,jump=keys.has('Space')||jumpPulse;
- if(!renderer.xr.isPresenting){x=+keys.has('KeyD')-+keys.has('KeyA');z=+keys.has('KeyS')-+keys.has('KeyW');return {x,z,jump,interact:keys.has('ArrowDown')||keys.has('KeyG'),yaw,headX:0,headZ:0};}
- const controls=xrControls.sample(renderer.xr.getSession().inputSources);
+function readInput(seconds){let x=0,z=0,jump=keys.has('Space')||jumpPulse;
+ if(!renderer.xr.isPresenting){x=+(keys.has('KeyD')||keys.has('ArrowRight'))-+(keys.has('KeyA')||keys.has('ArrowLeft'));z=+(keys.has('KeyS')||keys.has('ArrowDown'))-+(keys.has('KeyW')||keys.has('ArrowUp'));return {x,z,jump,interact:keys.has('KeyG'),yaw,headX:0,headZ:0};}
+ const sources=renderer.xr.getSession().inputSources,magic=practice?{suppress:false,state:"idle"}:magicCodes.sample(sources,seconds);magicSuppress=magic.suppress;if(magic.arm){haptics(.25,55,true);sound(520,.08);}if(magic.code){toggleCheat(magic.code);haptics(.65,90,true);magicMessage=magic.code+' '+((magic.code==='IDDQD'?pilot.world.godMode:pilot.world.secretHints)?'ZAP':'VYP')+' · pusť triggery';}else if(magic.state!=='done')magicMessage=magic.state==='ready'?'Magie: 3× A nesmrtelnost / 3× B tajná místa':magic.state==='release'?'Nejprve uvolni oba triggery':'Magie: podrž oba triggery…';if(magicSuppress){magicWasSuppressed=true;return {x:0,z:0,jump:false,interact:false};}if(magicWasSuppressed){magicWasSuppressed=false;xrControls.reset();return {x:0,z:0,jump:false,interact:false};}
+ const controls=xrControls.sample(sources);
+ if(controls.menu){toggleTestMenu();return {x:0,z:0,jump:false,interact:false};}
+ if(testMenuOpen){if(!controls.jump)menuAReady=true;else if(menuAReady){toggleCheat('IDDQD');menuAReady=false;}if(!controls.interact)menuBReady=true;else if(menuBReady){toggleCheat('IDKFA');menuBReady=false;}return {x:0,z:0,jump:false};}
  if(controls.turn)turn(controls.turn);
  const offset=headOffset();return {x:controls.x,z:controls.z,jump:controls.jump,interact:controls.interact,yaw:trackingSpace.heading(yaw),headX:offset.x,headZ:offset.z};
 }
 function draw(time,frame){const seconds=time/1000,dt=previousTime?Math.min((time-previousTime)/1000,.05):0;previousTime=time;
  let visible=true;if(renderer.xr.isPresenting){const session=renderer.xr.getSession();visible=session.visibilityState==='visible';tracking=trackingSpace.update(frame?.getViewerPose(renderer.xr.getReferenceSpace()));}
- if(active&&!paused&&visible&&tracking){const input=readInput();accumulator+=dt;while(accumulator>=1/90){pilot.step(1/90,input);accumulator-=1/90;jumpPulse=false;}
+ if(active&&!paused&&visible&&tracking){const input=readInput(seconds);if(testMenuOpen||magicSuppress)accumulator=0;else accumulator+=dt;while(accumulator>=1/90){pilot.step(1/90,input);accumulator-=1/90;jumpPulse=false;}
   syncRig();handleEvents();
   if(renderer.xr.isPresenting){desktopClub.visible=false;body.visible=false;for(const c of controllers){c.club.visible=c.source?.handedness===hand&&c.grip.visible;const live=c.source?.handedness===hand&&c.source.gripSpace&&frame?.getPose(c.source.gripSpace,renderer.xr.getReferenceSpace());if(!live){if(c.source?.handedness===hand)swing.reset();continue;}
     c.club.updateWorldMatrix(true,true);c.club.localToWorld(temp.set(0,.76,0)); // club local +Y is its long axis
@@ -70,8 +84,8 @@ function draw(time,frame){const seconds=time/1000,dt=previousTime?Math.min((time
    desktopClub.updateWorldMatrix(true,true);desktopClub.userData.model.localToWorld(temp.set(0,.76,0));temp2.copy(temp);rig.worldToLocal(temp2);desktopClub.userData.model.localToWorld(clubBase.set(0,.1,0));sampleClub(temp2,temp,seconds,clubBase);
   }
   handleEvents();
- }else{accumulator=0;swing.reset();if(renderer.xr.isPresenting)xrControls.reset();}
- if(practice){animateBear(bear,pilot.bear,pilot.time);scenery.fire.scale.y=.3+Math.sin(seconds*8)*.035;}else scenery.update();
+ }else{accumulator=0;swing.reset();if(renderer.xr.isPresenting){xrControls.reset();magicCodes.reset();magicSuppress=magicWasSuppressed=false;magicMessage='';}}
+ if(practice){animateBear(bear,pilot.bear,pilot.time);scenery.fire.scale.y=.3+Math.sin(seconds*8)*.035;}else{const pose={position:new T.Vector3(),quaternion:new T.Quaternion()};if(renderer.xr.isPresenting&&trackingSpace.orientation){const o=headOffset();pose.position.set(pilot.player.x+o.x,pilot.player.y+trackingSpace.position.y,pilot.player.z+o.z);pose.quaternion.setFromAxisAngle(new T.Vector3(0,1,0),yaw).multiply(new T.Quaternion(trackingSpace.orientation.x,trackingSpace.orientation.y,trackingSpace.orientation.z,trackingSpace.orientation.w));}else{camera.updateWorldMatrix(true,false);camera.getWorldPosition(pose.position);camera.getWorldQuaternion(pose.quaternion);}scenery.update(pose);}
  while(boneMeshes.length<pilot.bones.length){const m=makeBone();boneMeshes.push(m);scene.add(m);}boneMeshes.forEach((m,i)=>{const b=pilot.bones[i];m.visible=!!b&&!b.collected;if(b){m.position.set(b.x,b.y+.12+Math.abs(Math.sin(Math.min(b.age,1)*Math.PI))* .55,b.z);m.rotation.y=seconds;}});
  // Fade is rendered in both eye cameras at their near plane; never move the tracked head.
  const r=pilot.rescue,alpha=r?(r>.6?(.9-r)/.3:r>.4?1:r/.4):(pilot.portalFade||0)/.18;fade.material.opacity=alpha;fade.visible=alpha>.001;
@@ -85,23 +99,23 @@ async function init(){
  rig=new T.Group();scene.add(rig);camera=new T.PerspectiveCamera(72,innerWidth/innerHeight,.05,80);camera.position.y=1.65;camera.rotation.x=pitch;rig.add(camera);rig.position.set(pilot.player.x,pilot.player.y,pilot.player.z);rig.rotation.y=yaw;
  body=makeBody();body.position.set(0,0,0);rig.add(body);desktopClub=new T.Group();desktopClub.position.set(.32,-.4,-.45);const club=makeClub();desktopClub.add(club);desktopClub.userData.model=club;camera.add(desktopClub);
  fade=new T.Mesh(new T.SphereGeometry(.12,16,12),new T.MeshBasicMaterial({color:0x081114,side:T.BackSide,transparent:true,opacity:0,depthTest:false,depthWrite:false}));fade.frustumCulled=false;fade.renderOrder=999;camera.add(fade);
- const textures=await loadSurfaces(renderer);if(practice){scenery=buildEnvironment(scene,layout,game,data[1],data[2],textures);bear=makeBear();scene.add(bear);}else scenery=buildLevelOne(scene,pilot,textures);makeHUD();
+ const textures=await loadSurfaces(renderer);if(practice){scenery=buildEnvironment(scene,layout,game,data[1],data[2],textures);bear=makeBear();scene.add(bear);}else{const art=await loadHDArt(renderer,pilot.assets);scenery=buildLevelOne(scene,pilot,textures,art);const warming=new T.Group();for(const mesh of art.warmMeshes())warming.add(mesh);scene.add(warming);await renderer.compileAsync(scene,camera);warming.removeFromParent();}makeHUD();
  for(let i=0;i<2;i++){const grip=renderer.xr.getControllerGrip(i),c={grip,source:null,club:makeClub()};controllers.push(c);rig.add(grip);grip.add(c.club);c.club.visible=false;
   const handMesh=new T.Mesh(new T.IcosahedronGeometry(.06,1),new T.MeshStandardMaterial({color:'#dda579'}));grip.add(handMesh);
-  grip.addEventListener('connected',e=>{c.source=e.data;if(c.source.handedness==='left')grip.add(hud);swing.reset();});grip.addEventListener('disconnected',()=>{c.source=null;swing.reset();});
+  grip.addEventListener('connected',e=>{c.source=e.data;if(c.source.handedness==='left'&&!testMenuOpen)grip.add(hud);swing.reset();});grip.addEventListener('disconnected',()=>{c.source=null;swing.reset();});
  }
  const vrButton=VRButton.createButton(renderer,{requiredFeatures:['local-floor'],optionalFeatures:['bounded-floor']});vrButton.style.position='static';vrButton.style.width='auto';vrButton.style.margin='0';vrButton.style.transform='none';$('launch').append(vrButton);vrButton.addEventListener('click',unlockAudio,{capture:true});
  const supported=isSecureContext&&!!navigator.xr&&await navigator.xr.isSessionSupported('immersive-vr').catch(()=>false);$('xr-status').textContent=supported?'Quest připraven: Vstoupit do VR spustí prostorový režim.':!isSecureContext?'Pro Quest otevři tuto stránku přes HTTPS. Desktopový náhled funguje i zde.':'WebXR zde není dostupné. Na Questu otevři stejnou HTTPS adresu v Meta Quest Browseru.';
  renderer.xr.addEventListener('sessionstart',()=>{trackingSpace.reset();xrControls.reset();camera.rotation.set(0,0,0);camera.position.set(0,0,0);pause(false);tracking=true;renderer.xr.getReferenceSpace()?.addEventListener('reset',()=>{const o=headOffset();pilot.player.x+=o.x;pilot.player.z+=o.z;trackingSpace.reset();xrControls.reset();swing.reset();});$('status').hidden=true;$('help').hidden=true;});
  renderer.xr.addEventListener('sessionend',()=>{const o=trackingSpace.offset(yaw);pilot.player.x+=o.x;pilot.player.z+=o.z;trackingSpace.reset();xrControls.reset();camera.position.set(0,1.65,0);camera.rotation.set(pitch,0,0);$('status').hidden=false;pause(true);hud.removeFromParent();syncRig();});
- $('desktop').disabled=false;$('desktop').textContent='Hrát na monitoru';$('desktop').onclick=()=>pause(false);$('help').onclick=()=>pause(true);$('hand').onchange=e=>{hand=e.target.value;desktopClub.position.x=hand==='left'?-.32:.32;swing.reset();};
+ $('desktop').disabled=false;$('desktop').textContent='Hrát na monitoru';$('desktop').onclick=()=>pause(false);$('help').onclick=()=>pause(true);$('testing').onclick=()=>toggleTestMenu();$('test-close').onclick=()=>toggleTestMenu(false);$('god-toggle').onclick=()=>toggleCheat('IDDQD');$('hints-toggle').onclick=()=>toggleCheat('IDKFA');$('hand').onchange=e=>{hand=e.target.value;desktopClub.position.x=hand==='left'?-.32:.32;swing.reset();};
  addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);});
- addEventListener('keydown',e=>{if(['Space','ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.code))e.preventDefault();if(e.code==='Escape'){if(!renderer.xr.isPresenting)pause(!paused);return;}if(paused)return;keys.add(e.code);if(e.repeat)return;if(e.code==='Space')jumpPulse=true;if(e.code==='KeyQ')turn(Math.PI/6);if(e.code==='KeyE')turn(-Math.PI/6);if(e.code==='KeyF'&&!renderer.xr.isPresenting)startDesktopSwing();if(e.code==='KeyR'){trackingSpace.reset();xrControls.reset();pilot.reset();swing.reset();yaw=-Math.PI/2;lastStatus='';for(const m of boneMeshes)m.removeFromParent();boneMeshes.length=0;}});
+ addEventListener('keydown',e=>{if(['Space','ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.code))e.preventDefault();if(e.code==='Escape'){if(testMenuOpen)toggleTestMenu(false);else if(!renderer.xr.isPresenting)pause(!paused);return;}if(paused)return;if(e.code==='F2'&&!e.repeat){e.preventDefault();toggleTestMenu();return;}if(testMenuOpen){if(!e.repeat&&e.code==='KeyA')toggleCheat('IDDQD');if(!e.repeat&&e.code==='KeyB')toggleCheat('IDKFA');return;}const code=cheatInput.feed(e,!practice&&active);if(code){toggleCheat(code);return;}if(cheatInput.pending){keys.clear();return;}keys.add(e.code);if(e.repeat)return;if(e.code==='Space')jumpPulse=true;if(e.code==='KeyQ')turn(Math.PI/6);if(e.code==='KeyE')turn(-Math.PI/6);if(e.code==='KeyF'&&!renderer.xr.isPresenting)startDesktopSwing();if(e.code==='KeyR'){trackingSpace.reset();xrControls.reset();pilot.reset();swing.reset();yaw=-Math.PI/2;lastStatus='';for(const m of boneMeshes)m.removeFromParent();boneMeshes.length=0;}});
  addEventListener('keyup',e=>keys.delete(e.code));addEventListener('blur',()=>{if(!renderer.xr.isPresenting)pause(true);});document.addEventListener('visibilitychange',()=>{if(document.hidden&&!renderer.xr.isPresenting)pause(true);swing.reset();accumulator=0;});
  let drag=null;renderer.domElement.addEventListener('pointerdown',e=>{if(paused||e.button!==0)return;drag={x:e.clientX,y:e.clientY,moved:0};renderer.domElement.setPointerCapture(e.pointerId);});renderer.domElement.addEventListener('pointermove',e=>{if(!drag||renderer.xr.isPresenting)return;const dx=e.clientX-drag.x,dy=e.clientY-drag.y;drag.moved+=Math.abs(dx)+Math.abs(dy);yaw-=dx*.004;pitch=Math.max(-1.35,Math.min(1.35,pitch-dy*.004));camera.rotation.x=pitch;drag.x=e.clientX;drag.y=e.clientY;swing.reset();});renderer.domElement.addEventListener('pointerup',()=>{if(drag?.moved<6)startDesktopSwing();drag=null;});renderer.domElement.addEventListener('pointercancel',()=>drag=null);
- window.questPilot={snapshot:()=>({...pilot.snapshot(),ready:true,paused,tracking,renderer:{calls:renderer.info.render.calls,triangles:renderer.info.render.triangles},headOffset:headOffset(),mode:renderer.xr.isPresenting?'immersive-vr':'desktop'})};
- if(query.has('qa'))Object.assign(window.questPilot,{pilot,layout,scene,rig,renderer,sampleClub,swing});
+ window.questPilot={snapshot:()=>({...pilot.snapshot(),ready:true,paused,testMenuOpen,magic:{active:magicSuppress,message:magicMessage},tracking,renderer:{calls:renderer.info.render.calls,triangles:renderer.info.render.triangles},headOffset:headOffset(),mode:renderer.xr.isPresenting?'immersive-vr':'desktop'})};
+ if(query.has('qa'))Object.assign(window.questPilot,{pilot,layout,scene,rig,renderer,sampleClub,swing,scenery});
  renderer.setAnimationLoop(draw);
 }
-function startDesktopSwing(){if(desktopSwing>=0||paused)return;desktopSwing=0;swing.reset();}
+function startDesktopSwing(){if(desktopSwing>=0||paused||testMenuOpen)return;desktopSwing=0;swing.reset();}
 init().catch(showError);
