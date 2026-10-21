@@ -5,7 +5,7 @@ const base=process.env.PRE2_VR_URL||'http://127.0.0.1:5776/vr/',out=process.env.
 const browser=await chromium.launch({headless:true,args:['--use-angle=swiftshader','--enable-webgl','--no-sandbox']});
 try{
  const page=await browser.newPage({viewport:{width:1440,height:900}}),errors=[];page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});
- await page.goto(base+'?qa');await page.waitForFunction(()=>window.questPilot?.snapshot().ready);await page.screenshot({path:out+'/menu.png'});await page.click('#desktop');await page.waitForTimeout(100);await page.screenshot({path:out+'/opening.png'});
+ await page.goto(base+'?qa&pilot=1');await page.waitForFunction(()=>window.questPilot?.snapshot().ready);await page.screenshot({path:out+'/menu.png'});await page.click('#desktop');await page.waitForTimeout(100);await page.screenshot({path:out+'/opening.png'});
  const state=()=>page.evaluate(()=>questPilot.snapshot());
  const move=async x=>{await page.keyboard.down('KeyW');try{await page.waitForFunction(x=>questPilot.snapshot().player.x>=x,x,{timeout:15000});}finally{await page.keyboard.up('KeyW');}};
  await move(9.8);

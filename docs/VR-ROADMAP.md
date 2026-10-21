@@ -1,6 +1,6 @@
 # Full 360° Quest conversion: source contract and roadmap
 
-The intended future result is an explorable, stereoscopic 3D world around the player, with head tracking and spatial interaction. A flat game canvas on a virtual screen, panoramic video, or camera-facing character billboards alone do **not** meet that goal. The original preparation release added HD 2D character art and source contracts. This `vr/quest-360` branch now includes the [first playable pilot](vr/README.md) at `/vr/`: procedural 360° geometry, tracked club combat, free-depth movement, button jumping and checkpoint rescue. Desktop playthrough validation is complete; actual Quest stereo, tracking, comfort and performance acceptance remain pending.
+The intended future result is an explorable, stereoscopic 3D world around the player, with head tracking and spatial interaction. A flat game canvas on a virtual screen, panoramic video, or camera-facing character billboards alone do **not** meet that goal. The original preparation release added HD 2D character art and source contracts. This `vr/quest-360` branch now includes the [playable first level](vr/README.md) at `/vr/`: procedural 360° geometry, tracked club combat, free-depth movement, button jumping and checkpoint rescue. Desktop playthrough validation is complete; actual Quest stereo, tracking, comfort and performance acceptance remain pending.
 
 ## Sources prepared now
 
@@ -40,7 +40,7 @@ References checked 2026-10-19: [MDN requestSession](https://developer.mozilla.or
 
 1. **Current:** complete opt-in HD 2D atlas coverage, original fallback, reproducible source manifests, coordinate/scene export, unchanged gameplay replay hashes.
 2. **3D art pilot:** rigged hero/bear + first cave/terrain section; inspect from front/back/above and arbitrary 360° views, no billboard stand-ins for core actors/environment.
-3. **Quest vertical slice (in progress; desktop pilot playable, headset acceptance pending):** room-scale stereo scene, controller actions, spatial sound and UI, comfort/recenter/pause behavior, first-level traversal and combat. Profile a real target headset before expanding.
+3. **Quest vertical slice (in progress; desktop pilot playable, headset acceptance pending):** room-scale stereo scene, controller actions, spatial sound and UI, comfort/recenter/pause behavior, complete first-level map, source enemy families, bonus passages, secrets, key/exit and combat. Full outdoor input traversal and source-object fixtures pass. Profile a real target headset before campaign expansion.
 4. **3D campaign:** author all stage interiors, bosses, pickups and secret paths; decide on lateral-route or free-depth rules explicitly. Add route, save, combat and transition acceptance tests for that mode.
 5. **Hardware release:** test the actual target Quest models and supported frame rates; measure CPU/GPU frame time, dropped frames, texture memory, thermal stability and load time over long sessions. Budget against the negotiated display rate (e.g. 72Hz allows about 13.9ms total frame time, 90Hz about 11.1ms), with room for tracking and compositor work. Verify stereoscopy, controller handedness, lost tracking, interrupted sessions and HTTPS asset loads.
 

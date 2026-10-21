@@ -1,7 +1,7 @@
 {
   "version": 1,
   "target": "full-360-stereoscopic-6dof-world",
-  "status": "quest-pilot-procedural-meshes-desktop-tested-headset-pending",
+  "status": "full-first-level-source-data-procedural-3d-desktop-tested-headset-pending",
   "coordinates": {
     "pixelsPerMetre": 32,
     "tileMetres": 0.5,
@@ -69,8 +69,8 @@
         "retreat",
         "defeat"
       ],
-      "prototypeModelSource": "../../dist/vr/js/models.js",
-      "prototypeStatus": "partial-procedural-360-mesh-pilot; production-GLB-UV-LOD-pipeline-pending"
+      "prototypeModelSource": "../../dist/vr/js/bear-model.js",
+      "prototypeStatus": "upright-two-legged-source-silhouette; native-emergence-and-retreat; production-GLB-UV-LOD-pending"
     },
     {
       "id": "equipment",
@@ -125,5 +125,21 @@
       "prototypeStatus": "partial-procedural-360-mesh-pilot; production-GLB-UV-LOD-pipeline-pending"
     }
   ],
-  "pilotDocumentation": "../../docs/vr/README.md"
+  "pilotDocumentation": "../../docs/vr/README.md",
+  "levelOnePrototype": {
+    "sourceMap": "../../dist/assets/level-1.map",
+    "simulation": "../../dist/vr/js/level-one.js",
+    "environment": "../../dist/vr/js/level-one-view.js",
+    "indexedClosedMeshes": "../../dist/vr/js/native-art.js",
+    "sourceRecords": {
+      "columns": 256,
+      "items": 65,
+      "secretCells": 48,
+      "gates": 8,
+      "platforms": 3,
+      "normalEnemyDefinitions": 13
+    },
+    "geometryStatus": "closed authored depth and enclosures; indexed source faces; sculpted non-bear actors pending",
+    "hardwareAcceptance": "pending physical Quest"
+  }
 }

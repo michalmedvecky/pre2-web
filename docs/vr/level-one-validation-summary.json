@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-21",
+  "suite": {
+    "tests": 249,
+    "passed": 249,
+    "failed": 0
+  },
+  "browserFullLevel": true,
+  "browserMockXRControls": true,
+  "originalFileIntegrity": {
+    "checkedFiles": 54,
+    "changed": [],
+    "method": "read-only SHA-256 comparison against original analysis manifest; originals never executed"
+  },
+  "outdoorRoute": {
+    "inputsOnly": true,
+    "invulnerability": true,
+    "gates": 0,
+    "teleports": 0,
+    "pitRescues": 0,
+    "keyAndExit": true
+  },
+  "sourceCoverage": {
+    "mapColumns": 256,
+    "itemRecords": 65,
+    "validSecrets": 48,
+    "gates": 8,
+    "platforms": 3,
+    "normalEnemyDefinitionsActivated": 13
+  },
+  "pending": [
+    "Physical Quest walkthrough, performance and comfort",
+    "Ordinary controller-input collection of every optional reward",
+    "Production sculpted non-bear meshes and original audio",
+    "VR level two and campaign"
+  ]
+}

@@ -52,6 +52,7 @@ jobs:
           trap 'kill "$server_pid"; cat /tmp/quest-vr-server.log' EXIT
           curl --fail --retry 15 --retry-all-errors --retry-delay 1 --output /dev/null http://127.0.0.1:5777/vr/
           node scripts/verify-vr-xr-browser.mjs
+          PRE2_VR_EVIDENCE=/tmp/quest-vr-xr-test/level-one node scripts/verify-vr-level-one-browser.mjs
 
       - name: Save XR regression evidence
         if: always()
@@ -114,7 +115,7 @@ jobs:
           trap 'docker logs game-smoke; docker rm -f game-smoke' EXIT
           curl --fail --connect-timeout 2 --max-time 5 \
             --retry 15 --retry-all-errors --retry-delay 1 http://127.0.0.1:8080/healthz
-          for path in /vr/ /vr/js/main.js /vr/js/models.js /vr/js/simulation.js /vr/js/xr-input.js /vr/js/surfaces.js /vr/textures/grass.png /vr/textures/earth.png /vr/textures/stone.png /vr/textures/bark.png /vr/textures/foliage.png /vr/vendor/three.module.js /vr/vendor/three.core.js /vr/js/compat.js /vr/assets/game.json /vr/assets/level-1.map /vr/assets/union.idx; do
+          for path in /vr/ /vr/js/main.js /vr/js/models.js /vr/js/level-one.js /vr/js/level-one-view.js /vr/js/bear-model.js /vr/js/native-art.js /vr/native/engine.js /vr/native/assets.js /vr/assets/tables.bin /vr/assets/sprites.idx /vr/assets/footer-1.bin /vr/js/simulation.js /vr/js/xr-input.js /vr/js/surfaces.js /vr/textures/grass.png /vr/textures/earth.png /vr/textures/stone.png /vr/textures/bark.png /vr/textures/foliage.png /vr/vendor/three.module.js /vr/vendor/three.core.js /vr/js/compat.js /vr/assets/game.json /vr/assets/level-1.map /vr/assets/union.idx; do
             curl --fail --connect-timeout 2 --max-time 5 \
               --retry 5 --retry-all-errors --retry-delay 1 --output /dev/null "http://127.0.0.1:8080$path"
           done

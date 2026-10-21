@@ -25,7 +25,7 @@ export class XRControls {
   if(source.handedness==='left'){if(neutral)state.moveReady=true;if(state.moveReady){out.x=stick.x;out.z=stick.z;}}
   if(source.handedness==='right'){
    if(neutral)state.turnReady=true;if(Math.abs(stick.x)>.65&&state.turnReady){out.turn=-Math.sign(stick.x)*Math.PI/6;state.turnReady=false;}
-   const pressed=source.gamepad.buttons[4]?.pressed===true;if(!pressed)state.jumpReady=true;out.jump=state.jumpReady&&pressed;
+   const pressed=source.gamepad.buttons[4]?.pressed===true;if(!pressed)state.jumpReady=true;out.jump=state.jumpReady&&pressed;const interact=source.gamepad.buttons[5]?.pressed===true;if(!interact)state.interactReady=true;if(state.interactReady&&interact)out.interact=true;
   }
  }return out;}
 }
