@@ -53,7 +53,7 @@ function updateLevelHUD(){
  const status=`${hearts} · životy: ${w.lives} · ${pilot.score} bodů\n${objective}${w.godMode?' · IDDQD':''}${w.secretHints?' · IDKFA':''}`,cacheKey=status+':'+pilot.area;
  if(cacheKey===lastStatus)return;lastStatus=cacheKey;$('status').textContent=status;
  const c=hudContext;c.clearRect(0,0,768,320);c.fillStyle='#153c36ee';c.fillRect(0,0,768,320);c.fillStyle='#ffe5b0';c.font='bold 64px system-ui';c.fillText(`${hearts}  ${pilot.score}`,28,96);c.font='32px system-ui';
- c.fillText(magicSuppress?'MAGIE: 3x A / 3x B':pilot.gameOver?'KONEC HRY — B: ZNOVU':pilot.complete?'HOTOVO — B: ZNOVU':pilot.nearGate!==null?'VEJDI DO PRUCHODU / B':key?'KLIC: ANO — K VYCHODU':'NAJDI KLIC A VYCHOD',28,192);
+ c.fillText(magicSuppress?magicMessage:pilot.gameOver?'KONEC HRY — B: ZNOVU':pilot.complete?'HOTOVO — B: ZNOVU':pilot.nearGate!==null?'VEJDI DO PRUCHODU / B':key?'KLIC: ANO — K VYCHODU':'NAJDI KLIC A VYCHOD',28,192,710);
  c.fillText(`ZIVOTY: ${w.lives} ${w.godMode?' · IDDQD':''}${w.secretHints?' · IDKFA':''}`,28,265);hudTexture.needsUpdate=true;
 }
 function updateHUD(){const p=pilot.player;if(!practice){updateLevelHUD();return;}const status=`${'♥'.repeat(Math.max(0,p.health))}${'♡'.repeat(Math.max(0,3-p.health))}  ·  ${pilot.score} bodů\n${pilot.complete?'Hotovo! První VR trasa dokončena. R: znovu':pilot.bear.alive?'Poraz medvěda skutečným švihem kyje':pilot.checkpoint.x>20?'Přeskoč jámu a dojdi k cíli':'Medvěd poražen. Pokračuj k ohništi →'}`;
