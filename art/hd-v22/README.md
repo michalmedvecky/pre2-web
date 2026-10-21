@@ -24,3 +24,7 @@ The old HD kite carrier was assembled from independently generated upper and low
 - `review/tests.log`, `review/originals.log` and browser screenshots retain evidence. `review/glider-before.png` shows the disconnected old art; `glider-after.png` shows complete poses.
 
 Publication provenance is added in `release.json` after the build succeeds. No cluster rollout is performed by this work.
+
+## Published release1.2.6
+
+Game commit`e5f5e6c209027ede881abc70220292fbd685e3c6`; successful[build39592107222](https://github.com/michalmedvecky/pre2-web/actions/runs/39592107222). Verified linux/amd64 and linux/arm64 OCI revisions **and actual build.json contents in both image layers**. Index digest`sha256:a71d4861a133f42113fdd433ae786e878d63bc2e208da9c2baf443713f85b0d9`. The subsequent metadata/tag commit carries the verified deployment pin. No cluster rollout was performed.

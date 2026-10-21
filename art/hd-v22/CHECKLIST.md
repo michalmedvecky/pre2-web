@@ -7,5 +7,5 @@
 - [x] Existing mobile gesture/default-HD/fullscreen regression
 - [x] Ending credits and GitHub/commit footer verified in browser
 - [x]337 Node tests and54 unchanged originals
-- [ ] Published image served revision and OCI revisions verified on both architectures
-- [ ] Verified digest pin and annotated release tag published
+- [x] Published image served revision and OCI revisions verified on both architectures
+- [x] Verified digest pin and annotated release tag published
