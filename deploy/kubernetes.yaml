@@ -27,9 +27,9 @@ spec:
           type: RuntimeDefault
       containers:
         - name: game
-          # Successful build: commit ab008aa08a8e64cff1540e559f6de9500c2c94e0
-          # https://github.com/michalmedvecky/pre2-web/actions/runs/39570888223
-          image: ghcr.io/michalmedvecky/pre2-web@sha256:7dec8867cc4bc3f512bf17baa0556a32983e1f9ab468cda94aa90eaa43bafedf
+          # Successful build: commit 994259db9f68717868e53715bc30e453eed76a95
+          # https://github.com/michalmedvecky/pre2-web/actions/runs/39585872848
+          image: ghcr.io/michalmedvecky/pre2-web@sha256:d70a29e5041f385cad59361173c59545c4f6f73ab4b952ce43ff7ea71c7e9ddf
           ports:
             - name: http
               containerPort: 8080

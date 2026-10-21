@@ -12,4 +12,4 @@
 - [x] Mobile gestures, fullscreen and fresh HD default regression
 - [x]54 original source hashes unchanged; no original executable run
 - [x] Final terrain preparation/credits regression result recorded
-- [ ] Successful multiarch build, matching OCI revisions, immutable pin and release tag
+- [x] Successful multiarch build, matching OCI revisions, immutable pin and release tag

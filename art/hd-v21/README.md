@@ -44,3 +44,7 @@ Built-in ImageGen produced the statue redraw. `references/statue-complete.png` i
 Run the Node test suite and the browser scripts `audit-full-game-browser.mjs`, `inspect-reported-scenes.mjs`, `verify-hd-v21-browser.mjs`, `verify-off-browser.mjs` and `verify-reported-objects-browser.mjs` against port5776 with an installed Playwright module. `PRE2_PLAYWRIGHT_MODULE` selects that module; `PRE2_QA_OUTPUT` selects audit output. Browser captures are evidence, not runtime assets.
 
 Publication evidence is recorded in `release.json` after the image build succeeds. No cluster rollout is performed by this change.
+
+## Published release1.2.5
+
+Game commit`994259db9f68717868e53715bc30e453eed76a95`; successful[build39585872848](https://github.com/michalmedvecky/pre2-web/actions/runs/39585872848). Verified linux/amd64 and linux/arm64 OCI revision labels. Image index digest`sha256:d70a29e5041f385cad59361173c59545c4f6f73ab4b952ce43ff7ea71c7e9ddf`. The release metadata/tag commit carries this verified Kubernetes pin. No cluster rollout was performed.
