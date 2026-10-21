@@ -33,3 +33,7 @@ HD uses complete platform illustrations placed from the same authored surface re
 - Screenshots were visually inspected for support clarity, atlas contamination and disconnected objects. This does not claim every possible path or combat outcome was manually tested. The optional kite uses the existing flight controller; the main route does not require mastering it. Original mode uses simple authored indexed surfaces rather than the HD illustrations.
 
 Publication evidence is recorded in `release.json` after CI succeeds. This work does not roll out a Kubernetes cluster.
+
+## Published release1.3.0
+
+Game commit`aab8ff023cebe929ecfe8f0093d55ee0680d1374`; successful[build39599733319](https://github.com/michalmedvecky/pre2-web/actions/runs/39599733319). Verified linux/amd64 and linux/arm64 OCI revisions and actual served build.json contents in both image layers. Index digest`sha256:9003da93540c9a3856f3fa3a8d578afe645663c811e8875afa020429af276544`. The subsequent metadata/tag commit carries the verified deployment pin. No cluster rollout was performed.
