@@ -106,13 +106,13 @@ export class World {
   gravity(){const p=this.player,slow=p.glideMode===1;p.vy=Math.min(s16(p.vy+(slow?4:16)),slow?24:192);}
   step(input={}){
     this.presentationTicks=u16(this.presentationTicks+3);this.events=[];this.input=input;this.recorded.push(inputMask(input));if(this.recorded.length>60000)this.recorded.shift();this.frame=u16(this.frame+1);
-    this.screenShake=this.nextScreenShake;this.shakePlayerNudge=0;
+    const previousShakeNudge=this.shakePlayerNudge||0;this.screenShake=this.nextScreenShake;this.shakePlayerNudge=0;
     if(this.gateDownConsumed&&!input.down){this.gateDownConsumed=false;this.player.downTimer=0;}
     if(this.transition){this.transitionTimer++;if(this.transition.tally)this.stepTally();else if(!this.transition.ready&&this.transitionTimer>=this.transition.delay){this.transition.ready=true;this.emit('transitionReady',{transition:this.transition});}return;}
     if(this.deathTimer){this.updateEffects();updateWeather(this);this.player.vy+=8;this.player.y+=sar4(this.player.vy);if(--this.deathTimer===0){if(this.lives>0){this.lives--;this.loadLevel(this.levelIndex,{restart:true});}else{this.transition={type:'gameover',delay:1};this.transitionTimer=0;}}return;}
     if(this.collectionFlash)this.collectionFlash--;if(this.blockCooldown)this.blockCooldown--;if(this.sceneFlash)this.sceneFlash--;if(this.weaponPower)this.weaponPower--;
     // Original broad update order: actors, effects, player, interactions, world changes, presentation counter.
-    for(const a of this.actors)a.hitFlash=false;this.checkEnemyAttacks();this.checkBlocks();this.updateBosses();this.updateActors();this.spawnActors();this.updatePlatforms();this.updateEffects();this.updateProjectiles();this.stepPlayer(input);if(this.enemyPowerTimer)this.enemyPowerTimer--;this.checkActorDamage();this.checkPickups();this.updateFollowParticles();this.updatePalette();this.checkGates();updateMovingBlocks(this);this.updateCamera();this.updateTileAnimation();updateWeather(this);
+    for(const a of this.actors)a.hitFlash=false;this.checkEnemyAttacks();this.checkBlocks();this.updateBosses();this.updateActors();this.spawnActors();this.updatePlatforms();this.updateEffects();this.updateProjectiles();this.stepPlayer(input,previousShakeNudge);if(this.enemyPowerTimer)this.enemyPowerTimer--;this.checkActorDamage();this.checkPickups();this.updateFollowParticles();this.updatePalette();this.checkGates();updateMovingBlocks(this);this.updateCamera();this.updateTileAnimation();updateWeather(this);
     if(this.levelIndex===14&&this.player.y>(this.level.height+1)*16)this.finish('ending');
     else if(this.player.y>this.level.height*16+32||this.player.y< -320||
       // Fixed cave views may have more map below them. IDDQD must rescue a
@@ -124,8 +124,16 @@ export class World {
     // Pickups request completion before the last camera update of this frame.
     if(this.transition?.tally&&this.transitionTimer===0)this.transition.tally=createTally(this);
   }
-  stepPlayer(input){
-    const p=this.player;p.attackFrame=false;this.input=input;const oldX=p.x,oldY=p.y;
+  stepPlayer(input,previousShakeNudge=0){
+    const p=this.player;
+    // 0x14e44 lifts the rendered player by3. Reconcile that known lift with
+    // the same authored support before input; it must not become a falling
+    // jump-lock during repeated tree-boss slams. Never snap a real jump/ledge.
+    if(this.specialBoss?.active&&previousShakeNudge&&p.grounded&&!p.platformGrip&&p.vy>=0){
+      const y=p.y+previousShakeNudge,c=this.floorClass(p.x,y);
+      if(c>=1&&c<=5&&!(c===5&&p.downTimer)){const surface=this.surface(p.x,y);if(surface>=p.y&&surface<=y)p.y=surface;}
+    }
+    p.attackFrame=false;this.input=input;const oldX=p.x,oldY=p.y;
     if(input.right&&!input.left)p.face=1;else if(input.left&&!input.right)p.face=-1;
     const hurt=p.invulnerable>=22;
     let action=p.attackCooldown?0:ACTIONS[actionIndex(input)];if(hurt)action=8;
@@ -211,6 +219,15 @@ export class World {
     for(let ty=min;ty<=max;ty++){const y=ty*16,tile=this.tile(p.x,y),profile=bonusProfile(this.level,tile),c=this.prop('tilePropertiesY',tile);if(!profile||c<1||c>5||c===5&&p.downTimer)continue;const offset=profile[p.x&15];if(offset===null)continue;const surface=y+offset,crossed=oldY<=surface+1&&p.y>=surface,following=wasGrounded&&Math.abs(oldY-surface)<=6&&Math.abs(p.y-oldY)<=6;if(crossed||following)candidates.push({surface,c});}
     candidates.sort((a,b)=>a.surface-b.surface);if(candidates.length){const{surface,c}=candidates[0];this.landPlayer(surface,c>=2&&c<=4?c-1:0);}
   }
+  // G has ice ramps whose encoded support extends below their map row
+  // (for example 0x1e gives offsets14..19). Feet-only lookup misses the last
+  // columns when walking back uphill. Sweep the authored surfaces, not art.
+  resolveIceSupport(oldY,wasGrounded){
+    const p=this.player;if(this.level.id!=='G'||p.vy<0)return;
+    const first=Math.max(0,Math.floor((Math.min(oldY,p.y)-32)/16)),last=Math.min(this.level.height-1,Math.floor((Math.max(oldY,p.y)+16)/16)),candidates=[];
+    for(let row=first;row<=last;row++){const tile=this.tile(p.x,row*16),c=this.prop('tilePropertiesY',tile);if(c<1||c>5||c===5&&p.downTimer)continue;const surface=this.surface(p.x,row*16),crossed=oldY<=surface&&p.y>=surface,following=wasGrounded&&surface>=oldY-16&&surface<=oldY+12&&Math.abs(p.y-oldY)<=12;if(crossed||following)candidates.push({surface,c});}
+    candidates.sort((a,b)=>a.surface-b.surface);if(candidates.length){const{surface,c}=candidates[0];this.landPlayer(surface,c>=2&&c<=4?c-1:0);}
+  }
   collidePlayer(oldX,oldY){
     const p=this.player;const dx=p.x-oldX;const sideX=p.x+(dx>0?9:dx<0?-9:0);let hitSide=false;
     if(dx){const height=this.byte(0x718d+(p.sprite&0x1fff)*2)||36;for(let row=0;row<Math.ceil(height/16);row++){const y=(p.y&0xfff0)-16-row*16,c=this.prop('tilePropertiesX',this.tile(sideX,y));if(c===2&&!this.godMode){this.loseLife();return;}if(row===0&&c===1){hitSide=true;break;}}}
@@ -222,6 +239,7 @@ export class World {
       const surface=this.surface(p.x,p.y);if(p.y>=surface-12&&oldY<=surface+16){this.landPlayer(surface,c>=2&&c<=4?c-1:0);}
     }
     if(!p.grounded&&p.vy>=0){const nextC=this.floorClass(p.x,p.y+16),nextSlope=this.level.tileSlopes[this.tile(p.x,p.y+16)];if(nextC>=1&&nextC<=5&&nextSlope&&!(nextC===5&&p.downTimer)){let sy=this.surface(p.x,p.y+16);if(sy!==null&&sy<=p.y+5&&!bonusProfile(this.level,this.tile(p.x,p.y+16))){this.landPlayer(sy);}}}
+    if(!p.grounded)this.resolveIceSupport(oldY,wasGrounded);
     for(const q of this.platforms){if(!q.active)continue;const bounds=this.spriteBounds(q);if((p.vy>=0||this.carriedPlatform===q.index)&&p.x>bounds.left-3&&p.x<bounds.right+3&&oldY<=bounds.top+8&&p.y>=bounds.top){const support=this.platformSupport?.index===q.index?this.platformSupport:{y:p.y>bounds.top?bounds.top+1:bounds.top,vy:p.y>bounds.top?1:(q.dy||0)*16};this.landPlatform(support.y,q.index,support.vy);q.raw[6]|=64;if(this.carriedPlatform!==q.index)p.x+=q.dx||0;}}
   }
   attack(action=3){const p=this.player;p.attackAction=action===6||action===7?action:3;p.attackActive=true;p.attackTimer=this.attackDuration(p.attackAction);}

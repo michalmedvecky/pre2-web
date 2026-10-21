@@ -1,0 +1,26 @@
+{
+  chromium: {
+    samples: [ [Object], [Object], [Object] ],
+    poses: [
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object]
+    ],
+    errors: []
+  },
+  webkit: {
+    samples: [ [Object], [Object], [Object] ],
+    poses: [
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object]
+    ],
+    errors: []
+  }
+}

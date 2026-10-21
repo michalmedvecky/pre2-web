@@ -1,0 +1,31 @@
+{
+  "results": [
+    {
+      "id": "5-user-report",
+      "x": 96,
+      "y": 1568,
+      "playerX": 330,
+      "playerY": 1712,
+      "mismatches": 0,
+      "simulationUnchanged": true,
+      "nativeUnchanged": true
+    },
+    {
+      "id": "5-platform-faces",
+      "x": 0,
+      "y": 1568,
+      "mismatches": 0,
+      "simulationUnchanged": true,
+      "nativeUnchanged": true
+    },
+    {
+      "id": "5-hut-arch",
+      "x": 192,
+      "y": 1568,
+      "mismatches": 0,
+      "simulationUnchanged": true,
+      "nativeUnchanged": true
+    }
+  ],
+  "errors": []
+}

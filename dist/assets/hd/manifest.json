@@ -961,6 +961,54 @@
       "height": 832,
       "kind": "continuous-repair",
       "sha256": "10ee6d86b843f7046d2f8bbec3f58153a8b032a64b6f8c47170bc318be70de62"
+    },
+    {
+      "id": "v19-gray-rock",
+      "file": "v19-gray-rock.png",
+      "width": 1024,
+      "height": 1024,
+      "kind": "continuous-material",
+      "sha256": "5417dd7b121dafb950496834519bb074f128603f0ebf3a0e2c44e15027a3c728"
+    },
+    {
+      "id": "v19-green-rock",
+      "file": "v19-green-rock.png",
+      "width": 1024,
+      "height": 1024,
+      "kind": "continuous-material",
+      "sha256": "43d27683f2bf9e7d901a483dfa8552adedcae144e3efc523d0d8be50b62188ab"
+    },
+    {
+      "id": "v19-forest-bark",
+      "file": "v19-forest-bark.png",
+      "width": 1024,
+      "height": 1024,
+      "kind": "continuous-material",
+      "sha256": "f438c0b9dfbfad5ef2453bb80a44f425e43dbcfed8b0fe3ca813f344d6f296d1"
+    },
+    {
+      "id": "v19-blue-rock",
+      "file": "v19-blue-rock.png",
+      "width": 1024,
+      "height": 1024,
+      "kind": "continuous-material",
+      "sha256": "0ca625ad451e6bf932569a990c6793e45fc0d3a50e6490aecc0bc5bf463ac6a6"
+    },
+    {
+      "id": "v19-autumn-leaves",
+      "file": "v19-autumn-leaves.png",
+      "width": 1024,
+      "height": 1024,
+      "kind": "continuous-material",
+      "sha256": "b698a31d41f8241ac66152d7b91763c4cb5cf5a96ec812f72413adeac5a5bb44"
+    },
+    {
+      "id": "v19-forest-leaves",
+      "file": "v19-forest-leaves.png",
+      "width": 1024,
+      "height": 1024,
+      "kind": "continuous-material",
+      "sha256": "5219466c31e956ed03cc38a9e329961b98877050c64a0ed4c85ee6b9f98f578f"
     }
   ],
   "sprites": {
@@ -64402,6 +64450,78 @@
         ],
         "width": 256,
         "height": 256
+      },
+      "gray-rock": {
+        "atlas": "v19-gray-rock",
+        "rect": [
+          0,
+          0,
+          1024,
+          1024
+        ],
+        "width": 256,
+        "height": 256,
+        "uv": "repeat"
+      },
+      "green-rock": {
+        "atlas": "v19-green-rock",
+        "rect": [
+          0,
+          0,
+          1024,
+          1024
+        ],
+        "width": 256,
+        "height": 256,
+        "uv": "repeat"
+      },
+      "forest-bark": {
+        "atlas": "v19-forest-bark",
+        "rect": [
+          0,
+          0,
+          1024,
+          1024
+        ],
+        "width": 256,
+        "height": 256,
+        "uv": "repeat"
+      },
+      "blue-rock": {
+        "atlas": "v19-blue-rock",
+        "rect": [
+          0,
+          0,
+          1024,
+          1024
+        ],
+        "width": 256,
+        "height": 256,
+        "uv": "repeat"
+      },
+      "autumn-leaves": {
+        "atlas": "v19-autumn-leaves",
+        "rect": [
+          0,
+          0,
+          1024,
+          1024
+        ],
+        "width": 256,
+        "height": 256,
+        "uv": "repeat"
+      },
+      "forest-leaves": {
+        "atlas": "v19-forest-leaves",
+        "rect": [
+          0,
+          0,
+          1024,
+          1024
+        ],
+        "width": 256,
+        "height": 256,
+        "uv": "repeat"
       }
     },
     "objects": {
@@ -64438,6 +64558,12 @@
     "transparentCavities": [
       "8"
     ],
-    "completeFinalBoss": true
+    "completeFinalBoss": true,
+    "earlySemanticMaterials": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ]
   }
 }

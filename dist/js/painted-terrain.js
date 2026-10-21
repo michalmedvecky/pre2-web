@@ -1,3 +1,4 @@
+import{EARLY_MATERIALS}from'./terrain-materials.js';
 import{tileAnimation}from'./tile-animation.js';
 import{worldMaterial}from'./world-paint.js';
 import{renderTerrainChunk}from'./terrain-chunk.js';
@@ -13,7 +14,7 @@ export class PaintedTerrain{
  configure(hd,a,l){
   const identity=l.id+':'+hd.paletteKey;if(this.identity===identity)return;this.stop();this.identity=identity;this.cache.clear();
   const config=hd.pack.manifest.worldPaint,materials={},textures={},kinds={};
-  if(config&&['5','6','9','A','F'].includes(l.id))for(const[k,rec]of Object.entries(config.materials))if(l.id==='5'?k==='autumn-wood':l.id==='6'?k==='wood':k!=='wood'&&k!=='autumn-wood')materials[k]=hd.materialImage(rec);
+  if(config)for(const[k,rec]of Object.entries(config.materials))if(EARLY_MATERIALS[l.id]?EARLY_MATERIALS[l.id].includes(k):l.id==='6'?k==='wood':['9','A','F'].includes(l.id)&&['purple-stone','green-stone'].includes(k))materials[k]=hd.materialImage(rec);
   const tree=config?.objects?.arena||config?.objects?.tree,object=tree?.level===l.id?{...hd.materialImage(tree),x:tree.x,y:tree.y,feather:tree.feather??8}:null;
   for(const v of new Set(l.lookup)){if(v===256||v===65535)continue;const off=(v<256?v:v-256)*256,bank=v<256?a.tiles[l.id]:a.union;kinds[v]=config?worldMaterial(l.id,bank.subarray(off,off+256),v):null;const rec=hd.pack.manifest.tiles?.[l.id+':'+(v<256?'local:':'union:')+(v<256?v:v-256)];if(rec?.atlas.startsWith('v16-'))textures[v]=hd.terrainTexture(rec);}
   this.environment={level:l.id,local:a.tiles[l.id],union:a.union,palette:hd.palette,textures,kinds,materials,object,config};

@@ -1,0 +1,56 @@
+✔ input-only IDDQD completion: stage 1, including authored next-stage transition (6.255875ms)
+✔ input-only IDDQD completion: stage 2, including authored next-stage transition (13.484291ms)
+✔ input-only IDDQD completion: stage 3, including authored next-stage transition (9.083041ms)
+✔ input-only IDDQD completion: stage 4, including authored next-stage transition (13.0675ms)
+✔ input-only IDDQD completion: stage 5, including authored next-stage transition (7.003125ms)
+✖ input-only IDDQD completion: stage 6, including authored next-stage transition (7.518417ms)
+✔ input-only IDDQD completion: stage 7, including authored next-stage transition (5.03525ms)
+✔ input-only IDDQD completion: stage 8, including authored next-stage transition (7.713167ms)
+✔ input-only IDDQD completion: stage 9, including authored next-stage transition (16.224625ms)
+✔ input-only IDDQD completion: stage A, including authored next-stage transition (1.192709ms)
+✔ input-only IDDQD completion: stage B, including authored next-stage transition (2.793333ms)
+✔ input-only IDDQD completion: stage C, including authored next-stage transition (0.650666ms)
+✔ input-only IDDQD completion: stage D, including authored next-stage transition (1.307334ms)
+✔ input-only IDDQD completion: stage E, including authored next-stage transition (0.876042ms)
+✔ input-only IDDQD completion: stage F, including authored next-stage transition (0.851042ms)
+✔ input-only IDDQD completion: stage G, including authored next-stage transition (3.129667ms)
+✔ input-only secret branch: native-gate-release-rooms-1.json (4.2365ms)
+✔ input-only secret branch: native-weather-caves-rooms-E.json (3.714209ms)
+✔ input-only secret branch: qa8g-rooms-8.json (2.87675ms)
+✔ input-only secret branch: qa25-8-lower-v2.json (4.892291ms)
+✔ input-only secret branch: qa8g-room3-edge.json (1.196333ms)
+✔ input-only secret branch: native-gate-release-bonus-2.json (5.121125ms)
+✔ input-only secret branch: qa69-bonus4-glider.json (3.648458ms)
+✔ input-only secret branch: native-bounce-corrected-bonus-C.json (4.392875ms)
+✔ presentation leaves campaign and secret-route simulation hashes unchanged (838.871042ms)
+ℹ tests 25
+ℹ suites 0
+ℹ pass 24
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1015.101083
+
+✖ failing tests:
+
+test at tests/playthrough.test.mjs:16:32
+✖ input-only IDDQD completion: stage 6, including authored next-stage transition (7.518417ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  1636 !== 1637
+  
+      at TestContext.<anonymous> (file:///Users/misko/Documents/ChatGPT/Prehistorik/web/tests/playthrough.test.mjs:16:162)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1636,
+    expected: 1637,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

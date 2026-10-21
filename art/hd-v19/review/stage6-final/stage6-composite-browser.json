@@ -1,0 +1,790 @@
+{
+  "chromium": {
+    "samples": [
+      {
+        "level": 5,
+        "x": 0,
+        "y": 240,
+        "id": "6-spikes",
+        "preparation": 499,
+        "workerChunks": 56,
+        "workerParity": true,
+        "nativeParity": true,
+        "simulationParity": true
+      },
+      {
+        "level": 5,
+        "x": 736,
+        "y": 1840,
+        "id": "6-boss",
+        "preparation": 274.39999997615814,
+        "workerChunks": 52,
+        "workerParity": true,
+        "nativeParity": true,
+        "simulationParity": true
+      },
+      {
+        "level": 5,
+        "x": 704,
+        "y": 1840,
+        "id": "6-boss-left-boundary",
+        "preparation": 264.89999997615814,
+        "workerChunks": 58,
+        "workerParity": true,
+        "nativeParity": true,
+        "simulationParity": true
+      }
+    ],
+    "poses": [
+      {
+        "phase": 0,
+        "pose": 0,
+        "parts": [
+          {
+            "x": 937,
+            "y": 2004,
+            "sprite": 420
+          },
+          {
+            "x": 977,
+            "y": 1977,
+            "sprite": 421
+          },
+          {
+            "x": 981,
+            "y": 1985,
+            "sprite": 426
+          },
+          {
+            "x": 1018,
+            "y": 1974,
+            "sprite": 427
+          },
+          {
+            "x": 995,
+            "y": 1907,
+            "sprite": 432
+          }
+        ],
+        "stateUnchanged": true
+      },
+      {
+        "phase": 0,
+        "pose": 1,
+        "parts": [
+          {
+            "x": 930,
+            "y": 1958,
+            "sprite": 422
+          },
+          {
+            "x": 948,
+            "y": 1951,
+            "sprite": 423
+          },
+          {
+            "x": 1000,
+            "y": 1960,
+            "sprite": 428
+          },
+          {
+            "x": 1023,
+            "y": 1928,
+            "sprite": 429
+          },
+          {
+            "x": 995,
+            "y": 1907,
+            "sprite": 432
+          }
+        ],
+        "stateUnchanged": true
+      },
+      {
+        "phase": 0,
+        "pose": 2,
+        "parts": [
+          {
+            "x": 918,
+            "y": 1930,
+            "sprite": 424
+          },
+          {
+            "x": 950,
+            "y": 1948,
+            "sprite": 425
+          },
+          {
+            "x": 985,
+            "y": 1947,
+            "sprite": 430
+          },
+          {
+            "x": 1023,
+            "y": 1960,
+            "sprite": 431
+          },
+          {
+            "x": 995,
+            "y": 1907,
+            "sprite": 432
+          }
+        ],
+        "stateUnchanged": true
+      },
+      {
+        "phase": 0,
+        "pose": 3,
+        "parts": [
+          {
+            "x": 992,
+            "y": 1941,
+            "sprite": 438
+          },
+          {
+            "x": 1029,
+            "y": 1961,
+            "sprite": 439
+          },
+          {
+            "x": 995,
+            "y": 1907,
+            "sprite": 432
+          }
+        ],
+        "stateUnchanged": true
+      },
+      {
+        "phase": 1,
+        "pose": 0,
+        "parts": [
+          {
+            "x": 937,
+            "y": 2004,
+            "sprite": 420
+          },
+          {
+            "x": 977,
+            "y": 1977,
+            "sprite": 421
+          },
+          {
+            "x": 981,
+            "y": 1985,
+            "sprite": 426
+          },
+          {
+            "x": 1018,
+            "y": 1974,
+            "sprite": 427
+          },
+          {
+            "x": 996,
+            "y": 1905,
+            "sprite": 433
+          }
+        ],
+        "stateUnchanged": true
+      },
+      {
+        "phase": 1,
+        "pose": 1,
+        "parts": [
+          {
+            "x": 930,
+            "y": 1958,
+            "sprite": 422
+          },
+          {
+            "x": 948,
+            "y": 1951,
+            "sprite": 423
+          },
+          {
+            "x": 1000,
+            "y": 1960,
+            "sprite": 428
+          },
+          {
+            "x": 1023,
+            "y": 1928,
+            "sprite": 429
+          },
+          {
+            "x": 996,
+            "y": 1905,
+            "sprite": 433
+          }
+        ],
+        "stateUnchanged": true
+      },
+      {
+        "phase": 1,
+        "pose": 2,
+        "parts": [
+          {
+            "x": 918,
+            "y": 1930,
+            "sprite": 424
+          },
+          {
+            "x": 950,
+            "y": 1948,
+            "sprite": 425
+          },
+          {
+            "x": 985,
+            "y": 1947,
+            "sprite": 430
+          },
+          {
+            "x": 1023,
+            "y": 1960,
+            "sprite": 431
+          },
+          {
+            "x": 996,
+            "y": 1905,
+            "sprite": 433
+          }
+        ],
+        "stateUnchanged": true
+      },
+      {
+        "phase": 1,
+        "pose": 3,
+        "parts": [
+          {
+            "x": 992,
+            "y": 1941,
+            "sprite": 438
+          },
+          {
+            "x": 1029,
+            "y": 1961,
+            "sprite": 439
+          },
+          {
+            "x": 996,
+            "y": 1905,
+            "sprite": 433
+          }
+        ],
+        "stateUnchanged": true
+      },
+      {
+        "phase": 2,
+        "pose": 0,
+        "parts": [
+          {
+            "x": 937,
+            "y": 2004,
+            "sprite": 420
+          },
+          {
+            "x": 977,
+            "y": 1977,
+            "sprite": 421
+          },
+          {
+            "x": 981,
+            "y": 1985,
+            "sprite": 426
+          },
+          {
+            "x": 1018,
+            "y": 1974,
+            "sprite": 427
+          },
+          {
+            "x": 996,
+            "y": 1907,
+            "sprite": 434
+          }
+        ],
+        "stateUnchanged": true
+      },
+      {
+        "phase": 2,
+        "pose": 1,
+        "parts": [
+          {
+            "x": 930,
+            "y": 1958,
+            "sprite": 422
+          },
+          {
+            "x": 948,
+            "y": 1951,
+            "sprite": 423
+          },
+          {
+            "x": 1000,
+            "y": 1960,
+            "sprite": 428
+          },
+          {
+            "x": 1023,
+            "y": 1928,
+            "sprite": 429
+          },
+          {
+            "x": 996,
+            "y": 1907,
+            "sprite": 434
+          }
+        ],
+        "stateUnchanged": true
+      },
+      {
+        "phase": 2,
+        "pose": 2,
+        "parts": [
+          {
+            "x": 918,
+            "y": 1930,
+            "sprite": 424
+          },
+          {
+            "x": 950,
+            "y": 1948,
+            "sprite": 425
+          },
+          {
+            "x": 985,
+            "y": 1947,
+            "sprite": 430
+          },
+          {
+            "x": 1023,
+            "y": 1960,
+            "sprite": 431
+          },
+          {
+            "x": 996,
+            "y": 1907,
+            "sprite": 434
+          }
+        ],
+        "stateUnchanged": true
+      },
+      {
+        "phase": 2,
+        "pose": 3,
+        "parts": [
+          {
+            "x": 992,
+            "y": 1941,
+            "sprite": 438
+          },
+          {
+            "x": 1029,
+            "y": 1961,
+            "sprite": 439
+          },
+          {
+            "x": 996,
+            "y": 1907,
+            "sprite": 434
+          }
+        ],
+        "stateUnchanged": true
+      }
+    ],
+    "errors": []
+  },
+  "webkit": {
+    "samples": [
+      {
+        "level": 5,
+        "x": 0,
+        "y": 240,
+        "id": "6-spikes",
+        "preparation": 535,
+        "workerChunks": 56,
+        "workerParity": true,
+        "nativeParity": true,
+        "simulationParity": true
+      },
+      {
+        "level": 5,
+        "x": 736,
+        "y": 1840,
+        "id": "6-boss",
+        "preparation": 242,
+        "workerChunks": 52,
+        "workerParity": true,
+        "nativeParity": true,
+        "simulationParity": true
+      },
+      {
+        "level": 5,
+        "x": 704,
+        "y": 1840,
+        "id": "6-boss-left-boundary",
+        "preparation": 245,
+        "workerChunks": 58,
+        "workerParity": true,
+        "nativeParity": true,
+        "simulationParity": true
+      }
+    ],
+    "poses": [
+      {
+        "phase": 0,
+        "pose": 0,
+        "parts": [
+          {
+            "x": 937,
+            "y": 2004,
+            "sprite": 420
+          },
+          {
+            "x": 977,
+            "y": 1977,
+            "sprite": 421
+          },
+          {
+            "x": 981,
+            "y": 1985,
+            "sprite": 426
+          },
+          {
+            "x": 1018,
+            "y": 1974,
+            "sprite": 427
+          },
+          {
+            "x": 995,
+            "y": 1907,
+            "sprite": 432
+          }
+        ],
+        "stateUnchanged": true
+      },
+      {
+        "phase": 0,
+        "pose": 1,
+        "parts": [
+          {
+            "x": 930,
+            "y": 1958,
+            "sprite": 422
+          },
+          {
+            "x": 948,
+            "y": 1951,
+            "sprite": 423
+          },
+          {
+            "x": 1000,
+            "y": 1960,
+            "sprite": 428
+          },
+          {
+            "x": 1023,
+            "y": 1928,
+            "sprite": 429
+          },
+          {
+            "x": 995,
+            "y": 1907,
+            "sprite": 432
+          }
+        ],
+        "stateUnchanged": true
+      },
+      {
+        "phase": 0,
+        "pose": 2,
+        "parts": [
+          {
+            "x": 918,
+            "y": 1930,
+            "sprite": 424
+          },
+          {
+            "x": 950,
+            "y": 1948,
+            "sprite": 425
+          },
+          {
+            "x": 985,
+            "y": 1947,
+            "sprite": 430
+          },
+          {
+            "x": 1023,
+            "y": 1960,
+            "sprite": 431
+          },
+          {
+            "x": 995,
+            "y": 1907,
+            "sprite": 432
+          }
+        ],
+        "stateUnchanged": true
+      },
+      {
+        "phase": 0,
+        "pose": 3,
+        "parts": [
+          {
+            "x": 992,
+            "y": 1941,
+            "sprite": 438
+          },
+          {
+            "x": 1029,
+            "y": 1961,
+            "sprite": 439
+          },
+          {
+            "x": 995,
+            "y": 1907,
+            "sprite": 432
+          }
+        ],
+        "stateUnchanged": true
+      },
+      {
+        "phase": 1,
+        "pose": 0,
+        "parts": [
+          {
+            "x": 937,
+            "y": 2004,
+            "sprite": 420
+          },
+          {
+            "x": 977,
+            "y": 1977,
+            "sprite": 421
+          },
+          {
+            "x": 981,
+            "y": 1985,
+            "sprite": 426
+          },
+          {
+            "x": 1018,
+            "y": 1974,
+            "sprite": 427
+          },
+          {
+            "x": 996,
+            "y": 1905,
+            "sprite": 433
+          }
+        ],
+        "stateUnchanged": true
+      },
+      {
+        "phase": 1,
+        "pose": 1,
+        "parts": [
+          {
+            "x": 930,
+            "y": 1958,
+            "sprite": 422
+          },
+          {
+            "x": 948,
+            "y": 1951,
+            "sprite": 423
+          },
+          {
+            "x": 1000,
+            "y": 1960,
+            "sprite": 428
+          },
+          {
+            "x": 1023,
+            "y": 1928,
+            "sprite": 429
+          },
+          {
+            "x": 996,
+            "y": 1905,
+            "sprite": 433
+          }
+        ],
+        "stateUnchanged": true
+      },
+      {
+        "phase": 1,
+        "pose": 2,
+        "parts": [
+          {
+            "x": 918,
+            "y": 1930,
+            "sprite": 424
+          },
+          {
+            "x": 950,
+            "y": 1948,
+            "sprite": 425
+          },
+          {
+            "x": 985,
+            "y": 1947,
+            "sprite": 430
+          },
+          {
+            "x": 1023,
+            "y": 1960,
+            "sprite": 431
+          },
+          {
+            "x": 996,
+            "y": 1905,
+            "sprite": 433
+          }
+        ],
+        "stateUnchanged": true
+      },
+      {
+        "phase": 1,
+        "pose": 3,
+        "parts": [
+          {
+            "x": 992,
+            "y": 1941,
+            "sprite": 438
+          },
+          {
+            "x": 1029,
+            "y": 1961,
+            "sprite": 439
+          },
+          {
+            "x": 996,
+            "y": 1905,
+            "sprite": 433
+          }
+        ],
+        "stateUnchanged": true
+      },
+      {
+        "phase": 2,
+        "pose": 0,
+        "parts": [
+          {
+            "x": 937,
+            "y": 2004,
+            "sprite": 420
+          },
+          {
+            "x": 977,
+            "y": 1977,
+            "sprite": 421
+          },
+          {
+            "x": 981,
+            "y": 1985,
+            "sprite": 426
+          },
+          {
+            "x": 1018,
+            "y": 1974,
+            "sprite": 427
+          },
+          {
+            "x": 996,
+            "y": 1907,
+            "sprite": 434
+          }
+        ],
+        "stateUnchanged": true
+      },
+      {
+        "phase": 2,
+        "pose": 1,
+        "parts": [
+          {
+            "x": 930,
+            "y": 1958,
+            "sprite": 422
+          },
+          {
+            "x": 948,
+            "y": 1951,
+            "sprite": 423
+          },
+          {
+            "x": 1000,
+            "y": 1960,
+            "sprite": 428
+          },
+          {
+            "x": 1023,
+            "y": 1928,
+            "sprite": 429
+          },
+          {
+            "x": 996,
+            "y": 1907,
+            "sprite": 434
+          }
+        ],
+        "stateUnchanged": true
+      },
+      {
+        "phase": 2,
+        "pose": 2,
+        "parts": [
+          {
+            "x": 918,
+            "y": 1930,
+            "sprite": 424
+          },
+          {
+            "x": 950,
+            "y": 1948,
+            "sprite": 425
+          },
+          {
+            "x": 985,
+            "y": 1947,
+            "sprite": 430
+          },
+          {
+            "x": 1023,
+            "y": 1960,
+            "sprite": 431
+          },
+          {
+            "x": 996,
+            "y": 1907,
+            "sprite": 434
+          }
+        ],
+        "stateUnchanged": true
+      },
+      {
+        "phase": 2,
+        "pose": 3,
+        "parts": [
+          {
+            "x": 992,
+            "y": 1941,
+            "sprite": 438
+          },
+          {
+            "x": 1029,
+            "y": 1961,
+            "sprite": 439
+          },
+          {
+            "x": 996,
+            "y": 1907,
+            "sprite": 434
+          }
+        ],
+        "stateUnchanged": true
+      }
+    ],
+    "errors": []
+  }
+}

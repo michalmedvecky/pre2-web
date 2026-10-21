@@ -1,0 +1,20 @@
+{
+  "browser": "Codex in-app browser",
+  "url": "http://127.0.0.1:5776/?qa",
+  "method": "Stage menu G, ordinary held arrow keys, no cheats or state edits",
+  "walkReturn": {
+    "rightMs": 1400,
+    "beforeReturn": {"frame": 1899, "x": 186, "y": 711, "vy": 0},
+    "leftMs": 2200,
+    "afterReturn": {"frame": 1959, "x": 8, "y": 656, "vy": 0}
+  },
+  "jumpReturn": {
+    "upMs": 600,
+    "rightMs": 1400,
+    "beforeReturn": {"frame": 2824, "x": 188, "y": 712, "vy": 0},
+    "leftMs": 2300,
+    "afterReturn": {"frame": 2885, "x": 9, "y": 656, "vy": 0}
+  },
+  "visibleHUD": {"lives": 2, "hearts": 3},
+  "observations": "Returned to the starting ice floor in both cases; no fall, death or checkpoint reset. Poses read from the QA canvas DOM attribute."
+}

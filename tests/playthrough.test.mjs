@@ -8,10 +8,10 @@ const root=new URL('../dist/',import.meta.url),json=async n=>JSON.parse(await re
 const assets={game:await json('assets/game.json'),rules:await json('rules.json'),tables:await buf('tables.bin'),maps:{},footers:{}};
 for(const l of assets.game.levels){assets.maps[l.id]=await buf(l.map);assets.footers[l.id]=await buf(l.footer);}
 const fixtures=JSON.parse(await readFile(new URL('fixtures/playthroughs.json',import.meta.url),'utf8'));
-function replay(f,presentation=null){let lost=0;const w=new World(assets,{onEvent:e=>{if(e.type==='lifeLost')lost++;}});w.loadLevel(f.level);w.toggleGodMode();const gates=new Set(),native=w.checkGates;
+function replay(f,presentation=null){let lost=0,rescued=0;const w=new World(assets,{onEvent:e=>{if(e.type==='lifeLost')lost++;if(e.type==='rescue')rescued++;}});w.loadLevel(f.level);w.toggleGodMode();const gates=new Set(),native=w.checkGates;
  w.checkGates=function(){const pos=this.tilePos(this.player.x,this.player.y),x=this.player.x,y=this.player.y;native.call(this);if(x!==this.player.x||y!==this.player.y){const gate=this.gates.find(g=>g.active&&g.triggerTile===pos);if(gate)gates.add(gate.index);}};
  let ticks=0;for(const [mask,count]of f.rle){assert.ok(mask>=0&&mask<=63);for(let n=0;n<count;n++){presentation?.beforeStep(w);w.step(inputFromMask(mask));if(w.gateCameraFlag&&w.player.vy>=0)assert.ok(w.spriteBounds(w.player).top<w.camera.y+176,'invisible player below fixed view: '+(f.source||f.id));presentation?.afterStep(w);if(presentation){presentation.sample(w,.25,1/120);presentation.sample(w,.75,1/60);}ticks++;if(w.transition)break;}if(w.transition)break;}
- assert.equal(lost,0);assert.equal(w.health,3);assert.equal(w.godMode,true);for(const gate of f.gates)assert.ok(gates.has(gate),`missing gate ${gate}`);return {w,ticks};
+ if(f.id==='G')assert.equal(rescued,0,'G route must not use fall-through/checkpoint rescue');assert.equal(lost,0);assert.equal(w.health,3);assert.equal(w.godMode,true);for(const gate of f.gates)assert.ok(gates.has(gate),`missing gate ${gate}`);return {w,ticks};
 }
 for(const f of fixtures.stages)test(`input-only IDDQD completion: stage ${f.id}, including authored next-stage transition`,()=>{const {w,ticks}=replay(f);assert.equal(ticks,f.ticks);assert.ok(w.transition);assert.equal(w.transition.type,f.transition.type);assert.equal(w.transition.next,f.transition.next);
  if([2,8].includes(f.level)){assert.equal(w.boss.active,false);assert.ok(w.boss.hp<0);assert.ok(w.inventory2&2);}

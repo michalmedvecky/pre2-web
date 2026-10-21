@@ -1,0 +1,17 @@
+✔ spike trunk background continues across169/170/171 without filling a free-standing169 or inverted172 (2.925708ms)
+✔ whole arena alpha removes old native fragments and fills generated leaves over native holes (2.124917ms)
+✔ arena drawing is independent of terrain chunk boundaries and paints chunks with no native ink (16.739042ms)
+✔ only the exposed native spike family loses its matte; bark and fire retain their shadows (1.640167ms)
+✔ static chunks reuse one cache entry across phases; halo animation and map edits invalidate it (0.2255ms)
+✔ transparent spike gaps survive connected chunk reconstruction without changing source data (13.546ms)
+✔ canceling preparation releases all waiters, and unsupported workers have a bounded fallback (0.1865ms)
+✔ returning across a previously visited strip keeps its chunks recent instead of evicting the next view (0.059125ms)
+✔ the connected arena retains generated alpha, exact native bounds and packed hashes (33.159709ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 86.890917

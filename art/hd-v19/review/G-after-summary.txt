@@ -1,0 +1,25 @@
+[
+  { steps: 5, jump: false, rescues: [], maxY: 660 },
+  { steps: 5, jump: true, rescues: [], maxY: 656 },
+  { steps: 10, jump: false, rescues: [], maxY: 676 },
+  { steps: 10, jump: true, rescues: [], maxY: 656 },
+  { steps: 15, jump: false, rescues: [], maxY: 679 },
+  { steps: 15, jump: true, rescues: [], maxY: 656 },
+  { steps: 20, jump: false, rescues: [], maxY: 688 },
+  { steps: 20, jump: true, rescues: [], maxY: 656 },
+  { steps: 25, jump: false, rescues: [], maxY: 704 },
+  { steps: 25, jump: true, rescues: [], maxY: 656 },
+  { steps: 30, jump: false, rescues: [], maxY: 708 },
+  { steps: 30, jump: true, rescues: [], maxY: 672 },
+  { steps: 35, jump: false, rescues: [], maxY: 712 },
+  { steps: 35, jump: true, rescues: [], maxY: 656 },
+  { steps: 40, jump: false, rescues: [], maxY: 720 },
+  { steps: 40, jump: true, rescues: [], maxY: 656 },
+  { steps: 45, jump: false, rescues: [], maxY: 720 },
+  { steps: 45, jump: true, rescues: [], maxY: 656 },
+  { steps: 50, jump: false, rescues: [], maxY: 720 },
+  { steps: 50, jump: true, rescues: [], maxY: 656 },
+  { steps: 60, jump: false, rescues: [], maxY: 736 },
+  { steps: 60, jump: true, rescues: [], maxY: 656 }
+]
+G items [ { x: 560, y: 792, sprite: 161 }, { x: 256, y: 712, sprite: 160 } ]

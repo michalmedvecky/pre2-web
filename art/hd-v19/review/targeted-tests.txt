@@ -1,0 +1,43 @@
+✔ early stone includes shade11 and bark includes highlight7, without coloring literal signs (0.35075ms)
+✔ mixed bark/leaf tiles and broad empty corners keep separate material ownership (1.506542ms)
+✔ continuous material fields are invariant under different tile/chunk cuts (3.155542ms)
+✔ material repaint preserves exact native connected coverage (8.477916ms)
+✔ all six material plates have exact packed/raw hashes and coherent atlas dimensions (174.921417ms)
+✔ G: walk toward the first burger and return without falling through, with and without IDDQD (18.933375ms)
+✔ G: jumping first, walking and returning retains the visible ice support (7.653292ms)
+✔ G: a descending player catches a surface belonging to a row above the feet (0.441709ms)
+✔ G: authored overhanging slope columns across the map catch descending feet (2.242167ms)
+✔ ice recovery is scoped to G and cannot create a floor in an authored void (0.886667ms)
+✔ input-only IDDQD completion: stage 1, including authored next-stage transition (7.086542ms)
+✔ input-only IDDQD completion: stage 2, including authored next-stage transition (20.656125ms)
+✔ input-only IDDQD completion: stage 3, including authored next-stage transition (12.365917ms)
+✔ input-only IDDQD completion: stage 4, including authored next-stage transition (14.802792ms)
+✔ input-only IDDQD completion: stage 5, including authored next-stage transition (7.865709ms)
+✔ input-only IDDQD completion: stage 6, including authored next-stage transition (8.002ms)
+✔ input-only IDDQD completion: stage 7, including authored next-stage transition (5.093333ms)
+✔ input-only IDDQD completion: stage 8, including authored next-stage transition (9.832125ms)
+✔ input-only IDDQD completion: stage 9, including authored next-stage transition (17.394292ms)
+✔ input-only IDDQD completion: stage A, including authored next-stage transition (1.327417ms)
+✔ input-only IDDQD completion: stage B, including authored next-stage transition (3.395667ms)
+✔ input-only IDDQD completion: stage C, including authored next-stage transition (1.489625ms)
+✔ input-only IDDQD completion: stage D, including authored next-stage transition (1.202125ms)
+✔ input-only IDDQD completion: stage E, including authored next-stage transition (0.962417ms)
+✔ input-only IDDQD completion: stage F, including authored next-stage transition (0.80325ms)
+✔ input-only IDDQD completion: stage G, including authored next-stage transition (2.703334ms)
+✔ input-only secret branch: native-gate-release-rooms-1.json (4.28725ms)
+✔ input-only secret branch: native-weather-caves-rooms-E.json (5.218792ms)
+✔ input-only secret branch: qa8g-rooms-8.json (2.846209ms)
+✔ input-only secret branch: qa25-8-lower-v2.json (5.563166ms)
+✔ input-only secret branch: qa8g-room3-edge.json (2.568792ms)
+✔ input-only secret branch: native-gate-release-bonus-2.json (6.857417ms)
+✔ input-only secret branch: qa69-bonus4-glider.json (4.082875ms)
+✔ input-only secret branch: native-bounce-corrected-bonus-C.json (5.085541ms)
+✔ presentation leaves campaign and secret-route simulation hashes unchanged (859.38375ms)
+ℹ tests 35
+ℹ suites 0
+ℹ pass 35
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1081.395875

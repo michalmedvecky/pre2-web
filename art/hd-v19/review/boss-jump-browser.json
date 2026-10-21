@@ -1,0 +1,52 @@
+{
+  "chromium": {
+    "samples": [
+      {
+        "god": false,
+        "x": 772,
+        "y": 1972,
+        "vy": -33,
+        "jumpLock": 0,
+        "health": 3,
+        "frame": 18,
+        "shake": 3
+      },
+      {
+        "god": true,
+        "x": 772,
+        "y": 1979,
+        "vy": -49,
+        "jumpLock": 0,
+        "health": 3,
+        "frame": 18,
+        "shake": 3
+      }
+    ],
+    "errors": []
+  },
+  "webkit": {
+    "samples": [
+      {
+        "god": false,
+        "x": 772,
+        "y": 1979,
+        "vy": -49,
+        "jumpLock": 0,
+        "health": 3,
+        "frame": 18,
+        "shake": 3
+      },
+      {
+        "god": true,
+        "x": 772,
+        "y": 1979,
+        "vy": -49,
+        "jumpLock": 0,
+        "health": 3,
+        "frame": 18,
+        "shake": 3
+      }
+    ],
+    "errors": []
+  }
+}

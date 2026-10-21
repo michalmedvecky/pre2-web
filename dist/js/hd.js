@@ -1,5 +1,6 @@
+import{EARLY_MATERIALS,materialFields}from'./terrain-materials.js';
 import{tileAnimation}from'./tile-animation.js';
-import{worldMaterial,mirrorCoordinate}from'./world-paint.js';
+import{worldMaterial,mirrorCoordinate,worldPaintSampler,openMaterialCavities}from'./world-paint.js';
 import{PaintedTerrain}from'./painted-terrain.js';
 import{TerrainLayer}from'./terrain-layer.js';
 import{terrainShadowRoles,preserveCaveShadows,shadowRoleForMaterial}from'./terrain-semantics.js';
@@ -44,6 +45,9 @@ export class HDCompositor {
   const literal=this.pack.manifest.terrainV16?.literalTiles.find(t=>t.key===level+':'+bank+':'+id);if(literal){if(literal.index)this.clipped(176,c=>{c.fillStyle=this.color(literal.index);c.fillRect(Math.round(x)*4,Math.round(y)*4,64,64);});return true;}
   if(level==='1'&&bank==='front'&&id===20&&source&&this.pack.manifest.worldMaterials&&Number.isFinite(worldX)){
    const wall=this.materialImage(this.pack.manifest.worldMaterials.wall),roots=this.materialImage(this.pack.manifest.worldMaterials.roots),paint=continuousSampler({textures:[null],kinds:['wall'],columns:1,originX:worldX,originY:worldY,wall,roots}),rgba=connectedTerrain(source,16,16,this.palette,paint,{paintColor:true}),image=document.createElement('canvas');image.width=image.height=64;image.getContext('2d').putImageData(new ImageData(rgba,64,64),0,0);this.clipped(176,c=>c.drawImage(image,Math.round(x)*4,Math.round(y)*4));return true;
+  }
+  if(bank==='front'&&EARLY_MATERIALS[level]&&source&&Number.isFinite(worldX)){
+   const key=level+':'+id+':'+worldX+':'+worldY+':'+this.paletteKey;this.earlyFront||=new Map();let image=this.earlyFront.get(key);if(!image){const materials={};for(const n of EARLY_MATERIALS[level]){const rec=this.pack.manifest.worldPaint.materials[n];if(rec)materials[n]=this.materialImage(rec);}const rec=this.pack.manifest.tiles?.[level+':front:'+id],texture=rec?this.terrainTexture(rec):null,paint=worldPaintSampler({base:paintSampler([texture],1),source,width:16,columns:1,kinds:[null],originX:worldX,originY:worldY,materials,semantic:materialFields(level,source,16,[id],1,openMaterialCavities(source,16)),palette:this.palette}),rgba=connectedTerrain(source,16,16,this.palette,paint,{paintColor:true});image=document.createElement('canvas');image.width=image.height=64;image.getContext('2d').putImageData(new ImageData(rgba,64,64),0,0);this.earlyFront.set(key,image);while(this.earlyFront.size>256)this.earlyFront.delete(this.earlyFront.keys().next().value);}this.clipped(176,c=>c.drawImage(image,Math.round(x)*4,Math.round(y)*4));return true;
   }
   if(bank==='front'&&this.pack.manifest.worldPaint&&Number.isFinite(worldX)){
    const kind=worldMaterial(level,source,id),record=this.pack.manifest.worldPaint.materials[kind];if(record){const material=this.materialImage(record),paint=(x,y)=>{const p=(mirrorCoordinate(worldY*4+y,material.height)*material.width+mirrorCoordinate(worldX*4+x,material.width))*4;return[material.data[p],material.data[p+1],material.data[p+2],1];},rgba=connectedTerrain(source,16,16,this.palette,paint,{paintColor:true}),image=document.createElement('canvas');image.width=image.height=64;image.getContext('2d').putImageData(new ImageData(rgba,64,64),0,0);this.clipped(176,c=>c.drawImage(image,Math.round(x)*4,Math.round(y)*4));return true;}}
@@ -102,7 +106,7 @@ export class HDCompositor {
  }
  materialImage(record){
   let value=this.materialImages.get(record.atlas);if(value)return value;
-  const [x,y,width,height]=record.rect,canvas=document.createElement('canvas');canvas.width=width;canvas.height=height;const c=canvas.getContext('2d',{willReadFrequently:true});c.drawImage(this.pack.images.get(record.atlas),x,y,width,height,0,0,width,height);value={width,height,data:c.getImageData(0,0,width,height).data,originY:record.originY||0};this.materialImages.set(record.atlas,value);return value;
+  const [x,y,width,height]=record.rect,canvas=document.createElement('canvas');canvas.width=width;canvas.height=height;const c=canvas.getContext('2d',{willReadFrequently:true});c.drawImage(this.pack.images.get(record.atlas),x,y,width,height,0,0,width,height);value={width,height,data:c.getImageData(0,0,width,height).data,originY:record.originY||0,repeat:record.uv==='repeat'};this.materialImages.set(record.atlas,value);return value;
  }
  terrainTexture(record){
   const key=record.atlas+':'+record.index;let texture=this.terrainTextures.get(key);if(texture)return texture;

@@ -1,0 +1,19 @@
+{"start":{"x":42,"y":672,"vx":0,"vy":0,"face":1,"sprite":9,"action":0,"animationVariant":0,"walkHistory":0,"runTimer":0,"glideMode":0,"glideEnergy":0,"formAngle":3,"lastGroundY":672,"landingShake":0,"platformGrip":false,"attackActive":false,"attackAction":3,"anim":31645,"jumpFrame":0,"jumpLock":0,"fallFrames":0,"grounded":false,"speedShift":0,"invulnerable":0,"attackTimer":0,"attackCooldown":0,"downTimer":0,"powerTimer":0,"look":false,"animStart":31643,"marker":0},"walking":{"x":42,"y":672,"vx":0,"vy":0,"face":1,"sprite":9,"action":0,"animationVariant":0,"walkHistory":0,"runTimer":0,"glideMode":0,"glideEnergy":0,"formAngle":3,"lastGroundY":672,"landingShake":0,"platformGrip":false,"attackActive":false,"attackAction":3,"anim":31645,"jumpFrame":0,"jumpLock":0,"fallFrames":0,"grounded":false,"speedShift":0,"invulnerable":0,"attackTimer":0,"attackCooldown":0,"downTimer":0,"powerTimer":0,"look":false,"animStart":31643,"marker":0},"touch":{"state":"play","touch":[{"kind":"move","gesture":"pending","direction":"right"}],"frame":0},"layout":{"fullscreen":true,"immersive":true,"width":844,"height":390,"pad":{"x":10,"y":253.203125,"width":150,"height":82,"top":253.203125,"right":160,"bottom":335.203125,"left":10},"game":{"x":0,"y":0,"width":844,"height":390,"top":0,"right":844,"bottom":390,"left":0}}}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+  assert.ok(walking.x>start.x)
+
+    at file:///Users/misko/Documents/ChatGPT/Prehistorik/web/scripts/.mobile-probe.mjs:5:370 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

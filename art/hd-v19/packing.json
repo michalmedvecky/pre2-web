@@ -1,0 +1,44 @@
+[
+  {
+    "name": "gray-rock",
+    "rawSHA256": "aacb80037f4b9a864100e3930f11b3b2d850659c8a4fa15ef1d23096a60bdce5",
+    "sha256": "5417dd7b121dafb950496834519bb074f128603f0ebf3a0e2c44e15027a3c728",
+    "edgeOverlap": 64,
+    "uv": "repeat"
+  },
+  {
+    "name": "green-rock",
+    "rawSHA256": "e3e8eddca6390182bfeb48dab3b04e7c602967794fa79b4ee52c23ed837d154c",
+    "sha256": "43d27683f2bf9e7d901a483dfa8552adedcae144e3efc523d0d8be50b62188ab",
+    "edgeOverlap": 64,
+    "uv": "repeat"
+  },
+  {
+    "name": "forest-bark",
+    "rawSHA256": "2338bec755f9fe486735f934fe369526c4d7e8e901c88b010941586f40234228",
+    "sha256": "f438c0b9dfbfad5ef2453bb80a44f425e43dbcfed8b0fe3ca813f344d6f296d1",
+    "edgeOverlap": 64,
+    "uv": "repeat"
+  },
+  {
+    "name": "blue-rock",
+    "rawSHA256": "58f69a0baa8b770009aae3eb54a88b2bf537ab92ba58aaf29b592c37458b1116",
+    "sha256": "0ca625ad451e6bf932569a990c6793e45fc0d3a50e6490aecc0bc5bf463ac6a6",
+    "edgeOverlap": 64,
+    "uv": "repeat"
+  },
+  {
+    "name": "autumn-leaves",
+    "rawSHA256": "2123a3543955fb1138d0396f2324fb0e18f5955d914b5f3003b5da9be54e1e88",
+    "sha256": "b698a31d41f8241ac66152d7b91763c4cb5cf5a96ec812f72413adeac5a5bb44",
+    "edgeOverlap": 64,
+    "uv": "repeat"
+  },
+  {
+    "name": "forest-leaves",
+    "rawSHA256": "ef5c679ed2cc827ff7a2556b65b46c9b615e5c58b03f1c2cd5846005bb18d451",
+    "sha256": "5219466c31e956ed03cc38a9e329961b98877050c64a0ed4c85ee6b9f98f578f",
+    "edgeOverlap": 64,
+    "uv": "repeat"
+  }
+]

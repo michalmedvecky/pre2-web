@@ -182,3 +182,13 @@ test('view-edge rescue excludes ordinary visible falls and upward motion',()=>{
  const w=playerFixture();w.toggleGodMode();w.camera={x:0,y:544};Object.assign(w.player,{x:100,y:640,vy:0});w.step({});assert.equal(w.sceneFlash,0);assert.equal(w.player.grounded,true);
  w.gateCameraFlag=1;w.camera.y=0;w.map.fill(0);Object.assign(w.player,{y:250,vy:-128,jumpLock:6,grounded:false});w.step({});assert.ok(w.player.y>200);assert.ok(w.player.vy<0);assert.equal(w.gateCameraFlag,1);
 });
+
+function treeSlamFixture(god=false){const w=new World(a);w.loadLevel(5);w.activateSpecialBoss();w.godMode=god;w.definitions=[];w.items=[];w.blocks=[];Object.assign(w.player,{x:760,y:1984,vx:0,vy:0,grounded:true,jumpLock:0});Object.assign(w.specialBoss,{attackDelay:0,burst:100});return w;}
+test('tree-boss repeated hand slams retain real floor support and allow a jump at every attack phase',()=>{
+ for(const god of [false,true])for(let delay=1;delay<=32;delay++){const w=treeSlamFixture(god);let shakes=0;for(let n=0;n<delay;n++){w.step({});if(w.shakePlayerNudge)shakes++;assert.equal(w.player.jumpLock,0);assert.equal(w.player.grounded,true);}assert.ok(shakes);w.step({up:true});assert.ok(w.player.vy<0,`god=${god} phase=${delay}`);assert.ok(w.player.y<1984);assert.equal(w.health,3);}
+});
+test('known shake lift reconciliation does not invent support over a ledge or unlock an airborne jump',()=>{
+ const w=treeSlamFixture();w.map.fill(0);Object.assign(w.player,{y:1981,grounded:true});w.stepPlayer({},3);assert.equal(w.player.grounded,false);assert.equal(w.player.y,1981);
+ Object.assign(w.player,{y:1900,grounded:false,vy:32,jumpLock:6});w.stepPlayer({up:true},3);assert.ok(w.player.vy>0);assert.equal(w.player.jumpLock,6);
+});
+test('regression baseline without reconciliation loses jump to tree slam',()=>{const w=treeSlamFixture();const step=w.stepPlayer;w.stepPlayer=function(input){return step.call(this,input,0);};for(let n=0;n<4;n++)w.step({});assert.ok(w.player.jumpLock>0);w.step({up:true});assert.ok(w.player.vy>=0);});

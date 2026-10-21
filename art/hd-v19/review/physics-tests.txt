@@ -1,0 +1,61 @@
+✔ G: walk toward the first burger and return without falling through, with and without IDDQD (20.551292ms)
+✔ G: jumping first, walking and returning retains the visible ice support (7.188708ms)
+✔ G: a descending player catches a surface belonging to a row above the feet (0.16625ms)
+✖ G: authored overhanging slope columns across the map catch descending feet (5.136584ms)
+✔ ice recovery is scoped to G and cannot create a floor in an authored void (0.864ms)
+✔ input-only IDDQD completion: stage 1, including authored next-stage transition (7.741833ms)
+✔ input-only IDDQD completion: stage 2, including authored next-stage transition (16.721083ms)
+✔ input-only IDDQD completion: stage 3, including authored next-stage transition (11.848583ms)
+✔ input-only IDDQD completion: stage 4, including authored next-stage transition (15.663125ms)
+✔ input-only IDDQD completion: stage 5, including authored next-stage transition (6.642917ms)
+✔ input-only IDDQD completion: stage 6, including authored next-stage transition (7.464375ms)
+✔ input-only IDDQD completion: stage 7, including authored next-stage transition (5.093625ms)
+✔ input-only IDDQD completion: stage 8, including authored next-stage transition (8.492625ms)
+✔ input-only IDDQD completion: stage 9, including authored next-stage transition (17.55575ms)
+✔ input-only IDDQD completion: stage A, including authored next-stage transition (1.249583ms)
+✔ input-only IDDQD completion: stage B, including authored next-stage transition (4.329959ms)
+✔ input-only IDDQD completion: stage C, including authored next-stage transition (0.747333ms)
+✔ input-only IDDQD completion: stage D, including authored next-stage transition (1.390834ms)
+✔ input-only IDDQD completion: stage E, including authored next-stage transition (0.902084ms)
+✔ input-only IDDQD completion: stage F, including authored next-stage transition (0.793042ms)
+✔ input-only IDDQD completion: stage G, including authored next-stage transition (2.2925ms)
+✔ input-only secret branch: native-gate-release-rooms-1.json (3.8045ms)
+✔ input-only secret branch: native-weather-caves-rooms-E.json (4.547084ms)
+✔ input-only secret branch: qa8g-rooms-8.json (2.827083ms)
+✔ input-only secret branch: qa25-8-lower-v2.json (4.8105ms)
+✔ input-only secret branch: qa8g-room3-edge.json (1.404542ms)
+✔ input-only secret branch: native-gate-release-bonus-2.json (4.837958ms)
+✔ input-only secret branch: qa69-bonus4-glider.json (3.469292ms)
+✔ input-only secret branch: native-bounce-corrected-bonus-C.json (4.633375ms)
+✔ presentation leaves campaign and secret-route simulation hashes unchanged (898.665166ms)
+ℹ tests 30
+ℹ suites 0
+ℹ pass 29
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1100.25125
+
+✖ failing tests:
+
+test at tests/ice-support.test.mjs:7:1
+✖ G: authored overhanging slope columns across the map catch descending feet (5.136584ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(checked>=10)
+  
+      at TestContext.<anonymous> (file:///Users/misko/Documents/ChatGPT/Prehistorik/web/tests/ice-support.test.mjs:7:646)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
