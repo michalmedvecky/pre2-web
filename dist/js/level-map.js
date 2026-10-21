@@ -2,7 +2,7 @@
 export function surveyLevel(w){
  const map=w.map.slice(),secrets=[];
  for(const b of w.blocks||[])if(b.active){map[b.pos]=b.replacement;secrets.push({x:(b.pos&255)*16,y:(b.pos>>8)*16});}
- const enemies=(w.definitions||[]).filter(d=>!d.destroyed).map(d=>({...d,sprite:d.spriteId??d.sprite}));
+ const enemies=[...(w.definitions||[]),...(w.amberActors||[])].filter(d=>!d.destroyed).map(d=>({...d,sprite:d.spriteId??d.sprite}));
  return {map,width:256*16,height:w.level.height*16,secrets,enemies,
   items:(w.items||[]).filter(i=>i.active),platforms:(w.platforms||[]).filter(p=>p.active!==false),
   gates:(w.gates||[]).filter(g=>g.active).map(g=>({x:(g.triggerTile&255)*16+8,y:(g.triggerTile>>8)*16+8})),player:{...w.player},camera:{...w.camera}};

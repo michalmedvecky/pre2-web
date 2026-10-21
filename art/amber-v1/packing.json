@@ -1,0 +1,215 @@
+{
+  "rawObjectsSHA256": "e650677db3f456da37483d04686ec6d025965cf404720d148abdd1686c431ebe",
+  "objectsSHA256": "d757692da4d80c48b994323c32c74a410599993fd9f0d7d862ea300687518080",
+  "backgroundSHA256": "db8acc61c04dc2542c0aa3eb5bdce8baff068dd0fe9a96e1748c74702efcd933",
+  "objects": [
+    {
+      "name": "root",
+      "sourceInk": [
+        16,
+        84,
+        343,
+        170
+      ],
+      "nativeSize": [
+        192,
+        64
+      ]
+    },
+    {
+      "name": "wax",
+      "sourceInk": [
+        381,
+        88,
+        332,
+        153
+      ],
+      "nativeSize": [
+        192,
+        56
+      ]
+    },
+    {
+      "name": "crown",
+      "sourceInk": [
+        735,
+        60,
+        351,
+        182
+      ],
+      "nativeSize": [
+        192,
+        64
+      ]
+    },
+    {
+      "name": "branch",
+      "sourceInk": [
+        1115,
+        79,
+        318,
+        110
+      ],
+      "nativeSize": [
+        128,
+        24
+      ]
+    },
+    {
+      "name": "spikes",
+      "sourceInk": [
+        14,
+        351,
+        348,
+        138
+      ],
+      "nativeSize": [
+        96,
+        40
+      ]
+    },
+    {
+      "name": "honey",
+      "sourceInk": [
+        381,
+        421,
+        337,
+        71
+      ],
+      "nativeSize": [
+        64,
+        12
+      ]
+    },
+    {
+      "name": "drop",
+      "sourceInk": [
+        877,
+        322,
+        209,
+        222
+      ],
+      "nativeSize": [
+        10,
+        14
+      ]
+    },
+    {
+      "name": "door",
+      "sourceInk": [
+        1117,
+        272,
+        316,
+        242
+      ],
+      "nativeSize": [
+        48,
+        64
+      ]
+    },
+    {
+      "name": "bee0",
+      "sourceInk": [
+        32,
+        543,
+        310,
+        262
+      ],
+      "nativeSize": [
+        32,
+        28
+      ]
+    },
+    {
+      "name": "bee1",
+      "sourceInk": [
+        396,
+        597,
+        314,
+        208
+      ],
+      "nativeSize": [
+        32,
+        28
+      ]
+    },
+    {
+      "name": "queen",
+      "sourceInk": [
+        759,
+        543,
+        327,
+        272
+      ],
+      "nativeSize": [
+        64,
+        60
+      ]
+    },
+    {
+      "name": "checkpoint",
+      "sourceInk": [
+        1086,
+        543,
+        329,
+        269
+      ],
+      "nativeSize": [
+        24,
+        40
+      ]
+    },
+    {
+      "name": "pot",
+      "sourceInk": [
+        126,
+        867,
+        153,
+        165
+      ],
+      "nativeSize": [
+        20,
+        24
+      ]
+    },
+    {
+      "name": "key",
+      "sourceInk": [
+        457,
+        844,
+        157,
+        190
+      ],
+      "nativeSize": [
+        20,
+        28
+      ]
+    },
+    {
+      "name": "cache",
+      "sourceInk": [
+        795,
+        853,
+        203,
+        184
+      ],
+      "nativeSize": [
+        40,
+        32
+      ]
+    },
+    {
+      "name": "lift",
+      "sourceInk": [
+        1111,
+        864,
+        316,
+        186
+      ],
+      "nativeSize": [
+        80,
+        20
+      ]
+    }
+  ]
+}

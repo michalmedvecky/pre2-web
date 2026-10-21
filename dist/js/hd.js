@@ -1,3 +1,4 @@
+import{drawAmberTerrain,drawOpenAmberDoor}from'./amber-art.js';
 import{paletteLighting,neutralLighting,lightingColor}from'./hd-lighting.js';
 import{EARLY_MATERIALS,materialFields}from'./terrain-materials.js';
 import{tileAnimation}from'./tile-animation.js';
@@ -17,7 +18,7 @@ export class HDAssets {
   const response=await fetch(new URL('manifest.json',base));if(!response.ok)throw Error('HD manifest unavailable');
   const manifest=await response.json();if(manifest.version!==1||manifest.scale!==4||!manifest.sprites||!Array.isArray(manifest.atlases))throw Error('Unsupported HD manifest');
   const images=new Map();await Promise.all(manifest.atlases.map(async a=>{const image=new Image();image.src=new URL(a.file,base);await image.decode();if(image.naturalWidth!==a.width||image.naturalHeight!==a.height)throw Error('HD atlas extent mismatch');images.set(a.id,image);}));
-  const records=[...Object.values(manifest.sprites),...Object.values(manifest.tiles||{}),...Object.values(manifest.paintTiles||{}),...Object.values(manifest.worldMaterials||{}),...Object.values(manifest.worldDecor||{}),...Object.values(manifest.backgrounds||{}),...Object.values(manifest.bonusDecor||{}),...Object.values(manifest.screens||{}),...Object.values(manifest.bossPoses||{}),...Object.values(manifest.gliderPoses||{}),...Object.values(manifest.worldPaint?.materials||{}),...Object.values(manifest.worldPaint?.objects||{}),...(manifest.worldMap?[manifest.worldMap]:[]),...(manifest.banquetMaterial?[manifest.banquetMaterial]:[])];
+  const records=[...Object.values(manifest.sprites),...Object.values(manifest.tiles||{}),...Object.values(manifest.paintTiles||{}),...Object.values(manifest.worldMaterials||{}),...Object.values(manifest.worldDecor||{}),...Object.values(manifest.backgrounds||{}),...Object.values(manifest.bonusDecor||{}),...Object.values(manifest.screens||{}),...Object.values(manifest.bossPoses||{}),...Object.values(manifest.gliderPoses||{}),...Object.values(manifest.amber?.objects||{}),...(manifest.amber?.background?[manifest.amber.background]:[]),...Object.values(manifest.worldPaint?.materials||{}),...Object.values(manifest.worldPaint?.objects||{}),...(manifest.worldMap?[manifest.worldMap]:[]),...(manifest.banquetMaterial?[manifest.banquetMaterial]:[])];
   for(const s of records){const a=manifest.atlases.find(a=>a.id===s.atlas),r=s.rect;if(!a||!r||r.length!==4||r.some(v=>!Number.isFinite(v)||v<0)||r[2]===0||r[3]===0||r[0]+r[2]>a.width||r[1]+r[3]>a.height)throw Error('Invalid HD atlas record');}
 
   return {manifest,images};
@@ -49,7 +50,7 @@ export class HDCompositor {
  sprite(word,x,y,flip,clip,source){const id=word&0x1fff,s=this.pack.manifest.sprites[id],feedback=this.feedback.image(id,source,!!(word&0x4000));if(!s&&!feedback)return false;let image=feedback||this.pack.images.get(s.atlas),rect=feedback?[0,0,feedback.width,feedback.height]:s.rect;
   if((word&0x4000)&&!feedback){if(!this.flash.has(id)){const white=document.createElement('canvas');white.width=rect[2];white.height=rect[3];const c=white.getContext('2d');c.drawImage(image,...rect,0,0,white.width,white.height);c.globalCompositeOperation='source-in';c.fillStyle='white';c.fillRect(0,0,white.width,white.height);this.flash.set(id,white);}image=this.flash.get(id);rect=[0,0,image.width,image.height];}
   const ox=flip?source.width-source.originX:source.originX,dx=x-ox,dy=y+source.originY-source.height,scale=this.scale;
-  this.clipped(clip,c=>{c.imageSmoothingEnabled=true;if(flip){c.translate((dx+source.width)*scale,dy*scale);c.scale(-1,1);c.drawImage(image,...rect,0,0,source.width*scale,source.height*scale);}else c.drawImage(image,...rect,dx*scale,dy*scale,source.width*scale,source.height*scale);});return true;
+  this.clipped(clip,c=>{c.imageSmoothingEnabled=true;if(flip){c.translate((dx+source.width)*scale,dy*scale);c.scale(-1,1);c.drawImage(image,...rect,0,0,source.width*scale,source.height*scale);}else c.drawImage(image,...rect,dx*scale,dy*scale,source.width*scale,source.height*scale);});if(id===466)drawOpenAmberDoor(this,dx,dy,source.width,source.height,clip);return true;
  }
  atlas(record,x,y,clip=176){if(!record)return false;const image=this.pack.images.get(record.atlas),scale=this.scale;this.clipped(clip,c=>{c.imageSmoothingEnabled=true;c.drawImage(image,...record.rect,x*scale,y*scale,record.width*scale,record.height*scale);});return true;}
  tile(level,bank,id,x,y,source,worldX,worldY){
@@ -80,6 +81,7 @@ export class HDCompositor {
  }
  terrain(assets,level,map,cx,cy,animation){
   this.currentTerrain={level,map,animation};
+  if(level.custom==='amber')return drawAmberTerrain(this,level,cx,cy);
   if(this.terrainLevel!==level.id){this.terrainLevel=level.id;this.terrainTextures.clear();this.paintedTerrain?.stop();this.paintedTerrain=null;}
   if(this.pack.manifest.banquetMaterial?.levels.includes(level.id)){this.banquet||=new BanquetTerrain();return this.banquet.draw(this,assets,level,map,cx,cy);}
   if(this.pack.manifest.terrainV16?.levels.includes(level.id)){this.paintedTerrain||=new PaintedTerrain();return this.paintedTerrain.draw(this,assets,level,map,cx,cy,animation);}

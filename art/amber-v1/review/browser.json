@@ -1,0 +1,263 @@
+{
+  "chromium": {
+    "inputOnlyRoute": {
+      "ticks": 1380,
+      "samples": [
+        {
+          "tick": 200,
+          "x": 703,
+          "y": 382,
+          "hp": 3,
+          "queen": 6,
+          "hash": "4772f673"
+        },
+        {
+          "tick": 400,
+          "x": 1211,
+          "y": 314,
+          "hp": 3,
+          "queen": 6,
+          "hash": "787bd229"
+        },
+        {
+          "tick": 600,
+          "x": 2092,
+          "y": 352,
+          "hp": 3,
+          "queen": 6,
+          "hash": "48d45fa3"
+        },
+        {
+          "tick": 800,
+          "x": 2788,
+          "y": 336,
+          "hp": 3,
+          "queen": 6,
+          "hash": "0d819cf2"
+        },
+        {
+          "tick": 1000,
+          "x": 3619,
+          "y": 352,
+          "hp": 3,
+          "queen": 6,
+          "hash": "7ceaf437"
+        },
+        {
+          "tick": 1200,
+          "x": 3654,
+          "y": 337,
+          "hp": 2,
+          "queen": 3,
+          "hash": "78caa6bc"
+        },
+        {
+          "tick": 1380,
+          "x": 3971,
+          "y": 352,
+          "hp": 2,
+          "queen": 0,
+          "hash": "d3336f37",
+          "transition": "custom-complete"
+        }
+      ],
+      "parity": true
+    },
+    "keyboard": {
+      "jump": {
+        "y": 186,
+        "recorded": [
+          0,
+          68,
+          68,
+          68,
+          68,
+          68,
+          68,
+          68,
+          68,
+          68,
+          68,
+          68
+        ]
+      },
+      "weapons": [
+        {
+          "code": "IDHAMMER",
+          "weapon": 1,
+          "graphics": "hd",
+          "state": "play"
+        },
+        {
+          "code": "IDTOMAHAWK",
+          "weapon": 2,
+          "graphics": "hd",
+          "state": "play"
+        },
+        {
+          "code": "IDAXE",
+          "weapon": 3,
+          "graphics": "hd",
+          "state": "play"
+        },
+        {
+          "code": "IDCLUB",
+          "weapon": 0,
+          "graphics": "hd",
+          "state": "play"
+        }
+      ]
+    },
+    "errors": [],
+    "touch": {
+      "stage": "H",
+      "graphics": "hd",
+      "viewport": [
+        844,
+        390
+      ],
+      "canvas": {
+        "x": 0,
+        "y": 0,
+        "width": 844,
+        "height": 390,
+        "top": 0,
+        "right": 844,
+        "bottom": 390,
+        "left": 0
+      },
+      "fullscreen": true
+    }
+  },
+  "webkit": {
+    "inputOnlyRoute": {
+      "ticks": 1380,
+      "samples": [
+        {
+          "tick": 200,
+          "x": 703,
+          "y": 382,
+          "hp": 3,
+          "queen": 6,
+          "hash": "4772f673"
+        },
+        {
+          "tick": 400,
+          "x": 1211,
+          "y": 314,
+          "hp": 3,
+          "queen": 6,
+          "hash": "787bd229"
+        },
+        {
+          "tick": 600,
+          "x": 2092,
+          "y": 352,
+          "hp": 3,
+          "queen": 6,
+          "hash": "48d45fa3"
+        },
+        {
+          "tick": 800,
+          "x": 2788,
+          "y": 336,
+          "hp": 3,
+          "queen": 6,
+          "hash": "0d819cf2"
+        },
+        {
+          "tick": 1000,
+          "x": 3619,
+          "y": 352,
+          "hp": 3,
+          "queen": 6,
+          "hash": "7ceaf437"
+        },
+        {
+          "tick": 1200,
+          "x": 3654,
+          "y": 337,
+          "hp": 2,
+          "queen": 3,
+          "hash": "78caa6bc"
+        },
+        {
+          "tick": 1380,
+          "x": 3971,
+          "y": 352,
+          "hp": 2,
+          "queen": 0,
+          "hash": "d3336f37",
+          "transition": "custom-complete"
+        }
+      ],
+      "parity": true
+    },
+    "keyboard": {
+      "jump": {
+        "y": 174,
+        "recorded": [
+          0,
+          68,
+          68,
+          68,
+          68,
+          68,
+          68,
+          68,
+          68,
+          68,
+          68,
+          68,
+          68
+        ]
+      },
+      "weapons": [
+        {
+          "code": "IDHAMMER",
+          "weapon": 1,
+          "graphics": "hd",
+          "state": "play"
+        },
+        {
+          "code": "IDTOMAHAWK",
+          "weapon": 2,
+          "graphics": "hd",
+          "state": "play"
+        },
+        {
+          "code": "IDAXE",
+          "weapon": 3,
+          "graphics": "hd",
+          "state": "play"
+        },
+        {
+          "code": "IDCLUB",
+          "weapon": 0,
+          "graphics": "hd",
+          "state": "play"
+        }
+      ]
+    },
+    "errors": [],
+    "touch": {
+      "stage": "H",
+      "graphics": "hd",
+      "viewport": [
+        844,
+        390
+      ],
+      "canvas": {
+        "x": 0,
+        "y": 0,
+        "width": 843.984375,
+        "height": 390,
+        "top": 0,
+        "right": 843.984375,
+        "bottom": 390,
+        "left": 0
+      },
+      "fullscreen": false
+    }
+  }
+}

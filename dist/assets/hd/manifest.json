@@ -1057,6 +1057,20 @@
       "height": 1024,
       "kind": "complete-glider-poses",
       "sha256": "340d6006c1601d4ab22c859ec0b83e835a523b7ad3d126eb8a5dc596194b5982"
+    },
+    {
+      "id": "amber-objects",
+      "file": "amber-objects.png",
+      "width": 2048,
+      "height": 2048,
+      "sha256": "d757692da4d80c48b994323c32c74a410599993fd9f0d7d862ea300687518080"
+    },
+    {
+      "id": "amber-background",
+      "file": "amber-background.png",
+      "width": 2172,
+      "height": 724,
+      "sha256": "db8acc61c04dc2542c0aa3eb5bdce8baff068dd0fe9a96e1748c74702efcd933"
     }
   ],
   "sprites": {
@@ -7604,6 +7618,156 @@
       "role": "enemy-component",
       "sourceCell": 5,
       "dimensionality": "2d"
+    },
+    "460": {
+      "atlas": "amber-objects",
+      "rect": [
+        0,
+        1024,
+        128,
+        112
+      ],
+      "width": 32,
+      "height": 28,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 460,
+      "role": "amber-original"
+    },
+    "461": {
+      "atlas": "amber-objects",
+      "rect": [
+        512,
+        1024,
+        128,
+        112
+      ],
+      "width": 32,
+      "height": 28,
+      "originX": 16,
+      "originY": 0,
+      "sourceSprite": 461,
+      "role": "amber-original"
+    },
+    "462": {
+      "atlas": "amber-objects",
+      "rect": [
+        1024,
+        1024,
+        256,
+        240
+      ],
+      "width": 64,
+      "height": 60,
+      "originX": 32,
+      "originY": 0,
+      "sourceSprite": 462,
+      "role": "amber-original"
+    },
+    "463": {
+      "atlas": "amber-objects",
+      "rect": [
+        1536,
+        1536,
+        320,
+        80
+      ],
+      "width": 80,
+      "height": 20,
+      "originX": 40,
+      "originY": 0,
+      "sourceSprite": 463,
+      "role": "amber-original"
+    },
+    "464": {
+      "atlas": "amber-objects",
+      "rect": [
+        1024,
+        512,
+        40,
+        56
+      ],
+      "width": 10,
+      "height": 14,
+      "originX": 5,
+      "originY": 0,
+      "sourceSprite": 464,
+      "role": "amber-original"
+    },
+    "465": {
+      "atlas": "amber-objects",
+      "rect": [
+        1536,
+        512,
+        192,
+        256
+      ],
+      "width": 48,
+      "height": 64,
+      "originX": 24,
+      "originY": 0,
+      "sourceSprite": 465,
+      "role": "amber-original"
+    },
+    "466": {
+      "atlas": "amber-objects",
+      "rect": [
+        1536,
+        512,
+        192,
+        256
+      ],
+      "width": 48,
+      "height": 64,
+      "originX": 24,
+      "originY": 0,
+      "sourceSprite": 466,
+      "role": "amber-original"
+    },
+    "467": {
+      "atlas": "amber-objects",
+      "rect": [
+        512,
+        1536,
+        80,
+        112
+      ],
+      "width": 20,
+      "height": 28,
+      "originX": 10,
+      "originY": 0,
+      "sourceSprite": 467,
+      "role": "amber-original"
+    },
+    "468": {
+      "atlas": "amber-objects",
+      "rect": [
+        1536,
+        1024,
+        96,
+        160
+      ],
+      "width": 24,
+      "height": 40,
+      "originX": 12,
+      "originY": 0,
+      "sourceSprite": 468,
+      "role": "amber-original"
+    },
+    "469": {
+      "atlas": "amber-objects",
+      "rect": [
+        0,
+        1536,
+        80,
+        96
+      ],
+      "width": 20,
+      "height": 24,
+      "originX": 10,
+      "originY": 0,
+      "sourceSprite": 469,
+      "role": "amber-original"
     }
   },
   "future3D": {
@@ -65255,6 +65419,197 @@
       "height": 62,
       "originX": 22,
       "originY": 0
+    }
+  },
+  "amber": {
+    "objects": {
+      "root": {
+        "atlas": "amber-objects",
+        "rect": [
+          0,
+          0,
+          500,
+          256
+        ],
+        "width": 192,
+        "height": 64
+      },
+      "wax": {
+        "atlas": "amber-objects",
+        "rect": [
+          512,
+          0,
+          500,
+          224
+        ],
+        "width": 192,
+        "height": 56
+      },
+      "crown": {
+        "atlas": "amber-objects",
+        "rect": [
+          1024,
+          0,
+          500,
+          256
+        ],
+        "width": 192,
+        "height": 64
+      },
+      "branch": {
+        "atlas": "amber-objects",
+        "rect": [
+          1536,
+          0,
+          500,
+          96
+        ],
+        "width": 128,
+        "height": 24
+      },
+      "spikes": {
+        "atlas": "amber-objects",
+        "rect": [
+          0,
+          512,
+          384,
+          160
+        ],
+        "width": 96,
+        "height": 40
+      },
+      "honey": {
+        "atlas": "amber-objects",
+        "rect": [
+          512,
+          512,
+          256,
+          48
+        ],
+        "width": 64,
+        "height": 12
+      },
+      "drop": {
+        "atlas": "amber-objects",
+        "rect": [
+          1024,
+          512,
+          40,
+          56
+        ],
+        "width": 10,
+        "height": 14
+      },
+      "door": {
+        "atlas": "amber-objects",
+        "rect": [
+          1536,
+          512,
+          192,
+          256
+        ],
+        "width": 48,
+        "height": 64
+      },
+      "bee0": {
+        "atlas": "amber-objects",
+        "rect": [
+          0,
+          1024,
+          128,
+          112
+        ],
+        "width": 32,
+        "height": 28
+      },
+      "bee1": {
+        "atlas": "amber-objects",
+        "rect": [
+          512,
+          1024,
+          128,
+          112
+        ],
+        "width": 32,
+        "height": 28
+      },
+      "queen": {
+        "atlas": "amber-objects",
+        "rect": [
+          1024,
+          1024,
+          256,
+          240
+        ],
+        "width": 64,
+        "height": 60
+      },
+      "checkpoint": {
+        "atlas": "amber-objects",
+        "rect": [
+          1536,
+          1024,
+          96,
+          160
+        ],
+        "width": 24,
+        "height": 40
+      },
+      "pot": {
+        "atlas": "amber-objects",
+        "rect": [
+          0,
+          1536,
+          80,
+          96
+        ],
+        "width": 20,
+        "height": 24
+      },
+      "key": {
+        "atlas": "amber-objects",
+        "rect": [
+          512,
+          1536,
+          80,
+          112
+        ],
+        "width": 20,
+        "height": 28
+      },
+      "cache": {
+        "atlas": "amber-objects",
+        "rect": [
+          1024,
+          1536,
+          160,
+          128
+        ],
+        "width": 40,
+        "height": 32
+      },
+      "lift": {
+        "atlas": "amber-objects",
+        "rect": [
+          1536,
+          1536,
+          320,
+          80
+        ],
+        "width": 80,
+        "height": 20
+      }
+    },
+    "background": {
+      "atlas": "amber-background",
+      "rect": [
+        0,
+        0,
+        2172,
+        724
+      ],
+      "width": 1536,
+      "height": 512
     }
   }
 }

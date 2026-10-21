@@ -1,6 +1,6 @@
 import{bonusProfile}from'./bonus-support.js';
 // Presentation only: the DOS-rate world and its camera still control all rules.
-const layers=['platforms','items','actors','bossParts','projectiles','effects','ropePoints'];
+const layers=['platforms','items','actors','bossParts','projectiles','effects','ropePoints','amberActors'];
 const position=o=>({x:o.x,y:o.y});
 const mix=(a,b,t)=>a+(b-a)*t;
 // 0x16821 deliberately divides x&15 by three. Keep that in physics, but

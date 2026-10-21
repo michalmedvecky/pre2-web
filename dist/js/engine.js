@@ -1,3 +1,4 @@
+import{initAmber,amberPersistence,beforeAmberPlayer,updateAmber,amberState}from'./amber-level.js';
 import{bonusProfile}from'./bonus-support.js';
 import {createTally,advanceTally} from './stage-tally.js';
 import {initEnvironment,updateMovingBlocks,updateWeather,updateScreenShake} from './environment.js';
@@ -38,11 +39,11 @@ export class World {
     this.platforms=this.level.platforms.filter(d=>d.active).map(d=>this.makePlatform(d));
     initEnvironment(this);
     const footer=this.assets.footers[this.level.id];this.blocks=this.level.secrets.filter(d=>d.active && (d.raw[3]!==255 || d.raw[4]!==255)).map(d=>{const pos=d.raw[3]|d.raw[4]<<8,replacement=this.map[pos];this.map[pos]=d.raw[0];return {index:d.index,concealedTile:d.raw[0],replacement,durability:d.raw[2],pos,active:true,hitAt:-999};});
-    this.totalBlocks=this.blocks.length;this.totalFood=this.items.filter(d=>isScorePickup(d.sprite)).length;
+    this.totalBlocks=this.blocks.length;this.totalFood=this.items.filter(d=>isScorePickup(d.sprite)||d.amberFood).length;
     this.player={x:this.level.start.x,y:this.level.start.y,vx:0,vy:0,face:1,sprite:9,action:-1,animationVariant:-1,walkHistory:0,runTimer:0,glideMode:0,glideEnergy:0,formAngle:this.formAngle??this.byte(0x7b16),lastGroundY:this.level.start.y,landingShake:0,platformGrip:false,attackActive:false,attackAction:3,anim:0,jumpFrame:0,jumpLock:0,fallFrames:0,grounded:false,speedShift:0,invulnerable:0,attackTimer:0,attackCooldown:0,downTimer:0,powerTimer:0,look:false};
     this.checkpoint={x:this.player.x,y:this.player.y};this.camera={x:clamp((Math.floor(this.player.x/16)-10)*16,0,this.maxCameraX()),y:clamp(this.word(0x815a)*16,0,this.maxCameraY())};
     if(prior){this.restorePersistence(prior);Object.assign(this.player,this.checkpoint,{vx:0,vy:0,invulnerable:24});this.camera.y=clamp((Math.floor(this.player.y/16)-8)*16,0,this.maxCameraY());this.camera.x=clamp((Math.floor(this.player.x/16)-10)*16,0,this.maxCameraX());}
-    this.initBosses();this.animatePlayer(0);this.emit('level',{index,id:this.level.id,restart});
+    this.initBosses();initAmber(this,prior?.amber);this.animatePlayer(0);this.emit('level',{index,id:this.level.id,restart});
   }
   // 0x13849: advance only while animated tiles are in the 20x11 cache view.
   updateTileAnimation(){const {animated}=tileAnimation(this.level);const tx=this.camera.x>>4,ty=this.camera.y>>4;let visible=false;
@@ -51,8 +52,8 @@ export class World {
   }
   maxCameraX(){return Math.max(0,Math.min(this.level.scrollLimit||236,236)*16);}
   maxCameraY(){return Math.max(0,this.level.height*16-176);}
-  capturePersistence(){return {checkpoint:{...this.checkpoint},items:this.items.filter(i=>!i.active).map(i=>i.index),blocks:this.blocks.filter(b=>!b.active).map(b=>b.index),weapon:this.weapon};}
-  restorePersistence(s){this.checkpoint=s.checkpoint;this.weapon=s.weapon;for(const i of this.items){const c=(i.originalSprite&0x1fff)-0x35;if(s.items.includes(i.index)&&!RESPAWN_ITEM_CLASSES.has(c))i.active=false;}for(const b of this.blocks)if(s.blocks.includes(b.index)){b.active=false;this.map[b.pos]=b.replacement;}}
+  capturePersistence(){return {checkpoint:{...this.checkpoint},items:this.items.filter(i=>!i.active).map(i=>i.index),blocks:this.blocks.filter(b=>!b.active).map(b=>b.index),weapon:this.weapon,...(this.amber?{amber:amberPersistence(this)}:{})};}
+  restorePersistence(s){if(this.level.custom==='amber'&&s.amber)initAmber(this,s.amber);this.checkpoint=s.checkpoint;this.weapon=s.weapon;for(const i of this.items){const c=(i.originalSprite&0x1fff)-0x35;if(s.items.includes(i.index)&&!RESPAWN_ITEM_CLASSES.has(c))i.active=false;}for(const b of this.blocks)if(s.blocks.includes(b.index)){b.active=false;this.map[b.pos]=b.replacement;}if(this.level.custom==='amber')this.collectedAuthoredFood=this.items.filter(i=>i.authored&&i.amberFood&&!i.active).length;}
   tile(x,y){const tx=Math.floor(x/16),ty=Math.floor(y/16);if(tx<0||tx>=256||ty<0||ty>=this.level.height)return 0;return this.map[(ty<<8)|tx];}
   tilePos(x,y){return((Math.floor(y/16)&255)<<8)|(Math.floor(x/16)&255);}
   prop(kind,tile){return this.level[kind][tile]||0;}
@@ -105,6 +106,7 @@ export class World {
   applyWind(){this.player.vx=Math.max(-96,s16(this.player.vx-(u16(this.wind)>>>3)));}
   gravity(){const p=this.player,slow=p.glideMode===1;p.vy=Math.min(s16(p.vy+(slow?4:16)),slow?24:192);}
   step(input={}){
+    if(input.highJump)input={...input,up:true};
     this.presentationTicks=u16(this.presentationTicks+3);this.events=[];this.input=input;this.recorded.push(inputMask(input));if(this.recorded.length>60000)this.recorded.shift();this.frame=u16(this.frame+1);
     const previousShakeNudge=this.shakePlayerNudge||0;this.screenShake=this.nextScreenShake;this.shakePlayerNudge=0;
     if(this.gateDownConsumed&&!input.down){this.gateDownConsumed=false;this.player.downTimer=0;}
@@ -112,13 +114,13 @@ export class World {
     if(this.deathTimer){this.updateEffects();updateWeather(this);this.player.vy+=8;this.player.y+=sar4(this.player.vy);if(--this.deathTimer===0){if(this.lives>0){this.lives--;this.loadLevel(this.levelIndex,{restart:true});}else{this.transition={type:'gameover',delay:1};this.transitionTimer=0;}}return;}
     if(this.collectionFlash)this.collectionFlash--;if(this.blockCooldown)this.blockCooldown--;if(this.sceneFlash)this.sceneFlash--;if(this.weaponPower)this.weaponPower--;
     // Original broad update order: actors, effects, player, interactions, world changes, presentation counter.
-    for(const a of this.actors)a.hitFlash=false;this.checkEnemyAttacks();this.checkBlocks();this.updateBosses();this.updateActors();this.spawnActors();this.updatePlatforms();this.updateEffects();this.updateProjectiles();this.stepPlayer(input,previousShakeNudge);if(this.enemyPowerTimer)this.enemyPowerTimer--;this.checkActorDamage();this.checkPickups();this.updateFollowParticles();this.updatePalette();this.checkGates();updateMovingBlocks(this);this.updateCamera();this.updateTileAnimation();updateWeather(this);
+    for(const a of this.actors)a.hitFlash=false;this.checkEnemyAttacks();this.checkBlocks();this.updateBosses();this.updateActors();this.spawnActors();this.updatePlatforms();this.updateEffects();this.updateProjectiles();beforeAmberPlayer(this);this.stepPlayer(input,previousShakeNudge);if(this.enemyPowerTimer)this.enemyPowerTimer--;this.checkActorDamage();updateAmber(this);this.checkPickups();this.updateFollowParticles();this.updatePalette();this.checkGates();updateMovingBlocks(this);this.updateCamera();this.updateTileAnimation();updateWeather(this);
     if(this.levelIndex===14&&this.player.y>(this.level.height+1)*16)this.finish('ending');
     else if(this.player.y>this.level.height*16+32||this.player.y< -320||
       // Fixed cave views may have more map below them. IDDQD must rescue a
       // fallen, fully hidden player there too, even if a lower floor stops them.
       (this.godMode&&(this.gateCameraFlag||this.levelIndex===9)&&this.player.vy>=0&&this.spriteBounds(this.player).top>=this.camera.y+176))this.loseLife();
-    for(const i of this.items)if(i.active&&!(this.frame&1)){i.bob=(i.bob||0)+1;if(i.bob>=4)i.bob=-i.bob+1;i.y+=i.bob;}
+    for(const i of this.items)if(i.active&&!i.amberCheckpoint&&!i.amberExit&&!(this.frame&1)){i.bob=(i.bob||0)+1;if(i.bob>=4)i.bob=-i.bob+1;i.y+=i.bob;}
     if(this.player.invulnerable)this.player.invulnerable--;if(this.power)this.power--;updateScreenShake(this);
     const q=Math.floor((this.score>>>0)/25000);while(this.extraLifeQuotient<q){this.extraLifeQuotient++;this.lives=Math.min(99,this.lives+1);this.emit('sfx',{index:4});this.floatText('1UP',this.player.x,this.player.y-38,0xe3);}
     // Pickups request completion before the last camera update of this frame.
@@ -135,6 +137,8 @@ export class World {
     }
     p.attackFrame=false;this.input=input;const oldX=p.x,oldY=p.y;
     if(input.right&&!input.left)p.face=1;else if(input.left&&!input.right)p.face=-1;
+    const highPressed=!!input.highJump&&!p.highJumpHeld;p.highJumpHeld=!!input.highJump;
+    if(highPressed&&p.grounded&&!this.alternate&&p.invulnerable<22&&!p.attackActive){p.vy=-224;p.jumpFrame=0;p.jumpLock=0;p.grounded=false;p.platformGrip=false;p.fallFrames=0;this.emit('sfx',{index:3});}
     const hurt=p.invulnerable>=22;
     let action=p.attackCooldown?0:ACTIONS[actionIndex(input)];if(hurt)action=8;
     const alternate=this.alternate;
@@ -264,6 +268,11 @@ export class World {
       a.x=s16(a.x+sar4(a.vx));a.y=s16(a.y+sar4(a.vy));this.nextAnimation(a);a.sprite|=a.face<0?0x8000:0;
       a.vy=s16(a.vy+(a.mode===1?-16:32));
     }this.projectiles=this.projectiles.filter(a=>a.ttl>0);}
+  equipWeapon(index){
+    if(!Number.isInteger(index)||index<0||index>=WEAPON.length||this.transition||this.deathTimer)return false;
+    this.weapon=index;const p=this.player;Object.assign(p,{attackActive:false,attackFrame:false,attackCooldown:0,attackTimer:0,animationVariant:-1});
+    this.projectiles=this.projectiles.filter(s=>!s.contact);if(!this.alternate){this.playerWeapon=null;this.updatePlayerWeapon();}this.emit('weapon',{weapon:index,cheat:true});return true;
+  }
   toggleGodMode(){this.godMode=!this.godMode;if(this.godMode){this.player.invulnerable=0;if(this.deathTimer){this.deathTimer=0;this.rescuePlayer();}}this.emit('cheat',{code:'IDDQD',enabled:this.godMode});return this.godMode;}
   toggleSecretHints(){this.secretHints=!this.secretHints;this.emit('cheat',{code:'IDKFA',enabled:this.secretHints});return this.secretHints;}
   // IDDQD rescue is a fresh player/controller pose within the existing world.
@@ -320,7 +329,12 @@ export class World {
   scatterHealth(count=6*this.health+this.foodHealth){if(this.godMode)return;this.health=0;this.foodHealth=0;if(count)this.spawnFragments(this.player.x,this.player.y-48,0x2046,48,-128,count,{collectible:true});}
   randomFood(x,y,vx,vy){let n;do{n=this.rng.next()&127;}while(n>=95);this.spawnFragments(x,y,0x2080+n,vx,vy,1,{collectible:true});}
   discardRuntimePickup(i){if(i.authored)return false;i.active=false;return true;}
-  pickup(i){const sprite=i.sprite&0x1fff,c=sprite-0x35;let sound=null;
+  pickup(i){
+    if(i.amberFood){const result=this.pickup({...i,sprite:132,amberFood:false});if(result)i.active=false;return result;}
+    if(i.amberKey){i.active=false;this.inventory2|=2;this.unlockExits();for(const exit of this.items)if(exit.amberExit)exit.sprite=466;this.emit('sfx',{index:8});return true;}
+    if(i.amberCheckpoint){if(!i.checkpointLit){this.checkpoint={x:i.x,y:i.baseY??i.y};for(const c of this.items)if(c.amberCheckpoint)c.checkpointLit=c===i;this.emit('sfx',{index:8});this.emit('checkpoint');}return false;}
+    if(i.amberExit){if(this.inventory2&2){i.active=false;this.complete('special');return true;}return false;}
+    const sprite=i.sprite&0x1fff,c=sprite-0x35;let sound=null;
     if(this.godMode&&[458,459,220,221].includes(sprite)){i.active=false;return true;}
     if(sprite===0x1ca||sprite===0x1cb){if(this.health===0)this.loseLife();else{const remaining=this.health-1;this.scatterHealth(6+this.foodHealth);this.health=remaining;this.player.invulnerable=44;this.player.attackActive=false;this.player.animationVariant=-1;this.emit('sfx',{index:1});}i.active=false;return true;}
     if(c===258){i.active=false;this.complete('bonus');return true;}if(c===226){i.active=false;this.complete('special');return true;}
@@ -540,7 +554,7 @@ export class World {
     c.x=clamp(c.x+clamp(tx-c.x,-16,16),0,this.maxCameraX());c.y=clamp(c.y+clamp(ty-c.y,-16,16),0,this.maxCameraY());
   }
   complete(kind){
-    if(this.transition)return;
+    if(this.transition)return;if(this.level.custom==='amber'){this.finish('custom-complete');return;}
     const next=exitDestination(this.levelIndex,kind),pct=completionPercent(this.brokenBlocks,this.collectedAuthoredFood,this.totalBlocks,this.totalFood);
     this.transition={type:'complete',next,percent:pct,delay:58,bonus:this.collectedFood,kind};
     // 0x18a54 remaps flag-1 doors before 0x14e5d tests level<10.
@@ -554,5 +568,5 @@ export class World {
   finish(type){if(this.transition)return;this.transition={type,delay:36};this.transitionTimer=0;this.emit(type);}
   advance(){if(!this.transition?.ready)return;const t=this.transition;if(t.type==='complete'){if(t.next>=this.assets.game.levels.length){this.transition=null;this.finish('ending');return;}const ledger=t.tally?null:this.foodCounts.slice();this.loadLevel(t.next);if(ledger)this.foodCounts.set(ledger);}else this.emit('finish',{type:t.type});}
   snapshot(){const p=this.player;return {level:this.levelIndex,frame:this.frame,x:p.x,y:p.y,vx:p.vx,vy:p.vy,sprite:p.sprite,grounded:p.grounded,playerState:[p.action,p.animationVariant,p.anim,p.marker||0,p.jumpFrame,p.jumpLock,p.fallFrames,p.lastGroundY,p.attackActive?1:0,p.attackCooldown,p.invulnerable,p.glideMode,p.glideEnergy,p.formAngle,p.runTimer,this.alternate?1:0,this.power,this.presentationTicks,this.godMode?1:0,p.platformId??-1],environmentState:[this.weatherTime,this.weather,this.weatherPointer,this.screenShake,this.nextScreenShake,this.shakePlayerNudge,this.player.landingShake,+this.gateDownConsumed,...this.rainSeeds,...this.movingBlocks.flatMap(b=>[b.index,b.pos,b.trigger,b.remaining])],platformState:this.platforms.flatMap(q=>[q.index,q.x,q.y,q.active?1:0,...q.raw.slice(6)]),projectiles:this.projectiles.map(a=>[a.x,a.y,a.vx,a.vy,a.sprite,a.anim||0,a.ttl]),score:this.score,health:this.health,lives:this.lives,actors:this.actors.map(a=>[a.x,a.y,a.sprite,a.hp,a.state]),rng:[this.rng.a,this.rng.b,this.rng.c,this.rng.w,this.rng.secondary],bossState:bosses.snapshot(this),camera:[this.camera.x,this.camera.y],collected:this.items.filter(i=>!i.active).map(i=>i.index),blocks:this.blocks.filter(b=>!b.active).map(b=>b.index),transition:this.transition?.type||null};}
-  stateHash(){const s=this.snapshot();return fnv1a([s.level,s.frame,s.x,s.y,s.vx,s.vy,s.sprite,s.score,s.health,s.lives,...s.rng,...s.bossState,...s.environmentState,...s.platformState,...s.camera,...s.playerState,...s.projectiles.flat(),...s.actors.flat(),...s.collected,...s.blocks]);}
+  stateHash(){const s=this.snapshot();return fnv1a([s.level,s.frame,s.x,s.y,s.vx,s.vy,s.sprite,s.score,s.health,s.lives,...s.rng,...s.bossState,...s.environmentState,...s.platformState,...s.camera,...s.playerState,...s.projectiles.flat(),...s.actors.flat(),...s.collected,...s.blocks,...(this.player.highJumpHeld?[64]:[]),...amberState(this)]);}
 }

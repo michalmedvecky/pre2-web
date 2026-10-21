@@ -1,0 +1,331 @@
+{
+  "files": 54,
+  "all_unchanged": true,
+  "extra_files": [],
+  "results": [
+    {
+      "path": "prehistorik-2_1993/558BYTES.NFO",
+      "expected": "0472237b612ef017dc9875efa55fa9e51a26b2c6e599a7c84dfa64a8b1cad228",
+      "actual": "0472237b612ef017dc9875efa55fa9e51a26b2c6e599a7c84dfa64a8b1cad228",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/ALLFONTS.SQZ",
+      "expected": "1d2816450dc5364970bdd946f0ce19a25aec61947ce799533fa7d3c341e30f21",
+      "actual": "1d2816450dc5364970bdd946f0ce19a25aec61947ce799533fa7d3c341e30f21",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/BACK0.SQZ",
+      "expected": "82f182c1c310a252d5b6cf8cd06b0f0a0e6d2c18ed79aa17bcd52b7b29269773",
+      "actual": "82f182c1c310a252d5b6cf8cd06b0f0a0e6d2c18ed79aa17bcd52b7b29269773",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/BACK1.SQZ",
+      "expected": "9bc41189d6f67abf3ab89860a55d67e957c8948af55a0cc2367f540e2887c8ef",
+      "actual": "9bc41189d6f67abf3ab89860a55d67e957c8948af55a0cc2367f540e2887c8ef",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/BACK2.SQZ",
+      "expected": "67b033452db693c21eec33b41eb8b2c93669994efa13a8bd169eccd91d978336",
+      "actual": "67b033452db693c21eec33b41eb8b2c93669994efa13a8bd169eccd91d978336",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/BACK3.SQZ",
+      "expected": "d1c73b8ebb6ad1aefabd97ee489f6edce5fb66aa1ff7bb989e1772f2de198d2e",
+      "actual": "d1c73b8ebb6ad1aefabd97ee489f6edce5fb66aa1ff7bb989e1772f2de198d2e",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/BACK4.SQZ",
+      "expected": "96bf56446fdfb7da51aeca9c9889290c405b85d042687c555c23b9b032f82264",
+      "actual": "96bf56446fdfb7da51aeca9c9889290c405b85d042687c555c23b9b032f82264",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/BACK5.SQZ",
+      "expected": "e369e6e41299e10068b8d8efdf087f486447d50b734ec43403d70432f4dbfd8a",
+      "actual": "e369e6e41299e10068b8d8efdf087f486447d50b734ec43403d70432f4dbfd8a",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/BOULA.TRK",
+      "expected": "032289f344d0b9aaccd76aaf353f3ebb1f417fed83d057cf55e73ed58103476c",
+      "actual": "032289f344d0b9aaccd76aaf353f3ebb1f417fed83d057cf55e73ed58103476c",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/BRAVO.TRK",
+      "expected": "52d9ad5a31df5bd33bf9ef02ca892962135002ee2ce4848a6100f428d22a8703",
+      "actual": "52d9ad5a31df5bd33bf9ef02ca892962135002ee2ce4848a6100f428d22a8703",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/CARTE.TRK",
+      "expected": "fa9daf1da2952cfabbca0eb98953bdfd327537e6b00e011f6e4860b57bc25793",
+      "actual": "fa9daf1da2952cfabbca0eb98953bdfd327537e6b00e011f6e4860b57bc25793",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/CASTLE.SQZ",
+      "expected": "70fded89bd9458b768ad90802ea2fbeb38032a1b7a162338769d9ba7564e784d",
+      "actual": "70fded89bd9458b768ad90802ea2fbeb38032a1b7a162338769d9ba7564e784d",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/CODE.TRK",
+      "expected": "32d588e1057cf1fe854e698cf20662d6679bcdb9d6cc5b6e1ea1c5dbb9704e1e",
+      "actual": "32d588e1057cf1fe854e698cf20662d6679bcdb9d6cc5b6e1ea1c5dbb9704e1e",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/FINAL.TRK",
+      "expected": "0b4c1d9f167172fb79886a668ddc423c09dbee7be8960f7ef3c4154f60eff664",
+      "actual": "0b4c1d9f167172fb79886a668ddc423c09dbee7be8960f7ef3c4154f60eff664",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/FRONT.SQZ",
+      "expected": "e552bfbf6d7c9033a99b29fb58ab6c2f83eb59ed05871fac8d95e874876c902a",
+      "actual": "e552bfbf6d7c9033a99b29fb58ab6c2f83eb59ed05871fac8d95e874876c902a",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/GAMEOVER.SQZ",
+      "expected": "18e4cdf0719bba85cec912041454b739c94608d90e97d70ae928bdfe0cc6c0f2",
+      "actual": "18e4cdf0719bba85cec912041454b739c94608d90e97d70ae928bdfe0cc6c0f2",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/GLACE.TRK",
+      "expected": "9d5f26ca38247382f213518107c9ea687957a1d0d0422d510bff46e6c3834482",
+      "actual": "9d5f26ca38247382f213518107c9ea687957a1d0d0422d510bff46e6c3834482",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/KEYB.SQZ",
+      "expected": "8fdb04aa361f0f1fec6b449b0ac328b32b72798af22c106fe91583a4119d6d63",
+      "actual": "8fdb04aa361f0f1fec6b449b0ac328b32b72798af22c106fe91583a4119d6d63",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/KOOL.TRK",
+      "expected": "c13d730754fdcb3e86e9e2248c8c3b224a2adeb1fcd9b3ac2ad9f78fef6b566a",
+      "actual": "c13d730754fdcb3e86e9e2248c8c3b224a2adeb1fcd9b3ac2ad9f78fef6b566a",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/LEVEL1.SQZ",
+      "expected": "750c7472958155e0d86a6f43d79e95cfa2ef5168e8e7b974139ca984fd3453ea",
+      "actual": "750c7472958155e0d86a6f43d79e95cfa2ef5168e8e7b974139ca984fd3453ea",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/LEVEL2.SQZ",
+      "expected": "85f3d989dc45cfc71cde9bd0a3eb6fcb7cb8cdfeb30bf9399d8e4bd4390da646",
+      "actual": "85f3d989dc45cfc71cde9bd0a3eb6fcb7cb8cdfeb30bf9399d8e4bd4390da646",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/LEVEL3.SQZ",
+      "expected": "d42ddc604df6c2d1abe5c006ac07cb9529ef1db4f0c42b84e2ca4a41137972c6",
+      "actual": "d42ddc604df6c2d1abe5c006ac07cb9529ef1db4f0c42b84e2ca4a41137972c6",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/LEVEL4.SQZ",
+      "expected": "f2c043327f55753bbc80b551121bd9b2b8642a23eef9ab7adcdc06dbcfa9b2ef",
+      "actual": "f2c043327f55753bbc80b551121bd9b2b8642a23eef9ab7adcdc06dbcfa9b2ef",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/LEVEL5.SQZ",
+      "expected": "1aa68ede85d44f9bd089b719792aba6adbb49916e15348a6b9e31e7a86e32fb0",
+      "actual": "1aa68ede85d44f9bd089b719792aba6adbb49916e15348a6b9e31e7a86e32fb0",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/LEVEL6.SQZ",
+      "expected": "3277b17201a829742aec7651dd882279749a7875e843933a9edc8919eadac1b5",
+      "actual": "3277b17201a829742aec7651dd882279749a7875e843933a9edc8919eadac1b5",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/LEVEL7.SQZ",
+      "expected": "c83cef14e0b942fc8c816c85ce404b2491496517c688714df6b81503666c3063",
+      "actual": "c83cef14e0b942fc8c816c85ce404b2491496517c688714df6b81503666c3063",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/LEVEL8.SQZ",
+      "expected": "9670e51fe56ea8e47478a850fa4ee7ba28d737e1b312bd67bc9ef0e9fe952ff3",
+      "actual": "9670e51fe56ea8e47478a850fa4ee7ba28d737e1b312bd67bc9ef0e9fe952ff3",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/LEVEL9.SQZ",
+      "expected": "49f4b56f80a3642501a7230263a7a6ffa6b573a15242fa586a9c021333975d7e",
+      "actual": "49f4b56f80a3642501a7230263a7a6ffa6b573a15242fa586a9c021333975d7e",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/LEVELA.SQZ",
+      "expected": "d7ba4e57a6407ae151af0e1e2ab68bc93eb6ae3d0a52d3075b599c4844357c8a",
+      "actual": "d7ba4e57a6407ae151af0e1e2ab68bc93eb6ae3d0a52d3075b599c4844357c8a",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/LEVELB.SQZ",
+      "expected": "b8837edaf9847bcc250f6a69aff398e34796de305e4e187bb1efab90859a25eb",
+      "actual": "b8837edaf9847bcc250f6a69aff398e34796de305e4e187bb1efab90859a25eb",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/LEVELC.SQZ",
+      "expected": "740a327cdbaf970e267f0ae25fb33132f030a3dfa11e8f91205ee3303be0bdfd",
+      "actual": "740a327cdbaf970e267f0ae25fb33132f030a3dfa11e8f91205ee3303be0bdfd",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/LEVELD.SQZ",
+      "expected": "9f5cb83da77e08844d54240557d78baf290e009f4d9b3f70f9a23dd222acb109",
+      "actual": "9f5cb83da77e08844d54240557d78baf290e009f4d9b3f70f9a23dd222acb109",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/LEVELE.SQZ",
+      "expected": "2a08a155fbd055e008a292665796f967b6506a73e01d12e3d81607f75b861aa8",
+      "actual": "2a08a155fbd055e008a292665796f967b6506a73e01d12e3d81607f75b861aa8",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/LEVELF.SQZ",
+      "expected": "75c92c6b29aa9c85278572a1320fd30a72e987fd3689750e9f7fbc7c3a2db161",
+      "actual": "75c92c6b29aa9c85278572a1320fd30a72e987fd3689750e9f7fbc7c3a2db161",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/LEVELG.SQZ",
+      "expected": "52844782c87c22921abcf0bf1d22367810ba8674746e70f065ba15cf58120d65",
+      "actual": "52844782c87c22921abcf0bf1d22367810ba8674746e70f065ba15cf58120d65",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/LEVELH.SQZ",
+      "expected": "a630b15f92a7611a371d4dd06b4242a05cddff4722aa375bdb44cce132cd2a9e",
+      "actual": "a630b15f92a7611a371d4dd06b4242a05cddff4722aa375bdb44cce132cd2a9e",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/LEVELI.SQZ",
+      "expected": "7601f2641b4a2bab5bdf0a2913a6a0fc43f4138855d6b398370ab1b9a90355a7",
+      "actual": "7601f2641b4a2bab5bdf0a2913a6a0fc43f4138855d6b398370ab1b9a90355a7",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/MAP.SQZ",
+      "expected": "952d98d5d2dd4a064ccadd34e04ed9adcdc935e0d687f2eee61bb7c251e7aaa0",
+      "actual": "952d98d5d2dd4a064ccadd34e04ed9adcdc935e0d687f2eee61bb7c251e7aaa0",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/MENU.SQZ",
+      "expected": "3ddcffa50f4df80c692ae9b48e41efc6b579292b2993bba394c849e042582031",
+      "actual": "3ddcffa50f4df80c692ae9b48e41efc6b579292b2993bba394c849e042582031",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/MENU2.SQZ",
+      "expected": "464ccc6ac61ad5a8a106c3b4800d72396f2b3c060553afb981de6b0c369b961d",
+      "actual": "464ccc6ac61ad5a8a106c3b4800d72396f2b3c060553afb981de6b0c369b961d",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/MINES.TRK",
+      "expected": "b0c57532e4afabd8b15c0aab043b90064a94772be76a3fbfcba118414adfb3ec",
+      "actual": "b0c57532e4afabd8b15c0aab043b90064a94772be76a3fbfcba118414adfb3ec",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/MONSTER.TRK",
+      "expected": "3533bce9d49bbad156d8b90662565e17f664e1d8344fd44ddfa2a5f4f707c1a0",
+      "actual": "3533bce9d49bbad156d8b90662565e17f664e1d8344fd44ddfa2a5f4f707c1a0",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/MOTIF.SQZ",
+      "expected": "fa3a9785e9fa1288e71e4edf91e45db3dd0b0eacac968062d5c5edba0d2ab8d1",
+      "actual": "fa3a9785e9fa1288e71e4edf91e45db3dd0b0eacac968062d5c5edba0d2ab8d1",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/MYSTERY.TRK",
+      "expected": "47219dbc4aff86c8c5bc6d5c3430d5b243c4b8d0c3609318dcb04a7e1c30cadf",
+      "actual": "47219dbc4aff86c8c5bc6d5c3430d5b243c4b8d0c3609318dcb04a7e1c30cadf",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/PRE2.EXE",
+      "expected": "e1a7f875b2806551e3f1a8e393b5dfedd5825c402528a24ed90f21e08a2a1142",
+      "actual": "e1a7f875b2806551e3f1a8e393b5dfedd5825c402528a24ed90f21e08a2a1142",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/PRE2.PIF",
+      "expected": "3d1f7bf6761960438396119ba48545f70675d2d4245796acfc95e34697a61e87",
+      "actual": "3d1f7bf6761960438396119ba48545f70675d2d4245796acfc95e34697a61e87",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/PRES.TRK",
+      "expected": "956c54a838dbe0f4d23499017e3d98b313e917e5a5efbad44a768f761985b4a7",
+      "actual": "956c54a838dbe0f4d23499017e3d98b313e917e5a5efbad44a768f761985b4a7",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/PRESENT.SQZ",
+      "expected": "0055011dbf9d3cd5f50ce3139bf68595916ee57fc56d353f16f2132b84c22796",
+      "actual": "0055011dbf9d3cd5f50ce3139bf68595916ee57fc56d353f16f2132b84c22796",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/PRESENTA.TRK",
+      "expected": "dd4b7840301f128c95f9bb24afb8fcbf95b5e2c33e19b9a2647e59ecb90c0c5c",
+      "actual": "dd4b7840301f128c95f9bb24afb8fcbf95b5e2c33e19b9a2647e59ecb90c0c5c",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/SAMPLE.SQZ",
+      "expected": "44bf0ce46992e0d4c0b830928ae5e43b38f824a9b3004e75c347beca8b5d6fcd",
+      "actual": "44bf0ce46992e0d4c0b830928ae5e43b38f824a9b3004e75c347beca8b5d6fcd",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/SPRITES.SQZ",
+      "expected": "829990e2dd27708bc986c074217f0142b574361f92246742ec420bb4f114ed0a",
+      "actual": "829990e2dd27708bc986c074217f0142b574361f92246742ec420bb4f114ed0a",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/THEEND.SQZ",
+      "expected": "9db4f672025daa845edf3f3e9a0ea6d2e1c01aa3b69d20a30832d59ef6143c2e",
+      "actual": "9db4f672025daa845edf3f3e9a0ea6d2e1c01aa3b69d20a30832d59ef6143c2e",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/TITUS.SQZ",
+      "expected": "80213e0f9fcc613bde4956ec390e43fa672c33ce4f527e46dddd9d4dc4e5266d",
+      "actual": "80213e0f9fcc613bde4956ec390e43fa672c33ce4f527e46dddd9d4dc4e5266d",
+      "unchanged": true
+    },
+    {
+      "path": "prehistorik-2_1993/UNION.SQZ",
+      "expected": "a2451f64ab46fc4b8566f3dc4a411c1244644dc1be3ca029ba3abbaa32410d6d",
+      "actual": "a2451f64ab46fc4b8566f3dc4a411c1244644dc1be3ca029ba3abbaa32410d6d",
+      "unchanged": true
+    }
+  ]
+}

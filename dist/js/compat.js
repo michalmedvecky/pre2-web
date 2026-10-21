@@ -19,10 +19,10 @@ export class Demo {
   constructor(bytes){this.bytes=bytes;this.cursor=0;this.repeat=0;this.mask=0;this.done=false;}
   next(){if(this.done)return 0;if(this.repeat){this.repeat--;return this.mask;}let p=this.cursor;if(p+1>=this.bytes.length-2||this.bytes[p]===0xaa&&this.bytes[p+1]===0x55){this.done=true;return 0;}this.mask=this.bytes[p];this.repeat=this.bytes[p+1];this.cursor+=2;return this.mask;}
 }
-export function encodeReplay(masks){const out=[];for(const mask of masks){const m=mask&63;if(out.length&&out[out.length-2]===m&&out[out.length-1]<255)out[out.length-1]++;else out.push(m,0);}out.push(0xaa,0x55);return new Uint8Array(out);}
+export function encodeReplay(masks){const out=[];for(const mask of masks){const m=mask&127;if(out.length&&out[out.length-2]===m&&out[out.length-1]<255)out[out.length-1]++;else out.push(m,0);}out.push(0xaa,0x55);return new Uint8Array(out);}
 // Shipped demo bit order: left,right,up,down,attack,look.
-export function inputFromMask(m){return {left:!!(m&1),right:!!(m&2),up:!!(m&4),down:!!(m&8),attack:!!(m&16),look:!!(m&32)};}
-export function inputMask(i){return +!!i.left|(+!!i.right<<1)|(+!!i.up<<2)|(+!!i.down<<3)|(+!!i.attack<<4)|(+!!i.look<<5);}
+export function inputFromMask(m){return {left:!!(m&1),right:!!(m&2),up:!!(m&4),down:!!(m&8),attack:!!(m&16),look:!!(m&32),...(m&64?{highJump:true}:{})};}
+export function inputMask(i){return +!!i.left|(+!!i.right<<1)|(+!!i.up<<2)|(+!!i.down<<3)|(+!!i.attack<<4)|(+!!i.look<<5)|(+!!i.highJump<<6);}
 export function actionIndex(i){return (+!!i.right<<4)|(+!!i.left<<3)|(+!!i.up<<2)|(+!!i.down<<1)|+!!i.attack;}
 // Virtual ROM/CPU profile: deterministic, portable browser password compatibility.
 export const PASSWORD_PROFILE = {salt:0x20,rotate:3};
