@@ -1,0 +1,30 @@
+[
+  {
+    "name": "statue",
+    "sha256": "4d9f1839e73f0028bae30b54861afc586f866f20b0e8b65a73e6d8a2891f9902",
+    "rawSHA256": "798154948a90a52cc7e4083e28869df4a46bc66a697d7921a8d65a7bee845a48",
+    "nativeBounds": [
+      80,
+      64
+    ]
+  },
+  {
+    "name": "grapes-113",
+    "sha256": "66b0a8b9e0fc0d01b1c573c579f0f158f3a79453197b60da3870bf90d1ec21ca",
+    "sourceCropSHA256": "c56314081ee6138ab7eb9724bec70ddc9d001780c4ada74c206a727c320ca287",
+    "kept": 11021,
+    "removedComponents": [
+      31,
+      9
+    ]
+  },
+  {
+    "name": "grapes-137",
+    "sha256": "cc60ba893c341876d7fc39dea004e4f0e637ede501cdb83ee64138895f0710dd",
+    "sourceCropSHA256": "ccaaa228e08a8faa97f919fd4f19ab8cd67faeada4b0e30169fe3079c70b9152",
+    "kept": 2315,
+    "removedComponents": [
+      28
+    ]
+  }
+]

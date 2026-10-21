@@ -1,0 +1,33 @@
+{
+  "ok": true,
+  "synthetic": {
+    "samples": 90,
+    "mismatches": 0
+  },
+  "scenes": [
+    {
+      "level": "1",
+      "movingDifferences": 186573,
+      "stationaryDifferences": 0,
+      "cache": 84
+    },
+    {
+      "level": "B",
+      "movingDifferences": 9753,
+      "stationaryDifferences": 0,
+      "cache": 0
+    },
+    {
+      "level": "C",
+      "movingDifferences": 0,
+      "stationaryDifferences": 0,
+      "cache": 0
+    },
+    {
+      "level": "D",
+      "movingDifferences": 4226,
+      "stationaryDifferences": 0,
+      "cache": 0
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  chromium: {
+    samples: [ [Object], [Object], [Object] ],
+    starts: [
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object]
+    ],
+    cancelAndChangeStage: true,
+    graphicsSwitchWhilePreparing: true,
+    errors: []
+  },
+  fallbackWithoutWorkers: true,
+  webkit: {
+    samples: [ [Object], [Object], [Object] ],
+    starts: [
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object],
+      [Object], [Object]
+    ],
+    cancelAndChangeStage: true,
+    graphicsSwitchWhilePreparing: true,
+    errors: []
+  }
+}

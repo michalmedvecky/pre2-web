@@ -1,0 +1,20 @@
+{
+  chromium: {
+    mouth: { class: 1, next: [Array] },
+    start: { x: 816, y: 336 },
+    destination: { x: 48, y: 140 },
+    passages: 1,
+    animation: [ [Object], [Object], [Object] ],
+    authoredMapUnchanged: true,
+    errors: []
+  },
+  webkit: {
+    mouth: { class: 1, next: [Array] },
+    start: { x: 816, y: 336 },
+    destination: { x: 48, y: 140 },
+    passages: 1,
+    animation: [ [Object], [Object], [Object] ],
+    authoredMapUnchanged: true,
+    errors: []
+  }
+}

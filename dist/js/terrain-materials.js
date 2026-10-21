@@ -1,12 +1,13 @@
 // Per-pixel material ownership. A mixed trunk/leaf tile must never become one
 // opaque rectangle of bark. Native indices and source geometry stay intact.
-export const EARLY_MATERIALS={2:['gray-rock','root-surface'],3:['green-rock','root-surface'],4:['forest-bark','blue-rock','root-surface','platform-wood'],5:['forest-bark','autumn-leaves'],E:['cave-flowstone']};
+export const EARLY_MATERIALS={2:['gray-rock','root-surface','platform-wood'],3:['green-rock','root-surface','platform-wood'],4:['forest-bark','blue-rock','root-surface','platform-wood'],5:['forest-bark','autumn-leaves'],E:['cave-flowstone']};
 // These original end-grain faces are separately painted platform surfaces.
 // Keep their bright horizontal grain; a vertical bark material erases depth.
 export const STAGE5_CUT_FACES=new Set([17,18,93,94,95]);
+export const E_CAVE_VALUES=new Set([31,32,33,34,35,46,47,48,49,50,55,56,57,58,59,63,64,65,66,81,82,83,84,85,86,87,147,148,149,150,156,157,158,168,169]);
 export function materialSeed(level,index,value){
  if(level==='5'&&STAGE5_CUT_FACES.has(value)&&([1,2,3,7,11,15].includes(index)))return null;
- if(level==='E'&&([1,2,3,7,11].includes(index)))return'cave-flowstone';
+ if(level==='E'&&E_CAVE_VALUES.has(value)&&([1,2,3,7,11].includes(index)))return'cave-flowstone';
  if(value>=775&&value<=783)return null; // Literal LEVEL lettering and numbers.
  if(level==='2'&&index>=11)return'gray-rock';
  if(level==='3'&&index>=11)return'green-rock';
@@ -26,9 +27,10 @@ export function materialFields(level,source,width,values,columns,opened=source,f
  for(let cell=0;cell<values.length;cell++){
   let brown=0,green=0;const tx=cell%columns*16,ty=(cell/columns|0)*16;
   for(let y=0;y<16;y++)for(let x=0;x<16;x++){const i=source[(ty+y)*width+tx+x];if(i>=1&&i<=3)brown++;if(i>=8&&i<=10)green++;}
-  const floor=floors[values[cell]]||0,literal=values[cell]>=775&&values[cell]<=783,root=!literal&&(['2','3'].includes(level)&&brown>4||level==='4'&&floor>=1&&floor<=5&&brown>8&&green>8);rootCells[cell]=root?1:0;rootTop[cell]=green>4?1:0;if(cell>=columns&&rootCells[cell-columns]&&floors[values[cell-columns]]>=1&&floors[values[cell-columns]]<=5)rootTop[cell]=0;
+  const floor=floors[values[cell]]||0,literal=values[cell]>=775&&values[cell]<=783,root=!literal&&(['2','3'].includes(level)&&floor>=1&&floor<=4&&brown>4||level==='4'&&(floor>=1&&floor<=5||floors.visualRoots?.includes(values[cell]))&&brown>8&&green>4);rootCells[cell]=root?1:0;rootTop[cell]=green>4?1:0;if(cell>=columns&&rootCells[cell-columns])rootTop[cell]=0;
   for(let y=0;y<16;y++)for(let x=0;x<16;x++){const p=(ty+y)*width+tx+x,i=source[p];if(['2','3','4'].includes(level)&&i>=8&&i<=10)seeds[p]=null;
-   if(root&&(i>=1&&i<=3||i>=8&&i<=10||level==='4'&&(i===7||i===11)))seeds[p]='root-surface';
+   if(root&&(level==='4'?i!==0&&i!==6:i>=1&&i<=3||i>=8&&i<=10))seeds[p]='root-surface';
+   if(!literal&&['2','3'].includes(level)&&floor===5&&brown>8&&(i>=1&&i<=3||i===7))seeds[p]='platform-wood';
    if(!literal&&level==='4'&&floor>=1&&floor<=5&&brown>8&&green<=8&&([1,2,3,7,11].includes(i)))seeds[p]='platform-wood';
   }
  }

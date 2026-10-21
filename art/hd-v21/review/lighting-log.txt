@@ -1,0 +1,4 @@
+{
+  chromium: { samples: [ [Object], [Object], [Object], [Object] ], errors: [] },
+  webkit: { samples: [ [Object], [Object], [Object], [Object] ], errors: [] }
+}
