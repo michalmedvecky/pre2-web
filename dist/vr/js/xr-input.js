@@ -19,12 +19,12 @@ export function thumbstick(source){const gp=source?.gamepad;if(source?.targetRay
 export class XRControls {
  constructor(){this.reset();}
  reset(){this.sources=new WeakMap();}
- sample(sources){const out={x:0,z:0,jump:false,turn:0};for(const source of sources){if(!source||source.targetRayMode!=='tracked-pointer'||!source.gripSpace||source.gamepad?.mapping!=='xr-standard')continue;
+ sample(sources,{turnMode='snap'}={}){const out={x:0,z:0,jump:false,turn:0};for(const source of sources){if(!source||source.targetRayMode!=='tracked-pointer'||!source.gripSpace||source.gamepad?.mapping!=='xr-standard')continue;
   let state=this.sources.get(source);if(!state){state={moveReady:false,turnReady:false,jumpReady:false};this.sources.set(source,state);}
   const stick=thumbstick(source),neutral=stick.x===0&&stick.z===0;
   if(source.handedness==='left'){const menu=source.gamepad.buttons[5]?.pressed===true;if(!menu)state.menuReady=true;if(menu&&state.menuReady){out.menu=true;state.menuReady=false;}if(neutral)state.moveReady=true;if(state.moveReady){out.x=stick.x;out.z=stick.z;}}
   if(source.handedness==='right'){
-   if(neutral)state.turnReady=true;if(Math.abs(stick.x)>.65&&state.turnReady){out.turn=-Math.sign(stick.x)*Math.PI/6;state.turnReady=false;}
+   if(neutral)state.turnReady=true;if(turnMode==='smooth'&&state.turnReady)out.turnAxis=-stick.x;if(turnMode==='snap'&&Math.abs(stick.x)>.65&&state.turnReady){out.turn=-Math.sign(stick.x)*Math.PI/6;state.turnReady=false;}
    const pressed=source.gamepad.buttons[4]?.pressed===true;if(!pressed)state.jumpReady=true;out.jump=state.jumpReady&&pressed;const interact=source.gamepad.buttons[5]?.pressed===true;if(!interact)state.interactReady=true;if(state.interactReady&&interact)out.interact=true;
   }
  }return out;}
@@ -54,4 +54,11 @@ export class XRMagicCodes {
   if(key){if(this.target!==key||time-this.lastAt>2.5)this.count=0;this.target=key;this.lastAt=time;this.count++;if(this.count===3){this.locked=true;return {suppress:true,state:'done',code:key==='A'?'IDDQD':'IDKFA'};}}
   return {suppress:true,state:'ready',arm,count:this.count,target:this.target};
  }
+}
+
+// Exact exponential integration makes angular acceleration independent of headset refresh rate.
+export class SmoothTurn {
+ constructor({speed=Math.PI/2,response=.12}={}){this.speed=speed;this.response=response;this.reset();}
+ reset(){this.velocity=0;}
+ step(axis,dt){if(!Number.isFinite(axis)||!Number.isFinite(dt)||dt<=0)return 0;dt=Math.min(dt,.05);const target=Math.max(-1,Math.min(1,axis))*this.speed,decay=Math.exp(-dt/this.response),angle=target*dt+(this.velocity-target)*this.response*(1-decay);this.velocity=target+(this.velocity-target)*decay;if(Math.abs(this.velocity)<.00001)this.velocity=0;return angle;}
 }

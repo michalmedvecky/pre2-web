@@ -1,0 +1,8166 @@
+{
+  "version": 1,
+  "scope": "Complete VR object atlas; first-level tile terrain and animation poses are prewarmed. Unused atlas poses do not imply a completed campaign.",
+  "sourceAtlasSHA256": "088c5796c654abc4d056fe853f7d0201189fe222279cdc9a3e512a1a5442cf3d",
+  "geometry": "Runtime closed rounded silhouettes with HD UVs; anatomical spider/frog/bird/platform recipes; existing jointed upright bear.",
+  "modelCount": 407,
+  "models": [
+    {
+      "sprite": 53,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 102,
+      "triangles": 200,
+      "bounds": [
+        [
+          -0.125,
+          0,
+          -0.08986595273017883
+        ],
+        [
+          0.125,
+          0.1875,
+          0.08986595273017883
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 54,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 106,
+      "triangles": 208,
+      "bounds": [
+        [
+          -0.125,
+          0,
+          -0.10200978815555573
+        ],
+        [
+          0.09375,
+          0.25,
+          0.10200978815555573
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 55,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 128,
+      "triangles": 248,
+      "bounds": [
+        [
+          -0.15625,
+          0,
+          -0.11476100981235504
+        ],
+        [
+          0.125,
+          0.28125,
+          0.11476100981235504
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 56,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 120,
+      "triangles": 224,
+      "bounds": [
+        [
+          -0.15625,
+          0,
+          -0.12828245759010315
+        ],
+        [
+          0.15625,
+          0.34375,
+          0.12828245759010315
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 57,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 88,
+      "triangles": 160,
+      "bounds": [
+        [
+          -0.15625,
+          0,
+          -0.14026345312595367
+        ],
+        [
+          0.15625,
+          0.34375,
+          0.14026345312595367
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 58,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 348,
+      "triangles": 692,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.20877774059772491
+        ],
+        [
+          0.25,
+          0.59375,
+          0.20877774059772491
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 59,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 392,
+      "triangles": 780,
+      "bounds": [
+        [
+          -0.3125,
+          0,
+          -0.23601973056793213
+        ],
+        [
+          0.28125,
+          0.5625,
+          0.23601973056793213
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 60,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 494,
+      "triangles": 984,
+      "bounds": [
+        [
+          -0.375,
+          0,
+          -0.17232829332351685
+        ],
+        [
+          0.34375,
+          0.40625,
+          0.17232829332351685
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 61,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 286,
+      "triangles": 568,
+      "bounds": [
+        [
+          -0.15625,
+          0,
+          -0.2115761786699295
+        ],
+        [
+          0.15625,
+          0.5,
+          0.2115761786699295
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 62,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 338,
+      "triangles": 672,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.20979532599449158
+        ],
+        [
+          0.21875,
+          0.5,
+          0.20979532599449158
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 63,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 346,
+      "triangles": 688,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.21119193732738495
+        ],
+        [
+          0.21875,
+          0.5,
+          0.21119193732738495
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 64,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 214,
+      "triangles": 424,
+      "bounds": [
+        [
+          -0.1875,
+          0,
+          -0.19572913646697998
+        ],
+        [
+          0.15625,
+          0.46875,
+          0.19572913646697998
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 65,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 350,
+      "triangles": 696,
+      "bounds": [
+        [
+          -0.28125,
+          0,
+          -0.1966831088066101
+        ],
+        [
+          0.25,
+          0.46875,
+          0.1966831088066101
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 66,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 452,
+      "triangles": 900,
+      "bounds": [
+        [
+          -0.3125,
+          0,
+          -0.24998848140239716
+        ],
+        [
+          0.28125,
+          0.59375,
+          0.24998848140239716
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 67,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 716,
+      "triangles": 1428,
+      "bounds": [
+        [
+          -0.46875,
+          -0.28125,
+          -0.3161845803260803
+        ],
+        [
+          0.15625,
+          0.46875,
+          0.3161845803260803
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 68,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 706,
+      "triangles": 1408,
+      "bounds": [
+        [
+          -0.34375,
+          -0.1875,
+          -0.25054267048835754
+        ],
+        [
+          0.46875,
+          0.40625,
+          0.25054267048835754
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 69,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 660,
+      "triangles": 1316,
+      "bounds": [
+        [
+          -0.15625,
+          -0.46875,
+          -0.3178432583808899
+        ],
+        [
+          0.4375,
+          0.3125,
+          0.3178432583808899
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 70,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 272,
+      "triangles": 540,
+      "bounds": [
+        [
+          -0.15625,
+          0,
+          -0.193462073802948
+        ],
+        [
+          0.125,
+          0.46875,
+          0.193462073802948
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 71,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 270,
+      "triangles": 536,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.193462073802948
+        ],
+        [
+          0.21875,
+          0.46875,
+          0.193462073802948
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 72,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 270,
+      "triangles": 536,
+      "bounds": [
+        [
+          -0.25,
+          0.09375,
+          -0.1160772368311882
+        ],
+        [
+          0.21875,
+          0.375,
+          0.1160772368311882
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 73,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 264,
+      "triangles": 524,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.193462073802948
+        ],
+        [
+          0.21875,
+          0.46875,
+          0.193462073802948
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 74,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 272,
+      "triangles": 540,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.1160772368311882
+        ],
+        [
+          0.28125,
+          0.28125,
+          0.1160772368311882
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 75,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 306,
+      "triangles": 608,
+      "bounds": [
+        [
+          -0.28125,
+          0,
+          -0.1160772368311882
+        ],
+        [
+          0.28125,
+          0.28125,
+          0.1160772368311882
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 76,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 296,
+      "triangles": 588,
+      "bounds": [
+        [
+          -0.28125,
+          0,
+          -0.11835851520299911
+        ],
+        [
+          0.28125,
+          0.28125,
+          0.11835851520299911
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 77,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 308,
+      "triangles": 612,
+      "bounds": [
+        [
+          -0.28125,
+          0,
+          -0.11791829764842987
+        ],
+        [
+          0.28125,
+          0.28125,
+          0.11791829764842987
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 78,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 314,
+      "triangles": 624,
+      "bounds": [
+        [
+          -0.28125,
+          0,
+          -0.11733358353376389
+        ],
+        [
+          0.28125,
+          0.28125,
+          0.11733358353376389
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 79,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 290,
+      "triangles": 576,
+      "bounds": [
+        [
+          -0.28125,
+          0,
+          -0.1160772368311882
+        ],
+        [
+          0.28125,
+          0.28125,
+          0.1160772368311882
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 80,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 312,
+      "triangles": 620,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.11733358353376389
+        ],
+        [
+          0.3125,
+          0.28125,
+          0.11733358353376389
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 81,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 302,
+      "triangles": 600,
+      "bounds": [
+        [
+          -0.28125,
+          0,
+          -0.11670331656932831
+        ],
+        [
+          0.28125,
+          0.28125,
+          0.11670331656932831
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 82,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 352,
+      "triangles": 700,
+      "bounds": [
+        [
+          -0.34375,
+          0,
+          -0.1160772368311882
+        ],
+        [
+          0.34375,
+          0.28125,
+          0.1160772368311882
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 83,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 386,
+      "triangles": 768,
+      "bounds": [
+        [
+          -0.375,
+          0,
+          -0.1160772368311882
+        ],
+        [
+          0.34375,
+          0.28125,
+          0.1160772368311882
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 84,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 388,
+      "triangles": 772,
+      "bounds": [
+        [
+          -0.375,
+          0,
+          -0.11791829764842987
+        ],
+        [
+          0.34375,
+          0.28125,
+          0.11791829764842987
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 85,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 382,
+      "triangles": 760,
+      "bounds": [
+        [
+          -0.375,
+          0,
+          -0.11670331656932831
+        ],
+        [
+          0.34375,
+          0.28125,
+          0.11670331656932831
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 86,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 858,
+      "triangles": 1712,
+      "bounds": [
+        [
+          -0.625,
+          0,
+          -0.17265625298023224
+        ],
+        [
+          0.625,
+          0.40625,
+          0.17265625298023224
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 87,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 910,
+      "triangles": 1816,
+      "bounds": [
+        [
+          -0.625,
+          0,
+          -0.17106106877326965
+        ],
+        [
+          0.65625,
+          0.40625,
+          0.17106106877326965
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 88,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 924,
+      "triangles": 1844,
+      "bounds": [
+        [
+          -0.59375,
+          0,
+          -0.17219577729701996
+        ],
+        [
+          0.71875,
+          0.40625,
+          0.17219577729701996
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 89,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 940,
+      "triangles": 1876,
+      "bounds": [
+        [
+          -0.625,
+          0,
+          -0.17159344255924225
+        ],
+        [
+          0.6875,
+          0.40625,
+          0.17159344255924225
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 90,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1478,
+      "triangles": 2952,
+      "bounds": [
+        [
+          -0.78125,
+          0,
+          -0.22578124701976776
+        ],
+        [
+          0.84375,
+          0.53125,
+          0.22578124701976776
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 91,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 640,
+      "triangles": 1256,
+      "bounds": [
+        [
+          -0.4375,
+          -0.4375,
+          -0.24908415973186493
+        ],
+        [
+          0.3125,
+          0.15625,
+          0.24908415973186493
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 92,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 432,
+      "triangles": 860,
+      "bounds": [
+        [
+          -0.21875,
+          0,
+          -0.1710447520017624
+        ],
+        [
+          0.25,
+          0.40625,
+          0.1710447520017624
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 93,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 456,
+      "triangles": 908,
+      "bounds": [
+        [
+          -0.21875,
+          0,
+          -0.1710447520017624
+        ],
+        [
+          0.28125,
+          0.40625,
+          0.1710447520017624
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 94,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 460,
+      "triangles": 916,
+      "bounds": [
+        [
+          -0.21875,
+          0,
+          -0.1710447520017624
+        ],
+        [
+          0.28125,
+          0.40625,
+          0.1710447520017624
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 95,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 454,
+      "triangles": 904,
+      "bounds": [
+        [
+          -0.21875,
+          0,
+          -0.1710447520017624
+        ],
+        [
+          0.28125,
+          0.40625,
+          0.1710447520017624
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 96,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 430,
+      "triangles": 856,
+      "bounds": [
+        [
+          -0.21875,
+          0,
+          -0.1710447520017624
+        ],
+        [
+          0.25,
+          0.40625,
+          0.1710447520017624
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 97,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 552,
+      "triangles": 1100,
+      "bounds": [
+        [
+          -0.1875,
+          0,
+          -0.24998848140239716
+        ],
+        [
+          0.53125,
+          0.59375,
+          0.24998848140239716
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 98,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 1308,
+      "triangles": 2612,
+      "bounds": [
+        [
+          -0.46875,
+          0,
+          -0.28946033120155334
+        ],
+        [
+          0.53125,
+          0.6875,
+          0.28946033120155334
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 99,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 984,
+      "triangles": 1964,
+      "bounds": [
+        [
+          -0.28125,
+          0,
+          -0.3168832063674927
+        ],
+        [
+          0.3125,
+          0.9375,
+          0.3168832063674927
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 100,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 1024,
+      "triangles": 2052,
+      "bounds": [
+        [
+          -0.3125,
+          0,
+          -0.3187499940395355
+        ],
+        [
+          0.34375,
+          0.90625,
+          0.3187499940395355
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 101,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 898,
+      "triangles": 1792,
+      "bounds": [
+        [
+          -0.28125,
+          0,
+          -0.31342440843582153
+        ],
+        [
+          0.3125,
+          1.03125,
+          0.31342440843582153
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 102,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 726,
+      "triangles": 1448,
+      "bounds": [
+        [
+          -0.125,
+          0,
+          -0.21250000596046448
+        ],
+        [
+          0.25,
+          1.03125,
+          0.21250000596046448
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 103,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 900,
+      "triangles": 1796,
+      "bounds": [
+        [
+          -0.28125,
+          0,
+          -0.3181445598602295
+        ],
+        [
+          0.3125,
+          1.03125,
+          0.3181445598602295
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 104,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 334,
+      "triangles": 672,
+      "bounds": [
+        [
+          -0.3125,
+          0,
+          -0.08813030272722244
+        ],
+        [
+          0.34375,
+          0.21875,
+          0.08813030272722244
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 105,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 324,
+      "triangles": 652,
+      "bounds": [
+        [
+          -0.3125,
+          0,
+          -0.08813030272722244
+        ],
+        [
+          0.34375,
+          0.21875,
+          0.08813030272722244
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 106,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 328,
+      "triangles": 664,
+      "bounds": [
+        [
+          -0.3125,
+          0,
+          -0.09134025871753693
+        ],
+        [
+          0.34375,
+          0.21875,
+          0.09134025871753693
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 107,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 324,
+      "triangles": 648,
+      "bounds": [
+        [
+          -0.3125,
+          0,
+          -0.08813030272722244
+        ],
+        [
+          0.34375,
+          0.21875,
+          0.08813030272722244
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 108,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 332,
+      "triangles": 664,
+      "bounds": [
+        [
+          -0.3125,
+          0,
+          -0.09134025871753693
+        ],
+        [
+          0.34375,
+          0.21875,
+          0.09134025871753693
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 109,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 324,
+      "triangles": 648,
+      "bounds": [
+        [
+          -0.3125,
+          0,
+          -0.08813030272722244
+        ],
+        [
+          0.34375,
+          0.21875,
+          0.08813030272722244
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 110,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 5788,
+      "triangles": 11572,
+      "bounds": [
+        [
+          -0.75,
+          0,
+          -0.35969021916389465
+        ],
+        [
+          0.65625,
+          2.03125,
+          0.35969021916389465
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 111,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 2164,
+      "triangles": 4324,
+      "bounds": [
+        [
+          -0.65625,
+          0,
+          -0.3596212565898895
+        ],
+        [
+          0.53125,
+          1.375,
+          0.3596212565898895
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 112,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 2210,
+      "triangles": 4416,
+      "bounds": [
+        [
+          -0.65625,
+          0,
+          -0.35916322469711304
+        ],
+        [
+          0.78125,
+          1,
+          0.35916322469711304
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 113,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 1526,
+      "triangles": 3044,
+      "bounds": [
+        [
+          -0.53125,
+          0,
+          -0.3595682978630066
+        ],
+        [
+          0.5625,
+          1.4375,
+          0.3595682978630066
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 114,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 2244,
+      "triangles": 4484,
+      "bounds": [
+        [
+          -0.5,
+          0,
+          -0.36000001430511475
+        ],
+        [
+          0.5,
+          1.1875,
+          0.36000001430511475
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 115,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1904,
+      "triangles": 3808,
+      "bounds": [
+        [
+          -0.53125,
+          0,
+          -0.3574305474758148
+        ],
+        [
+          0.5625,
+          1.09375,
+          0.3574305474758148
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 116,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 2026,
+      "triangles": 4048,
+      "bounds": [
+        [
+          -0.4375,
+          0,
+          -0.35987403988838196
+        ],
+        [
+          0.84375,
+          1.03125,
+          0.35987403988838196
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 117,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 2382,
+      "triangles": 4760,
+      "bounds": [
+        [
+          -0.5625,
+          0,
+          -0.35943272709846497
+        ],
+        [
+          0.5625,
+          1.03125,
+          0.35943272709846497
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 118,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 828,
+      "triangles": 1664,
+      "bounds": [
+        [
+          -0.71875,
+          0,
+          -0.18251889944076538
+        ],
+        [
+          0.71875,
+          0.4375,
+          0.18251889944076538
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 119,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 1494,
+      "triangles": 2984,
+      "bounds": [
+        [
+          -0.75,
+          0,
+          -0.3597407639026642
+        ],
+        [
+          0.71875,
+          0.90625,
+          0.3597407639026642
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 120,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 1580,
+      "triangles": 3156,
+      "bounds": [
+        [
+          -0.75,
+          0,
+          -0.3593771159648895
+        ],
+        [
+          0.71875,
+          0.96875,
+          0.3593771159648895
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 121,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 1190,
+      "triangles": 2376,
+      "bounds": [
+        [
+          -0.375,
+          0,
+          -0.2523437440395355
+        ],
+        [
+          1.09375,
+          0.59375,
+          0.2523437440395355
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 122,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 1290,
+      "triangles": 2576,
+      "bounds": [
+        [
+          -0.375,
+          0,
+          -0.26441335678100586
+        ],
+        [
+          1.09375,
+          0.625,
+          0.26441335678100586
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 123,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 1302,
+      "triangles": 2600,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.30546873807907104
+        ],
+        [
+          1.15625,
+          0.71875,
+          0.30546873807907104
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 124,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 1324,
+      "triangles": 2644,
+      "bounds": [
+        [
+          -0.1875,
+          0,
+          -0.35724252462387085
+        ],
+        [
+          1.125,
+          0.84375,
+          0.35724252462387085
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 125,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 1130,
+      "triangles": 2256,
+      "bounds": [
+        [
+          -0.375,
+          0,
+          -0.30546873807907104
+        ],
+        [
+          0.90625,
+          0.71875,
+          0.30546873807907104
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 126,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 1198,
+      "triangles": 2392,
+      "bounds": [
+        [
+          -0.375,
+          0,
+          -0.3571827709674835
+        ],
+        [
+          0.875,
+          0.84375,
+          0.3571827709674835
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 127,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 1204,
+      "triangles": 2404,
+      "bounds": [
+        [
+          -0.28125,
+          -0.09375,
+          -0.3599834442138672
+        ],
+        [
+          0.75,
+          0.96875,
+          0.3599834442138672
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 128,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 462,
+      "triangles": 920,
+      "bounds": [
+        [
+          -0.3125,
+          0,
+          -0.18420203030109406
+        ],
+        [
+          0.3125,
+          0.4375,
+          0.18420203030109406
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 129,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 440,
+      "triangles": 876,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.19890743494033813
+        ],
+        [
+          0.21875,
+          0.46875,
+          0.19890743494033813
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 130,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 496,
+      "triangles": 988,
+      "bounds": [
+        [
+          -0.3125,
+          0,
+          -0.2515382766723633
+        ],
+        [
+          0.28125,
+          0.59375,
+          0.2515382766723633
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 131,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 446,
+      "triangles": 888,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.21051661670207977
+        ],
+        [
+          0.21875,
+          0.5625,
+          0.21051661670207977
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 132,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 450,
+      "triangles": 896,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.21141420304775238
+        ],
+        [
+          0.21875,
+          0.5625,
+          0.21141420304775238
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 133,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 478,
+      "triangles": 952,
+      "bounds": [
+        [
+          -0.34375,
+          0,
+          -0.15937499701976776
+        ],
+        [
+          0.3125,
+          0.375,
+          0.15937499701976776
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 134,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 496,
+      "triangles": 988,
+      "bounds": [
+        [
+          -0.3125,
+          0,
+          -0.2515382766723633
+        ],
+        [
+          0.28125,
+          0.59375,
+          0.2515382766723633
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 135,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 474,
+      "triangles": 944,
+      "bounds": [
+        [
+          -0.21875,
+          0,
+          -0.21051661670207977
+        ],
+        [
+          0.1875,
+          0.78125,
+          0.21051661670207977
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 136,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 492,
+      "triangles": 984,
+      "bounds": [
+        [
+          -0.28125,
+          0,
+          -0.27424636483192444
+        ],
+        [
+          0.28125,
+          0.65625,
+          0.27424636483192444
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 137,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 360,
+      "triangles": 716,
+      "bounds": [
+        [
+          -0.28125,
+          0,
+          -0.3035884201526642
+        ],
+        [
+          0.25,
+          0.46875,
+          0.3035884201526642
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 138,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 636,
+      "triangles": 1268,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.21189549565315247
+        ],
+        [
+          0.21875,
+          0.6875,
+          0.21189549565315247
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 139,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 490,
+      "triangles": 976,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.21091581881046295
+        ],
+        [
+          0.21875,
+          0.625,
+          0.21091581881046295
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 140,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 496,
+      "triangles": 988,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.2115563005208969
+        ],
+        [
+          0.25,
+          0.71875,
+          0.2115563005208969
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 141,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 360,
+      "triangles": 716,
+      "bounds": [
+        [
+          -0.1875,
+          0,
+          -0.2119808942079544
+        ],
+        [
+          0.1875,
+          0.65625,
+          0.2119808942079544
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 142,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 448,
+      "triangles": 892,
+      "bounds": [
+        [
+          -0.3125,
+          0,
+          -0.14519445598125458
+        ],
+        [
+          0.3125,
+          0.34375,
+          0.14519445598125458
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 143,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 448,
+      "triangles": 892,
+      "bounds": [
+        [
+          -0.3125,
+          0,
+          -0.14519445598125458
+        ],
+        [
+          0.3125,
+          0.34375,
+          0.14519445598125458
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 144,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 392,
+      "triangles": 780,
+      "bounds": [
+        [
+          -0.21875,
+          0,
+          -0.21250000596046448
+        ],
+        [
+          0.1875,
+          0.6875,
+          0.21250000596046448
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 145,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 392,
+      "triangles": 780,
+      "bounds": [
+        [
+          -0.21875,
+          0,
+          -0.21250000596046448
+        ],
+        [
+          0.1875,
+          0.6875,
+          0.21250000596046448
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 146,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 486,
+      "triangles": 968,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.21051661670207977
+        ],
+        [
+          0.25,
+          0.59375,
+          0.21051661670207977
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 147,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 374,
+      "triangles": 744,
+      "bounds": [
+        [
+          -0.1875,
+          0,
+          -0.20979532599449158
+        ],
+        [
+          0.15625,
+          0.5625,
+          0.20979532599449158
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 148,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 374,
+      "triangles": 744,
+      "bounds": [
+        [
+          -0.1875,
+          0,
+          -0.20979532599449158
+        ],
+        [
+          0.15625,
+          0.5625,
+          0.20979532599449158
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 149,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 552,
+      "triangles": 1100,
+      "bounds": [
+        [
+          -0.21875,
+          0,
+          -0.21051661670207977
+        ],
+        [
+          0.1875,
+          0.59375,
+          0.21051661670207977
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 150,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 544,
+      "triangles": 1084,
+      "bounds": [
+        [
+          -0.1875,
+          0,
+          -0.21201105415821075
+        ],
+        [
+          0.1875,
+          0.90625,
+          0.21201105415821075
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 151,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 384,
+      "triangles": 764,
+      "bounds": [
+        [
+          -0.1875,
+          0,
+          -0.21201105415821075
+        ],
+        [
+          0.1875,
+          0.65625,
+          0.21201105415821075
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 152,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 514,
+      "triangles": 1024,
+      "bounds": [
+        [
+          -0.1875,
+          0,
+          -0.21201105415821075
+        ],
+        [
+          0.1875,
+          0.875,
+          0.21201105415821075
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 153,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 418,
+      "triangles": 828,
+      "bounds": [
+        [
+          -0.375,
+          0,
+          -0.26369160413742065
+        ],
+        [
+          0.34375,
+          0.625,
+          0.26369160413742065
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 154,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 454,
+      "triangles": 904,
+      "bounds": [
+        [
+          -0.3125,
+          0,
+          -0.19833403825759888
+        ],
+        [
+          0.28125,
+          0.46875,
+          0.19833403825759888
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 155,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 408,
+      "triangles": 816,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.193462073802948
+        ],
+        [
+          0.21875,
+          0.46875,
+          0.193462073802948
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 156,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 552,
+      "triangles": 1100,
+      "bounds": [
+        [
+          -0.21875,
+          0,
+          -0.21051661670207977
+        ],
+        [
+          0.1875,
+          0.59375,
+          0.21051661670207977
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 157,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 560,
+      "triangles": 1116,
+      "bounds": [
+        [
+          -0.21875,
+          0,
+          -0.21250000596046448
+        ],
+        [
+          0.21875,
+          0.65625,
+          0.21250000596046448
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 158,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 516,
+      "triangles": 1028,
+      "bounds": [
+        [
+          -0.1875,
+          0,
+          -0.21250000596046448
+        ],
+        [
+          0.1875,
+          0.65625,
+          0.21250000596046448
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 159,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 668,
+      "triangles": 1332,
+      "bounds": [
+        [
+          -0.3125,
+          0,
+          -0.22450903058052063
+        ],
+        [
+          0.28125,
+          0.53125,
+          0.22450903058052063
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 160,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 472,
+      "triangles": 940,
+      "bounds": [
+        [
+          -0.3125,
+          0,
+          -0.15937499701976776
+        ],
+        [
+          0.28125,
+          0.375,
+          0.15937499701976776
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 161,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 448,
+      "triangles": 892,
+      "bounds": [
+        [
+          -0.34375,
+          0,
+          -0.1710447520017624
+        ],
+        [
+          0.3125,
+          0.40625,
+          0.1710447520017624
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 162,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 456,
+      "triangles": 908,
+      "bounds": [
+        [
+          -0.34375,
+          0,
+          -0.1710447520017624
+        ],
+        [
+          0.34375,
+          0.40625,
+          0.1710447520017624
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 163,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 498,
+      "triangles": 992,
+      "bounds": [
+        [
+          -0.3125,
+          0,
+          -0.2241981327533722
+        ],
+        [
+          0.28125,
+          0.53125,
+          0.2241981327533722
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 164,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 472,
+      "triangles": 940,
+      "bounds": [
+        [
+          -0.34375,
+          0,
+          -0.2870694100856781
+        ],
+        [
+          0.34375,
+          0.6875,
+          0.2870694100856781
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 165,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 456,
+      "triangles": 908,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.1710447520017624
+        ],
+        [
+          0.25,
+          0.40625,
+          0.1710447520017624
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 166,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 466,
+      "triangles": 928,
+      "bounds": [
+        [
+          -0.21875,
+          0,
+          -0.21250000596046448
+        ],
+        [
+          0.21875,
+          0.5,
+          0.21250000596046448
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 167,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 450,
+      "triangles": 896,
+      "bounds": [
+        [
+          -0.21875,
+          0,
+          -0.20979532599449158
+        ],
+        [
+          0.1875,
+          0.75,
+          0.20979532599449158
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 168,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 424,
+      "triangles": 844,
+      "bounds": [
+        [
+          -0.1875,
+          0,
+          -0.20979532599449158
+        ],
+        [
+          0.15625,
+          0.53125,
+          0.20979532599449158
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 169,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 424,
+      "triangles": 844,
+      "bounds": [
+        [
+          -0.375,
+          0,
+          -0.1442342847585678
+        ],
+        [
+          0.34375,
+          0.34375,
+          0.1442342847585678
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 170,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 392,
+      "triangles": 780,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.20859302580356598
+        ],
+        [
+          0.25,
+          0.53125,
+          0.20859302580356598
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 171,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 602,
+      "triangles": 1200,
+      "bounds": [
+        [
+          -0.34375,
+          0,
+          -0.23906250298023224
+        ],
+        [
+          0.34375,
+          0.5625,
+          0.23906250298023224
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 172,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 388,
+      "triangles": 776,
+      "bounds": [
+        [
+          -0.28125,
+          0,
+          -0.1966831088066101
+        ],
+        [
+          0.25,
+          0.46875,
+          0.1966831088066101
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 173,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 420,
+      "triangles": 836,
+      "bounds": [
+        [
+          -0.28125,
+          0,
+          -0.1966831088066101
+        ],
+        [
+          0.25,
+          0.46875,
+          0.1966831088066101
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 174,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 426,
+      "triangles": 848,
+      "bounds": [
+        [
+          -0.28125,
+          0,
+          -0.1966831088066101
+        ],
+        [
+          0.25,
+          0.46875,
+          0.1966831088066101
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 175,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 396,
+      "triangles": 792,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.21232202649116516
+        ],
+        [
+          0.21875,
+          0.59375,
+          0.21232202649116516
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 176,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 676,
+      "triangles": 1352,
+      "bounds": [
+        [
+          -0.3125,
+          0,
+          -0.26372912526130676
+        ],
+        [
+          0.3125,
+          0.625,
+          0.26372912526130676
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 177,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 380,
+      "triangles": 756,
+      "bounds": [
+        [
+          -0.1875,
+          0,
+          -0.20979532599449158
+        ],
+        [
+          0.15625,
+          0.5625,
+          0.20979532599449158
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 178,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 392,
+      "triangles": 780,
+      "bounds": [
+        [
+          -0.125,
+          0,
+          -0.10625000298023224
+        ],
+        [
+          0.125,
+          0.71875,
+          0.10625000298023224
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 179,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 436,
+      "triangles": 868,
+      "bounds": [
+        [
+          -0.15625,
+          0,
+          -0.21250000596046448
+        ],
+        [
+          0.15625,
+          0.65625,
+          0.21250000596046448
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 180,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 346,
+      "triangles": 688,
+      "bounds": [
+        [
+          -0.1875,
+          0,
+          -0.20859302580356598
+        ],
+        [
+          0.15625,
+          0.5625,
+          0.20859302580356598
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 181,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 306,
+      "triangles": 608,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.15734648704528809
+        ],
+        [
+          0.25,
+          0.375,
+          0.15734648704528809
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 182,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 296,
+      "triangles": 588,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.1583939492702484
+        ],
+        [
+          0.25,
+          0.375,
+          0.1583939492702484
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 183,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 306,
+      "triangles": 608,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.15734648704528809
+        ],
+        [
+          0.25,
+          0.375,
+          0.15734648704528809
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 184,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 594,
+      "triangles": 1192,
+      "bounds": [
+        [
+          -0.28125,
+          0,
+          -0.30011799931526184
+        ],
+        [
+          0.28125,
+          0.6875,
+          0.30011799931526184
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 185,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 348,
+      "triangles": 696,
+      "bounds": [
+        [
+          -0.21875,
+          0,
+          -0.2079184353351593
+        ],
+        [
+          0.21875,
+          0.5625,
+          0.2079184353351593
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 186,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 316,
+      "triangles": 628,
+      "bounds": [
+        [
+          -0.1875,
+          0,
+          -0.21250000596046448
+        ],
+        [
+          0.15625,
+          0.5,
+          0.21250000596046448
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 187,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 338,
+      "triangles": 676,
+      "bounds": [
+        [
+          -0.21875,
+          0,
+          -0.18357090651988983
+        ],
+        [
+          0.1875,
+          0.4375,
+          0.18357090651988983
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 188,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 382,
+      "triangles": 764,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.2096325308084488
+        ],
+        [
+          0.25,
+          0.65625,
+          0.2096325308084488
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 189,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 558,
+      "triangles": 1112,
+      "bounds": [
+        [
+          -0.40625,
+          0,
+          -0.1710447520017624
+        ],
+        [
+          0.375,
+          0.40625,
+          0.1710447520017624
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 190,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 316,
+      "triangles": 628,
+      "bounds": [
+        [
+          -0.28125,
+          0,
+          -0.21250000596046448
+        ],
+        [
+          0.28125,
+          0.25,
+          0.21250000596046448
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 191,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 328,
+      "triangles": 652,
+      "bounds": [
+        [
+          -0.3125,
+          0,
+          -0.2388622760772705
+        ],
+        [
+          0.28125,
+          0.3125,
+          0.2388622760772705
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 192,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 392,
+      "triangles": 784,
+      "bounds": [
+        [
+          -0.21875,
+          0,
+          -0.17265625298023224
+        ],
+        [
+          0.1875,
+          0.40625,
+          0.17265625298023224
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 193,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 500,
+      "triangles": 996,
+      "bounds": [
+        [
+          -0.3125,
+          0,
+          -0.18420203030109406
+        ],
+        [
+          0.28125,
+          0.4375,
+          0.18420203030109406
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 194,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 224,
+      "triangles": 440,
+      "bounds": [
+        [
+          -0.21875,
+          0,
+          -0.201440691947937
+        ],
+        [
+          0.21875,
+          0.59375,
+          0.201440691947937
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 195,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 212,
+      "triangles": 416,
+      "bounds": [
+        [
+          -0.125,
+          0,
+          -0.20877774059772491
+        ],
+        [
+          0.15625,
+          0.78125,
+          0.20877774059772491
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 196,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 366,
+      "triangles": 728,
+      "bounds": [
+        [
+          -0.125,
+          0,
+          -0.10625000298023224
+        ],
+        [
+          0.125,
+          0.6875,
+          0.10625000298023224
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 197,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 388,
+      "triangles": 772,
+      "bounds": [
+        [
+          -0.21875,
+          0,
+          -0.1710447520017624
+        ],
+        [
+          0.1875,
+          0.40625,
+          0.1710447520017624
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 198,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 446,
+      "triangles": 888,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.20859302580356598
+        ],
+        [
+          0.25,
+          0.59375,
+          0.20859302580356598
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 199,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 676,
+      "triangles": 1352,
+      "bounds": [
+        [
+          -0.375,
+          0,
+          -0.21226751804351807
+        ],
+        [
+          0.34375,
+          0.5,
+          0.21226751804351807
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 200,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 418,
+      "triangles": 832,
+      "bounds": [
+        [
+          -0.28125,
+          0,
+          -0.23466716706752777
+        ],
+        [
+          0.25,
+          0.5625,
+          0.23466716706752777
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 201,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 552,
+      "triangles": 1100,
+      "bounds": [
+        [
+          -0.3125,
+          0,
+          -0.1710447520017624
+        ],
+        [
+          0.28125,
+          0.40625,
+          0.1710447520017624
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 202,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 360,
+      "triangles": 716,
+      "bounds": [
+        [
+          -0.21875,
+          0,
+          -0.1966831088066101
+        ],
+        [
+          0.1875,
+          0.46875,
+          0.1966831088066101
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 203,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 604,
+      "triangles": 1208,
+      "bounds": [
+        [
+          -0.21875,
+          0,
+          -0.21193325519561768
+        ],
+        [
+          0.1875,
+          0.875,
+          0.21193325519561768
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 204,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 390,
+      "triangles": 776,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.18544159829616547
+        ],
+        [
+          0.25,
+          0.4375,
+          0.18544159829616547
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 205,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 586,
+      "triangles": 1168,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.20979532599449158
+        ],
+        [
+          0.25,
+          0.75,
+          0.20979532599449158
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 206,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 540,
+      "triangles": 1076,
+      "bounds": [
+        [
+          -0.3125,
+          0,
+          -0.23870642483234406
+        ],
+        [
+          0.3125,
+          0.5625,
+          0.23870642483234406
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 207,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 814,
+      "triangles": 1616,
+      "bounds": [
+        [
+          -0.46875,
+          0,
+          -0.26509231328964233
+        ],
+        [
+          0.46875,
+          0.625,
+          0.26509231328964233
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 208,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 828,
+      "triangles": 1652,
+      "bounds": [
+        [
+          -0.40625,
+          0,
+          -0.22578124701976776
+        ],
+        [
+          0.375,
+          0.53125,
+          0.22578124701976776
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 209,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 224,
+      "triangles": 444,
+      "bounds": [
+        [
+          -0.1875,
+          0,
+          -0.14466041326522827
+        ],
+        [
+          0.15625,
+          0.34375,
+          0.14466041326522827
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 210,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 550,
+      "triangles": 1096,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.20635953545570374
+        ],
+        [
+          0.25,
+          0.8125,
+          0.20635953545570374
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 211,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 636,
+      "triangles": 1268,
+      "bounds": [
+        [
+          -0.28125,
+          0,
+          -0.23906250298023224
+        ],
+        [
+          0.28125,
+          0.5625,
+          0.23906250298023224
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 212,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 636,
+      "triangles": 1268,
+      "bounds": [
+        [
+          -0.34375,
+          0,
+          -0.1710447520017624
+        ],
+        [
+          0.34375,
+          0.40625,
+          0.1710447520017624
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 213,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 332,
+      "triangles": 660,
+      "bounds": [
+        [
+          -0.34375,
+          0,
+          -0.1583939492702484
+        ],
+        [
+          0.3125,
+          0.375,
+          0.1583939492702484
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 214,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 338,
+      "triangles": 672,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.193462073802948
+        ],
+        [
+          0.21875,
+          0.46875,
+          0.193462073802948
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 215,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 552,
+      "triangles": 1100,
+      "bounds": [
+        [
+          -0.21875,
+          0,
+          -0.21051661670207977
+        ],
+        [
+          0.1875,
+          0.59375,
+          0.21051661670207977
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 216,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 552,
+      "triangles": 1100,
+      "bounds": [
+        [
+          -0.21875,
+          0,
+          -0.21051661670207977
+        ],
+        [
+          0.1875,
+          0.59375,
+          0.21051661670207977
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 217,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 552,
+      "triangles": 1100,
+      "bounds": [
+        [
+          -0.21875,
+          0,
+          -0.21051661670207977
+        ],
+        [
+          0.1875,
+          0.59375,
+          0.21051661670207977
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 218,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 552,
+      "triangles": 1100,
+      "bounds": [
+        [
+          -0.21875,
+          0,
+          -0.21051661670207977
+        ],
+        [
+          0.1875,
+          0.59375,
+          0.21051661670207977
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 219,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 552,
+      "triangles": 1100,
+      "bounds": [
+        [
+          -0.21875,
+          0,
+          -0.21051661670207977
+        ],
+        [
+          0.1875,
+          0.59375,
+          0.21051661670207977
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 220,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 648,
+      "triangles": 1292,
+      "bounds": [
+        [
+          -0.375,
+          0,
+          -0.21107161045074463
+        ],
+        [
+          0.34375,
+          0.5,
+          0.21107161045074463
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 221,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 696,
+      "triangles": 1388,
+      "bounds": [
+        [
+          -0.3125,
+          0,
+          -0.29175230860710144
+        ],
+        [
+          0.28125,
+          0.6875,
+          0.29175230860710144
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 222,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 366,
+      "triangles": 724,
+      "bounds": [
+        [
+          -0.1875,
+          0,
+          -0.20979532599449158
+        ],
+        [
+          0.15625,
+          0.5625,
+          0.20979532599449158
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 223,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 440,
+      "triangles": 852,
+      "bounds": [
+        [
+          -0.28125,
+          0,
+          -0.21226751804351807
+        ],
+        [
+          0.28125,
+          0.5,
+          0.21226751804351807
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 224,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 366,
+      "triangles": 732,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.1547696590423584
+        ],
+        [
+          0.25,
+          0.375,
+          0.1547696590423584
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 225,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 362,
+      "triangles": 724,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.15593883395195007
+        ],
+        [
+          0.25,
+          0.375,
+          0.15593883395195007
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 226,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 236,
+      "triangles": 468,
+      "bounds": [
+        [
+          -0.21875,
+          0,
+          -0.1434077024459839
+        ],
+        [
+          0.1875,
+          0.34375,
+          0.1434077024459839
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 227,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 764,
+      "triangles": 1512,
+      "bounds": [
+        [
+          -0.46875,
+          0,
+          -0.21216793358325958
+        ],
+        [
+          0.4375,
+          0.5,
+          0.21216793358325958
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 228,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 874,
+      "triangles": 1744,
+      "bounds": [
+        [
+          -0.5625,
+          0,
+          -0.18342846632003784
+        ],
+        [
+          0.5625,
+          0.4375,
+          0.18342846632003784
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 229,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 922,
+      "triangles": 1840,
+      "bounds": [
+        [
+          -0.59375,
+          0,
+          -0.18477226793766022
+        ],
+        [
+          0.59375,
+          0.4375,
+          0.18477226793766022
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 230,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 884,
+      "triangles": 1760,
+      "bounds": [
+        [
+          -0.59375,
+          0,
+          -0.1842196136713028
+        ],
+        [
+          0.5625,
+          0.4375,
+          0.1842196136713028
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 231,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 742,
+      "triangles": 1476,
+      "bounds": [
+        [
+          -0.5,
+          0,
+          -0.1842196136713028
+        ],
+        [
+          0.46875,
+          0.4375,
+          0.1842196136713028
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 232,
+      "recipe": "anatomical-platform",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1644,
+      "triangles": 1596,
+      "bounds": [
+        [
+          -0.48951247334480286,
+          0.028437500819563866,
+          -0.17890127003192902
+        ],
+        [
+          0.5082168579101562,
+          0.3984557092189789,
+          0.1775200217962265
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 233,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 524,
+      "triangles": 1044,
+      "bounds": [
+        [
+          -0.21875,
+          0,
+          -0.21051661670207977
+        ],
+        [
+          0.1875,
+          0.5625,
+          0.21051661670207977
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 234,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 524,
+      "triangles": 1044,
+      "bounds": [
+        [
+          -0.21875,
+          0,
+          -0.21051661670207977
+        ],
+        [
+          0.1875,
+          0.5625,
+          0.21051661670207977
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 235,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 560,
+      "triangles": 1116,
+      "bounds": [
+        [
+          -0.3125,
+          0,
+          -0.23868893086910248
+        ],
+        [
+          0.28125,
+          0.5625,
+          0.23868893086910248
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 236,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 1822,
+      "triangles": 3640,
+      "bounds": [
+        [
+          -0.5,
+          0,
+          -0.3588605225086212
+        ],
+        [
+          0.46875,
+          1.28125,
+          0.3588605225086212
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 237,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 1340,
+      "triangles": 2676,
+      "bounds": [
+        [
+          -0.5,
+          0,
+          -0.35946381092071533
+        ],
+        [
+          0.46875,
+          0.90625,
+          0.35946381092071533
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 238,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 608,
+      "triangles": 1212,
+      "bounds": [
+        [
+          -0.34375,
+          0,
+          -0.265625
+        ],
+        [
+          0.34375,
+          0.625,
+          0.265625
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 239,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 1500,
+      "triangles": 2996,
+      "bounds": [
+        [
+          -0.5625,
+          0,
+          -0.3588605225086212
+        ],
+        [
+          0.53125,
+          1.03125,
+          0.3588605225086212
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 240,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 1476,
+      "triangles": 2948,
+      "bounds": [
+        [
+          -0.65625,
+          0,
+          -0.3443814218044281
+        ],
+        [
+          0.625,
+          0.8125,
+          0.3443814218044281
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 241,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 356,
+      "triangles": 712,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.14466041326522827
+        ],
+        [
+          0.21875,
+          0.34375,
+          0.14466041326522827
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 242,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 368,
+      "triangles": 732,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.1442342847585678
+        ],
+        [
+          0.21875,
+          0.34375,
+          0.1442342847585678
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 243,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 356,
+      "triangles": 712,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.14187218248844147
+        ],
+        [
+          0.21875,
+          0.34375,
+          0.14187218248844147
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 244,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 364,
+      "triangles": 728,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.14609375596046448
+        ],
+        [
+          0.21875,
+          0.34375,
+          0.14609375596046448
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 245,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 354,
+      "triangles": 704,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.1442342847585678
+        ],
+        [
+          0.21875,
+          0.34375,
+          0.1442342847585678
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 246,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 274,
+      "triangles": 544,
+      "bounds": [
+        [
+          -0.21875,
+          0,
+          -0.1459714025259018
+        ],
+        [
+          0.21875,
+          0.34375,
+          0.1459714025259018
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 247,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 358,
+      "triangles": 716,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.1459714025259018
+        ],
+        [
+          0.21875,
+          0.34375,
+          0.1459714025259018
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 248,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 368,
+      "triangles": 732,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.14587615430355072
+        ],
+        [
+          0.21875,
+          0.34375,
+          0.14587615430355072
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 249,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 308,
+      "triangles": 612,
+      "bounds": [
+        [
+          -0.21875,
+          0,
+          -0.14550714194774628
+        ],
+        [
+          0.1875,
+          0.34375,
+          0.14550714194774628
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 250,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 322,
+      "triangles": 640,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.14466041326522827
+        ],
+        [
+          0.21875,
+          0.34375,
+          0.14466041326522827
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 251,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 364,
+      "triangles": 724,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.1459714025259018
+        ],
+        [
+          0.21875,
+          0.34375,
+          0.1459714025259018
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 252,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 274,
+      "triangles": 544,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.14609375596046448
+        ],
+        [
+          0.21875,
+          0.34375,
+          0.14609375596046448
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 253,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 368,
+      "triangles": 732,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.1434077024459839
+        ],
+        [
+          0.21875,
+          0.34375,
+          0.1434077024459839
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 254,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 362,
+      "triangles": 720,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.14187218248844147
+        ],
+        [
+          0.21875,
+          0.34375,
+          0.14187218248844147
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 255,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 352,
+      "triangles": 704,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.14187218248844147
+        ],
+        [
+          0.21875,
+          0.34375,
+          0.14187218248844147
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 256,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 288,
+      "triangles": 572,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.1459714025259018
+        ],
+        [
+          0.21875,
+          0.34375,
+          0.1459714025259018
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 257,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 358,
+      "triangles": 716,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.14187218248844147
+        ],
+        [
+          0.21875,
+          0.34375,
+          0.14187218248844147
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 258,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 370,
+      "triangles": 736,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.14609375596046448
+        ],
+        [
+          0.21875,
+          0.34375,
+          0.14609375596046448
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 259,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 354,
+      "triangles": 704,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.1442342847585678
+        ],
+        [
+          0.21875,
+          0.34375,
+          0.1442342847585678
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 260,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 260,
+      "triangles": 516,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.14187218248844147
+        ],
+        [
+          0.21875,
+          0.34375,
+          0.14187218248844147
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 261,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 364,
+      "triangles": 724,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.14609375596046448
+        ],
+        [
+          0.21875,
+          0.34375,
+          0.14609375596046448
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 262,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 336,
+      "triangles": 668,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.14187218248844147
+        ],
+        [
+          0.21875,
+          0.34375,
+          0.14187218248844147
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 263,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 360,
+      "triangles": 716,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.1434077024459839
+        ],
+        [
+          0.21875,
+          0.34375,
+          0.1434077024459839
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 264,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 360,
+      "triangles": 716,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.14187218248844147
+        ],
+        [
+          0.21875,
+          0.34375,
+          0.14187218248844147
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 265,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 252,
+      "triangles": 500,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.14187218248844147
+        ],
+        [
+          0.21875,
+          0.34375,
+          0.14187218248844147
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 266,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 322,
+      "triangles": 640,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.1459714025259018
+        ],
+        [
+          0.21875,
+          0.34375,
+          0.1459714025259018
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 267,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 310,
+      "triangles": 608,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.14466041326522827
+        ],
+        [
+          0.21875,
+          0.34375,
+          0.14466041326522827
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 268,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 136,
+      "triangles": 268,
+      "bounds": [
+        [
+          -0.125,
+          0,
+          -0.1048162654042244
+        ],
+        [
+          0.09375,
+          0.25,
+          0.1048162654042244
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 269,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 258,
+      "triangles": 516,
+      "bounds": [
+        [
+          -0.21875,
+          0,
+          -0.14412236213684082
+        ],
+        [
+          0.21875,
+          0.34375,
+          0.14412236213684082
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 270,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 184,
+      "triangles": 364,
+      "bounds": [
+        [
+          -0.125,
+          0,
+          -0.10317976772785187
+        ],
+        [
+          0.09375,
+          0.34375,
+          0.10317976772785187
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 271,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 88,
+      "triangles": 172,
+      "bounds": [
+        [
+          -0.125,
+          0,
+          -0.08531606197357178
+        ],
+        [
+          0.09375,
+          0.15625,
+          0.08531606197357178
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 272,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 84,
+      "triangles": 164,
+      "bounds": [
+        [
+          -0.125,
+          0,
+          -0.08640828728675842
+        ],
+        [
+          0.09375,
+          0.15625,
+          0.08640828728675842
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 273,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 276,
+      "triangles": 548,
+      "bounds": [
+        [
+          -0.1875,
+          0,
+          -0.15913762152194977
+        ],
+        [
+          0.1875,
+          0.375,
+          0.15913762152194977
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 274,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 2126,
+      "triangles": 4252,
+      "bounds": [
+        [
+          -0.75,
+          0,
+          -0.35835787653923035
+        ],
+        [
+          0.75,
+          1.25,
+          0.35835787653923035
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 275,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 2314,
+      "triangles": 4624,
+      "bounds": [
+        [
+          -0.875,
+          0,
+          -0.35835787653923035
+        ],
+        [
+          0.875,
+          0.9375,
+          0.35835787653923035
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 276,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 2436,
+      "triangles": 4872,
+      "bounds": [
+        [
+          -0.6875,
+          0,
+          -0.35946381092071533
+        ],
+        [
+          0.6875,
+          1.5,
+          0.35946381092071533
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 277,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 1774,
+      "triangles": 3544,
+      "bounds": [
+        [
+          -0.46875,
+          0,
+          -0.35905560851097107
+        ],
+        [
+          0.4375,
+          1.59375,
+          0.35905560851097107
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 278,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 2808,
+      "triangles": 5644,
+      "bounds": [
+        [
+          -1,
+          0,
+          -0.3574305474758148
+        ],
+        [
+          0.34375,
+          2.1875,
+          0.3574305474758148
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 279,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 3028,
+      "triangles": 6076,
+      "bounds": [
+        [
+          -0.53125,
+          0,
+          -0.36000001430511475
+        ],
+        [
+          0.84375,
+          2.1875,
+          0.36000001430511475
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 280,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 1266,
+      "triangles": 2528,
+      "bounds": [
+        [
+          -0.34375,
+          -0.03125,
+          -0.3585837483406067
+        ],
+        [
+          0.78125,
+          0.8125,
+          0.3585837483406067
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 281,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 1420,
+      "triangles": 2836,
+      "bounds": [
+        [
+          -0.71875,
+          0,
+          -0.35817432403564453
+        ],
+        [
+          0.625,
+          0.90625,
+          0.35817432403564453
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 282,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1194,
+      "triangles": 2384,
+      "bounds": [
+        [
+          -0.78125,
+          0,
+          -0.18420203030109406
+        ],
+        [
+          0.78125,
+          0.4375,
+          0.18420203030109406
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 283,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 408,
+      "triangles": 812,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.15937499701976776
+        ],
+        [
+          0.25,
+          0.375,
+          0.15937499701976776
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 284,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 328,
+      "triangles": 652,
+      "bounds": [
+        [
+          -0.21875,
+          0,
+          -0.15644477307796478
+        ],
+        [
+          0.21875,
+          0.375,
+          0.15644477307796478
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 285,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 404,
+      "triangles": 804,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.15734648704528809
+        ],
+        [
+          0.25,
+          0.375,
+          0.15734648704528809
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 286,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 396,
+      "triangles": 788,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.15937499701976776
+        ],
+        [
+          0.25,
+          0.375,
+          0.15937499701976776
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 287,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 342,
+      "triangles": 680,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.15734648704528809
+        ],
+        [
+          0.25,
+          0.375,
+          0.15734648704528809
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 288,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 412,
+      "triangles": 820,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.15937499701976776
+        ],
+        [
+          0.25,
+          0.375,
+          0.15937499701976776
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 289,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 406,
+      "triangles": 808,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.15937499701976776
+        ],
+        [
+          0.25,
+          0.375,
+          0.15937499701976776
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 290,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 322,
+      "triangles": 640,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.15644477307796478
+        ],
+        [
+          0.25,
+          0.375,
+          0.15644477307796478
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 291,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 412,
+      "triangles": 820,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.15937499701976776
+        ],
+        [
+          0.25,
+          0.375,
+          0.15937499701976776
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 292,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 418,
+      "triangles": 832,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.15937499701976776
+        ],
+        [
+          0.25,
+          0.375,
+          0.15937499701976776
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 293,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 414,
+      "triangles": 828,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.15644477307796478
+        ],
+        [
+          0.25,
+          0.375,
+          0.15644477307796478
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 294,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 422,
+      "triangles": 840,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.15937499701976776
+        ],
+        [
+          0.25,
+          0.375,
+          0.15937499701976776
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 295,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 412,
+      "triangles": 824,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.15644477307796478
+        ],
+        [
+          0.25,
+          0.375,
+          0.15644477307796478
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 296,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 422,
+      "triangles": 844,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.15644477307796478
+        ],
+        [
+          0.25,
+          0.375,
+          0.15644477307796478
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 297,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 410,
+      "triangles": 816,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.15937499701976776
+        ],
+        [
+          0.25,
+          0.375,
+          0.15937499701976776
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 298,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 326,
+      "triangles": 648,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.15644477307796478
+        ],
+        [
+          0.21875,
+          0.375,
+          0.15644477307796478
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 299,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1024,
+      "triangles": 2040,
+      "bounds": [
+        [
+          -0.5,
+          0,
+          -0.27889642119407654
+        ],
+        [
+          0.46875,
+          0.65625,
+          0.27889642119407654
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 300,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 184,
+      "triangles": 364,
+      "bounds": [
+        [
+          -0.125,
+          0,
+          -0.10625000298023224
+        ],
+        [
+          0.125,
+          0.3125,
+          0.10625000298023224
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 301,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 340,
+      "triangles": 676,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.15781135857105255
+        ],
+        [
+          0.25,
+          0.375,
+          0.15781135857105255
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 302,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 372,
+      "triangles": 740,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.15734648704528809
+        ],
+        [
+          0.25,
+          0.375,
+          0.15734648704528809
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 303,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 372,
+      "triangles": 740,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.15734648704528809
+        ],
+        [
+          0.25,
+          0.375,
+          0.15734648704528809
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 304,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 3394,
+      "triangles": 6784,
+      "bounds": [
+        [
+          -0.9375,
+          0,
+          -0.3599785566329956
+        ],
+        [
+          0.90625,
+          0.96875,
+          0.3599785566329956
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 305,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1122,
+      "triangles": 2240,
+      "bounds": [
+        [
+          -0.5,
+          0,
+          -0.21250000596046448
+        ],
+        [
+          0.5,
+          0.5,
+          0.21250000596046448
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 306,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 184,
+      "triangles": 364,
+      "bounds": [
+        [
+          -0.125,
+          0,
+          -0.10625000298023224
+        ],
+        [
+          0.125,
+          0.3125,
+          0.10625000298023224
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 307,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1498,
+      "triangles": 2992,
+      "bounds": [
+        [
+          -0.71875,
+          0,
+          -0.27863427996635437
+        ],
+        [
+          0.71875,
+          0.65625,
+          0.27863427996635437
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 308,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 308,
+      "triangles": 612,
+      "bounds": [
+        [
+          -0.21875,
+          -0.03125,
+          -0.15770156681537628
+        ],
+        [
+          0.28125,
+          0.34375,
+          0.15770156681537628
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 309,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 130,
+      "triangles": 256,
+      "bounds": [
+        [
+          -0.0625,
+          0,
+          -0.10625000298023224
+        ],
+        [
+          0.0625,
+          0.375,
+          0.10625000298023224
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 310,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 308,
+      "triangles": 612,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.15770156681537628
+        ],
+        [
+          0.25,
+          0.375,
+          0.15770156681537628
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 311,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 732,
+      "triangles": 1460,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.2109833061695099
+        ],
+        [
+          0.21875,
+          0.8125,
+          0.2109833061695099
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 312,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 954,
+      "triangles": 1904,
+      "bounds": [
+        [
+          -0.375,
+          0,
+          -0.31733447313308716
+        ],
+        [
+          0.34375,
+          0.75,
+          0.31733447313308716
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 313,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 1236,
+      "triangles": 2468,
+      "bounds": [
+        [
+          -0.40625,
+          0,
+          -0.35956573486328125
+        ],
+        [
+          0.40625,
+          0.90625,
+          0.35956573486328125
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 314,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 1226,
+      "triangles": 2448,
+      "bounds": [
+        [
+          -0.375,
+          0,
+          -0.3187499940395355
+        ],
+        [
+          0.34375,
+          0.9375,
+          0.3187499940395355
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 315,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 1294,
+      "triangles": 2584,
+      "bounds": [
+        [
+          -0.46875,
+          0,
+          -0.3594883382320404
+        ],
+        [
+          0.4375,
+          0.90625,
+          0.3594883382320404
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 316,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 1878,
+      "triangles": 3752,
+      "bounds": [
+        [
+          -0.65625,
+          0,
+          -0.35901695489883423
+        ],
+        [
+          0.625,
+          1.25,
+          0.35901695489883423
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 317,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 600,
+      "triangles": 1100,
+      "bounds": [
+        [
+          -0.4375,
+          0,
+          -0.2422732412815094
+        ],
+        [
+          0.40625,
+          0.59375,
+          0.2422732412815094
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 318,
+      "recipe": "anatomical-spider",
+      "sourcePixels": "connected-scale4",
+      "vertices": 2148,
+      "triangles": 2304,
+      "bounds": [
+        [
+          -0.42272910475730896,
+          0.031122688204050064,
+          -0.3803538680076599
+        ],
+        [
+          0.43799886107444763,
+          0.6953125,
+          0.37995409965515137
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 319,
+      "recipe": "anatomical-spider",
+      "sourcePixels": "connected-scale4",
+      "vertices": 2148,
+      "triangles": 2304,
+      "bounds": [
+        [
+          -0.3170468211174011,
+          0.03463536128401756,
+          -0.28526538610458374
+        ],
+        [
+          0.3284991383552551,
+          0.7787500023841858,
+          0.28493162989616394
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 320,
+      "recipe": "anatomical-spider",
+      "sourcePixels": "connected-scale4",
+      "vertices": 2148,
+      "triangles": 2304,
+      "bounds": [
+        [
+          -0.42272910475730896,
+          0.01731768064200878,
+          -0.3803538680076599
+        ],
+        [
+          0.43799886107444763,
+          0.3893750011920929,
+          0.37990885972976685
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 321,
+      "recipe": "anatomical-spider",
+      "sourcePixels": "connected-scale4",
+      "vertices": 2148,
+      "triangles": 2304,
+      "bounds": [
+        [
+          -0.42272910475730896,
+          0.01867361180484295,
+          -0.3803538680076599
+        ],
+        [
+          0.43799886107444763,
+          0.41718748211860657,
+          0.37995409965515137
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 322,
+      "recipe": "anatomical-spider",
+      "sourcePixels": "connected-scale4",
+      "vertices": 2148,
+      "triangles": 2304,
+      "bounds": [
+        [
+          -0.42272910475730896,
+          0.017428705468773842,
+          -0.3803538680076599
+        ],
+        [
+          0.43799886107444763,
+          0.3893750011920929,
+          0.37995409965515137
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 323,
+      "recipe": "anatomical-spider",
+      "sourcePixels": "connected-scale4",
+      "vertices": 2148,
+      "triangles": 2304,
+      "bounds": [
+        [
+          -0.42272910475730896,
+          0.018554657697677612,
+          -0.3803538680076599
+        ],
+        [
+          0.43799886107444763,
+          0.41718748211860657,
+          0.37990885972976685
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 324,
+      "recipe": "anatomical-spider",
+      "sourcePixels": "connected-scale4",
+      "vertices": 2148,
+      "triangles": 2304,
+      "bounds": [
+        [
+          -0.21136455237865448,
+          0.03463536128401756,
+          -0.19017693400382996
+        ],
+        [
+          0.21899943053722382,
+          0.7787500023841858,
+          0.18995442986488342
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 325,
+      "recipe": "anatomical-spider",
+      "sourcePixels": "connected-scale4",
+      "vertices": 2148,
+      "triangles": 2304,
+      "bounds": [
+        [
+          -0.21136455237865448,
+          0.034857410937547684,
+          -0.19017693400382996
+        ],
+        [
+          0.21899943053722382,
+          0.7787500023841858,
+          0.18997704982757568
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 326,
+      "recipe": "anatomical-spider",
+      "sourcePixels": "connected-scale4",
+      "vertices": 2148,
+      "triangles": 2304,
+      "bounds": [
+        [
+          -0.21136455237865448,
+          0.034857410937547684,
+          -0.19017693400382996
+        ],
+        [
+          0.21899943053722382,
+          0.7787500023841858,
+          0.18997704982757568
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 327,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 728,
+      "triangles": 1452,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.21141420304775238
+        ],
+        [
+          0.21875,
+          0.875,
+          0.21141420304775238
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 328,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 694,
+      "triangles": 1384,
+      "bounds": [
+        [
+          -0.375,
+          0,
+          -0.2763030529022217
+        ],
+        [
+          0.34375,
+          0.65625,
+          0.2763030529022217
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 329,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 856,
+      "triangles": 1708,
+      "bounds": [
+        [
+          -0.375,
+          0,
+          -0.3187499940395355
+        ],
+        [
+          0.34375,
+          0.78125,
+          0.3187499940395355
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 330,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 922,
+      "triangles": 1840,
+      "bounds": [
+        [
+          -0.4375,
+          0,
+          -0.30546873807907104
+        ],
+        [
+          0.4375,
+          0.71875,
+          0.30546873807907104
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 331,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 732,
+      "triangles": 1460,
+      "bounds": [
+        [
+          -0.4375,
+          0,
+          -0.3015807867050171
+        ],
+        [
+          0.375,
+          0.71875,
+          0.3015807867050171
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 332,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 734,
+      "triangles": 1464,
+      "bounds": [
+        [
+          -0.34375,
+          0,
+          -0.31500425934791565
+        ],
+        [
+          0.3125,
+          1,
+          0.31500425934791565
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 333,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 606,
+      "triangles": 1208,
+      "bounds": [
+        [
+          -0.34375,
+          0.03125,
+          -0.3172812759876251
+        ],
+        [
+          0.3125,
+          0.96875,
+          0.3172812759876251
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 334,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 794,
+      "triangles": 1572,
+      "bounds": [
+        [
+          -0.4375,
+          0,
+          -0.2907966375350952
+        ],
+        [
+          0.4375,
+          0.6875,
+          0.2907966375350952
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 335,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 522,
+      "triangles": 1040,
+      "bounds": [
+        [
+          -0.5625,
+          0,
+          -0.18251889944076538
+        ],
+        [
+          0.53125,
+          0.4375,
+          0.18251889944076538
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 336,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 518,
+      "triangles": 1028,
+      "bounds": [
+        [
+          -0.5625,
+          -0.09375,
+          -0.15644477307796478
+        ],
+        [
+          0.53125,
+          0.28125,
+          0.15644477307796478
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 337,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 424,
+      "triangles": 844,
+      "bounds": [
+        [
+          -0.34375,
+          0,
+          -0.1990244835615158
+        ],
+        [
+          0.34375,
+          0.46875,
+          0.1990244835615158
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 338,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 402,
+      "triangles": 800,
+      "bounds": [
+        [
+          -0.4375,
+          0,
+          -0.1459512859582901
+        ],
+        [
+          0.46875,
+          0.34375,
+          0.1459512859582901
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 339,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 548,
+      "triangles": 1092,
+      "bounds": [
+        [
+          -0.34375,
+          0,
+          -0.2759777307510376
+        ],
+        [
+          0.3125,
+          0.65625,
+          0.2759777307510376
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 340,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 202,
+      "triangles": 400,
+      "bounds": [
+        [
+          -0.15625,
+          0,
+          -0.13141797482967377
+        ],
+        [
+          0.15625,
+          0.3125,
+          0.13141797482967377
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 341,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 174,
+      "triangles": 344,
+      "bounds": [
+        [
+          -0.15625,
+          0,
+          -0.11901160329580307
+        ],
+        [
+          0.15625,
+          0.28125,
+          0.11901160329580307
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 342,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 148,
+      "triangles": 292,
+      "bounds": [
+        [
+          -0.125,
+          0,
+          -0.10200978815555573
+        ],
+        [
+          0.125,
+          0.3125,
+          0.10200978815555573
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 343,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 144,
+      "triangles": 284,
+      "bounds": [
+        [
+          -0.15625,
+          0,
+          -0.13048608601093292
+        ],
+        [
+          0.125,
+          0.3125,
+          0.13048608601093292
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 344,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 152,
+      "triangles": 300,
+      "bounds": [
+        [
+          -0.15625,
+          0,
+          -0.13048608601093292
+        ],
+        [
+          0.15625,
+          0.3125,
+          0.13048608601093292
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 345,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 228,
+      "triangles": 452,
+      "bounds": [
+        [
+          -0.34375,
+          0,
+          -0.09096431732177734
+        ],
+        [
+          0.34375,
+          0.21875,
+          0.09096431732177734
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 346,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 310,
+      "triangles": 616,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.18468765914440155
+        ],
+        [
+          0.25,
+          0.4375,
+          0.18468765914440155
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 347,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 332,
+      "triangles": 660,
+      "bounds": [
+        [
+          -0.28125,
+          0,
+          -0.15937499701976776
+        ],
+        [
+          0.25,
+          0.375,
+          0.15937499701976776
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 348,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 326,
+      "triangles": 648,
+      "bounds": [
+        [
+          -0.28125,
+          0,
+          -0.14455977082252502
+        ],
+        [
+          0.25,
+          0.34375,
+          0.14455977082252502
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 349,
+      "recipe": "anatomical-frog",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1240,
+      "triangles": 1552,
+      "bounds": [
+        [
+          -0.568105161190033,
+          -0.004111668560653925,
+          -0.41636765003204346
+        ],
+        [
+          0.5546649694442749,
+          0.7793750166893005,
+          0.4204361140727997
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 350,
+      "recipe": "anatomical-frog",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1240,
+      "triangles": 1552,
+      "bounds": [
+        [
+          -0.45448413491249084,
+          0,
+          -0.3316219449043274
+        ],
+        [
+          0.44373196363449097,
+          0.7524999976158142,
+          0.3349047005176544
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 351,
+      "recipe": "anatomical-frog",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1240,
+      "triangles": 1552,
+      "bounds": [
+        [
+          -0.45448413491249084,
+          0,
+          -0.331285685300827
+        ],
+        [
+          0.44373196363449097,
+          0.7524999976158142,
+          0.33446672558784485
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 352,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1398,
+      "triangles": 2792,
+      "bounds": [
+        [
+          -0.625,
+          0,
+          -0.3181668519973755
+        ],
+        [
+          0.625,
+          0.75,
+          0.3181668519973755
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 353,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1566,
+      "triangles": 3128,
+      "bounds": [
+        [
+          -0.59375,
+          0,
+          -0.35800325870513916
+        ],
+        [
+          0.59375,
+          1.125,
+          0.35800325870513916
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 354,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1642,
+      "triangles": 3276,
+      "bounds": [
+        [
+          -0.625,
+          0,
+          -0.359197735786438
+        ],
+        [
+          0.625,
+          0.96875,
+          0.359197735786438
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 355,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1160,
+      "triangles": 2312,
+      "bounds": [
+        [
+          -0.34375,
+          0,
+          -0.3187499940395355
+        ],
+        [
+          0.3125,
+          1,
+          0.3187499940395355
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 356,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1264,
+      "triangles": 2524,
+      "bounds": [
+        [
+          -0.375,
+          0,
+          -0.35930535197257996
+        ],
+        [
+          0.4375,
+          0.96875,
+          0.35930535197257996
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 357,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1254,
+      "triangles": 2500,
+      "bounds": [
+        [
+          -0.34375,
+          0,
+          -0.35855451226234436
+        ],
+        [
+          0.5,
+          0.96875,
+          0.35855451226234436
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 358,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1318,
+      "triangles": 2616,
+      "bounds": [
+        [
+          -0.4375,
+          0,
+          -0.35825031995773315
+        ],
+        [
+          0.4375,
+          0.96875,
+          0.35825031995773315
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 359,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 392,
+      "triangles": 780,
+      "bounds": [
+        [
+          0,
+          0,
+          -0.21041513979434967
+        ],
+        [
+          0.375,
+          0.65625,
+          0.21041513979434967
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 360,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 416,
+      "triangles": 828,
+      "bounds": [
+        [
+          0,
+          0,
+          -0.21250000596046448
+        ],
+        [
+          0.40625,
+          0.65625,
+          0.21250000596046448
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 361,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 602,
+      "triangles": 1200,
+      "bounds": [
+        [
+          0.03125,
+          0,
+          -0.21095328032970428
+        ],
+        [
+          0.5,
+          0.75,
+          0.21095328032970428
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 362,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 876,
+      "triangles": 1748,
+      "bounds": [
+        [
+          0.03125,
+          0,
+          -0.31827524304389954
+        ],
+        [
+          0.78125,
+          0.75,
+          0.31827524304389954
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 363,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 930,
+      "triangles": 1856,
+      "bounds": [
+        [
+          -0.46875,
+          0,
+          -0.2647339105606079
+        ],
+        [
+          0.6875,
+          0.625,
+          0.2647339105606079
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 364,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 850,
+      "triangles": 1696,
+      "bounds": [
+        [
+          -0.46875,
+          0.0625,
+          -0.23826052248477936
+        ],
+        [
+          0.6875,
+          0.625,
+          0.23826052248477936
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 365,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1202,
+      "triangles": 2400,
+      "bounds": [
+        [
+          -0.375,
+          0,
+          -0.35936519503593445
+        ],
+        [
+          0.625,
+          0.875,
+          0.35936519503593445
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 366,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 92,
+      "triangles": 180,
+      "bounds": [
+        [
+          -0.125,
+          0,
+          -0.08640828728675842
+        ],
+        [
+          0.125,
+          0.15625,
+          0.08640828728675842
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 367,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 230,
+      "triangles": 456,
+      "bounds": [
+        [
+          -0.28125,
+          0,
+          -0.09028229862451553
+        ],
+        [
+          0.28125,
+          0.21875,
+          0.09028229862451553
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 368,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 460,
+      "triangles": 924,
+      "bounds": [
+        [
+          -0.40625,
+          0,
+          -0.15892162919044495
+        ],
+        [
+          0.40625,
+          0.375,
+          0.15892162919044495
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 369,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 952,
+      "triangles": 1900,
+      "bounds": [
+        [
+          -0.5,
+          0,
+          -0.27756574749946594
+        ],
+        [
+          0.46875,
+          0.65625,
+          0.27756574749946594
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 370,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 238,
+      "triangles": 460,
+      "bounds": [
+        [
+          -0.34375,
+          0,
+          -0.08878553658723831
+        ],
+        [
+          0.34375,
+          0.1875,
+          0.08878553658723831
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 371,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 266,
+      "triangles": 524,
+      "bounds": [
+        [
+          -0.3125,
+          0,
+          -0.10616101324558258
+        ],
+        [
+          0.3125,
+          0.25,
+          0.10616101324558258
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 372,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 718,
+      "triangles": 1432,
+      "bounds": [
+        [
+          -0.3125,
+          0,
+          -0.2917309105396271
+        ],
+        [
+          0.28125,
+          0.6875,
+          0.2917309105396271
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 373,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1124,
+      "triangles": 2240,
+      "bounds": [
+        [
+          -0.4375,
+          0,
+          -0.3588983118534088
+        ],
+        [
+          0.4375,
+          0.875,
+          0.3588983118534088
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 374,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1116,
+      "triangles": 2228,
+      "bounds": [
+        [
+          -0.375,
+          0,
+          -0.31720080971717834
+        ],
+        [
+          0.34375,
+          0.96875,
+          0.31720080971717834
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 375,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1188,
+      "triangles": 2372,
+      "bounds": [
+        [
+          -0.59375,
+          0,
+          -0.35747578740119934
+        ],
+        [
+          0.5625,
+          0.9375,
+          0.35747578740119934
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 376,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1254,
+      "triangles": 2512,
+      "bounds": [
+        [
+          -0.4375,
+          0,
+          -0.34284788370132446
+        ],
+        [
+          0.4375,
+          0.8125,
+          0.34284788370132446
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 377,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 738,
+      "triangles": 1472,
+      "bounds": [
+        [
+          -0.40625,
+          0,
+          -0.24998848140239716
+        ],
+        [
+          0.40625,
+          0.59375,
+          0.24998848140239716
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 378,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 356,
+      "triangles": 708,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.21250000596046448
+        ],
+        [
+          0.25,
+          0.59375,
+          0.21250000596046448
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 379,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 778,
+      "triangles": 1552,
+      "bounds": [
+        [
+          -0.375,
+          0,
+          -0.2386012077331543
+        ],
+        [
+          0.34375,
+          0.5625,
+          0.2386012077331543
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 380,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 486,
+      "triangles": 968,
+      "bounds": [
+        [
+          -0.375,
+          0,
+          -0.1442342847585678
+        ],
+        [
+          0.34375,
+          0.34375,
+          0.1442342847585678
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 381,
+      "recipe": "rounded-volume",
+      "sourcePixels": "web-hd",
+      "vertices": 236,
+      "triangles": 468,
+      "bounds": [
+        [
+          -0.34375,
+          0,
+          -0.08531606197357178
+        ],
+        [
+          0.34375,
+          0.15625,
+          0.08531606197357178
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 382,
+      "recipe": "anatomical-bird",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1398,
+      "triangles": 1316,
+      "bounds": [
+        [
+          -0.7838836908340454,
+          0.0019360746955499053,
+          -0.6350874900817871
+        ],
+        [
+          0.8036066293716431,
+          0.7340624928474426,
+          0.6342697143554688
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 383,
+      "recipe": "anatomical-bird",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1398,
+      "triangles": 1316,
+      "bounds": [
+        [
+          -0.7838836908340454,
+          0.002079487545415759,
+          -0.6323002576828003
+        ],
+        [
+          0.8036066293716431,
+          0.7884374856948853,
+          0.6316484808921814
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 384,
+      "recipe": "anatomical-bird",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1398,
+      "triangles": 1316,
+      "bounds": [
+        [
+          -0.7838836908340454,
+          0.002939965110272169,
+          -0.5946115851402283
+        ],
+        [
+          0.8036066293716431,
+          1.1184355020523071,
+          0.594546914100647
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 385,
+      "recipe": "anatomical-bird",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1398,
+      "triangles": 1316,
+      "bounds": [
+        [
+          -0.7838836908340454,
+          0.0022946069948375225,
+          -0.6261590719223022
+        ],
+        [
+          0.8036066293716431,
+          0.8700000047683716,
+          0.6258732080459595
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 386,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 222,
+      "triangles": 440,
+      "bounds": [
+        [
+          -0.46875,
+          0,
+          -0.07902748137712479
+        ],
+        [
+          0.4375,
+          0.09375,
+          0.07902748137712479
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 387,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 326,
+      "triangles": 648,
+      "bounds": [
+        [
+          -0.46875,
+          0,
+          -0.08531606197357178
+        ],
+        [
+          0.4375,
+          0.15625,
+          0.08531606197357178
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 388,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 710,
+      "triangles": 1416,
+      "bounds": [
+        [
+          -0.5625,
+          0,
+          -0.1442342847585678
+        ],
+        [
+          0.53125,
+          0.34375,
+          0.1442342847585678
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 389,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1254,
+      "triangles": 2504,
+      "bounds": [
+        [
+          -0.75,
+          0,
+          -0.2509218752384186
+        ],
+        [
+          0.71875,
+          0.59375,
+          0.2509218752384186
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 390,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1786,
+      "triangles": 3568,
+      "bounds": [
+        [
+          -0.84375,
+          -0.03125,
+          -0.35748064517974854
+        ],
+        [
+          0.875,
+          0.8125,
+          0.35748064517974854
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 391,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 2086,
+      "triangles": 4168,
+      "bounds": [
+        [
+          -0.96875,
+          0,
+          -0.35956573486328125
+        ],
+        [
+          0.96875,
+          1,
+          0.35956573486328125
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 392,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 2130,
+      "triangles": 4260,
+      "bounds": [
+        [
+          -0.90625,
+          0,
+          -0.35956573486328125
+        ],
+        [
+          1,
+          0.96875,
+          0.35956573486328125
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 393,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 2178,
+      "triangles": 4352,
+      "bounds": [
+        [
+          -0.9375,
+          0,
+          -0.3594374358654022
+        ],
+        [
+          0.9375,
+          0.96875,
+          0.3594374358654022
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 394,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 2094,
+      "triangles": 4184,
+      "bounds": [
+        [
+          -1,
+          0,
+          -0.3588341772556305
+        ],
+        [
+          0.9375,
+          1,
+          0.3588341772556305
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 395,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 2180,
+      "triangles": 4356,
+      "bounds": [
+        [
+          -0.6875,
+          0,
+          -0.3588605225086212
+        ],
+        [
+          0.6875,
+          1.21875,
+          0.3588605225086212
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 396,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1636,
+      "triangles": 3272,
+      "bounds": [
+        [
+          -0.71875,
+          0,
+          -0.3579714894294739
+        ],
+        [
+          0.71875,
+          0.90625,
+          0.3579714894294739
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 397,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1586,
+      "triangles": 3172,
+      "bounds": [
+        [
+          -0.5625,
+          0,
+          -0.3579714894294739
+        ],
+        [
+          0.75,
+          0.9375,
+          0.3579714894294739
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 398,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1462,
+      "triangles": 2920,
+      "bounds": [
+        [
+          -0.6875,
+          0,
+          -0.35829341411590576
+        ],
+        [
+          0.6875,
+          0.84375,
+          0.35829341411590576
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 399,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1880,
+      "triangles": 3760,
+      "bounds": [
+        [
+          -0.90625,
+          0,
+          -0.35633835196495056
+        ],
+        [
+          0.875,
+          1.0625,
+          0.35633835196495056
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 400,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1842,
+      "triangles": 3688,
+      "bounds": [
+        [
+          -0.8125,
+          0,
+          -0.3591325581073761
+        ],
+        [
+          0.8125,
+          1.125,
+          0.3591325581073761
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 401,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1462,
+      "triangles": 2920,
+      "bounds": [
+        [
+          -0.53125,
+          0,
+          -0.35835787653923035
+        ],
+        [
+          0.53125,
+          1,
+          0.35835787653923035
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 402,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 2208,
+      "triangles": 4412,
+      "bounds": [
+        [
+          -0.9375,
+          0,
+          -0.3593771159648895
+        ],
+        [
+          0.9375,
+          1.09375,
+          0.3593771159648895
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 403,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 2388,
+      "triangles": 4772,
+      "bounds": [
+        [
+          -0.9375,
+          0,
+          -0.3593595325946808
+        ],
+        [
+          0.9375,
+          1.34375,
+          0.3593595325946808
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 404,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 2478,
+      "triangles": 4952,
+      "bounds": [
+        [
+          -0.8125,
+          0,
+          -0.3594176173210144
+        ],
+        [
+          0.8125,
+          1.40625,
+          0.3594176173210144
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 405,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1618,
+      "triangles": 3232,
+      "bounds": [
+        [
+          -0.46875,
+          0,
+          -0.35892990231513977
+        ],
+        [
+          0.46875,
+          1.15625,
+          0.35892990231513977
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 406,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1700,
+      "triangles": 3396,
+      "bounds": [
+        [
+          -0.5,
+          0,
+          -0.35953912138938904
+        ],
+        [
+          0.46875,
+          1.15625,
+          0.35953912138938904
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 407,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1556,
+      "triangles": 3108,
+      "bounds": [
+        [
+          -0.5,
+          0,
+          -0.35892990231513977
+        ],
+        [
+          0.46875,
+          1.0625,
+          0.35892990231513977
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 408,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1712,
+      "triangles": 3420,
+      "bounds": [
+        [
+          -0.5,
+          0,
+          -0.35953912138938904
+        ],
+        [
+          0.46875,
+          1.15625,
+          0.35953912138938904
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 409,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 3352,
+      "triangles": 6700,
+      "bounds": [
+        [
+          -0.75,
+          0,
+          -0.3596283495426178
+        ],
+        [
+          0.75,
+          1.4375,
+          0.3596283495426178
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 410,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 2890,
+      "triangles": 5776,
+      "bounds": [
+        [
+          -0.71875,
+          0,
+          -0.35992541909217834
+        ],
+        [
+          0.6875,
+          1.34375,
+          0.35992541909217834
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 411,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 2522,
+      "triangles": 5040,
+      "bounds": [
+        [
+          -0.8125,
+          0,
+          -0.3599785566329956
+        ],
+        [
+          0.78125,
+          0.9375,
+          0.3599785566329956
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 412,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1282,
+      "triangles": 2560,
+      "bounds": [
+        [
+          -0.53125,
+          0,
+          -0.36000001430511475
+        ],
+        [
+          0.5,
+          0.875,
+          0.36000001430511475
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 413,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1288,
+      "triangles": 2572,
+      "bounds": [
+        [
+          -0.53125,
+          0,
+          -0.31829696893692017
+        ],
+        [
+          0.5,
+          0.75,
+          0.31829696893692017
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 414,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1762,
+      "triangles": 3520,
+      "bounds": [
+        [
+          -0.875,
+          0,
+          -0.21250000596046448
+        ],
+        [
+          0.875,
+          0.5,
+          0.21250000596046448
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 415,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1666,
+      "triangles": 3328,
+      "bounds": [
+        [
+          -0.4375,
+          0,
+          -0.3599872887134552
+        ],
+        [
+          0.4375,
+          1.53125,
+          0.3599872887134552
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 416,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 2120,
+      "triangles": 4236,
+      "bounds": [
+        [
+          -0.4375,
+          0,
+          -0.3587923049926758
+        ],
+        [
+          0.4375,
+          1.84375,
+          0.3587923049926758
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 417,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 2318,
+      "triangles": 4632,
+      "bounds": [
+        [
+          -0.5,
+          0,
+          -0.36000001430511475
+        ],
+        [
+          0.46875,
+          1.5,
+          0.36000001430511475
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 418,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 2282,
+      "triangles": 4560,
+      "bounds": [
+        [
+          -0.78125,
+          0,
+          -0.35835787653923035
+        ],
+        [
+          0.75,
+          1.0625,
+          0.35835787653923035
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 419,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1996,
+      "triangles": 3988,
+      "bounds": [
+        [
+          -0.96875,
+          0,
+          -0.3580596446990967
+        ],
+        [
+          0.9375,
+          0.84375,
+          0.3580596446990967
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 420,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1642,
+      "triangles": 3280,
+      "bounds": [
+        [
+          -1,
+          0.625,
+          -0.35946381092071533
+        ],
+        [
+          0,
+          1.5625,
+          0.35946381092071533
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 421,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 836,
+      "triangles": 1668,
+      "bounds": [
+        [
+          -1.25,
+          0.15625,
+          -0.357379674911499
+        ],
+        [
+          -0.28125,
+          1.03125,
+          0.357379674911499
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 422,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1762,
+      "triangles": 3520,
+      "bounds": [
+        [
+          -1,
+          0.25,
+          -0.35987403988838196
+        ],
+        [
+          0,
+          1.25,
+          0.35987403988838196
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 423,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 940,
+      "triangles": 1876,
+      "bounds": [
+        [
+          -0.5625,
+          0,
+          -0.2789062559604645
+        ],
+        [
+          0.5625,
+          0.65625,
+          0.2789062559604645
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 424,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1714,
+      "triangles": 3424,
+      "bounds": [
+        [
+          -0.5,
+          0,
+          -0.35946381092071533
+        ],
+        [
+          0.5,
+          1,
+          0.35946381092071533
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 425,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 852,
+      "triangles": 1700,
+      "bounds": [
+        [
+          -0.5,
+          0,
+          -0.35663992166519165
+        ],
+        [
+          0.46875,
+          0.96875,
+          0.35663992166519165
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 426,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1654,
+      "triangles": 3304,
+      "bounds": [
+        [
+          -0.5,
+          0,
+          -0.35946381092071533
+        ],
+        [
+          0.5,
+          0.9375,
+          0.35946381092071533
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 427,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1178,
+      "triangles": 2352,
+      "bounds": [
+        [
+          -0.65625,
+          0,
+          -0.3577839732170105
+        ],
+        [
+          0.625,
+          0.875,
+          0.3577839732170105
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 428,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 3596,
+      "triangles": 7188,
+      "bounds": [
+        [
+          -1.25,
+          0,
+          -0.35955101251602173
+        ],
+        [
+          1.21875,
+          1,
+          0.35955101251602173
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 429,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1760,
+      "triangles": 3516,
+      "bounds": [
+        [
+          -0.5625,
+          0,
+          -0.35992130637168884
+        ],
+        [
+          0.53125,
+          0.9375,
+          0.35992130637168884
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 430,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1918,
+      "triangles": 3832,
+      "bounds": [
+        [
+          -0.625,
+          0,
+          -0.35946381092071533
+        ],
+        [
+          0.625,
+          1.09375,
+          0.35946381092071533
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 431,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 3340,
+      "triangles": 6676,
+      "bounds": [
+        [
+          -0.5625,
+          0,
+          -0.36000001430511475
+        ],
+        [
+          0.53125,
+          1.9375,
+          0.36000001430511475
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 432,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1638,
+      "triangles": 3276,
+      "bounds": [
+        [
+          -0.8125,
+          0.09375,
+          -0.2916213572025299
+        ],
+        [
+          0.8125,
+          0.78125,
+          0.2916213572025299
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 433,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1684,
+      "triangles": 3364,
+      "bounds": [
+        [
+          -0.78125,
+          0.03125,
+          -0.3175489008426666
+        ],
+        [
+          0.78125,
+          0.78125,
+          0.3175489008426666
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 434,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1648,
+      "triangles": 3312,
+      "bounds": [
+        [
+          -0.78125,
+          0.0625,
+          -0.30308786034584045
+        ],
+        [
+          0.75,
+          0.78125,
+          0.30308786034584045
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 435,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 642,
+      "triangles": 1280,
+      "bounds": [
+        [
+          -0.53125,
+          0,
+          -0.2102687507867813
+        ],
+        [
+          0.5,
+          0.5,
+          0.2102687507867813
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 436,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 598,
+      "triangles": 1192,
+      "bounds": [
+        [
+          -0.53125,
+          0,
+          -0.23671703040599823
+        ],
+        [
+          0.5,
+          0.5625,
+          0.23671703040599823
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 437,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 670,
+      "triangles": 1336,
+      "bounds": [
+        [
+          -0.5,
+          0,
+          -0.18479293584823608
+        ],
+        [
+          0.5,
+          0.4375,
+          0.18479293584823608
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 438,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 6300,
+      "triangles": 12596,
+      "bounds": [
+        [
+          -1.53125,
+          0,
+          -0.35959023237228394
+        ],
+        [
+          1.5,
+          1.28125,
+          0.35959023237228394
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 439,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 782,
+      "triangles": 1560,
+      "bounds": [
+        [
+          -0.25,
+          0,
+          -0.21250000596046448
+        ],
+        [
+          0.25,
+          0.6875,
+          0.21250000596046448
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 440,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 832,
+      "triangles": 1660,
+      "bounds": [
+        [
+          -0.34375,
+          0,
+          -0.3037475049495697
+        ],
+        [
+          0.34375,
+          0.71875,
+          0.3037475049495697
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 441,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 792,
+      "triangles": 1580,
+      "bounds": [
+        [
+          -0.34375,
+          0,
+          -0.3037475049495697
+        ],
+        [
+          0.3125,
+          0.71875,
+          0.3037475049495697
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 442,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 832,
+      "triangles": 1660,
+      "bounds": [
+        [
+          -0.34375,
+          0,
+          -0.3037475049495697
+        ],
+        [
+          0.34375,
+          0.71875,
+          0.3037475049495697
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 443,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 858,
+      "triangles": 1708,
+      "bounds": [
+        [
+          -0.40625,
+          0,
+          -0.3048793077468872
+        ],
+        [
+          0.375,
+          0.71875,
+          0.3048793077468872
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 444,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 824,
+      "triangles": 1644,
+      "bounds": [
+        [
+          -0.34375,
+          0,
+          -0.3169539272785187
+        ],
+        [
+          0.34375,
+          0.75,
+          0.3169539272785187
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 445,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 914,
+      "triangles": 1824,
+      "bounds": [
+        [
+          -0.4375,
+          0,
+          -0.3178098499774933
+        ],
+        [
+          0.40625,
+          0.75,
+          0.3178098499774933
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 446,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1064,
+      "triangles": 2124,
+      "bounds": [
+        [
+          -0.40625,
+          0,
+          -0.3175489008426666
+        ],
+        [
+          0.40625,
+          0.75,
+          0.3175489008426666
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 447,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 964,
+      "triangles": 1924,
+      "bounds": [
+        [
+          -0.4375,
+          0,
+          -0.3046703636646271
+        ],
+        [
+          0.40625,
+          0.71875,
+          0.3046703636646271
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 448,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1232,
+      "triangles": 2456,
+      "bounds": [
+        [
+          -0.46875,
+          0,
+          -0.35743629932403564
+        ],
+        [
+          0.46875,
+          0.84375,
+          0.35743629932403564
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 449,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1206,
+      "triangles": 2416,
+      "bounds": [
+        [
+          -0.4375,
+          0,
+          -0.35790181159973145
+        ],
+        [
+          0.4375,
+          0.84375,
+          0.35790181159973145
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 450,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 914,
+      "triangles": 1824,
+      "bounds": [
+        [
+          -0.4375,
+          0,
+          -0.31850457191467285
+        ],
+        [
+          0.40625,
+          0.75,
+          0.31850457191467285
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 451,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 826,
+      "triangles": 1652,
+      "bounds": [
+        [
+          -0.34375,
+          0,
+          -0.3177211582660675
+        ],
+        [
+          0.34375,
+          0.75,
+          0.3177211582660675
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 452,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 790,
+      "triangles": 1572,
+      "bounds": [
+        [
+          -0.46875,
+          0,
+          -0.26524749398231506
+        ],
+        [
+          0.4375,
+          0.625,
+          0.26524749398231506
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 453,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1610,
+      "triangles": 3220,
+      "bounds": [
+        [
+          -0.71875,
+          0,
+          -0.3594374358654022
+        ],
+        [
+          0.65625,
+          0.875,
+          0.3594374358654022
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 454,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1694,
+      "triangles": 3388,
+      "bounds": [
+        [
+          -0.90625,
+          -0.03125,
+          -0.35946381092071533
+        ],
+        [
+          0.875,
+          0.84375,
+          0.35946381092071533
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 455,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1652,
+      "triangles": 3304,
+      "bounds": [
+        [
+          -0.75,
+          -0.0625,
+          -0.35930246114730835
+        ],
+        [
+          0.75,
+          0.90625,
+          0.35930246114730835
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 456,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1792,
+      "triangles": 3572,
+      "bounds": [
+        [
+          -0.6875,
+          0,
+          -0.3594374358654022
+        ],
+        [
+          0.6875,
+          1.1875,
+          0.3594374358654022
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 457,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1660,
+      "triangles": 3316,
+      "bounds": [
+        [
+          -0.5625,
+          0,
+          -0.35908156633377075
+        ],
+        [
+          0.5625,
+          1.0625,
+          0.35908156633377075
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 458,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1204,
+      "triangles": 2404,
+      "bounds": [
+        [
+          -0.40625,
+          0,
+          -0.3443814218044281
+        ],
+        [
+          0.375,
+          0.8125,
+          0.3443814218044281
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    },
+    {
+      "sprite": 459,
+      "recipe": "rounded-volume",
+      "sourcePixels": "connected-scale4",
+      "vertices": 1586,
+      "triangles": 3176,
+      "bounds": [
+        [
+          -0.71875,
+          0,
+          -0.3053550720214844
+        ],
+        [
+          0.78125,
+          0.71875,
+          0.3053550720214844
+        ]
+      ],
+      "units": "metres; original anchors at 32px/m"
+    }
+  ],
+  "panorama": {
+    "file": "../textures/mountains-360.jpg",
+    "width": 1774,
+    "height": 887,
+    "sha256": "c03264256c616904ac34757f5be5de69a3b172a7c51a6866ee0a4b5a88d482aa",
+    "method": "Built-in image_gen, photorealistic generated landscape; not a geographically accurate photograph.",
+    "prompt": "Seamless 360-degree equirectangular forest-valley landscape. Everest-inspired snow peaks in one direction, Kilimanjaro-inspired massif opposite. Soft warm daylight, sky upper half, distant mountains at horizon, no structures, people, text or watermark. Requested highest resolution; tool returned 1774x887.",
+    "projection": "equirectangular",
+    "runtimeSeamBlend": "outer3% at each border",
+    "parallax": "180m sphere; center follows90% of horizontal viewer translation"
+  },
+  "limits": [
+    "Depth and unseen rear anatomy are authored interpretations of 2D references, not recovered original 3D data.",
+    "3D collectible surfaces retain original HD texture motifs; no billboard facing camera.",
+    "Labels/HUD remain 2D UI. IDKFA intentionally marks secrets through walls.",
+    "Physical Quest GPU/thermal acceptance pending."
+  ]
+}

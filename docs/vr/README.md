@@ -4,11 +4,13 @@ The `vr/quest-360` branch runs the first level at **`/vr/`** as a stereoscopic 3
 
 The upright bear follows the original walking and ground-emergence families. The full level includes the mountain, late chasms, bonus rooms, 65 authored item/marker records, 48 secret cells, all eight passage records, 13 normal enemy definitions, three moving/falling platforms, two checkpoints, the key and the locked exit. See [source audit](LEVEL-ONE-SOURCE-AUDIT.md), [bear reference](BEAR-REFERENCE.md) and [implementation/acceptance record](LEVEL-ONE-IMPLEMENTATION.md).
 
-**Status:** automated simulation, desktop WebGL and mocked WebXR checks pass. Physical Quest performance, stereo comfort, grip alignment and haptics still require device acceptance. The bear and terrain are editable procedural 3D interpretations. Other enemies and pickups use closed4× HD textured extrusions: approved web HD art where available and connected4× enlargement for the remaining poses; production sculpted/rigged GLB replacements remain future work.
+**Status:** automated simulation, desktop WebGL and mocked WebXR checks pass. Physical Quest performance, stereo comfort, grip alignment and haptics still require device acceptance. The bear and terrain are editable procedural 3D interpretations. Other enemies now have anatomical 3D models (spider, frog, bird). Pickups and decorations use closed rounded surfaces reconstructed from the HD silhouettes, with source textures retained. These models are authored interpretations of the unseen depth; production sculpted/rigged GLB replacements remain future work.
 
 ![Upright bear in the complete source-map level](level-one-bear.png)
 
-Latest: [secret-hit performance fixes, HD art, walking caves and IDDQD/IDKFA controls](HD-PERFORMANCE-CHEATS.md).
+Latest: [smooth turning, full-volume objects, occlusion and mountain panorama](SPATIAL-ART-AND-TURNING.md).
+
+Previous: [secret-hit performance fixes, HD art, walking caves and IDDQD/IDKFA controls](HD-PERFORMANCE-CHEATS.md).
 
 ## Run and play
 
@@ -21,7 +23,7 @@ PORT=5777 node scripts/serve.mjs
 Open <http://127.0.0.1:5777/vr/> on the development machine. On Quest, open the same hosted **HTTPS** `/vr/` address in Meta Quest Browser and enter VR. A LAN HTTP address is insufficient for immersive WebXR.
 
 - **Left stick:** move relative to head direction. Centre it once after entering/resuming VR. Neutral stops immediately.
-- **Right stick:** snap turn 30° around the tracked head.
+- **Right stick:** smooth proportional turning, easing up to90°/s around the tracked head.
 - **Right A:** jump. Holding it during a bear head bounce gives the higher rebound. Physical jumping is not required.
 - **Passages:** walk into the visible mouth with the left stick; movement follows the current look direction. Right B is an alternative. After completion/game over, B restarts.
 - **Magic controller combination:** hold both index triggers until a short vibration (about0.7s), keep holding and tap right **A three times** for IDDQD or **B three times** for IDKFA. Release both triggers afterward. Repeat to disable. Gameplay pauses during the combination.

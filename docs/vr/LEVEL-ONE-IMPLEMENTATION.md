@@ -56,3 +56,8 @@ Saved browser evidence: `level-one-validation.json`, `level-one-bear.png`, `leve
 - [ ] Implement VR level2/campaign progression after first-level hardware acceptance. Current first exit finishes the prototype.
 
 Deployment remains the existing GHCR branch workflow; building/publishing an image does not roll out a cluster. Do not modify the independent2D worktree or native analysis files. Verify original-file hashes read-only before closing a source-data task.
+
+
+## Spatial art and turning update
+
+See [SPATIAL-ART-AND-TURNING.md](SPATIAL-ART-AND-TURNING.md) for the resumable checklist, model coverage, generated panorama provenance, occlusion changes and physical Quest acceptance still required.
