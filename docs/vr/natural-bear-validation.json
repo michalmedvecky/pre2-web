@@ -1,0 +1,122 @@
+{
+  "passed": true,
+  "source": {
+    "stages": {
+      "emerge": {
+        "sprite": 381,
+        "pose": {
+          "x": 11.125,
+          "y": 0,
+          "z": 0,
+          "face": -1,
+          "alive": true,
+          "phase": 0.007769767707971797,
+          "hurt": 0,
+          "defeat": 0,
+          "visibility": 0.16,
+          "state": "emerge"
+        }
+      },
+      "walk": {
+        "sprite": 312,
+        "pose": {
+          "x": 11.125,
+          "y": 0,
+          "z": 0,
+          "face": -1,
+          "alive": true,
+          "phase": 0.46332532326352593,
+          "hurt": 0,
+          "defeat": 0,
+          "visibility": 1,
+          "state": "walk"
+        }
+      },
+      "retreat": {
+        "sprite": 379,
+        "pose": {
+          "x": 7.9375,
+          "y": 0,
+          "z": 0,
+          "face": -1,
+          "alive": true,
+          "phase": 5.074436434374621,
+          "hurt": 0,
+          "defeat": 0,
+          "visibility": 0.62,
+          "state": "retreat"
+        }
+      }
+    },
+    "sprites": [
+      381,
+      380,
+      379,
+      312,
+      315,
+      313,
+      314
+    ]
+  },
+  "models": [
+    {
+      "model": "sculpted-upright-bear",
+      "batches": 9,
+      "triangles": 30988
+    },
+    {
+      "model": "sculpted-upright-bear",
+      "batches": 9,
+      "triangles": 30988
+    },
+    {
+      "model": "sculpted-upright-bear",
+      "batches": 9,
+      "triangles": 30988
+    }
+  ],
+  "clipping": [
+    {
+      "visibility": 0.16,
+      "y": -0.8063999999999999,
+      "plane": 0,
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visibility": 0.36,
+      "y": -0.6144,
+      "plane": 0,
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visibility": 0.62,
+      "y": -0.3648,
+      "plane": 0,
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "visibility": 1,
+      "y": 0,
+      "plane": 0,
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "errors": [],
+  "limits": "Real software WebGL renders the production bear. Native AI timing is unchanged. Physical Quest performance/comfort pending."
+}

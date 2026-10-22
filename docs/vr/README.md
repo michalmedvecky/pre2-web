@@ -8,7 +8,9 @@ The upright bear follows the original walking and ground-emergence families. The
 
 ![Upright bear in the complete source-map level](level-one-bear.png)
 
-Latest: [carved wooden club, environment contact and haptic priority](CLUB-CONTACT-HAPTICS.md).
+Latest: [smoother upright bears, fur detail and articulated gait](NATURAL-BEARS.md).
+
+Previous: [carved wooden club, environment contact and haptic priority](CLUB-CONTACT-HAPTICS.md).
 
 Previous: [side rails, impact feedback, original music, crafted food/dinosaurs and underground bonus](RAILS-IMPACTS-MUSIC-BONUS.md).
 
