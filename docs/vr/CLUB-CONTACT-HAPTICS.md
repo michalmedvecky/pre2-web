@@ -1,5 +1,7 @@
 # Crafted wooden club and environmental contact
 
+**Historical experiment, superseded:** rigid environmental contact was removed after Quest reports of rumble/stalls. See [current free tracked club behavior](FREE-TRACKED-CLUB.md). The crafted model and head-impact haptic scheduler remain.
+
 The VR club is now a smooth crooked mesh with 48 angular subdivisions and 81 axial rings (7,776 body triangles), a 1024×2048 procedural wood-grain map, subtle bump detail, knots/drying checks and a separate six-turn leather band. Shared geometry/materials serve desktop and either controller. This is editable authored 3D geometry, not an AI preview substituted for the actual game object. [Rendered preview](carved-club-preview.png).
 
 The entire shaft is approximated by overlapping conservative spheres. The collision solver interpolates position and rotation in steps of at most 18mm of estimated swept travel, then refines the first contact. Its broad phase covers both previous and desired positions. Thin railing ropes and posts, solid source terrain, authored room shells, arch pillars, scenery proxies, trees/rocks and active moving platforms provide box proxies. Enemy/secret interactions retain their gameplay logic and use the constrained club pose. A quick swing cannot continue striking beyond a blocking wall. Decorative proxies are conservative rather than exact mesh triangles.

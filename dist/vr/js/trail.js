@@ -22,7 +22,3 @@ export function naturalLedge(width,depth=3.6){
  const base=positions.length/3;positions.push(0,-.63,0);for(let n=0;n<N;n++)indices.push(base,(rings.length-1)*N+n,(rings.length-1)*N+(n+1)%N);
  const grassStart=indices.length,top=positions.length/3;positions.push(0,.002,0);for(let n=0;n<N;n++)indices.push(top,(n+1)%N,n);const g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(positions,3));g.setIndex(indices);g.addGroup(0,grassStart,0);g.addGroup(grassStart,indices.length-grassStart,1);g.computeVertexNormals();g.computeBoundingSphere();return g;
 }
-
-export function railColliders(edges){return edges.flatMap(e=>[
- {minX:e.minX-.06,maxX:e.minX+.06,minY:e.maxY,maxY:e.maxY+.9,minZ:e.z-.06,maxZ:e.z+.06,area:e.area,kind:'rail post'},
- ...[.48,.87].map(h=>({minX:e.minX,maxX:e.maxX,minY:e.maxY+h-.024,maxY:e.maxY+h+.024,minZ:e.z-.024,maxZ:e.z+.024,area:e.area,kind:'rail rope'}))]);}
