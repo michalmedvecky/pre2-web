@@ -3,7 +3,7 @@ import * as T from '../vendor/three.module.js';
 import {makeNativeArt} from './native-art.js';
 import {makeBear,animateBear} from './bear-model.js';
 import {isBear,bearPresentation,nativeY,areaForY} from './level-one.js';
-import {floorEdges,railMeshes,naturalLedge} from './trail.js';
+import {floorEdges,railMeshes,naturalLedge,railColliders,boundaryShells} from './trail.js';
 import {headOcclusion} from './occlusion.js';
 import {tileAnimation} from '../native/tile-animation.js';
 import {surfaceMaterial} from './surfaces.js';
@@ -18,7 +18,8 @@ export function buildLevelOne(scene,pilot,textures,hdArt=null){
  const earth=surfaceMaterial('earth',textures),grass=surfaceMaterial('grass',textures),stone=surfaceMaterial('stone',textures),bark=surfaceMaterial('bark',textures),foliage=surfaceMaterial('foliage',textures);
  const atlasMaterial=new T.MeshStandardMaterial({map:art.tileAtlas(),alphaTest:.3,roughness:1,side:T.DoubleSide});
  const stats={chunkBuilds:0,lastChangedCells:0,lastRebuiltChunks:[],art:art.stats},chunks=new Map();let mapSnapshot=null;
- const cube=new T.BoxGeometry(1,1,1),ball=new T.IcosahedronGeometry(1,1),cylinder=new T.CylinderGeometry(.1,.18,1,7),dynamic=new Map();let revision=-1,area='',phase=-1,animated=[],boundWorld=null;
+ const authoredContacts=[];
+ const cube=new T.BoxGeometry(1,1,1),ball=new T.IcosahedronGeometry(1,1),cylinder=new T.CylinderGeometry(.1,.18,1,7),dynamic=new Map();let revision=-1,area='',phase=-1,animated=[],boundWorld=null,edges=[],contactBoxes=[];
  function instances(group,geometry,material,rows){if(!rows.length)return;const m=new T.InstancedMesh(geometry,material,rows.length);for(let n=0;n<rows.length;n++){const r=rows[n];dummy.position.set(...r.p);dummy.scale.set(...(r.s||[1,1,1]));dummy.rotation.set(0,r.yaw||0,0);dummy.updateMatrix();m.setMatrixAt(n,dummy.matrix);}m.computeBoundingSphere();group.add(m);return m;}
  function disposeChunk(group){group.traverse(o=>{if(o.isInstancedMesh)o.dispose();if(o.geometry&&o.userData.ownedGeometry)o.geometry.dispose();});group.removeFromParent();}
  function buildChunk(chunk,targetArea){
@@ -30,12 +31,13 @@ export function buildLevelOne(scene,pilot,textures,hdArt=null){
    if(solid){g.solid.push({p:[x*.5+.25,y-.25,0],s:[.5,.5,3.6]});g.tiles.push(pos);}
    else{if(!g.decor.has(id))g.decor.set(id,[]);g.decor.get(id).push({p:[x*.5+.25,y-.5,-2.15],s:[1,1,1]});}
   }
-  const remap=tileAnimation(level,w.tileAnimationPhase).remap,group=new T.Group();group.name='source-chunk:'+key;group.userData={chunk,area:targetArea,animated:[]};terrain.add(group);chunks.set(key,group);
+  const decorContacts=[];for(const rows of g.decor.values())for(const r of rows)decorContacts.push({minX:r.p[0]-.25,maxX:r.p[0]+.25,minY:r.p[1],maxY:r.p[1]+.5,minZ:-2.4,maxZ:-1.9,area:targetArea,kind:'scenery'});
+  const remap=tileAnimation(level,w.tileAnimationPhase).remap,group=new T.Group();group.name='source-chunk:'+key;group.userData={chunk,area:targetArea,animated:[],contacts:decorContacts};terrain.add(group);chunks.set(key,group);
    const solidAt=(x,row)=>{if(x<0||x>=256||row<0||row>=level.height)return false;const t=w.map[row*256+x],c=level.tilePropertiesY[t];return (c>=1&&c<=5)||!!level.tilePropertiesX[t];},floating=new Set();
    for(let row=0;row<level.height;row++){const cells=g.tiles.filter(t=>t.row===row&&!solidAt(t.x*2,row-1)&&!solidAt(t.x*2,row+1)).sort((a,b)=>a.x-b.x);for(let i=0;i<cells.length;){let end=i+1;while(end<cells.length&&Math.abs(cells[end].x-cells[end-1].x-.5)<.001)end++;if(end-i<=10){const width=(end-i)*.5,geo=naturalLedge(width),mesh=new T.Mesh(geo,[stone,grass]);mesh.name='natural-ledge';mesh.position.set(cells[i].x+width/2,cells[i].y,0);mesh.userData.ownedGeometry=true;group.add(mesh);for(let j=i;j<end;j++)floating.add(cells[j].row*256+cells[j].x*2);}i=end;}}
    instances(group,cube,[stone,stone,grass,earth,stone,stone],g.solid.filter(r=>!floating.has(Math.round((21-r.p[1]-.25)*2)*256+Math.round((r.p[0]-.25)*2))));
    g.tiles=g.tiles.filter(t=>!floating.has(t.row*256+t.x*2));
-   group.add(railMeshes(floorEdges(pilot.layout,w).filter(e=>e.area===targetArea&&(e.column>>4)===chunk),bark,railRopeMaterial));
+   group.add(railMeshes(edges.filter(e=>e.area===targetArea&&(e.column>>4)===chunk),bark,railRopeMaterial));
    const positions=[],uvs=[],normals=[],indices=[];
    for(const t of g.tiles)for(const z of [-1.806,1.806]){
     const i=positions.length/3,r=art.tileUV(remap[t.id]);positions.push(t.x,t.y-.5,z,t.x+.5,t.y-.5,z,t.x+.5,t.y,z,t.x,t.y,z);uvs.push(r.u0,r.v0,r.u1,r.v0,r.u1,r.v1,r.u0,r.v1);normals.push(0,0,Math.sign(z),0,0,Math.sign(z),0,0,Math.sign(z),0,0,Math.sign(z));indices.push(i,i+1,i+2,i,i+2,i+3);
@@ -46,7 +48,7 @@ export function buildLevelOne(scene,pilot,textures,hdArt=null){
   stats.chunkBuilds++;return key;
  }
  function refresh(){
-  const w=pilot.world;stats.lastRebuiltChunks=[];stats.lastChangedCells=0;
+  const w=pilot.world;edges=floorEdges(pilot.layout,w);contactBoxes=[...pilot.layout.boxes.filter(b=>b.floor||b.wall||b.ceiling).map(b=>({...b,kind:'terrain'})),...railColliders(edges),...boundaryShells(),...authoredContacts];stats.lastRebuiltChunks=[];stats.lastChangedCells=0;
   if(boundWorld!==w){for(const group of chunks.values())disposeChunk(group);chunks.clear();for(const target of ['outdoors','caves'])for(let col=0;col<16;col++)stats.lastRebuiltChunks.push(buildChunk(col,target));mapSnapshot=w.map.slice();boundWorld=w;}
   else if(revision!==pilot.revision){const dirty=new Set();for(let pos=0;pos<w.map.length;pos++)if(w.map[pos]!==mapSnapshot[pos]){stats.lastChangedCells++;mapSnapshot[pos]=w.map[pos];dirty.add(areaForY((pos>>8)*16)+':'+((pos&255)>>4));}for(const key of dirty){const [target,col]=key.split(':');stats.lastRebuiltChunks.push(buildChunk(Number(col),target));}}
   revision=pilot.revision;animated=Array.from(chunks.values()).flatMap(g=>g.userData.animated);phase=-1;
@@ -54,7 +56,7 @@ export function buildLevelOne(scene,pilot,textures,hdArt=null){
  // Depth scenery uses the same palette/materials, beyond the source walking strip.
  const trunks=[],leaves=[],rocks=[];
  for(let n=0;n<150;n++){const x=(n*7.371)%140-5,z=(n%2?-1:1)*(5+(n%7)*1.15),column=Math.max(0,Math.min(255,Math.floor(x*2)));const candidates=pilot.layout.columns[column].filter(b=>b.area==='outdoors'&&b.floor&&b.row>=28);const y=candidates.length?Math.max(...candidates.map(b=>b.maxY)):-2;
-  trunks.push({p:[x,y+1.5,z],s:[1,3+(n%3)*.2,1]});for(let h=0;h<3;h++)leaves.push({p:[x+(h-1)*.3,y+3+h*.3,z],s:[1.4-h*.2,1,1.2]});if(n%3===0)rocks.push({p:[x,y-.2,z*.8],s:[1.1,1.2,1],yaw:n*.7});
+  trunks.push({p:[x,y+1.5,z],s:[1,3+(n%3)*.2,1]});authoredContacts.push({minX:x-.18,maxX:x+.18,minY:y,maxY:y+3.6,minZ:z-.18,maxZ:z+.18,area:'outdoors',kind:'tree'});for(let h=0;h<3;h++)leaves.push({p:[x+(h-1)*.3,y+3+h*.3,z],s:[1.4-h*.2,1,1.2]});if(n%3===0){rocks.push({p:[x,y-.2,z*.8],s:[1.1,1.2,1],yaw:n*.7});authoredContacts.push({minX:x-1.1,maxX:x+1.1,minY:y-1.4,maxY:y+1,minZ:z*.8-1.1,maxZ:z*.8+1.1,area:'outdoors',kind:'rock'});}
  }
  const distantGround=new T.Mesh(new T.BoxGeometry(160,.5,48),earth);distantGround.position.set(64,-4.2,0);forest.add(distantGround);
  instances(forest,cylinder,bark,trunks);instances(forest,ball,foliage,leaves);instances(forest,ball,stone,rocks);
@@ -63,7 +65,7 @@ export function buildLevelOne(scene,pilot,textures,hdArt=null){
  const caveFront=caveBackdrop.clone();caveFront.position.z=4;caveFront.scale.y=2;root.add(caveFront);caveBackdrop.scale.y=2;
  const caveRoof=new T.Mesh(new T.BoxGeometry(128,.5,10),stone);caveRoof.position.set(64,23.5,0);root.add(caveRoof);
  const lowerWalls=new T.Group();lowerWalls.name='underground-bonus-shell';root.add(lowerWalls);for(const z of [-2.7,2.7]){const wall=new T.Mesh(new T.BoxGeometry(17.5,5,.35),stone);wall.position.set(119.5,-.45,z);lowerWalls.add(wall);}
- const caveEnds=new T.Group();root.add(caveEnds);for(const x of [-.5,128.5]){const wall=new T.Mesh(new T.BoxGeometry(1,26,10),stone);wall.position.set(x,11,0);caveEnds.add(wall);}
+ const caveEnds=new T.Group();root.add(caveEnds);for(const x of [-.5,128.5]){const wall=new T.Mesh(new T.BoxGeometry(1,26,10),stone);wall.position.set(x,11,0);caveEnds.add(wall);authoredContacts.push({minX:x-.5,maxX:x+.5,minY:-2,maxY:24,minZ:-5,maxZ:5,area:'caves',kind:'cave end'});}
  function setSprite(key,word,x,y,z=0,depth){let m=dynamic.get(key);if(!m||m.userData.word!==word){if(m)m.removeFromParent();m=(key.text&&art.label?.(key.text))||((word&0x1fff)>=74&&(word&0x1fff)<=90&&art.score?.(word&0x1fff))||art.sprite(word,{depth});m.userData.word=word;dynamic.set(key,m);props.add(m);}m.visible=true;m.position.set(x,y,z);m.rotation.y=m.userData.model?.startsWith('anatomical-')?0:Math.PI/2;return m;}
  function update(view={}){
   const w=pilot.world;if(boundWorld!==w||revision!==pilot.revision)refresh();area=pilot.area;stats.underground=area==='outdoors'&&pilot.player.x>=111&&pilot.player.y<2;forest.visible=area==='outdoors'&&!stats.underground;lowerWalls.visible=area==='outdoors';caveEnds.visible=caveFront.visible=caveBackdrop.visible=caveRoof.visible=area==='caves';scene.background.set(area==='caves'||stats.underground?'#26302b':'#adcfcd');scene.fog.color.copy(scene.background);stats.headOccluded=headOcclusion(view.position,pilot.layout.boxes,area);
@@ -83,6 +85,7 @@ export function buildLevelOne(scene,pilot,textures,hdArt=null){
   const live=new Set([...w.items,...w.effects,...w.platforms,...w.actors.filter(a=>a.active)]);
   for(const [key,m] of dynamic)if(!live.has(key)){m.removeFromParent();if(m.userData.batches){for(const {instances} of m.userData.batches)instances.dispose();for(const material of new Set(m.userData.batches.map(b=>b.instances.material)))material.dispose();}dynamic.delete(key);}
  }
- const arches=new T.Group();root.add(arches);for(const gate of pilot.world.gates.filter(g=>g.active&&[12,13,14,15,16,17,18].includes(g.index))){const x=((gate.triggerTile&255)*16+8)/32,y=nativeY((gate.triggerTile>>8)*16);const g=new T.Group();g.position.set(x,y,0);g.userData.area=areaForY((gate.triggerTile>>8)*16);if(g.userData.area==='caves')g.rotation.y=Math.PI;arches.add(g);instances(g,ball,stone,[{p:[-.65,.6,-1.25],s:[.3,.9,.4]},{p:[.65,.6,-1.25],s:[.3,.9,.4]},{p:[0,1.35,-1.25],s:[.8,.3,.4]}]);const mouth=new T.Mesh(new T.BoxGeometry(1.1,1.25,.25),new T.MeshBasicMaterial({color:'#131b19'}));mouth.position.set(0,.58,-1.65);g.add(mouth);}const originalUpdate=update;const viewUpdate=view=>{originalUpdate(view);for(const arch of arches.children)arch.visible=arch.userData.area===pilot.area;};
- viewUpdate();return {update:viewUpdate,root,art,stats};
+ const arches=new T.Group();root.add(arches);for(const gate of pilot.world.gates.filter(g=>g.active&&[12,13,14,15,16,17,18].includes(g.index))){const x=((gate.triggerTile&255)*16+8)/32,y=nativeY((gate.triggerTile>>8)*16);const g=new T.Group();g.position.set(x,y,0);g.userData.area=areaForY((gate.triggerTile>>8)*16);if(g.userData.area==='caves')g.rotation.y=Math.PI;arches.add(g);for(const dx of [-.65,.65])authoredContacts.push({minX:x+dx-.3,maxX:x+dx+.3,minY:y-.3,maxY:y+1.5,minZ:g.userData.area==='caves'?.85:-1.65,maxZ:g.userData.area==='caves'?1.65:-.85,area:g.userData.area,kind:'stone arch'});instances(g,ball,stone,[{p:[-.65,.6,-1.25],s:[.3,.9,.4]},{p:[.65,.6,-1.25],s:[.3,.9,.4]},{p:[0,1.35,-1.25],s:[.8,.3,.4]}]);const mouth=new T.Mesh(new T.BoxGeometry(1.1,1.25,.25),new T.MeshBasicMaterial({color:'#131b19'}));mouth.position.set(0,.58,-1.65);g.add(mouth);}const originalUpdate=update;const viewUpdate=view=>{originalUpdate(view);for(const arch of arches.children)arch.visible=arch.userData.area===pilot.area;};
+ function clubColliders(position,previous=position){previous=previous||position;const near=b=>b.area===pilot.area&&Math.max(position.x,previous.x)>b.minX-1.6&&Math.min(position.x,previous.x)<b.maxX+1.6&&Math.max(position.y,previous.y)>b.minY-1.6&&Math.min(position.y,previous.y)<b.maxY+1.6&&Math.max(position.z,previous.z)>b.minZ-1.6&&Math.min(position.z,previous.z)<b.maxZ+1.6;const boxes=contactBoxes.filter(near);for(const c of chunks.values())if(c.userData.area===pilot.area)for(const b of c.userData.contacts)if(near(b))boxes.push(b);for(const q of pilot.world.platforms)if(q.active&&q.vrArea===pilot.area){const b={minX:q.x/32-.45,maxX:q.x/32+.45,minY:nativeY(q.y)-.25,maxY:nativeY(q.y),minZ:-1.8,maxZ:1.8,area:q.vrArea,kind:'moving platform'};if(near(b))boxes.push(b);}return boxes;}
+ viewUpdate();return {update:viewUpdate,root,art,stats,clubColliders};
 }

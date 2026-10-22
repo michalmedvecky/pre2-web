@@ -4,11 +4,7 @@ import {surfaceMaterial} from './surfaces.js';
 const mat=(color)=>new T.MeshStandardMaterial({color,roughness:.94,flatShading:true});
 const geo={ball:new T.IcosahedronGeometry(1,1),box:new T.BoxGeometry(1,1,1),limb:new T.CylinderGeometry(.09,.07,1,7)};
 export function piece(parent,geometry,material,position,scale=[1,1,1]){const m=new T.Mesh(geometry,material);m.position.set(...position);m.scale.set(...scale);parent.add(m);return m;}
-export function makeClub(){const g=new T.Group(),wood=mat('#87502f'),dark=mat('#492b23'),skin=mat('#d99d6e');
- piece(g,new T.CylinderGeometry(.055,.035,.62,8),wood,[0,.24,0]);piece(g,geo.ball,wood,[0,.59,0],[.13,.23,.12]);
- for(let i=0;i<4;i++)piece(g,new T.TorusGeometry(.047,.008,4,8),dark,[0,.03+i*.028,0]).rotation.x=Math.PI/2;
- piece(g,geo.ball,skin,[0,0,.012],[.065,.085,.065]);g.rotation.x=-Math.PI/2;return g;
-}
+export {makeCraftedClub as makeClub} from './club-model.js';
 export function makeBear(){const root=new T.Group(),fur=mat('#7b4b2e'),light=mat('#b07744'),black=mat('#201a16'),cream=mat('#e4ce9c'),pivots=[];
  piece(root,geo.ball,fur,[0,.66,0],[.65,.48,.37]);piece(root,geo.ball,fur,[.4,.9,0],[.38,.37,.33]);piece(root,geo.ball,light,[.66,.76,0],[.23,.16,.22]);piece(root,geo.ball,black,[.85,.78,0],[.065,.07,.1]);
  for(const z of [-.26,.26]){piece(root,geo.ball,fur,[.4,1.18,z],[.13,.16,.12]);piece(root,geo.ball,light,[.44,1.19,z],[.075,.09,.08]);piece(root,geo.ball,black,[.65,.99,z*.91],[.045,.053,.026]);piece(root,geo.ball,cream,[.668,1.005,z*.96],[.012,.015,.012]);}

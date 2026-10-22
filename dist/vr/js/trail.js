@@ -1,7 +1,13 @@
 import * as T from '../vendor/three.module.js';
+export function boundaryShells(){return [
+ {minX:0,maxX:128,minY:4,maxY:28,minZ:-4.35,maxZ:-3.65,area:'caves',kind:'cave wall'},
+ {minX:0,maxX:128,minY:-1,maxY:35,minZ:3.65,maxZ:4.35,area:'caves',kind:'cave wall'},
+ {minX:0,maxX:128,minY:23.25,maxY:23.75,minZ:-5,maxZ:5,area:'caves',kind:'cave roof'},
+ ...[-2.7,2.7].map(z=>({minX:110.75,maxX:128.25,minY:-2.95,maxY:2.05,minZ:z-.175,maxZ:z+.175,area:'outdoors',kind:'underground wall'}))];}
 export function floorEdges(layout,world){
- const solid=new Set(layout.boxes.map(b=>b.row*256+b.column)),rows=[];
+ const solid=new Set(layout.boxes.map(b=>b.row*256+b.column)),rows=[],shells=boundaryShells();
  for(const b of layout.boxes){if(!b.floor||solid.has((b.row-1)*256+b.column))continue;for(const side of [-1,1]){
+ const enclosed=shells.some(w=>w.area===b.area&&b.minX>=w.minX&&b.maxX<=w.maxX&&w.maxY>=b.maxY+.87&&w.minY<=b.maxY+.48&&Math.abs((w.minZ+w.maxZ)/2-side*1.73)<3);if(enclosed)continue;
  const gate=world.gates.some(g=>g.active&&((g.triggerTile&255)/2-b.minX)>.0-1&&((g.triggerTile&255)/2-b.minX)<1&&Math.abs((672-(g.triggerTile>>8)*16)/32-b.maxY)<1.3&&((g.triggerTile>>8)<16?side===1:side===-1));if(!gate)rows.push({...b,side,z:side*1.73});}}
  return rows;
 }
@@ -16,3 +22,7 @@ export function naturalLedge(width,depth=3.6){
  const base=positions.length/3;positions.push(0,-.63,0);for(let n=0;n<N;n++)indices.push(base,(rings.length-1)*N+n,(rings.length-1)*N+(n+1)%N);
  const grassStart=indices.length,top=positions.length/3;positions.push(0,.002,0);for(let n=0;n<N;n++)indices.push(top,(n+1)%N,n);const g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(positions,3));g.setIndex(indices);g.addGroup(0,grassStart,0);g.addGroup(grassStart,indices.length-grassStart,1);g.computeVertexNormals();g.computeBoundingSphere();return g;
 }
+
+export function railColliders(edges){return edges.flatMap(e=>[
+ {minX:e.minX-.06,maxX:e.minX+.06,minY:e.maxY,maxY:e.maxY+.9,minZ:e.z-.06,maxZ:e.z+.06,area:e.area,kind:'rail post'},
+ ...[.48,.87].map(h=>({minX:e.minX,maxX:e.maxX,minY:e.maxY+h-.024,maxY:e.maxY+h+.024,minZ:e.z-.024,maxZ:e.z+.024,area:e.area,kind:'rail rope'}))]);}

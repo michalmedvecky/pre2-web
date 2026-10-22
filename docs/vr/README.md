@@ -8,7 +8,9 @@ The upright bear follows the original walking and ground-emergence families. The
 
 ![Upright bear in the complete source-map level](level-one-bear.png)
 
-Latest: [side rails, impact feedback, original music, crafted food/dinosaurs and underground bonus](RAILS-IMPACTS-MUSIC-BONUS.md).
+Latest: [carved wooden club, environment contact and haptic priority](CLUB-CONTACT-HAPTICS.md).
+
+Previous: [side rails, impact feedback, original music, crafted food/dinosaurs and underground bonus](RAILS-IMPACTS-MUSIC-BONUS.md).
 
 Previous: [smooth turning, full-volume objects, occlusion and mountain panorama](SPATIAL-ART-AND-TURNING.md).
 
@@ -31,7 +33,7 @@ Open <http://127.0.0.1:5777/vr/> on the development machine. On Quest, open the 
 - **Passages:** walk into the visible mouth with the left stick; movement follows the current look direction. Right B is an alternative. After completion/game over, B restarts.
 - **Magic controller combination:** hold both index triggers until a short vibration (about0.7s), keep holding and tap right **A three times** for IDDQD or **B three times** for IDKFA. Release both triggers afterward. Repeat to disable. Gameplay pauses during the combination.
 - **Left Y:** alternative paused test menu. Right A toggles IDDQD; right B toggles IDKFA; Y closes it. Release sticks/buttons to resume.
-- **Club:** swing the selected controller. A button cannot substitute for a physical strike.
+- **Club:** swing the selected controller. The wooden shaft stops against terrain, rails and other solid scenery; contact gives a short vibration. Pull the controller back to release it. A button cannot substitute for a physical strike.
 - **Wrist panel:** hearts, spare lives, score, key objective and passage prompt.
 
 Find the key near the far-right exit. Killing a bear is optional. Club blows reveal original hidden terrain and rewards, with original durability/cooldown rules. Only enemies that actually took a heart release recovery bones; six bones return a heart. Falls vibrate, fade and return to the latest checkpoint. After spare lives are exhausted, restart with B.
