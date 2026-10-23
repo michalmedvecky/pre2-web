@@ -1,0 +1,33 @@
+{
+  "unitTests": 294,
+  "passed": true,
+  "braking": {
+    "sprite": 27,
+    "reach": 1,
+    "hands": [
+      0.23399999999999999,
+      0.23399999999999999
+    ]
+  },
+  "descent": {
+    "headOffset": {
+      "x": 1.1,
+      "z": -6.735557395310444e-17
+    },
+    "rescue": 0,
+    "y": 7.8833333333333275
+  },
+  "stereoTransition": {
+    "level": {
+      "index": 1,
+      "id": "2"
+    },
+    "headAtStart": 1.625
+  },
+  "evidence": "GitHub Actions quest-vr-xr-test/campaign artifact",
+  "originalFiles": {
+    "checked": 54,
+    "unchanged": true
+  },
+  "limits": "The upper dead end is solid in source data and in the recovered model. A lower cave wall is a different location; no native DOS runtime or physical Quest execution."
+}

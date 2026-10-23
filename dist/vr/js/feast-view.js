@@ -1,6 +1,14 @@
 import * as T from '../vendor/three.module.js';
 import {makeCraftedClub} from './club-model.js';
 
+// DS:7c67 selects 25/26 then 27/28 while braking. Both hands reach
+// forward before velocity becomes zero; DS:7cab returns to the idle pose.
+export function feastActorPose(t){
+ const reach=({25:.45,26:.8,27:1,28:1})[t.player.sprite]||0;
+ const moving=['approach','arrive','brake','leave'].includes(t.phase),stride=moving?Math.sin(t.frame*.65)*.65:Math.sin(t.frame*.12)*.025;
+ return {reach,arms:[-stride*.65*(1-reach)-Math.PI/2*reach,stride*.65*(1-reach)-Math.PI/2*reach],legs:[stride*(1-.7*reach),-stride*(1-.7*reach)],bob:(moving?Math.abs(Math.sin(t.frame*.65))*.025:Math.sin(t.frame*.12)*.007)-.025*reach,lean:-.08*reach};
+}
+
 // A spectator stage: native screen coordinates animate the actor and apparatus,
 // while the headset remains entirely under the viewer's control.
 export function buildFeast(scene,pilot,art){
@@ -14,8 +22,10 @@ export function buildFeast(scene,pilot,art){
  for(const side of [-1,1]){ellipsoid(actor,ivory,side*.048,.63,.112,.026,.037,.018);ellipsoid(actor,black,side*.048,.63,.128,.01,.017,.009);}
  for(let n=0;n<9;n++)ellipsoid(actor,black,Math.sin(n*2.4)*.12,.32+(n%3)*.05,Math.cos(n*2.4)*.105,.022,.02,.015);
  const legs=[],arms=[];for(const side of [-1,1]){const leg=new T.Group();leg.position.set(side*.075,.24,0);actor.add(leg);ellipsoid(leg,skin,0,-.08,0,.055,.1,.055);ellipsoid(leg,skin,0,-.19,.045,.07,.04,.105);legs.push(leg);const arm=new T.Group();arm.position.set(side*.15,.47,0);actor.add(arm);ellipsoid(arm,skin,side*.015,-.09,0,.045,.115,.045);ellipsoid(arm,skin,side*.02,-.18,.01,.05,.05,.05);arms.push(arm);}
+ actor.userData={arms,legs};
  const club=makeCraftedClub();club.scale.setScalar(.45);club.position.set(.02,-.17,0);club.rotation.z=-.45;arms[1].add(club);
  const floor=mesh(new T.CylinderGeometry(4.1,4.25,.12,64),material('#51402c'));floor.position.set(0,-.08,0);
+ for(const id of [98,100,104,105,106,107,108,109])art.sprite(id,{depth:.5});
  const pieces=[100,98,104].map(id=>{const m=art.sprite(id,{depth:.5});root.add(m);return m;});
  const falling=Array.from({length:20},()=>({sprite:-1,mesh:null}));
  let bound=null,topSprite=104;
@@ -24,7 +34,7 @@ export function buildFeast(scene,pilot,art){
   const t=pilot.tally,show=!!t&&t.phase!=='iris'&&!['enter','playing'].includes(pilot.stage);root.visible=show;if(!show){if(!t)bound=null;return false;}
   if(bound!==t){bound=t;forward.set(0,0,-1).applyQuaternion(view.quaternion);forward.y=0;forward.normalize();root.position.copy(view.position).addScaledVector(forward,4.8);root.position.y=pilot.player.y;root.rotation.y=Math.atan2(-forward.x,-forward.z);}
   actor.position.set((t.player.x-160)/48,(175-t.player.y)/48,0);actor.rotation.y=Math.PI/2;actor.scale.setScalar(1.3);
-  const moving=['approach','arrive','brake','leave'].includes(t.phase),stride=moving?Math.sin(t.frame*.65)*.65:Math.sin(t.frame*.12)*.025;legs.forEach((leg,i)=>leg.rotation.x=stride*(i?-1:1));arms.forEach((arm,i)=>arm.rotation.x=-stride*.65*(i?-1:1));actor.position.y+=moving?Math.abs(Math.sin(t.frame*.65))*.025:Math.sin(t.frame*.12)*.007;
+  const pose=feastActorPose(t);legs.forEach((leg,i)=>leg.rotation.x=pose.legs[i]);arms.forEach((arm,i)=>arm.rotation.x=pose.arms[i]);actor.position.y+=pose.bob;actor.rotation.x=pose.lean;actor.userData.sourceSprite=t.player.sprite;actor.userData.brakeReach=pose.reach;
   for(let i=0;i<3;i++){const p=t.props[i];pieces[i].visible=!!p;if(!p)continue;if(i===2&&p.sprite!==topSprite){pieces[i].geometry=art.sprite(p.sprite,{depth:.5}).geometry;topSprite=p.sprite;}pieces[i].position.set((p.x-160)/48,(175-p.y)/48,.05);pieces[i].scale.setScalar(32/48);}
   falling.forEach((slot,i)=>{const o=t.falling[i];if(!o){if(slot.mesh)slot.mesh.visible=false;return;}if(o.sprite!==slot.sprite){slot.mesh?.removeFromParent();slot.mesh=art.sprite(o.sprite);slot.sprite=o.sprite;root.add(slot.mesh);}slot.mesh.visible=true;slot.mesh.position.set((o.x-160)/48,(175-o.y)/48,.05);slot.mesh.rotation.y=t.frame*.05;slot.mesh.scale.setScalar(32/48);});
   return true;

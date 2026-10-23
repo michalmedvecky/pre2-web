@@ -54,3 +54,17 @@ The padded 4x [level-two atlas](../../dist/vr/textures/tiles-hd-2.json) is rebui
 ![Food falling into the original apparatus](campaign-feast.png)
 
 ![Second-level grey-rock opening](level-two-opening.png)
+
+## Braking pose and upper cave dead end
+
+The feast now maps original DS:7c67 sprites 25/26/27/28 to progressively raised, forward-reaching arms. Both hands extend before the actor's braking velocity reaches zero; DS:7cab idle frames restore the resting arms. The 3D hand positions are checked in the rendered world, independently of the stage's viewing direction. Bowl poses 98/100/104–109 are prepared before play.
+
+The upper return passage 19 reaches (48,112). Walking right ends at the solid rock column X912 near feet Y336. The original map marks this wall solid; it is not a breakable secret. The onward route goes left to the branch at X832–864 and drops through it with Down. In VR, use B (desktop G). This is distinct from a wall inside a lower cave; the source map has several different passages.
+
+At this dead end the wrist/desktop panel points back to the branch; on the branch it shows the B/G descent action. The hint is derived from nearby source class-5 ledges at the current floor height, not a new opening in the map. Passage interaction retains priority. Checks use only nearby tile columns.
+
+A VR-specific bug compared branch bounds against the rig's X after selecting tiles at the physical head's X. Moving physically could therefore disable the B action despite standing over a branch. Both tests now use the same world-space head X. Regression cases cover offsets 0 and ±1.1m, actual Quest B with a shifted mocked headset, the native model's solid-wall/Down behavior and the complete input-only second-stage route. No DOS executable was run and original files remain unchanged.
+
+![Both hands reach forward while braking](feast-braking.png)
+
+![Upper-wall descent guidance](level-two-wall-hint.png)

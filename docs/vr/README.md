@@ -36,7 +36,7 @@ Open <http://127.0.0.1:5777/vr/> on the development machine. On Quest, open the 
 - **Right stick:** smooth proportional turning, easing up to90°/s around the tracked head.
 - **Left X:** music on/off. Original MINES music plays in both levels and BRAVO during the feast; pause/test menu mutes it.
 - **Right A:** jump. Holding it during a bear head bounce gives the higher rebound. Physical jumping is not required.
-- **Passages:** walk into the visible mouth with the left stick; movement follows the current look direction. Right B is an alternative. Away from passages, B drops through source class-5 ledges. After game over or the end of the two-level slice, B restarts the current level.
+- **Passages:** walk into the visible mouth with the left stick; movement follows the current look direction. Right B is an alternative. Away from passages, B drops through source class-5 ledges. At the upper level-two rock dead end, follow the wrist hint left to the branch and press B there. After game over or the end of the two-level slice, B restarts the current level.
 - **Magic controller combination:** hold both index triggers until a short vibration (about0.7s), keep holding and tap right **A three times** for IDDQD or **B three times** for IDKFA. Release both triggers afterward. Repeat to disable. Gameplay pauses during the combination.
 - **Left Y:** alternative paused test menu. Right A toggles IDDQD; right B toggles IDKFA; Y closes it. Release sticks/buttons to resume.
 - **Club:** swing the selected controller. The club follows the hand freely, including through scenery; walls, stairs and rails do not constrain it or trigger contact vibration. Qualified enemy/secret hits retain their feedback. A button cannot substitute for a physical strike.

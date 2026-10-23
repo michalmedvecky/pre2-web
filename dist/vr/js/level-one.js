@@ -33,6 +33,17 @@ export class LevelOne {
  }
  areaAt(y){return areaForY(y,this.world.levelIndex);}
  toggleCheat(code){if(code==='IDDQD'){this.world.godMode=!this.world.godMode;if(this.world.godMode){this.world.health=this.player.health=3;this.player.invulnerable=0;}}else if(code==='IDKFA')this.world.secretHints=!this.world.secretHints;else return null;this.emit('cheat',{code,enabled:code==='IDDQD'?this.world.godMode:this.world.secretHints});return code==='IDDQD'?this.world.godMode:this.world.secretHints;}
+ canDropThrough(input=this.lastInput){const x=this.player.x+(input.headX||0);return this.nearGate===null&&this.player.grounded&&this.nearby(x).some(b=>b.dropThrough&&Math.abs(b.maxY-this.player.y)<.05&&x>=b.minX&&x<=b.maxX);}
+ descentHint(input=this.lastInput){
+  if(this.nearGate!==null||!this.player.grounded)return null;
+  if(this.canDropThrough(input))return {ready:true,direction:0};
+  const p=this.player,x=p.x+(input.headX||0),face=this.face||1;
+  const wall=this.nearby(x+face*.35).some(b=>b.wall&&b.maxY>p.y+.2&&b.minY<p.y+.5&&(face>0?b.minX>=x&&b.minX-x<.32:b.maxX<=x&&x-b.maxX<.32));
+  if(!wall)return null;
+  const candidates=[];for(let col=Math.max(0,Math.floor(x*2)-5);col<=Math.min(255,Math.floor(x*2)+5);col++)for(const b of this.layout.columns[col])if(b.area===this.area&&b.dropThrough&&Math.abs(b.maxY-p.y)<.05&&Math.abs((b.minX+b.maxX)/2-x)<2.5)candidates.push(b);
+  const branch=candidates.sort((a,b)=>Math.abs((a.minX+a.maxX)/2-x)-Math.abs((b.minX+b.maxX)/2-x))[0];
+  return branch?{ready:false,direction:Math.sign((branch.minX+branch.maxX)/2-x)}:null;
+ }
  nearby(x){const out=[];for(let col=Math.max(0,Math.floor(x*2)-2);col<=Math.min(255,Math.floor(x*2)+2);col++)for(const b of this.layout.columns[col])if(b.area===this.area)out.push(b);return out.concat(this.platformBoxes);}
  support(x,z,above=Infinity){let y=-Infinity;for(const b of this.nearby(x))if(!(this.dropTimer>0&&b.dropThrough)&&(b.floor!==false||(b.hazard&&this.world.godMode))&&x>=b.minX&&x<=b.maxX&&z>=b.minZ&&z<=b.maxZ&&b.maxY<=above+.02)y=Math.max(y,b.maxY);return y;}
  emit(type,data={}){this.events.push({type,...data});}
@@ -58,7 +69,7 @@ export class LevelOne {
   this.time+=dt;this.dropTimer=Math.max(0,this.dropTimer-dt);this.portalFade=Math.max(0,this.portalFade-dt);this.lastInput=input;const p=this.player;p.invulnerable=Math.max(0,p.invulnerable-dt);
   if(this.complete||this.gameOver){if(input.interact&&!this.interactHeld&&!this.rescue){this.reset();return;}this.interactHeld=!!input.interact;if(!this.rescue)return;}
   if(this.rescue){this.rescue=Math.max(0,this.rescue-dt);if(this.rescue<.45&&!this.rescueMoved){this.area=this.checkpoint.area;Object.assign(p,this.checkpoint,{x:this.checkpoint.x-(input.headX||0),z:this.checkpoint.z-(input.headZ||0),vy:0,grounded:true,invulnerable:2});p.health=this.world.health;this.rescueMoved=true;this.emit('checkpoint-return');}this.jumpHeld=!!input.jump;return;}
-  const dropping=input.interact&&!this.interactHeld&&this.nearGate===null&&p.grounded&&this.nearby(p.x+(input.headX||0)).some(b=>b.dropThrough&&Math.abs(b.maxY-p.y)<.05&&p.x>=b.minX&&p.x<=b.maxX);if(dropping){this.dropTimer=.3;p.grounded=false;p.y-=.05;this.emit('drop-through');}
+  const dropping=input.interact&&!this.interactHeld&&this.canDropThrough(input);if(dropping){this.dropTimer=.3;p.grounded=false;p.y-=.05;this.emit('drop-through');}
   const ox=input.headX||0,oz=input.headZ||0,oldY=p.y,r=LEVEL_RULES.radius;
   let mx=input.x||0,mz=input.z||0,len=Math.hypot(mx,mz);if(len>1){mx/=len;mz/=len;}
   const yaw=input.yaw||0,dx=(mx*Math.cos(yaw)+mz*Math.sin(yaw))*LEVEL_RULES.speed*dt,dz=(-mx*Math.sin(yaw)+mz*Math.cos(yaw))*LEVEL_RULES.speed*dt;
@@ -129,5 +140,5 @@ export class LevelOne {
   if(block){const before=w.brokenBlocks;w.hitBlock(block,{face:this.face||1});this.tagEffects();if(before!==w.brokenBlocks){this.layout=levelOneLayout(w);this.revision++;}this.emit('hit',{x:sweep.to.x,y:sweep.to.y,z:sweep.to.z});return true;}return false;
  }
  bears(){return this.world.actors.filter(a=>a.active&&isBear(a)&&(a.vrArea??this.areaAt(a.y))===this.area).map(a=>bearPresentation(a,this.time));}
- snapshot(){return {player:{...this.player},checkpoint:{...this.checkpoint},area:this.area,score:this.score,lives:this.world.lives,complete:this.complete,gameOver:this.gameOver,cheats:{iddqd:this.world.godMode,idkfa:this.world.secretHints},rescue:this.rescue,bear:{...this.bear},bones:[],key:!!(this.world.inventory2&2),gatesVisited:[...this.gatesVisited],nearGate:this.nearGate,level:{index:this.world.levelIndex,id:this.world.level.id},source:{columns:256,items:this.world.items.length,secrets:this.world.blocks.length,platforms:this.world.platforms.length,enemies:this.world.definitions.length},native:this.world.snapshot()};}
+ snapshot(){return {player:{...this.player},checkpoint:{...this.checkpoint},area:this.area,score:this.score,lives:this.world.lives,complete:this.complete,gameOver:this.gameOver,cheats:{iddqd:this.world.godMode,idkfa:this.world.secretHints},rescue:this.rescue,bear:{...this.bear},bones:[],key:!!(this.world.inventory2&2),gatesVisited:[...this.gatesVisited],nearGate:this.nearGate,canDropThrough:this.canDropThrough(),descentHint:this.descentHint(),level:{index:this.world.levelIndex,id:this.world.level.id},source:{columns:256,items:this.world.items.length,secrets:this.world.blocks.length,platforms:this.world.platforms.length,enemies:this.world.definitions.length},native:this.world.snapshot()};}
 }
