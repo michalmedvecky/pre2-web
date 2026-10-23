@@ -2,8 +2,8 @@
 import * as T from '../vendor/three.module.js';
 const PIXEL=1/32;
 
-export function makeNativeArt(assets){
- const game=assets.game,level=game.levels[0],palette=game.palettes[0].rgb8_scaled;
+export function makeNativeArt(assets,{levelIndex=0}={}){
+ const game=assets.game,level=game.levels[levelIndex],palette=game.palettes[levelIndex].rgb8_scaled;
  const colors=Array.from({length:16},(_,i)=>new T.Color(palette[i*3]/255,palette[i*3+1]/255,palette[i*3+2]/255).convertSRGBToLinear());
  const material=new T.MeshStandardMaterial({vertexColors:true,roughness:.94,flatShading:true});
  material.name='native-indexed-extrusion';

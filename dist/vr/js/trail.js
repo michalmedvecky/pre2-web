@@ -5,10 +5,10 @@ export function boundaryShells(){return [
  {minX:0,maxX:128,minY:23.25,maxY:23.75,minZ:-5,maxZ:5,area:'caves',kind:'cave roof'},
  ...[-2.7,2.7].map(z=>({minX:110.75,maxX:128.25,minY:-2.95,maxY:2.05,minZ:z-.175,maxZ:z+.175,area:'outdoors',kind:'underground wall'}))];}
 export function floorEdges(layout,world){
- const solid=new Set(layout.boxes.map(b=>b.row*256+b.column)),rows=[],shells=boundaryShells();
+ const solid=new Set(layout.boxes.map(b=>b.row*256+b.column)),rows=[],shells=(world.levelIndex??0)===0?boundaryShells():[];
  for(const b of layout.boxes){if(!b.floor||solid.has((b.row-1)*256+b.column))continue;for(const side of [-1,1]){
  const enclosed=shells.some(w=>w.area===b.area&&b.minX>=w.minX&&b.maxX<=w.maxX&&w.maxY>=b.maxY+.87&&w.minY<=b.maxY+.48&&Math.abs((w.minZ+w.maxZ)/2-side*1.73)<3);if(enclosed)continue;
- const gate=world.gates.some(g=>g.active&&((g.triggerTile&255)/2-b.minX)>.0-1&&((g.triggerTile&255)/2-b.minX)<1&&Math.abs((672-(g.triggerTile>>8)*16)/32-b.maxY)<1.3&&((g.triggerTile>>8)<16?side===1:side===-1));if(!gate)rows.push({...b,side,z:side*1.73});}}
+ const gate=world.gates.some(g=>g.active&&((g.triggerTile&255)/2-b.minX)>.0-1&&((g.triggerTile&255)/2-b.minX)<1&&Math.abs((672-(g.triggerTile>>8)*16)/32-b.maxY)<1.3&&((world.levelIndex??0)===0&&(g.triggerTile>>8)<16?side===1:side===-1));if(!gate)rows.push({...b,side,z:side*1.73});}}
  return rows;
 }
 export function railMeshes(edges,wood,rope){const root=new T.Group();root.name='trail-railings';const post=new T.CylinderGeometry(.045,.06,1,7),beam=new T.CylinderGeometry(.024,.024,1,6);beam.rotateZ(Math.PI/2);const marker=new T.Object3D(),posts=[],rails=[];

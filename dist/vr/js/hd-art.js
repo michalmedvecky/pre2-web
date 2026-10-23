@@ -2,13 +2,16 @@
 import * as T from '../vendor/three.module.js';
 import {makeVolumeArt} from './volume-art.js';
 import {AWARDS} from './compat.js';
-export async function loadHDArt(renderer,assets,{volumetric=false}={}){
+export async function loadHDArt(renderer,assets,{volumetric=false,levelIndex=0,sharedArt=null}={}){
  const base=new URL('../textures/',import.meta.url),r=await fetch(new URL('objects-hd.json',base));if(!r.ok)throw Error('HD manifest unavailable');const pack=await r.json();
  const load=async file=>{const image=new Image();image.src=new URL(file,base);await image.decode();const canvas=document.createElement('canvas');canvas.width=image.naturalWidth;canvas.height=image.naturalHeight;const c=canvas.getContext('2d',{willReadFrequently:true});c.drawImage(image,0,0);const pixels=c.getImageData(0,0,canvas.width,canvas.height).data,texture=new T.Texture(image);texture.colorSpace=T.SRGBColorSpace;texture.magFilter=T.LinearFilter;texture.minFilter=T.LinearMipmapLinearFilter;texture.anisotropy=Math.min(4,renderer.capabilities.getMaxAnisotropy());texture.needsUpdate=true;renderer.initTexture(texture);return {texture,pixels,width:canvas.width,height:canvas.height};};
- const [sprites,tiles]=await Promise.all([load(pack.file),load(pack.tiles.file)]),flat=makeHDArt(assets,pack,sprites,tiles),art=volumetric?makeVolumeArt(flat,assets,pack,sprites,tiles):flat;
- for(let id=53;id<assets.game.sprites.length;id++){art.sprite(id);if(id<=311||id===308||id===310)art.sprite(id,{depth:.12});if(id>=312)art.sprite(id,{depth:.5});if(!(id%16))await new Promise(resolve=>setTimeout(resolve,0));}
+ if(levelIndex===1){const response=await fetch(new URL('tiles-hd-2.json',base));if(!response.ok)throw Error('Level 2 HD manifest unavailable');pack.tiles=await response.json();}
+ const [sprites,tiles]=await Promise.all([sharedArt?Promise.resolve(sharedArt.spriteImage):load(pack.file),load(pack.tiles.file)]),flat=makeHDArt(assets,pack,sprites,tiles),art=volumetric?makeVolumeArt(flat,assets,pack,sprites,tiles):flat;
+ art.spriteImage=sprites;art.stats.level=assets.game.levels[levelIndex].id;
+ if(sharedArt){for(const key of ['sprite','label','score'])art[key]=sharedArt[key];}
+ if(!sharedArt)for(let id=53;id<assets.game.sprites.length;id++){art.sprite(id);if(id<=311||id===308||id===310)art.sprite(id,{depth:.12});if(id>=312)art.sprite(id,{depth:.5});if(!(id%16))await new Promise(resolve=>setTimeout(resolve,0));}
  art.sprite(232,{depth:3.6});for(let id=0;id<256;id++)art.tileMesh(id,{depth:volumetric?.5:.32});
- art.prepareLabels(renderer);return art;
+ if(!sharedArt)art.prepareLabels(renderer);return art;
 }
 export function makeHDArt(assets,pack,sprites,tiles){
  const material=map=>new T.MeshStandardMaterial({map,alphaTest:.35,roughness:.94,side:T.FrontSide});

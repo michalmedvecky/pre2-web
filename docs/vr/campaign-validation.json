@@ -1,0 +1,55 @@
+{
+  "unitTests": {
+    "passed": 291,
+    "command": "node --test tests/*.test.mjs"
+  },
+  "levelTwoInputRoute": {
+    "ticks": 6270,
+    "gates": [
+      15,
+      17,
+      16
+    ],
+    "next": 2,
+    "pitRescues": 0,
+    "teleports": 0
+  },
+  "desktopAndMockXR": {
+    "passed": true,
+    "levelTwoCalls": 105,
+    "renderedRooms": [
+      {
+        "nativeY": 128,
+        "headOcclusion": 0
+      },
+      {
+        "nativeY": 1408,
+        "headOcclusion": 0
+      },
+      {
+        "nativeY": 1520,
+        "headOcclusion": 0
+      }
+    ],
+    "evidence": "GitHub Actions quest-vr-xr-test/campaign artifact; verify-vr-campaign-browser.mjs",
+    "fullStereoTransition": {
+      "passed": true,
+      "entryLevel": {
+        "index": 1,
+        "id": "2"
+      },
+      "yawPreserved": true,
+      "trackedHeadAtSourceStart": true
+    }
+  },
+  "originalFiles": {
+    "checked": 54,
+    "unchanged": true,
+    "manifestSHA256": "fea8f651d6c23d7f956c82dad76ab4a1860a2244f5533aacecbcf6b869675774"
+  },
+  "limits": [
+    "No DOS or native executable execution.",
+    "Physical Quest performance/comfort acceptance pending.",
+    "Two-level VR slice; level 3 and bonus D are not yet playable."
+  ]
+}

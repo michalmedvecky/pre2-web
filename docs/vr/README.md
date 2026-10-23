@@ -1,6 +1,6 @@
-# Quest 360° — playable first level
+# Quest 360° — playable levels 1 and 2
 
-The `vr/quest-360` branch runs the first level at **`/vr/`** as a stereoscopic 3D world with tracked hands, physical club combat and free movement in depth. It now loads the complete original map, instead of the old 32m practice course.
+The `vr/quest-360` branch runs the first and second levels at **`/vr/`** as a stereoscopic 3D world with tracked hands, physical club combat and free movement in depth. It loads the complete original maps, with a native-scored feast between them. See [campaign and level-two behavior, evidence and acceptance](CAMPAIGN-AND-LEVEL-TWO.md).
 
 The upright bear follows the original walking and ground-emergence families. The full level includes the mountain, late chasms, bonus rooms, 65 authored item/marker records, 48 secret cells, all eight passage records, 13 normal enemy definitions, three moving/falling platforms, two checkpoints, the key and the locked exit. See [source audit](LEVEL-ONE-SOURCE-AUDIT.md), [bear reference](BEAR-REFERENCE.md) and [implementation/acceptance record](LEVEL-ONE-IMPLEMENTATION.md).
 
@@ -8,7 +8,9 @@ The upright bear follows the original walking and ground-emergence families. The
 
 ![Upright bear in the complete source-map level](level-one-bear.png)
 
-Latest: [free tracked club: remove environmental blocking and rumble loops](FREE-TRACKED-CLUB.md).
+Latest: [native feast transition and playable second level](CAMPAIGN-AND-LEVEL-TWO.md).
+
+Previous: [free tracked club: remove environmental blocking and rumble loops](FREE-TRACKED-CLUB.md).
 
 Previous: [smoother upright bears, fur detail and articulated gait](NATURAL-BEARS.md).
 
@@ -32,9 +34,9 @@ Open <http://127.0.0.1:5777/vr/> on the development machine. On Quest, open the 
 
 - **Left stick:** move relative to head direction. Centre it once after entering/resuming VR. Neutral stops immediately.
 - **Right stick:** smooth proportional turning, easing up to90°/s around the tracked head.
-- **Left X:** music on/off. The original level-one MINES track starts after launch; pause/test menu mutes it.
+- **Left X:** music on/off. Original MINES music plays in both levels and BRAVO during the feast; pause/test menu mutes it.
 - **Right A:** jump. Holding it during a bear head bounce gives the higher rebound. Physical jumping is not required.
-- **Passages:** walk into the visible mouth with the left stick; movement follows the current look direction. Right B is an alternative. After completion/game over, B restarts.
+- **Passages:** walk into the visible mouth with the left stick; movement follows the current look direction. Right B is an alternative. Away from passages, B drops through source class-5 ledges. After game over or the end of the two-level slice, B restarts the current level.
 - **Magic controller combination:** hold both index triggers until a short vibration (about0.7s), keep holding and tap right **A three times** for IDDQD or **B three times** for IDKFA. Release both triggers afterward. Repeat to disable. Gameplay pauses during the combination.
 - **Left Y:** alternative paused test menu. Right A toggles IDDQD; right B toggles IDKFA; Y closes it. Release sticks/buttons to resume.
 - **Club:** swing the selected controller. The club follows the hand freely, including through scenery; walls, stairs and rails do not constrain it or trigger contact vibration. Qualified enemy/secret hits retain their feedback. A button cannot substitute for a physical strike.
@@ -42,7 +44,7 @@ Open <http://127.0.0.1:5777/vr/> on the development machine. On Quest, open the 
 
 Find the key near the far-right exit. Killing a bear is optional. Club blows reveal original hidden terrain and rewards, with original durability/cooldown rules. Only enemies that actually took a heart release recovery bones; six bones return a heart. Falls vibrate, fade and return to the latest checkpoint. After spare lives are exhausted, restart with B.
 
-Desktop: **WASD/arrow keys**, drag to look, **Q/E** snap turn, **Space** jump, **F/click** swing, **G** alternative passage action, **Esc** pause, **R** restart. Type **IDDQD** / **IDKFA**, or use **F2** for the paused test menu. B/keyboard passage also restarts after finishing. The old practice course remains only as `?qa&pilot=1` for controller regression fixtures.
+Desktop: **WASD/arrow keys**, drag to look, **Q/E** snap turn, **Space** jump, **F/click** swing, **G** alternative passage action, **Esc** pause, **R** restart. Type **IDDQD** / **IDKFA**, or use **F2** for the paused test menu. G also drops through ledges away from passages; B/G restarts after the current slice finishes. The old practice course remains only as `?qa&pilot=1` for controller regression fixtures.
 
 ## Automatic GHCR build and Kubernetes deployment
 
