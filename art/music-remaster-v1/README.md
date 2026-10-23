@@ -32,3 +32,7 @@ Sample credits: VSCO2 Community Edition, Versilian Studios / Sam Gossner, Simon 
 `review/browser.json`: Chromium and WebKit both decode and start all12 full AAC files, validate loop bounds/decoded signal and seam amplitude, exercise real keyboard MUSIC both directions, retain the selection across a stage change, recover from an injected503, and reload into original mode with no optional request. These are headless integration/decoded-signal checks, not a claim of a full subjective listening pass on every track or physical-phone testing. In-browser memory retains only one decoded track. The previous approved acoustic proof and the rendering sources are retained under `art/music-faithful-v1/` and `v2/`.
 
 Original playback remains the default. This is a sampled arrangement, not a live orchestral recording. Publication evidence is added in `release.json` after CI; no cluster rollout is performed here.
+
+## Published release1.4.0
+
+Game commit`a945d51e5be8823920a2e6527dfe2dbc8b1a77fa`; successful[build39925343875](https://github.com/michalmedvecky/pre2-web/actions/runs/39925343875). Verified linux/amd64 and linux/arm64 OCI revision labels and actual build.json contents in both image layers. Index digest`sha256:0a10ebbdca3d5885548252a9310427d3a4ca814becbee44a3dfd60996348926a`. The metadata/tag commit carries this verified deployment pin. No Kubernetes rollout was performed.
