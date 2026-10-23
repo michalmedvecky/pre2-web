@@ -104,10 +104,16 @@ export class OriginalMixer {
   }
 }
 
+// Level songs are distinct even when original stages share one MOD.
+export function oravaTrackKey(name,levelId=null){
+ if(levelId!==null&&/^[1-9A-H]$/.test(String(levelId)))return 'LEVEL_'+levelId;
+ return name==='BRAVO'?'LEVEL_F':name==='CODE'?'LEVEL_2':'LEVEL_1';
+}
+
 export class GameAudio {
   constructor(base = new URL('../assets/',import.meta.url)) {
     this.base=base; this.context=null; this.node=null; this.muted=false;
-    this.musicMode='original';this.remastered=null;this.track=null; this.trackToken=0; this.modules=new Map(); this.sampleBank=null;
+    this.musicMode='original';this.remastered=null;this.orava=null;this.track=null;this.levelId=null; this.trackToken=0; this.modules=new Map(); this.sampleBank=null;
   }
   async unlock() {
     if (!this.context) {
@@ -133,23 +139,24 @@ class Pre2Processor extends AudioWorkletProcessor {
         this.node=new AudioWorkletNode(this.context,'prehistorik-original',{numberOfInputs:0,numberOfOutputs:1,outputChannelCount:[1]});
         // Sound Blaster analog output is AC coupled; remove unsigned-buffer DC.
         const dc=this.context.createBiquadFilter();dc.type='highpass';dc.frequency.value=20;
-        this.node.connect(dc);dc.connect(this.context.destination);this.remastered=new RemasteredMusic(this.context,{base:this.base});this.remastered.setMuted(this.muted);
+        this.node.connect(dc);dc.connect(this.context.destination);this.remastered=new RemasteredMusic(this.context,{base:this.base});this.remastered.setMuted(this.muted);this.orava=new RemasteredMusic(this.context,{base:this.base,folder:'music-orava'});this.orava.setMuted(this.muted);
         this.node.port.postMessage({type:'mute',muted:this.muted});
       } finally { URL.revokeObjectURL(url); }
-      if(this.track) await this.setTrack(this.track);
+      if(this.track) await this.setTrack(this.track,{levelId:this.levelId});
     }
     await this.context.resume(); return true;
   }
-  async setMusicMode(mode){if(!['original','orchestral'].includes(mode))throw Error('Invalid music mode');this.musicMode=mode;return this.setTrack(this.track);}
-  async setTrack(name) {
+  async setMusicMode(mode){if(!['original','orchestral','orava'].includes(mode))throw Error('Invalid music mode');this.musicMode=mode;if(mode!=='orava'&&this.orava)this.orava.buffer=null;if(mode!=='orchestral'&&this.remastered)this.remastered.buffer=null;return this.setTrack(this.track,{levelId:this.levelId});}
+  async setTrack(name,{levelId=null}={}) {
     if(name&&!/^[A-Za-z0-9_-]+$/.test(name))throw Error('Invalid music name');
-    this.track=name;const token=++this.trackToken;this.remastered?.stop();if(!this.node)return 'original';
+    this.track=name;this.levelId=levelId;const token=++this.trackToken;this.remastered?.stop();this.orava?.stop();if(!this.node)return 'original';
     if(!name){this.node.port.postMessage({type:'song',song:null});return 'original';}
     if(!this.modules.has(name))this.modules.set(name,fetch(new URL(`music/${name}.mod`,this.base)).then(r=>{if(!r.ok)throw Error(`Music ${name}: ${r.status}`);return r.arrayBuffer();}).then(parseModule).catch(e=>{this.modules.delete(name);throw e;}));
     const song=await this.modules.get(name);if(token!==this.trackToken)return null;
     // Original plays while the optional arrangement loads, and remains the failure fallback.
     this.node.port.postMessage({type:'song',song});
-    if(this.musicMode==='orchestral')try{const playing=await this.remastered.play(name);if(playing&&token===this.trackToken&&this.musicMode==='orchestral'){this.node.port.postMessage({type:'song',song:null});return 'orchestral';}}catch{if(token!==this.trackToken)return null;return 'original';}
+    const mode=this.musicMode,player=mode==='orava'?this.orava:mode==='orchestral'?this.remastered:null;
+    if(player)try{const playing=await player.play(mode==='orava'?oravaTrackKey(name,levelId):name);if(playing&&token===this.trackToken&&this.musicMode===mode){this.node.port.postMessage({type:'song',song:null});return mode;}}catch{if(token!==this.trackToken)return null;return 'original';}
     return token===this.trackToken?'original':null;
   }
   async sfx(index) {
@@ -160,6 +167,6 @@ class Pre2Processor extends AudioWorkletProcessor {
     const samples=Uint8Array.from(bank.subarray(start,start+SAMPLE_LENGTHS[index]),x=>((x+128)&255)>>>2);
     this.node.port.postMessage({type:'effect',samples});
   }
-  setMuted(muted) {this.muted=!!muted;this.remastered?.setMuted(this.muted);this.node?.port.postMessage({type:'mute',muted:this.muted});}
-  stop() {this.remastered?.stop();this.track=null;this.trackToken++;this.node?.port.postMessage({type:'song',song:null});this.node?.port.postMessage({type:'effect',samples:new Uint8Array()});}
+  setMuted(muted) {this.muted=!!muted;this.remastered?.setMuted(this.muted);this.orava?.setMuted(this.muted);this.node?.port.postMessage({type:'mute',muted:this.muted});}
+  stop() {this.remastered?.stop();this.orava?.stop();this.track=null;this.levelId=null;this.trackToken++;this.node?.port.postMessage({type:'song',song:null});this.node?.port.postMessage({type:'effect',samples:new Uint8Array()});}
 }

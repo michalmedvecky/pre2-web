@@ -19,3 +19,5 @@ art/music-faithful-v2/samples/*.wav
 art/music-faithful-v1/output*/*.wav
 art/music-faithful-v2/output*/*.wav
 art/music-remaster-v1/masters/*.wav
+# Provider originals and decoded Orava masters are packaging intermediates.
+art/music-orava-v1/raw/

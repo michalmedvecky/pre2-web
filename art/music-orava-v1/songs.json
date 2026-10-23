@@ -1,0 +1,122 @@
+[
+  {
+    "level": "1",
+    "title": "Hej, cez jamu",
+    "theme": "Opening forest: hungry caveman, club, bears, rock platforms, fruit and jumping pits",
+    "tempo": 126,
+    "taskId": "2306b628-976f-4c08-829e-df5c7c78d01b",
+    "lyrics": "Pod horou sa oheň páli,\nhladný junák skáče skaly.\nV jednej ruke kyjak nesie,\nvečeru si hľadá v lese.\n\nHej, cez jamu, ponad skaly,\nmedvede nás nedohnali!\nZa čerešňu, za malinu,\nprejdem celú divočinu."
+  },
+  {
+    "level": "2",
+    "title": "Svieca v sivej skale",
+    "theme": "Grey rock caves, lights switching off, concealed passages and drop-through planks",
+    "tempo": 118,
+    "lyrics": "V sivej skale chodník mizne,\nchladná tma ma v boku hryzne.\nPod nohami doska puká,\nsrdce v hrudi hlasno búcha.\n\nHej, zapáľ mi malú sviecu,\nnech ma tiene neunesú.\nCez priepasť a ponad jamu,\nnájdem cestu domov k ránu."
+  },
+  {
+    "level": "3",
+    "title": "Pod zelenou skalou",
+    "theme": "Green boulders, tangled roots and a strong bear guarding the route",
+    "tempo": 130,
+    "lyrics": "Zelené sú skaly v hore,\nkorene mi stoja v ceste.\nVeľký medveď zuby cerí,\nže sa bojím, tomu verí.\n\nHej, medvedík, ustúp z cesty,\nje čas domov jedlo niesť si.\nKyjak buchne, skala duní,\nuž ma nikto nedohoní."
+  },
+  {
+    "level": "4",
+    "title": "Žlté krídlo nad horou",
+    "theme": "Giant jungle trees and a yellow skin hang-glider: run, take off, climb and dive",
+    "tempo": 128,
+    "lyrics": "Vysoké sú stromy v hore,\nžlté krídlo čaká hore.\nRozbehnem sa popri skale,\nuž ma vietor nesie ďalej.\n\nHej, nad lesom, ponad lúky,\nnech mi vietor vedie ruky.\nKeď sa krídlo k zemi skláňa,\nnový vietor ma zas bráni."
+  },
+  {
+    "level": "5",
+    "title": "Jesenný chodníček",
+    "theme": "Autumn red leaves, rooted platforms, hollow tree and a hidden hut entrance",
+    "tempo": 120,
+    "lyrics": "Červené sú listy v lese,\nkaždý vietor ďalší nesie.\nV dutom strome ticho býva,\nmalá chyža sa tam skrýva.\n\nHej, chodníček pod lístkami,\nneuhýbaj pod nohami.\nCez korene, ponad jamy,\npôjdem domov za hviezdami."
+  },
+  {
+    "level": "6",
+    "title": "Nedáš ma, starý strom",
+    "theme": "Orange haunted tree boss, hammering claw-like roots, spikes and a brave jumping caveman",
+    "tempo": 140,
+    "lyrics": "Starý strom má zuby z dreva,\nna celú horu sa hnevá.\nŤažkou labou trieska zhora,\nzem sa trasie dookola.\n\nHej, udri si, ja ti skočím,\nani chrbtom sa neotočím.\nKyjak zaznie, drevo praská,\nkľúčik moja ruka získa."
+  },
+  {
+    "level": "7",
+    "title": "Sneh pod bosou nohou",
+    "theme": "Snowy landscape, icy platforms and warmth of a distant home",
+    "tempo": 116,
+    "lyrics": "Biely sneh mi nohy studí,\nstudený ma vietor budí.\nBosou nohou skúšam skaly,\nnech si chrbát nedolámem.\n\nHej, snežienka, padáš tíško,\nja mám hladné svoje bruško.\nZa kopčekom oheň čaká,\njeho teplo ma už láka."
+  },
+  {
+    "level": "8",
+    "title": "Ľadová jaskyňa",
+    "theme": "Underground cave with hanging brown stalactites, turquoise ice and narrow landings",
+    "tempo": 108,
+    "lyrics": "V jaskyni sa ozve kvapka,\npod nohami ľad mi praská.\nZhora visia zuby skaly,\núzke rímsy pod nohami.\n\nHej, po ľade kráčaj zľahka,\nčierna jama dolu láka.\nKeď sa modrý ľad raz zlomí,\nnezostanem medzi krami."
+  },
+  {
+    "level": "9",
+    "title": "Kľúč od kamennej brány",
+    "theme": "Purple castle halls, carved beast statues, columns, a wooden gate and the exit key",
+    "tempo": 122,
+    "lyrics": "Kamenný hrad tiene ráta,\nťažké drevo drží vráta.\nSochy mlčia pri tej stene,\nkto ma pustí z tejto siene?\n\nHej, otvor sa, stará brána,\nnech ma vonku víta ráno.\nKľúčik držím, strach sa tratí,\ncez tie múry vietor letí."
+  },
+  {
+    "level": "A",
+    "title": "Obor za hradbami",
+    "theme": "Final giant boss amid castle masonry, danger and victory",
+    "tempo": 142,
+    "lyrics": "Za hradbami obor vstáva,\nťažký tieň na cestu dáva.\nSekera sa v ruke blyští,\nja sa držím ešte bližšie.\n\nHej, obor môj, márne zúriš,\nmoju cestu nezamúriš.\nKeď sa zem pod nami trasie,\nvíťazstvo si domov nesiem."
+  },
+  {
+    "level": "B",
+    "title": "Čerešne na veľkej žemli",
+    "theme": "Banquet bonus: giant sandwich platforms, cheese, dangling cherries and straw slopes",
+    "tempo": 132,
+    "lyrics": "Na veľkej sa žemli veziem,\nza čerešňou hore leziem.\nSyr sa z kraja dolu ťahá,\nto je cesta môjmu hladu.\n\nHej, čerešňa červenučká,\nneušmykni sa mi z rúčky.\nPo slamke sa zvezie pieseň,\ncelú hostinu si nesiem."
+  },
+  {
+    "level": "C",
+    "title": "Hostina pod nosom",
+    "theme": "Banquet bonus with a giant roast pig, fruit, glassware and rich food",
+    "tempo": 134,
+    "lyrics": "Pečené sa prasa smeje,\nmoje brucho nádej hreje.\nHrozno visí nad pohárom,\njablko mám rovno za ním.\n\nHej, hostina, široký stôl,\nkeby som tu ešte raz bol!\nZoberiem si sústo malé,\npotom skočím o kus ďalej."
+  },
+  {
+    "level": "D",
+    "title": "Po lístku za ovocím",
+    "theme": "Fruit banquet bonus, leaf and cherry-stem ramps, narrow supports and sweet treasure",
+    "tempo": 128,
+    "lyrics": "Po zelenom lístku stúpam,\nna sladkosti cestu skúšam.\nStopka vedie ponad jamu,\nčerešne mi kývu z brala.\n\nHej, malina, sladké hrozno,\nprídem k vám aj keby mrzlo.\nKaždý lístok pevne stojí,\nsladký poklad hlad mi zhojí."
+  },
+  {
+    "level": "E",
+    "title": "Pod kvapľovou strechou",
+    "theme": "Warm flowstone cave, rocky openings, bones, foliage and a buzzing wasp",
+    "tempo": 114,
+    "lyrics": "Pod kvapľami cesta tečie,\nosa bzučí, čas mi beží.\nMedzi kosťami sa skrýva\nchodba, čo ma ďalej volá.\n\nHej, skalisko, pusť ma ďalej,\nnetúžim po tvojej chvále.\nZa tou dierou slnko svieti,\ntam sa moja pieseň vráti."
+  },
+  {
+    "level": "F",
+    "title": "Domov s plnou kapsou",
+    "theme": "Closing credits and homecoming after the prehistoric adventure, gratitude and a shared feast",
+    "tempo": 112,
+    "lyrics": "Dlhá cesta koniec máva,\npri ohníku čaká sláva.\nKyjak k stene tíško zložím,\nplnú kapsu na stôl vložím.\n\nHej, priatelia, sadajme si,\nkaždý dobré sústo vezmi.\nNech nám husle ešte hrajú,\nnohy dnes už oddych majú."
+  },
+  {
+    "level": "G",
+    "title": "Burger na ľade",
+    "theme": "Ice bonus course, slippery starts, jumping an upper shelf, burger and safe returning",
+    "tempo": 136,
+    "lyrics": "Na ľade sa burger šmýka,\nmoje brucho za ním vzlyká.\nHore skočím, dolu zídem,\npo tej istej ceste prídem.\n\nHej, ľadisko, pevne drž ma,\nčierna jama nech ma nemá.\nAj keď vietor líca štípe,\nza tou žemľou srdce bije."
+  },
+  {
+    "level": "H",
+    "title": "Jantárová kráľovná",
+    "theme": "Original Amber Kingdom: honey-root platforms, bees, sticky honey, amber spikes, queen and gate key",
+    "tempo": 132,
+    "lyrics": "Jantár svieti medzi listím,\nvčely bzučia hlasom čistým.\nMed mi lepí bosé päty,\núl je samý poklad zlatý.\n\nHej, kráľovná, pusť ma z úľa,\nmoja pieseň sa tu túla.\nKľúčik vezmem, bránu miniem,\ns plnou kapsou domov idem."
+  }
+]

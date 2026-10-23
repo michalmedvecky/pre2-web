@@ -1,0 +1,13 @@
+{
+  "taskId": "63148676-ec23-47f3-9af6-01c331350e7f",
+  "level": "E",
+  "rawSHA256": "a5e2b71e35b81066d8af289cb753b23d5ea161a5aa36912f5dadd3ad06bff260",
+  "duration": 30.772244897959183,
+  "gain": 0.6721878355103251,
+  "rms": 0.12997980632396056,
+  "peak": 0.659366870019787,
+  "edgeFadeSeconds": 0.02,
+  "loop": "full song; 20 ms edge fades, no claim of beat-matched seamless vocal looping",
+  "newComposition": true,
+  "preservesOriginalMODMelody": false
+}

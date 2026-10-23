@@ -1,0 +1,12 @@
+{
+  "taskId": "2306b628-976f-4c08-829e-df5c7c78d01b",
+  "status": "SUCCEEDED",
+  "durationSeconds": 30.641583,
+  "title": "Prehistorik — Hej, cez jamu (oravská ukážka)",
+  "language": "Slovak",
+  "originalLyrics": "lyrics-forest.txt",
+  "prompt": "prompt-forest.txt",
+  "preservesOriginalMODMelody": false,
+  "integratedIntoGame": true,
+  "note": "Approved pilot reused as stage 1 in ORAVA mode. New composition, not original MOD melody."
+}
