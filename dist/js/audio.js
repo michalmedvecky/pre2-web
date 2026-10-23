@@ -114,7 +114,7 @@ export function oravaTrackKey(name,levelId=null){
 export class GameAudio {
   constructor(base = new URL('../assets/',import.meta.url)) {
     this.base=base; this.context=null; this.node=null; this.muted=false;
-    this.bells=null;this.musicMode='original';this.remastered=null;this.orava=null;this.track=null;this.levelId=null; this.trackToken=0; this.modules=new Map(); this.sampleBank=null;
+    this.bells=null;this.bark=null;this.lastBark=-Infinity;this.musicMode='original';this.remastered=null;this.orava=null;this.track=null;this.levelId=null; this.trackToken=0; this.modules=new Map(); this.sampleBank=null;
   }
   async unlock() {
     if (!this.context) {
@@ -147,9 +147,11 @@ class Pre2Processor extends AudioWorkletProcessor {
     }
     await this.context.resume(); return true;
   }
-  async prepareBells(){if(!this.context)return false;if(!this.bells){this.bells=new SpatialBells(this.context,{base:this.base});this.bells.setMuted(this.muted);this.bells.setEnabled(this.musicMode==='orava');}await this.bells.load();return true;}
-  async ringBells(x,y,camera){if(!this.context)return false;await this.prepareBells();return this.bells.ring(x,y,camera);}
-  async setMusicMode(mode){if(!['original','orchestral','orava'].includes(mode))throw Error('Invalid music mode');this.musicMode=mode;this.bells?.setEnabled(mode==='orava');if(mode!=='orava'&&this.orava)this.orava.buffer=null;if(mode!=='orchestral'&&this.remastered)this.remastered.buffer=null;return this.setTrack(this.track,{levelId:this.levelId});}
+  initSpatialSounds(){if(!this.context)return false;if(!this.bells){this.bells=new SpatialBells(this.context,{base:this.base});this.bells.setMuted(this.muted);this.bells.setEnabled(this.musicMode==='orava');}if(!this.bark){this.bark=new SpatialBells(this.context,{base:this.base,file:'bark.wav',level:.68});this.bark.setMuted(this.muted);this.bark.setEnabled(this.musicMode==='orava');}return true;}
+  async prepareBells(){if(!this.initSpatialSounds())return false;await Promise.all([this.bells.load(),this.bark.load().catch(()=>null)]);return true;}
+  async barkDog(x,y,camera){if(!this.context||this.musicMode!=='orava'||this.muted)return false;if(this.context.currentTime-this.lastBark<.18)return false;this.lastBark=this.context.currentTime;if(!this.initSpatialSounds())return false;return this.bark.ring(x,y,camera);}
+  async ringBells(x,y,camera){if(!this.initSpatialSounds())return false;return this.bells.ring(x,y,camera);}
+  async setMusicMode(mode){if(!['original','orchestral','orava'].includes(mode))throw Error('Invalid music mode');this.musicMode=mode;this.bells?.setEnabled(mode==='orava');this.bark?.setEnabled(mode==='orava');if(mode!=='orava'&&this.orava)this.orava.buffer=null;if(mode!=='orchestral'&&this.remastered)this.remastered.buffer=null;return this.setTrack(this.track,{levelId:this.levelId});}
   async setTrack(name,{levelId=null}={}) {
     if(name&&!/^[A-Za-z0-9_-]+$/.test(name))throw Error('Invalid music name');
     this.track=name;this.levelId=levelId;const token=++this.trackToken;this.remastered?.stop();this.orava?.stop();if(!this.node)return 'original';
@@ -170,6 +172,6 @@ class Pre2Processor extends AudioWorkletProcessor {
     const samples=Uint8Array.from(bank.subarray(start,start+SAMPLE_LENGTHS[index]),x=>((x+128)&255)>>>2);
     this.node.port.postMessage({type:'effect',samples});
   }
-  setMuted(muted) {this.muted=!!muted;this.remastered?.setMuted(this.muted);this.orava?.setMuted(this.muted);this.bells?.setMuted(this.muted);this.node?.port.postMessage({type:'mute',muted:this.muted});}
-  stop() {this.bells?.stop();this.remastered?.stop();this.orava?.stop();this.track=null;this.levelId=null;this.trackToken++;this.node?.port.postMessage({type:'song',song:null});this.node?.port.postMessage({type:'effect',samples:new Uint8Array()});}
+  setMuted(muted) {this.muted=!!muted;this.remastered?.setMuted(this.muted);this.orava?.setMuted(this.muted);this.bells?.setMuted(this.muted);this.bark?.setMuted(this.muted);this.node?.port.postMessage({type:'mute',muted:this.muted});}
+  stop() {this.bark?.stop();this.bells?.stop();this.remastered?.stop();this.orava?.stop();this.track=null;this.levelId=null;this.trackToken++;this.node?.port.postMessage({type:'song',song:null});this.node?.port.postMessage({type:'effect',samples:new Uint8Array()});}
 }

@@ -37,3 +37,11 @@ Food keeps its aspect ratio, source scoring and bonus routing. The bonus plate i
 - All 54 protected original files verified unchanged.
 
 Browser automation checks routing and playback state, not a subjective listening evaluation on every speaker/headphone combination. The approved generated animation poses can be refined further without changing the collision rules.
+
+## Patch 1.6.1
+
+The companion gives a short friendly woof on genuine enemy defeat (including star hits, power effects, glider stomps and Amber bees) and boss victory. Damage without defeat, despawning, repeated defeat calls and all non-ORAVA play remain quiet. The new mono generated bark is positioned at the dog's coordinates through an independent HRTF bus. It respects normal mute and ORAVA enable/disable; closely grouped kills within 180 ms share one bark to avoid a loud chorus. Bell and bark asset loading are separate, so a missing bark does not silence the bell weapon. Sound provenance and SHA-256 are in `bark.json`; no temporary signed download URLs are retained.
+
+Down attacks now emit stars straight down from beneath the feet; up attacks emit straight up. Side attacks retain their original horizontal direction. The drawn trail rotates with the flight direction, and the hero crouches for the downward strike. This fixes secrets under the real stage-1 traffic light (block 40 at x4064/y576). The native player's hit body and secret-block callbacks remain unchanged. A cosmetic dog-trail reset following teleport no longer resets an attack begun in the same tick.
+
+Regression checks cover both native and ORAVA down attacks on authored traffic-light bonuses in stages 1, 2 and 4. `review/bark-down-browser.json` records actual Down + Space input uncovering it in Chromium and WebKit, with spatial bark playback, silence while muted/outside ORAVA and no page errors. The updated full suite passes 378 tests.

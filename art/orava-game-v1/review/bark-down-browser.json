@@ -1,0 +1,52 @@
+{
+  "chromium": {
+    "bark": {
+      "events": [
+        {
+          "type": "oravaBark",
+          "x": 1490,
+          "y": 528
+        }
+      ],
+      "duration": 0.9347708333333333
+    },
+    "pan": {
+      "x": -0.9176470637321472,
+      "y": -0.3636363744735718,
+      "z": -1.5
+    },
+    "bonus": {
+      "revealed": true,
+      "replaced": true
+    },
+    "realDownSpace": true,
+    "mutedSilent": true,
+    "offSilent": true,
+    "errors": []
+  },
+  "webkit": {
+    "bark": {
+      "events": [
+        {
+          "type": "oravaBark",
+          "x": 1490,
+          "y": 528
+        }
+      ],
+      "duration": 0.9347708333333333
+    },
+    "pan": {
+      "x": -0.9176470637321472,
+      "y": -0.3636363744735718,
+      "z": -1.5
+    },
+    "bonus": {
+      "revealed": true,
+      "replaced": true
+    },
+    "realDownSpace": true,
+    "mutedSilent": true,
+    "offSilent": true,
+    "errors": []
+  }
+}

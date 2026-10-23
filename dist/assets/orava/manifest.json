@@ -925,6 +925,17 @@
         "positionalSource": true,
         "reverbSeconds": 0.48
       }
+    },
+    "bark": {
+      "file": "bark.wav",
+      "trigger": "enemy or boss defeated",
+      "duration": 0.9347845804988663,
+      "sha256": "888acd9a58e3496476a759a78b6a7467c582970b22fef56513f0187c6b08714f",
+      "taskId": "94fcceb4-80dd-45f8-9cb3-179b4d3dd65d",
+      "spatial": {
+        "panning": "HRTF",
+        "positionalSource": "companion dog"
+      }
     }
   },
   "replacements": {

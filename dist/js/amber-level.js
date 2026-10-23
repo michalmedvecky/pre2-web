@@ -17,7 +17,7 @@ export function amberPersistence(w){if(!w.amber)return null;return{queenDead:!w.
 export function beforeAmberPlayer(w){if(!w.amber)return;w.amber.oldY=w.player.y;if(w.player.grounded&&w.tile(w.player.x,w.player.y)===3)w.player.vx=Math.max(-40,Math.min(40,w.player.vx));}
 const overlaps=(a,b)=>a.left<b.right&&a.right>b.left&&a.top<b.bottom&&a.bottom>b.top;
 function body(w,e){const r=w.spriteBounds(e);return{left:r.left+4,right:r.right-4,top:r.top+5,bottom:r.bottom-2};}
-function hitEnemy(w,e,queen=false){if(w.frame-e.lastHit<18)return;e.lastHit=w.frame;e.hp--;w.emit('sfx',{index:2});if(e.hp<=0){e.active=false;w.scoreAward(queen?15:5,e.x,e.y);if(queen){key(w);w.emit('bossDefeated');}else w.spawnFragments(e.x,e.y,0x2046,24,-80,3,{collectible:true});}}
+function hitEnemy(w,e,queen=false){if(w.frame-e.lastHit<18)return;e.lastHit=w.frame;e.hp--;w.emit('sfx',{index:2});if(e.hp<=0){e.active=false;w.scoreAward(queen?15:5,e.x,e.y);if(queen){key(w);w.emit('bossDefeated');}else {w.cheerDog();w.spawnFragments(e.x,e.y,0x2046,24,-80,3,{collectible:true});}}}
 export function updateAmber(w){if(!w.amber||w.deathTimer||w.transition)return;const a=w.amber,p=w.player,frame=w.frame;
  for(const b of a.bees){if(!b.active)continue;const old=b.x;b.x=Math.round(b.baseX+Math.sin((frame+b.index*29)/26)*b.range);b.y=Math.round(b.baseY+Math.sin(frame/17+b.index)*9);b.flip=b.x>old;b.sprite=460+((frame>>2)&1);}
  const q=a.queen;if(q.active&&p.x>3376){const old=q.x;q.x=Math.round(q.baseX+Math.sin(frame/27)*44);q.y=Math.round(q.baseY+Math.sin(frame/20)*10);q.flip=p.x>q.x;if(frame%55===0)a.bullets.push({x:q.x+(p.x<q.x?-28:28),y:q.y-22,vx:p.x<q.x?-2:2,vy:-1,ttl:100,sprite:464,active:true});}

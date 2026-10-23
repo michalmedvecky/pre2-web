@@ -26,7 +26,8 @@ export class World {
     this.assets=assets;this.onEvent=onEvent;this.expert=expert;this.godMode=false;this.secretHints=false;this.score=0;this.lives=2;this.health=3;this.extraLifeQuotient=0;
     this.presentationTicks=0;this.frame=0;this.inventory=0;this.inventory2=0;this.weapon=0;this.foodHealth=0;this.weaponPower=0;this.transition=null;this.events=[];this.recorded=[];this.loadLevel(0);
   }
-  emit(type,data={}){const e={type,...data};this.events.push(e);this.onEvent(e);}
+  emit(type,data={}){const e={type,...data};this.events.push(e);this.onEvent(e);if(type==='bossDefeated')this.cheerDog();}
+  cheerDog(){if(this.oravaActive&&this.oravaDog)this.emit('oravaBark',{x:this.oravaDog.x,y:this.oravaDog.y});}
   word(p){return(this.mem[p&65535]||0)|((this.mem[(p+1)&65535]||0)<<8);}
   signedWord(p){return s16(this.word(p));}
   byte(p){return this.mem[p&65535]||0;}
@@ -356,7 +357,7 @@ export class World {
     else if(c===174){this.lives=Math.min(99,this.lives+1);sound=4;this.popup(0xe3);}
     else if(c===167||c===168){this.player.invulnerable=44;this.player.attackActive=false;this.player.animationVariant=-1;this.player.action=8;this.playerWeapon=null;this.projectiles=this.projectiles.filter(p=>!p.contact);this.scatterHealth();this.player.landingShake=7;this.popup(0xe4,i.x,i.y);sound=1;}
     else if(c===169){for(const a of this.actors)if(a.active&&a.state!==255&&!(a.def.flags&0x10)&&this.visibleActor(a))this.killActor(a);this.player.landingShake=9;this.popup(0xe6,i.x,i.y);sound=0;}
-    else if(c===170){for(const a of this.actors){if(!a.active||a.state===255||a.def.flags&0x10||!this.visibleActor(a))continue;a.state=255;this.removeActor(a,false);this.randomFood(a.x,a.y,32,-160);this.randomFood(a.x,a.y,-32,-160);this.randomFood(a.x,a.y,16,-176);this.randomFood(a.x,a.y,-16,-176);}this.popup(0xe7,i.x,i.y);sound=0;}
+    else if(c===170){for(const a of this.actors){if(!a.active||a.state===255||a.def.flags&0x10||!this.visibleActor(a))continue;a.state=255;this.cheerDog();this.removeActor(a,false);this.randomFood(a.x,a.y,32,-160);this.randomFood(a.x,a.y,-32,-160);this.randomFood(a.x,a.y,16,-176);this.randomFood(a.x,a.y,-16,-176);}this.popup(0xe7,i.x,i.y);sound=0;}
     else if(c===180||c===181){const mode=c===181?1:0;if(this.paletteMode!==mode){this.setPaletteMode(mode);if(mode)sound=1;}}
     else return false;
     i.active=false;if(sound!==null)this.emit('sfx',{index:sound});return true;
@@ -486,7 +487,7 @@ export class World {
   enemyDeathAnimation(a){let ptr=a.anim;for(let n=0;n<2048&&ptr+2<this.assets.tables.length;n++){ptr+=2;if(this.word(ptr)===0x7d00){a.anim=ptr+2;return true;}if(this.word(ptr)===0x7d01)break;}return false;}
   killActor(a,attack={face:this.player.face,damage:25}){
     if(!a.active||a.state===255)return;
-    const repeats=this.byte(0xa3ed+(((a.aux||0)>>>3)&7))||1;
+    this.cheerDog();const repeats=this.byte(0xa3ed+(((a.aux||0)>>>3)&7))||1;
     for(let n=0;n<repeats;n++)this.scoreAward(clamp(a.def.score_candidate||0,0,16),a.x+9*n,a.y+7*n);
     a.state=255;a.hitFlash=true;
     // 0x185c4 clears bit0 on harmful contact; 0x18ee5 checks it at defeat.
@@ -504,7 +505,7 @@ export class World {
       if(this.enemyPowerTimer){this.killActor(a);return;}
       if(hit.topContact&&p.vy>=0){
         if(p.glideMode){
-          if(p.vy>32){const count=(a.aux||0)&3;this.scoreAward(8+count*2,a.x,a.y);a.hitFlash=true;if(count===2){a.state=255;this.enemyDeathAnimation(a);a.def.flags&=~8;a.vy=-200;a.vx=(a.x>p.x?1:-1)*Math.abs(p.vy)*3;return;}a.aux=u8((a.aux||0)+1);}
+          if(p.vy>32){const count=(a.aux||0)&3;this.scoreAward(8+count*2,a.x,a.y);a.hitFlash=true;if(count===2){a.state=255;this.cheerDog();this.enemyDeathAnimation(a);a.def.flags&=~8;a.vy=-200;a.vx=(a.x>p.x?1:-1)*Math.abs(p.vy)*3;return;}a.aux=u8((a.aux||0)+1);}
           p.vy=-96;
         }else{this.emit('sfx',{index:3});const count=(a.aux||0)>>>2;if(count!==11){a.aux=u8((a.aux||0)+4);const next=count+1;if(!(next&1)){const sprite=this.word(0xa3e1+next);this.effects.push({x:a.x,y:a.y,sprite,vy:-8,ttl:44,active:true});}}p.vy=this.input.up?-224:-64;}
         p.fallFrames=0;p.y-=hit.penetration;p.grounded=false;return;
