@@ -1,0 +1,14 @@
+{
+ "BOULA":{"1":{"role":"bass","root":36},"2":{"role":"cello","root":51,"approximate":true},"3":{"role":"cello","root":43,"approximate":true},"8":{"role":"bird","root":84}},
+ "BRAVO":{"3":{"role":"bass","root":36},"4":{"role":"piano","root":48,"chord":[0,4,7]},"5":{"role":"violin","root":60},"6":{"role":"piano","root":60}},
+ "CARTE":{"1":{"role":"violin","root":48,"approximate":true}},
+ "CODE":{"1":{"role":"bass","root":36}},
+ "FINAL":{"4":{"role":"bass","root":36},"5":{"role":"piano","root":48,"chord":[0,4,7]},"6":{"role":"piano","root":60,"chord":[0,4,7]},"7":{"role":"violin","root":60},"8":{"role":"piano","root":36},"9":{"role":"violin","root":60}},
+ "GLACE":{"1":{"role":"violin","root":72},"3":{"role":"piano","root":60,"chord":[0,4,7]},"4":{"role":"bird","root":84,"approximate":true},"6":{"role":"bass","root":36}},
+ "KOOL":{"1":{"role":"bass","root":36},"3":{"role":"piano","root":36},"4":{"role":"violin","root":60},"5":{"role":"violin","root":60},"6":{"role":"violin","root":60}},
+ "MINES":{"4":{"role":"bass","root":36},"5":{"role":"violin","root":60},"7":{"role":"violin","root":48,"approximate":true}},
+ "MONSTER":{"1":{"role":"bass","root":36},"3":{"role":"piano","root":36,"approximate":true},"5":{"role":"violin","root":48,"chord":[0,4,7]}},
+ "MYSTERY":{"3":{"role":"violin","root":72},"4":{"role":"violin","root":53},"5":{"role":"violin","root":48,"approximate":true},"6":{"role":"bass","root":36}},
+ "PRES":{"3":{"role":"bass","root":36},"4":{"role":"violin","root":60},"5":{"role":"violin","root":72},"6":{"role":"violin","root":53},"7":{"role":"bird","root":84}},
+ "PRESENTA":{"3":{"role":"bass","root":36},"4":{"role":"piano","root":60,"chord":[0,4,7]},"5":{"role":"piano","root":48,"chord":[0,4,7]},"6":{"role":"violin","root":60},"7":{"role":"piano","root":36},"8":{"role":"bird","root":84},"9":{"role":"bird","root":84},"10":{"role":"cello","root":43,"approximate":true},"12":{"role":"bird","root":84,"approximate":true},"13":{"role":"cello","root":43,"approximate":true},"14":{"role":"cello","root":43,"approximate":true},"15":{"role":"bird","root":84}}
+}

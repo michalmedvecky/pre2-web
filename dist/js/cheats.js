@@ -1,5 +1,5 @@
 export const WEAPON_CHEATS={IDCLUB:0,IDHAMMER:1,IDTOMAHAWK:2,IDAXE:3};
-const CODES=['IDDQD','IDKFA','MAP',...Object.keys(WEAPON_CHEATS)];
+const CODES=['IDDQD','IDKFA','MAP','MUSIC',...Object.keys(WEAPON_CHEATS)];
 const MAX_CODE=Math.max(...CODES.map(c=>c.length));
 // Browser-only cheat. Physical key codes work across keyboard layouts.
 export class CheatInput {

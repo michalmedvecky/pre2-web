@@ -1,3 +1,5 @@
+Implementation update: release1.4.0 completes all12 tracks with the approved melody-preserving sampled violin/piano/section-string palette and piccolo ornaments. See [current implementation and verification](../music-remaster-v1/README.md). The following notes retain the original proposal and historical connection instructions.
+
 # Requested violin and piano arrangement
 
 User direction: serious, dramatic violin and piano. Preserve recognizable original game melodies; this is an alternate arrangement rather than a claim about the original soundtrack.

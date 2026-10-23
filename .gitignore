@@ -13,3 +13,9 @@ dist/assets/README.md
 node_modules/
 .DS_Store
 *.tar.gz
+# Reproducible music intermediates; compressed playback assets and provenance stay tracked.
+art/music-faithful-v1/samples/*.wav
+art/music-faithful-v2/samples/*.wav
+art/music-faithful-v1/output*/*.wav
+art/music-faithful-v2/output*/*.wav
+art/music-remaster-v1/masters/*.wav

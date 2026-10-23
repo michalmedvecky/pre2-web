@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile,readdir} from 'node:fs/promises';
 const source=await readFile(new URL('../dist/js/audio.js',import.meta.url),'utf8');
-const {OriginalMixer,parseModule,PHASE_STEPS,PERIODS,SAMPLE_LENGTHS}=await import(`data:text/javascript;base64,${Buffer.from(source).toString('base64')}`);
+const {OriginalMixer,parseModule,PHASE_STEPS,PERIODS,SAMPLE_LENGTHS}=await import('../dist/js/audio.js');
 const fixture=()=>({length:1,orders:[0,0],events:new Array(1024).fill(0),samples:new Array(4096).fill(32),instruments:[{start:0,length:4096,volume:64,loopStart:0,loopLength:4096}]});
 function voices(mixer){for(const v of mixer.voices)Object.assign(v,{position:0,end:4096,volume:64,step:0});}
 

@@ -1,0 +1,91 @@
+{
+  "sourceSHA256": "fa61617a7a1499768ae12057901b39fb2766bdb810b43c33fc9742103a9e4ca8",
+  "excerptStart": 8.516592,
+  "duration": 23.030784,
+  "cues": [
+    {
+      "time": 2.518991999999999,
+      "sourceTime": 11.035583999999998,
+      "order": 2,
+      "row": 21,
+      "channel": 2,
+      "period": 381,
+      "step": 31,
+      "relativeSemitones": 1.9788831201082535,
+      "sourceDuration": 0.338182243902439,
+      "volume": 50
+    },
+    {
+      "time": 6.117552,
+      "sourceTime": 14.634144,
+      "order": 2,
+      "row": 51,
+      "channel": 2,
+      "period": 428,
+      "step": 0,
+      "relativeSemitones": 0,
+      "sourceDuration": 0.37913399999999997,
+      "volume": 50
+    },
+    {
+      "time": 9.956015999999998,
+      "sourceTime": 18.472607999999997,
+      "order": 3,
+      "row": 19,
+      "channel": 2,
+      "period": 508,
+      "step": 65495,
+      "relativeSemitones": -3.0216858049264763,
+      "sourceDuration": 0.4514339720930232,
+      "volume": 50
+    },
+    {
+      "time": 12.714911999999998,
+      "sourceTime": 21.231503999999997,
+      "order": 3,
+      "row": 42,
+      "channel": 2,
+      "period": 508,
+      "step": 65495,
+      "relativeSemitones": -3.0216858049264763,
+      "sourceDuration": 0.4514339720930232,
+      "volume": 50
+    },
+    {
+      "time": 14.634144,
+      "sourceTime": 23.150736,
+      "order": 3,
+      "row": 58,
+      "channel": 2,
+      "period": 381,
+      "step": 31,
+      "relativeSemitones": 1.9788831201082535,
+      "sourceDuration": 0.338182243902439,
+      "volume": 50
+    },
+    {
+      "time": 17.39304,
+      "sourceTime": 25.909632,
+      "order": 4,
+      "row": 17,
+      "channel": 1,
+      "period": 339,
+      "step": 67,
+      "relativeSemitones": 4.024684256327099,
+      "sourceDuration": 0.3004901052631579,
+      "volume": 50
+    },
+    {
+      "time": 19.432223999999998,
+      "sourceTime": 27.948815999999997,
+      "order": 4,
+      "row": 34,
+      "channel": 1,
+      "period": 428,
+      "step": 0,
+      "relativeSemitones": 0,
+      "sourceDuration": 0.37913399999999997,
+      "volume": 0
+    }
+  ]
+}

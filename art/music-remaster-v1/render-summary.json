@@ -1,0 +1,254 @@
+[
+  {
+    "name": "BOULA",
+    "sourceSHA256": "d5e20e0f7384934fc11ff2fd3a7dbb929cf65b96aa23cb9fe00d11f00841bbe4",
+    "duration": 53.418625,
+    "frames": 2564094,
+    "loopStart": 0.11995833333333333,
+    "loopEnd": 53.418625,
+    "sourceEvents": 576,
+    "renderedEvents": 576,
+    "sectionNotes": 87,
+    "birdCues": 19,
+    "peak": 0.8899999856948853,
+    "rms": 0.14250794053077698,
+    "normalizationGain": 0.6832623170253357,
+    "masterSHA256": "b639a65fba4b853d60ac452ebadc38a3056ae24110cb3721ff0a7feeebc0fff6",
+    "sourceNotesPreserved": true,
+    "rmsBeforeGain": {
+      "dry": 0.14414219558238983,
+      "strings": 0.12788210809230804
+    }
+  },
+  {
+    "name": "BRAVO",
+    "sourceSHA256": "026f1e9fc3eca3d7e8c6466da0d6cdf887af19cb06188bd046c3d7facd5f270b",
+    "duration": 35.20591666666667,
+    "frames": 1689884,
+    "loopStart": 3.2187083333333333,
+    "loopEnd": 35.20591666666667,
+    "sourceEvents": 298,
+    "renderedEvents": 298,
+    "sectionNotes": 66,
+    "birdCues": 0,
+    "peak": 0.89000004529953,
+    "rms": 0.15205399692058563,
+    "normalizationGain": 0.7592792875618871,
+    "masterSHA256": "1ff7136606c45cf2d14319cc0aae5a28097c3152d0a6cb38e8644c76ea27312a",
+    "sourceNotesPreserved": true,
+    "rmsBeforeGain": {
+      "dry": 0.16175952553749084,
+      "strings": 0.11266135424375534
+    }
+  },
+  {
+    "name": "CARTE",
+    "sourceSHA256": "44adcbba77c85bbb1d2b61b83e6575cb6d5c8bbdb52be2be664b51e06fafd3cb",
+    "duration": 15.353854166666666,
+    "frames": 736985,
+    "loopStart": 0.0,
+    "loopEnd": 15.353854166666666,
+    "sourceEvents": 128,
+    "renderedEvents": 128,
+    "sectionNotes": 24,
+    "birdCues": 0,
+    "peak": 0.8899999856948853,
+    "rms": 0.13195671141147614,
+    "normalizationGain": 0.9583966006454856,
+    "masterSHA256": "097cae892e7f174481a899afab880f6e611ce747098323394ee94e4e38a79598",
+    "sourceNotesPreserved": true,
+    "rmsBeforeGain": {
+      "dry": 0.09204481542110443,
+      "strings": 0.09960545599460602
+    }
+  },
+  {
+    "name": "CODE",
+    "sourceSHA256": "7fd085d161c20e8a1bed937e84475fe13d226502de98258475755e96915ac4fd",
+    "duration": 15.713708333333333,
+    "frames": 754258,
+    "loopStart": 0.35985416666666664,
+    "loopEnd": 15.713708333333333,
+    "sourceEvents": 107,
+    "renderedEvents": 107,
+    "sectionNotes": 27,
+    "birdCues": 0,
+    "peak": 0.8272669315338135,
+    "rms": 0.1437722146511078,
+    "normalizationGain": 0.8763786693023469,
+    "masterSHA256": "1071825c2a8aba050e65da89aaa841bfefc172e065e38e8ec87733c3018fe0c4",
+    "sourceNotesPreserved": true,
+    "rmsBeforeGain": {
+      "dry": 0.10901572555303574,
+      "strings": 0.1166604682803154
+    }
+  },
+  {
+    "name": "FINAL",
+    "sourceSHA256": "6f330e89f9bf5d9cac834484eaa1cdcec31b773a68349e1ae44859a8f09e7232",
+    "duration": 167.453,
+    "frames": 8037744,
+    "loopStart": 29.268291666666666,
+    "loopEnd": 167.453,
+    "sourceEvents": 1038,
+    "renderedEvents": 1038,
+    "sectionNotes": 258,
+    "birdCues": 0,
+    "peak": 0.8899999856948853,
+    "rms": 0.13649746775627136,
+    "normalizationGain": 0.7583836802060209,
+    "masterSHA256": "ebe90d0cb0b27c9ba05c144d765fc88e59135d8754c7a1718759d3a8eb050a87",
+    "sourceNotesPreserved": true,
+    "rmsBeforeGain": {
+      "dry": 0.12490345537662506,
+      "strings": 0.12711316347122192
+    }
+  },
+  {
+    "name": "GLACE",
+    "sourceSHA256": "d2b475d215694241375301b2e5c9d56173a8075c009afc9d52185648d9470471",
+    "duration": 124.030375,
+    "frames": 5953458,
+    "loopStart": 24.2303125,
+    "loopEnd": 124.030375,
+    "sourceEvents": 715,
+    "renderedEvents": 715,
+    "sectionNotes": 93,
+    "birdCues": 105,
+    "peak": 0.8899999856948853,
+    "rms": 0.1306365579366684,
+    "normalizationGain": 0.8136304843567203,
+    "masterSHA256": "0ede774301eac1b75cfea17d702675994f5f3e1ceb8b2d538ed9333be5ae63ea",
+    "sourceNotesPreserved": true,
+    "rmsBeforeGain": {
+      "dry": 0.12765440344810486,
+      "strings": 0.08953134715557098
+    }
+  },
+  {
+    "name": "KOOL",
+    "sourceSHA256": "c60a01aef08cd771d9a1b14a02ac311a269edc0beb1411db355cbe44ad757320",
+    "duration": 108.43660416666667,
+    "frames": 5204957,
+    "loopStart": 0.959625,
+    "loopEnd": 108.43660416666667,
+    "sourceEvents": 1084,
+    "renderedEvents": 1084,
+    "sectionNotes": 171,
+    "birdCues": 0,
+    "peak": 0.8899999856948853,
+    "rms": 0.13500338792800903,
+    "normalizationGain": 0.747880243974173,
+    "masterSHA256": "55cb1f37873c68348244076590aaf7aa16d282278f6f9fc87079fa057218a5d7",
+    "sourceNotesPreserved": true,
+    "rmsBeforeGain": {
+      "dry": 0.14357835054397583,
+      "strings": 0.09657460451126099
+    }
+  },
+  {
+    "name": "MINES",
+    "sourceSHA256": "6319bf3c055b832b5d825dd5b231701ba51d6201f8767a62c80b54c5387274ab",
+    "duration": 75.38983333333333,
+    "frames": 3618712,
+    "loopStart": 37.0051875,
+    "loopEnd": 75.38983333333333,
+    "sourceEvents": 508,
+    "renderedEvents": 508,
+    "sectionNotes": 117,
+    "birdCues": 0,
+    "peak": 0.8899999856948853,
+    "rms": 0.15055641531944275,
+    "normalizationGain": 0.986176381970416,
+    "masterSHA256": "ba2a8c9b1b9374d64c277f416f5537356b62d1362aea406f7278f5ced27ed2d9",
+    "sourceNotesPreserved": true,
+    "rmsBeforeGain": {
+      "dry": 0.12660299241542816,
+      "strings": 0.08056885749101639
+    }
+  },
+  {
+    "name": "MONSTER",
+    "sourceSHA256": "3b74d9a611670321ca02884369c32a2c1baf2553bd6e9aaf8665191745f80f65",
+    "duration": 63.994395833333336,
+    "frames": 3071731,
+    "loopStart": 6.4174375,
+    "loopEnd": 63.994395833333336,
+    "sourceEvents": 849,
+    "renderedEvents": 849,
+    "sectionNotes": 114,
+    "birdCues": 0,
+    "peak": 0.89000004529953,
+    "rms": 0.14666655659675598,
+    "normalizationGain": 1.0529902772183164,
+    "masterSHA256": "e9afd26f668228ed0509b935c474f87d9f93278ca8f88debe61d581e2794ddfd",
+    "sourceNotesPreserved": true,
+    "rmsBeforeGain": {
+      "dry": 0.1121518686413765,
+      "strings": 0.07724983245134354
+    }
+  },
+  {
+    "name": "MYSTERY",
+    "sourceSHA256": "051b340dab37a73cd8a781f26613adfabb9c63037fd107898933fdaffd70f392",
+    "duration": 145.46179166666667,
+    "frames": 6982166,
+    "loopStart": 0.11995833333333333,
+    "loopEnd": 145.46179166666667,
+    "sourceEvents": 850,
+    "renderedEvents": 850,
+    "sectionNotes": 54,
+    "birdCues": 0,
+    "peak": 0.8899999856948853,
+    "rms": 0.11527013778686523,
+    "normalizationGain": 0.8746396548799381,
+    "masterSHA256": "1e4fe5b06c8ca55b6e1b764e2c14c161cbbc3fda472a80a3dbb0223edb6e3980",
+    "sourceNotesPreserved": true,
+    "rmsBeforeGain": {
+      "dry": 0.10661618411540985,
+      "strings": 0.0722249448299408
+    }
+  },
+  {
+    "name": "PRES",
+    "sourceSHA256": "fa61617a7a1499768ae12057901b39fb2766bdb810b43c33fc9742103a9e4ca8",
+    "duration": 92.96279166666666,
+    "frames": 4462214,
+    "loopStart": 0.8396666666666667,
+    "loopEnd": 92.96279166666666,
+    "sourceEvents": 412,
+    "renderedEvents": 412,
+    "sectionNotes": 114,
+    "birdCues": 24,
+    "peak": 0.8899999856948853,
+    "rms": 0.14783598482608795,
+    "normalizationGain": 0.8461058427154496,
+    "masterSHA256": "4c340f4f709082198445f00ba910338ba93a31fd30c8907c0ead95ff2b199382",
+    "sourceNotesPreserved": true,
+    "rmsBeforeGain": {
+      "dry": 0.12690342962741852,
+      "strings": 0.11129594594240189
+    }
+  },
+  {
+    "name": "PRESENTA",
+    "sourceSHA256": "ec29029b0be6841d66fed082dc16af345588b2cdd05fd7b2c23c1473fdf01e47",
+    "duration": 104.89802083333333,
+    "frames": 5035105,
+    "loopStart": 43.48260416666667,
+    "loopEnd": 104.89802083333333,
+    "sourceEvents": 460,
+    "renderedEvents": 460,
+    "sectionNotes": 108,
+    "birdCues": 170,
+    "peak": 0.8899999856948853,
+    "rms": 0.15145684778690338,
+    "normalizationGain": 1.0285102277091815,
+    "masterSHA256": "ab1dd7a9aac6b46629f109f429770a6d9d3c8f39515fef6ce8f0f35a7fb44801",
+    "sourceNotesPreserved": true,
+    "rmsBeforeGain": {
+      "dry": 0.09629840403795242,
+      "strings": 0.1022748053073883
+    }
+  }
+]

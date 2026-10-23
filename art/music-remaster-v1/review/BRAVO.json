@@ -1,0 +1,3534 @@
+{
+  "name": "BRAVO",
+  "sourceSHA256": "026f1e9fc3eca3d7e8c6466da0d6cdf887af19cb06188bd046c3d7facd5f270b",
+  "duration": 35.20591666666667,
+  "frames": 1689884,
+  "loopStart": 3.2187083333333333,
+  "loopEnd": 35.20591666666667,
+  "sourceEvents": 298,
+  "renderedEvents": 298,
+  "sectionNotes": 66,
+  "birdCues": 0,
+  "peak": 0.89000004529953,
+  "rms": 0.15205399692058563,
+  "normalizationGain": 0.7592792875618871,
+  "masterSHA256": "1ff7136606c45cf2d14319cc0aae5a28097c3152d0a6cb38e8644c76ea27312a",
+  "sourceNotesPreserved": true,
+  "rmsBeforeGain": {
+    "dry": 0.16175952553749084,
+    "strings": 0.11266135424375534
+  },
+  "events": [
+    {
+      "time": 0,
+      "pitch": 43.01955000865387,
+      "step": 128,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 0,
+      "pitch": 67.01955000865388,
+      "step": 128,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 0,
+      "pitch": 71.02635884729513,
+      "step": 228,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 0,
+      "pitch": 61.97888312010825,
+      "step": 31,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 0.219912,
+      "pitch": 43.01955000865387,
+      "step": 128,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 0.219912,
+      "pitch": 67.01955000865388,
+      "step": 128,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 0.219912,
+      "pitch": 71.02635884729513,
+      "step": 228,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 0.219912,
+      "pitch": 61.97888312010825,
+      "step": 31,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 0.319872,
+      "pitch": 43.01955000865387,
+      "step": 128,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 0.319872,
+      "pitch": 67.01955000865388,
+      "step": 128,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 0.319872,
+      "pitch": 71.02635884729513,
+      "step": 228,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 0.319872,
+      "pitch": 61.97888312010825,
+      "step": 31,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 0.419832,
+      "pitch": 43.01955000865387,
+      "step": 128,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 0.419832,
+      "pitch": 67.01955000865388,
+      "step": 128,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 0.419832,
+      "pitch": 71.02635884729513,
+      "step": 228,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 0.419832,
+      "pitch": 61.97888312010825,
+      "step": 31,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 0.619752,
+      "pitch": 43.01955000865387,
+      "step": 128,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 0.619752,
+      "pitch": 67.01955000865388,
+      "step": 128,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 0.619752,
+      "pitch": 71.02635884729513,
+      "step": 228,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 0.619752,
+      "pitch": 61.97888312010825,
+      "step": 31,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 1.019592,
+      "pitch": 43.01955000865387,
+      "step": 128,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 1.019592,
+      "pitch": 67.01955000865388,
+      "step": 128,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 1.019592,
+      "pitch": 71.02635884729513,
+      "step": 228,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 1.019592,
+      "pitch": 61.97888312010825,
+      "step": 31,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 1.419432,
+      "pitch": 43.01955000865387,
+      "step": 128,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 1.419432,
+      "pitch": 67.01955000865388,
+      "step": 128,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 1.419432,
+      "pitch": 71.02635884729513,
+      "step": 228,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 1.419432,
+      "pitch": 61.97888312010825,
+      "step": 31,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 1.619352,
+      "pitch": 43.01955000865387,
+      "step": 128,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 1.619352,
+      "pitch": 67.01955000865388,
+      "step": 128,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 1.619352,
+      "pitch": 71.02635884729513,
+      "step": 228,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 1.619352,
+      "pitch": 61.97888312010825,
+      "step": 31,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 1.819272,
+      "pitch": 43.01955000865387,
+      "step": 128,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 1.819272,
+      "pitch": 67.01955000865388,
+      "step": 128,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 1.819272,
+      "pitch": 71.02635884729513,
+      "step": 228,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 1.819272,
+      "pitch": 61.97888312010825,
+      "step": 31,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 1.919232,
+      "pitch": 43.01955000865387,
+      "step": 128,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 1.919232,
+      "pitch": 67.01955000865388,
+      "step": 128,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 1.919232,
+      "pitch": 71.02635884729513,
+      "step": 228,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 1.919232,
+      "pitch": 61.97888312010825,
+      "step": 31,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 2.019192,
+      "pitch": 43.01955000865387,
+      "step": 128,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 2.019192,
+      "pitch": 67.01955000865388,
+      "step": 128,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 2.019192,
+      "pitch": 71.02635884729513,
+      "step": 228,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 2.019192,
+      "pitch": 61.97888312010825,
+      "step": 31,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 2.219112,
+      "pitch": 43.01955000865387,
+      "step": 128,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 2.219112,
+      "pitch": 67.01955000865388,
+      "step": 128,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 2.219112,
+      "pitch": 71.02635884729513,
+      "step": 228,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 2.219112,
+      "pitch": 61.97888312010825,
+      "step": 31,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 2.6189519999999997,
+      "pitch": 43.01955000865387,
+      "step": 128,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 2.818872,
+      "pitch": 45.01852870906918,
+      "step": 175,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 3.018792,
+      "pitch": 47.026358847295135,
+      "step": 228,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 3.218712,
+      "pitch": 48,
+      "step": 256,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 3.218712,
+      "pitch": 72,
+      "step": 256,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 3.4186319999999997,
+      "pitch": 60,
+      "step": 256,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 3.6185519999999998,
+      "pitch": 43.01955000865387,
+      "step": 128,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 3.6185519999999998,
+      "pitch": 67.01955000865388,
+      "step": 128,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 3.818472,
+      "pitch": 60,
+      "step": 256,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 4.0183919999999995,
+      "pitch": 48,
+      "step": 256,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 4.0183919999999995,
+      "pitch": 64.0246842563271,
+      "step": 67,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 4.218312,
+      "pitch": 60,
+      "step": 256,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 4.418232,
+      "pitch": 43.01955000865387,
+      "step": 128,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 4.418232,
+      "pitch": 67.01955000865388,
+      "step": 128,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 4.618152,
+      "pitch": 41.99815064499846,
+      "step": 106,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 4.818072,
+      "pitch": 41.014230178630775,
+      "step": 86,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 4.818072,
+      "pitch": 65.01423017863077,
+      "step": 86,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 5.017992,
+      "pitch": 53.014230178630775,
+      "step": 86,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 5.217912,
+      "pitch": 36,
+      "step": 0,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 5.417832,
+      "pitch": 53.014230178630775,
+      "step": 86,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 5.617751999999999,
+      "pitch": 41.014230178630775,
+      "step": 86,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 5.817672,
+      "pitch": 53.014230178630775,
+      "step": 86,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 5.817672,
+      "pitch": 64.0246842563271,
+      "step": 67,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 6.017592,
+      "pitch": 36,
+      "step": 0,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 6.017592,
+      "pitch": 65.01423017863077,
+      "step": 86,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 6.217512,
+      "pitch": 53.014230178630775,
+      "step": 86,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 6.217512,
+      "pitch": 67.01955000865388,
+      "step": 128,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 6.417432,
+      "pitch": 51.971002537375405,
+      "step": 388,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 6.417432,
+      "pitch": 65.01423017863077,
+      "step": 86,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 6.6173519999999995,
+      "pitch": 62.039100017307746,
+      "step": 320,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 6.817272,
+      "pitch": 47.026358847295135,
+      "step": 228,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 6.817272,
+      "pitch": 64.0246842563271,
+      "step": 67,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 7.017192,
+      "pitch": 62.039100017307746,
+      "step": 320,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 7.217112,
+      "pitch": 51.971002537375405,
+      "step": 388,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 7.417032,
+      "pitch": 62.039100017307746,
+      "step": 320,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 7.6169519999999995,
+      "pitch": 47.026358847295135,
+      "step": 228,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 7.6169519999999995,
+      "pitch": 69.01852870906917,
+      "step": 175,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 7.816872,
+      "pitch": 44.02661981119496,
+      "step": 151,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 8.016792,
+      "pitch": 43.01955000865387,
+      "step": 128,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 8.016792,
+      "pitch": 67.01955000865388,
+      "step": 128,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 8.216712,
+      "pitch": 55.01955000865387,
+      "step": 128,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 8.416632,
+      "pitch": 37.97888312010825,
+      "step": 31,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 8.616552,
+      "pitch": 55.01955000865387,
+      "step": 128,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 8.816472,
+      "pitch": 43.01955000865387,
+      "step": 128,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 9.016392,
+      "pitch": 55.01955000865387,
+      "step": 128,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 9.216312,
+      "pitch": 37.97888312010825,
+      "step": 31,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 9.416231999999999,
+      "pitch": 47.026358847295135,
+      "step": 228,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 9.616152,
+      "pitch": 48,
+      "step": 256,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 9.616152,
+      "pitch": 72,
+      "step": 256,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 9.616152,
+      "pitch": 75.9710025373754,
+      "step": 388,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 9.816072,
+      "pitch": 60,
+      "step": 256,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 10.015991999999999,
+      "pitch": 43.01955000865387,
+      "step": 128,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 10.015991999999999,
+      "pitch": 74.03910001730775,
+      "step": 320,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 10.015991999999999,
+      "pitch": 77.01423017863078,
+      "step": 428,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 10.215912,
+      "pitch": 60,
+      "step": 256,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 10.215912,
+      "pitch": 72,
+      "step": 256,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 10.215912,
+      "pitch": 75.9710025373754,
+      "step": 388,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 10.415832,
+      "pitch": 48,
+      "step": 256,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 10.415832,
+      "pitch": 71.02635884729513,
+      "step": 228,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 10.415832,
+      "pitch": 74.03910001730775,
+      "step": 320,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 10.615752,
+      "pitch": 60,
+      "step": 256,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 10.815672,
+      "pitch": 43.01955000865387,
+      "step": 128,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 10.815672,
+      "pitch": 72,
+      "step": 256,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 10.815672,
+      "pitch": 75.9710025373754,
+      "step": 388,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 11.015592,
+      "pitch": 44.02661981119496,
+      "step": 151,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 11.215512,
+      "pitch": 45.01852870906918,
+      "step": 175,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 11.215512,
+      "pitch": 69.01852870906917,
+      "step": 175,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 11.215512,
+      "pitch": 64.0246842563271,
+      "step": 67,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 11.415432,
+      "pitch": 57.01852870906918,
+      "step": 175,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 11.615352,
+      "pitch": 40.0246842563271,
+      "step": 67,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 11.815272,
+      "pitch": 57.01852870906918,
+      "step": 175,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 12.015191999999999,
+      "pitch": 45.01852870906918,
+      "step": 175,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 12.215112,
+      "pitch": 57.01852870906918,
+      "step": 175,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 12.215112,
+      "pitch": 69.01852870906917,
+      "step": 175,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 12.415032,
+      "pitch": 40.0246842563271,
+      "step": 67,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 12.415032,
+      "pitch": 71.02635884729513,
+      "step": 228,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 12.614951999999999,
+      "pitch": 48.98578849624646,
+      "step": 286,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 12.614951999999999,
+      "pitch": 72,
+      "step": 256,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 12.814872,
+      "pitch": 50.039100017307746,
+      "step": 320,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 12.814872,
+      "pitch": 71.02635884729513,
+      "step": 228,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 13.014792,
+      "pitch": 62.039100017307746,
+      "step": 320,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 13.214712,
+      "pitch": 45.01852870906918,
+      "step": 175,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 13.414632,
+      "pitch": 62.039100017307746,
+      "step": 320,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 13.614552,
+      "pitch": 50.039100017307746,
+      "step": 320,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 13.614552,
+      "pitch": 72,
+      "step": 256,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 13.814472,
+      "pitch": 62.039100017307746,
+      "step": 320,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 13.814472,
+      "pitch": 71.02635884729513,
+      "step": 228,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 14.014391999999999,
+      "pitch": 45.01852870906918,
+      "step": 175,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 14.014391999999999,
+      "pitch": 72,
+      "step": 256,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 14.214312,
+      "pitch": 44.02661981119496,
+      "step": 151,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 14.414232,
+      "pitch": 43.01955000865387,
+      "step": 128,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 14.414232,
+      "pitch": 74.03910001730775,
+      "step": 320,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 14.614151999999999,
+      "pitch": 55.01955000865387,
+      "step": 128,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 14.814072,
+      "pitch": 37.97888312010825,
+      "step": 31,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 15.013992,
+      "pitch": 55.01955000865387,
+      "step": 128,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 15.013992,
+      "pitch": 61.97888312010825,
+      "step": 31,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 15.213911999999999,
+      "pitch": 43.01955000865387,
+      "step": 128,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 15.413832,
+      "pitch": 55.01955000865387,
+      "step": 128,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 15.613752,
+      "pitch": 37.97888312010825,
+      "step": 31,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 15.813671999999999,
+      "pitch": 47.026358847295135,
+      "step": 228,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 16.013592,
+      "pitch": 48,
+      "step": 256,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 16.213511999999998,
+      "pitch": 60,
+      "step": 256,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 16.213511999999998,
+      "pitch": 72,
+      "step": 256,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 16.413432,
+      "pitch": 43.01955000865387,
+      "step": 128,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 16.613352,
+      "pitch": 60,
+      "step": 256,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 16.613352,
+      "pitch": 72,
+      "step": 256,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 16.813271999999998,
+      "pitch": 48,
+      "step": 256,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 17.013192,
+      "pitch": 60,
+      "step": 256,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 17.213112,
+      "pitch": 43.01955000865387,
+      "step": 128,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 17.413032,
+      "pitch": 44.02661981119496,
+      "step": 151,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 17.612952,
+      "pitch": 45.01852870906918,
+      "step": 175,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 17.812872,
+      "pitch": 57.01852870906918,
+      "step": 175,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 18.012792,
+      "pitch": 40.0246842563271,
+      "step": 67,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 18.212712,
+      "pitch": 57.01852870906918,
+      "step": 175,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 18.412632,
+      "pitch": 45.01852870906918,
+      "step": 175,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 18.612552,
+      "pitch": 57.01852870906918,
+      "step": 175,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 18.812472,
+      "pitch": 40.0246842563271,
+      "step": 67,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 19.012392,
+      "pitch": 48.98578849624646,
+      "step": 286,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 19.212312,
+      "pitch": 50.039100017307746,
+      "step": 320,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 19.412232,
+      "pitch": 62.039100017307746,
+      "step": 320,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 19.412232,
+      "pitch": 74.03910001730775,
+      "step": 320,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 19.612152,
+      "pitch": 45.01852870906918,
+      "step": 175,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 19.812072,
+      "pitch": 62.039100017307746,
+      "step": 320,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 19.812072,
+      "pitch": 74.03910001730775,
+      "step": 320,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 20.011992,
+      "pitch": 50.039100017307746,
+      "step": 320,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 20.211911999999998,
+      "pitch": 62.039100017307746,
+      "step": 320,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 20.411832,
+      "pitch": 45.01852870906918,
+      "step": 175,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 20.611752,
+      "pitch": 44.02661981119496,
+      "step": 151,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 20.811671999999998,
+      "pitch": 43.01955000865387,
+      "step": 128,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 21.011592,
+      "pitch": 55.01955000865387,
+      "step": 128,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 21.211512,
+      "pitch": 37.97888312010825,
+      "step": 31,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 21.411431999999998,
+      "pitch": 55.01955000865387,
+      "step": 128,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 21.611352,
+      "pitch": 43.01955000865387,
+      "step": 128,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 21.811272,
+      "pitch": 55.01955000865387,
+      "step": 128,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 22.011191999999998,
+      "pitch": 37.97888312010825,
+      "step": 31,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 22.211112,
+      "pitch": 44.02661981119496,
+      "step": 151,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 22.411032,
+      "pitch": 45.01852870906918,
+      "step": 175,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 22.610951999999997,
+      "pitch": 57.01852870906918,
+      "step": 175,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 22.610951999999997,
+      "pitch": 69.01852870906917,
+      "step": 175,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 22.610951999999997,
+      "pitch": 72.98578849624646,
+      "step": 286,
+      "sourceInstrument": 6,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 22.810872,
+      "pitch": 40.0246842563271,
+      "step": 67,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 22.810872,
+      "pitch": 68.02661981119496,
+      "step": 151,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 22.810872,
+      "pitch": 71.02635884729513,
+      "step": 228,
+      "sourceInstrument": 6,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 23.010792,
+      "pitch": 57.01852870906918,
+      "step": 175,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 23.210712,
+      "pitch": 45.01852870906918,
+      "step": 175,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 23.210712,
+      "pitch": 69.01852870906917,
+      "step": 175,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 23.210712,
+      "pitch": 72.98578849624646,
+      "step": 286,
+      "sourceInstrument": 6,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 23.410632,
+      "pitch": 57.01852870906918,
+      "step": 175,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 23.610552,
+      "pitch": 40.0246842563271,
+      "step": 67,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 23.610552,
+      "pitch": 71.02635884729513,
+      "step": 228,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 23.610552,
+      "pitch": 65.99815064499846,
+      "step": 106,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 23.810472,
+      "pitch": 41.014230178630775,
+      "step": 86,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 24.010392,
+      "pitch": 41.99815064499846,
+      "step": 106,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 24.010392,
+      "pitch": 69.01852870906917,
+      "step": 175,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 24.010392,
+      "pitch": 64.0246842563271,
+      "step": 67,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 24.210312,
+      "pitch": 53.99815064499846,
+      "step": 106,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 24.410232,
+      "pitch": 36.98578849624646,
+      "step": 15,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 24.410232,
+      "pitch": 65.99815064499846,
+      "step": 106,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 24.410232,
+      "pitch": 60.98578849624646,
+      "step": 15,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 24.610152,
+      "pitch": 53.99815064499846,
+      "step": 106,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 24.810071999999998,
+      "pitch": 41.99815064499846,
+      "step": 106,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 25.009992,
+      "pitch": 53.99815064499846,
+      "step": 106,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 25.009992,
+      "pitch": 65.99815064499846,
+      "step": 106,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 25.009992,
+      "pitch": 69.01852870906917,
+      "step": 175,
+      "sourceInstrument": 6,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 25.209912,
+      "pitch": 36.98578849624646,
+      "step": 15,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 25.209912,
+      "pitch": 68.02661981119496,
+      "step": 151,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 25.209912,
+      "pitch": 71.02635884729513,
+      "step": 228,
+      "sourceInstrument": 6,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 25.409831999999998,
+      "pitch": 45.9946801699769,
+      "step": 200,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 25.409831999999998,
+      "pitch": 69.01852870906917,
+      "step": 175,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 25.409831999999998,
+      "pitch": 72.98578849624646,
+      "step": 286,
+      "sourceInstrument": 6,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 25.609752,
+      "pitch": 47.026358847295135,
+      "step": 228,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 25.609752,
+      "pitch": 68.02661981119496,
+      "step": 151,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 25.609752,
+      "pitch": 62.97513016132302,
+      "step": 48,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 25.809672,
+      "pitch": 59.026358847295135,
+      "step": 228,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 26.009591999999998,
+      "pitch": 41.99815064499846,
+      "step": 106,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 26.209512,
+      "pitch": 59.026358847295135,
+      "step": 228,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 26.409432,
+      "pitch": 47.026358847295135,
+      "step": 228,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 26.609351999999998,
+      "pitch": 59.026358847295135,
+      "step": 228,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 26.809272,
+      "pitch": 41.99815064499846,
+      "step": 106,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 26.809272,
+      "pitch": 65.99815064499846,
+      "step": 106,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 27.009192,
+      "pitch": 41.014230178630775,
+      "step": 86,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 27.209111999999998,
+      "pitch": 40.0246842563271,
+      "step": 67,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 27.209111999999998,
+      "pitch": 71.02635884729513,
+      "step": 228,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 27.209111999999998,
+      "pitch": 64.0246842563271,
+      "step": 67,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 27.409032,
+      "pitch": 52.0246842563271,
+      "step": 67,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 27.608952,
+      "pitch": 34.95467203475954,
+      "step": 65521,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 27.808871999999997,
+      "pitch": 52.0246842563271,
+      "step": 67,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 27.808871999999997,
+      "pitch": 58.95467203475954,
+      "step": 65521,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 28.008792,
+      "pitch": 40.0246842563271,
+      "step": 67,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 28.208712,
+      "pitch": 52.0246842563271,
+      "step": 67,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 28.408632,
+      "pitch": 34.95467203475954,
+      "step": 65521,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 28.608552,
+      "pitch": 45.9946801699769,
+      "step": 200,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 28.808472,
+      "pitch": 47.026358847295135,
+      "step": 228,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 29.008392,
+      "pitch": 59.026358847295135,
+      "step": 228,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 29.008392,
+      "pitch": 71.04423426498097,
+      "step": 713,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 29.008392,
+      "pitch": 59.04423426498097,
+      "step": 713,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 29.208312,
+      "pitch": 41.99815064499846,
+      "step": 106,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 29.208312,
+      "pitch": 69.01852870906917,
+      "step": 606,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 29.208312,
+      "pitch": 57.01852870906917,
+      "step": 606,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 29.408231999999998,
+      "pitch": 59.026358847295135,
+      "step": 228,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 29.608152,
+      "pitch": 47.026358847295135,
+      "step": 228,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 29.608152,
+      "pitch": 71.04423426498097,
+      "step": 713,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 29.608152,
+      "pitch": 59.04423426498097,
+      "step": 713,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 29.808072,
+      "pitch": 59.026358847295135,
+      "step": 228,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 29.808072,
+      "pitch": 69.01852870906917,
+      "step": 606,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 29.808072,
+      "pitch": 57.01852870906917,
+      "step": 606,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 30.007991999999998,
+      "pitch": 41.99815064499846,
+      "step": 106,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 30.207912,
+      "pitch": 43.01955000865387,
+      "step": 128,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 30.407832,
+      "pitch": 44.02661981119496,
+      "step": 151,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 30.407832,
+      "pitch": 67.96269725060728,
+      "step": 555,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 30.407832,
+      "pitch": 55.96269725060728,
+      "step": 555,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 30.607751999999998,
+      "pitch": 56.02661981119496,
+      "step": 151,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 30.807672,
+      "pitch": 38.97513016132302,
+      "step": 48,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 31.007592,
+      "pitch": 56.02661981119496,
+      "step": 151,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 31.207511999999998,
+      "pitch": 44.02661981119496,
+      "step": 151,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 31.407432,
+      "pitch": 56.02661981119496,
+      "step": 151,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 31.407432,
+      "pitch": 74.97513016132302,
+      "step": 352,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 31.407432,
+      "pitch": 69.9946801699769,
+      "step": 200,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 31.607352,
+      "pitch": 38.97513016132302,
+      "step": 48,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 31.607352,
+      "pitch": 74.97513016132302,
+      "step": 352,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 31.607352,
+      "pitch": 71.02635884729513,
+      "step": 228,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 31.807271999999998,
+      "pitch": 48,
+      "step": 256,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 31.807271999999998,
+      "pitch": 72.98578849624646,
+      "step": 286,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 31.807271999999998,
+      "pitch": 69.9946801699769,
+      "step": 200,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 32.007191999999996,
+      "pitch": 48.98578849624646,
+      "step": 286,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 32.007191999999996,
+      "pitch": 74.97513016132302,
+      "step": 352,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 32.007191999999996,
+      "pitch": 71.02635884729513,
+      "step": 228,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 32.207112,
+      "pitch": 60.98578849624646,
+      "step": 286,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 32.207112,
+      "pitch": 62.97513016132302,
+      "step": 48,
+      "sourceInstrument": 6,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 32.407032,
+      "pitch": 44.02661981119496,
+      "step": 151,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 32.407032,
+      "pitch": 65.99815064499846,
+      "step": 106,
+      "sourceInstrument": 6,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 32.606952,
+      "pitch": 60.98578849624646,
+      "step": 286,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 32.606952,
+      "pitch": 68.02661981119496,
+      "step": 151,
+      "sourceInstrument": 6,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 32.806872,
+      "pitch": 48.98578849624646,
+      "step": 286,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 32.806872,
+      "pitch": 68.02661981119496,
+      "step": 151,
+      "sourceInstrument": 6,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 33.006792,
+      "pitch": 60.98578849624646,
+      "step": 286,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 33.206711999999996,
+      "pitch": 44.02661981119496,
+      "step": 151,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 33.206711999999996,
+      "pitch": 71.02635884729513,
+      "step": 228,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 33.206711999999996,
+      "pitch": 68.02661981119496,
+      "step": 151,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 33.406632,
+      "pitch": 43.01955000865387,
+      "step": 128,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 33.606552,
+      "pitch": 41.99815064499846,
+      "step": 106,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 33.606552,
+      "pitch": 72.98578849624646,
+      "step": 286,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 33.606552,
+      "pitch": 69.9946801699769,
+      "step": 200,
+      "sourceInstrument": 5,
+      "target": "violin",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 33.806472,
+      "pitch": 53.99815064499846,
+      "step": 106,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 34.006392,
+      "pitch": 36.98578849624646,
+      "step": 15,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 34.206312,
+      "pitch": 53.99815064499846,
+      "step": 106,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 34.406231999999996,
+      "pitch": 41.99815064499846,
+      "step": 106,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 34.606152,
+      "pitch": 53.99815064499846,
+      "step": 106,
+      "sourceInstrument": 4,
+      "target": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "time": 34.806072,
+      "pitch": 36.98578849624646,
+      "step": 15,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    },
+    {
+      "time": 35.005992,
+      "pitch": 45.9946801699769,
+      "step": 200,
+      "sourceInstrument": 3,
+      "target": "piano",
+      "chord": [
+        0
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "time": 0,
+      "pitch": 43.01955000865387,
+      "sourcePitch": 43.01955000865387,
+      "kind": "cello-section"
+    },
+    {
+      "time": 0,
+      "pitch": 55.01955000865387,
+      "sourcePitch": 43.01955000865387,
+      "kind": "viola-section"
+    },
+    {
+      "time": 0,
+      "pitch": 62.01955000865387,
+      "sourcePitch": 43.01955000865387,
+      "kind": "violin-section"
+    },
+    {
+      "time": 1.619352,
+      "pitch": 43.01955000865387,
+      "sourcePitch": 43.01955000865387,
+      "kind": "cello-section"
+    },
+    {
+      "time": 1.619352,
+      "pitch": 55.01955000865387,
+      "sourcePitch": 43.01955000865387,
+      "kind": "viola-section"
+    },
+    {
+      "time": 1.619352,
+      "pitch": 62.01955000865387,
+      "sourcePitch": 43.01955000865387,
+      "kind": "violin-section"
+    },
+    {
+      "time": 3.218712,
+      "pitch": 48,
+      "sourcePitch": 48,
+      "kind": "cello-section"
+    },
+    {
+      "time": 3.218712,
+      "pitch": 60,
+      "sourcePitch": 48,
+      "kind": "viola-section"
+    },
+    {
+      "time": 3.218712,
+      "pitch": 67,
+      "sourcePitch": 48,
+      "kind": "violin-section"
+    },
+    {
+      "time": 4.818072,
+      "pitch": 53.014230178630775,
+      "sourcePitch": 41.014230178630775,
+      "kind": "cello-section"
+    },
+    {
+      "time": 4.818072,
+      "pitch": 65.01423017863078,
+      "sourcePitch": 41.014230178630775,
+      "kind": "viola-section"
+    },
+    {
+      "time": 4.818072,
+      "pitch": 72.01423017863078,
+      "sourcePitch": 41.014230178630775,
+      "kind": "violin-section"
+    },
+    {
+      "time": 6.417432,
+      "pitch": 51.971002537375405,
+      "sourcePitch": 51.971002537375405,
+      "kind": "cello-section"
+    },
+    {
+      "time": 6.417432,
+      "pitch": 63.971002537375405,
+      "sourcePitch": 51.971002537375405,
+      "kind": "viola-section"
+    },
+    {
+      "time": 6.417432,
+      "pitch": 70.9710025373754,
+      "sourcePitch": 51.971002537375405,
+      "kind": "violin-section"
+    },
+    {
+      "time": 8.016792,
+      "pitch": 43.01955000865387,
+      "sourcePitch": 43.01955000865387,
+      "kind": "cello-section"
+    },
+    {
+      "time": 8.016792,
+      "pitch": 55.01955000865387,
+      "sourcePitch": 43.01955000865387,
+      "kind": "viola-section"
+    },
+    {
+      "time": 8.016792,
+      "pitch": 62.01955000865387,
+      "sourcePitch": 43.01955000865387,
+      "kind": "violin-section"
+    },
+    {
+      "time": 9.616152,
+      "pitch": 48,
+      "sourcePitch": 48,
+      "kind": "cello-section"
+    },
+    {
+      "time": 9.616152,
+      "pitch": 60,
+      "sourcePitch": 48,
+      "kind": "viola-section"
+    },
+    {
+      "time": 9.616152,
+      "pitch": 67,
+      "sourcePitch": 48,
+      "kind": "violin-section"
+    },
+    {
+      "time": 11.215512,
+      "pitch": 45.01852870906918,
+      "sourcePitch": 45.01852870906918,
+      "kind": "cello-section"
+    },
+    {
+      "time": 11.215512,
+      "pitch": 57.01852870906918,
+      "sourcePitch": 45.01852870906918,
+      "kind": "viola-section"
+    },
+    {
+      "time": 11.215512,
+      "pitch": 64.01852870906919,
+      "sourcePitch": 45.01852870906918,
+      "kind": "violin-section"
+    },
+    {
+      "time": 12.814872,
+      "pitch": 50.039100017307746,
+      "sourcePitch": 50.039100017307746,
+      "kind": "cello-section"
+    },
+    {
+      "time": 12.814872,
+      "pitch": 62.039100017307746,
+      "sourcePitch": 50.039100017307746,
+      "kind": "viola-section"
+    },
+    {
+      "time": 12.814872,
+      "pitch": 69.03910001730775,
+      "sourcePitch": 50.039100017307746,
+      "kind": "violin-section"
+    },
+    {
+      "time": 14.414232,
+      "pitch": 43.01955000865387,
+      "sourcePitch": 43.01955000865387,
+      "kind": "cello-section"
+    },
+    {
+      "time": 14.414232,
+      "pitch": 55.01955000865387,
+      "sourcePitch": 43.01955000865387,
+      "kind": "viola-section"
+    },
+    {
+      "time": 14.414232,
+      "pitch": 62.01955000865387,
+      "sourcePitch": 43.01955000865387,
+      "kind": "violin-section"
+    },
+    {
+      "time": 16.013592,
+      "pitch": 48,
+      "sourcePitch": 48,
+      "kind": "cello-section"
+    },
+    {
+      "time": 16.013592,
+      "pitch": 60,
+      "sourcePitch": 48,
+      "kind": "viola-section"
+    },
+    {
+      "time": 16.013592,
+      "pitch": 67,
+      "sourcePitch": 48,
+      "kind": "violin-section"
+    },
+    {
+      "time": 17.612952,
+      "pitch": 45.01852870906918,
+      "sourcePitch": 45.01852870906918,
+      "kind": "cello-section"
+    },
+    {
+      "time": 17.612952,
+      "pitch": 57.01852870906918,
+      "sourcePitch": 45.01852870906918,
+      "kind": "viola-section"
+    },
+    {
+      "time": 17.612952,
+      "pitch": 64.01852870906919,
+      "sourcePitch": 45.01852870906918,
+      "kind": "violin-section"
+    },
+    {
+      "time": 19.212312,
+      "pitch": 50.039100017307746,
+      "sourcePitch": 50.039100017307746,
+      "kind": "cello-section"
+    },
+    {
+      "time": 19.212312,
+      "pitch": 62.039100017307746,
+      "sourcePitch": 50.039100017307746,
+      "kind": "viola-section"
+    },
+    {
+      "time": 19.212312,
+      "pitch": 69.03910001730775,
+      "sourcePitch": 50.039100017307746,
+      "kind": "violin-section"
+    },
+    {
+      "time": 20.811671999999998,
+      "pitch": 43.01955000865387,
+      "sourcePitch": 43.01955000865387,
+      "kind": "cello-section"
+    },
+    {
+      "time": 20.811671999999998,
+      "pitch": 55.01955000865387,
+      "sourcePitch": 43.01955000865387,
+      "kind": "viola-section"
+    },
+    {
+      "time": 20.811671999999998,
+      "pitch": 62.01955000865387,
+      "sourcePitch": 43.01955000865387,
+      "kind": "violin-section"
+    },
+    {
+      "time": 22.411032,
+      "pitch": 45.01852870906918,
+      "sourcePitch": 45.01852870906918,
+      "kind": "cello-section"
+    },
+    {
+      "time": 22.411032,
+      "pitch": 57.01852870906918,
+      "sourcePitch": 45.01852870906918,
+      "kind": "viola-section"
+    },
+    {
+      "time": 22.411032,
+      "pitch": 64.01852870906919,
+      "sourcePitch": 45.01852870906918,
+      "kind": "violin-section"
+    },
+    {
+      "time": 24.010392,
+      "pitch": 53.99815064499846,
+      "sourcePitch": 41.99815064499846,
+      "kind": "cello-section"
+    },
+    {
+      "time": 24.010392,
+      "pitch": 65.99815064499846,
+      "sourcePitch": 41.99815064499846,
+      "kind": "viola-section"
+    },
+    {
+      "time": 24.010392,
+      "pitch": 72.99815064499846,
+      "sourcePitch": 41.99815064499846,
+      "kind": "violin-section"
+    },
+    {
+      "time": 25.609752,
+      "pitch": 47.026358847295135,
+      "sourcePitch": 47.026358847295135,
+      "kind": "cello-section"
+    },
+    {
+      "time": 25.609752,
+      "pitch": 59.026358847295135,
+      "sourcePitch": 47.026358847295135,
+      "kind": "viola-section"
+    },
+    {
+      "time": 25.609752,
+      "pitch": 66.02635884729514,
+      "sourcePitch": 47.026358847295135,
+      "kind": "violin-section"
+    },
+    {
+      "time": 27.209111999999998,
+      "pitch": 52.0246842563271,
+      "sourcePitch": 40.0246842563271,
+      "kind": "cello-section"
+    },
+    {
+      "time": 27.209111999999998,
+      "pitch": 64.0246842563271,
+      "sourcePitch": 40.0246842563271,
+      "kind": "viola-section"
+    },
+    {
+      "time": 27.209111999999998,
+      "pitch": 71.0246842563271,
+      "sourcePitch": 40.0246842563271,
+      "kind": "violin-section"
+    },
+    {
+      "time": 28.808472,
+      "pitch": 47.026358847295135,
+      "sourcePitch": 47.026358847295135,
+      "kind": "cello-section"
+    },
+    {
+      "time": 28.808472,
+      "pitch": 59.026358847295135,
+      "sourcePitch": 47.026358847295135,
+      "kind": "viola-section"
+    },
+    {
+      "time": 28.808472,
+      "pitch": 66.02635884729514,
+      "sourcePitch": 47.026358847295135,
+      "kind": "violin-section"
+    },
+    {
+      "time": 30.407832,
+      "pitch": 44.02661981119496,
+      "sourcePitch": 44.02661981119496,
+      "kind": "cello-section"
+    },
+    {
+      "time": 30.407832,
+      "pitch": 56.02661981119496,
+      "sourcePitch": 44.02661981119496,
+      "kind": "viola-section"
+    },
+    {
+      "time": 30.407832,
+      "pitch": 63.02661981119496,
+      "sourcePitch": 44.02661981119496,
+      "kind": "violin-section"
+    },
+    {
+      "time": 32.007191999999996,
+      "pitch": 48.98578849624646,
+      "sourcePitch": 48.98578849624646,
+      "kind": "cello-section"
+    },
+    {
+      "time": 32.007191999999996,
+      "pitch": 60.98578849624646,
+      "sourcePitch": 48.98578849624646,
+      "kind": "viola-section"
+    },
+    {
+      "time": 32.007191999999996,
+      "pitch": 67.98578849624646,
+      "sourcePitch": 48.98578849624646,
+      "kind": "violin-section"
+    },
+    {
+      "time": 33.606552,
+      "pitch": 53.99815064499846,
+      "sourcePitch": 41.99815064499846,
+      "kind": "cello-section"
+    },
+    {
+      "time": 33.606552,
+      "pitch": 65.99815064499846,
+      "sourcePitch": 41.99815064499846,
+      "kind": "viola-section"
+    },
+    {
+      "time": 33.606552,
+      "pitch": 72.99815064499846,
+      "sourcePitch": 41.99815064499846,
+      "kind": "violin-section"
+    }
+  ],
+  "birds": []
+}

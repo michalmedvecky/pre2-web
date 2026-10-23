@@ -1,0 +1,116 @@
+{
+  "version": 1,
+  "format": "AAC-LC in MPEG-4",
+  "sampleRate": 48000,
+  "channels": 2,
+  "tracks": {
+    "BOULA": {
+      "file": "BOULA.m4a",
+      "sha256": "b6429d29bdf3155e1c24690d4fbe0c84000ba685fc099a2692f58767273fc033",
+      "bytes": 1276896,
+      "duration": 53.418625,
+      "loopStart": 0.11995833333333333,
+      "loopEnd": 53.418625,
+      "sourceSHA256": "d5e20e0f7384934fc11ff2fd3a7dbb929cf65b96aa23cb9fe00d11f00841bbe4"
+    },
+    "BRAVO": {
+      "file": "BRAVO.m4a",
+      "sha256": "fe5b25412f1a9291a08f3dee367a367a832fc1e590cf7825f4ae58a29861584d",
+      "bytes": 859057,
+      "duration": 35.20591666666667,
+      "loopStart": 3.2187083333333333,
+      "loopEnd": 35.20591666666667,
+      "sourceSHA256": "026f1e9fc3eca3d7e8c6466da0d6cdf887af19cb06188bd046c3d7facd5f270b"
+    },
+    "CARTE": {
+      "file": "CARTE.m4a",
+      "sha256": "e824cb621726d9d24cb3045ec6cfa12dae7b1269ff7f423125a23df4daff7ff5",
+      "bytes": 378365,
+      "duration": 15.353854166666666,
+      "loopStart": 0.0,
+      "loopEnd": 15.353854166666666,
+      "sourceSHA256": "44adcbba77c85bbb1d2b61b83e6575cb6d5c8bbdb52be2be664b51e06fafd3cb"
+    },
+    "CODE": {
+      "file": "CODE.m4a",
+      "sha256": "389a38529d64581e9919100a889edd350ef43976a505d3ffecfa771a569a4322",
+      "bytes": 381173,
+      "duration": 15.713708333333333,
+      "loopStart": 0.35985416666666664,
+      "loopEnd": 15.713708333333333,
+      "sourceSHA256": "7fd085d161c20e8a1bed937e84475fe13d226502de98258475755e96915ac4fd"
+    },
+    "FINAL": {
+      "file": "FINAL.m4a",
+      "sha256": "4b058ad93a358a7f19232d98ddaaa74a8f34b2037d94cc18a6fb8a13c486673a",
+      "bytes": 4017462,
+      "duration": 167.453,
+      "loopStart": 29.268291666666666,
+      "loopEnd": 167.453,
+      "sourceSHA256": "6f330e89f9bf5d9cac834484eaa1cdcec31b773a68349e1ae44859a8f09e7232"
+    },
+    "GLACE": {
+      "file": "GLACE.m4a",
+      "sha256": "00ca92e54163c86ae6b7eebaf7b1f5baac9ef914c0bb252e9df8577be7d20064",
+      "bytes": 3069534,
+      "duration": 124.030375,
+      "loopStart": 24.2303125,
+      "loopEnd": 124.030375,
+      "sourceSHA256": "d2b475d215694241375301b2e5c9d56173a8075c009afc9d52185648d9470471"
+    },
+    "KOOL": {
+      "file": "KOOL.m4a",
+      "sha256": "babea203ba27592045ca06c7f2e52578fca4f009a7efa6e79ba250d0025c5c78",
+      "bytes": 2672615,
+      "duration": 108.43660416666667,
+      "loopStart": 0.959625,
+      "loopEnd": 108.43660416666667,
+      "sourceSHA256": "c60a01aef08cd771d9a1b14a02ac311a269edc0beb1411db355cbe44ad757320"
+    },
+    "MINES": {
+      "file": "MINES.m4a",
+      "sha256": "bfb1954c62730d88ace2eecc7a311f1a8d70bd0abdee39d19f621b47eebe807f",
+      "bytes": 1832939,
+      "duration": 75.38983333333333,
+      "loopStart": 37.0051875,
+      "loopEnd": 75.38983333333333,
+      "sourceSHA256": "6319bf3c055b832b5d825dd5b231701ba51d6201f8767a62c80b54c5387274ab"
+    },
+    "MONSTER": {
+      "file": "MONSTER.m4a",
+      "sha256": "3b7ed1a07c32abd202afe6b6cdfdf342faee4c21a52b62c5720f2d6da81f8442",
+      "bytes": 1562385,
+      "duration": 63.994395833333336,
+      "loopStart": 6.4174375,
+      "loopEnd": 63.994395833333336,
+      "sourceSHA256": "3b74d9a611670321ca02884369c32a2c1baf2553bd6e9aaf8665191745f80f65"
+    },
+    "MYSTERY": {
+      "file": "MYSTERY.m4a",
+      "sha256": "274739684063a7f23e5d4349c2df4079e42fc003edcf17a32f396601fe3a3014",
+      "bytes": 3446980,
+      "duration": 145.46179166666667,
+      "loopStart": 0.11995833333333333,
+      "loopEnd": 145.46179166666667,
+      "sourceSHA256": "051b340dab37a73cd8a781f26613adfabb9c63037fd107898933fdaffd70f392"
+    },
+    "PRES": {
+      "file": "PRES.m4a",
+      "sha256": "b94b6913708fa789b6ae336d1b612cd9893f8cec82d913b26b10060c31f0aaa8",
+      "bytes": 2203152,
+      "duration": 92.96279166666666,
+      "loopStart": 0.8396666666666667,
+      "loopEnd": 92.96279166666666,
+      "sourceSHA256": "fa61617a7a1499768ae12057901b39fb2766bdb810b43c33fc9742103a9e4ca8"
+    },
+    "PRESENTA": {
+      "file": "PRESENTA.m4a",
+      "sha256": "33c7353fd38b0bda14af0bf3adc849eaa5006b743a6ec6e97c69f98a32fe9c08",
+      "bytes": 2514360,
+      "duration": 104.89802083333333,
+      "loopStart": 43.48260416666667,
+      "loopEnd": 104.89802083333333,
+      "sourceSHA256": "ec29029b0be6841d66fed082dc16af345588b2cdd05fd7b2c23c1473fdf01e47"
+    }
+  }
+}

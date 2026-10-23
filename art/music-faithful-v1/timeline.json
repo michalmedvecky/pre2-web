@@ -1,0 +1,4824 @@
+{
+  "source": "dist/assets/music/PRES.mod",
+  "sourceSHA256": "fa61617a7a1499768ae12057901b39fb2766bdb810b43c33fc9742103a9e4ca8",
+  "duration": 31.547376,
+  "excerptStart": 8.516592,
+  "excerptDuration": 23.030784,
+  "tickSeconds": 0.019992,
+  "instrumentRoots": {
+    "3": 36,
+    "4": 60,
+    "5": 72,
+    "6": 53
+  },
+  "rootExplanation": "Fundamental of source samples at native step0: bass C2, xylo C4, glock C5, vocoder F3. Pitch follows actual fixed-point step ratios. Original percussion and bird effects omitted, no new pitched notes added.",
+  "rows": [
+    {
+      "order": 0,
+      "pattern": 1,
+      "row": 0,
+      "time": 0,
+      "tick": 0
+    },
+    {
+      "order": 0,
+      "pattern": 1,
+      "row": 1,
+      "time": 0.119952,
+      "tick": 6
+    },
+    {
+      "order": 0,
+      "pattern": 1,
+      "row": 2,
+      "time": 0.239904,
+      "tick": 12
+    },
+    {
+      "order": 0,
+      "pattern": 1,
+      "row": 3,
+      "time": 0.359856,
+      "tick": 18
+    },
+    {
+      "order": 0,
+      "pattern": 1,
+      "row": 4,
+      "time": 0.479808,
+      "tick": 24
+    },
+    {
+      "order": 0,
+      "pattern": 1,
+      "row": 5,
+      "time": 0.59976,
+      "tick": 30
+    },
+    {
+      "order": 0,
+      "pattern": 1,
+      "row": 6,
+      "time": 0.719712,
+      "tick": 36
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 0,
+      "time": 0.839664,
+      "tick": 42
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 1,
+      "time": 0.959616,
+      "tick": 48
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 2,
+      "time": 1.0795679999999999,
+      "tick": 54
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 3,
+      "time": 1.19952,
+      "tick": 60
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 4,
+      "time": 1.319472,
+      "tick": 66
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 5,
+      "time": 1.439424,
+      "tick": 72
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 6,
+      "time": 1.5593759999999999,
+      "tick": 78
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 7,
+      "time": 1.679328,
+      "tick": 84
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 8,
+      "time": 1.79928,
+      "tick": 90
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 9,
+      "time": 1.919232,
+      "tick": 96
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 10,
+      "time": 2.039184,
+      "tick": 102
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 11,
+      "time": 2.1591359999999997,
+      "tick": 108
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 12,
+      "time": 2.279088,
+      "tick": 114
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 13,
+      "time": 2.39904,
+      "tick": 120
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 14,
+      "time": 2.518992,
+      "tick": 126
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 15,
+      "time": 2.638944,
+      "tick": 132
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 16,
+      "time": 2.758896,
+      "tick": 138
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 17,
+      "time": 2.878848,
+      "tick": 144
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 18,
+      "time": 2.9987999999999997,
+      "tick": 150
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 19,
+      "time": 3.1187519999999997,
+      "tick": 156
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 20,
+      "time": 3.238704,
+      "tick": 162
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 21,
+      "time": 3.358656,
+      "tick": 168
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 22,
+      "time": 3.478608,
+      "tick": 174
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 23,
+      "time": 3.59856,
+      "tick": 180
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 24,
+      "time": 3.718512,
+      "tick": 186
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 25,
+      "time": 3.838464,
+      "tick": 192
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 26,
+      "time": 3.9584159999999997,
+      "tick": 198
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 27,
+      "time": 4.078368,
+      "tick": 204
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 28,
+      "time": 4.19832,
+      "tick": 210
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 29,
+      "time": 4.3182719999999994,
+      "tick": 216
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 30,
+      "time": 4.438224,
+      "tick": 222
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 31,
+      "time": 4.558176,
+      "tick": 228
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 32,
+      "time": 4.678128,
+      "tick": 234
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 33,
+      "time": 4.79808,
+      "tick": 240
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 34,
+      "time": 4.918032,
+      "tick": 246
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 35,
+      "time": 5.037984,
+      "tick": 252
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 36,
+      "time": 5.157935999999999,
+      "tick": 258
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 37,
+      "time": 5.277888,
+      "tick": 264
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 38,
+      "time": 5.3978399999999995,
+      "tick": 270
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 39,
+      "time": 5.517792,
+      "tick": 276
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 40,
+      "time": 5.637744,
+      "tick": 282
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 41,
+      "time": 5.757696,
+      "tick": 288
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 42,
+      "time": 5.877648,
+      "tick": 294
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 43,
+      "time": 5.997599999999999,
+      "tick": 300
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 44,
+      "time": 6.117552,
+      "tick": 306
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 45,
+      "time": 6.2375039999999995,
+      "tick": 312
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 46,
+      "time": 6.357456,
+      "tick": 318
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 47,
+      "time": 6.477408,
+      "tick": 324
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 48,
+      "time": 6.59736,
+      "tick": 330
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 49,
+      "time": 6.717312,
+      "tick": 336
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 50,
+      "time": 6.837263999999999,
+      "tick": 342
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 51,
+      "time": 6.957216,
+      "tick": 348
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 52,
+      "time": 7.0771679999999995,
+      "tick": 354
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 53,
+      "time": 7.19712,
+      "tick": 360
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 54,
+      "time": 7.317072,
+      "tick": 366
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 55,
+      "time": 7.437024,
+      "tick": 372
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 56,
+      "time": 7.556976,
+      "tick": 378
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 57,
+      "time": 7.676928,
+      "tick": 384
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 58,
+      "time": 7.79688,
+      "tick": 390
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 59,
+      "time": 7.916831999999999,
+      "tick": 396
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 60,
+      "time": 8.036783999999999,
+      "tick": 402
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 61,
+      "time": 8.156736,
+      "tick": 408
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 62,
+      "time": 8.276688,
+      "tick": 414
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 63,
+      "time": 8.39664,
+      "tick": 420
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 0,
+      "time": 8.516592,
+      "tick": 426
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 1,
+      "time": 8.636543999999999,
+      "tick": 432
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 2,
+      "time": 8.756496,
+      "tick": 438
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 3,
+      "time": 8.876448,
+      "tick": 444
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 4,
+      "time": 8.9964,
+      "tick": 450
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 5,
+      "time": 9.116352,
+      "tick": 456
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 6,
+      "time": 9.236304,
+      "tick": 462
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 7,
+      "time": 9.356256,
+      "tick": 468
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 8,
+      "time": 9.476208,
+      "tick": 474
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 9,
+      "time": 9.59616,
+      "tick": 480
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 10,
+      "time": 9.716111999999999,
+      "tick": 486
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 11,
+      "time": 9.836064,
+      "tick": 492
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 12,
+      "time": 9.956016,
+      "tick": 498
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 13,
+      "time": 10.075968,
+      "tick": 504
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 14,
+      "time": 10.19592,
+      "tick": 510
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 15,
+      "time": 10.315871999999999,
+      "tick": 516
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 16,
+      "time": 10.435824,
+      "tick": 522
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 17,
+      "time": 10.555776,
+      "tick": 528
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 18,
+      "time": 10.675728,
+      "tick": 534
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 19,
+      "time": 10.795679999999999,
+      "tick": 540
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 20,
+      "time": 10.915632,
+      "tick": 546
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 21,
+      "time": 11.035584,
+      "tick": 552
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 22,
+      "time": 11.155536,
+      "tick": 558
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 23,
+      "time": 11.275488,
+      "tick": 564
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 24,
+      "time": 11.395439999999999,
+      "tick": 570
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 25,
+      "time": 11.515392,
+      "tick": 576
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 26,
+      "time": 11.635344,
+      "tick": 582
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 27,
+      "time": 11.755296,
+      "tick": 588
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 28,
+      "time": 11.875248,
+      "tick": 594
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 29,
+      "time": 11.995199999999999,
+      "tick": 600
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 30,
+      "time": 12.115152,
+      "tick": 606
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 31,
+      "time": 12.235104,
+      "tick": 612
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 32,
+      "time": 12.355056,
+      "tick": 618
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 33,
+      "time": 12.475007999999999,
+      "tick": 624
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 34,
+      "time": 12.59496,
+      "tick": 630
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 35,
+      "time": 12.714912,
+      "tick": 636
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 36,
+      "time": 12.834864,
+      "tick": 642
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 37,
+      "time": 12.954816,
+      "tick": 648
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 38,
+      "time": 13.074767999999999,
+      "tick": 654
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 39,
+      "time": 13.19472,
+      "tick": 660
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 40,
+      "time": 13.314672,
+      "tick": 666
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 41,
+      "time": 13.434624,
+      "tick": 672
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 42,
+      "time": 13.554575999999999,
+      "tick": 678
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 43,
+      "time": 13.674527999999999,
+      "tick": 684
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 44,
+      "time": 13.79448,
+      "tick": 690
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 45,
+      "time": 13.914432,
+      "tick": 696
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 46,
+      "time": 14.034384,
+      "tick": 702
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 47,
+      "time": 14.154335999999999,
+      "tick": 708
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 48,
+      "time": 14.274288,
+      "tick": 714
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 49,
+      "time": 14.39424,
+      "tick": 720
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 50,
+      "time": 14.514192,
+      "tick": 726
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 51,
+      "time": 14.634144,
+      "tick": 732
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 52,
+      "time": 14.754095999999999,
+      "tick": 738
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 53,
+      "time": 14.874048,
+      "tick": 744
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 54,
+      "time": 14.994,
+      "tick": 750
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 55,
+      "time": 15.113952,
+      "tick": 756
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 56,
+      "time": 15.233903999999999,
+      "tick": 762
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 57,
+      "time": 15.353856,
+      "tick": 768
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 58,
+      "time": 15.473808,
+      "tick": 774
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 59,
+      "time": 15.59376,
+      "tick": 780
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 60,
+      "time": 15.713712,
+      "tick": 786
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 61,
+      "time": 15.833663999999999,
+      "tick": 792
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 62,
+      "time": 15.953616,
+      "tick": 798
+    },
+    {
+      "order": 2,
+      "pattern": 2,
+      "row": 63,
+      "time": 16.073567999999998,
+      "tick": 804
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 0,
+      "time": 16.19352,
+      "tick": 810
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 1,
+      "time": 16.313472,
+      "tick": 816
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 2,
+      "time": 16.433424,
+      "tick": 822
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 3,
+      "time": 16.553376,
+      "tick": 828
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 4,
+      "time": 16.673327999999998,
+      "tick": 834
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 5,
+      "time": 16.79328,
+      "tick": 840
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 6,
+      "time": 16.913232,
+      "tick": 846
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 7,
+      "time": 17.033184,
+      "tick": 852
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 8,
+      "time": 17.153136,
+      "tick": 858
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 9,
+      "time": 17.273087999999998,
+      "tick": 864
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 10,
+      "time": 17.39304,
+      "tick": 870
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 11,
+      "time": 17.512992,
+      "tick": 876
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 12,
+      "time": 17.632944,
+      "tick": 882
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 13,
+      "time": 17.752896,
+      "tick": 888
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 14,
+      "time": 17.872848,
+      "tick": 894
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 15,
+      "time": 17.9928,
+      "tick": 900
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 16,
+      "time": 18.112752,
+      "tick": 906
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 17,
+      "time": 18.232704,
+      "tick": 912
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 18,
+      "time": 18.352656,
+      "tick": 918
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 19,
+      "time": 18.472608,
+      "tick": 924
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 20,
+      "time": 18.59256,
+      "tick": 930
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 21,
+      "time": 18.712512,
+      "tick": 936
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 22,
+      "time": 18.832463999999998,
+      "tick": 942
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 23,
+      "time": 18.952416,
+      "tick": 948
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 24,
+      "time": 19.072368,
+      "tick": 954
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 25,
+      "time": 19.19232,
+      "tick": 960
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 26,
+      "time": 19.312272,
+      "tick": 966
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 27,
+      "time": 19.432223999999998,
+      "tick": 972
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 28,
+      "time": 19.552176,
+      "tick": 978
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 29,
+      "time": 19.672128,
+      "tick": 984
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 30,
+      "time": 19.79208,
+      "tick": 990
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 31,
+      "time": 19.912032,
+      "tick": 996
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 32,
+      "time": 20.031983999999998,
+      "tick": 1002
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 33,
+      "time": 20.151936,
+      "tick": 1008
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 34,
+      "time": 20.271888,
+      "tick": 1014
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 35,
+      "time": 20.39184,
+      "tick": 1020
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 36,
+      "time": 20.511792,
+      "tick": 1026
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 37,
+      "time": 20.631743999999998,
+      "tick": 1032
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 38,
+      "time": 20.751696,
+      "tick": 1038
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 39,
+      "time": 20.871648,
+      "tick": 1044
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 40,
+      "time": 20.9916,
+      "tick": 1050
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 41,
+      "time": 21.111552,
+      "tick": 1056
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 42,
+      "time": 21.231504,
+      "tick": 1062
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 43,
+      "time": 21.351456,
+      "tick": 1068
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 44,
+      "time": 21.471408,
+      "tick": 1074
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 45,
+      "time": 21.591359999999998,
+      "tick": 1080
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 46,
+      "time": 21.711312,
+      "tick": 1086
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 47,
+      "time": 21.831264,
+      "tick": 1092
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 48,
+      "time": 21.951216,
+      "tick": 1098
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 49,
+      "time": 22.071168,
+      "tick": 1104
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 50,
+      "time": 22.191119999999998,
+      "tick": 1110
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 51,
+      "time": 22.311072,
+      "tick": 1116
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 52,
+      "time": 22.431024,
+      "tick": 1122
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 53,
+      "time": 22.550976,
+      "tick": 1128
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 54,
+      "time": 22.670928,
+      "tick": 1134
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 55,
+      "time": 22.790879999999998,
+      "tick": 1140
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 56,
+      "time": 22.910832,
+      "tick": 1146
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 57,
+      "time": 23.030784,
+      "tick": 1152
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 58,
+      "time": 23.150736,
+      "tick": 1158
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 59,
+      "time": 23.270688,
+      "tick": 1164
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 60,
+      "time": 23.390639999999998,
+      "tick": 1170
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 61,
+      "time": 23.510592,
+      "tick": 1176
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 62,
+      "time": 23.630544,
+      "tick": 1182
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 63,
+      "time": 23.750496,
+      "tick": 1188
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 0,
+      "time": 23.870448,
+      "tick": 1194
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 1,
+      "time": 23.990399999999998,
+      "tick": 1200
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 2,
+      "time": 24.110352,
+      "tick": 1206
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 3,
+      "time": 24.230304,
+      "tick": 1212
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 4,
+      "time": 24.350255999999998,
+      "tick": 1218
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 5,
+      "time": 24.470208,
+      "tick": 1224
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 6,
+      "time": 24.59016,
+      "tick": 1230
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 7,
+      "time": 24.710112,
+      "tick": 1236
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 8,
+      "time": 24.830064,
+      "tick": 1242
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 9,
+      "time": 24.950015999999998,
+      "tick": 1248
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 10,
+      "time": 25.069968,
+      "tick": 1254
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 11,
+      "time": 25.18992,
+      "tick": 1260
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 12,
+      "time": 25.309872,
+      "tick": 1266
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 13,
+      "time": 25.429824,
+      "tick": 1272
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 14,
+      "time": 25.549775999999998,
+      "tick": 1278
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 15,
+      "time": 25.669728,
+      "tick": 1284
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 16,
+      "time": 25.78968,
+      "tick": 1290
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 17,
+      "time": 25.909632,
+      "tick": 1296
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 18,
+      "time": 26.029584,
+      "tick": 1302
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 19,
+      "time": 26.149535999999998,
+      "tick": 1308
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 20,
+      "time": 26.269488,
+      "tick": 1314
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 21,
+      "time": 26.38944,
+      "tick": 1320
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 22,
+      "time": 26.509392,
+      "tick": 1326
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 23,
+      "time": 26.629344,
+      "tick": 1332
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 24,
+      "time": 26.749295999999998,
+      "tick": 1338
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 25,
+      "time": 26.869248,
+      "tick": 1344
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 26,
+      "time": 26.9892,
+      "tick": 1350
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 27,
+      "time": 27.109151999999998,
+      "tick": 1356
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 28,
+      "time": 27.229104,
+      "tick": 1362
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 29,
+      "time": 27.349055999999997,
+      "tick": 1368
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 30,
+      "time": 27.469008,
+      "tick": 1374
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 31,
+      "time": 27.58896,
+      "tick": 1380
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 32,
+      "time": 27.708911999999998,
+      "tick": 1386
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 33,
+      "time": 27.828864,
+      "tick": 1392
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 34,
+      "time": 27.948816,
+      "tick": 1398
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 35,
+      "time": 28.068768,
+      "tick": 1404
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 36,
+      "time": 28.18872,
+      "tick": 1410
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 37,
+      "time": 28.308671999999998,
+      "tick": 1416
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 38,
+      "time": 28.428624,
+      "tick": 1422
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 39,
+      "time": 28.548576,
+      "tick": 1428
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 40,
+      "time": 28.668528,
+      "tick": 1434
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 41,
+      "time": 28.78848,
+      "tick": 1440
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 42,
+      "time": 28.908431999999998,
+      "tick": 1446
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 43,
+      "time": 29.028384,
+      "tick": 1452
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 44,
+      "time": 29.148336,
+      "tick": 1458
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 45,
+      "time": 29.268288,
+      "tick": 1464
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 46,
+      "time": 29.38824,
+      "tick": 1470
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 47,
+      "time": 29.508191999999998,
+      "tick": 1476
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 48,
+      "time": 29.628144,
+      "tick": 1482
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 49,
+      "time": 29.748096,
+      "tick": 1488
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 50,
+      "time": 29.868047999999998,
+      "tick": 1494
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 51,
+      "time": 29.988,
+      "tick": 1500
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 52,
+      "time": 30.107951999999997,
+      "tick": 1506
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 53,
+      "time": 30.227904,
+      "tick": 1512
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 54,
+      "time": 30.347856,
+      "tick": 1518
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 55,
+      "time": 30.467807999999998,
+      "tick": 1524
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 56,
+      "time": 30.58776,
+      "tick": 1530
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 57,
+      "time": 30.707712,
+      "tick": 1536
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 58,
+      "time": 30.827664,
+      "tick": 1542
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 59,
+      "time": 30.947616,
+      "tick": 1548
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 60,
+      "time": 31.067567999999998,
+      "tick": 1554
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 61,
+      "time": 31.18752,
+      "tick": 1560
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 62,
+      "time": 31.307472,
+      "tick": 1566
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 63,
+      "time": 31.427424,
+      "tick": 1572
+    }
+  ],
+  "events": [
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 0,
+      "end": 0.119952,
+      "pitch": 37.97888312010825,
+      "midi": 38,
+      "velocity": 64,
+      "step": 31,
+      "order": 0,
+      "row": 0,
+      "period": 381,
+      "volumeAutomation": [
+        {
+          "time": 0,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 2,
+      "instrument": 3,
+      "time": 0,
+      "end": 0.119952,
+      "pitch": 45.01852870906918,
+      "midi": 45,
+      "velocity": 32,
+      "step": 175,
+      "order": 0,
+      "row": 0,
+      "period": 254,
+      "volumeAutomation": [
+        {
+          "time": 0,
+          "volume": 32
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 0.119952,
+      "end": 0.239904,
+      "pitch": 33.9946801699769,
+      "midi": 34,
+      "velocity": 64,
+      "step": 65508,
+      "order": 0,
+      "row": 1,
+      "period": 480,
+      "volumeAutomation": [
+        {
+          "time": 0.119952,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 2,
+      "instrument": 3,
+      "time": 0.119952,
+      "end": 0.239904,
+      "pitch": 43.01955000865387,
+      "midi": 43,
+      "velocity": 32,
+      "step": 128,
+      "order": 0,
+      "row": 1,
+      "period": 285,
+      "volumeAutomation": [
+        {
+          "time": 0.119952,
+          "volume": 32
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 0.239904,
+      "end": 0.359856,
+      "pitch": 41.014230178630775,
+      "midi": 41,
+      "velocity": 64,
+      "step": 86,
+      "order": 0,
+      "row": 2,
+      "period": 320,
+      "volumeAutomation": [
+        {
+          "time": 0.239904,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 2,
+      "instrument": 3,
+      "time": 0.239904,
+      "end": 0.359856,
+      "pitch": 48,
+      "midi": 48,
+      "velocity": 32,
+      "step": 256,
+      "order": 0,
+      "row": 2,
+      "period": 214,
+      "volumeAutomation": [
+        {
+          "time": 0.239904,
+          "volume": 32
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 0.359856,
+      "end": 0.479808,
+      "pitch": 40.0246842563271,
+      "midi": 40,
+      "velocity": 64,
+      "step": 67,
+      "order": 0,
+      "row": 3,
+      "period": 339,
+      "volumeAutomation": [
+        {
+          "time": 0.359856,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 2,
+      "instrument": 3,
+      "time": 0.359856,
+      "end": 0.479808,
+      "pitch": 47.026358847295135,
+      "midi": 47,
+      "velocity": 32,
+      "step": 228,
+      "order": 0,
+      "row": 3,
+      "period": 226,
+      "volumeAutomation": [
+        {
+          "time": 0.359856,
+          "volume": 32
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 0.479808,
+      "end": 0.59976,
+      "pitch": 36,
+      "midi": 36,
+      "velocity": 64,
+      "step": 0,
+      "order": 0,
+      "row": 4,
+      "period": 428,
+      "volumeAutomation": [
+        {
+          "time": 0.479808,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 2,
+      "instrument": 3,
+      "time": 0.479808,
+      "end": 0.59976,
+      "pitch": 43.01955000865387,
+      "midi": 43,
+      "velocity": 32,
+      "step": 128,
+      "order": 0,
+      "row": 4,
+      "period": 285,
+      "volumeAutomation": [
+        {
+          "time": 0.479808,
+          "volume": 32
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 0.59976,
+      "end": 0.719712,
+      "pitch": 32.97831419507352,
+      "midi": 33,
+      "velocity": 64,
+      "step": 65495,
+      "order": 0,
+      "row": 5,
+      "period": 508,
+      "volumeAutomation": [
+        {
+          "time": 0.59976,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 2,
+      "instrument": 3,
+      "time": 0.59976,
+      "end": 0.719712,
+      "pitch": 40.0246842563271,
+      "midi": 40,
+      "velocity": 32,
+      "step": 67,
+      "order": 0,
+      "row": 5,
+      "period": 339,
+      "volumeAutomation": [
+        {
+          "time": 0.59976,
+          "volume": 32
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 0.719712,
+      "end": 0.839664,
+      "pitch": 40.0246842563271,
+      "midi": 40,
+      "velocity": 64,
+      "step": 67,
+      "order": 0,
+      "row": 6,
+      "period": 339,
+      "volumeAutomation": [
+        {
+          "time": 0.719712,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 2,
+      "instrument": 3,
+      "time": 0.719712,
+      "end": 0.9796079999999999,
+      "pitch": 47.026358847295135,
+      "midi": 47,
+      "velocity": 32,
+      "step": 228,
+      "order": 0,
+      "row": 6,
+      "period": 226,
+      "volumeAutomation": [
+        {
+          "time": 0.719712,
+          "volume": 32
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 0.839664,
+      "end": 1.0795679999999999,
+      "pitch": 37.97888312010825,
+      "midi": 38,
+      "velocity": 64,
+      "step": 31,
+      "order": 1,
+      "row": 0,
+      "period": 381,
+      "volumeAutomation": [
+        {
+          "time": 0.839664,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 1.319472,
+      "end": 1.5593759999999999,
+      "pitch": 32.97831419507352,
+      "midi": 33,
+      "velocity": 64,
+      "step": 65495,
+      "order": 1,
+      "row": 4,
+      "period": 508,
+      "volumeAutomation": [
+        {
+          "time": 1.319472,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 1.679328,
+      "end": 1.79928,
+      "pitch": 37.97888312010825,
+      "midi": 38,
+      "velocity": 64,
+      "step": 31,
+      "order": 1,
+      "row": 7,
+      "period": 381,
+      "volumeAutomation": [
+        {
+          "time": 1.679328,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 1.919232,
+      "end": 2.039184,
+      "pitch": 37.97888312010825,
+      "midi": 38,
+      "velocity": 64,
+      "step": 31,
+      "order": 1,
+      "row": 9,
+      "period": 381,
+      "volumeAutomation": [
+        {
+          "time": 1.919232,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 2.039184,
+      "end": 2.279088,
+      "pitch": 36.98578849624646,
+      "midi": 37,
+      "velocity": 64,
+      "step": 15,
+      "order": 1,
+      "row": 10,
+      "period": 404,
+      "volumeAutomation": [
+        {
+          "time": 2.039184,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 2.279088,
+      "end": 2.518992,
+      "pitch": 36,
+      "midi": 36,
+      "velocity": 64,
+      "step": 0,
+      "order": 1,
+      "row": 12,
+      "period": 428,
+      "volumeAutomation": [
+        {
+          "time": 2.279088,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 2.518992,
+      "end": 2.758896,
+      "pitch": 34.95467203475954,
+      "midi": 35,
+      "velocity": 64,
+      "step": 65521,
+      "order": 1,
+      "row": 14,
+      "period": 453,
+      "volumeAutomation": [
+        {
+          "time": 2.518992,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 2.758896,
+      "end": 2.9987999999999997,
+      "pitch": 33.9946801699769,
+      "midi": 34,
+      "velocity": 64,
+      "step": 65508,
+      "order": 1,
+      "row": 16,
+      "period": 480,
+      "volumeAutomation": [
+        {
+          "time": 2.758896,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 3.238704,
+      "end": 3.478608,
+      "pitch": 29.014230178630775,
+      "midi": 29,
+      "velocity": 64,
+      "step": 65451,
+      "order": 1,
+      "row": 20,
+      "period": 640,
+      "volumeAutomation": [
+        {
+          "time": 3.238704,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 3.59856,
+      "end": 3.838464,
+      "pitch": 33.9946801699769,
+      "midi": 34,
+      "velocity": 64,
+      "step": 65508,
+      "order": 1,
+      "row": 23,
+      "period": 480,
+      "volumeAutomation": [
+        {
+          "time": 3.59856,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 3.838464,
+      "end": 3.9584159999999997,
+      "pitch": 33.9946801699769,
+      "midi": 34,
+      "velocity": 64,
+      "step": 65508,
+      "order": 1,
+      "row": 25,
+      "period": 480,
+      "volumeAutomation": [
+        {
+          "time": 3.838464,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 3.9584159999999997,
+      "end": 4.19832,
+      "pitch": 29.014230178630775,
+      "midi": 29,
+      "velocity": 64,
+      "step": 65451,
+      "order": 1,
+      "row": 26,
+      "period": 640,
+      "volumeAutomation": [
+        {
+          "time": 3.9584159999999997,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 4.19832,
+      "end": 4.438224,
+      "pitch": 33.9946801699769,
+      "midi": 34,
+      "velocity": 64,
+      "step": 65508,
+      "order": 1,
+      "row": 28,
+      "period": 480,
+      "volumeAutomation": [
+        {
+          "time": 4.19832,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 4.438224,
+      "end": 4.678128,
+      "pitch": 34.95467203475954,
+      "midi": 35,
+      "velocity": 64,
+      "step": 65521,
+      "order": 1,
+      "row": 30,
+      "period": 453,
+      "volumeAutomation": [
+        {
+          "time": 4.438224,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 4.678128,
+      "end": 4.918032,
+      "pitch": 36,
+      "midi": 36,
+      "velocity": 64,
+      "step": 0,
+      "order": 1,
+      "row": 32,
+      "period": 428,
+      "volumeAutomation": [
+        {
+          "time": 4.678128,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 5.157935999999999,
+      "end": 5.517792,
+      "pitch": 31.019550008653873,
+      "midi": 31,
+      "velocity": 64,
+      "step": 65472,
+      "order": 1,
+      "row": 36,
+      "period": 570,
+      "volumeAutomation": [
+        {
+          "time": 5.157935999999999,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 5.517792,
+      "end": 5.637744,
+      "pitch": 36,
+      "midi": 36,
+      "velocity": 64,
+      "step": 0,
+      "order": 1,
+      "row": 39,
+      "period": 428,
+      "volumeAutomation": [
+        {
+          "time": 5.517792,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 5.757696,
+      "end": 5.877648,
+      "pitch": 36,
+      "midi": 36,
+      "velocity": 64,
+      "step": 0,
+      "order": 1,
+      "row": 41,
+      "period": 428,
+      "volumeAutomation": [
+        {
+          "time": 5.757696,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 5.877648,
+      "end": 6.117552,
+      "pitch": 34.95467203475954,
+      "midi": 35,
+      "velocity": 64,
+      "step": 65521,
+      "order": 1,
+      "row": 42,
+      "period": 453,
+      "volumeAutomation": [
+        {
+          "time": 5.877648,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 6.117552,
+      "end": 6.357456,
+      "pitch": 33.9946801699769,
+      "midi": 34,
+      "velocity": 64,
+      "step": 65508,
+      "order": 1,
+      "row": 44,
+      "period": 480,
+      "volumeAutomation": [
+        {
+          "time": 6.117552,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 6.357456,
+      "end": 6.59736,
+      "pitch": 32.97831419507352,
+      "midi": 33,
+      "velocity": 64,
+      "step": 65495,
+      "order": 1,
+      "row": 46,
+      "period": 508,
+      "volumeAutomation": [
+        {
+          "time": 6.357456,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 6.59736,
+      "end": 6.837263999999999,
+      "pitch": 31.984031006222114,
+      "midi": 32,
+      "velocity": 64,
+      "step": 65483,
+      "order": 1,
+      "row": 48,
+      "period": 538,
+      "volumeAutomation": [
+        {
+          "time": 6.59736,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 7.0771679999999995,
+      "end": 7.437024,
+      "pitch": 26.975130161323026,
+      "midi": 27,
+      "velocity": 64,
+      "step": 65432,
+      "order": 1,
+      "row": 52,
+      "period": 720,
+      "volumeAutomation": [
+        {
+          "time": 7.0771679999999995,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 7.437024,
+      "end": 7.556976,
+      "pitch": 31.984031006222114,
+      "midi": 32,
+      "velocity": 64,
+      "step": 65483,
+      "order": 1,
+      "row": 55,
+      "period": 538,
+      "volumeAutomation": [
+        {
+          "time": 7.437024,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 7.676928,
+      "end": 7.79688,
+      "pitch": 31.984031006222114,
+      "midi": 32,
+      "velocity": 64,
+      "step": 65483,
+      "order": 1,
+      "row": 57,
+      "period": 538,
+      "volumeAutomation": [
+        {
+          "time": 7.676928,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 7.79688,
+      "end": 8.036783999999999,
+      "pitch": 26.975130161323026,
+      "midi": 27,
+      "velocity": 64,
+      "step": 65432,
+      "order": 1,
+      "row": 58,
+      "period": 720,
+      "volumeAutomation": [
+        {
+          "time": 7.79688,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 8.036783999999999,
+      "end": 8.276688,
+      "pitch": 32.97831419507352,
+      "midi": 33,
+      "velocity": 64,
+      "step": 65495,
+      "order": 1,
+      "row": 60,
+      "period": 508,
+      "volumeAutomation": [
+        {
+          "time": 8.036783999999999,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 8.276688,
+      "end": 8.516592,
+      "pitch": 33.9946801699769,
+      "midi": 34,
+      "velocity": 64,
+      "step": 65508,
+      "order": 1,
+      "row": 62,
+      "period": 480,
+      "volumeAutomation": [
+        {
+          "time": 8.276688,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 8.516592,
+      "end": 8.756496,
+      "pitch": 37.97888312010825,
+      "midi": 38,
+      "velocity": 64,
+      "step": 31,
+      "order": 2,
+      "row": 0,
+      "period": 381,
+      "volumeAutomation": [
+        {
+          "time": 8.516592,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 8.9964,
+      "end": 9.236304,
+      "pitch": 32.97831419507352,
+      "midi": 33,
+      "velocity": 64,
+      "step": 65495,
+      "order": 2,
+      "row": 4,
+      "period": 508,
+      "volumeAutomation": [
+        {
+          "time": 8.9964,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 2,
+      "instrument": 4,
+      "time": 8.9964,
+      "end": 9.236304,
+      "pitch": 74.03910001730775,
+      "midi": 74,
+      "velocity": 58,
+      "step": 320,
+      "order": 2,
+      "row": 4,
+      "period": 190,
+      "volumeAutomation": [
+        {
+          "time": 8.9964,
+          "volume": 58
+        }
+      ]
+    },
+    {
+      "channel": 2,
+      "instrument": 4,
+      "time": 9.236304,
+      "end": 9.476208,
+      "pitch": 75.9710025373754,
+      "midi": 76,
+      "velocity": 58,
+      "step": 388,
+      "order": 2,
+      "row": 6,
+      "period": 170,
+      "volumeAutomation": [
+        {
+          "time": 9.236304,
+          "volume": 58
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 9.356256,
+      "end": 9.476208,
+      "pitch": 37.97888312010825,
+      "midi": 38,
+      "velocity": 64,
+      "step": 31,
+      "order": 2,
+      "row": 7,
+      "period": 381,
+      "volumeAutomation": [
+        {
+          "time": 9.356256,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 2,
+      "instrument": 4,
+      "time": 9.476208,
+      "end": 9.816072,
+      "pitch": 77.01423017863078,
+      "midi": 77,
+      "velocity": 58,
+      "step": 428,
+      "order": 2,
+      "row": 8,
+      "period": 160,
+      "volumeAutomation": [
+        {
+          "time": 9.476208,
+          "volume": 58
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 9.59616,
+      "end": 9.716111999999999,
+      "pitch": 37.97888312010825,
+      "midi": 38,
+      "velocity": 64,
+      "step": 31,
+      "order": 2,
+      "row": 9,
+      "period": 381,
+      "volumeAutomation": [
+        {
+          "time": 9.59616,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 9.716111999999999,
+      "end": 9.956016,
+      "pitch": 36.98578849624646,
+      "midi": 37,
+      "velocity": 64,
+      "step": 15,
+      "order": 2,
+      "row": 10,
+      "period": 404,
+      "volumeAutomation": [
+        {
+          "time": 9.716111999999999,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 9.956016,
+      "end": 10.19592,
+      "pitch": 36,
+      "midi": 36,
+      "velocity": 64,
+      "step": 0,
+      "order": 2,
+      "row": 12,
+      "period": 428,
+      "volumeAutomation": [
+        {
+          "time": 9.956016,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 2,
+      "instrument": 4,
+      "time": 9.956016,
+      "end": 10.19592,
+      "pitch": 75.9710025373754,
+      "midi": 76,
+      "velocity": 58,
+      "step": 388,
+      "order": 2,
+      "row": 12,
+      "period": 170,
+      "volumeAutomation": [
+        {
+          "time": 9.956016,
+          "volume": 58
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 10.19592,
+      "end": 10.435824,
+      "pitch": 34.95467203475954,
+      "midi": 35,
+      "velocity": 64,
+      "step": 65521,
+      "order": 2,
+      "row": 14,
+      "period": 453,
+      "volumeAutomation": [
+        {
+          "time": 10.19592,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 2,
+      "instrument": 4,
+      "time": 10.19592,
+      "end": 10.4958,
+      "pitch": 78.97440698309948,
+      "midi": 79,
+      "velocity": 58,
+      "step": 510,
+      "order": 2,
+      "row": 14,
+      "period": 143,
+      "volumeAutomation": [
+        {
+          "time": 10.19592,
+          "volume": 58
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 10.435824,
+      "end": 10.675728,
+      "pitch": 33.9946801699769,
+      "midi": 34,
+      "velocity": 64,
+      "step": 65508,
+      "order": 2,
+      "row": 16,
+      "period": 480,
+      "volumeAutomation": [
+        {
+          "time": 10.435824,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 10.915632,
+      "end": 11.155536,
+      "pitch": 29.014230178630775,
+      "midi": 29,
+      "velocity": 64,
+      "step": 65451,
+      "order": 2,
+      "row": 20,
+      "period": 640,
+      "volumeAutomation": [
+        {
+          "time": 10.915632,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 11.275488,
+      "end": 11.515392,
+      "pitch": 33.9946801699769,
+      "midi": 34,
+      "velocity": 64,
+      "step": 65508,
+      "order": 2,
+      "row": 23,
+      "period": 480,
+      "volumeAutomation": [
+        {
+          "time": 11.275488,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 11.515392,
+      "end": 11.635344,
+      "pitch": 33.9946801699769,
+      "midi": 34,
+      "velocity": 64,
+      "step": 65508,
+      "order": 2,
+      "row": 25,
+      "period": 480,
+      "volumeAutomation": [
+        {
+          "time": 11.515392,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 11.635344,
+      "end": 11.875248,
+      "pitch": 29.014230178630775,
+      "midi": 29,
+      "velocity": 64,
+      "step": 65451,
+      "order": 2,
+      "row": 26,
+      "period": 640,
+      "volumeAutomation": [
+        {
+          "time": 11.635344,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 2,
+      "instrument": 4,
+      "time": 11.635344,
+      "end": 11.875248,
+      "pitch": 77.01423017863078,
+      "midi": 77,
+      "velocity": 58,
+      "step": 428,
+      "order": 2,
+      "row": 26,
+      "period": 160,
+      "volumeAutomation": [
+        {
+          "time": 11.635344,
+          "volume": 58
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 11.875248,
+      "end": 12.115152,
+      "pitch": 33.9946801699769,
+      "midi": 34,
+      "velocity": 64,
+      "step": 65508,
+      "order": 2,
+      "row": 28,
+      "period": 480,
+      "volumeAutomation": [
+        {
+          "time": 11.875248,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 2,
+      "instrument": 4,
+      "time": 11.875248,
+      "end": 12.115152,
+      "pitch": 75.9710025373754,
+      "midi": 76,
+      "velocity": 58,
+      "step": 388,
+      "order": 2,
+      "row": 28,
+      "period": 170,
+      "volumeAutomation": [
+        {
+          "time": 11.875248,
+          "volume": 58
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 12.115152,
+      "end": 12.355056,
+      "pitch": 34.95467203475954,
+      "midi": 35,
+      "velocity": 64,
+      "step": 65521,
+      "order": 2,
+      "row": 30,
+      "period": 453,
+      "volumeAutomation": [
+        {
+          "time": 12.115152,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 2,
+      "instrument": 4,
+      "time": 12.115152,
+      "end": 12.355056,
+      "pitch": 77.01423017863078,
+      "midi": 77,
+      "velocity": 58,
+      "step": 428,
+      "order": 2,
+      "row": 30,
+      "period": 160,
+      "volumeAutomation": [
+        {
+          "time": 12.115152,
+          "volume": 58
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 12.355056,
+      "end": 12.59496,
+      "pitch": 36,
+      "midi": 36,
+      "velocity": 64,
+      "step": 0,
+      "order": 2,
+      "row": 32,
+      "period": 428,
+      "volumeAutomation": [
+        {
+          "time": 12.355056,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 2,
+      "instrument": 4,
+      "time": 12.355056,
+      "end": 12.774887999999999,
+      "pitch": 74.03910001730775,
+      "midi": 74,
+      "velocity": 58,
+      "step": 320,
+      "order": 2,
+      "row": 32,
+      "period": 190,
+      "volumeAutomation": [
+        {
+          "time": 12.355056,
+          "volume": 58
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 12.834864,
+      "end": 13.19472,
+      "pitch": 31.019550008653873,
+      "midi": 31,
+      "velocity": 64,
+      "step": 65472,
+      "order": 2,
+      "row": 36,
+      "period": 570,
+      "volumeAutomation": [
+        {
+          "time": 12.834864,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 13.19472,
+      "end": 13.314672,
+      "pitch": 36,
+      "midi": 36,
+      "velocity": 64,
+      "step": 0,
+      "order": 2,
+      "row": 39,
+      "period": 428,
+      "volumeAutomation": [
+        {
+          "time": 13.19472,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 13.434624,
+      "end": 13.554575999999999,
+      "pitch": 36,
+      "midi": 36,
+      "velocity": 64,
+      "step": 0,
+      "order": 2,
+      "row": 41,
+      "period": 428,
+      "volumeAutomation": [
+        {
+          "time": 13.434624,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 13.554575999999999,
+      "end": 13.79448,
+      "pitch": 34.95467203475954,
+      "midi": 35,
+      "velocity": 64,
+      "step": 65521,
+      "order": 2,
+      "row": 42,
+      "period": 453,
+      "volumeAutomation": [
+        {
+          "time": 13.554575999999999,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 13.79448,
+      "end": 14.034384,
+      "pitch": 33.9946801699769,
+      "midi": 34,
+      "velocity": 64,
+      "step": 65508,
+      "order": 2,
+      "row": 44,
+      "period": 480,
+      "volumeAutomation": [
+        {
+          "time": 13.79448,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 14.034384,
+      "end": 14.274288,
+      "pitch": 32.97831419507352,
+      "midi": 33,
+      "velocity": 64,
+      "step": 65495,
+      "order": 2,
+      "row": 46,
+      "period": 508,
+      "volumeAutomation": [
+        {
+          "time": 14.034384,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 2,
+      "instrument": 4,
+      "time": 14.034384,
+      "end": 14.274288,
+      "pitch": 72,
+      "midi": 72,
+      "velocity": 58,
+      "step": 256,
+      "order": 2,
+      "row": 46,
+      "period": 214,
+      "volumeAutomation": [
+        {
+          "time": 14.034384,
+          "volume": 58
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 14.274288,
+      "end": 14.514192,
+      "pitch": 31.984031006222114,
+      "midi": 32,
+      "velocity": 64,
+      "step": 65483,
+      "order": 2,
+      "row": 48,
+      "period": 538,
+      "volumeAutomation": [
+        {
+          "time": 14.274288,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 2,
+      "instrument": 4,
+      "time": 14.274288,
+      "end": 14.634144,
+      "pitch": 71.02635884729513,
+      "midi": 71,
+      "velocity": 58,
+      "step": 228,
+      "order": 2,
+      "row": 48,
+      "period": 226,
+      "volumeAutomation": [
+        {
+          "time": 14.274288,
+          "volume": 58
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 14.754095999999999,
+      "end": 15.113952,
+      "pitch": 26.975130161323026,
+      "midi": 27,
+      "velocity": 64,
+      "step": 65432,
+      "order": 2,
+      "row": 52,
+      "period": 720,
+      "volumeAutomation": [
+        {
+          "time": 14.754095999999999,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 15.113952,
+      "end": 15.233903999999999,
+      "pitch": 31.984031006222114,
+      "midi": 32,
+      "velocity": 64,
+      "step": 65483,
+      "order": 2,
+      "row": 55,
+      "period": 538,
+      "volumeAutomation": [
+        {
+          "time": 15.113952,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 15.353856,
+      "end": 15.473808,
+      "pitch": 31.984031006222114,
+      "midi": 32,
+      "velocity": 64,
+      "step": 65483,
+      "order": 2,
+      "row": 57,
+      "period": 538,
+      "volumeAutomation": [
+        {
+          "time": 15.353856,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 15.473808,
+      "end": 15.713712,
+      "pitch": 26.975130161323026,
+      "midi": 27,
+      "velocity": 64,
+      "step": 65432,
+      "order": 2,
+      "row": 58,
+      "period": 720,
+      "volumeAutomation": [
+        {
+          "time": 15.473808,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 15.713712,
+      "end": 15.953616,
+      "pitch": 32.97831419507352,
+      "midi": 33,
+      "velocity": 64,
+      "step": 65495,
+      "order": 2,
+      "row": 60,
+      "period": 508,
+      "volumeAutomation": [
+        {
+          "time": 15.713712,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 15.953616,
+      "end": 16.19352,
+      "pitch": 33.9946801699769,
+      "midi": 34,
+      "velocity": 64,
+      "step": 65508,
+      "order": 2,
+      "row": 62,
+      "period": 480,
+      "volumeAutomation": [
+        {
+          "time": 15.953616,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 16.19352,
+      "end": 16.433424,
+      "pitch": 37.97888312010825,
+      "midi": 38,
+      "velocity": 64,
+      "step": 31,
+      "order": 3,
+      "row": 0,
+      "period": 381,
+      "volumeAutomation": [
+        {
+          "time": 16.19352,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 16.673327999999998,
+      "end": 16.913232,
+      "pitch": 32.97831419507352,
+      "midi": 33,
+      "velocity": 64,
+      "step": 65495,
+      "order": 3,
+      "row": 4,
+      "period": 508,
+      "volumeAutomation": [
+        {
+          "time": 16.673327999999998,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 2,
+      "instrument": 5,
+      "time": 16.673327999999998,
+      "end": 16.913232,
+      "pitch": 86.03910001730775,
+      "midi": 86,
+      "velocity": 64,
+      "step": 320,
+      "order": 3,
+      "row": 4,
+      "period": 190,
+      "volumeAutomation": [
+        {
+          "time": 16.673327999999998,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 2,
+      "instrument": 5,
+      "time": 16.913232,
+      "end": 17.153136,
+      "pitch": 87.9710025373754,
+      "midi": 88,
+      "velocity": 64,
+      "step": 388,
+      "order": 3,
+      "row": 6,
+      "period": 170,
+      "volumeAutomation": [
+        {
+          "time": 16.913232,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 17.033184,
+      "end": 17.153136,
+      "pitch": 37.97888312010825,
+      "midi": 38,
+      "velocity": 64,
+      "step": 31,
+      "order": 3,
+      "row": 7,
+      "period": 381,
+      "volumeAutomation": [
+        {
+          "time": 17.033184,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 2,
+      "instrument": 5,
+      "time": 17.153136,
+      "end": 17.473008,
+      "pitch": 89.01423017863078,
+      "midi": 89,
+      "velocity": 64,
+      "step": 428,
+      "order": 3,
+      "row": 8,
+      "period": 160,
+      "volumeAutomation": [
+        {
+          "time": 17.153136,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 17.273087999999998,
+      "end": 17.39304,
+      "pitch": 37.97888312010825,
+      "midi": 38,
+      "velocity": 64,
+      "step": 31,
+      "order": 3,
+      "row": 9,
+      "period": 381,
+      "volumeAutomation": [
+        {
+          "time": 17.273087999999998,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 17.39304,
+      "end": 17.632944,
+      "pitch": 36.98578849624646,
+      "midi": 37,
+      "velocity": 64,
+      "step": 15,
+      "order": 3,
+      "row": 10,
+      "period": 404,
+      "volumeAutomation": [
+        {
+          "time": 17.39304,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 17.632944,
+      "end": 17.872848,
+      "pitch": 36,
+      "midi": 36,
+      "velocity": 64,
+      "step": 0,
+      "order": 3,
+      "row": 12,
+      "period": 428,
+      "volumeAutomation": [
+        {
+          "time": 17.632944,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 2,
+      "instrument": 5,
+      "time": 17.632944,
+      "end": 17.872848,
+      "pitch": 87.9710025373754,
+      "midi": 88,
+      "velocity": 64,
+      "step": 388,
+      "order": 3,
+      "row": 12,
+      "period": 170,
+      "volumeAutomation": [
+        {
+          "time": 17.632944,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 17.872848,
+      "end": 18.112752,
+      "pitch": 34.95467203475954,
+      "midi": 35,
+      "velocity": 64,
+      "step": 65521,
+      "order": 3,
+      "row": 14,
+      "period": 453,
+      "volumeAutomation": [
+        {
+          "time": 17.872848,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 2,
+      "instrument": 5,
+      "time": 17.872848,
+      "end": 18.172728,
+      "pitch": 90.97440698309948,
+      "midi": 91,
+      "velocity": 64,
+      "step": 510,
+      "order": 3,
+      "row": 14,
+      "period": 143,
+      "volumeAutomation": [
+        {
+          "time": 17.872848,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 18.112752,
+      "end": 18.352656,
+      "pitch": 33.9946801699769,
+      "midi": 34,
+      "velocity": 64,
+      "step": 65508,
+      "order": 3,
+      "row": 16,
+      "period": 480,
+      "volumeAutomation": [
+        {
+          "time": 18.112752,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 18.59256,
+      "end": 18.832463999999998,
+      "pitch": 29.014230178630775,
+      "midi": 29,
+      "velocity": 64,
+      "step": 65451,
+      "order": 3,
+      "row": 20,
+      "period": 640,
+      "volumeAutomation": [
+        {
+          "time": 18.59256,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 18.952416,
+      "end": 19.19232,
+      "pitch": 33.9946801699769,
+      "midi": 34,
+      "velocity": 64,
+      "step": 65508,
+      "order": 3,
+      "row": 23,
+      "period": 480,
+      "volumeAutomation": [
+        {
+          "time": 18.952416,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 19.19232,
+      "end": 19.312272,
+      "pitch": 33.9946801699769,
+      "midi": 34,
+      "velocity": 64,
+      "step": 65508,
+      "order": 3,
+      "row": 25,
+      "period": 480,
+      "volumeAutomation": [
+        {
+          "time": 19.19232,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 19.312272,
+      "end": 19.552176,
+      "pitch": 29.014230178630775,
+      "midi": 29,
+      "velocity": 64,
+      "step": 65451,
+      "order": 3,
+      "row": 26,
+      "period": 640,
+      "volumeAutomation": [
+        {
+          "time": 19.312272,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 2,
+      "instrument": 5,
+      "time": 19.312272,
+      "end": 19.552176,
+      "pitch": 89.01423017863078,
+      "midi": 89,
+      "velocity": 64,
+      "step": 428,
+      "order": 3,
+      "row": 26,
+      "period": 160,
+      "volumeAutomation": [
+        {
+          "time": 19.312272,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 19.552176,
+      "end": 19.79208,
+      "pitch": 33.9946801699769,
+      "midi": 34,
+      "velocity": 64,
+      "step": 65508,
+      "order": 3,
+      "row": 28,
+      "period": 480,
+      "volumeAutomation": [
+        {
+          "time": 19.552176,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 2,
+      "instrument": 5,
+      "time": 19.552176,
+      "end": 19.79208,
+      "pitch": 87.9710025373754,
+      "midi": 88,
+      "velocity": 64,
+      "step": 388,
+      "order": 3,
+      "row": 28,
+      "period": 170,
+      "volumeAutomation": [
+        {
+          "time": 19.552176,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 19.79208,
+      "end": 20.031983999999998,
+      "pitch": 34.95467203475954,
+      "midi": 35,
+      "velocity": 64,
+      "step": 65521,
+      "order": 3,
+      "row": 30,
+      "period": 453,
+      "volumeAutomation": [
+        {
+          "time": 19.79208,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 2,
+      "instrument": 5,
+      "time": 19.79208,
+      "end": 20.031983999999998,
+      "pitch": 89.01423017863078,
+      "midi": 89,
+      "velocity": 64,
+      "step": 428,
+      "order": 3,
+      "row": 30,
+      "period": 160,
+      "volumeAutomation": [
+        {
+          "time": 19.79208,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 20.031983999999998,
+      "end": 20.271888,
+      "pitch": 36,
+      "midi": 36,
+      "velocity": 64,
+      "step": 0,
+      "order": 3,
+      "row": 32,
+      "period": 428,
+      "volumeAutomation": [
+        {
+          "time": 20.031983999999998,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 2,
+      "instrument": 5,
+      "time": 20.031983999999998,
+      "end": 20.431824,
+      "pitch": 86.03910001730775,
+      "midi": 86,
+      "velocity": 64,
+      "step": 320,
+      "order": 3,
+      "row": 32,
+      "period": 190,
+      "volumeAutomation": [
+        {
+          "time": 20.031983999999998,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 20.511792,
+      "end": 20.871648,
+      "pitch": 31.019550008653873,
+      "midi": 31,
+      "velocity": 64,
+      "step": 65472,
+      "order": 3,
+      "row": 36,
+      "period": 570,
+      "volumeAutomation": [
+        {
+          "time": 20.511792,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 20.871648,
+      "end": 20.9916,
+      "pitch": 36,
+      "midi": 36,
+      "velocity": 64,
+      "step": 0,
+      "order": 3,
+      "row": 39,
+      "period": 428,
+      "volumeAutomation": [
+        {
+          "time": 20.871648,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 21.111552,
+      "end": 21.231504,
+      "pitch": 36,
+      "midi": 36,
+      "velocity": 64,
+      "step": 0,
+      "order": 3,
+      "row": 41,
+      "period": 428,
+      "volumeAutomation": [
+        {
+          "time": 21.111552,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 21.231504,
+      "end": 21.471408,
+      "pitch": 34.95467203475954,
+      "midi": 35,
+      "velocity": 64,
+      "step": 65521,
+      "order": 3,
+      "row": 42,
+      "period": 453,
+      "volumeAutomation": [
+        {
+          "time": 21.231504,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 21.471408,
+      "end": 21.711312,
+      "pitch": 33.9946801699769,
+      "midi": 34,
+      "velocity": 64,
+      "step": 65508,
+      "order": 3,
+      "row": 44,
+      "period": 480,
+      "volumeAutomation": [
+        {
+          "time": 21.471408,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 21.711312,
+      "end": 21.951216,
+      "pitch": 32.97831419507352,
+      "midi": 33,
+      "velocity": 64,
+      "step": 65495,
+      "order": 3,
+      "row": 46,
+      "period": 508,
+      "volumeAutomation": [
+        {
+          "time": 21.711312,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 2,
+      "instrument": 5,
+      "time": 21.711312,
+      "end": 21.951216,
+      "pitch": 84,
+      "midi": 84,
+      "velocity": 64,
+      "step": 256,
+      "order": 3,
+      "row": 46,
+      "period": 214,
+      "volumeAutomation": [
+        {
+          "time": 21.711312,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 21.951216,
+      "end": 22.191119999999998,
+      "pitch": 31.984031006222114,
+      "midi": 32,
+      "velocity": 64,
+      "step": 65483,
+      "order": 3,
+      "row": 48,
+      "period": 538,
+      "volumeAutomation": [
+        {
+          "time": 21.951216,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 2,
+      "instrument": 5,
+      "time": 21.951216,
+      "end": 22.411032,
+      "pitch": 83.02635884729513,
+      "midi": 83,
+      "velocity": 64,
+      "step": 228,
+      "order": 3,
+      "row": 48,
+      "period": 226,
+      "volumeAutomation": [
+        {
+          "time": 21.951216,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 22.431024,
+      "end": 22.790879999999998,
+      "pitch": 26.975130161323026,
+      "midi": 27,
+      "velocity": 64,
+      "step": 65432,
+      "order": 3,
+      "row": 52,
+      "period": 720,
+      "volumeAutomation": [
+        {
+          "time": 22.431024,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 22.790879999999998,
+      "end": 22.910832,
+      "pitch": 31.984031006222114,
+      "midi": 32,
+      "velocity": 64,
+      "step": 65483,
+      "order": 3,
+      "row": 55,
+      "period": 538,
+      "volumeAutomation": [
+        {
+          "time": 22.790879999999998,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 23.030784,
+      "end": 23.150736,
+      "pitch": 31.984031006222114,
+      "midi": 32,
+      "velocity": 64,
+      "step": 65483,
+      "order": 3,
+      "row": 57,
+      "period": 538,
+      "volumeAutomation": [
+        {
+          "time": 23.030784,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 23.150736,
+      "end": 23.390639999999998,
+      "pitch": 26.975130161323026,
+      "midi": 27,
+      "velocity": 64,
+      "step": 65432,
+      "order": 3,
+      "row": 58,
+      "period": 720,
+      "volumeAutomation": [
+        {
+          "time": 23.150736,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 23.390639999999998,
+      "end": 23.630544,
+      "pitch": 32.97831419507352,
+      "midi": 33,
+      "velocity": 64,
+      "step": 65495,
+      "order": 3,
+      "row": 60,
+      "period": 508,
+      "volumeAutomation": [
+        {
+          "time": 23.390639999999998,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 23.630544,
+      "end": 23.870448,
+      "pitch": 33.9946801699769,
+      "midi": 34,
+      "velocity": 64,
+      "step": 65508,
+      "order": 3,
+      "row": 62,
+      "period": 480,
+      "volumeAutomation": [
+        {
+          "time": 23.630544,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 23.870448,
+      "end": 24.110352,
+      "pitch": 37.97888312010825,
+      "midi": 38,
+      "velocity": 64,
+      "step": 31,
+      "order": 4,
+      "row": 0,
+      "period": 381,
+      "volumeAutomation": [
+        {
+          "time": 23.870448,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 24.350255999999998,
+      "end": 24.59016,
+      "pitch": 32.97831419507352,
+      "midi": 33,
+      "velocity": 64,
+      "step": 65495,
+      "order": 4,
+      "row": 4,
+      "period": 508,
+      "volumeAutomation": [
+        {
+          "time": 24.350255999999998,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 2,
+      "instrument": 6,
+      "time": 24.350255999999998,
+      "end": 24.830064,
+      "pitch": 62.01852870906918,
+      "midi": 62,
+      "velocity": 55,
+      "step": 175,
+      "order": 4,
+      "row": 4,
+      "period": 254,
+      "volumeAutomation": [
+        {
+          "time": 24.350255999999998,
+          "volume": 55
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 24.710112,
+      "end": 24.830064,
+      "pitch": 37.97888312010825,
+      "midi": 38,
+      "velocity": 64,
+      "step": 31,
+      "order": 4,
+      "row": 7,
+      "period": 381,
+      "volumeAutomation": [
+        {
+          "time": 24.710112,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 2,
+      "instrument": 6,
+      "time": 24.830064,
+      "end": 25.309872,
+      "pitch": 68.9710025373754,
+      "midi": 69,
+      "velocity": 55,
+      "step": 388,
+      "order": 4,
+      "row": 8,
+      "period": 170,
+      "volumeAutomation": [
+        {
+          "time": 24.830064,
+          "volume": 55
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 24.950015999999998,
+      "end": 25.069968,
+      "pitch": 37.97888312010825,
+      "midi": 38,
+      "velocity": 64,
+      "step": 31,
+      "order": 4,
+      "row": 9,
+      "period": 381,
+      "volumeAutomation": [
+        {
+          "time": 24.950015999999998,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 25.069968,
+      "end": 25.309872,
+      "pitch": 36.98578849624646,
+      "midi": 37,
+      "velocity": 64,
+      "step": 15,
+      "order": 4,
+      "row": 10,
+      "period": 404,
+      "volumeAutomation": [
+        {
+          "time": 25.069968,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 25.309872,
+      "end": 25.549775999999998,
+      "pitch": 36,
+      "midi": 36,
+      "velocity": 64,
+      "step": 0,
+      "order": 4,
+      "row": 12,
+      "period": 428,
+      "volumeAutomation": [
+        {
+          "time": 25.309872,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 2,
+      "instrument": 6,
+      "time": 25.309872,
+      "end": 25.78968,
+      "pitch": 70.01423017863078,
+      "midi": 70,
+      "velocity": 55,
+      "step": 428,
+      "order": 4,
+      "row": 12,
+      "period": 160,
+      "volumeAutomation": [
+        {
+          "time": 25.309872,
+          "volume": 55
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 25.549775999999998,
+      "end": 25.78968,
+      "pitch": 34.95467203475954,
+      "midi": 35,
+      "velocity": 64,
+      "step": 65521,
+      "order": 4,
+      "row": 14,
+      "period": 453,
+      "volumeAutomation": [
+        {
+          "time": 25.549775999999998,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 25.78968,
+      "end": 25.909632,
+      "pitch": 33.9946801699769,
+      "midi": 34,
+      "velocity": 64,
+      "step": 65508,
+      "order": 4,
+      "row": 16,
+      "period": 480,
+      "volumeAutomation": [
+        {
+          "time": 25.78968,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 2,
+      "instrument": 6,
+      "time": 25.78968,
+      "end": 27.708911999999998,
+      "pitch": 67.03910001730775,
+      "midi": 67,
+      "velocity": 55,
+      "step": 320,
+      "order": 4,
+      "row": 16,
+      "period": 190,
+      "volumeAutomation": [
+        {
+          "time": 25.78968,
+          "volume": 55
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 26.269488,
+      "end": 26.509392,
+      "pitch": 29.014230178630775,
+      "midi": 29,
+      "velocity": 64,
+      "step": 65451,
+      "order": 4,
+      "row": 20,
+      "period": 640,
+      "volumeAutomation": [
+        {
+          "time": 26.269488,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 26.629344,
+      "end": 26.869248,
+      "pitch": 33.9946801699769,
+      "midi": 34,
+      "velocity": 64,
+      "step": 65508,
+      "order": 4,
+      "row": 23,
+      "period": 480,
+      "volumeAutomation": [
+        {
+          "time": 26.629344,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 26.869248,
+      "end": 26.9892,
+      "pitch": 33.9946801699769,
+      "midi": 34,
+      "velocity": 64,
+      "step": 65508,
+      "order": 4,
+      "row": 25,
+      "period": 480,
+      "volumeAutomation": [
+        {
+          "time": 26.869248,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 26.9892,
+      "end": 27.229104,
+      "pitch": 29.014230178630775,
+      "midi": 29,
+      "velocity": 64,
+      "step": 65451,
+      "order": 4,
+      "row": 26,
+      "period": 640,
+      "volumeAutomation": [
+        {
+          "time": 26.9892,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 27.229104,
+      "end": 27.469008,
+      "pitch": 33.9946801699769,
+      "midi": 34,
+      "velocity": 64,
+      "step": 65508,
+      "order": 4,
+      "row": 28,
+      "period": 480,
+      "volumeAutomation": [
+        {
+          "time": 27.229104,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 27.469008,
+      "end": 27.708911999999998,
+      "pitch": 34.95467203475954,
+      "midi": 35,
+      "velocity": 64,
+      "step": 65521,
+      "order": 4,
+      "row": 30,
+      "period": 453,
+      "volumeAutomation": [
+        {
+          "time": 27.469008,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 27.708911999999998,
+      "end": 27.948816,
+      "pitch": 36,
+      "midi": 36,
+      "velocity": 64,
+      "step": 0,
+      "order": 4,
+      "row": 32,
+      "period": 428,
+      "volumeAutomation": [
+        {
+          "time": 27.708911999999998,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 2,
+      "instrument": 6,
+      "time": 27.708911999999998,
+      "end": 29.38824,
+      "pitch": 68.9710025373754,
+      "midi": 69,
+      "velocity": 55,
+      "step": 388,
+      "order": 4,
+      "row": 32,
+      "period": 170,
+      "volumeAutomation": [
+        {
+          "time": 27.708911999999998,
+          "volume": 55
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 28.18872,
+      "end": 28.548576,
+      "pitch": 31.019550008653873,
+      "midi": 31,
+      "velocity": 64,
+      "step": 65472,
+      "order": 4,
+      "row": 36,
+      "period": 570,
+      "volumeAutomation": [
+        {
+          "time": 28.18872,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 28.548576,
+      "end": 28.668528,
+      "pitch": 36,
+      "midi": 36,
+      "velocity": 64,
+      "step": 0,
+      "order": 4,
+      "row": 39,
+      "period": 428,
+      "volumeAutomation": [
+        {
+          "time": 28.548576,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 28.78848,
+      "end": 28.908431999999998,
+      "pitch": 36,
+      "midi": 36,
+      "velocity": 64,
+      "step": 0,
+      "order": 4,
+      "row": 41,
+      "period": 428,
+      "volumeAutomation": [
+        {
+          "time": 28.78848,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 28.908431999999998,
+      "end": 29.148336,
+      "pitch": 34.95467203475954,
+      "midi": 35,
+      "velocity": 64,
+      "step": 65521,
+      "order": 4,
+      "row": 42,
+      "period": 453,
+      "volumeAutomation": [
+        {
+          "time": 28.908431999999998,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 29.148336,
+      "end": 29.38824,
+      "pitch": 33.9946801699769,
+      "midi": 34,
+      "velocity": 64,
+      "step": 65508,
+      "order": 4,
+      "row": 44,
+      "period": 480,
+      "volumeAutomation": [
+        {
+          "time": 29.148336,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 29.38824,
+      "end": 29.628144,
+      "pitch": 32.97831419507352,
+      "midi": 33,
+      "velocity": 64,
+      "step": 65495,
+      "order": 4,
+      "row": 46,
+      "period": 508,
+      "volumeAutomation": [
+        {
+          "time": 29.38824,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 2,
+      "instrument": 6,
+      "time": 29.38824,
+      "end": 29.508191999999998,
+      "pitch": 64.02635884729513,
+      "midi": 64,
+      "velocity": 55,
+      "step": 228,
+      "order": 4,
+      "row": 46,
+      "period": 226,
+      "volumeAutomation": [
+        {
+          "time": 29.38824,
+          "volume": 55
+        }
+      ]
+    },
+    {
+      "channel": 2,
+      "instrument": 6,
+      "time": 29.508191999999998,
+      "end": 29.628144,
+      "pitch": 65,
+      "midi": 65,
+      "velocity": 55,
+      "step": 256,
+      "order": 4,
+      "row": 47,
+      "period": 214,
+      "volumeAutomation": [
+        {
+          "time": 29.508191999999998,
+          "volume": 55
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 29.628144,
+      "end": 29.868047999999998,
+      "pitch": 31.984031006222114,
+      "midi": 32,
+      "velocity": 64,
+      "step": 65483,
+      "order": 4,
+      "row": 48,
+      "period": 538,
+      "volumeAutomation": [
+        {
+          "time": 29.628144,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 2,
+      "instrument": 6,
+      "time": 29.628144,
+      "end": 31.547376,
+      "pitch": 65.98578849624646,
+      "midi": 66,
+      "velocity": 55,
+      "step": 286,
+      "order": 4,
+      "row": 48,
+      "period": 202,
+      "volumeAutomation": [
+        {
+          "time": 29.628144,
+          "volume": 55
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 30.107951999999997,
+      "end": 30.467807999999998,
+      "pitch": 26.975130161323026,
+      "midi": 27,
+      "velocity": 64,
+      "step": 65432,
+      "order": 4,
+      "row": 52,
+      "period": 720,
+      "volumeAutomation": [
+        {
+          "time": 30.107951999999997,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 30.467807999999998,
+      "end": 30.58776,
+      "pitch": 31.984031006222114,
+      "midi": 32,
+      "velocity": 64,
+      "step": 65483,
+      "order": 4,
+      "row": 55,
+      "period": 538,
+      "volumeAutomation": [
+        {
+          "time": 30.467807999999998,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 30.707712,
+      "end": 30.827664,
+      "pitch": 31.984031006222114,
+      "midi": 32,
+      "velocity": 64,
+      "step": 65483,
+      "order": 4,
+      "row": 57,
+      "period": 538,
+      "volumeAutomation": [
+        {
+          "time": 30.707712,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 30.827664,
+      "end": 31.067567999999998,
+      "pitch": 26.975130161323026,
+      "midi": 27,
+      "velocity": 64,
+      "step": 65432,
+      "order": 4,
+      "row": 58,
+      "period": 720,
+      "volumeAutomation": [
+        {
+          "time": 30.827664,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 31.067567999999998,
+      "end": 31.307472,
+      "pitch": 32.97831419507352,
+      "midi": 33,
+      "velocity": 64,
+      "step": 65495,
+      "order": 4,
+      "row": 60,
+      "period": 508,
+      "volumeAutomation": [
+        {
+          "time": 31.067567999999998,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "channel": 1,
+      "instrument": 3,
+      "time": 31.307472,
+      "end": 31.547376,
+      "pitch": 33.9946801699769,
+      "midi": 34,
+      "velocity": 64,
+      "step": 65508,
+      "order": 4,
+      "row": 62,
+      "period": 480,
+      "volumeAutomation": [
+        {
+          "time": 31.307472,
+          "volume": 64
+        }
+      ]
+    }
+  ]
+}

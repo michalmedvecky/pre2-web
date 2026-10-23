@@ -1,0 +1,8868 @@
+{
+  "name": "BRAVO",
+  "sourceSHA256": "026f1e9fc3eca3d7e8c6466da0d6cdf887af19cb06188bd046c3d7facd5f270b",
+  "duration": 35.205912,
+  "loopStart": 3.218712,
+  "loopEnd": 35.205912,
+  "loopState": "1:0:5",
+  "tickSeconds": 0.019992,
+  "rows": [
+    {
+      "order": 0,
+      "pattern": 2,
+      "row": 0,
+      "time": 0,
+      "tick": 0
+    },
+    {
+      "order": 0,
+      "pattern": 2,
+      "row": 1,
+      "time": 0.119952,
+      "tick": 6
+    },
+    {
+      "order": 0,
+      "pattern": 2,
+      "row": 2,
+      "time": 0.219912,
+      "tick": 11
+    },
+    {
+      "order": 0,
+      "pattern": 2,
+      "row": 3,
+      "time": 0.319872,
+      "tick": 16
+    },
+    {
+      "order": 0,
+      "pattern": 2,
+      "row": 4,
+      "time": 0.419832,
+      "tick": 21
+    },
+    {
+      "order": 0,
+      "pattern": 2,
+      "row": 5,
+      "time": 0.519792,
+      "tick": 26
+    },
+    {
+      "order": 0,
+      "pattern": 2,
+      "row": 6,
+      "time": 0.619752,
+      "tick": 31
+    },
+    {
+      "order": 0,
+      "pattern": 2,
+      "row": 7,
+      "time": 0.719712,
+      "tick": 36
+    },
+    {
+      "order": 0,
+      "pattern": 2,
+      "row": 8,
+      "time": 0.819672,
+      "tick": 41
+    },
+    {
+      "order": 0,
+      "pattern": 2,
+      "row": 9,
+      "time": 0.919632,
+      "tick": 46
+    },
+    {
+      "order": 0,
+      "pattern": 2,
+      "row": 10,
+      "time": 1.019592,
+      "tick": 51
+    },
+    {
+      "order": 0,
+      "pattern": 2,
+      "row": 11,
+      "time": 1.1195519999999999,
+      "tick": 56
+    },
+    {
+      "order": 0,
+      "pattern": 2,
+      "row": 12,
+      "time": 1.219512,
+      "tick": 61
+    },
+    {
+      "order": 0,
+      "pattern": 2,
+      "row": 13,
+      "time": 1.319472,
+      "tick": 66
+    },
+    {
+      "order": 0,
+      "pattern": 2,
+      "row": 14,
+      "time": 1.419432,
+      "tick": 71
+    },
+    {
+      "order": 0,
+      "pattern": 2,
+      "row": 15,
+      "time": 1.5193919999999999,
+      "tick": 76
+    },
+    {
+      "order": 0,
+      "pattern": 2,
+      "row": 16,
+      "time": 1.619352,
+      "tick": 81
+    },
+    {
+      "order": 0,
+      "pattern": 2,
+      "row": 17,
+      "time": 1.719312,
+      "tick": 86
+    },
+    {
+      "order": 0,
+      "pattern": 2,
+      "row": 18,
+      "time": 1.819272,
+      "tick": 91
+    },
+    {
+      "order": 0,
+      "pattern": 2,
+      "row": 19,
+      "time": 1.919232,
+      "tick": 96
+    },
+    {
+      "order": 0,
+      "pattern": 2,
+      "row": 20,
+      "time": 2.019192,
+      "tick": 101
+    },
+    {
+      "order": 0,
+      "pattern": 2,
+      "row": 21,
+      "time": 2.119152,
+      "tick": 106
+    },
+    {
+      "order": 0,
+      "pattern": 2,
+      "row": 22,
+      "time": 2.219112,
+      "tick": 111
+    },
+    {
+      "order": 0,
+      "pattern": 2,
+      "row": 23,
+      "time": 2.319072,
+      "tick": 116
+    },
+    {
+      "order": 0,
+      "pattern": 2,
+      "row": 24,
+      "time": 2.419032,
+      "tick": 121
+    },
+    {
+      "order": 0,
+      "pattern": 2,
+      "row": 25,
+      "time": 2.518992,
+      "tick": 126
+    },
+    {
+      "order": 0,
+      "pattern": 2,
+      "row": 26,
+      "time": 2.6189519999999997,
+      "tick": 131
+    },
+    {
+      "order": 0,
+      "pattern": 2,
+      "row": 27,
+      "time": 2.718912,
+      "tick": 136
+    },
+    {
+      "order": 0,
+      "pattern": 2,
+      "row": 28,
+      "time": 2.818872,
+      "tick": 141
+    },
+    {
+      "order": 0,
+      "pattern": 2,
+      "row": 29,
+      "time": 2.918832,
+      "tick": 146
+    },
+    {
+      "order": 0,
+      "pattern": 2,
+      "row": 30,
+      "time": 3.018792,
+      "tick": 151
+    },
+    {
+      "order": 0,
+      "pattern": 2,
+      "row": 31,
+      "time": 3.1187519999999997,
+      "tick": 156
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 0,
+      "time": 3.218712,
+      "tick": 161
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 1,
+      "time": 3.318672,
+      "tick": 166
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 2,
+      "time": 3.4186319999999997,
+      "tick": 171
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 3,
+      "time": 3.518592,
+      "tick": 176
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 4,
+      "time": 3.6185519999999998,
+      "tick": 181
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 5,
+      "time": 3.718512,
+      "tick": 186
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 6,
+      "time": 3.818472,
+      "tick": 191
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 7,
+      "time": 3.9184319999999997,
+      "tick": 196
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 8,
+      "time": 4.0183919999999995,
+      "tick": 201
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 9,
+      "time": 4.118352,
+      "tick": 206
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 10,
+      "time": 4.218312,
+      "tick": 211
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 11,
+      "time": 4.3182719999999994,
+      "tick": 216
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 12,
+      "time": 4.418232,
+      "tick": 221
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 13,
+      "time": 4.518192,
+      "tick": 226
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 14,
+      "time": 4.618152,
+      "tick": 231
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 15,
+      "time": 4.718112,
+      "tick": 236
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 16,
+      "time": 4.818072,
+      "tick": 241
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 17,
+      "time": 4.918032,
+      "tick": 246
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 18,
+      "time": 5.017992,
+      "tick": 251
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 19,
+      "time": 5.117952,
+      "tick": 256
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 20,
+      "time": 5.217912,
+      "tick": 261
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 21,
+      "time": 5.3178719999999995,
+      "tick": 266
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 22,
+      "time": 5.417832,
+      "tick": 271
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 23,
+      "time": 5.517792,
+      "tick": 276
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 24,
+      "time": 5.617751999999999,
+      "tick": 281
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 25,
+      "time": 5.717712,
+      "tick": 286
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 26,
+      "time": 5.817672,
+      "tick": 291
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 27,
+      "time": 5.917632,
+      "tick": 296
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 28,
+      "time": 6.017592,
+      "tick": 301
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 29,
+      "time": 6.117552,
+      "tick": 306
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 30,
+      "time": 6.217512,
+      "tick": 311
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 31,
+      "time": 6.3174719999999995,
+      "tick": 316
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 32,
+      "time": 6.417432,
+      "tick": 321
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 33,
+      "time": 6.517392,
+      "tick": 326
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 34,
+      "time": 6.6173519999999995,
+      "tick": 331
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 35,
+      "time": 6.717312,
+      "tick": 336
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 36,
+      "time": 6.817272,
+      "tick": 341
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 37,
+      "time": 6.917231999999999,
+      "tick": 346
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 38,
+      "time": 7.017192,
+      "tick": 351
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 39,
+      "time": 7.117152,
+      "tick": 356
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 40,
+      "time": 7.217112,
+      "tick": 361
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 41,
+      "time": 7.317072,
+      "tick": 366
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 42,
+      "time": 7.417032,
+      "tick": 371
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 43,
+      "time": 7.516992,
+      "tick": 376
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 44,
+      "time": 7.6169519999999995,
+      "tick": 381
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 45,
+      "time": 7.716912,
+      "tick": 386
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 46,
+      "time": 7.816872,
+      "tick": 391
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 47,
+      "time": 7.916831999999999,
+      "tick": 396
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 48,
+      "time": 8.016792,
+      "tick": 401
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 49,
+      "time": 8.116752,
+      "tick": 406
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 50,
+      "time": 8.216712,
+      "tick": 411
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 51,
+      "time": 8.316672,
+      "tick": 416
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 52,
+      "time": 8.416632,
+      "tick": 421
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 53,
+      "time": 8.516592,
+      "tick": 426
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 54,
+      "time": 8.616552,
+      "tick": 431
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 55,
+      "time": 8.716512,
+      "tick": 436
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 56,
+      "time": 8.816472,
+      "tick": 441
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 57,
+      "time": 8.916432,
+      "tick": 446
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 58,
+      "time": 9.016392,
+      "tick": 451
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 59,
+      "time": 9.116352,
+      "tick": 456
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 60,
+      "time": 9.216312,
+      "tick": 461
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 61,
+      "time": 9.316272,
+      "tick": 466
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 62,
+      "time": 9.416231999999999,
+      "tick": 471
+    },
+    {
+      "order": 1,
+      "pattern": 0,
+      "row": 63,
+      "time": 9.516192,
+      "tick": 476
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 0,
+      "time": 9.616152,
+      "tick": 481
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 1,
+      "time": 9.716111999999999,
+      "tick": 486
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 2,
+      "time": 9.816072,
+      "tick": 491
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 3,
+      "time": 9.916032,
+      "tick": 496
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 4,
+      "time": 10.015991999999999,
+      "tick": 501
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 5,
+      "time": 10.115952,
+      "tick": 506
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 6,
+      "time": 10.215912,
+      "tick": 511
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 7,
+      "time": 10.315871999999999,
+      "tick": 516
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 8,
+      "time": 10.415832,
+      "tick": 521
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 9,
+      "time": 10.515792,
+      "tick": 526
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 10,
+      "time": 10.615752,
+      "tick": 531
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 11,
+      "time": 10.715712,
+      "tick": 536
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 12,
+      "time": 10.815672,
+      "tick": 541
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 13,
+      "time": 10.915632,
+      "tick": 546
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 14,
+      "time": 11.015592,
+      "tick": 551
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 15,
+      "time": 11.115552,
+      "tick": 556
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 16,
+      "time": 11.215512,
+      "tick": 561
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 17,
+      "time": 11.315472,
+      "tick": 566
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 18,
+      "time": 11.415432,
+      "tick": 571
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 19,
+      "time": 11.515392,
+      "tick": 576
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 20,
+      "time": 11.615352,
+      "tick": 581
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 21,
+      "time": 11.715311999999999,
+      "tick": 586
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 22,
+      "time": 11.815272,
+      "tick": 591
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 23,
+      "time": 11.915232,
+      "tick": 596
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 24,
+      "time": 12.015191999999999,
+      "tick": 601
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 25,
+      "time": 12.115152,
+      "tick": 606
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 26,
+      "time": 12.215112,
+      "tick": 611
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 27,
+      "time": 12.315071999999999,
+      "tick": 616
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 28,
+      "time": 12.415032,
+      "tick": 621
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 29,
+      "time": 12.514992,
+      "tick": 626
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 30,
+      "time": 12.614951999999999,
+      "tick": 631
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 31,
+      "time": 12.714912,
+      "tick": 636
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 32,
+      "time": 12.814872,
+      "tick": 641
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 33,
+      "time": 12.914831999999999,
+      "tick": 646
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 34,
+      "time": 13.014792,
+      "tick": 651
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 35,
+      "time": 13.114752,
+      "tick": 656
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 36,
+      "time": 13.214712,
+      "tick": 661
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 37,
+      "time": 13.314672,
+      "tick": 666
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 38,
+      "time": 13.414632,
+      "tick": 671
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 39,
+      "time": 13.514592,
+      "tick": 676
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 40,
+      "time": 13.614552,
+      "tick": 681
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 41,
+      "time": 13.714512,
+      "tick": 686
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 42,
+      "time": 13.814472,
+      "tick": 691
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 43,
+      "time": 13.914432,
+      "tick": 696
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 44,
+      "time": 14.014391999999999,
+      "tick": 701
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 45,
+      "time": 14.114352,
+      "tick": 706
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 46,
+      "time": 14.214312,
+      "tick": 711
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 47,
+      "time": 14.314271999999999,
+      "tick": 716
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 48,
+      "time": 14.414232,
+      "tick": 721
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 49,
+      "time": 14.514192,
+      "tick": 726
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 50,
+      "time": 14.614151999999999,
+      "tick": 731
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 51,
+      "time": 14.714112,
+      "tick": 736
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 52,
+      "time": 14.814072,
+      "tick": 741
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 53,
+      "time": 14.914031999999999,
+      "tick": 746
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 54,
+      "time": 15.013992,
+      "tick": 751
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 55,
+      "time": 15.113952,
+      "tick": 756
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 56,
+      "time": 15.213911999999999,
+      "tick": 761
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 57,
+      "time": 15.313872,
+      "tick": 766
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 58,
+      "time": 15.413832,
+      "tick": 771
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 59,
+      "time": 15.513791999999999,
+      "tick": 776
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 60,
+      "time": 15.613752,
+      "tick": 781
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 61,
+      "time": 15.713712,
+      "tick": 786
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 62,
+      "time": 15.813671999999999,
+      "tick": 791
+    },
+    {
+      "order": 2,
+      "pattern": 1,
+      "row": 63,
+      "time": 15.913632,
+      "tick": 796
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 0,
+      "time": 16.013592,
+      "tick": 801
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 1,
+      "time": 16.113552,
+      "tick": 806
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 2,
+      "time": 16.213511999999998,
+      "tick": 811
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 3,
+      "time": 16.313472,
+      "tick": 816
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 4,
+      "time": 16.413432,
+      "tick": 821
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 5,
+      "time": 16.513392,
+      "tick": 826
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 6,
+      "time": 16.613352,
+      "tick": 831
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 7,
+      "time": 16.713312,
+      "tick": 836
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 8,
+      "time": 16.813271999999998,
+      "tick": 841
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 9,
+      "time": 16.913232,
+      "tick": 846
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 10,
+      "time": 17.013192,
+      "tick": 851
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 11,
+      "time": 17.113152,
+      "tick": 856
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 12,
+      "time": 17.213112,
+      "tick": 861
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 13,
+      "time": 17.313072,
+      "tick": 866
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 14,
+      "time": 17.413032,
+      "tick": 871
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 15,
+      "time": 17.512992,
+      "tick": 876
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 16,
+      "time": 17.612952,
+      "tick": 881
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 17,
+      "time": 17.712912,
+      "tick": 886
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 18,
+      "time": 17.812872,
+      "tick": 891
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 19,
+      "time": 17.912831999999998,
+      "tick": 896
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 20,
+      "time": 18.012792,
+      "tick": 901
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 21,
+      "time": 18.112752,
+      "tick": 906
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 22,
+      "time": 18.212712,
+      "tick": 911
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 23,
+      "time": 18.312672,
+      "tick": 916
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 24,
+      "time": 18.412632,
+      "tick": 921
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 25,
+      "time": 18.512591999999998,
+      "tick": 926
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 26,
+      "time": 18.612552,
+      "tick": 931
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 27,
+      "time": 18.712512,
+      "tick": 936
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 28,
+      "time": 18.812472,
+      "tick": 941
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 29,
+      "time": 18.912432,
+      "tick": 946
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 30,
+      "time": 19.012392,
+      "tick": 951
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 31,
+      "time": 19.112351999999998,
+      "tick": 956
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 32,
+      "time": 19.212312,
+      "tick": 961
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 33,
+      "time": 19.312272,
+      "tick": 966
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 34,
+      "time": 19.412232,
+      "tick": 971
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 35,
+      "time": 19.512192,
+      "tick": 976
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 36,
+      "time": 19.612152,
+      "tick": 981
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 37,
+      "time": 19.712111999999998,
+      "tick": 986
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 38,
+      "time": 19.812072,
+      "tick": 991
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 39,
+      "time": 19.912032,
+      "tick": 996
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 40,
+      "time": 20.011992,
+      "tick": 1001
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 41,
+      "time": 20.111952,
+      "tick": 1006
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 42,
+      "time": 20.211911999999998,
+      "tick": 1011
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 43,
+      "time": 20.311872,
+      "tick": 1016
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 44,
+      "time": 20.411832,
+      "tick": 1021
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 45,
+      "time": 20.511792,
+      "tick": 1026
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 46,
+      "time": 20.611752,
+      "tick": 1031
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 47,
+      "time": 20.711712,
+      "tick": 1036
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 48,
+      "time": 20.811671999999998,
+      "tick": 1041
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 49,
+      "time": 20.911632,
+      "tick": 1046
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 50,
+      "time": 21.011592,
+      "tick": 1051
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 51,
+      "time": 21.111552,
+      "tick": 1056
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 52,
+      "time": 21.211512,
+      "tick": 1061
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 53,
+      "time": 21.311472,
+      "tick": 1066
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 54,
+      "time": 21.411431999999998,
+      "tick": 1071
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 55,
+      "time": 21.511392,
+      "tick": 1076
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 56,
+      "time": 21.611352,
+      "tick": 1081
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 57,
+      "time": 21.711312,
+      "tick": 1086
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 58,
+      "time": 21.811272,
+      "tick": 1091
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 59,
+      "time": 21.911232,
+      "tick": 1096
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 60,
+      "time": 22.011191999999998,
+      "tick": 1101
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 61,
+      "time": 22.111152,
+      "tick": 1106
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 62,
+      "time": 22.211112,
+      "tick": 1111
+    },
+    {
+      "order": 3,
+      "pattern": 3,
+      "row": 63,
+      "time": 22.311072,
+      "tick": 1116
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 0,
+      "time": 22.411032,
+      "tick": 1121
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 1,
+      "time": 22.510991999999998,
+      "tick": 1126
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 2,
+      "time": 22.610951999999997,
+      "tick": 1131
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 3,
+      "time": 22.710912,
+      "tick": 1136
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 4,
+      "time": 22.810872,
+      "tick": 1141
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 5,
+      "time": 22.910832,
+      "tick": 1146
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 6,
+      "time": 23.010792,
+      "tick": 1151
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 7,
+      "time": 23.110751999999998,
+      "tick": 1156
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 8,
+      "time": 23.210712,
+      "tick": 1161
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 9,
+      "time": 23.310672,
+      "tick": 1166
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 10,
+      "time": 23.410632,
+      "tick": 1171
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 11,
+      "time": 23.510592,
+      "tick": 1176
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 12,
+      "time": 23.610552,
+      "tick": 1181
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 13,
+      "time": 23.710511999999998,
+      "tick": 1186
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 14,
+      "time": 23.810472,
+      "tick": 1191
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 15,
+      "time": 23.910432,
+      "tick": 1196
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 16,
+      "time": 24.010392,
+      "tick": 1201
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 17,
+      "time": 24.110352,
+      "tick": 1206
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 18,
+      "time": 24.210312,
+      "tick": 1211
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 19,
+      "time": 24.310271999999998,
+      "tick": 1216
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 20,
+      "time": 24.410232,
+      "tick": 1221
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 21,
+      "time": 24.510192,
+      "tick": 1226
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 22,
+      "time": 24.610152,
+      "tick": 1231
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 23,
+      "time": 24.710112,
+      "tick": 1236
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 24,
+      "time": 24.810071999999998,
+      "tick": 1241
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 25,
+      "time": 24.910031999999998,
+      "tick": 1246
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 26,
+      "time": 25.009992,
+      "tick": 1251
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 27,
+      "time": 25.109952,
+      "tick": 1256
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 28,
+      "time": 25.209912,
+      "tick": 1261
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 29,
+      "time": 25.309872,
+      "tick": 1266
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 30,
+      "time": 25.409831999999998,
+      "tick": 1271
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 31,
+      "time": 25.509792,
+      "tick": 1276
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 32,
+      "time": 25.609752,
+      "tick": 1281
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 33,
+      "time": 25.709712,
+      "tick": 1286
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 34,
+      "time": 25.809672,
+      "tick": 1291
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 35,
+      "time": 25.909632,
+      "tick": 1296
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 36,
+      "time": 26.009591999999998,
+      "tick": 1301
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 37,
+      "time": 26.109552,
+      "tick": 1306
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 38,
+      "time": 26.209512,
+      "tick": 1311
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 39,
+      "time": 26.309472,
+      "tick": 1316
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 40,
+      "time": 26.409432,
+      "tick": 1321
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 41,
+      "time": 26.509392,
+      "tick": 1326
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 42,
+      "time": 26.609351999999998,
+      "tick": 1331
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 43,
+      "time": 26.709312,
+      "tick": 1336
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 44,
+      "time": 26.809272,
+      "tick": 1341
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 45,
+      "time": 26.909232,
+      "tick": 1346
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 46,
+      "time": 27.009192,
+      "tick": 1351
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 47,
+      "time": 27.109151999999998,
+      "tick": 1356
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 48,
+      "time": 27.209111999999998,
+      "tick": 1361
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 49,
+      "time": 27.309072,
+      "tick": 1366
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 50,
+      "time": 27.409032,
+      "tick": 1371
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 51,
+      "time": 27.508992,
+      "tick": 1376
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 52,
+      "time": 27.608952,
+      "tick": 1381
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 53,
+      "time": 27.708911999999998,
+      "tick": 1386
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 54,
+      "time": 27.808871999999997,
+      "tick": 1391
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 55,
+      "time": 27.908832,
+      "tick": 1396
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 56,
+      "time": 28.008792,
+      "tick": 1401
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 57,
+      "time": 28.108752,
+      "tick": 1406
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 58,
+      "time": 28.208712,
+      "tick": 1411
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 59,
+      "time": 28.308671999999998,
+      "tick": 1416
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 60,
+      "time": 28.408632,
+      "tick": 1421
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 61,
+      "time": 28.508592,
+      "tick": 1426
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 62,
+      "time": 28.608552,
+      "tick": 1431
+    },
+    {
+      "order": 4,
+      "pattern": 4,
+      "row": 63,
+      "time": 28.708512,
+      "tick": 1436
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 0,
+      "time": 28.808472,
+      "tick": 1441
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 1,
+      "time": 28.908431999999998,
+      "tick": 1446
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 2,
+      "time": 29.008392,
+      "tick": 1451
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 3,
+      "time": 29.108352,
+      "tick": 1456
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 4,
+      "time": 29.208312,
+      "tick": 1461
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 5,
+      "time": 29.308272,
+      "tick": 1466
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 6,
+      "time": 29.408231999999998,
+      "tick": 1471
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 7,
+      "time": 29.508191999999998,
+      "tick": 1476
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 8,
+      "time": 29.608152,
+      "tick": 1481
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 9,
+      "time": 29.708112,
+      "tick": 1486
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 10,
+      "time": 29.808072,
+      "tick": 1491
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 11,
+      "time": 29.908032,
+      "tick": 1496
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 12,
+      "time": 30.007991999999998,
+      "tick": 1501
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 13,
+      "time": 30.107951999999997,
+      "tick": 1506
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 14,
+      "time": 30.207912,
+      "tick": 1511
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 15,
+      "time": 30.307872,
+      "tick": 1516
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 16,
+      "time": 30.407832,
+      "tick": 1521
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 17,
+      "time": 30.507792,
+      "tick": 1526
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 18,
+      "time": 30.607751999999998,
+      "tick": 1531
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 19,
+      "time": 30.707712,
+      "tick": 1536
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 20,
+      "time": 30.807672,
+      "tick": 1541
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 21,
+      "time": 30.907632,
+      "tick": 1546
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 22,
+      "time": 31.007592,
+      "tick": 1551
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 23,
+      "time": 31.107552,
+      "tick": 1556
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 24,
+      "time": 31.207511999999998,
+      "tick": 1561
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 25,
+      "time": 31.307472,
+      "tick": 1566
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 26,
+      "time": 31.407432,
+      "tick": 1571
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 27,
+      "time": 31.507392,
+      "tick": 1576
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 28,
+      "time": 31.607352,
+      "tick": 1581
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 29,
+      "time": 31.707311999999998,
+      "tick": 1586
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 30,
+      "time": 31.807271999999998,
+      "tick": 1591
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 31,
+      "time": 31.907232,
+      "tick": 1596
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 32,
+      "time": 32.007191999999996,
+      "tick": 1601
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 33,
+      "time": 32.107152,
+      "tick": 1606
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 34,
+      "time": 32.207112,
+      "tick": 1611
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 35,
+      "time": 32.307072,
+      "tick": 1616
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 36,
+      "time": 32.407032,
+      "tick": 1621
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 37,
+      "time": 32.506992,
+      "tick": 1626
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 38,
+      "time": 32.606952,
+      "tick": 1631
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 39,
+      "time": 32.706911999999996,
+      "tick": 1636
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 40,
+      "time": 32.806872,
+      "tick": 1641
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 41,
+      "time": 32.906832,
+      "tick": 1646
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 42,
+      "time": 33.006792,
+      "tick": 1651
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 43,
+      "time": 33.106752,
+      "tick": 1656
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 44,
+      "time": 33.206711999999996,
+      "tick": 1661
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 45,
+      "time": 33.306672,
+      "tick": 1666
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 46,
+      "time": 33.406632,
+      "tick": 1671
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 47,
+      "time": 33.506592,
+      "tick": 1676
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 48,
+      "time": 33.606552,
+      "tick": 1681
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 49,
+      "time": 33.706512,
+      "tick": 1686
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 50,
+      "time": 33.806472,
+      "tick": 1691
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 51,
+      "time": 33.906432,
+      "tick": 1696
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 52,
+      "time": 34.006392,
+      "tick": 1701
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 53,
+      "time": 34.106352,
+      "tick": 1706
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 54,
+      "time": 34.206312,
+      "tick": 1711
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 55,
+      "time": 34.306272,
+      "tick": 1716
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 56,
+      "time": 34.406231999999996,
+      "tick": 1721
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 57,
+      "time": 34.506192,
+      "tick": 1726
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 58,
+      "time": 34.606152,
+      "tick": 1731
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 59,
+      "time": 34.706112,
+      "tick": 1736
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 60,
+      "time": 34.806072,
+      "tick": 1741
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 61,
+      "time": 34.906031999999996,
+      "tick": 1746
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 62,
+      "time": 35.005992,
+      "tick": 1751
+    },
+    {
+      "order": 5,
+      "pattern": 5,
+      "row": 63,
+      "time": 35.105952,
+      "tick": 1756
+    }
+  ],
+  "events": [
+    {
+      "time": 0,
+      "end": 0.219912,
+      "pitch": 43.01955000865387,
+      "instrument": 3,
+      "channel": 0,
+      "step": 128,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 0,
+      "volumeAutomation": [
+        {
+          "time": 0,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 0,
+      "end": 0.219912,
+      "pitch": 67.01955000865388,
+      "instrument": 5,
+      "channel": 1,
+      "step": 128,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 0,
+      "volumeAutomation": [
+        {
+          "time": 0,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 0,
+      "end": 0.219912,
+      "pitch": 71.02635884729513,
+      "instrument": 5,
+      "channel": 2,
+      "step": 228,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 0,
+      "volumeAutomation": [
+        {
+          "time": 0,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 0,
+      "end": 0.219912,
+      "pitch": 61.97888312010825,
+      "instrument": 5,
+      "channel": 3,
+      "step": 31,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 0,
+      "volumeAutomation": [
+        {
+          "time": 0,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 0.219912,
+      "end": 0.319872,
+      "pitch": 43.01955000865387,
+      "instrument": 3,
+      "channel": 0,
+      "step": 128,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 2,
+      "volumeAutomation": [
+        {
+          "time": 0.219912,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 0.219912,
+      "end": 0.319872,
+      "pitch": 67.01955000865388,
+      "instrument": 5,
+      "channel": 1,
+      "step": 128,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 2,
+      "volumeAutomation": [
+        {
+          "time": 0.219912,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 0.219912,
+      "end": 0.319872,
+      "pitch": 71.02635884729513,
+      "instrument": 5,
+      "channel": 2,
+      "step": 228,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 2,
+      "volumeAutomation": [
+        {
+          "time": 0.219912,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 0.219912,
+      "end": 0.319872,
+      "pitch": 61.97888312010825,
+      "instrument": 5,
+      "channel": 3,
+      "step": 31,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 2,
+      "volumeAutomation": [
+        {
+          "time": 0.219912,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 0.319872,
+      "end": 0.419832,
+      "pitch": 43.01955000865387,
+      "instrument": 3,
+      "channel": 0,
+      "step": 128,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 3,
+      "volumeAutomation": [
+        {
+          "time": 0.319872,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 0.319872,
+      "end": 0.419832,
+      "pitch": 67.01955000865388,
+      "instrument": 5,
+      "channel": 1,
+      "step": 128,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 3,
+      "volumeAutomation": [
+        {
+          "time": 0.319872,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 0.319872,
+      "end": 0.419832,
+      "pitch": 71.02635884729513,
+      "instrument": 5,
+      "channel": 2,
+      "step": 228,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 3,
+      "volumeAutomation": [
+        {
+          "time": 0.319872,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 0.319872,
+      "end": 0.419832,
+      "pitch": 61.97888312010825,
+      "instrument": 5,
+      "channel": 3,
+      "step": 31,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 3,
+      "volumeAutomation": [
+        {
+          "time": 0.319872,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 0.419832,
+      "end": 0.619752,
+      "pitch": 43.01955000865387,
+      "instrument": 3,
+      "channel": 0,
+      "step": 128,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 4,
+      "volumeAutomation": [
+        {
+          "time": 0.419832,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 0.419832,
+      "end": 0.619752,
+      "pitch": 67.01955000865388,
+      "instrument": 5,
+      "channel": 1,
+      "step": 128,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 4,
+      "volumeAutomation": [
+        {
+          "time": 0.419832,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 0.419832,
+      "end": 0.619752,
+      "pitch": 71.02635884729513,
+      "instrument": 5,
+      "channel": 2,
+      "step": 228,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 4,
+      "volumeAutomation": [
+        {
+          "time": 0.419832,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 0.419832,
+      "end": 0.619752,
+      "pitch": 61.97888312010825,
+      "instrument": 5,
+      "channel": 3,
+      "step": 31,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 4,
+      "volumeAutomation": [
+        {
+          "time": 0.419832,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 0.619752,
+      "end": 0.919632,
+      "pitch": 43.01955000865387,
+      "instrument": 3,
+      "channel": 0,
+      "step": 128,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 6,
+      "volumeAutomation": [
+        {
+          "time": 0.619752,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 0.619752,
+      "end": 1.019592,
+      "pitch": 67.01955000865388,
+      "instrument": 5,
+      "channel": 1,
+      "step": 128,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 6,
+      "volumeAutomation": [
+        {
+          "time": 0.619752,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 0.619752,
+      "end": 1.019592,
+      "pitch": 71.02635884729513,
+      "instrument": 5,
+      "channel": 2,
+      "step": 228,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 6,
+      "volumeAutomation": [
+        {
+          "time": 0.619752,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 0.619752,
+      "end": 1.019592,
+      "pitch": 61.97888312010825,
+      "instrument": 5,
+      "channel": 3,
+      "step": 31,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 6,
+      "volumeAutomation": [
+        {
+          "time": 0.619752,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 1.019592,
+      "end": 1.319472,
+      "pitch": 43.01955000865387,
+      "instrument": 3,
+      "channel": 0,
+      "step": 128,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 10,
+      "volumeAutomation": [
+        {
+          "time": 1.019592,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 1.019592,
+      "end": 1.419432,
+      "pitch": 67.01955000865388,
+      "instrument": 5,
+      "channel": 1,
+      "step": 128,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 10,
+      "volumeAutomation": [
+        {
+          "time": 1.019592,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 1.019592,
+      "end": 1.419432,
+      "pitch": 71.02635884729513,
+      "instrument": 5,
+      "channel": 2,
+      "step": 228,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 10,
+      "volumeAutomation": [
+        {
+          "time": 1.019592,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 1.019592,
+      "end": 1.419432,
+      "pitch": 61.97888312010825,
+      "instrument": 5,
+      "channel": 3,
+      "step": 31,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 10,
+      "volumeAutomation": [
+        {
+          "time": 1.019592,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 1.419432,
+      "end": 1.619352,
+      "pitch": 43.01955000865387,
+      "instrument": 3,
+      "channel": 0,
+      "step": 128,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 14,
+      "volumeAutomation": [
+        {
+          "time": 1.419432,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 1.419432,
+      "end": 1.619352,
+      "pitch": 67.01955000865388,
+      "instrument": 5,
+      "channel": 1,
+      "step": 128,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 14,
+      "volumeAutomation": [
+        {
+          "time": 1.419432,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 1.419432,
+      "end": 1.619352,
+      "pitch": 71.02635884729513,
+      "instrument": 5,
+      "channel": 2,
+      "step": 228,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 14,
+      "volumeAutomation": [
+        {
+          "time": 1.419432,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 1.419432,
+      "end": 1.619352,
+      "pitch": 61.97888312010825,
+      "instrument": 5,
+      "channel": 3,
+      "step": 31,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 14,
+      "volumeAutomation": [
+        {
+          "time": 1.419432,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 1.619352,
+      "end": 1.819272,
+      "pitch": 43.01955000865387,
+      "instrument": 3,
+      "channel": 0,
+      "step": 128,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 16,
+      "volumeAutomation": [
+        {
+          "time": 1.619352,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 1.619352,
+      "end": 1.819272,
+      "pitch": 67.01955000865388,
+      "instrument": 5,
+      "channel": 1,
+      "step": 128,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 16,
+      "volumeAutomation": [
+        {
+          "time": 1.619352,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 1.619352,
+      "end": 1.819272,
+      "pitch": 71.02635884729513,
+      "instrument": 5,
+      "channel": 2,
+      "step": 228,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 16,
+      "volumeAutomation": [
+        {
+          "time": 1.619352,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 1.619352,
+      "end": 1.819272,
+      "pitch": 61.97888312010825,
+      "instrument": 5,
+      "channel": 3,
+      "step": 31,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 16,
+      "volumeAutomation": [
+        {
+          "time": 1.619352,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 1.819272,
+      "end": 1.919232,
+      "pitch": 43.01955000865387,
+      "instrument": 3,
+      "channel": 0,
+      "step": 128,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 18,
+      "volumeAutomation": [
+        {
+          "time": 1.819272,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 1.819272,
+      "end": 1.919232,
+      "pitch": 67.01955000865388,
+      "instrument": 5,
+      "channel": 1,
+      "step": 128,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 18,
+      "volumeAutomation": [
+        {
+          "time": 1.819272,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 1.819272,
+      "end": 1.919232,
+      "pitch": 71.02635884729513,
+      "instrument": 5,
+      "channel": 2,
+      "step": 228,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 18,
+      "volumeAutomation": [
+        {
+          "time": 1.819272,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 1.819272,
+      "end": 1.919232,
+      "pitch": 61.97888312010825,
+      "instrument": 5,
+      "channel": 3,
+      "step": 31,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 18,
+      "volumeAutomation": [
+        {
+          "time": 1.819272,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 1.919232,
+      "end": 2.019192,
+      "pitch": 43.01955000865387,
+      "instrument": 3,
+      "channel": 0,
+      "step": 128,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 19,
+      "volumeAutomation": [
+        {
+          "time": 1.919232,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 1.919232,
+      "end": 2.019192,
+      "pitch": 67.01955000865388,
+      "instrument": 5,
+      "channel": 1,
+      "step": 128,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 19,
+      "volumeAutomation": [
+        {
+          "time": 1.919232,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 1.919232,
+      "end": 2.019192,
+      "pitch": 71.02635884729513,
+      "instrument": 5,
+      "channel": 2,
+      "step": 228,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 19,
+      "volumeAutomation": [
+        {
+          "time": 1.919232,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 1.919232,
+      "end": 2.019192,
+      "pitch": 61.97888312010825,
+      "instrument": 5,
+      "channel": 3,
+      "step": 31,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 19,
+      "volumeAutomation": [
+        {
+          "time": 1.919232,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 2.019192,
+      "end": 2.219112,
+      "pitch": 43.01955000865387,
+      "instrument": 3,
+      "channel": 0,
+      "step": 128,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 20,
+      "volumeAutomation": [
+        {
+          "time": 2.019192,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 2.019192,
+      "end": 2.219112,
+      "pitch": 67.01955000865388,
+      "instrument": 5,
+      "channel": 1,
+      "step": 128,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 20,
+      "volumeAutomation": [
+        {
+          "time": 2.019192,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 2.019192,
+      "end": 2.219112,
+      "pitch": 71.02635884729513,
+      "instrument": 5,
+      "channel": 2,
+      "step": 228,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 20,
+      "volumeAutomation": [
+        {
+          "time": 2.019192,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 2.019192,
+      "end": 2.219112,
+      "pitch": 61.97888312010825,
+      "instrument": 5,
+      "channel": 3,
+      "step": 31,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 20,
+      "volumeAutomation": [
+        {
+          "time": 2.019192,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 2.219112,
+      "end": 2.518992,
+      "pitch": 43.01955000865387,
+      "instrument": 3,
+      "channel": 0,
+      "step": 128,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 22,
+      "volumeAutomation": [
+        {
+          "time": 2.219112,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 2.219112,
+      "end": 2.718912,
+      "pitch": 67.01955000865388,
+      "instrument": 5,
+      "channel": 1,
+      "step": 128,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 22,
+      "volumeAutomation": [
+        {
+          "time": 2.219112,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 2.219112,
+      "end": 2.6189519999999997,
+      "pitch": 71.02635884729513,
+      "instrument": 5,
+      "channel": 2,
+      "step": 228,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 22,
+      "volumeAutomation": [
+        {
+          "time": 2.219112,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 2.219112,
+      "end": 2.89884,
+      "pitch": 61.97888312010825,
+      "instrument": 5,
+      "channel": 3,
+      "step": 31,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 22,
+      "volumeAutomation": [
+        {
+          "time": 2.219112,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 2.6189519999999997,
+      "end": 2.818872,
+      "pitch": 43.01955000865387,
+      "instrument": 3,
+      "channel": 0,
+      "step": 128,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 26,
+      "volumeAutomation": [
+        {
+          "time": 2.6189519999999997,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 2.818872,
+      "end": 3.018792,
+      "pitch": 45.01852870906918,
+      "instrument": 3,
+      "channel": 0,
+      "step": 175,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 28,
+      "volumeAutomation": [
+        {
+          "time": 2.818872,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 3.018792,
+      "end": 3.218712,
+      "pitch": 47.026358847295135,
+      "instrument": 3,
+      "channel": 0,
+      "step": 228,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 0,
+      "row": 30,
+      "volumeAutomation": [
+        {
+          "time": 3.018792,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 3.218712,
+      "end": 3.4186319999999997,
+      "pitch": 48,
+      "instrument": 3,
+      "channel": 1,
+      "step": 256,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 0,
+      "volumeAutomation": [
+        {
+          "time": 3.218712,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 3.218712,
+      "end": 3.59856,
+      "pitch": 72,
+      "instrument": 5,
+      "channel": 2,
+      "step": 256,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 0,
+      "volumeAutomation": [
+        {
+          "time": 3.218712,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 3.4186319999999997,
+      "end": 3.5785679999999997,
+      "pitch": 60,
+      "instrument": 4,
+      "channel": 1,
+      "step": 256,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 2,
+      "volumeAutomation": [
+        {
+          "time": 3.4186319999999997,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 3.6185519999999998,
+      "end": 3.818472,
+      "pitch": 43.01955000865387,
+      "instrument": 3,
+      "channel": 1,
+      "step": 128,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 4,
+      "volumeAutomation": [
+        {
+          "time": 3.6185519999999998,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 3.6185519999999998,
+      "end": 4.0183919999999995,
+      "pitch": 67.01955000865388,
+      "instrument": 5,
+      "channel": 2,
+      "step": 128,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 4,
+      "volumeAutomation": [
+        {
+          "time": 3.6185519999999998,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 3.818472,
+      "end": 3.978408,
+      "pitch": 60,
+      "instrument": 4,
+      "channel": 1,
+      "step": 256,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 6,
+      "volumeAutomation": [
+        {
+          "time": 3.818472,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 4.0183919999999995,
+      "end": 4.218312,
+      "pitch": 48,
+      "instrument": 3,
+      "channel": 1,
+      "step": 256,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 8,
+      "volumeAutomation": [
+        {
+          "time": 4.0183919999999995,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 4.0183919999999995,
+      "end": 4.418232,
+      "pitch": 64.0246842563271,
+      "instrument": 5,
+      "channel": 2,
+      "step": 67,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 8,
+      "volumeAutomation": [
+        {
+          "time": 4.0183919999999995,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 4.218312,
+      "end": 4.378248,
+      "pitch": 60,
+      "instrument": 4,
+      "channel": 1,
+      "step": 256,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 10,
+      "volumeAutomation": [
+        {
+          "time": 4.218312,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 4.418232,
+      "end": 4.618152,
+      "pitch": 43.01955000865387,
+      "instrument": 3,
+      "channel": 1,
+      "step": 128,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 12,
+      "volumeAutomation": [
+        {
+          "time": 4.418232,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 4.418232,
+      "end": 4.818072,
+      "pitch": 67.01955000865388,
+      "instrument": 5,
+      "channel": 2,
+      "step": 128,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 12,
+      "volumeAutomation": [
+        {
+          "time": 4.418232,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 4.618152,
+      "end": 4.818072,
+      "pitch": 41.99815064499846,
+      "instrument": 3,
+      "channel": 1,
+      "step": 106,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 14,
+      "volumeAutomation": [
+        {
+          "time": 4.618152,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 4.818072,
+      "end": 5.017992,
+      "pitch": 41.014230178630775,
+      "instrument": 3,
+      "channel": 1,
+      "step": 86,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 16,
+      "volumeAutomation": [
+        {
+          "time": 4.818072,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 4.818072,
+      "end": 5.377848,
+      "pitch": 65.01423017863077,
+      "instrument": 5,
+      "channel": 2,
+      "step": 86,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 16,
+      "volumeAutomation": [
+        {
+          "time": 4.818072,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 5.017992,
+      "end": 5.217912,
+      "pitch": 53.014230178630775,
+      "instrument": 4,
+      "channel": 1,
+      "step": 86,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 18,
+      "volumeAutomation": [
+        {
+          "time": 5.017992,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 5.217912,
+      "end": 5.417832,
+      "pitch": 36,
+      "instrument": 3,
+      "channel": 1,
+      "step": 0,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 20,
+      "volumeAutomation": [
+        {
+          "time": 5.217912,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 5.417832,
+      "end": 5.617751999999999,
+      "pitch": 53.014230178630775,
+      "instrument": 4,
+      "channel": 1,
+      "step": 86,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 22,
+      "volumeAutomation": [
+        {
+          "time": 5.417832,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 5.617751999999999,
+      "end": 5.817672,
+      "pitch": 41.014230178630775,
+      "instrument": 3,
+      "channel": 1,
+      "step": 86,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 24,
+      "volumeAutomation": [
+        {
+          "time": 5.617751999999999,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 5.817672,
+      "end": 6.017592,
+      "pitch": 53.014230178630775,
+      "instrument": 4,
+      "channel": 1,
+      "step": 86,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 26,
+      "volumeAutomation": [
+        {
+          "time": 5.817672,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 5.817672,
+      "end": 6.017592,
+      "pitch": 64.0246842563271,
+      "instrument": 5,
+      "channel": 2,
+      "step": 67,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 26,
+      "volumeAutomation": [
+        {
+          "time": 5.817672,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 6.017592,
+      "end": 6.217512,
+      "pitch": 36,
+      "instrument": 3,
+      "channel": 1,
+      "step": 0,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 28,
+      "volumeAutomation": [
+        {
+          "time": 6.017592,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 6.017592,
+      "end": 6.217512,
+      "pitch": 65.01423017863077,
+      "instrument": 5,
+      "channel": 2,
+      "step": 86,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 28,
+      "volumeAutomation": [
+        {
+          "time": 6.017592,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 6.217512,
+      "end": 6.417432,
+      "pitch": 53.014230178630775,
+      "instrument": 4,
+      "channel": 1,
+      "step": 86,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 30,
+      "volumeAutomation": [
+        {
+          "time": 6.217512,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 6.217512,
+      "end": 6.417432,
+      "pitch": 67.01955000865388,
+      "instrument": 5,
+      "channel": 2,
+      "step": 128,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 30,
+      "volumeAutomation": [
+        {
+          "time": 6.217512,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 6.417432,
+      "end": 6.59736,
+      "pitch": 51.971002537375405,
+      "instrument": 3,
+      "channel": 1,
+      "step": 388,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 32,
+      "volumeAutomation": [
+        {
+          "time": 6.417432,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 6.417432,
+      "end": 6.817272,
+      "pitch": 65.01423017863077,
+      "instrument": 5,
+      "channel": 2,
+      "step": 86,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 32,
+      "volumeAutomation": [
+        {
+          "time": 6.417432,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 6.6173519999999995,
+      "end": 6.757296,
+      "pitch": 62.039100017307746,
+      "instrument": 4,
+      "channel": 1,
+      "step": 320,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 34,
+      "volumeAutomation": [
+        {
+          "time": 6.6173519999999995,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 6.817272,
+      "end": 7.017192,
+      "pitch": 47.026358847295135,
+      "instrument": 3,
+      "channel": 1,
+      "step": 228,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 36,
+      "volumeAutomation": [
+        {
+          "time": 6.817272,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 6.817272,
+      "end": 7.417032,
+      "pitch": 64.0246842563271,
+      "instrument": 5,
+      "channel": 2,
+      "step": 67,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 36,
+      "volumeAutomation": [
+        {
+          "time": 6.817272,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 7.017192,
+      "end": 7.1571359999999995,
+      "pitch": 62.039100017307746,
+      "instrument": 4,
+      "channel": 1,
+      "step": 320,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 38,
+      "volumeAutomation": [
+        {
+          "time": 7.017192,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 7.217112,
+      "end": 7.39704,
+      "pitch": 51.971002537375405,
+      "instrument": 3,
+      "channel": 1,
+      "step": 388,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 40,
+      "volumeAutomation": [
+        {
+          "time": 7.217112,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 7.417032,
+      "end": 7.556976,
+      "pitch": 62.039100017307746,
+      "instrument": 4,
+      "channel": 1,
+      "step": 320,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 42,
+      "volumeAutomation": [
+        {
+          "time": 7.417032,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 7.6169519999999995,
+      "end": 7.816872,
+      "pitch": 47.026358847295135,
+      "instrument": 3,
+      "channel": 1,
+      "step": 228,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 44,
+      "volumeAutomation": [
+        {
+          "time": 7.6169519999999995,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 7.6169519999999995,
+      "end": 8.016792,
+      "pitch": 69.01852870906917,
+      "instrument": 5,
+      "channel": 2,
+      "step": 175,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 44,
+      "volumeAutomation": [
+        {
+          "time": 7.6169519999999995,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 7.816872,
+      "end": 8.016792,
+      "pitch": 44.02661981119496,
+      "instrument": 3,
+      "channel": 1,
+      "step": 151,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 46,
+      "volumeAutomation": [
+        {
+          "time": 7.816872,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 8.016792,
+      "end": 8.216712,
+      "pitch": 43.01955000865387,
+      "instrument": 3,
+      "channel": 1,
+      "step": 128,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 48,
+      "volumeAutomation": [
+        {
+          "time": 8.016792,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 8.016792,
+      "end": 8.516592,
+      "pitch": 67.01955000865388,
+      "instrument": 5,
+      "channel": 2,
+      "step": 128,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 48,
+      "volumeAutomation": [
+        {
+          "time": 8.016792,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 8.216712,
+      "end": 8.416632,
+      "pitch": 55.01955000865387,
+      "instrument": 4,
+      "channel": 1,
+      "step": 128,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 50,
+      "volumeAutomation": [
+        {
+          "time": 8.216712,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 8.416632,
+      "end": 8.616552,
+      "pitch": 37.97888312010825,
+      "instrument": 3,
+      "channel": 1,
+      "step": 31,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 52,
+      "volumeAutomation": [
+        {
+          "time": 8.416632,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 8.616552,
+      "end": 8.816472,
+      "pitch": 55.01955000865387,
+      "instrument": 4,
+      "channel": 1,
+      "step": 128,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 54,
+      "volumeAutomation": [
+        {
+          "time": 8.616552,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 8.816472,
+      "end": 9.016392,
+      "pitch": 43.01955000865387,
+      "instrument": 3,
+      "channel": 1,
+      "step": 128,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 56,
+      "volumeAutomation": [
+        {
+          "time": 8.816472,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 9.016392,
+      "end": 9.216312,
+      "pitch": 55.01955000865387,
+      "instrument": 4,
+      "channel": 1,
+      "step": 128,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 58,
+      "volumeAutomation": [
+        {
+          "time": 9.016392,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 9.216312,
+      "end": 9.416231999999999,
+      "pitch": 37.97888312010825,
+      "instrument": 3,
+      "channel": 1,
+      "step": 31,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 60,
+      "volumeAutomation": [
+        {
+          "time": 9.216312,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 9.416231999999999,
+      "end": 9.616152,
+      "pitch": 47.026358847295135,
+      "instrument": 3,
+      "channel": 1,
+      "step": 228,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 1,
+      "row": 62,
+      "volumeAutomation": [
+        {
+          "time": 9.416231999999999,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 9.616152,
+      "end": 9.816072,
+      "pitch": 48,
+      "instrument": 3,
+      "channel": 1,
+      "step": 256,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 0,
+      "volumeAutomation": [
+        {
+          "time": 9.616152,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 9.616152,
+      "end": 9.996,
+      "pitch": 72,
+      "instrument": 5,
+      "channel": 2,
+      "step": 256,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 0,
+      "volumeAutomation": [
+        {
+          "time": 9.616152,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 9.616152,
+      "end": 9.916032,
+      "pitch": 75.9710025373754,
+      "instrument": 5,
+      "channel": 3,
+      "step": 388,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 0,
+      "volumeAutomation": [
+        {
+          "time": 9.616152,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 9.816072,
+      "end": 9.976008,
+      "pitch": 60,
+      "instrument": 4,
+      "channel": 1,
+      "step": 256,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 2,
+      "volumeAutomation": [
+        {
+          "time": 9.816072,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 10.015991999999999,
+      "end": 10.215912,
+      "pitch": 43.01955000865387,
+      "instrument": 3,
+      "channel": 1,
+      "step": 128,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 4,
+      "volumeAutomation": [
+        {
+          "time": 10.015991999999999,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 10.015991999999999,
+      "end": 10.215912,
+      "pitch": 74.03910001730775,
+      "instrument": 5,
+      "channel": 2,
+      "step": 320,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 4,
+      "volumeAutomation": [
+        {
+          "time": 10.015991999999999,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 10.015991999999999,
+      "end": 10.215912,
+      "pitch": 77.01423017863078,
+      "instrument": 5,
+      "channel": 3,
+      "step": 428,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 4,
+      "volumeAutomation": [
+        {
+          "time": 10.015991999999999,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 10.215912,
+      "end": 10.375848,
+      "pitch": 60,
+      "instrument": 4,
+      "channel": 1,
+      "step": 256,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 6,
+      "volumeAutomation": [
+        {
+          "time": 10.215912,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 10.215912,
+      "end": 10.415832,
+      "pitch": 72,
+      "instrument": 5,
+      "channel": 2,
+      "step": 256,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 6,
+      "volumeAutomation": [
+        {
+          "time": 10.215912,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 10.215912,
+      "end": 10.415832,
+      "pitch": 75.9710025373754,
+      "instrument": 5,
+      "channel": 3,
+      "step": 388,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 6,
+      "volumeAutomation": [
+        {
+          "time": 10.215912,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 10.415832,
+      "end": 10.615752,
+      "pitch": 48,
+      "instrument": 3,
+      "channel": 1,
+      "step": 256,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 8,
+      "volumeAutomation": [
+        {
+          "time": 10.415832,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 10.415832,
+      "end": 10.815672,
+      "pitch": 71.02635884729513,
+      "instrument": 5,
+      "channel": 2,
+      "step": 228,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 8,
+      "volumeAutomation": [
+        {
+          "time": 10.415832,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 10.415832,
+      "end": 10.755696,
+      "pitch": 74.03910001730775,
+      "instrument": 5,
+      "channel": 3,
+      "step": 320,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 8,
+      "volumeAutomation": [
+        {
+          "time": 10.415832,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 10.615752,
+      "end": 10.775687999999999,
+      "pitch": 60,
+      "instrument": 4,
+      "channel": 1,
+      "step": 256,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 10,
+      "volumeAutomation": [
+        {
+          "time": 10.615752,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 10.815672,
+      "end": 11.015592,
+      "pitch": 43.01955000865387,
+      "instrument": 3,
+      "channel": 1,
+      "step": 128,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 12,
+      "volumeAutomation": [
+        {
+          "time": 10.815672,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 10.815672,
+      "end": 11.19552,
+      "pitch": 72,
+      "instrument": 5,
+      "channel": 2,
+      "step": 256,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 12,
+      "volumeAutomation": [
+        {
+          "time": 10.815672,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 10.815672,
+      "end": 11.115552,
+      "pitch": 75.9710025373754,
+      "instrument": 5,
+      "channel": 3,
+      "step": 388,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 12,
+      "volumeAutomation": [
+        {
+          "time": 10.815672,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 11.015592,
+      "end": 11.215512,
+      "pitch": 44.02661981119496,
+      "instrument": 3,
+      "channel": 1,
+      "step": 151,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 14,
+      "volumeAutomation": [
+        {
+          "time": 11.015592,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 11.215512,
+      "end": 11.415432,
+      "pitch": 45.01852870906918,
+      "instrument": 3,
+      "channel": 1,
+      "step": 175,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 16,
+      "volumeAutomation": [
+        {
+          "time": 11.215512,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 11.215512,
+      "end": 11.655336,
+      "pitch": 69.01852870906917,
+      "instrument": 5,
+      "channel": 2,
+      "step": 175,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 16,
+      "volumeAutomation": [
+        {
+          "time": 11.215512,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 11.215512,
+      "end": 11.815272,
+      "pitch": 64.0246842563271,
+      "instrument": 5,
+      "channel": 3,
+      "step": 67,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 16,
+      "volumeAutomation": [
+        {
+          "time": 11.215512,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 11.415432,
+      "end": 11.615352,
+      "pitch": 57.01852870906918,
+      "instrument": 4,
+      "channel": 1,
+      "step": 175,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 18,
+      "volumeAutomation": [
+        {
+          "time": 11.415432,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 11.615352,
+      "end": 11.815272,
+      "pitch": 40.0246842563271,
+      "instrument": 3,
+      "channel": 1,
+      "step": 67,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 20,
+      "volumeAutomation": [
+        {
+          "time": 11.615352,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 11.815272,
+      "end": 12.015191999999999,
+      "pitch": 57.01852870906918,
+      "instrument": 4,
+      "channel": 1,
+      "step": 175,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 22,
+      "volumeAutomation": [
+        {
+          "time": 11.815272,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 12.015191999999999,
+      "end": 12.215112,
+      "pitch": 45.01852870906918,
+      "instrument": 3,
+      "channel": 1,
+      "step": 175,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 24,
+      "volumeAutomation": [
+        {
+          "time": 12.015191999999999,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 12.215112,
+      "end": 12.415032,
+      "pitch": 57.01852870906918,
+      "instrument": 4,
+      "channel": 1,
+      "step": 175,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 26,
+      "volumeAutomation": [
+        {
+          "time": 12.215112,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 12.215112,
+      "end": 12.415032,
+      "pitch": 69.01852870906917,
+      "instrument": 5,
+      "channel": 2,
+      "step": 175,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 26,
+      "volumeAutomation": [
+        {
+          "time": 12.215112,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 12.415032,
+      "end": 12.614951999999999,
+      "pitch": 40.0246842563271,
+      "instrument": 3,
+      "channel": 1,
+      "step": 67,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 28,
+      "volumeAutomation": [
+        {
+          "time": 12.415032,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 12.415032,
+      "end": 12.614951999999999,
+      "pitch": 71.02635884729513,
+      "instrument": 5,
+      "channel": 2,
+      "step": 228,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 28,
+      "volumeAutomation": [
+        {
+          "time": 12.415032,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 12.614951999999999,
+      "end": 12.814872,
+      "pitch": 48.98578849624646,
+      "instrument": 3,
+      "channel": 1,
+      "step": 286,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 30,
+      "volumeAutomation": [
+        {
+          "time": 12.614951999999999,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 12.614951999999999,
+      "end": 12.814872,
+      "pitch": 72,
+      "instrument": 5,
+      "channel": 2,
+      "step": 256,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 30,
+      "volumeAutomation": [
+        {
+          "time": 12.614951999999999,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 12.814872,
+      "end": 13.014792,
+      "pitch": 50.039100017307746,
+      "instrument": 3,
+      "channel": 1,
+      "step": 320,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 32,
+      "volumeAutomation": [
+        {
+          "time": 12.814872,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 12.814872,
+      "end": 13.214712,
+      "pitch": 71.02635884729513,
+      "instrument": 5,
+      "channel": 2,
+      "step": 228,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 32,
+      "volumeAutomation": [
+        {
+          "time": 12.814872,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 13.014792,
+      "end": 13.154736,
+      "pitch": 62.039100017307746,
+      "instrument": 4,
+      "channel": 1,
+      "step": 320,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 34,
+      "volumeAutomation": [
+        {
+          "time": 13.014792,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 13.214712,
+      "end": 13.414632,
+      "pitch": 45.01852870906918,
+      "instrument": 3,
+      "channel": 1,
+      "step": 175,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 36,
+      "volumeAutomation": [
+        {
+          "time": 13.214712,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 13.414632,
+      "end": 13.554575999999999,
+      "pitch": 62.039100017307746,
+      "instrument": 4,
+      "channel": 1,
+      "step": 320,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 38,
+      "volumeAutomation": [
+        {
+          "time": 13.414632,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 13.614552,
+      "end": 13.814472,
+      "pitch": 50.039100017307746,
+      "instrument": 3,
+      "channel": 1,
+      "step": 320,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 40,
+      "volumeAutomation": [
+        {
+          "time": 13.614552,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 13.614552,
+      "end": 13.814472,
+      "pitch": 72,
+      "instrument": 5,
+      "channel": 2,
+      "step": 256,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 40,
+      "volumeAutomation": [
+        {
+          "time": 13.614552,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 13.814472,
+      "end": 13.954416,
+      "pitch": 62.039100017307746,
+      "instrument": 4,
+      "channel": 1,
+      "step": 320,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 42,
+      "volumeAutomation": [
+        {
+          "time": 13.814472,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 13.814472,
+      "end": 14.014391999999999,
+      "pitch": 71.02635884729513,
+      "instrument": 5,
+      "channel": 2,
+      "step": 228,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 42,
+      "volumeAutomation": [
+        {
+          "time": 13.814472,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 14.014391999999999,
+      "end": 14.214312,
+      "pitch": 45.01852870906918,
+      "instrument": 3,
+      "channel": 1,
+      "step": 175,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 44,
+      "volumeAutomation": [
+        {
+          "time": 14.014391999999999,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 14.014391999999999,
+      "end": 14.39424,
+      "pitch": 72,
+      "instrument": 5,
+      "channel": 2,
+      "step": 256,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 44,
+      "volumeAutomation": [
+        {
+          "time": 14.014391999999999,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 14.214312,
+      "end": 14.414232,
+      "pitch": 44.02661981119496,
+      "instrument": 3,
+      "channel": 1,
+      "step": 151,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 46,
+      "volumeAutomation": [
+        {
+          "time": 14.214312,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 14.414232,
+      "end": 14.614151999999999,
+      "pitch": 43.01955000865387,
+      "instrument": 3,
+      "channel": 1,
+      "step": 128,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 48,
+      "volumeAutomation": [
+        {
+          "time": 14.414232,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 14.414232,
+      "end": 14.754095999999999,
+      "pitch": 74.03910001730775,
+      "instrument": 5,
+      "channel": 2,
+      "step": 320,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 48,
+      "volumeAutomation": [
+        {
+          "time": 14.414232,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 14.614151999999999,
+      "end": 14.814072,
+      "pitch": 55.01955000865387,
+      "instrument": 4,
+      "channel": 1,
+      "step": 128,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 50,
+      "volumeAutomation": [
+        {
+          "time": 14.614151999999999,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 14.814072,
+      "end": 15.013992,
+      "pitch": 37.97888312010825,
+      "instrument": 3,
+      "channel": 1,
+      "step": 31,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 52,
+      "volumeAutomation": [
+        {
+          "time": 14.814072,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 15.013992,
+      "end": 15.213911999999999,
+      "pitch": 55.01955000865387,
+      "instrument": 4,
+      "channel": 1,
+      "step": 128,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 54,
+      "volumeAutomation": [
+        {
+          "time": 15.013992,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 15.013992,
+      "end": 15.693719999999999,
+      "pitch": 61.97888312010825,
+      "instrument": 5,
+      "channel": 2,
+      "step": 31,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 54,
+      "volumeAutomation": [
+        {
+          "time": 15.013992,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 15.213911999999999,
+      "end": 15.413832,
+      "pitch": 43.01955000865387,
+      "instrument": 3,
+      "channel": 1,
+      "step": 128,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 56,
+      "volumeAutomation": [
+        {
+          "time": 15.213911999999999,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 15.413832,
+      "end": 15.613752,
+      "pitch": 55.01955000865387,
+      "instrument": 4,
+      "channel": 1,
+      "step": 128,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 58,
+      "volumeAutomation": [
+        {
+          "time": 15.413832,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 15.613752,
+      "end": 15.813671999999999,
+      "pitch": 37.97888312010825,
+      "instrument": 3,
+      "channel": 1,
+      "step": 31,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 60,
+      "volumeAutomation": [
+        {
+          "time": 15.613752,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 15.813671999999999,
+      "end": 16.013592,
+      "pitch": 47.026358847295135,
+      "instrument": 3,
+      "channel": 1,
+      "step": 228,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 2,
+      "row": 62,
+      "volumeAutomation": [
+        {
+          "time": 15.813671999999999,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 16.013592,
+      "end": 16.213511999999998,
+      "pitch": 48,
+      "instrument": 3,
+      "channel": 1,
+      "step": 256,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 3,
+      "row": 0,
+      "volumeAutomation": [
+        {
+          "time": 16.013592,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 16.213511999999998,
+      "end": 16.373448,
+      "pitch": 60,
+      "instrument": 4,
+      "channel": 1,
+      "step": 256,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 3,
+      "row": 2,
+      "volumeAutomation": [
+        {
+          "time": 16.213511999999998,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 16.213511999999998,
+      "end": 16.59336,
+      "pitch": 72,
+      "instrument": 5,
+      "channel": 3,
+      "step": 256,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 32,
+      "order": 3,
+      "row": 2,
+      "volumeAutomation": [
+        {
+          "time": 16.213511999999998,
+          "volume": 32
+        }
+      ]
+    },
+    {
+      "time": 16.413432,
+      "end": 16.613352,
+      "pitch": 43.01955000865387,
+      "instrument": 3,
+      "channel": 1,
+      "step": 128,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 3,
+      "row": 4,
+      "volumeAutomation": [
+        {
+          "time": 16.413432,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 16.613352,
+      "end": 16.773288,
+      "pitch": 60,
+      "instrument": 4,
+      "channel": 1,
+      "step": 256,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 3,
+      "row": 6,
+      "volumeAutomation": [
+        {
+          "time": 16.613352,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 16.613352,
+      "end": 16.993199999999998,
+      "pitch": 72,
+      "instrument": 5,
+      "channel": 3,
+      "step": 256,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 32,
+      "order": 3,
+      "row": 6,
+      "volumeAutomation": [
+        {
+          "time": 16.613352,
+          "volume": 32
+        }
+      ]
+    },
+    {
+      "time": 16.813271999999998,
+      "end": 17.013192,
+      "pitch": 48,
+      "instrument": 3,
+      "channel": 1,
+      "step": 256,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 3,
+      "row": 8,
+      "volumeAutomation": [
+        {
+          "time": 16.813271999999998,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 17.013192,
+      "end": 17.173128,
+      "pitch": 60,
+      "instrument": 4,
+      "channel": 1,
+      "step": 256,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 3,
+      "row": 10,
+      "volumeAutomation": [
+        {
+          "time": 17.013192,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 17.213112,
+      "end": 17.413032,
+      "pitch": 43.01955000865387,
+      "instrument": 3,
+      "channel": 1,
+      "step": 128,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 3,
+      "row": 12,
+      "volumeAutomation": [
+        {
+          "time": 17.213112,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 17.413032,
+      "end": 17.612952,
+      "pitch": 44.02661981119496,
+      "instrument": 3,
+      "channel": 1,
+      "step": 151,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 3,
+      "row": 14,
+      "volumeAutomation": [
+        {
+          "time": 17.413032,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 17.612952,
+      "end": 17.812872,
+      "pitch": 45.01852870906918,
+      "instrument": 3,
+      "channel": 1,
+      "step": 175,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 3,
+      "row": 16,
+      "volumeAutomation": [
+        {
+          "time": 17.612952,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 17.812872,
+      "end": 18.012792,
+      "pitch": 57.01852870906918,
+      "instrument": 4,
+      "channel": 1,
+      "step": 175,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 3,
+      "row": 18,
+      "volumeAutomation": [
+        {
+          "time": 17.812872,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 18.012792,
+      "end": 18.212712,
+      "pitch": 40.0246842563271,
+      "instrument": 3,
+      "channel": 1,
+      "step": 67,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 3,
+      "row": 20,
+      "volumeAutomation": [
+        {
+          "time": 18.012792,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 18.212712,
+      "end": 18.412632,
+      "pitch": 57.01852870906918,
+      "instrument": 4,
+      "channel": 1,
+      "step": 175,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 3,
+      "row": 22,
+      "volumeAutomation": [
+        {
+          "time": 18.212712,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 18.412632,
+      "end": 18.612552,
+      "pitch": 45.01852870906918,
+      "instrument": 3,
+      "channel": 1,
+      "step": 175,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 3,
+      "row": 24,
+      "volumeAutomation": [
+        {
+          "time": 18.412632,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 18.612552,
+      "end": 18.812472,
+      "pitch": 57.01852870906918,
+      "instrument": 4,
+      "channel": 1,
+      "step": 175,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 3,
+      "row": 26,
+      "volumeAutomation": [
+        {
+          "time": 18.612552,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 18.812472,
+      "end": 19.012392,
+      "pitch": 40.0246842563271,
+      "instrument": 3,
+      "channel": 1,
+      "step": 67,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 3,
+      "row": 28,
+      "volumeAutomation": [
+        {
+          "time": 18.812472,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 19.012392,
+      "end": 19.212312,
+      "pitch": 48.98578849624646,
+      "instrument": 3,
+      "channel": 1,
+      "step": 286,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 3,
+      "row": 30,
+      "volumeAutomation": [
+        {
+          "time": 19.012392,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 19.212312,
+      "end": 19.412232,
+      "pitch": 50.039100017307746,
+      "instrument": 3,
+      "channel": 1,
+      "step": 320,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 3,
+      "row": 32,
+      "volumeAutomation": [
+        {
+          "time": 19.212312,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 19.412232,
+      "end": 19.552176,
+      "pitch": 62.039100017307746,
+      "instrument": 4,
+      "channel": 1,
+      "step": 320,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 3,
+      "row": 34,
+      "volumeAutomation": [
+        {
+          "time": 19.412232,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 19.412232,
+      "end": 19.752095999999998,
+      "pitch": 74.03910001730775,
+      "instrument": 5,
+      "channel": 3,
+      "step": 320,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 32,
+      "order": 3,
+      "row": 34,
+      "volumeAutomation": [
+        {
+          "time": 19.412232,
+          "volume": 32
+        }
+      ]
+    },
+    {
+      "time": 19.612152,
+      "end": 19.812072,
+      "pitch": 45.01852870906918,
+      "instrument": 3,
+      "channel": 1,
+      "step": 175,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 3,
+      "row": 36,
+      "volumeAutomation": [
+        {
+          "time": 19.612152,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 19.812072,
+      "end": 19.952016,
+      "pitch": 62.039100017307746,
+      "instrument": 4,
+      "channel": 1,
+      "step": 320,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 3,
+      "row": 38,
+      "volumeAutomation": [
+        {
+          "time": 19.812072,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 19.812072,
+      "end": 20.011992,
+      "pitch": 74.03910001730775,
+      "instrument": 5,
+      "channel": 3,
+      "step": 320,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 32,
+      "order": 3,
+      "row": 38,
+      "volumeAutomation": [
+        {
+          "time": 19.812072,
+          "volume": 32
+        }
+      ]
+    },
+    {
+      "time": 20.011992,
+      "end": 20.211911999999998,
+      "pitch": 50.039100017307746,
+      "instrument": 3,
+      "channel": 1,
+      "step": 320,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 3,
+      "row": 40,
+      "volumeAutomation": [
+        {
+          "time": 20.011992,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 20.211911999999998,
+      "end": 20.351855999999998,
+      "pitch": 62.039100017307746,
+      "instrument": 4,
+      "channel": 1,
+      "step": 320,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 3,
+      "row": 42,
+      "volumeAutomation": [
+        {
+          "time": 20.211911999999998,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 20.411832,
+      "end": 20.611752,
+      "pitch": 45.01852870906918,
+      "instrument": 3,
+      "channel": 1,
+      "step": 175,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 3,
+      "row": 44,
+      "volumeAutomation": [
+        {
+          "time": 20.411832,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 20.611752,
+      "end": 20.811671999999998,
+      "pitch": 44.02661981119496,
+      "instrument": 3,
+      "channel": 1,
+      "step": 151,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 3,
+      "row": 46,
+      "volumeAutomation": [
+        {
+          "time": 20.611752,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 20.811671999999998,
+      "end": 21.011592,
+      "pitch": 43.01955000865387,
+      "instrument": 3,
+      "channel": 1,
+      "step": 128,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 3,
+      "row": 48,
+      "volumeAutomation": [
+        {
+          "time": 20.811671999999998,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 21.011592,
+      "end": 21.211512,
+      "pitch": 55.01955000865387,
+      "instrument": 4,
+      "channel": 1,
+      "step": 128,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 3,
+      "row": 50,
+      "volumeAutomation": [
+        {
+          "time": 21.011592,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 21.211512,
+      "end": 21.411431999999998,
+      "pitch": 37.97888312010825,
+      "instrument": 3,
+      "channel": 1,
+      "step": 31,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 3,
+      "row": 52,
+      "volumeAutomation": [
+        {
+          "time": 21.211512,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 21.411431999999998,
+      "end": 21.611352,
+      "pitch": 55.01955000865387,
+      "instrument": 4,
+      "channel": 1,
+      "step": 128,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 3,
+      "row": 54,
+      "volumeAutomation": [
+        {
+          "time": 21.411431999999998,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 21.611352,
+      "end": 21.811272,
+      "pitch": 43.01955000865387,
+      "instrument": 3,
+      "channel": 1,
+      "step": 128,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 3,
+      "row": 56,
+      "volumeAutomation": [
+        {
+          "time": 21.611352,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 21.811272,
+      "end": 22.011191999999998,
+      "pitch": 55.01955000865387,
+      "instrument": 4,
+      "channel": 1,
+      "step": 128,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 3,
+      "row": 58,
+      "volumeAutomation": [
+        {
+          "time": 21.811272,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 22.011191999999998,
+      "end": 22.211112,
+      "pitch": 37.97888312010825,
+      "instrument": 3,
+      "channel": 1,
+      "step": 31,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 3,
+      "row": 60,
+      "volumeAutomation": [
+        {
+          "time": 22.011191999999998,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 22.211112,
+      "end": 22.411032,
+      "pitch": 44.02661981119496,
+      "instrument": 3,
+      "channel": 1,
+      "step": 151,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 3,
+      "row": 62,
+      "volumeAutomation": [
+        {
+          "time": 22.211112,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 22.411032,
+      "end": 22.610951999999997,
+      "pitch": 45.01852870906918,
+      "instrument": 3,
+      "channel": 1,
+      "step": 175,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 0,
+      "volumeAutomation": [
+        {
+          "time": 22.411032,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 22.610951999999997,
+      "end": 22.810872,
+      "pitch": 57.01852870906918,
+      "instrument": 4,
+      "channel": 1,
+      "step": 175,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 2,
+      "volumeAutomation": [
+        {
+          "time": 22.610951999999997,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 22.610951999999997,
+      "end": 22.810872,
+      "pitch": 69.01852870906917,
+      "instrument": 5,
+      "channel": 2,
+      "step": 175,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 2,
+      "volumeAutomation": [
+        {
+          "time": 22.610951999999997,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 22.610951999999997,
+      "end": 22.810872,
+      "pitch": 72.98578849624646,
+      "instrument": 6,
+      "channel": 3,
+      "step": 286,
+      "role": "piano",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 2,
+      "volumeAutomation": [
+        {
+          "time": 22.610951999999997,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 22.810872,
+      "end": 23.010792,
+      "pitch": 40.0246842563271,
+      "instrument": 3,
+      "channel": 1,
+      "step": 67,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 4,
+      "volumeAutomation": [
+        {
+          "time": 22.810872,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 22.810872,
+      "end": 23.210712,
+      "pitch": 68.02661981119496,
+      "instrument": 5,
+      "channel": 2,
+      "step": 151,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 4,
+      "volumeAutomation": [
+        {
+          "time": 22.810872,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 22.810872,
+      "end": 23.210712,
+      "pitch": 71.02635884729513,
+      "instrument": 6,
+      "channel": 3,
+      "step": 228,
+      "role": "piano",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 4,
+      "volumeAutomation": [
+        {
+          "time": 22.810872,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 23.010792,
+      "end": 23.210712,
+      "pitch": 57.01852870906918,
+      "instrument": 4,
+      "channel": 1,
+      "step": 175,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 6,
+      "volumeAutomation": [
+        {
+          "time": 23.010792,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 23.210712,
+      "end": 23.410632,
+      "pitch": 45.01852870906918,
+      "instrument": 3,
+      "channel": 1,
+      "step": 175,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 8,
+      "volumeAutomation": [
+        {
+          "time": 23.210712,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 23.210712,
+      "end": 23.610552,
+      "pitch": 69.01852870906917,
+      "instrument": 5,
+      "channel": 2,
+      "step": 175,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 8,
+      "volumeAutomation": [
+        {
+          "time": 23.210712,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 23.210712,
+      "end": 23.610552,
+      "pitch": 72.98578849624646,
+      "instrument": 6,
+      "channel": 3,
+      "step": 286,
+      "role": "piano",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 8,
+      "volumeAutomation": [
+        {
+          "time": 23.210712,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 23.410632,
+      "end": 23.610552,
+      "pitch": 57.01852870906918,
+      "instrument": 4,
+      "channel": 1,
+      "step": 175,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 10,
+      "volumeAutomation": [
+        {
+          "time": 23.410632,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 23.610552,
+      "end": 23.810472,
+      "pitch": 40.0246842563271,
+      "instrument": 3,
+      "channel": 1,
+      "step": 67,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 12,
+      "volumeAutomation": [
+        {
+          "time": 23.610552,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 23.610552,
+      "end": 24.010392,
+      "pitch": 71.02635884729513,
+      "instrument": 5,
+      "channel": 2,
+      "step": 228,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 12,
+      "volumeAutomation": [
+        {
+          "time": 23.610552,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 23.610552,
+      "end": 24.010392,
+      "pitch": 65.99815064499846,
+      "instrument": 5,
+      "channel": 3,
+      "step": 106,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 12,
+      "volumeAutomation": [
+        {
+          "time": 23.610552,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 23.810472,
+      "end": 24.010392,
+      "pitch": 41.014230178630775,
+      "instrument": 3,
+      "channel": 1,
+      "step": 86,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 14,
+      "volumeAutomation": [
+        {
+          "time": 23.810472,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 24.010392,
+      "end": 24.210312,
+      "pitch": 41.99815064499846,
+      "instrument": 3,
+      "channel": 1,
+      "step": 106,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 16,
+      "volumeAutomation": [
+        {
+          "time": 24.010392,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 24.010392,
+      "end": 24.410232,
+      "pitch": 69.01852870906917,
+      "instrument": 5,
+      "channel": 2,
+      "step": 175,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 16,
+      "volumeAutomation": [
+        {
+          "time": 24.010392,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 24.010392,
+      "end": 24.410232,
+      "pitch": 64.0246842563271,
+      "instrument": 5,
+      "channel": 3,
+      "step": 67,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 16,
+      "volumeAutomation": [
+        {
+          "time": 24.010392,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 24.210312,
+      "end": 24.410232,
+      "pitch": 53.99815064499846,
+      "instrument": 4,
+      "channel": 1,
+      "step": 106,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 18,
+      "volumeAutomation": [
+        {
+          "time": 24.210312,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 24.410232,
+      "end": 24.610152,
+      "pitch": 36.98578849624646,
+      "instrument": 3,
+      "channel": 1,
+      "step": 15,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 20,
+      "volumeAutomation": [
+        {
+          "time": 24.410232,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 24.410232,
+      "end": 24.950015999999998,
+      "pitch": 65.99815064499846,
+      "instrument": 5,
+      "channel": 2,
+      "step": 106,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 20,
+      "volumeAutomation": [
+        {
+          "time": 24.410232,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 24.410232,
+      "end": 25.009992,
+      "pitch": 60.98578849624646,
+      "instrument": 5,
+      "channel": 3,
+      "step": 15,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 20,
+      "volumeAutomation": [
+        {
+          "time": 24.410232,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 24.610152,
+      "end": 24.810071999999998,
+      "pitch": 53.99815064499846,
+      "instrument": 4,
+      "channel": 1,
+      "step": 106,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 22,
+      "volumeAutomation": [
+        {
+          "time": 24.610152,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 24.810071999999998,
+      "end": 25.009992,
+      "pitch": 41.99815064499846,
+      "instrument": 3,
+      "channel": 1,
+      "step": 106,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 24,
+      "volumeAutomation": [
+        {
+          "time": 24.810071999999998,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 25.009992,
+      "end": 25.209912,
+      "pitch": 53.99815064499846,
+      "instrument": 4,
+      "channel": 1,
+      "step": 106,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 26,
+      "volumeAutomation": [
+        {
+          "time": 25.009992,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 25.009992,
+      "end": 25.209912,
+      "pitch": 65.99815064499846,
+      "instrument": 5,
+      "channel": 2,
+      "step": 106,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 26,
+      "volumeAutomation": [
+        {
+          "time": 25.009992,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 25.009992,
+      "end": 25.209912,
+      "pitch": 69.01852870906917,
+      "instrument": 6,
+      "channel": 3,
+      "step": 175,
+      "role": "piano",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 26,
+      "volumeAutomation": [
+        {
+          "time": 25.009992,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 25.209912,
+      "end": 25.409831999999998,
+      "pitch": 36.98578849624646,
+      "instrument": 3,
+      "channel": 1,
+      "step": 15,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 28,
+      "volumeAutomation": [
+        {
+          "time": 25.209912,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 25.209912,
+      "end": 25.409831999999998,
+      "pitch": 68.02661981119496,
+      "instrument": 5,
+      "channel": 2,
+      "step": 151,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 28,
+      "volumeAutomation": [
+        {
+          "time": 25.209912,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 25.209912,
+      "end": 25.409831999999998,
+      "pitch": 71.02635884729513,
+      "instrument": 6,
+      "channel": 3,
+      "step": 228,
+      "role": "piano",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 28,
+      "volumeAutomation": [
+        {
+          "time": 25.209912,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 25.409831999999998,
+      "end": 25.609752,
+      "pitch": 45.9946801699769,
+      "instrument": 3,
+      "channel": 1,
+      "step": 200,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 30,
+      "volumeAutomation": [
+        {
+          "time": 25.409831999999998,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 25.409831999999998,
+      "end": 25.609752,
+      "pitch": 69.01852870906917,
+      "instrument": 5,
+      "channel": 2,
+      "step": 175,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 30,
+      "volumeAutomation": [
+        {
+          "time": 25.409831999999998,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 25.409831999999998,
+      "end": 25.609752,
+      "pitch": 72.98578849624646,
+      "instrument": 6,
+      "channel": 3,
+      "step": 286,
+      "role": "piano",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 30,
+      "volumeAutomation": [
+        {
+          "time": 25.409831999999998,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 25.609752,
+      "end": 25.809672,
+      "pitch": 47.026358847295135,
+      "instrument": 3,
+      "channel": 1,
+      "step": 228,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 32,
+      "volumeAutomation": [
+        {
+          "time": 25.609752,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 25.609752,
+      "end": 26.08956,
+      "pitch": 68.02661981119496,
+      "instrument": 5,
+      "channel": 2,
+      "step": 151,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 32,
+      "volumeAutomation": [
+        {
+          "time": 25.609752,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 25.609752,
+      "end": 26.249496,
+      "pitch": 62.97513016132302,
+      "instrument": 5,
+      "channel": 3,
+      "step": 48,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 32,
+      "volumeAutomation": [
+        {
+          "time": 25.609752,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 25.809672,
+      "end": 25.9896,
+      "pitch": 59.026358847295135,
+      "instrument": 4,
+      "channel": 1,
+      "step": 228,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 34,
+      "volumeAutomation": [
+        {
+          "time": 25.809672,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 26.009591999999998,
+      "end": 26.209512,
+      "pitch": 41.99815064499846,
+      "instrument": 3,
+      "channel": 1,
+      "step": 106,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 36,
+      "volumeAutomation": [
+        {
+          "time": 26.009591999999998,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 26.209512,
+      "end": 26.38944,
+      "pitch": 59.026358847295135,
+      "instrument": 4,
+      "channel": 1,
+      "step": 228,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 38,
+      "volumeAutomation": [
+        {
+          "time": 26.209512,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 26.409432,
+      "end": 26.609351999999998,
+      "pitch": 47.026358847295135,
+      "instrument": 3,
+      "channel": 1,
+      "step": 228,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 40,
+      "volumeAutomation": [
+        {
+          "time": 26.409432,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 26.609351999999998,
+      "end": 26.789279999999998,
+      "pitch": 59.026358847295135,
+      "instrument": 4,
+      "channel": 1,
+      "step": 228,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 42,
+      "volumeAutomation": [
+        {
+          "time": 26.609351999999998,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 26.809272,
+      "end": 27.009192,
+      "pitch": 41.99815064499846,
+      "instrument": 3,
+      "channel": 1,
+      "step": 106,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 44,
+      "volumeAutomation": [
+        {
+          "time": 26.809272,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 26.809272,
+      "end": 27.209111999999998,
+      "pitch": 65.99815064499846,
+      "instrument": 5,
+      "channel": 2,
+      "step": 106,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 44,
+      "volumeAutomation": [
+        {
+          "time": 26.809272,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 27.009192,
+      "end": 27.209111999999998,
+      "pitch": 41.014230178630775,
+      "instrument": 3,
+      "channel": 1,
+      "step": 86,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 46,
+      "volumeAutomation": [
+        {
+          "time": 27.009192,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 27.209111999999998,
+      "end": 27.409032,
+      "pitch": 40.0246842563271,
+      "instrument": 3,
+      "channel": 1,
+      "step": 67,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 48,
+      "volumeAutomation": [
+        {
+          "time": 27.209111999999998,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 27.209111999999998,
+      "end": 27.608952,
+      "pitch": 71.02635884729513,
+      "instrument": 5,
+      "channel": 2,
+      "step": 228,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 48,
+      "volumeAutomation": [
+        {
+          "time": 27.209111999999998,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 27.209111999999998,
+      "end": 27.808871999999997,
+      "pitch": 64.0246842563271,
+      "instrument": 5,
+      "channel": 3,
+      "step": 67,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 48,
+      "volumeAutomation": [
+        {
+          "time": 27.209111999999998,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 27.409032,
+      "end": 27.608952,
+      "pitch": 52.0246842563271,
+      "instrument": 4,
+      "channel": 1,
+      "step": 67,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 50,
+      "volumeAutomation": [
+        {
+          "time": 27.409032,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 27.608952,
+      "end": 27.808871999999997,
+      "pitch": 34.95467203475954,
+      "instrument": 3,
+      "channel": 1,
+      "step": 65521,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 52,
+      "volumeAutomation": [
+        {
+          "time": 27.608952,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 27.808871999999997,
+      "end": 28.008792,
+      "pitch": 52.0246842563271,
+      "instrument": 4,
+      "channel": 1,
+      "step": 67,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 54,
+      "volumeAutomation": [
+        {
+          "time": 27.808871999999997,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 27.808871999999997,
+      "end": 28.628543999999998,
+      "pitch": 58.95467203475954,
+      "instrument": 5,
+      "channel": 2,
+      "step": 65521,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 54,
+      "volumeAutomation": [
+        {
+          "time": 27.808871999999997,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 28.008792,
+      "end": 28.208712,
+      "pitch": 40.0246842563271,
+      "instrument": 3,
+      "channel": 1,
+      "step": 67,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 56,
+      "volumeAutomation": [
+        {
+          "time": 28.008792,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 28.208712,
+      "end": 28.408632,
+      "pitch": 52.0246842563271,
+      "instrument": 4,
+      "channel": 1,
+      "step": 67,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 58,
+      "volumeAutomation": [
+        {
+          "time": 28.208712,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 28.408632,
+      "end": 28.608552,
+      "pitch": 34.95467203475954,
+      "instrument": 3,
+      "channel": 1,
+      "step": 65521,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 60,
+      "volumeAutomation": [
+        {
+          "time": 28.408632,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 28.608552,
+      "end": 28.808472,
+      "pitch": 45.9946801699769,
+      "instrument": 3,
+      "channel": 1,
+      "step": 200,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 4,
+      "row": 62,
+      "volumeAutomation": [
+        {
+          "time": 28.608552,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 28.808472,
+      "end": 29.008392,
+      "pitch": 47.026358847295135,
+      "instrument": 3,
+      "channel": 1,
+      "step": 228,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 0,
+      "volumeAutomation": [
+        {
+          "time": 28.808472,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 29.008392,
+      "end": 29.188319999999997,
+      "pitch": 59.026358847295135,
+      "instrument": 4,
+      "channel": 1,
+      "step": 228,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 2,
+      "volumeAutomation": [
+        {
+          "time": 29.008392,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 29.008392,
+      "end": 29.088359999999998,
+      "pitch": 71.04423426498097,
+      "instrument": 4,
+      "channel": 2,
+      "step": 713,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 2,
+      "volumeAutomation": [
+        {
+          "time": 29.008392,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 29.008392,
+      "end": 29.128344,
+      "pitch": 59.04423426498097,
+      "instrument": 3,
+      "channel": 3,
+      "step": 713,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 2,
+      "volumeAutomation": [
+        {
+          "time": 29.008392,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 29.208312,
+      "end": 29.408231999999998,
+      "pitch": 41.99815064499846,
+      "instrument": 3,
+      "channel": 1,
+      "step": 106,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 4,
+      "volumeAutomation": [
+        {
+          "time": 29.208312,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 29.208312,
+      "end": 29.308272,
+      "pitch": 69.01852870906917,
+      "instrument": 4,
+      "channel": 2,
+      "step": 606,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 4,
+      "volumeAutomation": [
+        {
+          "time": 29.208312,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 29.208312,
+      "end": 29.328264,
+      "pitch": 57.01852870906917,
+      "instrument": 3,
+      "channel": 3,
+      "step": 606,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 4,
+      "volumeAutomation": [
+        {
+          "time": 29.208312,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 29.408231999999998,
+      "end": 29.58816,
+      "pitch": 59.026358847295135,
+      "instrument": 4,
+      "channel": 1,
+      "step": 228,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 6,
+      "volumeAutomation": [
+        {
+          "time": 29.408231999999998,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 29.608152,
+      "end": 29.808072,
+      "pitch": 47.026358847295135,
+      "instrument": 3,
+      "channel": 1,
+      "step": 228,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 8,
+      "volumeAutomation": [
+        {
+          "time": 29.608152,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 29.608152,
+      "end": 29.688119999999998,
+      "pitch": 71.04423426498097,
+      "instrument": 4,
+      "channel": 2,
+      "step": 713,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 8,
+      "volumeAutomation": [
+        {
+          "time": 29.608152,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 29.608152,
+      "end": 29.728104,
+      "pitch": 59.04423426498097,
+      "instrument": 3,
+      "channel": 3,
+      "step": 713,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 8,
+      "volumeAutomation": [
+        {
+          "time": 29.608152,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 29.808072,
+      "end": 29.988,
+      "pitch": 59.026358847295135,
+      "instrument": 4,
+      "channel": 1,
+      "step": 228,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 10,
+      "volumeAutomation": [
+        {
+          "time": 29.808072,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 29.808072,
+      "end": 29.908032,
+      "pitch": 69.01852870906917,
+      "instrument": 4,
+      "channel": 2,
+      "step": 606,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 10,
+      "volumeAutomation": [
+        {
+          "time": 29.808072,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 29.808072,
+      "end": 29.928024,
+      "pitch": 57.01852870906917,
+      "instrument": 3,
+      "channel": 3,
+      "step": 606,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 10,
+      "volumeAutomation": [
+        {
+          "time": 29.808072,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 30.007991999999998,
+      "end": 30.207912,
+      "pitch": 41.99815064499846,
+      "instrument": 3,
+      "channel": 1,
+      "step": 106,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 12,
+      "volumeAutomation": [
+        {
+          "time": 30.007991999999998,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 30.207912,
+      "end": 30.407832,
+      "pitch": 43.01955000865387,
+      "instrument": 3,
+      "channel": 1,
+      "step": 128,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 14,
+      "volumeAutomation": [
+        {
+          "time": 30.207912,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 30.407832,
+      "end": 30.607751999999998,
+      "pitch": 44.02661981119496,
+      "instrument": 3,
+      "channel": 1,
+      "step": 151,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 16,
+      "volumeAutomation": [
+        {
+          "time": 30.407832,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 30.407832,
+      "end": 30.507792,
+      "pitch": 67.96269725060728,
+      "instrument": 4,
+      "channel": 2,
+      "step": 555,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 16,
+      "volumeAutomation": [
+        {
+          "time": 30.407832,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 30.407832,
+      "end": 30.547776,
+      "pitch": 55.96269725060728,
+      "instrument": 3,
+      "channel": 3,
+      "step": 555,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 16,
+      "volumeAutomation": [
+        {
+          "time": 30.407832,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 30.607751999999998,
+      "end": 30.807672,
+      "pitch": 56.02661981119496,
+      "instrument": 4,
+      "channel": 1,
+      "step": 151,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 18,
+      "volumeAutomation": [
+        {
+          "time": 30.607751999999998,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 30.807672,
+      "end": 31.007592,
+      "pitch": 38.97513016132302,
+      "instrument": 3,
+      "channel": 1,
+      "step": 48,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 20,
+      "volumeAutomation": [
+        {
+          "time": 30.807672,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 31.007592,
+      "end": 31.207511999999998,
+      "pitch": 56.02661981119496,
+      "instrument": 4,
+      "channel": 1,
+      "step": 151,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 22,
+      "volumeAutomation": [
+        {
+          "time": 31.007592,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 31.207511999999998,
+      "end": 31.407432,
+      "pitch": 44.02661981119496,
+      "instrument": 3,
+      "channel": 1,
+      "step": 151,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 24,
+      "volumeAutomation": [
+        {
+          "time": 31.207511999999998,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 31.407432,
+      "end": 31.607352,
+      "pitch": 56.02661981119496,
+      "instrument": 4,
+      "channel": 1,
+      "step": 151,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 26,
+      "volumeAutomation": [
+        {
+          "time": 31.407432,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 31.407432,
+      "end": 31.607352,
+      "pitch": 74.97513016132302,
+      "instrument": 5,
+      "channel": 2,
+      "step": 352,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 26,
+      "volumeAutomation": [
+        {
+          "time": 31.407432,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 31.407432,
+      "end": 31.607352,
+      "pitch": 69.9946801699769,
+      "instrument": 5,
+      "channel": 3,
+      "step": 200,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 26,
+      "volumeAutomation": [
+        {
+          "time": 31.407432,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 31.607352,
+      "end": 31.807271999999998,
+      "pitch": 38.97513016132302,
+      "instrument": 3,
+      "channel": 1,
+      "step": 48,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 28,
+      "volumeAutomation": [
+        {
+          "time": 31.607352,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 31.607352,
+      "end": 31.807271999999998,
+      "pitch": 74.97513016132302,
+      "instrument": 5,
+      "channel": 2,
+      "step": 352,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 28,
+      "volumeAutomation": [
+        {
+          "time": 31.607352,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 31.607352,
+      "end": 31.807271999999998,
+      "pitch": 71.02635884729513,
+      "instrument": 5,
+      "channel": 3,
+      "step": 228,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 28,
+      "volumeAutomation": [
+        {
+          "time": 31.607352,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 31.807271999999998,
+      "end": 32.007191999999996,
+      "pitch": 48,
+      "instrument": 3,
+      "channel": 1,
+      "step": 256,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 30,
+      "volumeAutomation": [
+        {
+          "time": 31.807271999999998,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 31.807271999999998,
+      "end": 32.007191999999996,
+      "pitch": 72.98578849624646,
+      "instrument": 5,
+      "channel": 2,
+      "step": 286,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 30,
+      "volumeAutomation": [
+        {
+          "time": 31.807271999999998,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 31.807271999999998,
+      "end": 32.007191999999996,
+      "pitch": 69.9946801699769,
+      "instrument": 5,
+      "channel": 3,
+      "step": 200,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 30,
+      "volumeAutomation": [
+        {
+          "time": 31.807271999999998,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 32.007191999999996,
+      "end": 32.207112,
+      "pitch": 48.98578849624646,
+      "instrument": 3,
+      "channel": 1,
+      "step": 286,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 32,
+      "volumeAutomation": [
+        {
+          "time": 32.007191999999996,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 32.007191999999996,
+      "end": 32.207112,
+      "pitch": 74.97513016132302,
+      "instrument": 5,
+      "channel": 2,
+      "step": 352,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 32,
+      "volumeAutomation": [
+        {
+          "time": 32.007191999999996,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 32.007191999999996,
+      "end": 32.207112,
+      "pitch": 71.02635884729513,
+      "instrument": 5,
+      "channel": 3,
+      "step": 228,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 32,
+      "volumeAutomation": [
+        {
+          "time": 32.007191999999996,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 32.207112,
+      "end": 32.367048,
+      "pitch": 60.98578849624646,
+      "instrument": 4,
+      "channel": 1,
+      "step": 286,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 34,
+      "volumeAutomation": [
+        {
+          "time": 32.207112,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 32.207112,
+      "end": 32.407032,
+      "pitch": 62.97513016132302,
+      "instrument": 6,
+      "channel": 3,
+      "step": 48,
+      "role": "piano",
+      "chord": [
+        0
+      ],
+      "velocity": 48,
+      "order": 5,
+      "row": 34,
+      "volumeAutomation": [
+        {
+          "time": 32.207112,
+          "volume": 48
+        }
+      ]
+    },
+    {
+      "time": 32.407032,
+      "end": 32.606952,
+      "pitch": 44.02661981119496,
+      "instrument": 3,
+      "channel": 1,
+      "step": 151,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 36,
+      "volumeAutomation": [
+        {
+          "time": 32.407032,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 32.407032,
+      "end": 32.606952,
+      "pitch": 65.99815064499846,
+      "instrument": 6,
+      "channel": 3,
+      "step": 106,
+      "role": "piano",
+      "chord": [
+        0
+      ],
+      "velocity": 48,
+      "order": 5,
+      "row": 36,
+      "volumeAutomation": [
+        {
+          "time": 32.407032,
+          "volume": 48
+        }
+      ]
+    },
+    {
+      "time": 32.606952,
+      "end": 32.766888,
+      "pitch": 60.98578849624646,
+      "instrument": 4,
+      "channel": 1,
+      "step": 286,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 38,
+      "volumeAutomation": [
+        {
+          "time": 32.606952,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 32.606952,
+      "end": 32.806872,
+      "pitch": 68.02661981119496,
+      "instrument": 6,
+      "channel": 3,
+      "step": 151,
+      "role": "piano",
+      "chord": [
+        0
+      ],
+      "velocity": 48,
+      "order": 5,
+      "row": 38,
+      "volumeAutomation": [
+        {
+          "time": 32.606952,
+          "volume": 48
+        }
+      ]
+    },
+    {
+      "time": 32.806872,
+      "end": 33.006792,
+      "pitch": 48.98578849624646,
+      "instrument": 3,
+      "channel": 1,
+      "step": 286,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 40,
+      "volumeAutomation": [
+        {
+          "time": 32.806872,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 32.806872,
+      "end": 33.206711999999996,
+      "pitch": 68.02661981119496,
+      "instrument": 6,
+      "channel": 3,
+      "step": 151,
+      "role": "piano",
+      "chord": [
+        0
+      ],
+      "velocity": 48,
+      "order": 5,
+      "row": 40,
+      "volumeAutomation": [
+        {
+          "time": 32.806872,
+          "volume": 48
+        }
+      ]
+    },
+    {
+      "time": 33.006792,
+      "end": 33.166728,
+      "pitch": 60.98578849624646,
+      "instrument": 4,
+      "channel": 1,
+      "step": 286,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 42,
+      "volumeAutomation": [
+        {
+          "time": 33.006792,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 33.206711999999996,
+      "end": 33.406632,
+      "pitch": 44.02661981119496,
+      "instrument": 3,
+      "channel": 1,
+      "step": 151,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 44,
+      "volumeAutomation": [
+        {
+          "time": 33.206711999999996,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 33.206711999999996,
+      "end": 33.606552,
+      "pitch": 71.02635884729513,
+      "instrument": 5,
+      "channel": 2,
+      "step": 228,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 44,
+      "volumeAutomation": [
+        {
+          "time": 33.206711999999996,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 33.206711999999996,
+      "end": 33.606552,
+      "pitch": 68.02661981119496,
+      "instrument": 5,
+      "channel": 3,
+      "step": 151,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 44,
+      "volumeAutomation": [
+        {
+          "time": 33.206711999999996,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 33.406632,
+      "end": 33.606552,
+      "pitch": 43.01955000865387,
+      "instrument": 3,
+      "channel": 1,
+      "step": 128,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 46,
+      "volumeAutomation": [
+        {
+          "time": 33.406632,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 33.606552,
+      "end": 33.806472,
+      "pitch": 41.99815064499846,
+      "instrument": 3,
+      "channel": 1,
+      "step": 106,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 48,
+      "volumeAutomation": [
+        {
+          "time": 33.606552,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 33.606552,
+      "end": 33.966408,
+      "pitch": 72.98578849624646,
+      "instrument": 5,
+      "channel": 2,
+      "step": 286,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 48,
+      "volumeAutomation": [
+        {
+          "time": 33.606552,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 33.606552,
+      "end": 34.026384,
+      "pitch": 69.9946801699769,
+      "instrument": 5,
+      "channel": 3,
+      "step": 200,
+      "role": "violin",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 48,
+      "volumeAutomation": [
+        {
+          "time": 33.606552,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 33.806472,
+      "end": 34.006392,
+      "pitch": 53.99815064499846,
+      "instrument": 4,
+      "channel": 1,
+      "step": 106,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 50,
+      "volumeAutomation": [
+        {
+          "time": 33.806472,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 34.006392,
+      "end": 34.206312,
+      "pitch": 36.98578849624646,
+      "instrument": 3,
+      "channel": 1,
+      "step": 15,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 52,
+      "volumeAutomation": [
+        {
+          "time": 34.006392,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 34.206312,
+      "end": 34.406231999999996,
+      "pitch": 53.99815064499846,
+      "instrument": 4,
+      "channel": 1,
+      "step": 106,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 54,
+      "volumeAutomation": [
+        {
+          "time": 34.206312,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 34.406231999999996,
+      "end": 34.606152,
+      "pitch": 41.99815064499846,
+      "instrument": 3,
+      "channel": 1,
+      "step": 106,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 56,
+      "volumeAutomation": [
+        {
+          "time": 34.406231999999996,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 34.606152,
+      "end": 34.806072,
+      "pitch": 53.99815064499846,
+      "instrument": 4,
+      "channel": 1,
+      "step": 106,
+      "role": "piano",
+      "chord": [
+        0,
+        4,
+        7
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 58,
+      "volumeAutomation": [
+        {
+          "time": 34.606152,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 34.806072,
+      "end": 35.005992,
+      "pitch": 36.98578849624646,
+      "instrument": 3,
+      "channel": 1,
+      "step": 15,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 60,
+      "volumeAutomation": [
+        {
+          "time": 34.806072,
+          "volume": 64
+        }
+      ]
+    },
+    {
+      "time": 35.005992,
+      "end": 35.205912,
+      "pitch": 45.9946801699769,
+      "instrument": 3,
+      "channel": 1,
+      "step": 200,
+      "role": "bass",
+      "chord": [
+        0
+      ],
+      "velocity": 64,
+      "order": 5,
+      "row": 62,
+      "volumeAutomation": [
+        {
+          "time": 35.005992,
+          "volume": 64
+        }
+      ]
+    }
+  ],
+  "birds": []
+}

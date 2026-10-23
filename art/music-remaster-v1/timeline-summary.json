@@ -1,0 +1,86 @@
+[
+  {
+    "name": "BOULA",
+    "duration": 53.418624,
+    "loopStart": 0.119952,
+    "events": 576,
+    "birds": 19
+  },
+  {
+    "name": "BRAVO",
+    "duration": 35.205912,
+    "loopStart": 3.218712,
+    "events": 298,
+    "birds": 0
+  },
+  {
+    "name": "CARTE",
+    "duration": 15.353856,
+    "loopStart": 0,
+    "events": 128,
+    "birds": 0
+  },
+  {
+    "name": "CODE",
+    "duration": 15.713712,
+    "loopStart": 0.359856,
+    "events": 107,
+    "birds": 0
+  },
+  {
+    "name": "FINAL",
+    "duration": 167.452992,
+    "loopStart": 29.268288,
+    "events": 1038,
+    "birds": 0
+  },
+  {
+    "name": "GLACE",
+    "duration": 124.030368,
+    "loopStart": 24.230304,
+    "events": 715,
+    "birds": 105
+  },
+  {
+    "name": "KOOL",
+    "duration": 108.43660799999999,
+    "loopStart": 0.959616,
+    "events": 1084,
+    "birds": 0
+  },
+  {
+    "name": "MINES",
+    "duration": 75.389832,
+    "loopStart": 37.005192,
+    "events": 508,
+    "birds": 0
+  },
+  {
+    "name": "MONSTER",
+    "duration": 63.994392,
+    "loopStart": 6.417432,
+    "events": 849,
+    "birds": 0
+  },
+  {
+    "name": "MYSTERY",
+    "duration": 145.461792,
+    "loopStart": 0.119952,
+    "events": 850,
+    "birds": 0
+  },
+  {
+    "name": "PRES",
+    "duration": 92.9628,
+    "loopStart": 0.839664,
+    "events": 412,
+    "birds": 24
+  },
+  {
+    "name": "PRESENTA",
+    "duration": 104.89802399999999,
+    "loopStart": 43.4826,
+    "events": 460,
+    "birds": 170
+  }
+]

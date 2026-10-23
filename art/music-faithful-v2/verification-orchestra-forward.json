@@ -1,0 +1,613 @@
+{
+  "stringsGain": 4.0,
+  "stringsGainDB": 12.041199826559248,
+  "sourceMODSHA256": "fa61617a7a1499768ae12057901b39fb2766bdb810b43c33fc9742103a9e4ca8",
+  "duetSourceSHA256": "8ca93dded27256bcdc44a5e0ea5fc79f2f3e0564f6ecffeddfa26b63fd0da517",
+  "duetEventsUnchanged": true,
+  "sourcePitchedEvents": 114,
+  "addedSectionNotes": 36,
+  "audibleBirdCues": 6,
+  "mutedBirdCuesOmitted": 1,
+  "birdCueOnsetsUnchanged": true,
+  "duration": 24.730791666666665,
+  "sampleRate": 48000,
+  "normalizationGain": 0.9698103912227658,
+  "peak": 0.89,
+  "rms": {
+    "duet": 0.13517560266361991,
+    "strings": 0.10737925076186929,
+    "piccolo": 0.014033882659964074
+  },
+  "birdArrangement": [
+    {
+      "sourceTime": 11.035583999999998,
+      "time": 2.518991999999999,
+      "basePitch": 85.97888312010825,
+      "neighbourSemitones": 2,
+      "duration": 0.338182243902439,
+      "notes": 3
+    },
+    {
+      "sourceTime": 14.634144,
+      "time": 6.117552,
+      "basePitch": 84,
+      "neighbourSemitones": 2,
+      "duration": 0.37913399999999997,
+      "notes": 3
+    },
+    {
+      "sourceTime": 18.472607999999997,
+      "time": 9.956015999999998,
+      "basePitch": 80.97831419507352,
+      "neighbourSemitones": 1,
+      "duration": 0.39,
+      "notes": 3
+    },
+    {
+      "sourceTime": 21.231503999999997,
+      "time": 12.714911999999998,
+      "basePitch": 80.97831419507352,
+      "neighbourSemitones": 1,
+      "duration": 0.39,
+      "notes": 3
+    },
+    {
+      "sourceTime": 23.150736,
+      "time": 14.634144,
+      "basePitch": 85.97888312010825,
+      "neighbourSemitones": 2,
+      "duration": 0.338182243902439,
+      "notes": 3
+    },
+    {
+      "sourceTime": 25.909632,
+      "time": 17.39304,
+      "basePitch": 88.0246842563271,
+      "neighbourSemitones": 1,
+      "duration": 0.3004901052631579,
+      "notes": 3
+    }
+  ],
+  "renderedAddedNotes": [
+    {
+      "kind": "cello-section",
+      "pitch": 49.97888312010825,
+      "time": 0.0,
+      "gate": 1.919232000000001,
+      "sample": "susvib_D2_v1_1.wav",
+      "sampleRoot": 50,
+      "level": 0.115,
+      "pan": 0.35
+    },
+    {
+      "kind": "viola-section",
+      "pitch": 61.97888312010825,
+      "time": 0.0,
+      "gate": 1.919232000000001,
+      "sample": "ViolaEns_susvib_D3_v1_1.wav",
+      "sampleRoot": 62,
+      "level": 0.1,
+      "pan": 0.05
+    },
+    {
+      "kind": "violin-section",
+      "pitch": 68.97888312010825,
+      "time": 0.0,
+      "gate": 1.919232000000001,
+      "sample": "VlnEns_susVib_A3_v1.wav",
+      "sampleRoot": 69,
+      "level": 0.08,
+      "pan": -0.4
+    },
+    {
+      "kind": "cello-section",
+      "pitch": 45.9946801699769,
+      "time": 1.919232000000001,
+      "gate": 1.9192319999999992,
+      "sample": "susvib_B1_v1_1.wav",
+      "sampleRoot": 47,
+      "level": 0.115,
+      "pan": 0.35
+    },
+    {
+      "kind": "viola-section",
+      "pitch": 57.9946801699769,
+      "time": 1.919232000000001,
+      "gate": 1.9192319999999992,
+      "sample": "ViolaEns_susvib_B2_v1_1.wav",
+      "sampleRoot": 59,
+      "level": 0.1,
+      "pan": 0.05
+    },
+    {
+      "kind": "violin-section",
+      "pitch": 64.9946801699769,
+      "time": 1.919232000000001,
+      "gate": 1.9192319999999992,
+      "sample": "VlnEns_susVib_D3_v1.wav",
+      "sampleRoot": 62,
+      "level": 0.08,
+      "pan": -0.4
+    },
+    {
+      "kind": "cello-section",
+      "pitch": 48,
+      "time": 3.838464,
+      "gate": 1.919232000000001,
+      "sample": "susvib_B1_v1_1.wav",
+      "sampleRoot": 47,
+      "level": 0.115,
+      "pan": 0.35
+    },
+    {
+      "kind": "viola-section",
+      "pitch": 60,
+      "time": 3.838464,
+      "gate": 1.919232000000001,
+      "sample": "ViolaEns_susvib_B2_v1_1.wav",
+      "sampleRoot": 59,
+      "level": 0.1,
+      "pan": 0.05
+    },
+    {
+      "kind": "violin-section",
+      "pitch": 67,
+      "time": 3.838464,
+      "gate": 1.919232000000001,
+      "sample": "VlnEns_susVib_A3_v1.wav",
+      "sampleRoot": 69,
+      "level": 0.08,
+      "pan": -0.4
+    },
+    {
+      "kind": "cello-section",
+      "pitch": 43.98403100622211,
+      "time": 5.757696000000001,
+      "gate": 1.9192319999999992,
+      "sample": "susvib_G1_v1_1.wav",
+      "sampleRoot": 43,
+      "level": 0.115,
+      "pan": 0.35
+    },
+    {
+      "kind": "viola-section",
+      "pitch": 55.98403100622211,
+      "time": 5.757696000000001,
+      "gate": 1.9192319999999992,
+      "sample": "ViolaEns_susvib_G2_v1_1.wav",
+      "sampleRoot": 55,
+      "level": 0.1,
+      "pan": 0.05
+    },
+    {
+      "kind": "violin-section",
+      "pitch": 62.98403100622211,
+      "time": 5.757696000000001,
+      "gate": 1.9192319999999992,
+      "sample": "VlnEns_susVib_D3_v1.wav",
+      "sampleRoot": 62,
+      "level": 0.08,
+      "pan": -0.4
+    },
+    {
+      "kind": "cello-section",
+      "pitch": 49.97888312010825,
+      "time": 7.676928,
+      "gate": 1.919232000000001,
+      "sample": "susvib_D2_v1_1.wav",
+      "sampleRoot": 50,
+      "level": 0.115,
+      "pan": 0.35
+    },
+    {
+      "kind": "viola-section",
+      "pitch": 61.97888312010825,
+      "time": 7.676928,
+      "gate": 1.919232000000001,
+      "sample": "ViolaEns_susvib_D3_v1_1.wav",
+      "sampleRoot": 62,
+      "level": 0.1,
+      "pan": 0.05
+    },
+    {
+      "kind": "violin-section",
+      "pitch": 68.97888312010825,
+      "time": 7.676928,
+      "gate": 1.919232000000001,
+      "sample": "VlnEns_susVib_A3_v1.wav",
+      "sampleRoot": 69,
+      "level": 0.08,
+      "pan": -0.4
+    },
+    {
+      "kind": "cello-section",
+      "pitch": 45.9946801699769,
+      "time": 9.596160000000001,
+      "gate": 1.9192319999999974,
+      "sample": "susvib_B1_v1_1.wav",
+      "sampleRoot": 47,
+      "level": 0.115,
+      "pan": 0.35
+    },
+    {
+      "kind": "viola-section",
+      "pitch": 57.9946801699769,
+      "time": 9.596160000000001,
+      "gate": 1.9192319999999974,
+      "sample": "ViolaEns_susvib_B2_v1_1.wav",
+      "sampleRoot": 59,
+      "level": 0.1,
+      "pan": 0.05
+    },
+    {
+      "kind": "violin-section",
+      "pitch": 64.9946801699769,
+      "time": 9.596160000000001,
+      "gate": 1.9192319999999974,
+      "sample": "VlnEns_susVib_D3_v1.wav",
+      "sampleRoot": 62,
+      "level": 0.08,
+      "pan": -0.4
+    },
+    {
+      "kind": "cello-section",
+      "pitch": 48,
+      "time": 11.515391999999999,
+      "gate": 1.919232000000001,
+      "sample": "susvib_B1_v1_1.wav",
+      "sampleRoot": 47,
+      "level": 0.115,
+      "pan": 0.35
+    },
+    {
+      "kind": "viola-section",
+      "pitch": 60,
+      "time": 11.515391999999999,
+      "gate": 1.919232000000001,
+      "sample": "ViolaEns_susvib_B2_v1_1.wav",
+      "sampleRoot": 59,
+      "level": 0.1,
+      "pan": 0.05
+    },
+    {
+      "kind": "violin-section",
+      "pitch": 67,
+      "time": 11.515391999999999,
+      "gate": 1.919232000000001,
+      "sample": "VlnEns_susVib_A3_v1.wav",
+      "sampleRoot": 69,
+      "level": 0.08,
+      "pan": -0.4
+    },
+    {
+      "kind": "cello-section",
+      "pitch": 43.98403100622211,
+      "time": 13.434624,
+      "gate": 1.919232000000001,
+      "sample": "susvib_G1_v1_1.wav",
+      "sampleRoot": 43,
+      "level": 0.115,
+      "pan": 0.35
+    },
+    {
+      "kind": "viola-section",
+      "pitch": 55.98403100622211,
+      "time": 13.434624,
+      "gate": 1.919232000000001,
+      "sample": "ViolaEns_susvib_G2_v1_1.wav",
+      "sampleRoot": 55,
+      "level": 0.1,
+      "pan": 0.05
+    },
+    {
+      "kind": "violin-section",
+      "pitch": 62.98403100622211,
+      "time": 13.434624,
+      "gate": 1.919232000000001,
+      "sample": "VlnEns_susVib_D3_v1.wav",
+      "sampleRoot": 62,
+      "level": 0.08,
+      "pan": -0.4
+    },
+    {
+      "kind": "cello-section",
+      "pitch": 49.97888312010825,
+      "time": 15.353856,
+      "gate": 1.919232000000001,
+      "sample": "susvib_D2_v1_1.wav",
+      "sampleRoot": 50,
+      "level": 0.115,
+      "pan": 0.35
+    },
+    {
+      "kind": "viola-section",
+      "pitch": 61.97888312010825,
+      "time": 15.353856,
+      "gate": 1.919232000000001,
+      "sample": "ViolaEns_susvib_D3_v1_1.wav",
+      "sampleRoot": 62,
+      "level": 0.1,
+      "pan": 0.05
+    },
+    {
+      "kind": "violin-section",
+      "pitch": 68.97888312010825,
+      "time": 15.353856,
+      "gate": 1.919232000000001,
+      "sample": "VlnEns_susVib_A3_v1.wav",
+      "sampleRoot": 69,
+      "level": 0.08,
+      "pan": -0.4
+    },
+    {
+      "kind": "cello-section",
+      "pitch": 45.9946801699769,
+      "time": 17.273088,
+      "gate": 1.9192319999999974,
+      "sample": "susvib_B1_v1_1.wav",
+      "sampleRoot": 47,
+      "level": 0.115,
+      "pan": 0.35
+    },
+    {
+      "kind": "viola-section",
+      "pitch": 57.9946801699769,
+      "time": 17.273088,
+      "gate": 1.9192319999999974,
+      "sample": "ViolaEns_susvib_B2_v1_1.wav",
+      "sampleRoot": 59,
+      "level": 0.1,
+      "pan": 0.05
+    },
+    {
+      "kind": "violin-section",
+      "pitch": 64.9946801699769,
+      "time": 17.273088,
+      "gate": 1.9192319999999974,
+      "sample": "VlnEns_susVib_D3_v1.wav",
+      "sampleRoot": 62,
+      "level": 0.08,
+      "pan": -0.4
+    },
+    {
+      "kind": "cello-section",
+      "pitch": 48,
+      "time": 19.19232,
+      "gate": 1.919232000000001,
+      "sample": "susvib_B1_v1_1.wav",
+      "sampleRoot": 47,
+      "level": 0.115,
+      "pan": 0.35
+    },
+    {
+      "kind": "viola-section",
+      "pitch": 60,
+      "time": 19.19232,
+      "gate": 1.919232000000001,
+      "sample": "ViolaEns_susvib_B2_v1_1.wav",
+      "sampleRoot": 59,
+      "level": 0.1,
+      "pan": 0.05
+    },
+    {
+      "kind": "violin-section",
+      "pitch": 67,
+      "time": 19.19232,
+      "gate": 1.919232000000001,
+      "sample": "VlnEns_susVib_A3_v1.wav",
+      "sampleRoot": 69,
+      "level": 0.08,
+      "pan": -0.4
+    },
+    {
+      "kind": "cello-section",
+      "pitch": 43.98403100622211,
+      "time": 21.111552,
+      "gate": 1.919232000000001,
+      "sample": "susvib_G1_v1_1.wav",
+      "sampleRoot": 43,
+      "level": 0.115,
+      "pan": 0.35
+    },
+    {
+      "kind": "viola-section",
+      "pitch": 55.98403100622211,
+      "time": 21.111552,
+      "gate": 1.919232000000001,
+      "sample": "ViolaEns_susvib_G2_v1_1.wav",
+      "sampleRoot": 55,
+      "level": 0.1,
+      "pan": 0.05
+    },
+    {
+      "kind": "violin-section",
+      "pitch": 62.98403100622211,
+      "time": 21.111552,
+      "gate": 1.919232000000001,
+      "sample": "VlnEns_susVib_D3_v1.wav",
+      "sampleRoot": 62,
+      "level": 0.08,
+      "pan": -0.4
+    },
+    {
+      "kind": "piccolo",
+      "pitch": 85.97888312010825,
+      "time": 2.518991999999999,
+      "gate": 0.06989099707317073,
+      "sample": "piccolo_A#4_staccato1.wav",
+      "sampleRoot": 82,
+      "level": 0.19,
+      "pan": -0.32
+    },
+    {
+      "kind": "piccolo",
+      "pitch": 87.97888312010825,
+      "time": 2.631719414634145,
+      "gate": 0.06989099707317073,
+      "sample": "piccolo_G5_staccato1.wav",
+      "sampleRoot": 91,
+      "level": 0.1596,
+      "pan": -0.32
+    },
+    {
+      "kind": "piccolo",
+      "pitch": 85.97888312010825,
+      "time": 2.7444468292682918,
+      "gate": 0.06989099707317073,
+      "sample": "piccolo_A#4_staccato1.wav",
+      "sampleRoot": 82,
+      "level": 0.12919999999999998,
+      "pan": -0.32
+    },
+    {
+      "kind": "piccolo",
+      "pitch": 84,
+      "time": 6.117552,
+      "gate": 0.07835436,
+      "sample": "piccolo_A#4_staccato1.wav",
+      "sampleRoot": 82,
+      "level": 0.19,
+      "pan": 0.32
+    },
+    {
+      "kind": "piccolo",
+      "pitch": 86,
+      "time": 6.24393,
+      "gate": 0.07835436,
+      "sample": "piccolo_A#4_staccato1.wav",
+      "sampleRoot": 82,
+      "level": 0.1596,
+      "pan": 0.32
+    },
+    {
+      "kind": "piccolo",
+      "pitch": 84,
+      "time": 6.370308,
+      "gate": 0.07835436,
+      "sample": "piccolo_A#4_staccato1.wav",
+      "sampleRoot": 82,
+      "level": 0.12919999999999998,
+      "pan": 0.32
+    },
+    {
+      "kind": "piccolo",
+      "pitch": 80.97831419507352,
+      "time": 9.956015999999998,
+      "gate": 0.0806,
+      "sample": "piccolo_A#4_staccato1.wav",
+      "sampleRoot": 82,
+      "level": 0.19,
+      "pan": -0.32
+    },
+    {
+      "kind": "piccolo",
+      "pitch": 81.97831419507352,
+      "time": 10.086015999999999,
+      "gate": 0.0806,
+      "sample": "piccolo_A#4_staccato1.wav",
+      "sampleRoot": 82,
+      "level": 0.1596,
+      "pan": -0.32
+    },
+    {
+      "kind": "piccolo",
+      "pitch": 80.97831419507352,
+      "time": 10.216015999999998,
+      "gate": 0.0806,
+      "sample": "piccolo_A#4_staccato1.wav",
+      "sampleRoot": 82,
+      "level": 0.12919999999999998,
+      "pan": -0.32
+    },
+    {
+      "kind": "piccolo",
+      "pitch": 80.97831419507352,
+      "time": 12.714911999999998,
+      "gate": 0.0806,
+      "sample": "piccolo_A#4_staccato1.wav",
+      "sampleRoot": 82,
+      "level": 0.19,
+      "pan": 0.32
+    },
+    {
+      "kind": "piccolo",
+      "pitch": 81.97831419507352,
+      "time": 12.844911999999999,
+      "gate": 0.0806,
+      "sample": "piccolo_A#4_staccato1.wav",
+      "sampleRoot": 82,
+      "level": 0.1596,
+      "pan": 0.32
+    },
+    {
+      "kind": "piccolo",
+      "pitch": 80.97831419507352,
+      "time": 12.974911999999998,
+      "gate": 0.0806,
+      "sample": "piccolo_A#4_staccato1.wav",
+      "sampleRoot": 82,
+      "level": 0.12919999999999998,
+      "pan": 0.32
+    },
+    {
+      "kind": "piccolo",
+      "pitch": 85.97888312010825,
+      "time": 14.634144,
+      "gate": 0.06989099707317073,
+      "sample": "piccolo_A#4_staccato1.wav",
+      "sampleRoot": 82,
+      "level": 0.19,
+      "pan": -0.32
+    },
+    {
+      "kind": "piccolo",
+      "pitch": 87.97888312010825,
+      "time": 14.746871414634146,
+      "gate": 0.06989099707317073,
+      "sample": "piccolo_G5_staccato1.wav",
+      "sampleRoot": 91,
+      "level": 0.1596,
+      "pan": -0.32
+    },
+    {
+      "kind": "piccolo",
+      "pitch": 85.97888312010825,
+      "time": 14.859598829268291,
+      "gate": 0.06989099707317073,
+      "sample": "piccolo_A#4_staccato1.wav",
+      "sampleRoot": 82,
+      "level": 0.12919999999999998,
+      "pan": -0.32
+    },
+    {
+      "kind": "piccolo",
+      "pitch": 88.0246842563271,
+      "time": 17.39304,
+      "gate": 0.06210128842105263,
+      "sample": "piccolo_G5_staccato1.wav",
+      "sampleRoot": 91,
+      "level": 0.19,
+      "pan": 0.32
+    },
+    {
+      "kind": "piccolo",
+      "pitch": 89.0246842563271,
+      "time": 17.493203368421053,
+      "gate": 0.06210128842105263,
+      "sample": "piccolo_G5_staccato1.wav",
+      "sampleRoot": 91,
+      "level": 0.1596,
+      "pan": 0.32
+    },
+    {
+      "kind": "piccolo",
+      "pitch": 88.0246842563271,
+      "time": 17.593366736842103,
+      "gate": 0.06210128842105263,
+      "sample": "piccolo_G5_staccato1.wav",
+      "sampleRoot": 91,
+      "level": 0.12919999999999998,
+      "pan": 0.32
+    }
+  ]
+}
