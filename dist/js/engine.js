@@ -1,3 +1,4 @@
+import{setOrava,resetOrava,updateOrava,advanceOravaAttack}from'./orava.js';
 import{initAmber,amberPersistence,beforeAmberPlayer,updateAmber,amberState}from'./amber-level.js';
 import{bonusProfile}from'./bonus-support.js';
 import {createTally,advanceTally} from './stage-tally.js';
@@ -43,7 +44,7 @@ export class World {
     this.player={x:this.level.start.x,y:this.level.start.y,vx:0,vy:0,face:1,sprite:9,action:-1,animationVariant:-1,walkHistory:0,runTimer:0,glideMode:0,glideEnergy:0,formAngle:this.formAngle??this.byte(0x7b16),lastGroundY:this.level.start.y,landingShake:0,platformGrip:false,attackActive:false,attackAction:3,anim:0,jumpFrame:0,jumpLock:0,fallFrames:0,grounded:false,speedShift:0,invulnerable:0,attackTimer:0,attackCooldown:0,downTimer:0,powerTimer:0,look:false};
     this.checkpoint={x:this.player.x,y:this.player.y};this.camera={x:clamp((Math.floor(this.player.x/16)-10)*16,0,this.maxCameraX()),y:clamp(this.word(0x815a)*16,0,this.maxCameraY())};
     if(prior){this.restorePersistence(prior);Object.assign(this.player,this.checkpoint,{vx:0,vy:0,invulnerable:24});this.camera.y=clamp((Math.floor(this.player.y/16)-8)*16,0,this.maxCameraY());this.camera.x=clamp((Math.floor(this.player.x/16)-10)*16,0,this.maxCameraX());}
-    this.initBosses();initAmber(this,prior?.amber);this.animatePlayer(0);this.emit('level',{index,id:this.level.id,restart});
+    this.initBosses();initAmber(this,prior?.amber);this.animatePlayer(0);if(this.oravaActive)resetOrava(this);this.emit('level',{index,id:this.level.id,restart});
   }
   // 0x13849: advance only while animated tiles are in the 20x11 cache view.
   updateTileAnimation(){const {animated}=tileAnimation(this.level);const tx=this.camera.x>>4,ty=this.camera.y>>4;let visible=false;
@@ -61,9 +62,10 @@ export class World {
   // A floor class is a callback, not a generic "nonzero map tile".
   floorClass(x,y){return this.prop('tilePropertiesY',this.tile(x,y));}
   solidSupport(x,y,down=false){const c=this.floorClass(x,y);return c>=1&&c<=5&&!(c===5&&down);}
-  spriteBounds(a){const sp=this.assets.game.sprites[(a.sprite||0)&0x1fff]||this.assets.game.sprites[0];const flip=a.flip??(a.face<0||!!(a.sprite&0x8000));const ox=flip?sp.width-sp.originX:sp.originX;return {left:a.x-ox,right:a.x-ox+sp.width,top:a.y+sp.originY-sp.height,bottom:a.y+sp.originY,width:sp.width,height:sp.height};}
+  spriteBounds(a){if(a.oravaStar)return{left:a.x-6,right:a.x+6,top:a.y-5,bottom:a.y+5,width:12,height:10};const sp=this.assets.game.sprites[(a.sprite||0)&0x1fff]||this.assets.game.sprites[0];const flip=a.flip??(a.face<0||!!(a.sprite&0x8000));const ox=flip?sp.width-sp.originX:sp.originX;return {left:a.x-ox,right:a.x-ox+sp.width,top:a.y+sp.originY-sp.height,bottom:a.y+sp.originY,width:sp.width,height:sp.height};}
   // 0x18fa5 uses feet/height and half-width overlap; attacks use full width.
   collisionDetails(a,b,{attack=false}={}){
+    if(a.oravaStar||b.oravaStar){const x=this.spriteBounds(a),y=this.spriteBounds(b);return x.left<y.right&&x.right>y.left&&x.top<y.bottom&&x.bottom>y.top?{penetration:1,topContact:false}:null;}
     if(Math.abs(a.x-b.x)>=64||Math.abs(a.y-b.y)>=70)return null;
     const sprite=o=>this.assets.game.sprites[o.sprite&0x1fff];if(!sprite(a)||!sprite(b))return null;
     const lower=a.y>=b.y?a:b,upper=lower===a?b:a,h=sprite(lower).height,penetration=upper.y-(lower.y-h);
@@ -105,6 +107,7 @@ export class World {
   friction(){const p=this.player;const a=12>>p.speedShift;p.vx=Math.sign(p.vx)*Math.max(0,Math.abs(p.vx)-a);}
   applyWind(){this.player.vx=Math.max(-96,s16(this.player.vx-(u16(this.wind)>>>3)));}
   gravity(){const p=this.player,slow=p.glideMode===1;p.vy=Math.min(s16(p.vy+(slow?4:16)),slow?24:192);}
+  setOravaMode(enabled){setOrava(this,enabled);}
   step(input={}){
     if(input.highJump)input={...input,up:true};
     this.presentationTicks=u16(this.presentationTicks+3);this.events=[];this.input=input;this.recorded.push(inputMask(input));if(this.recorded.length>60000)this.recorded.shift();this.frame=u16(this.frame+1);
@@ -114,7 +117,7 @@ export class World {
     if(this.deathTimer){this.updateEffects();updateWeather(this);this.player.vy+=8;this.player.y+=sar4(this.player.vy);if(--this.deathTimer===0){if(this.lives>0){this.lives--;this.loadLevel(this.levelIndex,{restart:true});}else{this.transition={type:'gameover',delay:1};this.transitionTimer=0;}}return;}
     if(this.collectionFlash)this.collectionFlash--;if(this.blockCooldown)this.blockCooldown--;if(this.sceneFlash)this.sceneFlash--;if(this.weaponPower)this.weaponPower--;
     // Original broad update order: actors, effects, player, interactions, world changes, presentation counter.
-    for(const a of this.actors)a.hitFlash=false;this.checkEnemyAttacks();this.checkBlocks();this.updateBosses();this.updateActors();this.spawnActors();this.updatePlatforms();this.updateEffects();this.updateProjectiles();beforeAmberPlayer(this);this.stepPlayer(input,previousShakeNudge);if(this.enemyPowerTimer)this.enemyPowerTimer--;this.checkActorDamage();updateAmber(this);this.checkPickups();this.updateFollowParticles();this.updatePalette();this.checkGates();updateMovingBlocks(this);this.updateCamera();this.updateTileAnimation();updateWeather(this);
+    for(const a of this.actors)a.hitFlash=false;this.checkEnemyAttacks();this.checkBlocks();this.updateBosses();this.updateActors();this.spawnActors();this.updatePlatforms();this.updateEffects();this.updateProjectiles();beforeAmberPlayer(this);this.stepPlayer(input,previousShakeNudge);if(this.enemyPowerTimer)this.enemyPowerTimer--;this.checkActorDamage();updateAmber(this);this.checkPickups();this.updateFollowParticles();this.updatePalette();this.checkGates();updateMovingBlocks(this);updateOrava(this);this.updateCamera();this.updateTileAnimation();updateWeather(this);
     if(this.levelIndex===14&&this.player.y>(this.level.height+1)*16)this.finish('ending');
     else if(this.player.y>this.level.height*16+32||this.player.y< -320||
       // Fixed cave views may have more map below them. IDDQD must rescue a
@@ -246,8 +249,8 @@ export class World {
     if(!p.grounded)this.resolveIceSupport(oldY,wasGrounded);
     for(const q of this.platforms){if(!q.active)continue;const bounds=this.spriteBounds(q);if((p.vy>=0||this.carriedPlatform===q.index)&&p.x>bounds.left-3&&p.x<bounds.right+3&&oldY<=bounds.top+8&&p.y>=bounds.top){const support=this.platformSupport?.index===q.index?this.platformSupport:{y:p.y>bounds.top?bounds.top+1:bounds.top,vy:p.y>bounds.top?1:(q.dy||0)*16};this.landPlatform(support.y,q.index,support.vy);q.raw[6]|=64;if(this.carriedPlatform!==q.index)p.x+=q.dx||0;}}
   }
-  attack(action=3){const p=this.player;p.attackAction=action===6||action===7?action:3;p.attackActive=true;p.attackTimer=this.attackDuration(p.attackAction);}
-  advanceAttack(){const p=this.player,w=WEAPON[this.weapon];p.attackFrame=true;this.animatePlayer(p.attackAction);this.friction();p.walkHistory=Math.min(255,p.walkHistory+1);p.attackTimer=Math.max(0,p.attackTimer-1);p.attackActive=!(p.marker&0x4000);
+  attack(action=3){if(this.oravaActive)this.oravaAttack={age:0};const p=this.player;p.attackAction=action===6||action===7?action:3;p.attackActive=true;p.attackTimer=this.attackDuration(p.attackAction);}
+  advanceAttack(){if(this.oravaActive){advanceOravaAttack(this);return;}const p=this.player,w=WEAPON[this.weapon];p.attackFrame=true;this.animatePlayer(p.attackAction);this.friction();p.walkHistory=Math.min(255,p.walkHistory+1);p.attackTimer=Math.max(0,p.attackTimer-1);p.attackActive=!(p.marker&0x4000);
     if(p.attackActive){this.updatePlayerWeapon(true);return;}
     p.attackTimer=0;p.attackCooldown=w.cooldown;this.emit('sfx',{index:this.weapon===0?5:this.weapon===1?0:10});
     if(!p.platformGrip)p.vy=s16(p.vy+(p.attackAction===6?0:p.attackAction===3?-32:-48));
@@ -258,11 +261,12 @@ export class World {
     const vx=p.face*this.signedWord(ptr+2),vy=this.signedWord(ptr+4),origin=this.playerWeapon||p;
     this.projectiles.push({x:origin.x+sar4(vx),y:origin.y+sar4(vy),sprite:this.word(ptr+6)|(p.face<0?0x8000:0),face:p.face,vx,vy,anim:ptr+6,animStart:ptr+6,mode:(w.flags>>>1)&3,ttl:1,damage:w.damage*(this.power?4:1),ranged:true});
   }
-  consumeAttack(shot){shot.ttl=0;if(shot.contact&&this.player.vy!==0)this.player.vy=-80;}
-  syncContactWeapon(){const a=this.playerWeapon;if(!a||this.alternate)return;const w=WEAPON[this.weapon];if(w.flags&1)return;
+  consumeAttack(shot){if(shot.oravaStar&&shot.ttl>0)this.effects.push({oravaBurst:true,x:shot.x,y:shot.y,sprite:182,ttl:8});shot.ttl=0;if(shot.contact&&this.player.vy!==0)this.player.vy=-80;}
+  syncContactWeapon(){if(this.oravaActive)return;const a=this.playerWeapon;if(!a||this.alternate)return;const w=WEAPON[this.weapon];if(w.flags&1)return;
     this.projectiles.push({...a,face:this.player.face,vx:0,vy:0,ttl:1,damage:w.damage*(this.power?4:1),contact:true,hidden:true});
   }
   updateProjectiles(){for(const a of this.projectiles){
+      if(a.oravaStar){a.x+=a.vx/16;a.y+=a.vy/16;a.ttl--;if(Math.abs(a.x-this.player.x)>360)a.ttl=0;continue;}
       if(a.contact){a.ttl=0;continue;}
       const bounds=this.spriteBounds(a);if(bounds.right<=this.camera.x||bounds.left>=this.camera.x+320||bounds.bottom<=this.camera.y||bounds.top>=this.camera.y+176){a.ttl=0;continue;}
       a.x=s16(a.x+sar4(a.vx));a.y=s16(a.y+sar4(a.vy));this.nextAnimation(a);a.sprite|=a.face<0?0x8000:0;
@@ -494,7 +498,7 @@ export class World {
   }
   updateDeadActor(a){if(!(a.def.flags&1)||(!this.visibleActor(a)&&this.player.y<a.y)){this.removeActor(a,!(a.def.flags&2));return;}if(a.vy<240)a.vy+=15;}
   checkEnemyAttacks(){for(const shot of this.projectiles){if(shot.ttl<=0)continue;for(const a of this.actors){if(!a.active||a.state===255||a.def.flags&0x10)continue;if(!this.overlap(shot,a,true))continue;
-        this.consumeAttack(shot);a.hitFlash=true;const hp=a.hp;a.hp=u8(hp-shot.damage);if(hp<shot.damage){this.emit('sfx',{index:2});this.killActor(a,shot);}else a.x-=a.vx>>2;break;
+        this.consumeAttack(shot);if(shot.oravaStar){this.emit('sfx',{index:2});this.killActor(a,shot);break;}a.hitFlash=true;const hp=a.hp;a.hp=u8(hp-shot.damage);if(hp<shot.damage){this.emit('sfx',{index:2});this.killActor(a,shot);}else a.x-=a.vx>>2;break;
       }}}
   checkActorDamage(){const p=this.player;if(p.invulnerable)return;for(const a of this.actors){if(!a.active||a.state===255||a.def.flags&0x10||!this.visibleActor(a))continue;const hit=this.collisionDetails(p,a);if(!hit)continue;
       if(this.enemyPowerTimer){this.killActor(a);return;}

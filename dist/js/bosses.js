@@ -37,7 +37,7 @@ function genericHits(w,b){for(const shot of attacks(w)){
     const shield=b.parts[3],head=b.parts[2];if(shield&&[412,413].includes(shield.sprite&0x1fff)&&w.overlap(shot,shield,true)){shot.ttl=0;continue;}
     if(!head||!w.overlap(shot,head,true))continue;
     if(Math.abs(s16(w.frame-b.lastHit))<=22)return;
-    b.lastHit=w.frame;w.emit('sfx',{index:8});for(const p of b.parts)p.hitFlash=true;w.alternate=false;b.anger=Math.min(255,b.anger+1);b.hp=s16(b.hp-shot.damage);
+    if(shot.oravaStar)w.consumeAttack(shot);b.lastHit=w.frame;w.emit('sfx',{index:8});for(const p of b.parts)p.hitFlash=true;w.alternate=false;b.anger=Math.min(255,b.anger+1);b.hp=s16(b.hp-shot.damage);
     if(b.hp<0){b.state=6;b.vy=-128;return;}
     if(shot.damage>20){b.vx=b.x>=w.player.x?48:-48;b.vy=b.vy>0?-128:-64;b.state=5;}
     b.stateAge=0;shot.ttl=0;return;
@@ -98,7 +98,7 @@ function special(w,m){meter(w,(2-m.stage)*2);rocks(w);const parts=specialParts(w
   if(!w.deathTimer&&!w.transition){
     if(advancing){if(parts.slice(3).some(p=>p.active&&w.overlap(w.player,p))){if(w.player.y<=1979)w.player.vy=-160;else if(!w.godMode){knockback(w,-128,-160);energyHit(w,3);}}}
     else {const hit=w.collisionDetails(w.player,parts[4]);if(hit?.topContact)w.player.vy=w.input.up?-128:-64;}
-    const target=parts[m.stage*2];for(const shot of attacks(w)){if(!target?.active||!w.overlap(shot,target,true))continue;shot.ttl=0;target.hitFlash=true;if(m.stage)parts[m.stage*2-1].hitFlash=true;m.hitTimer=6;if(m.stage<2)m.leftFrame=m.rightFrame=3;m.hp--;
+    const target=parts[m.stage*2];for(const shot of attacks(w)){if(!target?.active||!w.overlap(shot,target,true))continue;if(shot.oravaStar)w.consumeAttack(shot);shot.ttl=0;target.hitFlash=true;if(m.stage)parts[m.stage*2-1].hitFlash=true;m.hitTimer=6;if(m.stage<2)m.leftFrame=m.rightFrame=3;m.hp--;
       if(!m.hp){m.stage++;m.hp=7;if(m.stage===3){m.active=false;w.bossRocks=[];w.bossParts=[];w.bossStatus=[];victory(w,body.x-200,body.y);}}break;
     }
     if(w.player.x>984&&!w.godMode){knockback(w,-160,-144);energyHit(w);}
@@ -109,7 +109,7 @@ function finalHazard(w,kind){const x=kind===458?200:(w.rng.next()&127)-16,y=kind
 export function finalBossReward(w){for(const [vx,vy]of [[32,-160],[-32,-160],[16,-176],[-16,-176]])w.spawnFragments(185,30,0x2137,vx,vy,1,{collectible:true});w.emit('bossDefeated',{final:true});}
 function final(w,f){meter(w,f.hp>>2);if(f.hp<=0){f.pose=2;return;}
   if(!f.repeat){let p=f.schedule;if(w.word(p)===65535)p=u16(p+w.signedWord(p+2));f.script=w.word(p);f.repeat=w.word(p+2)&255;f.schedule=p+4;}
-  for(const shot of attacks(w,false)){if(u16(shot.x-185)>=50||u16(shot.y-30)>=50)continue;f.hp--;f.script=0xa530;f.hitCount=(f.hitCount+1)&3;if(!f.hitCount)f.script=0xa53c;if(!f.hp)finalBossReward(w);break;}
+  for(const shot of attacks(w,false)){if(u16(shot.x-185)>=50||u16(shot.y-30)>=50)continue;if(shot.oravaStar)w.consumeAttack(shot);f.hp--;f.script=0xa530;f.hitCount=(f.hitCount+1)&3;if(!f.hitCount)f.script=0xa53c;if(!f.hp)finalBossReward(w);break;}
   let p=f.script;for(let guard=0;guard<128;guard++){
     const c=w.byte(p);if(c===255||c===254){finalHazard(w,c===255?458:459);p++;continue;}if(c===253){w.emit('sfx',{index:2});p++;continue;}
     if(s8(c)<0){f.repeat=Math.max(0,f.repeat-1);f.script=u16(p+s8(c));p=f.script;continue;}

@@ -1,0 +1,15 @@
+# Generation prompt set / production brief
+
+Tool: built-in image_gen, transparent_background=true. Identity/style reference: approved ORAVA character concept generated in this conversation. Four separate transparent PNG outputs; no game code changed.
+
+Shared direction: smooth high-resolution hand-painted 2D cartoon platform-game art, crisp dark contours, warm dimensional shading. Consistent right-facing side view; no text, labels, grid lines, scenery, ground shadows or checkerboard. Separate complete silhouettes, transparent margins. No pixel art, photorealism or 3D.
+
+Hero: large soft dark-brown broad-brimmed shepherd hat, blond locks, friendly round face, loose blue-white linen shirt, golden ochre trousers, brown laced leather shoes, two golden brass cowbells on a short hand-held leather strap. Uniform scale and camera. Requested 4×4 layout, row-major poses: idle, breathing/blink, run contact, run compression; opposite contact, run passing, rising jump, falling; crouch, attack anticipation, attack release with bell mouths pointing right, recovery; hurt, landing, seated dazed defeat, joyful victory. No dog or star effects in hero atlas.
+
+Dog: small cream shaggy obedient companion, long floppy ears, fluffy curled-up tail, reddish brown collar and brass medallion. Requested 4×3 layout, row-major: alert idle, blinking/wagging idle, diagonal trot contact, passing compression; opposite contact, passing lift, extended airborne run, gathered run; rising jump, reaching landing/fall, obedient sit, happy sit. Consistent four-legged anatomy, same direction as hero; never attacks.
+
+Effects: requested 4×3 layout. Row 1: four rotations of five-pointed gold projectile star, small tail pointing left. Row 2: small hit flash, bright expanding burst, scattered stars, fading sparkles. Row 3: hanging pair of brass cowbells, pair pointed right, isolated rightward ring pulse, sparkle puff. Warm gold/brass; no characters or background.
+
+Final effects refinement: preserve ordering and style but shrink effects; prioritize clear transparent gutters, confine glow to each effect, remove stray background residue, separate the forward-pointing bells from muzzle flash. No glow or particles should bridge cells. Exact measured frame rectangles are subsequently recorded in manifest.json without modifying image pixels.
+
+Food prompt: three isolated 2D food sprites on a truly transparent background, one horizontal row, hand-painted HD cartoon shading and clear dark outlines. Left: rustic ivory ceramic plate with blue rim, small irregular bryndzové halušky coated in white sheep cheese, crisp bacon cubes and a few chives. Middle: three overlapping half-moon bryndzové pirohy with clearly crimped edges, cream and small bacon bits, no plate. Right: one thick slab of Orava smoked bacon with dark rind, white fat and pink meat layers, one slice leaning against it. No logos, lettering, table, utensils or scenery. No pixel art, photorealism or 3D. Reference: established game palette, no external image input.

@@ -1,0 +1,13 @@
+{
+  "loaded": true,
+  "attacks": 2,
+  "sounds": 2,
+  "spatial": {
+    "panning": "HRTF",
+    "x": 1.25,
+    "z": -1.5,
+    "reverbSeconds": 0.48
+  },
+  "framePreviews": 43,
+  "errors": []
+}

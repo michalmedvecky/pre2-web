@@ -1,0 +1,71 @@
+{
+  "chromium": {
+    "combat": {
+      "shots": 1,
+      "rings": 1,
+      "dead": true,
+      "bounds": true
+    },
+    "stages": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H"
+    ],
+    "sd": true,
+    "hd": true,
+    "defaultOriginalNoOptionalRequests": true,
+    "reversible": true,
+    "errors": []
+  },
+  "webkit": {
+    "combat": {
+      "shots": 1,
+      "rings": 1,
+      "dead": true,
+      "bounds": true
+    },
+    "stages": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H"
+    ],
+    "sd": true,
+    "hd": true,
+    "defaultOriginalNoOptionalRequests": true,
+    "reversible": true,
+    "errors": []
+  },
+  "mobile": {
+    "tapRings": true,
+    "orava": true,
+    "errors": []
+  }
+}

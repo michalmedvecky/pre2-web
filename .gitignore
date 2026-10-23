@@ -21,3 +21,6 @@ art/music-faithful-v2/output*/*.wav
 art/music-remaster-v1/masters/*.wav
 # Provider originals and decoded Orava masters are packaging intermediates.
 art/music-orava-v1/raw/
+
+# Downloadable sprite archive is reproducible from its tracked source directory.
+art/orava-sprites-v1.zip

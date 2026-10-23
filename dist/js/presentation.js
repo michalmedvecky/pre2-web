@@ -14,7 +14,7 @@ export class Presentation {
  reset(w){this.world=w;this.map=w.map;this.player=w.player;this.previous=null;this.camera={...w.camera};}
  beforeStep(w){
   if(this.world!==w||this.map!==w.map||this.player!==w.player)this.reset(w);
-  this.previous={player:{...position(w.player),grounded:w.player.grounded,platformGrip:w.player.platformGrip,displayY:slopeDisplayY(w,w.player)},camera:{...w.camera},sceneFlash:w.sceneFlash,shakePlayerNudge:w.shakePlayerNudge||0,objects:new Map(),indexed:{}};
+  this.previous={dog:w.oravaDog&&position(w.oravaDog),player:{...position(w.player),grounded:w.player.grounded,platformGrip:w.player.platformGrip,displayY:slopeDisplayY(w,w.player)},camera:{...w.camera},sceneFlash:w.sceneFlash,shakePlayerNudge:w.shakePlayerNudge||0,objects:new Map(),indexed:{}};
   for(const layer of layers){const list=w[layer]||[];this.previous.indexed[layer]=list.map(position);for(const o of list)this.previous.objects.set(o,position(o));}
  }
  afterStep(w){
@@ -35,7 +35,7 @@ export class Presentation {
   const weight=1-Math.exp(-Math.max(0,dt)/.065);
   for(const axis of ['x','y'])this.camera[axis]+=((prev?mix(prev.camera[axis],w.camera[axis],t):w.camera[axis])-this.camera[axis])*weight;
   const nudge=prev?mix(prev.shakePlayerNudge,w.shakePlayerNudge||0,t):(w.shakePlayerNudge||0);
-  const view={...w,player,shakePlayerNudge:nudge,renderCamera:{...this.camera},camera:{x:Math.round(this.camera.x),y:Math.round(this.camera.y)}};
+  const view={...w,oravaDog:w.oravaDog&&interpolate(w.oravaDog,prev?.dog),player,shakePlayerNudge:nudge,renderCamera:{...this.camera},camera:{x:Math.round(this.camera.x),y:Math.round(this.camera.y)}};
   for(const layer of layers)view[layer]=(w[layer]||[]).map((o,i)=>{
    const fallback=(layer==='bossParts'||layer==='ropePoints')&&prev?.indexed[layer].length===w[layer].length?prev.indexed[layer][i]:null;
    const p=prev?.objects.get(o)||fallback;

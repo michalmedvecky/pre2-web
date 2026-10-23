@@ -1,0 +1,66 @@
+{
+  "hero": {
+    "mode": "RGBA",
+    "size": [
+      1263,
+      1245
+    ],
+    "frameCount": 16,
+    "fullyTransparentPixels": 876159,
+    "alphaRange": [
+      0,
+      255
+    ],
+    "maxSolidPixelsOnInternalCut": 0,
+    "frameBoundsThreshold": 8,
+    "solidCutThreshold": 32
+  },
+  "dog": {
+    "mode": "RGBA",
+    "size": [
+      1448,
+      1086
+    ],
+    "frameCount": 12,
+    "fullyTransparentPixels": 901147,
+    "alphaRange": [
+      0,
+      255
+    ],
+    "maxSolidPixelsOnInternalCut": 0,
+    "frameBoundsThreshold": 8,
+    "solidCutThreshold": 32
+  },
+  "food": {
+    "mode": "RGBA",
+    "size": [
+      2172,
+      724
+    ],
+    "frameCount": 3,
+    "fullyTransparentPixels": 835287,
+    "alphaRange": [
+      0,
+      255
+    ],
+    "maxSolidPixelsOnInternalCut": 0,
+    "frameBoundsThreshold": 8,
+    "solidCutThreshold": 32
+  },
+  "effects": {
+    "mode": "RGBA",
+    "size": [
+      1448,
+      1086
+    ],
+    "frameCount": 12,
+    "fullyTransparentPixels": 948206,
+    "alphaRange": [
+      0,
+      255
+    ],
+    "maxSolidPixelsOnInternalCut": 0,
+    "frameBoundsThreshold": 8,
+    "solidCutThreshold": 32
+  }
+}

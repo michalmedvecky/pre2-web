@@ -1,3 +1,4 @@
+import{SpatialBells}from'./spatial-bells.js';
 import{RemasteredMusic}from'./remastered-music.js';
 // Original Sound Blaster digital path: 0x12229, 0x1236B, 0x1241A, 0x124AF.
 // No ProTracker BPM semantics or interpolation are substituted into this mixer.
@@ -113,7 +114,7 @@ export function oravaTrackKey(name,levelId=null){
 export class GameAudio {
   constructor(base = new URL('../assets/',import.meta.url)) {
     this.base=base; this.context=null; this.node=null; this.muted=false;
-    this.musicMode='original';this.remastered=null;this.orava=null;this.track=null;this.levelId=null; this.trackToken=0; this.modules=new Map(); this.sampleBank=null;
+    this.bells=null;this.musicMode='original';this.remastered=null;this.orava=null;this.track=null;this.levelId=null; this.trackToken=0; this.modules=new Map(); this.sampleBank=null;
   }
   async unlock() {
     if (!this.context) {
@@ -146,7 +147,9 @@ class Pre2Processor extends AudioWorkletProcessor {
     }
     await this.context.resume(); return true;
   }
-  async setMusicMode(mode){if(!['original','orchestral','orava'].includes(mode))throw Error('Invalid music mode');this.musicMode=mode;if(mode!=='orava'&&this.orava)this.orava.buffer=null;if(mode!=='orchestral'&&this.remastered)this.remastered.buffer=null;return this.setTrack(this.track,{levelId:this.levelId});}
+  async prepareBells(){if(!this.context)return false;if(!this.bells){this.bells=new SpatialBells(this.context,{base:this.base});this.bells.setMuted(this.muted);this.bells.setEnabled(this.musicMode==='orava');}await this.bells.load();return true;}
+  async ringBells(x,y,camera){if(!this.context)return false;await this.prepareBells();return this.bells.ring(x,y,camera);}
+  async setMusicMode(mode){if(!['original','orchestral','orava'].includes(mode))throw Error('Invalid music mode');this.musicMode=mode;this.bells?.setEnabled(mode==='orava');if(mode!=='orava'&&this.orava)this.orava.buffer=null;if(mode!=='orchestral'&&this.remastered)this.remastered.buffer=null;return this.setTrack(this.track,{levelId:this.levelId});}
   async setTrack(name,{levelId=null}={}) {
     if(name&&!/^[A-Za-z0-9_-]+$/.test(name))throw Error('Invalid music name');
     this.track=name;this.levelId=levelId;const token=++this.trackToken;this.remastered?.stop();this.orava?.stop();if(!this.node)return 'original';
@@ -167,6 +170,6 @@ class Pre2Processor extends AudioWorkletProcessor {
     const samples=Uint8Array.from(bank.subarray(start,start+SAMPLE_LENGTHS[index]),x=>((x+128)&255)>>>2);
     this.node.port.postMessage({type:'effect',samples});
   }
-  setMuted(muted) {this.muted=!!muted;this.remastered?.setMuted(this.muted);this.orava?.setMuted(this.muted);this.node?.port.postMessage({type:'mute',muted:this.muted});}
-  stop() {this.remastered?.stop();this.orava?.stop();this.track=null;this.levelId=null;this.trackToken++;this.node?.port.postMessage({type:'song',song:null});this.node?.port.postMessage({type:'effect',samples:new Uint8Array()});}
+  setMuted(muted) {this.muted=!!muted;this.remastered?.setMuted(this.muted);this.orava?.setMuted(this.muted);this.bells?.setMuted(this.muted);this.node?.port.postMessage({type:'mute',muted:this.muted});}
+  stop() {this.bells?.stop();this.remastered?.stop();this.orava?.stop();this.track=null;this.levelId=null;this.trackToken++;this.node?.port.postMessage({type:'song',song:null});this.node?.port.postMessage({type:'effect',samples:new Uint8Array()});}
 }
