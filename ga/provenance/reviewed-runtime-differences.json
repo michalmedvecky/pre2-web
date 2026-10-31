@@ -1,0 +1,27 @@
+{
+  "oneTimeCopyOnly": true,
+  "sourceOriginal148FilesStillUnchanged": true,
+  "modifiedRuntimeFiles": {
+    "assets/audio/opl/NOTICE.txt": {
+      "before": "ff06acd9b897ff3492c7b98078b5a07f9d2143da22ffcf956b5e8fe826ce94fd",
+      "after": "7594fb86712fa64078f95ef9e2775307e2f0f106d459a4b7e542c9587ac46a6c"
+    },
+    "index.html": {
+      "before": "6d96f0beec5d23124ce541aa64f77410650a0acaf37db98ee47386fabc5bc035",
+      "after": "59861205db382cfd92dfeec84c6522c58e6bbb05d2c15bd6c733ac00282ee79e"
+    },
+    "js/app.js": {
+      "before": "9dc498b9f91d2ebb241ec1c7797bff469f94f202165ef29db47600392abd4732",
+      "after": "7dea0cd228aa02948bc63b86540289f78a0e7f5594a04a8be432ace4ba661c90"
+    }
+  },
+  "addedRuntimeFiles": {
+    "assets/audio/opl/source/BUILD.md": "0bd201fec41fa0cb0f99f9d8c5bd8a169129a23faeaa06b3b279e6b05fc7a696",
+    "assets/audio/opl/source/build-wasm.sh": "15ab5577b66eaaefae6a6b856b6dd079d0c1607c90a656fc08ae44c63a9a1be4",
+    "assets/audio/opl/source/wasm-provenance.json": "3d6d2fb28eff72c6703035f6708069b8e7caf7985c19179e5c32e93d02ac7b71",
+    "js/build-info.js": "92489d725bec0102c8133632cdd9a6cd52cab4381fc891ebcf05274ed4bf5cb3"
+  },
+  "removed": [],
+  "injectedBuildJSONExcludedFromManifest": true,
+  "scope": "Only independently reviewed identity app/index hook and self-contained LGPL build/provenance documents. No simulation/renderer/gameplay or HDliveasset changes."
+}

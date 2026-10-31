@@ -1,0 +1,109 @@
+name: Golden Axe image
+
+on:
+  push:
+    branches: [main]
+    paths: ['ga/**', '.github/workflows/publish-ga-image.yml']
+  pull_request:
+    paths: ['ga/**', '.github/workflows/publish-ga-image.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6; inherited from Pre2 reference
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - run: npm --prefix ga test
+      - run: node ga/scripts/verify-package.mjs
+
+  publish:
+    needs: check
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      packages: write
+    env:
+      IMAGE: ${{ vars.GA_IMAGE_REPOSITORY }}
+      NGINX_IMAGE: ${{ vars.GA_NGINX_IMAGE }}
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - name: Require explicit separate image and immutable base
+        run: node ga/scripts/validate-release-env.mjs
+      - name: Verify clean checkout and record deterministic inputs
+        run: |
+          test -z "$(git status --porcelain)"
+          node ga/scripts/verify-package.mjs
+          echo "SOURCE_DATE_EPOCH=$(git show -s --format=%ct HEAD)" >> "$GITHUB_ENV"
+          echo "SOURCE_SNAPSHOT=$(node -p 'JSON.parse(require("fs").readFileSync("ga/provenance/runtime-manifest.json")).snapshotSHA256')" >> "$GITHUB_ENV"
+      - uses: docker/setup-qemu-action@99012661954931238ded8c8b007157a8430204e1 # v4
+        with:
+          platforms: arm64
+      - uses: docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069 # v4
+      - uses: docker/login-action@dbcb813823bdd20940b903addbd779551569679f # v4
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build and publish isolated Golden Axe image
+        id: image
+        uses: docker/build-push-action@c3c9e263c25d99ce0380d002d59b67737d91b0dc # v7
+        env:
+          SOURCE_DATE_EPOCH: ${{ env.SOURCE_DATE_EPOCH }}
+        with:
+          context: ./ga
+          file: ./ga/Dockerfile
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ${{ env.IMAGE }}:sha-${{ github.sha }}
+          build-args: |
+            NGINX_IMAGE=${{ env.NGINX_IMAGE }}
+            VCS_REF=${{ github.sha }}
+            BUILD_SOURCE=ci
+            BUILD_DIRTY=false
+            SOURCE_SNAPSHOT=${{ env.SOURCE_SNAPSHOT }}
+            BUILD_REPOSITORY=https://github.com/${{ github.repository }}
+            SOURCE_DATE_EPOCH=${{ env.SOURCE_DATE_EPOCH }}
+          labels: |
+            org.opencontainers.image.source=https://github.com/${{ github.repository }}
+            org.opencontainers.image.revision=${{ github.sha }}
+            org.opencontainers.image.title=Golden Axe web port
+          cache-from: type=gha,scope=ga
+          cache-to: type=gha,mode=max,scope=ga
+      - name: Verify both architectures and runtime image
+        env:
+          IMAGE_DIGEST: ${{ steps.image.outputs.digest }}
+          EXPECTED_COMMIT: ${{ github.sha }}
+          EXPECTED_SNAPSHOT: ${{ env.SOURCE_SNAPSHOT }}
+        run: |
+          docker buildx imagetools inspect --raw "$IMAGE@$IMAGE_DIGEST" > /tmp/ga-index.json
+          jq -e 'any(.manifests[]; .platform.os == "linux" and .platform.architecture == "amd64") and any(.manifests[]; .platform.os == "linux" and .platform.architecture == "arm64")' /tmp/ga-index.json
+          GA_CONTAINER_IMAGE="$IMAGE@$IMAGE_DIGEST" node ga/scripts/smoke-container.mjs
+      - name: Deployer image reference (no cluster access)
+        env:
+          IMAGE_DIGEST: ${{ steps.image.outputs.digest }}
+        run: |
+          {
+            echo '### Golden Axe image; not deployed'
+            echo "Image: \`$IMAGE@$IMAGE_DIGEST\`"
+            echo "Build commit: \`$GITHUB_SHA\`"
+            echo "Runtime snapshot: \`$SOURCE_SNAPSHOT\`"
+            echo 'Platforms: linux/amd64, linux/arm64. Configure ga/deploy/config.local.json; deployer handles cluster rollout.'
+          } >> "$GITHUB_STEP_SUMMARY"

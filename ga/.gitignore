@@ -1,0 +1,4 @@
+/deploy/config.local.json
+/deploy/rendered*.json
+/validation/local-*
+/node_modules/

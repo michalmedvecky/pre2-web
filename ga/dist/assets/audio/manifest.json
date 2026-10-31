@@ -1,0 +1,459 @@
+{
+  "version": 1,
+  "kind": "original-gold-opl-and-native-pc-speaker",
+  "faithfulSupported": true,
+  "registerProof": "finite 64-write meta/instrument and 12-write first-note windows exact against unmodified GOLD",
+  "tickSeconds": 0.0009973331813587533,
+  "OPLCore": "Nuked-OPL3 765ec962e473aeb767e4cba74ffdc8f588ffbfe8",
+  "tracks": {
+    "intro": {
+      "file": "intro.flac",
+      "loopStart": 0,
+      "loopEnd": 33.21119493924648,
+      "duration": 34.2111875,
+      "nativeTicks": 33300,
+      "registerWrites": 5391,
+      "sequence": [],
+      "sha256": "7635eed1950eb873920ccb4593e2f073bc5fc561e89398b9fa5bd0158358e31a"
+    },
+    "intro2": {
+      "file": "intro2.flac",
+      "loopStart": 0,
+      "loopEnd": 19.914748965371587,
+      "duration": 20.914729166666667,
+      "nativeTicks": 19968,
+      "registerWrites": 3291,
+      "sequence": [],
+      "sha256": "07272ee195fe80cd629e8d8898e3857e35b83ec13295c70d102fba9bca6e3329"
+    },
+    "oldmap": {
+      "file": "oldmap.flac",
+      "loopStart": 0,
+      "loopEnd": 31.834875148971406,
+      "duration": 32.834875,
+      "nativeTicks": 31920,
+      "registerWrites": 1050,
+      "sequence": [],
+      "sha256": "9cf9f8aee4b36066f4384eb595b42480804ec23833a181ec501caf36946df82e"
+    },
+    "opening": {
+      "file": "opening.flac",
+      "loopStart": 33.21219227242784,
+      "loopEnd": 53.12694123779943,
+      "duration": 54.1269375,
+      "nativeTicks": 53269,
+      "registerWrites": 8270,
+      "sequence": [
+        "intro",
+        "intro2"
+      ],
+      "sha256": "54f81da0f480f6f78632afadb5a2463ddd0b9d39c8d726ebaac133c05d7c96d1"
+    },
+    "rd1beg": {
+      "file": "rd1beg.flac",
+      "loopStart": 0,
+      "loopEnd": 13.404157957461644,
+      "duration": 14.404145833333333,
+      "nativeTicks": 13440,
+      "registerWrites": 1816,
+      "sequence": [],
+      "sha256": "e57caa3b65dd5cbfbf7b0287c518b083add3c5169a94d685be9a428d320df9d2"
+    },
+    "rd1end1": {
+      "file": "rd1end1.flac",
+      "loopStart": 0,
+      "loopEnd": 13.404157957461644,
+      "duration": 14.404145833333333,
+      "nativeTicks": 13440,
+      "registerWrites": 1768,
+      "sequence": [],
+      "sha256": "83844014d36fe3eca8e6fd7142e37182ee0fb237ac8bb5695d551bcf34867b8a"
+    },
+    "rd1end2": {
+      "file": "rd1end2.flac",
+      "loopStart": 0,
+      "loopEnd": 16.755197446827054,
+      "duration": 17.7551875,
+      "nativeTicks": 16800,
+      "registerWrites": 1923,
+      "sequence": [],
+      "sha256": "64446df461344401b5e4d180db3640c549c8b3c5347bb56901f3c9ada0e6e970"
+    },
+    "rd1end3": {
+      "file": "rd1end3.flac",
+      "loopStart": 0,
+      "loopEnd": 6.702078978730822,
+      "duration": 7.7020625,
+      "nativeTicks": 6720,
+      "registerWrites": 1185,
+      "sequence": [],
+      "sha256": "cf6d18e6c0d31d8adaedcfede5cad915a35bc2f4bb59b79a5ca318037ffa6e96"
+    },
+    "rd2part1": {
+      "file": "rd2part1.flac",
+      "loopStart": 0,
+      "loopEnd": 33.51039489365411,
+      "duration": 34.510375,
+      "nativeTicks": 33600,
+      "registerWrites": 3409,
+      "sequence": [],
+      "sha256": "b24b7a1b98b9a931d615ad61ee038f2d36108e87045ef8fe7b06a0cc1c126e43"
+    },
+    "rd2part2": {
+      "file": "rd2part2.flac",
+      "loopStart": 0,
+      "loopEnd": 18.337965205643396,
+      "duration": 19.337958333333333,
+      "nativeTicks": 18387,
+      "registerWrites": 2961,
+      "sequence": [],
+      "sha256": "916380c5f0a2360c4c29a1f8aca33873a266808e429efc1efd6817efa29da10a"
+    },
+    "rd3part1": {
+      "file": "rd3part1.flac",
+      "loopStart": 0,
+      "loopEnd": 93.82112703678064,
+      "duration": 94.821125,
+      "nativeTicks": 94072,
+      "registerWrites": 7314,
+      "sequence": [],
+      "sha256": "9c939477d33eb0b90397f920507a2159e8f996c4d1e4f641fafb1f67cff9c07b"
+    },
+    "rd3part2": {
+      "file": "rd3part2.flac",
+      "loopStart": 0,
+      "loopEnd": 23.45727642555788,
+      "duration": 24.457270833333332,
+      "nativeTicks": 23520,
+      "registerWrites": 1945,
+      "sequence": [],
+      "sha256": "cd0f15fc38cf0dcc8db9f68a3fae5dc9f7157f8330c5ff1ad26c382e1a92e71d"
+    },
+    "rd4": {
+      "file": "rd4.flac",
+      "loopStart": 0,
+      "loopEnd": 63.66975029794281,
+      "duration": 64.66975,
+      "nativeTicks": 63840,
+      "registerWrites": 2234,
+      "sequence": [],
+      "sha256": "9d26df5f6bc56479946bab6355fc9bba92479aaa03fa7dc01162e76e3dc04427"
+    },
+    "rd5": {
+      "file": "rd5.flac",
+      "loopStart": 0,
+      "loopEnd": 61.9942305532601,
+      "duration": 62.99422916666666,
+      "nativeTicks": 62160,
+      "registerWrites": 3174,
+      "sequence": [],
+      "sha256": "def0c38b8a2ef2ec94c5be2b876a99f027710a9e544af28933738403b88e00cf"
+    },
+    "rd6part1": {
+      "file": "rd6part1.flac",
+      "loopStart": 0,
+      "loopEnd": 53.19376256095047,
+      "duration": 54.19375,
+      "nativeTicks": 53336,
+      "registerWrites": 3079,
+      "sequence": [],
+      "sha256": "9aa487c21331f06c72af907f02e0192beac9cad75cb90cf82ed0bb284488f27e"
+    },
+    "rd6part2": {
+      "file": "rd6part2.flac",
+      "loopStart": 0,
+      "loopEnd": 8.765561330962083,
+      "duration": 9.765541666666667,
+      "nativeTicks": 8789,
+      "registerWrites": 1173,
+      "sequence": [],
+      "sha256": "e44529ab71319afbab133f60a4ce9d5290539810f5e404ac91c23130feae3202"
+    },
+    "rd6part3": {
+      "file": "rd6part3.flac",
+      "loopStart": 0,
+      "loopEnd": 16.75220544728298,
+      "duration": 17.7521875,
+      "nativeTicks": 16797,
+      "registerWrites": 1488,
+      "sequence": [],
+      "sha256": "a3319f0eb353ea1d23858c6bf4282eb37d19af9381bc0ac14ae286c2186e6e0b"
+    },
+    "rd6part4": {
+      "file": "rd6part4.flac",
+      "loopStart": 0,
+      "loopEnd": 17.55904799100221,
+      "duration": 18.559041666666666,
+      "nativeTicks": 17606,
+      "registerWrites": 1456,
+      "sequence": [],
+      "sha256": "395b0227bd38f250d5385a9d1d68d6133e6b3b43bb9edd44e89ad98ca6b009c6"
+    },
+    "sassa": {
+      "file": "sassa.flac",
+      "loopStart": 0,
+      "loopEnd": 40.21247387238493,
+      "duration": 41.21245833333333,
+      "nativeTicks": 40320,
+      "registerWrites": 2744,
+      "sequence": [],
+      "sha256": "d6ccbc1e5b0599d1cab9ea57e3540ccde0ede9dee13dffb1704cd3ea187db6ef"
+    },
+    "score": {
+      "file": "score.flac",
+      "loopStart": 0,
+      "loopEnd": 14.660797765973674,
+      "duration": 15.660791666666666,
+      "nativeTicks": 14700,
+      "registerWrites": 1287,
+      "sequence": [],
+      "sha256": "527e05bfb77d164d3728f08162d739bb8ef1e627f56464dbfb7956de9deff92d"
+    },
+    "showdown": {
+      "file": "showdown.flac",
+      "loopStart": 0,
+      "loopEnd": 108.90878340437587,
+      "duration": 109.90877083333334,
+      "nativeTicks": 109200,
+      "registerWrites": 5079,
+      "sequence": [],
+      "sha256": "1548a16f1fd72b7219469a37cf69e572ab3d71f21652d8a3c84cc72ae6e5956c"
+    },
+    "stage1": {
+      "file": "stage1.flac",
+      "loopStart": 0,
+      "loopEnd": 154.15878717580387,
+      "duration": 155.15877083333334,
+      "nativeTicks": 154571,
+      "registerWrites": 16111,
+      "sequence": [
+        "rd1beg",
+        "rd1beg",
+        "rd1end1",
+        "rd1end1",
+        "rd1beg",
+        "rd1beg",
+        "rd1end2",
+        "rd1end2",
+        "rd1beg",
+        "rd1beg",
+        "rd1end3",
+        "rd1end3"
+      ],
+      "sha256": "99f375544fb5dbbf1ab6c64326d5f1422baaefce967a5cf3e90dc05296331abb"
+    },
+    "stage2": {
+      "file": "stage2.flac",
+      "loopStart": 0,
+      "loopEnd": 51.84935743247887,
+      "duration": 52.849354166666664,
+      "nativeTicks": 51988,
+      "registerWrites": 5961,
+      "sequence": [
+        "rd2part1",
+        "rd2part2"
+      ],
+      "sha256": "2de5097a5597ef389f3b9b145c6421efd4ac54a6601120adcb73a6f80a992faf"
+    },
+    "stage3": {
+      "file": "stage3.flac",
+      "loopStart": 0,
+      "loopEnd": 117.27940079551988,
+      "duration": 118.27939583333334,
+      "nativeTicks": 117593,
+      "registerWrites": 8846,
+      "sequence": [
+        "rd3part1",
+        "rd3part2"
+      ],
+      "sha256": "f1898f110816dd4255ddcfe6ccd13c7d9c853c4cd33ac2997fcc45081f49f354"
+    },
+    "stage6": {
+      "file": "stage6.flac",
+      "loopStart": 0,
+      "loopEnd": 113.02677211020615,
+      "duration": 114.02677083333333,
+      "nativeTicks": 113329,
+      "registerWrites": 7053,
+      "sequence": [
+        "rd6part1",
+        "rd6part2",
+        "rd6part3",
+        "rd6part4",
+        "rd6part3"
+      ],
+      "sha256": "f552780111fbce814f03586484ec47e08585366adc738a2e3b1c4928b12288fd"
+    },
+    "thief": {
+      "file": "thief.flac",
+      "loopStart": 0,
+      "loopEnd": 29.605835488634593,
+      "duration": 30.605833333333333,
+      "nativeTicks": 29685,
+      "registerWrites": 1543,
+      "sequence": [],
+      "sha256": "989836125538ebf3eed3f9e66e9edbc6ca5da9843ec3dcf9df2ea6600c5272de"
+    }
+  },
+  "selectors": {
+    "0": "stage1",
+    "1": "stage2",
+    "2": "stage3",
+    "3": "rd4",
+    "4": "rd5",
+    "5": "stage6",
+    "6": "stage6",
+    "7": "showdown",
+    "9": "score",
+    "10": "opening",
+    "11": "oldmap",
+    "12": "opening",
+    "13": "sassa",
+    "16": "thief",
+    "17": "thief",
+    "18": "thief",
+    "19": "thief"
+  },
+  "effects": {
+    "0": {
+      "file": "effect-0.wav",
+      "offset": 1007,
+      "bytes": 736,
+      "bits": 5888,
+      "duration": 0.8389166666666666,
+      "sha256": "049b14ee4665ae3f394d2a0eefe89f1ffbdd64f6b61d42497e9b424aef477cf6",
+      "nativeDurationSeconds": 0.8388996816914771
+    },
+    "1": {
+      "file": "effect-1.wav",
+      "offset": 2916,
+      "bytes": 721,
+      "bits": 5768,
+      "duration": 0.8218125,
+      "sha256": "2dc82e9d14bd0f6d5a7054193287c83e4516924a549f9e59c7c0a48f90602440",
+      "nativeDurationSeconds": 0.8218025414396127
+    },
+    "2": {
+      "file": "effect-2.wav",
+      "offset": 4711,
+      "bytes": 128,
+      "bits": 1024,
+      "duration": 0.14589583333333334,
+      "sha256": "c471281f43ea2aefcd4932258e7ddf0437a3ecb3cc443587cf3bad21e3e54026",
+      "nativeDurationSeconds": 0.14589559681590905
+    },
+    "3": {
+      "file": "effect-3.wav",
+      "offset": 2340,
+      "bytes": 165,
+      "bits": 1320,
+      "duration": 0.18808333333333332,
+      "sha256": "daefce31dec962d4ecf6e5ffa4b1a339333165fa4c31227bd8422ac81e17651a",
+      "nativeDurationSeconds": 0.18806854277050777
+    },
+    "4": {
+      "file": "effect-4.wav",
+      "offset": 2505,
+      "bytes": 44,
+      "bits": 352,
+      "duration": 0.050166666666666665,
+      "sha256": "a5b20cd120e824a89f1109d087d7780c4ff7bac400a449758f2d5e886a9a3a0b",
+      "nativeDurationSeconds": 0.05015161140546874
+    },
+    "5": {
+      "file": "effect-5.wav",
+      "offset": 918,
+      "bytes": 89,
+      "bits": 712,
+      "duration": 0.10145833333333333,
+      "sha256": "274c1bafb58047083c7538d5abf14ad32a938cda64f466940632d9d99a74db61",
+      "nativeDurationSeconds": 0.10144303216106176
+    },
+    "6": {
+      "file": "effect-6.wav",
+      "offset": 2549,
+      "bytes": 367,
+      "bits": 2936,
+      "duration": 0.4183125,
+      "sha256": "8371c4b83c4eb2198ee63129eb2d7f112696aef03878fcd2c1606d4faeee353d",
+      "nativeDurationSeconds": 0.41831003149561424
+    },
+    "7": {
+      "file": "effect-7.wav",
+      "offset": 0,
+      "bytes": 155,
+      "bits": 1240,
+      "duration": 0.1766875,
+      "sha256": "2248b1b984fe4b948de8b28513fca4f9c22596ca55bf25b69f77dd5675958501",
+      "nativeDurationSeconds": 0.17667044926926487
+    },
+    "8": {
+      "file": "effect-8.wav",
+      "offset": 4839,
+      "bytes": 232,
+      "bits": 1856,
+      "duration": 0.2644375,
+      "sha256": "b66e1a9820d9f2c6d338ac804a4c494f4aede06be0821e0108326abe6fd33057",
+      "nativeDurationSeconds": 0.26443576922883516
+    },
+    "9": {
+      "file": "effect-9.wav",
+      "offset": 3637,
+      "bytes": 173,
+      "bits": 1384,
+      "duration": 0.1971875,
+      "sha256": "7e38a7c448f41af91de75b83fb88b556a39562393516f84d0c85c1630a15dd62",
+      "nativeDurationSeconds": 0.1971870175715021
+    },
+    "10": {
+      "file": "effect-10.wav",
+      "offset": 307,
+      "bytes": 611,
+      "bits": 4888,
+      "duration": 0.6964375,
+      "sha256": "5808bf5bf7656c84aa7f5621dc612addbe1db9b61c66dea9fcbf1b07cb175585",
+      "nativeDurationSeconds": 0.6964235129259408
+    },
+    "11": {
+      "file": "effect-11.wav",
+      "offset": 155,
+      "bytes": 152,
+      "bits": 1216,
+      "duration": 0.17327083333333335,
+      "sha256": "c04046eba37febb76720a964bb085fd9bc3bac220f3fcedaeae821d600916208",
+      "nativeDurationSeconds": 0.173251021218892
+    },
+    "12": {
+      "file": "effect-12.wav",
+      "offset": 1743,
+      "bytes": 597,
+      "bits": 4776,
+      "duration": 0.6804791666666666,
+      "sha256": "91233e0a4b3e3021cfcdf72ac80ba2b203c92fd644df63b542505af538bc1f1b",
+      "nativeDurationSeconds": 0.6804661820242008
+    },
+    "13": {
+      "file": "effect-13.wav",
+      "offset": 4216,
+      "bytes": 495,
+      "bits": 3960,
+      "duration": 0.5642083333333333,
+      "sha256": "2c25e304db4582026c10994ebfcd83878636934a3b93e9e62455897408dad6df",
+      "nativeDurationSeconds": 0.5642056283115233
+    },
+    "14": {
+      "file": "effect-14.wav",
+      "offset": 3810,
+      "bytes": 406,
+      "bits": 3248,
+      "duration": 0.46277083333333335,
+      "sha256": "d203011c1ab67d349045800c3a680b26ef1947a4366aa7d19534945c53c2a86a",
+      "nativeDurationSeconds": 0.46276259615046156
+    }
+  },
+  "limits": [
+    "Register proof covers finite windows, not full-game waveform equivalence.",
+    "PCM loop reuses a rendered cycle; oscillator/noise phase at repeat is not an exact continuation of physical hardware.",
+    "PC speaker preserves source bits and IRQ rate, not the acoustic response of every historical speaker."
+  ]
+}

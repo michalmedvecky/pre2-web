@@ -1,0 +1,57 @@
+{
+  "checkedAtUTC": "2026-10-31T15:18:38.642943+00:00",
+  "status": "Prepared deployer package, not published or deployed",
+  "sourceCore75": {
+    "version": 75,
+    "simulationSHA256": "5213829f351f710dddefc27a37edbd2f4a715a901e86da62bf81ab0bb073b1e0"
+  },
+  "runtimeSnapshotSHA256": "95612700e3f875032e2f11d34dd5cef7e19a74ab64779f9964c1d668ec3ae49d",
+  "runtimeFileCountExcludingBuildJSON": 152,
+  "originalSource148FilesUnchanged": true,
+  "parentProtected39FilesUnchanged": true,
+  "authorizedParentWorkflowOneLineOnly": true,
+  "newGAWorkflow": "../.github/workflows/publish-ga-image.yml",
+  "tests": {
+    "passed": 84,
+    "failed": 0,
+    "log": "validation/tests.txt"
+  },
+  "offlineKustomize": {
+    "checkedAtUTC": "2026-10-31T15:17:08.019515+00:00",
+    "command": "kubectl kustomize <temporary synthetic fixture>",
+    "result": "PASS",
+    "clusterContacted": false,
+    "serverValidation": false,
+    "applied": false,
+    "resources": [
+      "Namespace",
+      "Deployment",
+      "Service",
+      "Ingress"
+    ],
+    "outputSHA256": "0afee309a515d5e53c84f61b3c2512d50227c476128183066db3714a54a736f1",
+    "namespace": "ga-offline-test (fixture only)",
+    "knownLimits": "Offline parser/resource assembly, not target-cluster schema/admission/Traefik or container runtime proof."
+  },
+  "browserReceipt": "evidence/browser/checks.json",
+  "browserReceiptSHA256": "bf9a8af89582de697bd2396c95ee111fdcc7b2b5c247982195f695494a47e2fa",
+  "runtimeReview": "reports/runtime-review.md",
+  "DockerAvailable": false,
+  "containerBuildRun": false,
+  "containerSmokeRun": false,
+  "registryPublish": false,
+  "clusterContacted": false,
+  "deployed": false,
+  "commitOrPush": false,
+  "CIIncludesFutureContainerGates": true,
+  "deployerRequiredInputs": [
+    "GA_IMAGE_REPOSITORY",
+    "GA_NGINX_IMAGE pinned multiarch digest",
+    "kubeContext",
+    "namespace",
+    "new Golden image digest",
+    "host/TLSSecret/TraefikHTTPSentrypoint when expose=true",
+    "existing pullSecret name if needed"
+  ],
+  "cleanup": "Independent QA browser/AudioContext/server5790 closed, user5788 preserved; no own emulator/container/cluster session started"
+}

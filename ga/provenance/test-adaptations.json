@@ -1,0 +1,35 @@
+{
+  "tests": [
+    {
+      "file": "tests/mechanics-core.mjs",
+      "sourceSHA256": "6fc81350c1f3ff5adeeb6eeb322f8fe03536a7cdd03b3d621c1ddafb345bd683",
+      "packagedSHA256": "ada104a9e066f17d690d2ec9d5674a5bf56009c641c5daa4555940a9b924c895",
+      "change": "Portable dist paths, retained JSON native samples, original byte-data fixture instead of copying executable module."
+    },
+    {
+      "file": "tests/mechanics-airattack.mjs",
+      "sourceSHA256": "c32b368cb8874f4ca41020893eb1b5448951d24b7cd25075b9e031e138956dcd",
+      "packagedSHA256": "d23a13ae8a16294af095103ce6463af2888e0471382327ace866f3589e69265c",
+      "change": "Portable dist paths, retained JSON native samples, original byte-data fixture instead of copying executable module."
+    },
+    {
+      "file": "tests/mechanics-doors.mjs",
+      "sourceSHA256": "120966b1567733f8a8f3b057c222e38aec7ab6a450d1954e4bb88908b396bc4c",
+      "packagedSHA256": "c1853e82e4a1cbf312a3500e7770f72fbb948c1e496c290d4fb3f1b0b68ad4ef",
+      "change": "Portable dist paths, retained JSON native samples, original byte-data fixture instead of copying executable module."
+    },
+    {
+      "file": "tests/mechanics-physics-audit.mjs",
+      "sourceSHA256": "27aaae9581c55c0ce4bd1214a740aec7b8f35c971fb1b3287fd4aa9d647f7ef4",
+      "packagedSHA256": "3edcc53a268bf6a148fdfaa53b3aad2a8421b683cbe1d3d34a4e678f45917024",
+      "change": "Portable dist paths, retained JSON native samples, original byte-data fixture instead of copying executable module."
+    }
+  ],
+  "fixtureSourceFiles": {
+    "evidence/runtime-mechanics/movement-samples.json": "tests/fixtures/movement-samples.json",
+    "evidence/runtime-mechanics/close-attack-samples.json": "tests/fixtures/close-attack-samples.json",
+    "evidence/user-combat-native/native-airattack.json": "tests/fixtures/native-airattack.json",
+    "evidence/death-magic-audio/blue/native-pot-archive-extract.json": "tests/fixtures/native-pot-archive-extract.json"
+  },
+  "executableCopied": false
+}

@@ -1,0 +1,281 @@
+[
+  {
+    "label": "original-grounded",
+    "regs": [
+      4489,
+      8123,
+      23578
+    ],
+    "d61": 8,
+    "d63": 1,
+    "actors": [
+      {
+        "ptr": 6647,
+        "type": 2,
+        "x": 65,
+        "y": 174,
+        "z": 0,
+        "vz": 0,
+        "lifeCycle": 0,
+        "blinkFlags": 0,
+        "hp": 12,
+        "state": 1,
+        "transition": 0,
+        "frame": 1,
+        "frameTimer": 0,
+        "raw": "02000200000000ffff0100000001000204004100ae00000001003900ae0000000100000000000000000000000c0300000000ff0100000001000400000000000000000000ffffffffffff004100a60003002d50",
+        "frameCount": 4,
+        "spriteSegment": 20525,
+        "frameOffset": 3
+      }
+    ]
+  },
+  {
+    "label": "Insert-jump",
+    "regs": [
+      4489,
+      8123,
+      23578
+    ],
+    "d61": 2,
+    "d63": 8,
+    "actors": [
+      {
+        "ptr": 6647,
+        "type": 2,
+        "x": 65,
+        "y": 126,
+        "z": 15,
+        "vz": 5,
+        "lifeCycle": 0,
+        "blinkFlags": 0,
+        "hp": 12,
+        "state": 3,
+        "transition": 0,
+        "frame": 0,
+        "frameTimer": 253,
+        "raw": "02000200000000ffff01000000010008100041007e000f00020041007e000f000200000005000000000000000c0300000000ff0300000000000200fd0004000000000000ffffffffffff004100670001005653",
+        "frameCount": 2,
+        "spriteSegment": 21334,
+        "frameOffset": 1
+      }
+    ]
+  },
+  {
+    "label": "Num5-airattack",
+    "regs": [
+      4489,
+      8123,
+      23578
+    ],
+    "d61": 1,
+    "d63": 2,
+    "actors": [
+      {
+        "ptr": 6647,
+        "type": 2,
+        "x": 65,
+        "y": 126,
+        "z": 22,
+        "vz": 2,
+        "lifeCycle": 0,
+        "blinkFlags": 0,
+        "hp": 12,
+        "state": 8,
+        "transition": 0,
+        "frame": 0,
+        "frameTimer": 252,
+        "raw": "02000200000000ffff0100000001000820ff41007e001600020041007e000f000200000002000000000000000c0300000000ff0800000000000200fc0003000000000000ffffffffffff004100600001005653",
+        "frameCount": 2,
+        "spriteSegment": 21334,
+        "frameOffset": 1
+      }
+    ]
+  },
+  {
+    "label": "airattack-idle-1",
+    "regs": [
+      4489,
+      8123,
+      23578
+    ],
+    "d61": 1,
+    "d63": 1,
+    "actors": [
+      {
+        "ptr": 6647,
+        "type": 2,
+        "x": 65,
+        "y": 126,
+        "z": 24,
+        "vz": 0,
+        "lifeCycle": 0,
+        "blinkFlags": 0,
+        "hp": 12,
+        "state": 8,
+        "transition": 0,
+        "frame": 0,
+        "frameTimer": 0,
+        "raw": "02000200000000ffff01000000010008000041007e001800020041007e000f000200000000000000000000000c0300000000ff0800000000000100000002000000000000ffffffffffff0041005e0001001257",
+        "frameCount": 1,
+        "spriteSegment": 22290,
+        "frameOffset": 1
+      }
+    ]
+  },
+  {
+    "label": "airattack-idle-2",
+    "regs": [
+      4489,
+      8123,
+      23578
+    ],
+    "d61": 1,
+    "d63": 1,
+    "actors": [
+      {
+        "ptr": 6647,
+        "type": 2,
+        "x": 65,
+        "y": 126,
+        "z": 24,
+        "vz": -2,
+        "lifeCycle": 0,
+        "blinkFlags": 0,
+        "hp": 12,
+        "state": 8,
+        "transition": 1,
+        "frame": 0,
+        "frameTimer": 0,
+        "raw": "02000200000000ffff01000000010008000041007e001800020041007e000f0002000000feff0000000000000c0300000000ff0800010000000100000001000000000000ffffffffffff0041005e0001001257",
+        "frameCount": 1,
+        "spriteSegment": 22290,
+        "frameOffset": 1
+      }
+    ]
+  },
+  {
+    "label": "airattack-idle-3",
+    "regs": [
+      4489,
+      8123,
+      23578
+    ],
+    "d61": 1,
+    "d63": 1,
+    "actors": [
+      {
+        "ptr": 6647,
+        "type": 2,
+        "x": 65,
+        "y": 126,
+        "z": 22,
+        "vz": -4,
+        "lifeCycle": 0,
+        "blinkFlags": 0,
+        "hp": 12,
+        "state": 3,
+        "transition": 0,
+        "frame": 0,
+        "frameTimer": 9,
+        "raw": "02000200000000ffff01000000010008000041007e001600020041007e000f0002000000fcff0000000000000c0300000000ff0300000000000200090000000000000000ffffffffffff004100600001005653",
+        "frameCount": 2,
+        "spriteSegment": 21334,
+        "frameOffset": 1
+      }
+    ]
+  },
+  {
+    "label": "airattack-idle-4",
+    "regs": [
+      4489,
+      8123,
+      23578
+    ],
+    "d61": 1,
+    "d63": 1,
+    "actors": [
+      {
+        "ptr": 6647,
+        "type": 2,
+        "x": 65,
+        "y": 126,
+        "z": 18,
+        "vz": -6,
+        "lifeCycle": 0,
+        "blinkFlags": 0,
+        "hp": 12,
+        "state": 3,
+        "transition": 0,
+        "frame": 1,
+        "frameTimer": 254,
+        "raw": "02000200000000ffff01000000010008000041007e001200020041007e00120002000000faff0000000000000c0300000000ff0300000001000200fe0004000000000000ffffffffffff004100640003005653",
+        "frameCount": 2,
+        "spriteSegment": 21334,
+        "frameOffset": 3
+      }
+    ]
+  },
+  {
+    "label": "airattack-idle-5",
+    "regs": [
+      4489,
+      8123,
+      23578
+    ],
+    "d61": 1,
+    "d63": 1,
+    "actors": [
+      {
+        "ptr": 6647,
+        "type": 2,
+        "x": 65,
+        "y": 126,
+        "z": 12,
+        "vz": -8,
+        "lifeCycle": 0,
+        "blinkFlags": 0,
+        "hp": 12,
+        "state": 3,
+        "transition": 0,
+        "frame": 1,
+        "frameTimer": 254,
+        "raw": "02000200000000ffff01000000010008000041007e000c00020041007e00120002000000f8ff0000000000000c0300000000ff0300000001000200fe0003000000000000ffffffffffff0041006a0003005653",
+        "frameCount": 2,
+        "spriteSegment": 21334,
+        "frameOffset": 3
+      }
+    ]
+  },
+  {
+    "label": "airattack-idle-6",
+    "regs": [
+      4489,
+      8123,
+      23578
+    ],
+    "d61": 1,
+    "d63": 1,
+    "actors": [
+      {
+        "ptr": 6647,
+        "type": 2,
+        "x": 65,
+        "y": 174,
+        "z": 52,
+        "vz": -10,
+        "lifeCycle": 0,
+        "blinkFlags": 0,
+        "hp": 12,
+        "state": 3,
+        "transition": 0,
+        "frame": 1,
+        "frameTimer": 254,
+        "raw": "02000200000000ffff0100000001000800004100ae003400010041007e00120002000000f6ff0000000000000c0300000000ff0300000001000200fe0002000000000000ffffffffffff004100720003005653",
+        "frameCount": 2,
+        "spriteSegment": 21334,
+        "frameOffset": 3
+      }
+    ]
+  }
+]

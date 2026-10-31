@@ -1,0 +1,24 @@
+{
+  "revision": "765ec962e473aeb767e4cba74ffdc8f588ffbfe8",
+  "repository": "https://github.com/nukeykt/Nuked-OPL3",
+  "files": [
+    {
+      "file": "opl3.c",
+      "bytes": 41716,
+      "sha256": "59eb873fdb6d52bc7977a0fcbb97c1bae03dd71cc88e3acddbcc01b7121bfe03",
+      "url": "https://raw.githubusercontent.com/nukeykt/Nuked-OPL3/765ec962e473aeb767e4cba74ffdc8f588ffbfe8/opl3.c"
+    },
+    {
+      "file": "opl3.h",
+      "bytes": 4397,
+      "sha256": "a84266b8d71a4929f15f573afbe407fd24310b77757d855835dacabf68763679",
+      "url": "https://raw.githubusercontent.com/nukeykt/Nuked-OPL3/765ec962e473aeb767e4cba74ffdc8f588ffbfe8/opl3.h"
+    },
+    {
+      "file": "LICENSE",
+      "bytes": 26526,
+      "sha256": "20c17d8b8c48a600800dfd14f95d5cb9ff47066a9641ddeab48dc54aec96e331",
+      "url": "https://raw.githubusercontent.com/nukeykt/Nuked-OPL3/765ec962e473aeb767e4cba74ffdc8f588ffbfe8/LICENSE"
+    }
+  ]
+}

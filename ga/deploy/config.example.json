@@ -1,0 +1,11 @@
+{
+  "kubeContext": "",
+  "namespace": "",
+  "image": "",
+  "imagePullSecret": "",
+  "expose": false,
+  "host": "",
+  "tlsSecret": "",
+  "ingressClass": "traefik",
+  "httpsEntrypoint": ""
+}

@@ -1,0 +1,24 @@
+{
+  "checkedAtUTC": "2026-10-31T16:03:14.781602+00:00",
+  "repository": "michalmedvecky/pre2-web",
+  "variables": {
+    "GA_IMAGE_REPOSITORY": "ghcr.io/michalmedvecky/pre2-web-ga",
+    "GA_NGINX_IMAGE": "nginx:stable-alpine@sha256:0e52bd054126cdc040b1276c0af347aeb02a41b9cfe305d6094767ac30e97949"
+  },
+  "variableReadbackMatch": true,
+  "candidateGHCRPackageBeforePublishing": "Authenticated owner package API returned404; no existing package collision detected. Initial visibility not assumed.",
+  "nginxVerification": {
+    "registry": "registry-1.docker.io/library/nginx",
+    "tag": "stable-alpine",
+    "digest": "sha256:0e52bd054126cdc040b1276c0af347aeb02a41b9cfe305d6094767ac30e97949",
+    "digestEqualsSHA256OfReturnedOCIIndex": true,
+    "requiredPlatforms": [
+      "linux/amd64",
+      "linux/arm64"
+    ],
+    "bothPresent": true,
+    "tokenPersistedOrPrinted": false
+  },
+  "clusterTouched": false,
+  "imagePublishedYet": false
+}

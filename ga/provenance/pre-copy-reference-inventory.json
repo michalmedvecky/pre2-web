@@ -1,0 +1,75 @@
+{
+  "observedAtUTC": "2026-10-31T14:35:44.343386+00:00",
+  "targetConfirmed": false,
+  "referenceRepository": {
+    "path": "/Users/misko/Documents/ChatGPT/Prehistorik/web",
+    "origin": "git@github.com:michalmedvecky/pre2-web.git",
+    "head": "fe50c02c95e50eb153272e15995555307009ca76",
+    "branch": "main",
+    "package": {
+      "name": "prehistorik-two-web",
+      "private": true,
+      "type": "module",
+      "version": "1.6.1",
+      "scripts": {
+        "start": "node scripts/serve.mjs",
+        "test": "node --test tests/*.test.mjs"
+      }
+    },
+    "statusPorcelain": " M README.md\n M dist/js/app.js\n M dist/js/cheats.js\n M dist/js/render.js\n?? art/orava-level-design-v1.zip\n?? art/orava-level-design-v1/\n?? art/volby-sprites-v1.zip\n?? art/volby-sprites-v1/\n?? dist/assets/volby/\n?? dist/js/volby.js\n?? scripts/verify-volby-browser.mjs\n?? tests/volby.test.mjs\n",
+    "dirty": true,
+    "trackedDiffSHA256": "aa202d826d7a9ad06205b68194153f9df17532916daec0a9e35d018ffeb40111",
+    "dirtyTrackedFileSHA256": {
+      "README.md": "192c6d90d6756bfcb915a7661bb9d66ed56cc2d961a642698ecb59b82d085701",
+      "dist/js/app.js": "b21c999eb3e4c733258f4d5fa3d8e1a588b5568c5dbf404dcf35b67b64120cee",
+      "dist/js/cheats.js": "2e8602a34090d7df25c1846745d28b4eeaab05cbe14e51c84aa377c4cb03e374",
+      "dist/js/render.js": "60a1dea18834ac0503fc110d0a7dfbe1330d6dbef6e98143bd0ae4607667beff"
+    }
+  },
+  "referenceConfigSHA256": {
+    "Dockerfile": "10f545c667c60f8c21b0a0b55a3c93e728eb84a2f849f359904a3f247302ca14",
+    ".dockerignore": "6760fc2c42e74b00c4b39c218710789b53287696989fd3e9692586a231d940b7",
+    ".github/workflows/publish-image.yml": "f2dfb5b91dad9d86a446cdf1678254bb2bb90cd18761a5ab174fa06de0cbb5d3",
+    "deploy/nginx.conf": "74da11db46afd11f1b87fe1286fc7deef9dca4c6e43123ee7e2e8de9f38d0e42",
+    "deploy/kubernetes.yaml": "6e4961390e0cf513463a90f362719d40f10dc2082e4e058980903bb630c8127a",
+    "deploy/ingress.yaml": "f09fd8cbd36193c9c257a54e898e944f1fc4fdb3ea4953ec5196c39c8a7cecac",
+    "deploy/README.md": "e29df86ca56929c1b9c1be628aea589d6e459ffb019823022a4dd75b23a9f163",
+    "README.md": "192c6d90d6756bfcb915a7661bb9d66ed56cc2d961a642698ecb59b82d085701",
+    "package.json": "693122e42a92a3051855f78205427680575306af30fc4628e1889f6b2d3ff89f"
+  },
+  "reference": {
+    "imageRepository": "ghcr.io/michalmedvecky/pre2-web",
+    "namespace": "prehistorik",
+    "deployment": "prehistorik",
+    "service": "prehistorik",
+    "replicas": 2,
+    "containerPort": 8080,
+    "servicePort": 80,
+    "ingressClass": "traefik",
+    "hostOnlyPlaceholder": "prehistorik.example.com",
+    "TLSSecretTemplateOnly": "prehistorik-tls",
+    "oldPinnedImageDigest": "sha256:5d33808e313d649a33401986367c1b5b0a34b2534341398638c36801743cb6c8",
+    "oldPinnedImageSourceCommit": "414de11b66d264bedeb9af73eced108aeb75f798",
+    "pinnedImageIsNotCurrentDirtySource": true
+  },
+  "localTools": {
+    "kubectlClient": "v1.37.1",
+    "embeddedKustomize": "v5.8.1",
+    "node": "bundledruntime available",
+    "docker": false,
+    "npmNpxCtx7": false,
+    "clusterAccessAttempted": false
+  },
+  "actionsPerformed": {
+    "referenceReadsOnly": true,
+    "packageCopied": false,
+    "sourceChanged": false,
+    "pushPublishDeploy": false
+  },
+  "agentInstructions": "No AGENTS.md found in workspace/ancestors or selected web/golden roots.",
+  "afterReadVerification": {
+    "allReferenceConfigSHA256Unchanged": true,
+    "referenceWorktreeStatusUnchanged": true,
+    "packageCopied": false
+  }
+}

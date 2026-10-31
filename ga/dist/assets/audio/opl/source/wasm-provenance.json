@@ -1,0 +1,33 @@
+{
+  "scope": "Unmodified licensed Nuked C, custom freestanding wrapper; no EXE/CPU interpreter",
+  "command": [
+    "/private/tmp/golden-axe-wasi-sdk34/portable/wasi-sdk-34.0-arm64-macos/bin/clang",
+    "-O2",
+    "-fno-builtin",
+    "-nostdlib",
+    "-I/Users/misko/Documents/ChatGPT/Prehistorik/golden-axe-research/derived/audio/vendor/nuked-opl3",
+    "-Wl,--no-entry",
+    "-Wl,--export=opl_reset",
+    "-Wl,--export=opl_write",
+    "-Wl,--export=opl_render",
+    "-Wl,--export=opl_buffer",
+    "-Wl,--export=opl_chip_size",
+    "-Wl,--export-memory",
+    "-Wl,--initial-memory=262144",
+    "-Wl,--max-memory=262144",
+    "-Wl,--strip-all",
+    "/Users/misko/Documents/ChatGPT/Prehistorik/golden-axe-research/derived/audio/live-opl/opl_wasm.c",
+    "/Users/misko/Documents/ChatGPT/Prehistorik/golden-axe-research/derived/audio/vendor/nuked-opl3/opl3.c",
+    "-o",
+    "/Users/misko/Documents/ChatGPT/Prehistorik/golden-axe-research/web/assets/audio/opl/nuked-opl3.wasm"
+  ],
+  "compilerVersion": "clang version 23.1.0-wasi-sdk (https://github.com/llvm/llvm-project 895aa2c896ada719451be2e3673c83da8ddf1141)\nTarget: wasm32-unknown-wasip1\nThread model: posix\nInstalledDir: /private/tmp/golden-axe-wasi-sdk34/portable/wasi-sdk-34.0-arm64-macos/bin\nConfiguration file: /private/tmp/golden-axe-wasi-sdk34/portable/wasi-sdk-34.0-arm64-macos/bin/clang.cfg\n",
+  "sourceSHA256": {
+    "derived/audio/live-opl/opl_wasm.c": "d03fe5f6fe45cc029ba8b9b34f1dbc825d001313a3f9ef1f9781e1185be53969",
+    "derived/audio/vendor/nuked-opl3/opl3.c": "59eb873fdb6d52bc7977a0fcbb97c1bae03dd71cc88e3acddbcc01b7121bfe03",
+    "derived/audio/vendor/nuked-opl3/opl3.h": "a84266b8d71a4929f15f573afbe407fd24310b77757d855835dacabf68763679",
+    "derived/audio/vendor/nuked-opl3/LICENSE": "20c17d8b8c48a600800dfd14f95d5cb9ff47066a9641ddeab48dc54aec96e331"
+  },
+  "outputSHA256": "a3e772f76416ccdbd3aaa96866e76a9c1d92427e0b6832b972769356be4ccaaf",
+  "outputBytes": 9969
+}

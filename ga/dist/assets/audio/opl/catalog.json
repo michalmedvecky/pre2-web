@@ -1,0 +1,329 @@
+{
+  "version": 1,
+  "authority": "Original native GOLD parser0948/0a43/04f8/0759 instrumented event logs; no EXE interpreter",
+  "tickPITCounts": 1190,
+  "pitHz": 1193182,
+  "scores": {
+    "intro": {
+      "file": "scores/intro.json",
+      "endTick": 33300,
+      "events": 3058,
+      "sha256": "fa623f337059c8c28e3ea1bf5ccd15b4b3eade7b7b900b6c8f4784d9a34f879d"
+    },
+    "intro2": {
+      "file": "scores/intro2.json",
+      "endTick": 19968,
+      "events": 1716,
+      "sha256": "0f57ae340c0e82222f75e47924ae1c4052b5440f4b6363550b6252787a46a26c"
+    },
+    "oldmap": {
+      "file": "scores/oldmap.json",
+      "endTick": 31920,
+      "events": 232,
+      "sha256": "9cc0287e0cf2dc8e16feddb5eb54607827795e0b1db8fd64f51397182cbefb3d"
+    },
+    "rd1beg": {
+      "file": "scores/rd1beg.json",
+      "endTick": 13440,
+      "events": 765,
+      "sha256": "b553cacfa7d1ecc6cc803289b3c075b72205734fb563a911cdd19a8e8b22ac46"
+    },
+    "rd1end1": {
+      "file": "scores/rd1end1.json",
+      "endTick": 13440,
+      "events": 747,
+      "sha256": "93c22c83e4f01543681a7cc581350863c9c7e3168341239f04cd9b5470e4b474"
+    },
+    "rd1end2": {
+      "file": "scores/rd1end2.json",
+      "endTick": 16800,
+      "events": 932,
+      "sha256": "53cefc9765f5c4e2498888f738abd94974a56f99328583446562fd6381d2a2f0"
+    },
+    "rd1end3": {
+      "file": "scores/rd1end3.json",
+      "endTick": 6720,
+      "events": 346,
+      "sha256": "8ac02a9d3db2c7c0b9f286944750b6460f0c1ffae43602300b1af767b53cd4cb"
+    },
+    "rd2part1": {
+      "file": "scores/rd2part1.json",
+      "endTick": 33600,
+      "events": 2174,
+      "sha256": "fad1aaa796331232278753485e72f4d7884ee38f122332701de8e6f737aaa27c"
+    },
+    "rd2part2": {
+      "file": "scores/rd2part2.json",
+      "endTick": 18387,
+      "events": 1694,
+      "sha256": "ef77e8010b46b20e37dc5543e040926d88a2601f0487983f3423a824360c7857"
+    },
+    "rd3part1": {
+      "file": "scores/rd3part1.json",
+      "endTick": 94072,
+      "events": 4170,
+      "sha256": "71da1553bf555ecd38cab587433af852f9379588c1523dcb8b72e2e8e5d221e0"
+    },
+    "rd3part2": {
+      "file": "scores/rd3part2.json",
+      "endTick": 23520,
+      "events": 788,
+      "sha256": "49fa5937290c39d3b60401dc47139d14a742187aa803914e0158e91489fec6d8"
+    },
+    "rd4": {
+      "file": "scores/rd4.json",
+      "endTick": 63840,
+      "events": 1098,
+      "sha256": "99ad659bf9a542059d4728b299c558ed2862953fb97b8ef6b3d9023bf983dd04"
+    },
+    "rd5": {
+      "file": "scores/rd5.json",
+      "endTick": 62160,
+      "events": 1928,
+      "sha256": "ebed359230f4836c8f41954fda5289b7e169b72921b0a24db9b244e87d64a6e4"
+    },
+    "rd6part1": {
+      "file": "scores/rd6part1.json",
+      "endTick": 53336,
+      "events": 1586,
+      "sha256": "f062844c0bb5faa9e767d05500e2b88b478f8d4d5357a0a5f8ba8d7feecb18d3"
+    },
+    "rd6part2": {
+      "file": "scores/rd6part2.json",
+      "endTick": 8789,
+      "events": 366,
+      "sha256": "5faa8f942b8dd88e153c1a9c882948e2f43e9e10a036efb9376c4eb1d4dd8b33"
+    },
+    "rd6part3": {
+      "file": "scores/rd6part3.json",
+      "endTick": 16797,
+      "events": 622,
+      "sha256": "4640858e920d624154e00c00344f20c9aa204d76fbce1da8ef423fda86658fcc"
+    },
+    "rd6part4": {
+      "file": "scores/rd6part4.json",
+      "endTick": 17606,
+      "events": 578,
+      "sha256": "3ada5997d5745364a5ddd53a60d50eb8ab64b0c42b2366a274f96ca88d577307"
+    },
+    "sassa": {
+      "file": "scores/sassa.json",
+      "endTick": 40320,
+      "events": 1469,
+      "sha256": "045fea617793a1338e53bb080bfd6f9772c40e56637f372706f00ead66219bdb"
+    },
+    "score": {
+      "file": "scores/score.json",
+      "endTick": 14700,
+      "events": 394,
+      "sha256": "6017b6e7704de1250a7d35c21bd8d077bbb073c48f43aee8c2772bcf91f864d6"
+    },
+    "showdown": {
+      "file": "scores/showdown.json",
+      "endTick": 109200,
+      "events": 3288,
+      "sha256": "c5f3451b9302acb9b910336d9d192bf1a86d99b78cfbfa8eccadeabe57681fea"
+    },
+    "thief": {
+      "file": "scores/thief.json",
+      "endTick": 29685,
+      "events": 570,
+      "sha256": "b0794a8c10670ffac3ff70e041a3ea26d9bb9cdd711f675f45a4669d60c2fd10"
+    }
+  },
+  "programs": {
+    "intro": {
+      "sequence": [
+        "intro"
+      ],
+      "loopStart": 0
+    },
+    "intro2": {
+      "sequence": [
+        "intro2"
+      ],
+      "loopStart": 0
+    },
+    "oldmap": {
+      "sequence": [
+        "oldmap"
+      ],
+      "loopStart": 0
+    },
+    "rd1beg": {
+      "sequence": [
+        "rd1beg"
+      ],
+      "loopStart": 0
+    },
+    "rd1end1": {
+      "sequence": [
+        "rd1end1"
+      ],
+      "loopStart": 0
+    },
+    "rd1end2": {
+      "sequence": [
+        "rd1end2"
+      ],
+      "loopStart": 0
+    },
+    "rd1end3": {
+      "sequence": [
+        "rd1end3"
+      ],
+      "loopStart": 0
+    },
+    "rd2part1": {
+      "sequence": [
+        "rd2part1"
+      ],
+      "loopStart": 0
+    },
+    "rd2part2": {
+      "sequence": [
+        "rd2part2"
+      ],
+      "loopStart": 0
+    },
+    "rd3part1": {
+      "sequence": [
+        "rd3part1"
+      ],
+      "loopStart": 0
+    },
+    "rd3part2": {
+      "sequence": [
+        "rd3part2"
+      ],
+      "loopStart": 0
+    },
+    "rd4": {
+      "sequence": [
+        "rd4"
+      ],
+      "loopStart": 0
+    },
+    "rd5": {
+      "sequence": [
+        "rd5"
+      ],
+      "loopStart": 0
+    },
+    "rd6part1": {
+      "sequence": [
+        "rd6part1"
+      ],
+      "loopStart": 0
+    },
+    "rd6part2": {
+      "sequence": [
+        "rd6part2"
+      ],
+      "loopStart": 0
+    },
+    "rd6part3": {
+      "sequence": [
+        "rd6part3"
+      ],
+      "loopStart": 0
+    },
+    "rd6part4": {
+      "sequence": [
+        "rd6part4"
+      ],
+      "loopStart": 0
+    },
+    "sassa": {
+      "sequence": [
+        "sassa"
+      ],
+      "loopStart": 0
+    },
+    "score": {
+      "sequence": [
+        "score"
+      ],
+      "loopStart": 0
+    },
+    "showdown": {
+      "sequence": [
+        "showdown"
+      ],
+      "loopStart": 0
+    },
+    "thief": {
+      "sequence": [
+        "thief"
+      ],
+      "loopStart": 0
+    },
+    "stage1": {
+      "sequence": [
+        "rd1beg",
+        "rd1beg",
+        "rd1end1",
+        "rd1end1",
+        "rd1beg",
+        "rd1beg",
+        "rd1end2",
+        "rd1end2",
+        "rd1beg",
+        "rd1beg",
+        "rd1end3",
+        "rd1end3"
+      ],
+      "loopStart": 0
+    },
+    "stage2": {
+      "sequence": [
+        "rd2part1",
+        "rd2part2"
+      ],
+      "loopStart": 0
+    },
+    "stage3": {
+      "sequence": [
+        "rd3part1",
+        "rd3part2"
+      ],
+      "loopStart": 0
+    },
+    "stage6": {
+      "sequence": [
+        "rd6part1",
+        "rd6part2",
+        "rd6part3",
+        "rd6part4",
+        "rd6part3"
+      ],
+      "loopStart": 0
+    },
+    "opening": {
+      "sequence": [
+        "intro",
+        "intro2"
+      ],
+      "loopStart": 1
+    }
+  },
+  "selectors": {
+    "0": "stage1",
+    "1": "stage2",
+    "2": "stage3",
+    "3": "rd4",
+    "4": "rd5",
+    "5": "stage6",
+    "6": "stage6",
+    "7": "showdown",
+    "9": "score",
+    "10": "opening",
+    "11": "oldmap",
+    "12": "opening",
+    "13": "sassa",
+    "16": "thief",
+    "17": "thief",
+    "18": "thief",
+    "19": "thief"
+  }
+}

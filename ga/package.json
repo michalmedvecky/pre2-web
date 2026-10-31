@@ -1,0 +1,14 @@
+{
+  "name": "golden-axe-web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "test": "node --test tests/*.test.mjs tests/mechanics-*.mjs",
+    "verify": "node scripts/verify-package.mjs"
+  }
+}

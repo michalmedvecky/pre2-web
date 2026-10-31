@@ -1,0 +1,48 @@
+{
+  "apiVersion": "networking.k8s.io/v1",
+  "kind": "Ingress",
+  "metadata": {
+    "name": "ga",
+    "namespace": "__NAMESPACE__",
+    "labels": {
+      "app.kubernetes.io/name": "ga",
+      "app.kubernetes.io/part-of": "golden-axe"
+    },
+    "annotations": {
+      "traefik.ingress.kubernetes.io/router.entrypoints": "__HTTPS_ENTRYPOINT__",
+      "traefik.ingress.kubernetes.io/router.tls": "true"
+    }
+  },
+  "spec": {
+    "ingressClassName": "__INGRESS_CLASS__",
+    "tls": [
+      {
+        "hosts": [
+          "__HOSTNAME__"
+        ],
+        "secretName": "__TLS_SECRET__"
+      }
+    ],
+    "rules": [
+      {
+        "host": "__HOSTNAME__",
+        "http": {
+          "paths": [
+            {
+              "path": "/",
+              "pathType": "Prefix",
+              "backend": {
+                "service": {
+                  "name": "ga",
+                  "port": {
+                    "number": 80
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

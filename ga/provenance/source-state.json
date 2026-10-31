@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "createdAtUTC": "2026-10-31T15:02:32.313902+00:00",
+  "game": "Golden Axe supplied DOS edition standalone web port",
+  "targetRepository": "https://github.com/michalmedvecky/pre2-web",
+  "targetRepositoryPath": "ga",
+  "sourceSnapshotSHA256": "4df1850cb3a369ffa4df2d4d4d293b0216710279287dc669a33b184398928b77",
+  "originalRuntimeSource": "golden-axe-research/web",
+  "sourceFrontendAuthority": {
+    "path": "golden-axe-research/evidence/hd-pilot/app-hook/frontend-checkpoint.json",
+    "sha256": "97f7c9b204f57db677b77766fdd1e0c06cfb0391e61f2f1cc05e00399cf492ba"
+  },
+  "sourceCore": {
+    "version": 75,
+    "simulationSHA256": "5213829f351f710dddefc27a37edbd2f4a715a901e86da62bf81ab0bb073b1e0"
+  },
+  "sourceParentGit": {
+    "head": "fe50c02c95e50eb153272e15995555307009ca76",
+    "branch": "main",
+    "origin": "git@github.com:michalmedvecky/pre2-web.git",
+    "dirtyBeforePackaging": true,
+    "trackedDiffSHA256": "aa202d826d7a9ad06205b68194153f9df17532916daec0a9e35d018ffeb40111",
+    "statusPorcelainObservedAfterCopy": " M README.md\n M dist/js/app.js\n M dist/js/cheats.js\n M dist/js/render.js\n?? art/orava-level-design-v1.zip\n?? art/orava-level-design-v1/\n?? art/volby-sprites-v1.zip\n?? art/volby-sprites-v1/\n?? dist/assets/volby/\n?? dist/js/volby.js\n?? ga/\n?? scripts/verify-volby-browser.mjs\n?? tests/volby.test.mjs\n",
+    "statusPorcelainBeforePackaging": " M README.md\n M dist/js/app.js\n M dist/js/cheats.js\n M dist/js/render.js\n?? art/orava-level-design-v1.zip\n?? art/orava-level-design-v1/\n?? art/volby-sprites-v1.zip\n?? art/volby-sprites-v1/\n?? dist/assets/volby/\n?? dist/js/volby.js\n?? scripts/verify-volby-browser.mjs\n?? tests/volby.test.mjs\n",
+    "preCopyStatusAuthority": "provenance/pre-copy-reference-inventory.json (read-only baseline; protected file hashes rechecked)"
+  },
+  "buildCommit": null,
+  "buildCommitMeaning": "Actual future clean CI packaging commit; source parent HEAD above is not a commit of Golden runtime bytes.",
+  "copyVerifiedBeforeAfter": true,
+  "originalFilesMovedOrChanged": false,
+  "runtimeFiles": 148,
+  "runtimeBytes": 55381394,
+  "packagedRuntimeSnapshotSHA256": "95612700e3f875032e2f11d34dd5cef7e19a74ab64779f9964c1d668ec3ae49d",
+  "finalRuntimeDiffReview": "provenance/reviewed-runtime-differences.json"
+}

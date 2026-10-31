@@ -1,0 +1,164 @@
+{
+  "version": 1,
+  "scale": 4,
+  "status": "quality-gate-failed",
+  "approval": "pending-user-style-review-only",
+  "runtimeEligible": false,
+  "completeHero": false,
+  "completeGameHD": false,
+  "description": "Two built-in image_gen pilot edits only. Preview candidates failed exact geometry/alpha/pivot gates; gameplay always uses original bitmaps.",
+  "images": {
+    "scene": {
+      "url": "scene-v1.png",
+      "width": 1536,
+      "height": 1024,
+      "density": 4,
+      "sha256": "7f4fec8a553fbc83753608eeb9314a8b527bdfb54c69bc8988d22104dd381aa7"
+    },
+    "walk": {
+      "url": "dwarf-walk-v1.png",
+      "width": 1254,
+      "height": 1254,
+      "density": 3.265625,
+      "sha256": "e3f3e561f88c6ef4979bc7ce04d0f0aa3c3330da2e001c3da7da3d00c2c33578"
+    }
+  },
+  "originals": {
+    "scene": "original-scene.png",
+    "walk": "original-walk.png"
+  },
+  "regions": [
+    {
+      "image": "scene",
+      "stage": "1",
+      "x": 0,
+      "y": 8,
+      "width": 312,
+      "height": 200,
+      "sourceRect": {
+        "x": 144,
+        "y": 112,
+        "width": 1248,
+        "height": 800
+      },
+      "runtimeEligible": false
+    }
+  ],
+  "sprites": [
+    {
+      "image": "walk",
+      "name": "dwarf",
+      "slot": 1,
+      "index": 0,
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 627,
+        "height": 627
+      },
+      "frame": {
+        "width": 192,
+        "height": 192,
+        "pivotX": 96,
+        "pivotY": 160
+      },
+      "original": {
+        "width": 49,
+        "height": 51,
+        "pivotX": 34,
+        "pivotY": 49,
+        "duration": 3
+      },
+      "duration": 3,
+      "runtimeEligible": false
+    },
+    {
+      "image": "walk",
+      "name": "dwarf",
+      "slot": 1,
+      "index": 1,
+      "sourceRect": {
+        "x": 627,
+        "y": 0,
+        "width": 627,
+        "height": 627
+      },
+      "frame": {
+        "width": 192,
+        "height": 192,
+        "pivotX": 96,
+        "pivotY": 160
+      },
+      "original": {
+        "width": 52,
+        "height": 55,
+        "pivotX": 35,
+        "pivotY": 50,
+        "duration": 3
+      },
+      "duration": 3,
+      "runtimeEligible": false
+    },
+    {
+      "image": "walk",
+      "name": "dwarf",
+      "slot": 1,
+      "index": 2,
+      "sourceRect": {
+        "x": 0,
+        "y": 627,
+        "width": 627,
+        "height": 627
+      },
+      "frame": {
+        "width": 192,
+        "height": 192,
+        "pivotX": 96,
+        "pivotY": 160
+      },
+      "original": {
+        "width": 54,
+        "height": 59,
+        "pivotX": 36,
+        "pivotY": 50,
+        "duration": 3
+      },
+      "duration": 3,
+      "runtimeEligible": false
+    },
+    {
+      "image": "walk",
+      "name": "dwarf",
+      "slot": 1,
+      "index": 3,
+      "sourceRect": {
+        "x": 627,
+        "y": 627,
+        "width": 627,
+        "height": 627
+      },
+      "frame": {
+        "width": 192,
+        "height": 192,
+        "pivotX": 96,
+        "pivotY": 160
+      },
+      "original": {
+        "width": 52,
+        "height": 56,
+        "pivotX": 35,
+        "pivotY": 49,
+        "duration": 3
+      },
+      "duration": 3,
+      "runtimeEligible": false
+    }
+  ],
+  "qualityGate": {
+    "sceneBoundaryDriftNativePx": 2.5,
+    "spriteVisibleBBoxMaxDriftNativePx": 11.325358851674636,
+    "spriteFootBottomMaxDriftNativePx": 6.933014354066984,
+    "alphaCrossesCellBoundary": 3,
+    "accepted": false
+  }
+}

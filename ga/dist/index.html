@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#10100f">
+  <title>Golden Axe — původní hra · pracovní rekonstrukce</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main id="game-shell">
+    <header class="topbar">
+      <a class="wordmark" href="./" aria-label="Golden Axe, úvod">GOLDEN <span>AXE</span></a>
+      <span class="edition">PŮVODNÍ GRAFIKA <i></i> PRACOVNÍ VERZE</span>
+      <div class="toolbar">
+        <button id="sound" class="icon-button" aria-label="Ztlumit původní zvuk" title="Původní hudba a zvuky">♪</button>
+        <button id="fullscreen" class="icon-button" aria-label="Celá obrazovka" title="Celá obrazovka">⛶</button>
+        <button id="pause" class="icon-button" aria-label="Pozastavit hru" title="Pozastavit hru">Ⅱ</button>
+      </div>
+    </header>
+    <section class="stage" aria-label="Herní plocha">
+      <div class="screen-wrap">
+        <canvas id="game" width="320" height="200" aria-label="Golden Axe, herní obraz" tabindex="0"></canvas>
+        <div id="loading" class="loading">Načítání původních dat…</div>
+        <form id="password-entry" class="password-entry" hidden><label><span>Heslo · zadej libovolné neprázdné slovo</span><input id="password-text" aria-label="Původní heslo" maxlength="16" autocomplete="off" autocapitalize="characters" spellcheck="false" inputmode="text"></label><button type="submit">Potvrdit</button></form>
+        <div id="start-screen" class="overlay menu-overlay" hidden>
+          <div id="mode-menu" class="original-menu">
+            <img class="original-logo" src="./assets/ui/logo.png" alt="Golden Axe" width="224" height="32">
+            <div class="player-count" aria-label="Počet hráčů">
+              <button data-players="1" class="selected" aria-pressed="true">1 Player</button>
+              <button data-players="2" aria-pressed="false" title="Společná klávesnice; port podle původního kódu.">2 Players</button>
+            </div>
+            <div class="menu-caption">CHOOSE GAME TYPE</div>
+            <div class="mode-options" aria-label="Původní herní režim">
+              <button data-mode="arcade" class="selected" aria-pressed="true"><span>›</span> Arcade</button>
+              <button data-mode="beginner" aria-pressed="false"><span>›</span> Beginner</button>
+              <button data-mode="duel" aria-pressed="false"><span>›</span> The Duel</button>
+              <button id="open-options"><span>›</span> Options</button>
+            </div>
+            <button id="start" class="primary">Vybrat hrdinu <span>→</span></button>
+            <p class="scope">Pracovní rekonstrukce · shoda s originálem se ověřuje</p>
+            <p id="two-player-note" class="scope" hidden>Dva hráči · vstupy vyber v Options · původní 2P se ještě porovnává</p>
+          </div>
+          <div id="character-menu" class="character-menu" hidden>
+            <div id="character-player" class="character-player">PLAYER 1</div>
+            <div class="character-options" aria-label="Vyber hrdinu">
+              <button data-character="dwarf" aria-pressed="false"><img src="./assets/ui/dwarf.png" alt="" width="48" height="56"><span>Gilius</span></button>
+              <button data-character="hero" class="selected" aria-pressed="true"><img src="./assets/ui/hero.png" alt="" width="32" height="64"><span>Axe Battler</span></button>
+              <button data-character="amazon" aria-pressed="false"><img src="./assets/ui/amazon.png" alt="" width="29" height="62"><span>Tyris</span></button>
+            </div>
+            <button id="launch" class="primary">Začít hru <span>→</span></button>
+            <button id="menu-back" class="menu-back">← Zpět</button>
+          </div>
+          <div id="options-menu" class="pause-card" hidden>
+            <div class="menu-caption">OPTIONS</div>
+            <div class="life-meter"><span>Life Meter</span><div><button data-health-bars="3" class="selected" aria-pressed="true">***</button><button data-health-bars="4" aria-pressed="false">****</button><button data-health-bars="5" aria-pressed="false">*****</button></div></div>
+            <div class="device-options"><label>Player 1 <select data-device-player="0" aria-label="Ovládání hráče 1"></select></label><label>Player 2 <select data-device-player="1" aria-label="Ovládání hráče 2"></select></label></div>
+            <p class="scope">Hráči používají odlišné vstupy. Keyboard znamená QWE / A·D / ZXC; Keypad numerickou klávesnici.</p>
+            <details class="control-help"><summary>Ovládání</summary><p>Keypad: 789 / 4·6 / 123 pro pohyb<br>Num 5 útok · Insert skok.<br>Keyboard: QWE / A·D / ZXC pro pohyb<br>S útok · Tab skok.</p>
+            <p>Dotyk: směry pro pohyb, tap pro útok,<br>swipe nahoru pro skok.</p>
+            <p>P1 má navíc šipky a J/K/L.<br>Magie: P1 pravý Shift, P2 levý Shift.<br>Mezerník: pauza.</p>
+            <p>Mouse: pohyb myši · levé tlačítko útok<br>pravé tlačítko skok · Shift magie.<br>Joystick: páčka · tlačítka 1/2 útok/skok.</p></details>
+            <p id="device-status" class="scope">Joystick 1/2 používá první/druhý připojený gamepad.</p>
+            <div class="device-calibration"><button data-calibrate-port="0" class="secondary">Kalibrace Joystick 1</button><button data-calibrate-port="1" class="secondary">Kalibrace Joystick 2</button></div>
+            <div id="calibration-panel" class="overlay" role="dialog" aria-modal="true" aria-labelledby="calibration-prompt" hidden><div class="pause-card"><div class="menu-caption">JOYSTICK CALIBRATION</div><p id="calibration-prompt" role="status"></p><p>Polohu potvrď tlačítkem gamepadu, Esc nebo tlačítkem níže.</p><button id="calibration-measure" class="secondary">Změřit polohu</button><button id="calibration-cancel" class="menu-back">Zrušit</button></div></div>
+            <div class="device-calibration"><button data-toggle-effects class="secondary">Zvuky: zapnuto · F2</button><button data-toggle-music class="secondary">Hudba: zapnuto · F3</button></div>
+            <button id="open-sound-test" class="secondary">Sound Test</button>
+            <button id="mouse-lock" class="secondary">Zachytit myš</button>
+            <button id="options-fullscreen" class="secondary">Celá obrazovka</button>
+            <button id="options-back" class="menu-back">← Zpět</button>
+          </div>
+          <div id="sound-test-menu" class="pause-card" hidden><div class="menu-caption">SOUND TEST</div><div id="sound-test-tracks" class="sound-test-tracks"></div><div class="sound-effect-row"><span>Sound Effect</span><button id="sound-effect-prev" aria-label="Předchozí zvuk">−</button><output id="sound-effect-number">1</output><button id="sound-effect-next" aria-label="Další zvuk">+</button></div><button id="sound-test-exit" class="secondary">Exit</button></div>
+        </div>
+        <div id="pause-screen" class="overlay" hidden>
+          <div class="pause-card">
+            <div class="eyebrow">GOLDEN AXE</div>
+            <h2>Hra pozastavena</h2>
+            <button id="resume" class="primary">Pokračovat <span>→</span></button>
+            <button id="restart" class="secondary">Začít znovu</button>
+            <button data-open-level class="secondary">Vybrat úroveň</button>
+            <button data-open-hd class="secondary">HD ukázka</button>
+            <div class="cheat-actions"><button data-open-map class="secondary">MAP</button><button data-toggle-god class="secondary" aria-pressed="false">IDDQD: vypnuto</button></div>
+            <button data-return-menu class="menu-back">Hlavní menu</button>
+            <p>Šipky pohyb v obou osách<br>J / Num 5 útok · K / Insert skok<br>L / pravý Shift magie · mezerník pauza</p>
+          </div>
+        </div>
+        <div id="result-screen" class="overlay" hidden>
+          <div class="pause-card">
+            <div class="eyebrow">GOLDEN AXE</div>
+            <h2 id="result-title">Konec hry</h2>
+            <p id="result-detail"></p>
+            <button id="continue" class="primary" hidden>Pokračovat <span>→</span></button>
+            <button id="decline" class="secondary" hidden>Ukončit hru</button>
+            <button id="play-again" class="secondary">Hrát znovu</button>
+            <button data-return-menu class="menu-back">Hlavní menu</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="touch-controls" aria-label="Dotykové ovládání">
+      <div class="dpad" aria-label="Pohyb v obou osách">
+        <button data-hold="up" class="up" aria-label="Pohyb dozadu">▲</button>
+        <button data-hold="left" class="left" aria-label="Pohyb vlevo">◀</button>
+        <span class="dpad-center"></span>
+        <button data-hold="right" class="right" aria-label="Pohyb vpravo">▶</button>
+        <button data-hold="down" class="down" aria-label="Pohyb dopředu">▼</button>
+      </div>
+      <div class="touch-actions">
+        <div class="small-actions">
+          <button data-hold="jump" class="action-small">SKOK <span>↑</span></button>
+          <button data-hold="magic" class="action-small magic">MAGIE <span>✦</span></button>
+        </div>
+        <button id="gesture-area" class="attack-pad" aria-label="Tapnutí útok, swipe nahoru skok">ÚTOK <span>↗</span><small>tap · ↑ skok</small></button>
+      </div>
+    </section>
+    <footer>
+      <span style="display:flex;flex-direction:column;gap:2px"><span id="status">Původní data</span><span aria-label="Identita sestavení"><a id="build-repository">GitHub</a> · <a id="build-commit">Neověřené sestavení</a></span></span>
+      <span class="desktop-hint">← ↑ ↓ → <b>POHYB</b> &nbsp; J <b>ÚTOK</b> &nbsp; K <b>SKOK</b> &nbsp; L <b>MAGIE</b></span>
+      <button id="about-toggle" aria-expanded="false" aria-controls="about">O této verzi ↗</button>
+    </footer>
+    <aside id="about" hidden>
+      <p>Samostatná webová rekonstrukce z původních herních dat a analýzy DOS verze Golden Axe. Nejde o emulátor. Tato pracovní verze není dokončeným remasterem; přesné shodě mechanik a celému průchodu se věnuje probíhající ověřování.</p>
+      <p>Původní sprity, mapy, hudba a zvuky. Živá hra používá původní grafiku; HD pilot je samostatná neschválená ukázka. Commit se zobrazuje pouze z metadat čistého CI sestavení, místní pracovní snapshot nemá ověřený build commit.</p>
+    </aside>
+  </main>
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>

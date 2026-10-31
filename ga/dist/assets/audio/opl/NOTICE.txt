@@ -1,0 +1,5 @@
+Nuked-OPL3 rev765ec962e473aeb767e4cba74ffdc8f588ffbfe8, LGPL-2.1-or-later.
+Unmodified engine C/h and the custom wrapper are retained in source/.
+Build recipe and original source/provenance: source/BUILD.md, source/build-wasm.sh, source/wasm-provenance.json.
+This is an OPL sound-chip engine, not an EXE/DOS interpreter.
+Original score/register data is derived from user-supplied Golden Axe files.
