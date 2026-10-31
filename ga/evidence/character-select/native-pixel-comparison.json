@@ -1,0 +1,14 @@
+{
+  "nativeReference": "golden-axe-research/evidence/runtime/captures/axe_003.png",
+  "nativeReferenceType": "Existing actual DOS capture, nearest downsample2x; filename does not prove boot order.",
+  "web": "Actual RAF original character select initial phase20,1P",
+  "region": [
+    0,
+    0,
+    312,
+    200
+  ],
+  "matchingRGBPixels": 62400,
+  "total": 62400,
+  "exact": true
+}

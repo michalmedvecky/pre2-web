@@ -6,6 +6,7 @@ import {OriginalAudio} from './audio.js';
 import {OriginalSequence} from './ending.js';
 import {OriginalIntro,openingReady} from './intro.js';
 import {OriginalInterlude,interludeReady} from './interlude.js';
+import {OriginalCharacterSelect} from './character-select.js';
 import {OriginalPassword} from './password.js';
 import {SOUND_TEST_DATA} from './sound-test-data.js';
 import {LEGACY_DATA,averageJoystickSamples} from './legacy-controls.js';
@@ -20,6 +21,7 @@ let prior = performance.now(), accumulated = 0;
 let lastStatus;
 let assets, menuStep = 'mode';
 let selectingPlayer = 1;
+let characterSelect = null;
 let menuCursor = 0;
 const selection = {mode:'arcade',character:'hero',players:1,character2:'amazon',healthBars:3,devices:['keypad','keyboard']};
 let sequence=null;
@@ -66,19 +68,33 @@ window.addEventListener('pagehide',()=>audio.dispose());
 
 function menuSync() {
   $('#mode-menu').hidden = menuStep !== 'mode';
-  $('#character-menu').hidden = menuStep !== 'character';
+  $('#character-menu').hidden = started||menuStep !== 'character';
   $('#options-menu').hidden = menuStep !== 'options';
   $('#sound-test-menu').hidden = menuStep !== 'soundtest';
-  $('#start-screen').classList.toggle('character-mode',menuStep === 'character');
+  document.querySelector('.stage').classList.toggle('selecting',!started&&menuStep==='character');
+  document.querySelector('.stage').classList.toggle('two-selectors',!started&&menuStep==='character'&&selection.players===2);
+  $('#start-screen').hidden=started||menuStep==='character';
+  input?.setActive(started||menuStep==='character');
   for (const button of document.querySelectorAll('[data-mode]')) {
     const active = menuCursor<3 && button.dataset.mode === selection.mode;
     button.classList.toggle('selected',active); button.setAttribute('aria-pressed',String(active));
   }
-  for (const button of document.querySelectorAll('[data-character]')) {
-    const active = button.dataset.character === (selectingPlayer===2?selection.character2:selection.character);
-    button.classList.toggle('selected',active); button.setAttribute('aria-pressed',String(active));
-    button.disabled = selectingPlayer===2 && button.dataset.character===selection.character;
+  if(menuStep==='character'&&characterSelect){
+    for(let index=0;index<selection.players;index++){
+      const current=characterSelect.current[index?'p2':'p1'];
+      const key=index?'character2':'character';selection[key]=current.character||selection[key];
+      const group=document.querySelector(`[data-selection-player="${index}"]`);
+      group.querySelector('.character-player').textContent=`PLAYER ${index+1} · ${current.confirmed?'POTVRZENO':current.rotating?'OTÁČENÍ…':'VYBER HRDINU'}`;
+      for(const button of group.querySelectorAll('[data-character],[data-character2]')){
+        const name=button.dataset.character||button.dataset.character2,active=name===current.character;
+        button.classList.toggle('selected',active);button.setAttribute('aria-pressed',String(active));
+        button.disabled=current.confirmed||current.rotating||!!characterSelect.current[index?'p1':'p2']?.confirmed&&characterSelect.current[index?'p1':'p2'].character===name;
+      }
+      group.querySelector('.primary').disabled=current.confirmed||current.rotating;
+      for(const button of group.querySelectorAll('[data-select-rotate]'))button.disabled=current.confirmed;
+    }
   }
+  document.querySelector('[data-selection-player="1"]').hidden=selection.players!==2;
   for (const button of document.querySelectorAll('[data-players]')) {
     const active = Number(button.dataset.players) === selection.players;
     button.classList.toggle('selected',active); button.setAttribute('aria-pressed',String(active));
@@ -87,8 +103,7 @@ function menuSync() {
   $('#two-player-note').hidden=selection.players!==2;
   for(const select of document.querySelectorAll('[data-device-player]')){const index=Number(select.dataset.devicePlayer);select.value=selection.devices[index];for(const option of select.options)option.disabled=option.value===selection.devices[1-index];}
   $('#mouse-lock').disabled=!selection.devices.includes('mouse');
-  $('#character-player').textContent=`PLAYER ${selectingPlayer}`;
-  $('#launch').innerHTML=selection.players===2&&selectingPlayer===1?'Vybrat druhého hrdinu <span>→</span>':'Začít hru <span>→</span>';
+  $('#launch').innerHTML='Vybrat <span>✓</span>';
   $('#open-options').classList.toggle('selected',menuCursor===3);
   $('#start').innerHTML=menuCursor===3?'Otevřít Options <span>→</span>':titlePending?'Spustit původní úvod <span>→</span>':'Vybrat hrdinu <span>→</span>';
 }
@@ -103,18 +118,23 @@ function primaryAction() {
     if(simulation.state.status==='stage-complete'){continueStage();return;}
     if(paused)pause();return;
   }
-  if (menuStep === 'mode') {if(menuCursor===3)menuAudio();else resetAudio();menuStep=menuCursor===3?'options':'character';selectingPlayer=1;menuSync();return;}
+  if (menuStep === 'mode') {if(menuCursor===3)menuAudio();else resetAudio();menuStep=menuCursor===3?'options':'character';selectingPlayer=1;if(menuStep==='character')beginCharacterSelect();menuSync();return;}
   if (menuStep === 'options') {menuStep='mode';menuSync();return;}
   if(menuStep==='soundtest'){if(soundTestCursor<11)playSoundTestMusic(SOUND_TEST_DATA.music[soundTestCursor].selector);else if(soundTestCursor===11)stepSoundTestEffect(1);else exitSoundTest();return;}
   launchSelection();
 }
-function launchSelection(){
-  if(selection.players===2&&selectingPlayer===1){
-    selectingPlayer=2;
-    if(selection.character2===selection.character)selection.character2=['hero','amazon','dwarf'].find(c=>c!==selection.character);
-    menuSync();return;
-  }
-  launch();
+function beginCharacterSelect(){
+  characterSelect=new OriginalCharacterSelect({assets,players:selection.players});
+  drainCharacterEvents();
+  input?.setPlayers(selection.players);input?.setDevices(selection.devices);input?.clear();
+  accumulated=0;prior=performance.now();canvas.focus({preventScroll:true});
+}
+function drainCharacterEvents(){const events=characterSelect?.drainEvents()||[];simulation?.acceptSpeakerEvents?.(events);for(const event of events){if(event.kind==='music-stop')resetAudio();else dispatchSound(event);}}
+function launchSelection(){if(menuStep==='character'&&characterSelect){characterSelect.confirm(0);menuSync();}}
+function finishCharacterSelect(){
+  if(!characterSelect?.done)return;
+  [selection.character,selection.character2]=characterSelect.selected;
+  characterSelect=null;launch();
 }
 function launch() {
   if (!assets) return;
@@ -147,7 +167,9 @@ function returnMenu() {
   menuAudio();canvas.focus({preventScroll:true});
 }
 for (const button of document.querySelectorAll('[data-mode]')) button.addEventListener('click',()=>{selection.mode=button.dataset.mode;menuCursor=['arcade','beginner','duel'].indexOf(selection.mode);menuAudio();menuSync();});
-for (const button of document.querySelectorAll('[data-character]')) button.addEventListener('click',()=>{if(button.disabled)return;selection[selectingPlayer===2?'character2':'character']=button.dataset.character;menuSync();});
+for(const button of document.querySelectorAll('[data-character],[data-character2]'))button.addEventListener('click',()=>{if(button.disabled||!characterSelect)return;characterSelect.select(button.dataset.character2?1:0,button.dataset.character||button.dataset.character2);menuSync();});
+for(const button of document.querySelectorAll('[data-select-rotate]'))button.addEventListener('click',()=>{characterSelect?.rotate(Number(button.dataset.selectPlayer),Number(button.dataset.selectRotate));menuSync();});
+$('#launch2').addEventListener('click',()=>{characterSelect?.confirm(1);menuSync();});
 for (const button of document.querySelectorAll('[data-players]')) button.addEventListener('click',()=>{if(!button.disabled){selection.players=Number(button.dataset.players);menuAudio();menuSync();}});
 for(const button of document.querySelectorAll('[data-health-bars]'))button.addEventListener('click',()=>{selection.healthBars=Number(button.dataset.healthBars);menuSync();});
 for(const select of document.querySelectorAll('[data-device-player]')){
@@ -178,7 +200,7 @@ window.addEventListener('keydown',event=>{if(sequence?.kind!=='password'||event.
 $('#password-text').addEventListener('input',event=>{if(sequence?.kind!=='password')return;const text=event.target.value;sequence.text='';for(const letter of text)sequence.key(letter);syncPasswordField();});
 $('#password-entry').addEventListener('submit',event=>{event.preventDefault();if(sequence?.kind==='password'){sequence.key('Enter');syncPasswordField();finishSequence();}});
 
-$('#menu-back').addEventListener('click',()=>{if(selectingPlayer===2)selectingPlayer=1;else menuStep='mode';menuSync();});
+$('#menu-back').addEventListener('click',()=>{characterSelect=null;menuStep='mode';input?.clear();menuSync();});
 $('#open-options').addEventListener('click',()=>{menuCursor=3;menuStep='options';menuSync();});
 $('#options-back').addEventListener('click',()=>{menuStep='mode';menuSync();});
 function soundTestSync(){for(const button of document.querySelectorAll('[data-sound-track]'))button.classList.toggle('selected',Number(button.dataset.soundTrack)===soundTestCursor);$('#sound-effect-number').textContent=String(soundTestEffect+SOUND_TEST_DATA.effect.displayOffset);}
@@ -205,21 +227,23 @@ window.addEventListener('keydown',event=>{
     if(confirm){event.preventDefault();event.stopImmediatePropagation();primaryAction();return;}
   }
   if(started||!assets||event.repeat)return;
+  if(menuStep==='character'){if(event.target?.closest?.('#character-menu')&&!['Enter','Space'].includes(event.code)){for(let index=0;index<selection.players;index++){const actions=input.actions(event.code,index);if(actions.includes('left')){event.preventDefault();characterSelect.rotate(index,-1);}if(actions.includes('right')){event.preventDefault();characterSelect.rotate(index,1);}if(actions.includes('attack')){event.preventDefault();characterSelect.confirm(index);}}menuSync();}if(event.code==='Escape'){event.preventDefault();characterSelect=null;menuStep='mode';input?.clear();menuSync();}return;}
   if(event.code==='Numpad5'||event.code==='KeyJ'){event.preventDefault();primaryAction();}
   if(event.code==='Escape'&&menuStep!=='mode'){event.preventDefault();menuStep='mode';menuSync();}
   if(menuStep==='mode'&&['ArrowUp','ArrowDown'].includes(event.code)){
     event.preventDefault();const modes=['arcade','beginner','duel'];menuCursor=(menuCursor+(event.code==='ArrowDown'?1:3))%4;if(menuCursor<3)selection.mode=modes[menuCursor];menuSync();
   }
   if(menuStep==='mode'&&['ArrowLeft','ArrowRight'].includes(event.code)){event.preventDefault();selection.players=event.code==='ArrowRight'?2:1;menuSync();}
-  if(menuStep==='character'&&['ArrowLeft','ArrowRight'].includes(event.code)){
-    event.preventDefault();const characters=['dwarf','hero','amazon'].filter(c=>selectingPlayer===1||c!==selection.character),key=selectingPlayer===2?'character2':'character';selection[key]=characters[(characters.indexOf(selection[key])+(event.code==='ArrowRight'?1:characters.length-1))%characters.length];menuSync();
-  }
+
 });
 
 function sync() {
-  $('#start-screen').hidden = started;
+  $('#character-menu').hidden=started||menuStep!=='character';
+  document.querySelector('.stage').classList.toggle('selecting',!started&&menuStep==='character');
+  document.querySelector('.stage').classList.toggle('two-selectors',!started&&menuStep==='character'&&selection.players===2);
+  $('#start-screen').hidden = started||menuStep==='character';
   $('#password-entry').hidden=sequence?.kind!=='password';
-  input?.setActive(started);
+  input?.setActive(started||menuStep==='character');
   $('#pause-screen').hidden = !started || !paused;
   $('#pause').textContent = paused ? '▶' : 'Ⅱ';
   $('#pause').setAttribute('aria-label', paused ? 'Pokračovat ve hře' : 'Pozastavit hru');
@@ -341,7 +365,7 @@ try {
   canvas.addEventListener('pointerdown',event=>{if(event.pointerType==='mouse'&&started&&!paused&&!sequence&&selection.devices.includes('mouse'))input.legacy.requestMouseLock();});
   renderer.renderMenu(menuStep);
   $('#loading').hidden = true; menuSync();sync();
-  window.goldenAxe = {assets,simulation,renderer,input,audio,start,launch,pause,returnMenu,jumpToLevel,selection,beginSequence,continueStage,get sequence(){return sequence;},get started(){return started;},get paused(){return paused;},tickRate:rate};
+  window.goldenAxe = {assets,simulation,renderer,input,audio,start,launch,pause,returnMenu,jumpToLevel,selection,beginSequence,continueStage,get characterSelect(){return characterSelect;},get sequence(){return sequence;},get started(){return started;},get paused(){return paused;},tickRate:rate};
   showBuildInfo($('#build-repository'),$('#build-commit')).then(info=>{window.goldenAxe.buildInfo=info;});
   mapOverlay=createMapOverlay({getGame:()=>window.goldenAxe});window.goldenAxe.mapOverlay=mapOverlay;
   levelOverlay=createLevelOverlay({getGame:()=>window.goldenAxe,onSelect:jumpToLevel});window.goldenAxe.levelOverlay=levelOverlay;
@@ -371,9 +395,10 @@ try {
     try {
     const frameStart=performance.now(),rawElapsed=now-prior;let maxStepMs=0,steps=0;
     const elapsed = Math.min(100, Math.max(0, now - prior)); prior = now;
-    if (started && !paused || calibration || menuStep==='soundtest') {
+    if (started && !paused || calibration || menuStep==='soundtest'||!started&&menuStep==='character') {
       accumulated += elapsed;
       while (accumulated >= tickMs) {
+        if(!started&&menuStep==='character'){simulation.advanceSpeakerPIT?.();characterSelect.step(input.sample(simulation.state.players));drainCharacterEvents();menuSync();finishCharacterSelect();accumulated=Math.max(0,accumulated-tickMs);continue;}
         if(calibration||!started&&menuStep==='soundtest'){simulation.advanceSpeakerPIT?.();accumulated=Math.max(0,accumulated-tickMs);continue;}
         const sampled=input.sample(simulation.state.players);
         if(sequence){
@@ -391,7 +416,7 @@ try {
       }
       syncAudioStage();
     }
-    if (started) {if(sequence)sequence.render(renderer);else renderer.render({...simulation.state,mode:simulation.mode});} else renderer.renderMenu(menuStep);
+    if (started) {if(sequence)sequence.render(renderer);else renderer.render({...simulation.state,mode:simulation.mode});} else if(menuStep==='character'&&characterSelect)characterSelect.render(renderer);else renderer.renderMenu(menuStep);
     if (simulation.state.status !== lastStatus) sync();
     if(lastGodMode!==!!simulation.state.godMode){lastGodMode=!!simulation.state.godMode;$('#status').textContent=`Původní data${lastGodMode?' · IDDQD':''}`;for(const button of document.querySelectorAll('[data-toggle-god]')){button.textContent=`IDDQD: ${lastGodMode?'zapnuto':'vypnuto'}`;button.setAttribute('aria-pressed',String(lastGodMode));}}
     if(started){const sample={now,rawElapsed,frameMs:performance.now()-frameStart,maxStepMs,steps,tick:simulation.state.tick,stageIndex:simulation.state.stageIndex,paused,hidden:document.hidden,status:simulation.state.status,actors:simulation.state.entities.length,magic:simulation.magic?{type:simulation.magic.type,phase:simulation.magic.phase,timer:simulation.magic.timer}:null};frameDiagnostics.push(sample);if(frameDiagnostics.length>180)frameDiagnostics.shift();if(rawElapsed>250||sample.frameMs>250||maxStepMs>50){frameAnomalies.push(sample);if(frameAnomalies.length>120)frameAnomalies.shift();}}

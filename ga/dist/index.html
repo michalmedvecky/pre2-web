@@ -41,16 +41,6 @@
             <p class="scope">Pracovní rekonstrukce · shoda s originálem se ověřuje</p>
             <p id="two-player-note" class="scope" hidden>Dva hráči · vstupy vyber v Options · původní 2P se ještě porovnává</p>
           </div>
-          <div id="character-menu" class="character-menu" hidden>
-            <div id="character-player" class="character-player">PLAYER 1</div>
-            <div class="character-options" aria-label="Vyber hrdinu">
-              <button data-character="dwarf" aria-pressed="false"><img src="./assets/ui/dwarf.png" alt="" width="48" height="56"><span>Gilius</span></button>
-              <button data-character="hero" class="selected" aria-pressed="true"><img src="./assets/ui/hero.png" alt="" width="32" height="64"><span>Axe Battler</span></button>
-              <button data-character="amazon" aria-pressed="false"><img src="./assets/ui/amazon.png" alt="" width="29" height="62"><span>Tyris</span></button>
-            </div>
-            <button id="launch" class="primary">Začít hru <span>→</span></button>
-            <button id="menu-back" class="menu-back">← Zpět</button>
-          </div>
           <div id="options-menu" class="pause-card" hidden>
             <div class="menu-caption">OPTIONS</div>
             <div class="life-meter"><span>Life Meter</span><div><button data-health-bars="3" class="selected" aria-pressed="true">***</button><button data-health-bars="4" aria-pressed="false">****</button><button data-health-bars="5" aria-pressed="false">*****</button></div></div>
@@ -95,6 +85,17 @@
             <button data-return-menu class="menu-back">Hlavní menu</button>
           </div>
         </div>
+      </div>
+      <div id="character-menu" class="character-menu selection-controls" hidden>
+        <div class="selection-player" data-selection-player="0">
+          <div id="character-player" class="character-player" aria-live="polite">PLAYER 1</div>
+          <div class="selection-row"><button data-select-rotate="-1" data-select-player="0" class="selection-arrow" aria-label="Hráč 1 otočit doleva">←</button><div class="character-options" aria-label="Hráč 1 vyber hrdinu"><button data-character="dwarf" aria-pressed="false">Gilius</button><button data-character="hero" class="selected" aria-pressed="true">Axe Battler</button><button data-character="amazon" aria-pressed="false">Tyris</button></div><button data-select-rotate="1" data-select-player="0" class="selection-arrow" aria-label="Hráč 1 otočit doprava">→</button><button id="launch" class="primary">Vybrat <span>✓</span></button></div>
+        </div>
+        <div class="selection-player" data-selection-player="1" hidden>
+          <div id="character-player2" class="character-player" aria-live="polite">PLAYER 2</div>
+          <div class="selection-row"><button data-select-rotate="-1" data-select-player="1" class="selection-arrow" aria-label="Hráč 2 otočit doleva">←</button><div class="character-options" aria-label="Hráč 2 vyber hrdinu"><button data-character2="dwarf" aria-pressed="false">Gilius</button><button data-character2="hero" class="selected" aria-pressed="true">Axe Battler</button><button data-character2="amazon" aria-pressed="false">Tyris</button></div><button data-select-rotate="1" data-select-player="1" class="selection-arrow" aria-label="Hráč 2 otočit doprava">→</button><button id="launch2" class="primary">Vybrat <span>✓</span></button></div>
+        </div>
+        <button id="menu-back" class="menu-back">← Zpět</button>
       </div>
     </section>
     <section class="touch-controls" aria-label="Dotykové ovládání">

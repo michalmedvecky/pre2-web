@@ -1,0 +1,137 @@
+{
+  "authority": "Actual RAF and keyboard/touch-style controls in isolated Chromium; original data/static code plus existing native screenshots, not a new native run or physical mobile test.",
+  "errors": [],
+  "hashes": {
+    "app.js": "a620a1509cc63b736c4089e4610b8bce6fbb2d70fec0e63d39e438b22943a999",
+    "character-select.js": "ed5ba4a78dac79f6b105f0c72d71b715a07101e44c926478f7437f38427a9e78",
+    "character-select-data.js": "c4e2b9b7fd58576849f653601c8d097b53eb8b51e365416ca38d643a4aede9fb",
+    "input.js": "d6d509333f504ab07250ed4b14f17be10017e2233e03aa74bb677d31b5fd8efc",
+    "renderer.js": "095a537992e9e308ea7103189d45b62ff79dbb881e3c72884e629dc6d9ad70d2",
+    "simulation.js": "5213829f351f710dddefc27a37edbd2f4a715a901e86da62bf81ab0bb073b1e0"
+  },
+  "initial": {
+    "current": {
+      "p1": {
+        "character": "hero",
+        "confirmed": false,
+        "phase": 20,
+        "rotating": false
+      }
+    },
+    "scene": {
+      "stage": "c",
+      "stageIndex": 12,
+      "camera": {
+        "x": 0,
+        "y": 0
+      },
+      "entities": [
+        {
+          "id": 100,
+          "type": "select1",
+          "sprite": "select1",
+          "typeId": 24,
+          "animationSlot": 0,
+          "frame": 0,
+          "direction": 0,
+          "mirrored": false,
+          "x": 114,
+          "y": 139,
+          "z": 0,
+          "cachedScreenX": 114,
+          "cachedScreenY": 139,
+          "lifecycle": 0,
+          "reveal": -1,
+          "revealDraw": -1
+        },
+        {
+          "id": 101,
+          "type": "select2",
+          "sprite": "select2",
+          "typeId": 25,
+          "animationSlot": 0,
+          "frame": 0,
+          "direction": 0,
+          "mirrored": false,
+          "x": 90,
+          "y": 172,
+          "z": 0,
+          "cachedScreenX": 90,
+          "cachedScreenY": 172,
+          "lifecycle": 0,
+          "reveal": -1,
+          "revealDraw": -1
+        },
+        {
+          "id": 102,
+          "type": "select3",
+          "sprite": "select3",
+          "typeId": 26,
+          "animationSlot": 0,
+          "frame": 0,
+          "direction": 0,
+          "mirrored": false,
+          "x": 66,
+          "y": 139,
+          "z": 0,
+          "cachedScreenX": 66,
+          "cachedScreenY": 139,
+          "lifecycle": 0,
+          "reveal": -1,
+          "revealDraw": -1
+        }
+      ],
+      "hideHUD": true,
+      "paletteRecords": [],
+      "characterSelect": true
+    },
+    "started": false
+  },
+  "rotating": {
+    "p1": {
+      "character": null,
+      "confirmed": false,
+      "phase": 22,
+      "rotating": true
+    }
+  },
+  "duplicate": {
+    "p1": {
+      "character": "hero",
+      "confirmed": true,
+      "phase": 20,
+      "rotating": false
+    },
+    "p2": {
+      "character": "hero",
+      "confirmed": false,
+      "phase": 20,
+      "rotating": true
+    }
+  },
+  "players": [
+    {
+      "type": "hero",
+      "health": 12
+    },
+    {
+      "type": "amazon",
+      "health": 12
+    }
+  ],
+  "mobilePlayers": [
+    "hero",
+    "dwarf"
+  ],
+  "pass": true,
+  "audioDisposed": true,
+  "browserClosed": true,
+  "visuallyInspected": [
+    "one-player-initial.png",
+    "one-player-rotating.png",
+    "two-player-initial.png",
+    "two-player-choice.png",
+    "two-player-mobile.png"
+  ],
+  "original5788Untouched": true
+}

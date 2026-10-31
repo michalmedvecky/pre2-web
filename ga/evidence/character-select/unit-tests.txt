@@ -1,0 +1,19 @@
+✔ clean CI metadata identifies the actual full source commit (0.5885ms)
+✔ local, dirty and unknown metadata never attribute the snapshot to HEAD (0.14075ms)
+✔ repository metadata accepts only an unadorned HTTPS GitHub repository (0.045ms)
+✔ commit and snapshot validation never interpolate arbitrary markup into links (0.3585ms)
+✔ served metadata is requested without cache and failures clear prior identity links (0.223ms)
+✔ original120phase orbit tables match rawAXE DS1204/12f4 byte-for-byte (2.348417ms)
+✔ original initial projection places hero infront onleft hand and2P independently onright (0.193709ms)
+✔ oneleft edge movesphase20→60Amazon in20updates, right reverses mid-orbit and wrap isoriginal120 (0.24475ms)
+✔ simultaneous2Pconfirm samehero locksP1first, P2 refuses and auto rotates past occupied angle (0.1365ms)
+✔ confirmation during rotation is ignored and held movement resumes beyond a detent (0.07325ms)
+✔ web namebutton usesnative orbit and duplicated locked character is refused without phasejump (0.106834ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 45.310791

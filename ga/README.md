@@ -44,3 +44,9 @@ Prohlížeč potřebuje pro vzdálené OPL AudioWorklet **HTTPS** a uživatelsk�
 Původní herní artwork/melodie/data si zachovávají původní autorství; tento balíček jim neuděluje novou licenci. Nuked-OPL3 je LGPL-2.1-or-later, včetně plného původního C/h, licence, wrapperu a přenositelného buildreceptu v `dist/assets/audio/opl/source/`. Podrobnosti [LICENSES.md](LICENSES.md). Tajné údaje do repozitáře nepatří.
 
 Samostatné Golden Axe vydání používá tagprefix `ga-v*` a ručně přiložený GA-only archiv+SHA256SUMS po úspěšném GA CI; automatický GitHub reposourceZIP není tento balíček. Viz release postup vDEPLOYER.md.
+
+## Verze0.1.1 — původní výběr postav
+
+Samostatný preview [localhost5790](http://127.0.0.1:5790/) obnovuje původní scénu modré kostry a obíhajících hrdinů. Ve2P vybírají oba hráči současně na vlastních rukách; potvrzení stejného hrdiny je zakázané. Dotykové šipky/názvy/potvrzení jsou pod plátnem. VýchozíP1 Num4/Num6 aNum5 (navíc šipky/J/Enter),P2 A/D aS; Options mohou vstupní zařízení prohodit. Zahrnuto v samostatném preview vydání ga-v0.1.1; existující release ga-v0.1.0 zůstává beze změny. Skutečný releasecommit/image/CI jsou uvedené v GitHub release notes.
+
+Důkazy a meze: [character-select report](reports/character-select.md), `evidence/character-select/checks.json`,6nových cílených presenter testů. Počáteční1P obraz souhlasí62400/62400RGBpixelů s původním DOS capture; ostatní pózy nejsou tímto jedním snímkem plošně ověřené.

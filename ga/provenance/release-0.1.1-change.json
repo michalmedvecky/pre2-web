@@ -1,0 +1,22 @@
+{
+  "version": "0.1.1",
+  "previousTag": "ga-v0.1.0",
+  "previousCommit": "7fbb3638c0a29f46ef3cae64122a911f1b9d3ef7",
+  "runtimeSnapshot": "e60da36a1307690d417693bb94ca4bf2d18a58376523a5652e59b68c74aa764b",
+  "changedRuntimeFiles": [
+    "index.html",
+    "js/app.js",
+    "style.css"
+  ],
+  "addedRuntimeFiles": [
+    "js/character-select-data.js",
+    "js/character-select.js"
+  ],
+  "removedRuntimeFiles": [],
+  "core75SHA256": "5213829f351f710dddefc27a37edbd2f4a715a901e86da62bf81ab0bb073b1e0",
+  "gameplayCoreUnchanged": true,
+  "runtimeReceipt": "evidence/character-select/checks.json",
+  "independentPresenterAndPixelReview": "reports/character-select.md",
+  "HDChanges": false,
+  "EXEorZIPCopied": false
+}

@@ -11,24 +11,24 @@
       "size": 84
     },
     "DEPLOYER.md": {
-      "sha256": "d365a59ff74747770bb0f11986fba90cd82c51f8a726e3d5a21a8bee844947ce",
-      "size": 9390
+      "sha256": "9d654bb5f9f5f5e0d78780a76b9c085962ea0fa7719199d9cbfb70f9820584ce",
+      "size": 9646
     },
     "Dockerfile": {
       "sha256": "491a20bf4a6158b52dcca0619fadf2bbed9bcbbbbfb72aa5f5284ae2bcc1f5da",
       "size": 1121
     },
     "HANDOFF.md": {
-      "sha256": "455b3fd6208be8916b652bfc1f5d57db7927bc39748266f9f83ea20be98b74e1",
-      "size": 3488
+      "sha256": "c393f146f87ad91ba9962067e5d8b1c16990b831f71d33bad7551a5d5d43bd9d",
+      "size": 3072
     },
     "LICENSES.md": {
       "sha256": "b15e2c3127cfd31caa99b8a46c65e561ade8c6fa85b966909f5121e5611b2890",
       "size": 1274
     },
     "README.md": {
-      "sha256": "d01b3e5b2cb6302ac3911f25dca22153d2d86b23476aa4922a7e7702069db7e4",
-      "size": 4418
+      "sha256": "a3a1034a7a21b5753cad6c825afc2627c1e942fb059c27b2b605adf6562a3a88",
+      "size": 5332
     },
     "deploy/config.example.json": {
       "sha256": "6532962c9d2de74523f8efcb21efc451bd2a0f5c4614712f5bd38c611d7f7035",
@@ -507,7 +507,7 @@
       "size": 747
     },
     "dist/build.json": {
-      "sha256": "997f0026dceeb5de9e1fe62a24231dc984235cc174259971c268418ed548559f",
+      "sha256": "3ca37bb8e5f9480ae3efc5bdd24617ecbf62f5420ab05e12c8641471addb355e",
       "size": 223
     },
     "dist/hd-pilot.html": {
@@ -515,12 +515,12 @@
       "size": 5828
     },
     "dist/index.html": {
-      "sha256": "59861205db382cfd92dfeec84c6522c58e6bbb05d2c15bd6c733ac00282ee79e",
-      "size": 10740
+      "sha256": "1064bd608f77690ecfe28222fe82c00168bd8c5658aaa49acd59ca9e6afa43e0",
+      "size": 11685
     },
     "dist/js/app.js": {
-      "sha256": "7dea0cd228aa02948bc63b86540289f78a0e7f5594a04a8be432ace4ba661c90",
-      "size": 33089
+      "sha256": "a620a1509cc63b736c4089e4610b8bce6fbb2d70fec0e63d39e438b22943a999",
+      "size": 36084
     },
     "dist/js/audio.js": {
       "sha256": "4ada6251296f9a08ca7ee5bf07800b6f1478cc6ce3fe69a3e2cbb53e5137e902",
@@ -529,6 +529,14 @@
     "dist/js/build-info.js": {
       "sha256": "92489d725bec0102c8133632cdd9a6cd52cab4381fc891ebcf05274ed4bf5cb3",
       "size": 2574
+    },
+    "dist/js/character-select-data.js": {
+      "sha256": "c4e2b9b7fd58576849f653601c8d097b53eb8b51e365416ca38d643a4aede9fb",
+      "size": 1497
+    },
+    "dist/js/character-select.js": {
+      "sha256": "ed5ba4a78dac79f6b105f0c72d71b715a07101e44c926478f7437f38427a9e78",
+      "size": 3849
     },
     "dist/js/ending.js": {
       "sha256": "6a9558c82954eed92233c96a04d2e514cfa1a05755845d97aede09604c5bd8b3",
@@ -655,8 +663,8 @@
       "size": 1657
     },
     "dist/style.css": {
-      "sha256": "3427c671f41ec252a7fe52960fb4798f7dccb2077a2d4db5e19977bc11d294f8",
-      "size": 13373
+      "sha256": "857df51f2e6a0aa8aa2fc880ec7e95e321205e5be720fe336385d10784ba63d0",
+      "size": 15470
     },
     "evidence/browser/checks.json": {
       "sha256": "bf9a8af89582de697bd2396c95ee111fdcc7b2b5c247982195f695494a47e2fa",
@@ -674,8 +682,48 @@
       "sha256": "536510be3696c1e81d3ca657ce12b9c39bc298fcf8bdd11f17cd73063b602d24",
       "size": 7450
     },
+    "evidence/character-select/checks.json": {
+      "sha256": "d30922b67a21e2c746778342f7c313003ea3ae003d157107c126e68f4de04908",
+      "size": 3318
+    },
+    "evidence/character-select/final-checks.json": {
+      "sha256": "11ec70fe8dd2d1cee80ad383a701cddad74c0c38f42b99be4890c080e159025e",
+      "size": 865
+    },
+    "evidence/character-select/native-pixel-comparison.json": {
+      "sha256": "85f28baf69301b7fe7dbbe92c7a1a62f391701745244a10eeaabd8d23e034eab",
+      "size": 383
+    },
+    "evidence/character-select/one-player-initial.png": {
+      "sha256": "76c5e2007a7195decb1bf9e726fc39bde0f8453b4257473dab4ba45cd7fca7e5",
+      "size": 25228
+    },
+    "evidence/character-select/one-player-native-resolution.png": {
+      "sha256": "525ba5911b22f3d487ff81795ee9375ec4df87af248885949454646346ba3be4",
+      "size": 24628
+    },
+    "evidence/character-select/one-player-rotating.png": {
+      "sha256": "c9a992283bd6cef032cb5be8cf31c137eff684886f050963a4bca47ece523643",
+      "size": 25246
+    },
+    "evidence/character-select/two-player-choice.png": {
+      "sha256": "4531815cac67ac2774ff7638df641c0c55ced9fb5aff22e363406f906a4d5a72",
+      "size": 65133
+    },
+    "evidence/character-select/two-player-initial.png": {
+      "sha256": "95d75e531ac2f4906b164234dda5d86e0ad8a69ccfb35033652b011d0c45fe78",
+      "size": 25703
+    },
+    "evidence/character-select/two-player-mobile.png": {
+      "sha256": "b289fa7b90696d2bf5f516de6de71f598fe1d7357649e2d793bbdf26b665d512",
+      "size": 48886
+    },
+    "evidence/character-select/unit-tests.txt": {
+      "sha256": "77bb5460ac229186806dbf713c90d8d98533589e66aa378d8ad678f6d14ece58",
+      "size": 1171
+    },
     "package.json": {
-      "sha256": "ae6a38645538748d1b32c011aebd0abe7f35380f01a9cec0edc4bce728120461",
+      "sha256": "80cc23525b451017a7f1281b7648a6595dbf1c6a23693359825c3045692015cb",
       "size": 304
     },
     "provenance/opl-vendor.json": {
@@ -702,6 +750,10 @@
       "sha256": "b3b7fd97ce0b408349dc7f436b5f31fc9bcef486cb1689dd2c2a12b102a42085",
       "size": 3504
     },
+    "provenance/release-0.1.1-change.json": {
+      "sha256": "841d35058cc454441c980a8177429661eea01e565a16695b5628df323a329e49",
+      "size": 714
+    },
     "provenance/release-environment.json": {
       "sha256": "67a450296a363aca648792858c00818ec0c821b82e858e6e82b5f166b2ca574f",
       "size": 943
@@ -711,16 +763,20 @@
       "size": 1407
     },
     "provenance/runtime-manifest.json": {
-      "sha256": "68b6ec29ff30b3275a626aaeffce2d3832579bd63a0e1b9d6d9eef49289ebfe3",
-      "size": 22240
+      "sha256": "6ac0a0927d9f673770317c2df02d50c82c2938ceac352dff2bae730fd4a8f68c",
+      "size": 22529
     },
     "provenance/source-state.json": {
-      "sha256": "dcbf54e626d4763ea4d7fda5eadaa6bc07cf3eda05ba7795d8f6954ed1aad55d",
-      "size": 2315
+      "sha256": "ea5ca905e6d9fb3c0ada54d42c7f30148580d0b65afb5dc3e43a8d090ebe3bc7",
+      "size": 2388
     },
     "provenance/test-adaptations.json": {
-      "sha256": "f32696858d25bb92ec46a477347781e8ae61899386ee789bf4e85ee234c2db8f",
-      "size": 1996
+      "sha256": "f67976bd301a250826a469d5e4a1cf59ce2f72db1ceb256054c3487969a4ddbe",
+      "size": 2366
+    },
+    "reports/character-select.md": {
+      "sha256": "b0a0472709304291021a6c941b7b558a9e342e388ab084027742980895a53f29",
+      "size": 2998
     },
     "reports/runtime-review.md": {
       "sha256": "3486fa1eca985b407d3338e43c5b318a8e3cbc43edc0d494d0a92a9ddc66b082",
@@ -762,6 +818,14 @@
       "sha256": "4784b3a799a4814a80e595a4bc4388d1b0913c785b2627e3205c0e92d014372b",
       "size": 2951
     },
+    "tests/character-select-browser.mjs": {
+      "sha256": "b0723561b8f61108d0031a9657d392a17df5d1a823035ef0608f824ad70a62c2",
+      "size": 6026
+    },
+    "tests/character-select.test.mjs": {
+      "sha256": "04eb1d49ef2b47f674501a90773cc9bec5eae4355fe8c5378b8d8b628156b08e",
+      "size": 3275
+    },
     "tests/ci-isolation.test.mjs": {
       "sha256": "85dc1e1b19a2436f7b834c71b97b6013769837bfae9540539bf559add79607dc",
       "size": 1553
@@ -769,6 +833,10 @@
     "tests/deployment.test.mjs": {
       "sha256": "829664015e01c5313ddb180131dd71d9cf119ab4f4a2efb52de9eb5d5de766ff",
       "size": 3225
+    },
+    "tests/fixtures/character-select-native.json": {
+      "sha256": "0566dc50588aa93249dcee0826aaf1a47ab727ae9b07a3bfde4dcaeff4ef3bed",
+      "size": 1185
     },
     "tests/fixtures/close-attack-samples.json": {
       "sha256": "d920147bfc50072bb552fbf943c68a67f9b414acae66c210fc31804e105ccde9",
@@ -837,6 +905,14 @@
     "validation/offline-kustomize.json": {
       "sha256": "99c9e2d98b2863193db3186c452b4c952eb581ffb2af9ec3180e48bb3e9433e1",
       "size": 566
+    },
+    "validation/release-0.1.1-preflight.json": {
+      "sha256": "155ba818dea95e0d6bf4fd062614c5b9df176a0517f0e43eed74f0ae1539aa72",
+      "size": 788
+    },
+    "validation/release-0.1.1-tests.txt": {
+      "sha256": "4b9c520a665b2ae8e0ceba3a30fd4331bfd37137ca63995cc4f9b8d847bdbdba",
+      "size": 9206
     },
     "validation/release-preflight-tests.txt": {
       "sha256": "93bfb263acf73962b853b572c21047ddac12db709779450755a5eb22850e1ac0",

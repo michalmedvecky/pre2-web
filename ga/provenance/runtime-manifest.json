@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "snapshotSHA256": "95612700e3f875032e2f11d34dd5cef7e19a74ab64779f9964c1d668ec3ae49d",
+  "snapshotSHA256": "e60da36a1307690d417693bb94ca4bf2d18a58376523a5652e59b68c74aa764b",
   "excluded": [
     "build.json (injected per build)"
   ],
@@ -470,12 +470,12 @@
       "size": 5828
     },
     "index.html": {
-      "sha256": "59861205db382cfd92dfeec84c6522c58e6bbb05d2c15bd6c733ac00282ee79e",
-      "size": 10740
+      "sha256": "1064bd608f77690ecfe28222fe82c00168bd8c5658aaa49acd59ca9e6afa43e0",
+      "size": 11685
     },
     "js/app.js": {
-      "sha256": "7dea0cd228aa02948bc63b86540289f78a0e7f5594a04a8be432ace4ba661c90",
-      "size": 33089
+      "sha256": "a620a1509cc63b736c4089e4610b8bce6fbb2d70fec0e63d39e438b22943a999",
+      "size": 36084
     },
     "js/audio.js": {
       "sha256": "4ada6251296f9a08ca7ee5bf07800b6f1478cc6ce3fe69a3e2cbb53e5137e902",
@@ -484,6 +484,14 @@
     "js/build-info.js": {
       "sha256": "92489d725bec0102c8133632cdd9a6cd52cab4381fc891ebcf05274ed4bf5cb3",
       "size": 2574
+    },
+    "js/character-select-data.js": {
+      "sha256": "c4e2b9b7fd58576849f653601c8d097b53eb8b51e365416ca38d643a4aede9fb",
+      "size": 1497
+    },
+    "js/character-select.js": {
+      "sha256": "ed5ba4a78dac79f6b105f0c72d71b715a07101e44c926478f7437f38427a9e78",
+      "size": 3849
     },
     "js/ending.js": {
       "sha256": "6a9558c82954eed92233c96a04d2e514cfa1a05755845d97aede09604c5bd8b3",
@@ -610,8 +618,8 @@
       "size": 1657
     },
     "style.css": {
-      "sha256": "3427c671f41ec252a7fe52960fb4798f7dccb2077a2d4db5e19977bc11d294f8",
-      "size": 13373
+      "sha256": "857df51f2e6a0aa8aa2fc880ec7e95e321205e5be720fe336385d10784ba63d0",
+      "size": 15470
     }
   }
 }

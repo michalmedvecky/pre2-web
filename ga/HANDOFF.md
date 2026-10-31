@@ -1,24 +1,20 @@
-# GA — deployer handoff
+# GA — verze0.1.1 / původní výběr postav
 
-Tento zápis zachycuje původní přípravu a následný release postup. Aktuální vydaný commit, úspěšný CIrun a image digest patří do samostatného GitHub release `ga-v*`, nikoli do nepravdivé self-reference tohoto souboru.
-
-- Stav: připravený samostatný Golden Axe balíček v `web/ga`; žádný commit/push/publish/deploy ani cluster access.
-- Repo `https://github.com/michalmedvecky/pre2-web`, aplikace/context `ga/`; ostatní Pre2 runtime/README/untracked soubory zachovány.
-- Jediná výslovná parent výjimka:1řádek paths-ignore v dříve clean Pre2 workflow; GA-only včetně obou workflow/Pre2-app-only/mixed filtry ověřené. Přesný patch `provenance/parent-workflow-delta.patch`.
-- Source core75 SHA `5213829f351f710dddefc27a37edbd2f4a715a901e86da62bf81ab0bb073b1e0`. Původní runtime copy a parentdirty provenance jsou oddělené od budoucího CIpackaging commitu.
-- `dist/`: původní grafika/audio+OPL/WASM/SND/FLAC, pouze HDpreview. Žádný EXE/ZIP/interpreter. Všechny LGPL C/h/licence/wrapper/buildrecipe součást runtime.
-- Runtime manifest `provenance/runtime-manifest.json`,152files bez build.json, snapshot `95612700e3f875032e2f11d34dd5cef7e19a74ab64779f9964c1d668ec3ae49d`.
-- Local `/build.json` poctivě dirty-snapshot/commitnull; DockerCI injektuje skutečný40SHA pouze při cleanCI. GitHub a commit odkaz ve stránce; sourceSnapshot je samostatný.
-- Dev start: Node24+ `node scripts/serve.mjs`, localhost5790; žádná npm instalace. Produkční image má nginx8080/UID10001/read-only/tmp64Mi.
-- K3s renderer pouze připraví JSON; bez explicit context/namespace/image digestu selže. HTTPS host/TLS/Traefik entrypoint a pull access musí dodat deployer.
-- Primární návod: `DEPLOYER.md` (repo variables→CI digest→render→manual diff/apply→acceptance→rollback). Nepoužívat starý Pre2 image/latest.
--84/84 unit PASS (75mechanics+5identity+3deployment/metadata+1CIisolation); fixture přenos nahrazuje EXE-only testinput datovými JSON referencemi.
-- Runtime manifest/license/requireddependencies PASS; offline kubectlKustomize4resources PASS bezAPI/servervalidation. `validation/` uchovává výsledky.
-- Nezávislý browser PASS: actual OPL AudioWorkletNode/cursor, LEVELStage3, HDpreviewgatefalse/scale1, localdirtymetadata a CI HTTPfixture. Nejde o skutečný imageproof.
-- Vizuálně prohlédnuté footer/mobile/Stage3 PNG; browser+audio+vlastní5790 server uzavřeny, uživatelský5788 ponechán. `reports/runtime-review.md`, `evidence/browser/checks.json`.
-- Docker lokálně chybí. Imagebuild, skutečný nginxcontainer smoke, registrypublish a cílový k3s rollout nebyly provedené; CI je obsahuje jako povinné gate.
-- Úplná nativefidelity/globalIRQ/RNG/hitordering a fyzickýiOS/Gamepad nejsou prokázané. Starší transientstally nejsou univerzálně uzavřené jednotlivými opravami.
-- Oddělený HDworkstream/materialpilot není schválený fullremaster ani deploymentdependency; do této frozen kopie se narychlo neimportoval.
-- Nejbližší krok deployera: review pouze GA souborů+schválenéCI výjimky, potvrdit vnějšívstupy, vlastní commit/CIbuild a až na výslovný pokyn clusterrollout.
-
-- Release příprava: vlastní prefix ga-v0.1.0, manuální release po úspěšném main GA CI, explicitní ga-onlytar+SHA; žádný tag-trigger automatický release. Publish/tag/release provádí release owner až po rootreview a úspěšném GA CI; žádný cluster rollout.
+- Samostatný Golden Axe v `ga/`, repo `https://github.com/michalmedvecky/pre2-web`. Nový release používá `ga-v0.1.1`; publikovaný0.1.0 se nepřepisuje.
+- Přesný releasecommit, úspěšný CIrun, image digest a přílohy jsou v GitHub release notes; netvoří se nepravdivá self-reference commitu tohoto souboru.
+- Změna0.1.1: původní MAPC/SELECT1–3,120originálních orbitálních poloh, současný nezávislý1P/2P výběr a původní confirmation/duplicate gates. Touch ovladače pod plátnem.
+- P1 defaultNum4/6+Num5 (webalias šipky/J/Enter),P2 A/D+S; Options mohou zařízení prohodit. Oba musí potvrdit, pak další původnípresentation update spustí hru.
+- Gameplay core75 zůstává SHA `5213829f351f710dddefc27a37edbd2f4a715a901e86da62bf81ab0bb073b1e0`; žádná změna fyziky/audio engine ani HDliveassetů.
+- Runtime154files bez injektovaného build.json, snapshot `e60da36a1307690d417693bb94ca4bf2d18a58376523a5652e59b68c74aa764b`; manifest/sourceSnapshot a localdirtymetadata poctivě oddělené od CI40SHA.
+- Presenter6unit+identity5PASS a independent read-only/sourcebyte review; actual1P/2P/390px touch browserPASS/0errors. Použity stávající receipts, nevydává se nový whole-game průchod.
+- Počáteční1P312×200 obraz62400/62400RGB shodný se skutečným DOS capture axe_003; jedna póza není všechnyfáze/native2P/wallclock proof.
+- Autority: `reports/character-select.md`, `evidence/character-select/{checks,final-checks,native-pixel-comparison}.json`, raw datovéfixtures místoEXE.
+- Testovacíbrowser/audio zavřené; userpreview5790 ponechán na výslovný pokyn, původní5788 nedotčen. Žádné nové browser/native boot opakování pro release.
+- Release preflight: runtime/provenance/parentchecks +testy v `validation/release-0.1.1-preflight.json` a příslušném unitlogu. Skutečný container smoke až GA CI, ne localNode preview.
+-39původních dirty/untrackedPre2souborů mají původníSHA a nesmějí se stageovat; oba rootworkflow beze změny proti0.1.0, GA-onlyCI izolace zachovaná.
+- Repo variablesGA_IMAGE_REPOSITORY/GA_NGINX_IMAGE z0.1.0 se jen ověřují; bez zbytečného přepisu. Žádné tajné hodnoty v repo.
+- Docker lokálně není; CI musí projít testy/manifestem, oběma linuxarchitekturami, registry a skutečným readonly/UID/MIME/commit smoke před vydáním prerelease/latest:false.
+- Přílohyrelease: GA-onlycommittedtar.gz+SHA256SUMS; GitHubautomaticSourceZIP je celýparentrepo. ZdrojovéLGPL C/h/licence/wrapper/buildrecipe součást runtime.
+- Deployer `DEPLOYER.md`: image digest→explicitcontext/namespace→render→manualdiff/apply/verify/rollback. Požadovanýhostga.500miles.cz jen předanývstup; žádnéDNS/TLS/k3s změny.
+- Nadále nejde o úplný nativeexact/HD remaster: IRQ/RNG/wallclock/globalhitordering/near-goods a fyzickýiOS/Gamepad mají doložené meze.
+- HD zatím pouze pozastavenýpreview s failedqualitygate; důslednýupscaling má samostatný workstream až po tomto releasu, neimportuje se narychlo.

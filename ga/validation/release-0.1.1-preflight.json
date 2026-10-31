@@ -1,0 +1,26 @@
+{
+  "checkedAtUTC": "2026-10-31T16:46:01.168868+00:00",
+  "releaseCandidate": "ga-v0.1.1",
+  "packageVersion": "0.1.1",
+  "snapshotSHA256": "e60da36a1307690d417693bb94ca4bf2d18a58376523a5652e59b68c74aa764b",
+  "runtimeFiles": 154,
+  "tests": {
+    "passed": 90,
+    "failed": 0,
+    "log": "validation/release-0.1.1-tests.txt"
+  },
+  "runtimeManifestAndLicense": "PASS",
+  "reusedBrowserReceiptHashesAllMatch": true,
+  "nativeInitial1PPixels": {
+    "matching": 62400,
+    "total": 62400,
+    "scope": "One312x200pose; no new native2P/fullnative timer claim"
+  },
+  "Pre2ProtectedFilesUnchanged": 39,
+  "rootWorkflowChanges": false,
+  "indexBeforeStageEmpty": true,
+  "oldReleaseUnaffected": true,
+  "CIAndPublishPending": true,
+  "clusterDeploy": false,
+  "preview5790Preserved": true
+}

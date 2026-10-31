@@ -76,8 +76,10 @@ Předávací zápis po skutečné práci: build commit+snapshot, image digest/pl
 
 ## Samostatný GitHub release Golden Axe
 
-Verze balíčku0.1.0 používá vlastní prefix `ga-v0.1.0`, nikoli existující Pre2tag `v*`. Image se staví na main/workflow_dispatch; tagpush sám další image ani release nevytváří. Po úspěšném GA CI vytvoří release owner tag na přesném otestovaném packaging commitu a samostatný GitHub release s názvem Golden Axe. Před vytvořením musí znovu ověřit nepoužitý tag.
+Verze balíčku0.1.1 používá vlastní prefix `ga-v0.1.1`, nikoli existující Pre2tag `v*`. Image se staví na main/workflow_dispatch; tagpush sám další image ani release nevytváří. Po úspěšném GA CI vytvoří release owner tag na přesném otestovaném packaging commitu a samostatný GitHub release s názvem Golden Axe. Před vytvořením musí znovu ověřit nepoužitý tag.
 
-Deployer asset je explicitní `ga-v0.1.0.tar.gz` z committed `ga/` subtree a `ga-v0.1.0.SHA256SUMS`; GitHub automatický SourcecodeZIP obsahuje celý parentrepo a není GA-only balíček. Archiv ponechává tracked build.json jako poctivý lokální template; skutečný čistý buildcommit se ověřuje vCI image. Pro CI-integrační test použijte cílový repo včetně obou rootworkflow; samotný GA kontejner/render nepotřebují Pre2runtime.
+Deployer asset je explicitní `ga-v0.1.1.tar.gz` z committed `ga/` subtree a `ga-v0.1.1.SHA256SUMS`; GitHub automatický SourcecodeZIP obsahuje celý parentrepo a není GA-only balíček. Archiv ponechává tracked build.json jako poctivý lokální template; skutečný čistý buildcommit se ověřuje vCI image. Pro CI-integrační test použijte cílový repo včetně obou rootworkflow; samotný GA kontejner/render nepotřebují Pre2runtime.
 
 Release notes uvedou actual packagingcommit, runtime snapshot, GA CIrun, skutečný image digest/platformy, checksum přiloženého archivu, známé meze a žádný clusterdeploy. Release se nevydává jako dokončený HD/nativeexact remaster; HD zůstává preview. Žádný release/push při původním balení neproběhl.
+
+Požadovaný deployment host pro toto předání je `ga.500miles.cz`. Je to vstup pro deployera, nikoli potvrzení změnyDNS/TLS/Ingressu nebo skutečného nasazení; žádný cluster se při vydání nemění. Historický ga-v0.1.0 zůstává neměnný.

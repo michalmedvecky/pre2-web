@@ -23,6 +23,12 @@
       "sourceSHA256": "27aaae9581c55c0ce4bd1214a740aec7b8f35c971fb1b3287fd4aa9d647f7ef4",
       "packagedSHA256": "3edcc53a268bf6a148fdfaa53b3aad2a8421b683cbe1d3d34a4e678f45917024",
       "change": "Portable dist paths, retained JSON native samples, original byte-data fixture instead of copying executable module."
+    },
+    {
+      "file": "tests/character-select.test.mjs",
+      "sourceSHA256": "ad27d560210742ea56564c107e382e628dc02e54ef2241eaf3ec678cb82e9c23",
+      "packagedSHA256": "04eb1d49ef2b47f674501a90773cc9bec5eae4355fe8c5378b8d8b628156b08e",
+      "change": "Portable dist imports; raw480B orbit table fixture + source module SHA instead of an executable dependency."
     }
   ],
   "fixtureSourceFiles": {

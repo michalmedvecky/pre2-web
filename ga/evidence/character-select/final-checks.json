@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "runtimeSnapshot": "e60da36a1307690d417693bb94ca4bf2d18a58376523a5652e59b68c74aa764b",
+  "runtimeFileCount": 154,
+  "targetedUnitTests": {
+    "passed": 11,
+    "failed": 0,
+    "log": "unit-tests.txt"
+  },
+  "browser": "checks.json",
+  "nativeInitialPosePixels": "native-pixel-comparison.json",
+  "parentProtectedFiles": 39,
+  "parentMismatches": [],
+  "coreSHA256": "5213829f351f710dddefc27a37edbd2f4a715a901e86da62bf81ab0bb073b1e0",
+  "localOnly": true,
+  "releaseTagUntouched": "ga-v0.1.0",
+  "preview": {
+    "url": "http://127.0.0.1:5790/",
+    "pid": 76136,
+    "leftRunningByInstruction": true
+  },
+  "testBrowserClosed": true,
+  "testAudioDisposed": true,
+  "independentPresenterReview": "PASS: original module owner read-only app/input/audio drain review; no blocking bug, GA modules byte-identical to exported research modules"
+}
