@@ -24,5 +24,6 @@
   "featureFreezeSnapshot": "80dd4aee69233a1c3c4480dfe690c8017b991299d830888ba01d322dc01f1b3f",
   "changesAfterFeatureFreeze": [
     "Remove trailing whitespace from dist/js/app.js; no semantic change."
-  ]
+  ],
+  "portableTestFixture": "tests/fixtures/dynamic-door-states.json"
 }
