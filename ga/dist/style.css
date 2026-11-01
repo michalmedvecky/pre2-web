@@ -30,3 +30,7 @@ footer{display:flex;gap:20px;align-items:center;color:var(--muted);font-size:10p
 @media(max-width:600px){.selection-controls .character-options button{min-width:0;padding:8px;font-size:10px}.selection-row{gap:4px}.selection-controls .character-options{gap:3px}.selection-arrow{min-width:38px}.selection-actions .primary{min-width:180px;font-size:12px}.stage.selecting .screen-wrap{width:min(100%,calc((100dvh - 300px)*1.6))}.selection-actions{gap:10px}}
 
 .selection-player+.selection-player{margin-top:8px}.selection-row>.primary{width:auto;min-height:44px;min-width:80px;padding:8px;font-size:12px}.selection-row>.primary span{font-size:16px;margin-left:8px}.selection-controls .menu-back{margin:4px auto 0;min-height:36px}.stage.selecting.two-selectors .screen-wrap{width:min(100%,calc((100dvh - 390px)*1.6))}@media(max-width:600px){.selection-row>.primary{min-width:60px;font-size:10px}.selection-controls .character-options button{padding:6px;font-size:9px}.selection-row>.primary span{display:none}.selection-arrow{min-width:32px}.stage.selecting.two-selectors .screen-wrap{width:min(100%,calc((100dvh - 355px)*1.6))}}
+
+/* HD uses real4xbacking; only original mode requests nearest CSS scaling. */
+#game.graphics-hd{image-rendering:auto}
+@media(max-width:600px){#graphics-edition{display:none}}

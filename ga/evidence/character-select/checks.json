@@ -2,11 +2,11 @@
   "authority": "Actual RAF and keyboard/touch-style controls in isolated Chromium; original data/static code plus existing native screenshots, not a new native run or physical mobile test.",
   "errors": [],
   "hashes": {
-    "app.js": "a620a1509cc63b736c4089e4610b8bce6fbb2d70fec0e63d39e438b22943a999",
+    "app.js": "ecdad888fa9dd38bcb032bca4ffb859da4d2f81dc991868127e92a421f2a0d9e",
     "character-select.js": "ed5ba4a78dac79f6b105f0c72d71b715a07101e44c926478f7437f38427a9e78",
     "character-select-data.js": "c4e2b9b7fd58576849f653601c8d097b53eb8b51e365416ca38d643a4aede9fb",
     "input.js": "d6d509333f504ab07250ed4b14f17be10017e2233e03aa74bb677d31b5fd8efc",
-    "renderer.js": "095a537992e9e308ea7103189d45b62ff79dbb881e3c72884e629dc6d9ad70d2",
+    "renderer.js": "60afbd70882ca5cb0ead7b4fe360a65838d5c3c84ca9e18c5034ee26c1b5e7cb",
     "simulation.js": "5213829f351f710dddefc27a37edbd2f4a715a901e86da62bf81ab0bb073b1e0"
   },
   "initial": {
@@ -125,13 +125,5 @@
   ],
   "pass": true,
   "audioDisposed": true,
-  "browserClosed": true,
-  "visuallyInspected": [
-    "one-player-initial.png",
-    "one-player-rotating.png",
-    "two-player-initial.png",
-    "two-player-choice.png",
-    "two-player-mobile.png"
-  ],
-  "original5788Untouched": true
+  "browserClosed": true
 }

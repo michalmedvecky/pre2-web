@@ -1,0 +1,28 @@
+{
+  "scope": "Runtime integration checkpoint only; artwork manifest continues independently under asset owner. No full-game HD completeness claim.",
+  "unitTests": {
+    "passed": 102,
+    "failed": 0,
+    "command": "npm test"
+  },
+  "runtimeSHA256": {
+    "dist/js/hd-assets.js": "6414e90699b906995e346858c72371d399a197de13a6625795e617caefa71c21",
+    "dist/js/renderer.js": "60afbd70882ca5cb0ead7b4fe360a65838d5c3c84ca9e18c5034ee26c1b5e7cb",
+    "dist/js/app.js": "ecdad888fa9dd38bcb032bca4ffb859da4d2f81dc991868127e92a421f2a0d9e",
+    "dist/js/hd-presentation.js": "0b6a1c7c4ae38e9289fcd519990866b05efe0346d9e3a520ee037f551b0d7b7a",
+    "dist/js/hd-native-font.js": "d4ef6035ace079e117a6efb488a2ded1ef772e733251d60baec43079193dcfb2",
+    "dist/index.html": "a6cb1d4fc491a6d0cd8f6c1e1cd23c4c3fc122d3c6a83ed888f720e1b9317489",
+    "dist/style.css": "9a03bd153c2d572c562920302b101e60bf8e208221268efb3b229f731e1a8403",
+    "tests/hd-assets.test.mjs": "54bb59336ad6e50f94b4eb6dff30de1a25ba3faf50a2ff06c1c2cda0fec5d1e7",
+    "tests/hd-renderer-browser.mjs": "3cb30d36063d15f6e56a3ea665ed9790fbb307e810c6be497d5d562765f7e50d",
+    "tests/runtime-browser.mjs": "9e7ae87690d3694979d9a90e8d8961b6a657d383025fb73bf007ef7c109d8c0e",
+    "tests/character-select-browser.mjs": "f5756c5cf376428642f1a698c50c346db28c7d7a221bef78c5627cd9713801a8"
+  },
+  "receipts": [
+    "validation/hd-renderer/checks.json",
+    "validation/hd-runtime-smoke/checks.json",
+    "evidence/character-select/checks.json"
+  ],
+  "physicsEdited": false,
+  "published": false
+}

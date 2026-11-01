@@ -1,0 +1,458 @@
+{
+  "base": "http://127.0.0.1:5796/",
+  "errors": [],
+  "scope": "Actual browser centralrenderer HD/backing/pivots/variants/dynamicmap/presentation/toggle. Synthetic coloratlases are TESTFIXTURES, never productionHDart or fidelityproof.",
+  "startup": {
+    "mode": "hd",
+    "backingScale": 4,
+    "canvas": [
+      1280,
+      800
+    ],
+    "sourceFrames": 581,
+    "sourceMaps": 13,
+    "available": {
+      "approvedFrames": 22,
+      "approvedMapRegions": 2,
+      "approvedTilePatches": 0,
+      "approvedGlyphs": 0,
+      "loadedAtlases": 4,
+      "pendingAtlases": 0,
+      "failedAtlases": 0,
+      "decodedBytes": 25162580,
+      "evictions": 0,
+      "declaredComplete": false
+    },
+    "draw": {
+      "hdSprites": 0,
+      "originalSprites": 0,
+      "hdMapRegions": 0,
+      "hdGlyphs": 0,
+      "vectorGlyphs": 0,
+      "originalGlyphs": 0,
+      "dynamicOriginalCells": 0,
+      "reasons": {}
+    },
+    "typography": {
+      "classification": "preserved-vector-typography",
+      "sourceGlyphs": 72
+    },
+    "manifestError": null
+  },
+  "toggle": {
+    "original": {
+      "mode": "original",
+      "backingScale": 1,
+      "canvas": [
+        320,
+        200
+      ],
+      "sourceFrames": 581,
+      "sourceMaps": 13,
+      "available": {
+        "approvedFrames": 22,
+        "approvedMapRegions": 2,
+        "approvedTilePatches": 0,
+        "approvedGlyphs": 0,
+        "loadedAtlases": 4,
+        "pendingAtlases": 0,
+        "failedAtlases": 0,
+        "decodedBytes": 25162580,
+        "evictions": 0,
+        "declaredComplete": false
+      },
+      "draw": {
+        "hdSprites": 0,
+        "originalSprites": 0,
+        "hdMapRegions": 0,
+        "hdGlyphs": 0,
+        "vectorGlyphs": 0,
+        "originalGlyphs": 0,
+        "dynamicOriginalCells": 0,
+        "reasons": {}
+      },
+      "typography": {
+        "classification": "original-pixels",
+        "sourceGlyphs": 72
+      },
+      "manifestError": null
+    },
+    "hd": {
+      "mode": "hd",
+      "backingScale": 4,
+      "canvas": [
+        1280,
+        800
+      ],
+      "sourceFrames": 581,
+      "sourceMaps": 13,
+      "available": {
+        "approvedFrames": 22,
+        "approvedMapRegions": 2,
+        "approvedTilePatches": 0,
+        "approvedGlyphs": 0,
+        "loadedAtlases": 4,
+        "pendingAtlases": 0,
+        "failedAtlases": 0,
+        "decodedBytes": 25162580,
+        "evictions": 0,
+        "declaredComplete": false
+      },
+      "draw": {
+        "hdSprites": 0,
+        "originalSprites": 0,
+        "hdMapRegions": 0,
+        "hdGlyphs": 0,
+        "vectorGlyphs": 0,
+        "originalGlyphs": 0,
+        "dynamicOriginalCells": 0,
+        "reasons": {}
+      },
+      "typography": {
+        "classification": "preserved-vector-typography",
+        "sourceGlyphs": 72
+      },
+      "manifestError": null
+    },
+    "worldUnchanged": true
+  },
+  "renderer": {
+    "actual": {
+      "mode": "hd",
+      "backingScale": 4,
+      "canvas": [
+        1280,
+        800
+      ],
+      "sourceFrames": 581,
+      "sourceMaps": 13,
+      "available": {
+        "approvedFrames": 22,
+        "approvedMapRegions": 2,
+        "approvedTilePatches": 0,
+        "approvedGlyphs": 0,
+        "loadedAtlases": 6,
+        "pendingAtlases": 0,
+        "failedAtlases": 0,
+        "decodedBytes": 37741700,
+        "evictions": 0,
+        "declaredComplete": false
+      },
+      "draw": {
+        "hdSprites": 1,
+        "originalSprites": 0,
+        "hdMapRegions": 1,
+        "hdGlyphs": 0,
+        "vectorGlyphs": 0,
+        "originalGlyphs": 0,
+        "dynamicOriginalCells": 0,
+        "reasons": {}
+      },
+      "typography": {
+        "classification": "preserved-vector-typography",
+        "sourceGlyphs": 72
+      },
+      "manifestError": null
+    },
+    "detailPixels": [
+      [
+        255,
+        0,
+        0,
+        255
+      ],
+      [
+        0,
+        0,
+        255,
+        255
+      ]
+    ],
+    "mirrorPixel": [
+      255,
+      0,
+      0,
+      255
+    ],
+    "door": {
+      "mode": "hd",
+      "backingScale": 4,
+      "canvas": [
+        1280,
+        800
+      ],
+      "sourceFrames": 581,
+      "sourceMaps": 13,
+      "available": {
+        "approvedFrames": 1,
+        "approvedMapRegions": 1,
+        "approvedTilePatches": 0,
+        "approvedGlyphs": 1,
+        "loadedAtlases": 2,
+        "pendingAtlases": 0,
+        "failedAtlases": 0,
+        "decodedBytes": 249856,
+        "evictions": 0,
+        "declaredComplete": false
+      },
+      "draw": {
+        "hdSprites": 0,
+        "originalSprites": 0,
+        "hdMapRegions": 1,
+        "hdGlyphs": 0,
+        "vectorGlyphs": 0,
+        "originalGlyphs": 0,
+        "dynamicOriginalCells": 1,
+        "reasons": {
+          "dynamic-map-cell": 1
+        }
+      },
+      "typography": {
+        "classification": "preserved-vector-typography",
+        "sourceGlyphs": 72
+      },
+      "manifestError": null
+    },
+    "expected": [
+      130,
+      162,
+      243,
+      255
+    ],
+    "patched": [
+      130,
+      162,
+      243,
+      255
+    ],
+    "outside": [
+      255,
+      0,
+      0,
+      255
+    ],
+    "aliasDoor": {
+      "mode": "hd",
+      "backingScale": 4,
+      "canvas": [
+        1280,
+        800
+      ],
+      "sourceFrames": 581,
+      "sourceMaps": 13,
+      "available": {
+        "approvedFrames": 1,
+        "approvedMapRegions": 1,
+        "approvedTilePatches": 0,
+        "approvedGlyphs": 1,
+        "loadedAtlases": 2,
+        "pendingAtlases": 0,
+        "failedAtlases": 0,
+        "decodedBytes": 249856,
+        "evictions": 0,
+        "declaredComplete": false
+      },
+      "draw": {
+        "hdSprites": 0,
+        "originalSprites": 0,
+        "hdMapRegions": 1,
+        "hdGlyphs": 0,
+        "vectorGlyphs": 0,
+        "originalGlyphs": 0,
+        "dynamicOriginalCells": 1,
+        "reasons": {
+          "dynamic-map-cell": 1
+        }
+      },
+      "typography": {
+        "classification": "preserved-vector-typography",
+        "sourceGlyphs": 72
+      },
+      "manifestError": null
+    },
+    "font": {
+      "mode": "hd",
+      "backingScale": 4,
+      "canvas": [
+        1280,
+        800
+      ],
+      "sourceFrames": 581,
+      "sourceMaps": 13,
+      "available": {
+        "approvedFrames": 1,
+        "approvedMapRegions": 1,
+        "approvedTilePatches": 0,
+        "approvedGlyphs": 1,
+        "loadedAtlases": 2,
+        "pendingAtlases": 0,
+        "failedAtlases": 0,
+        "decodedBytes": 249856,
+        "evictions": 0,
+        "declaredComplete": false
+      },
+      "draw": {
+        "hdSprites": 0,
+        "originalSprites": 0,
+        "hdMapRegions": 1,
+        "hdGlyphs": 1,
+        "vectorGlyphs": 0,
+        "originalGlyphs": 0,
+        "dynamicOriginalCells": 1,
+        "reasons": {
+          "dynamic-map-cell": 1
+        }
+      },
+      "typography": {
+        "classification": "preserved-vector-typography",
+        "sourceGlyphs": 72
+      },
+      "manifestError": null
+    },
+    "presenters": [
+      [
+        "title",
+        1280
+      ],
+      [
+        "opening",
+        1280
+      ],
+      [
+        "selection2P",
+        1280
+      ],
+      [
+        "rescue",
+        1280
+      ],
+      [
+        "results",
+        1280
+      ],
+      [
+        "gameover",
+        1280
+      ]
+    ],
+    "original": {
+      "mode": "original",
+      "backingScale": 1,
+      "canvas": [
+        320,
+        200
+      ],
+      "sourceFrames": 581,
+      "sourceMaps": 13,
+      "available": {
+        "approvedFrames": 1,
+        "approvedMapRegions": 1,
+        "approvedTilePatches": 0,
+        "approvedGlyphs": 1,
+        "loadedAtlases": 2,
+        "pendingAtlases": 0,
+        "failedAtlases": 0,
+        "decodedBytes": 249856,
+        "evictions": 0,
+        "declaredComplete": false
+      },
+      "draw": {
+        "hdSprites": 0,
+        "originalSprites": 0,
+        "hdMapRegions": 0,
+        "hdGlyphs": 0,
+        "vectorGlyphs": 0,
+        "originalGlyphs": 0,
+        "dynamicOriginalCells": 0,
+        "reasons": {}
+      },
+      "typography": {
+        "classification": "original-pixels",
+        "sourceGlyphs": 72
+      },
+      "manifestError": null
+    },
+    "pivot": 34
+  },
+  "title": {
+    "mode": "hd",
+    "backingScale": 4,
+    "canvas": [
+      1280,
+      800
+    ],
+    "sourceFrames": 581,
+    "sourceMaps": 13,
+    "available": {
+      "approvedFrames": 22,
+      "approvedMapRegions": 2,
+      "approvedTilePatches": 0,
+      "approvedGlyphs": 0,
+      "loadedAtlases": 6,
+      "pendingAtlases": 0,
+      "failedAtlases": 0,
+      "decodedBytes": 37741700,
+      "evictions": 0,
+      "declaredComplete": false
+    },
+    "draw": {
+      "hdSprites": 19,
+      "originalSprites": 0,
+      "hdMapRegions": 1,
+      "hdGlyphs": 0,
+      "vectorGlyphs": 0,
+      "originalGlyphs": 0,
+      "dynamicOriginalCells": 0,
+      "reasons": {}
+    },
+    "typography": {
+      "classification": "preserved-vector-typography",
+      "sourceGlyphs": 72
+    },
+    "manifestError": null
+  },
+  "cheatOriginal": {
+    "mode": "original",
+    "backingScale": 1,
+    "canvas": [
+      320,
+      200
+    ],
+    "sourceFrames": 581,
+    "sourceMaps": 13,
+    "available": {
+      "approvedFrames": 22,
+      "approvedMapRegions": 2,
+      "approvedTilePatches": 0,
+      "approvedGlyphs": 0,
+      "loadedAtlases": 6,
+      "pendingAtlases": 0,
+      "failedAtlases": 0,
+      "decodedBytes": 37741700,
+      "evictions": 0,
+      "declaredComplete": false
+    },
+    "draw": {
+      "hdSprites": 0,
+      "originalSprites": 19,
+      "hdMapRegions": 0,
+      "hdGlyphs": 0,
+      "vectorGlyphs": 0,
+      "originalGlyphs": 0,
+      "dynamicOriginalCells": 0,
+      "reasons": {}
+    },
+    "typography": {
+      "classification": "original-pixels",
+      "sourceGlyphs": 72
+    },
+    "manifestError": null
+  },
+  "mobile": {
+    "left": 216,
+    "right": 376,
+    "viewport": 390
+  },
+  "browserClosed": true,
+  "pass": true
+}

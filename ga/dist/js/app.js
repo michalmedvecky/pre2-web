@@ -12,7 +12,8 @@ import {SOUND_TEST_DATA} from './sound-test-data.js';
 import {LEGACY_DATA,averageJoystickSamples} from './legacy-controls.js';
 import {createMapOverlay} from './map-overlay.js';
 import {createLevelOverlay} from './level-overlay.js';
-import {createHDPreviewOverlay} from './hd-preview-overlay.js';
+import {preloadPresentationHD} from './hd-presentation.js';
+import {warmStatePalettes} from './hd-palette-warmup.js';
 
 const $ = selector => document.querySelector(selector);
 const canvas = $('#game');
@@ -29,8 +30,33 @@ let titlePending=true,openingShown=false,interludeShown=false;
 let calibration=null;
 let acceptedPasswordByte=0;
 let soundTestCursor=0,soundTestEffect=SOUND_TEST_DATA.effect.initial,soundTestMusicTicket=0,soundTestEffectTicket=0;
-function makePassword(){const presenter=new OriginalPassword({acceptedByte:acceptedPasswordByte});presenter.kind='password';presenter.phase='password';presenter.advance=()=>presenter.key('Enter');return presenter;}
-let mapOverlay=null,levelOverlay=null,hdPreview=null,lastGodMode=false;
+function warmPresentation(kind) {
+  if(!assets?.hd)return Promise.resolve(null);
+  const characters=[selection.character,...(selection.players===2?[selection.character2]:[])];
+  const key=kind+':'+characters.join(',');
+  if(!hdWarmups.has(key))hdWarmups.set(key,preloadPresentationHD(assets,kind,{characters,load:request=>request.kind==='font'&&renderer?.vectorFont?true:assets.hd.preloadRequest(request.kind==='map'?{...request,viewport:[assets.maps[request.mapId].initialCamera.x,assets.maps[request.mapId].initialCamera.y,assets.playfieldWidth,200]}:request)}).then(report=>{report.typography=renderer?.vectorFont?.classification;if(window.goldenAxe)(window.goldenAxe.hdPresentationCoverage??={})[key]=report;return report;}).catch(error=>({kind,complete:false,error:String(error.message||error)})));
+  return hdWarmups.get(key);
+}
+function updateGraphicsUI() {
+  if(!renderer)return;
+  const status=renderer.getGraphicsStatus(),hd=status.mode==='hd';
+  for(const button of document.querySelectorAll('[data-open-hd]')){button.disabled=false;button.setAttribute('aria-pressed',String(hd));button.textContent=button.classList.contains('icon-button')?(hd?'HD':'DOS'):(hd?'HD → originál':'Originál → HD');button.setAttribute('aria-label',hd?'Přepnout na původní grafiku':'Přepnout na HD grafiku');}
+  const label=$('#graphics-coverage');
+  if(label)label.textContent=hd?'HD remaster. Tlačítkem HD přepneš původní grafiku.':'Původní grafika.';
+  const edition=$('#graphics-edition');if(edition)edition.textContent=hd?'HD REMASTER':'PŮVODNÍ GRAFIKA';
+}
+function setGraphicsMode(mode) {const result=renderer.setGraphicsMode(mode);try{localStorage.setItem('ga.graphics',mode);}catch{}updateGraphicsUI();return result;}
+function toggleHD() {return setGraphicsMode(renderer.graphicsMode==='hd'?'original':'hd');}
+function makePassword(){warmPresentation('password');const presenter=new OriginalPassword({acceptedByte:acceptedPasswordByte});presenter.kind='password';presenter.phase='password';presenter.advance=()=>presenter.key('Enter');return presenter;}
+let mapOverlay=null,levelOverlay=null,lastGodMode=false;
+const hdWarmups=new Map();
+let paletteWarmupRunning=false,lastPaletteWarmup=-Infinity;
+function warmActorPalettes(now=performance.now()) {
+  if(!assets?.hd||!renderer||!simulation||paletteWarmupRunning||now-lastPaletteWarmup<250)return;
+  lastPaletteWarmup=now;paletteWarmupRunning=true;
+  // Snapshot only palette dependencies; no simulation tick/input/audio waits for this work.
+  warmStatePalettes(assets,renderer,simulation.state,{limit:8}).catch(()=>{}).finally(()=>{paletteWarmupRunning=false;});
+}
 const resultsHistogram=Array(8).fill(0);
 const audio = new OriginalAudio({muted:globalThis.GOLDEN_AXE_TEST_MUTED===true});
 let audioStageKey=null;
@@ -109,7 +135,7 @@ function menuSync() {
 }
 function primaryAction() {
   if(!started&&titlePending&&menuStep==='mode'&&menuCursor!==3){
-    titlePending=false;sequence=new OriginalIntro(simulation,'title');start();
+    titlePending=false;sequence=new OriginalIntro(simulation,'title');warmPresentation('title');start();
     const generation=audioGeneration;audio.unlock().then(ok=>{if(ok&&generation===audioGeneration&&sequence?.kind==='title')audio.playTrack('opening');});return;
   }
   if (started) {
@@ -124,7 +150,7 @@ function primaryAction() {
   launchSelection();
 }
 function beginCharacterSelect(){
-  characterSelect=new OriginalCharacterSelect({assets,players:selection.players});
+  characterSelect=new OriginalCharacterSelect({assets,players:selection.players});warmPresentation('character-select');
   drainCharacterEvents();
   input?.setPlayers(selection.players);input?.setDevices(selection.devices);input?.clear();
   accumulated=0;prior=performance.now();canvas.focus({preventScroll:true});
@@ -138,7 +164,7 @@ function finishCharacterSelect(){
 }
 function launch() {
   if (!assets) return;
-  hdPreview?.close({resume:false,focus:false});levelOverlay?.close({resume:false,focus:false});
+  levelOverlay?.close({resume:false,focus:false});
   resetAudio();
   sequence=null;
   openingShown=false;
@@ -153,13 +179,13 @@ function jumpToLevel(index) {
   if(!started||['title','password'].includes(sequence?.kind))return {ok:false,reason:'inactive-game'};
   const result=simulation.jumpToStage(index);
   if(!result.ok)return result;
-  hdPreview?.close({resume:false,focus:false});levelOverlay?.close({resume:false,focus:false});mapOverlay?.close();
+  levelOverlay?.close({resume:false,focus:false});mapOverlay?.close();
   resetAudio();sequence=null;calibration=null;$('#calibration-panel').hidden=true;
   openingShown=true;interludeShown=false;input?.clear();
   start();renderer.render({...simulation.state,mode:simulation.mode});return result;
 }
 function returnMenu() {
-  hdPreview?.close({resume:false,focus:false});
+
   levelOverlay?.close({resume:false,focus:false});
   mapOverlay?.close();
   resetAudio();audio.setPaused(true);
@@ -266,6 +292,7 @@ function start() {
   if (!simulation) return;
   started = true; paused = false; accumulated = 0; prior = performance.now();
   input?.clear(); sync(); canvas.focus({preventScroll:true});
+  warmActorPalettes();
   unlockAudio();
 }
 function pause() {
@@ -300,6 +327,7 @@ document.addEventListener('visibilitychange', () => {
 });
 
 function beginSequence(kind,plan=null){
+  warmPresentation(kind);
   if(kind==='results'){
     const results=simulation.calculateResults();for(const result of results)resultsHistogram[Math.min(7,result.rank)]++;
     simulation.state.resultsHistogram=[...resultsHistogram];
@@ -330,7 +358,7 @@ function routeTerminal(){
   }
 }
 function continueStage(skipTravel=false){
-  if(!interludeShown&&interludeReady(simulation)){interludeShown=true;sequence=new OriginalInterlude(simulation);drainSequenceEvents();start();return;}
+  if(!interludeShown&&interludeReady(simulation)){interludeShown=true;sequence=new OriginalInterlude(simulation);warmPresentation('interlude');drainSequenceEvents();start();return;}
   const plan=skipTravel?null:simulation.transitionPlan?.();
   if(plan&&!(simulation.mode==='arcade'&&simulation.state.stageIndex===7)){beginSequence('travel',plan);start();return;}
   simulation.advanceStage();routeTerminal();start();
@@ -341,7 +369,7 @@ function finishSequence(){
   if(finished.kind==='title'&&next==='menu'&&!acceptedPasswordByte){resetAudio();sequence=makePassword();input?.clear();sync();$('#password-text').value='';$('#password-text').focus();return;}
   if(finished.kind==='password'){
     if(finished.accepted)acceptedPasswordByte=finished.acceptedByte;
-    if(next==='title'){sequence=new OriginalIntro(simulation,'title');resetAudio();const generation=audioGeneration;audio.unlock().then(ok=>{if(ok&&generation===audioGeneration&&sequence?.kind==='title')audio.playTrack('opening');});input?.clear();sync();canvas.focus();return;}
+    if(next==='title'){sequence=new OriginalIntro(simulation,'title');warmPresentation('title');resetAudio();const generation=audioGeneration;audio.unlock().then(ok=>{if(ok&&generation===audioGeneration&&sequence?.kind==='title')audio.playTrack('opening');});input?.clear();sync();canvas.focus();return;}
   }
   if(next==='resume-game'){input?.clear();return;}
   if(finished.kind==='rescue'){
@@ -359,7 +387,8 @@ try {
   const rate = engine.TICK_RATE;
   if (!Number.isFinite(rate) || rate <= 0) throw new Error('Chybí ověřené časování simulace.');
   simulation = new engine.Simulation({assets});
-  renderer = new Renderer(canvas, assets);
+  let graphicsMode='hd';try{if(localStorage.getItem('ga.graphics')==='original')graphicsMode='original';}catch{}
+  renderer = new Renderer(canvas, assets,{graphicsMode});
   input = new Input({onPause:code=>{if(sequence?.kind==='title'&&code==='Space'){primaryAction();return;}if(!started&&code==='Escape')return;pause();},onStart:primaryAction});
   window.addEventListener('pagehide',()=>input.dispose());
   canvas.addEventListener('pointerdown',event=>{if(event.pointerType==='mouse'&&started&&!paused&&!sequence&&selection.devices.includes('mouse'))input.legacy.requestMouseLock();});
@@ -369,23 +398,24 @@ try {
   showBuildInfo($('#build-repository'),$('#build-commit')).then(info=>{window.goldenAxe.buildInfo=info;});
   mapOverlay=createMapOverlay({getGame:()=>window.goldenAxe});window.goldenAxe.mapOverlay=mapOverlay;
   levelOverlay=createLevelOverlay({getGame:()=>window.goldenAxe,onSelect:jumpToLevel});window.goldenAxe.levelOverlay=levelOverlay;
-  hdPreview=createHDPreviewOverlay({getGame:()=>window.goldenAxe});window.goldenAxe.hdPreview=hdPreview;
-  for(const button of document.querySelectorAll('[data-open-hd]'))button.addEventListener('click',()=>hdPreview.toggle());
+  window.goldenAxe.graphics={toggle:toggleHD,set:setGraphicsMode,status:()=>renderer.getGraphicsStatus()};
+  for(const button of document.querySelectorAll('[data-open-hd]'))button.addEventListener('click',toggleHD);
+  updateGraphicsUI();
   for(const button of document.querySelectorAll('[data-open-level]'))button.addEventListener('click',()=>levelOverlay.toggle());
   for(const button of document.querySelectorAll('[data-open-map]'))button.addEventListener('click',()=>mapOverlay.toggle());
   for(const button of document.querySelectorAll('[data-toggle-god]'))button.addEventListener('click',()=>mapOverlay.toggleGodMode());
   let cheatWord='';
   window.addEventListener('keydown',event=>{
-    if(!started||event.ctrlKey||event.metaKey||event.altKey||event.target?.closest?.('input,select,textarea')||mapOverlay.isOpen||levelOverlay.isOpen||hdPreview.isOpen)return;
+    if(!started||event.ctrlKey||event.metaKey||event.altKey||event.target?.closest?.('input,select,textarea')||mapOverlay.isOpen||levelOverlay.isOpen)return;
     if(!/^[a-z]$/i.test(event.key))return;
     cheatWord=(cheatWord+event.key.toUpperCase()).slice(-5);
-    if(cheatWord.endsWith('HD')){hdPreview.open();cheatWord='';return;}
+    if(cheatWord.endsWith('HD')){toggleHD();cheatWord='';return;}
     if(cheatWord.endsWith('LEVEL')){levelOverlay.open();cheatWord='';return;}
     if(sequence||simulation.state.status!=='playing')return;
     if(cheatWord.endsWith('IDDQD')){mapOverlay.toggleGodMode();cheatWord='';}
     else if(cheatWord.endsWith('MAP')){mapOverlay.toggle();cheatWord='';}
   });
-  window.addEventListener('pagehide',()=>{hdPreview.dispose();levelOverlay.dispose();mapOverlay.dispose();});
+  window.addEventListener('pagehide',()=>{levelOverlay.dispose();mapOverlay.dispose();});
   const tickMs = 1000 / rate;
   const frameDiagnostics=[];
   const frameAnomalies=[];
@@ -406,7 +436,7 @@ try {
           sequence.step(sampled);drainSequenceEvents();
           finishSequence();
         }else{
-          if(!openingShown&&openingReady(simulation)){sequence=new OriginalIntro(simulation,'opening');openingShown=true;input.clear();accumulated=Math.max(0,accumulated-tickMs);continue;}
+          if(!openingShown&&openingReady(simulation)){sequence=new OriginalIntro(simulation,'opening');warmPresentation('opening');openingShown=true;input.clear();accumulated=Math.max(0,accumulated-tickMs);continue;}
           const previousTick=simulation.state.tick,stepStart=performance.now();simulation.step(sampled);
           maxStepMs=Math.max(maxStepMs,performance.now()-stepStart);steps++;
           if(simulation.state.tick!==previousTick)for(const event of simulation.state.events||[])dispatchSound(event);
@@ -416,7 +446,10 @@ try {
       }
       syncAudioStage();
     }
+    renderer.beginFrame();
+    if(started)warmActorPalettes(now);
     if (started) {if(sequence)sequence.render(renderer);else renderer.render({...simulation.state,mode:simulation.mode});} else if(menuStep==='character'&&characterSelect)characterSelect.render(renderer);else renderer.renderMenu(menuStep);
+    updateGraphicsUI();
     if (simulation.state.status !== lastStatus) sync();
     if(lastGodMode!==!!simulation.state.godMode){lastGodMode=!!simulation.state.godMode;$('#status').textContent=`Původní data${lastGodMode?' · IDDQD':''}`;for(const button of document.querySelectorAll('[data-toggle-god]')){button.textContent=`IDDQD: ${lastGodMode?'zapnuto':'vypnuto'}`;button.setAttribute('aria-pressed',String(lastGodMode));}}
     if(started){const sample={now,rawElapsed,frameMs:performance.now()-frameStart,maxStepMs,steps,tick:simulation.state.tick,stageIndex:simulation.state.stageIndex,paused,hidden:document.hidden,status:simulation.state.status,actors:simulation.state.entities.length,magic:simulation.magic?{type:simulation.magic.type,phase:simulation.magic.phase,timer:simulation.magic.timer}:null};frameDiagnostics.push(sample);if(frameDiagnostics.length>180)frameDiagnostics.shift();if(rawElapsed>250||sample.frameMs>250||maxStepMs>50){frameAnomalies.push(sample);if(frameAnomalies.length>120)frameAnomalies.shift();}}

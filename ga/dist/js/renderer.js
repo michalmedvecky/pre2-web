@@ -1,3 +1,9 @@
+import {loadHDAssets,mapRegionCoverage} from './hd-assets.js';
+import {NativeVectorFont} from './hd-native-font.js';
+import {compilePreservedSprite,drawPreservedSprite} from './hd-native-sprite.js';
+import {patchCoversCell} from './hd-map-state.js';
+import {resolveSpriteFrame} from './sprite-frame-identity.js';
+import {nativeMapPaletteRecord} from './native-map-palette.js';
 export async function loadAssets(base = new URL('../assets/', import.meta.url)) {
   const response = await fetch(new URL('game.json', base));
   if (!response.ok) throw new Error('Nepodařilo se načíst původní herní data.');
@@ -16,6 +22,8 @@ export async function loadAssets(base = new URL('../assets/', import.meta.url)) 
     map.cells = Uint16Array.from({length: cells.byteLength / 2}, (_, i) => view.getUint16(i * 2, true));
     map.tiles = new Uint8Array(tiles);
   }));
+  assets.hd = await loadHDAssets(new URL('hd/',base));
+  await assets.hd.preloadScene('startup');
   return assets;
 }
 
@@ -33,13 +41,99 @@ export function nativeActorDrawOrder(actors, cameraY = 0) {
 }
 
 export class Renderer {
-  constructor(target, assets) {
+  constructor(target, assets, {graphicsMode = 'hd'} = {}) {
     this.canvas = target;
     this.ctx = target.getContext('2d', {alpha: false});
     this.assets = assets;
-    this.maps = new Map(); this.frames = new Map();
+    this.maps = new Map(); this.frames = new Map();this.preservedSprites=new Map();
     this.ctx.imageSmoothingEnabled = false;
     this.lastState = null;
+    this.hd = assets.hd;
+    this.vectorFont = new NativeVectorFont(assets.fontPixels,{glyphCount:assets.font.glyphs});
+    this.graphicsMode = null;
+    this.setGraphicsMode(graphicsMode);
+  }
+  setGraphicsMode(mode) {
+    if(!['hd','original'].includes(mode))throw new RangeError('Unknown graphics mode.');
+    if(this.graphicsMode===mode)return this.getGraphicsStatus();
+    this.graphicsMode=mode;this.canvas.classList?.toggle('graphics-hd',mode==='hd'); this.backingScale=mode==='hd'?4:1;
+    this.canvas.width=320*this.backingScale; this.canvas.height=200*this.backingScale;
+    this.ctx.setTransform(this.backingScale,0,0,this.backingScale,0,0);
+    this.ctx.imageSmoothingEnabled=false;
+    this.beginFrame(); return this.getGraphicsStatus();
+  }
+  toggleGraphicsMode() {return this.setGraphicsMode(this.graphicsMode==='hd'?'original':'hd');}
+  beginFrame() {this.drawCoverage={hdSprites:0,vectorSprites:0,originalSprites:0,hdMapRegions:0,hdMapStatePatches:0,hdStateCells:0,hdGlyphs:0,vectorGlyphs:0,originalGlyphs:0,dynamicOriginalCells:0,reasons:{}};}
+  fallback(reason) {this.drawCoverage.reasons[reason]=(this.drawCoverage.reasons[reason]||0)+1;}
+  getGraphicsStatus() {
+    const sourceFrames=Object.values(this.assets.sprites).reduce((n,g)=>n+Object.values(g.slots||{}).reduce((a,s)=>a+(s?.frames?.length||0),0),0);
+    return {mode:this.graphicsMode,backingScale:this.backingScale,canvas:[this.canvas.width,this.canvas.height],sourceFrames,sourceMaps:Object.keys(this.assets.maps).length,available:this.hd?.coverage()||{},draw:this.drawCoverage,typography:{classification:this.graphicsMode==='hd'?this.vectorFont.classification:'original-pixels',sourceGlyphs:this.vectorFont.glyphCount},manifestError:this.hd?.manifestError||null};
+  }
+  canonicalMapId(map) {
+    const match=Object.entries(this.assets.maps).find(([,m])=>m===map || m.cellsFile===map.cellsFile&&m.tilesFile===map.tilesFile);
+    return String(map.sourceMapId??match?.[0]??map.id).toLowerCase();
+  }
+  paintHD(found,x,y) {
+    const {entry:e,image}=found,[sx,sy,sw,sh]=e.rectPixels,s=e.scaleNativePerPixel;
+    this.ctx.save(); this.ctx.imageSmoothingEnabled=true;this.ctx.imageSmoothingQuality='high';
+    this.ctx.drawImage(image,sx,sy,sw,sh,x+e.translationNative[0],y+e.translationNative[1],sw*s,sh*s);
+    this.ctx.restore();
+  }
+  paintFrame(name,slot,index,palette,entry,x,top,mirror) {
+    const {image,frame}=entry;
+    const identity=resolveSpriteFrame(this.assets.sprites[name],slot,index);
+    const canonicalSlot=identity?.slot??slot,canonicalFrame=identity?.frame??index;
+    const preserved=this.graphicsMode==='hd'&&this.hd?.manifest?.preservedNativeFrames?.find(e=>e.sprite===name&&e.slot===canonicalSlot&&e.frame===canonicalFrame);
+    if(preserved){
+      const key=`${name}/${canonicalSlot}/${canonicalFrame}`;if(!this.preservedSprites.has(key))this.preservedSprites.set(key,compilePreservedSprite(preserved,frame,this.assets.spritePixels));
+      const compiled=this.preservedSprites.get(key);
+      if(compiled){const left=mirror?x-frame.width+frame.pivotX:x-frame.pivotX;
+        if(mirror){this.ctx.save();this.ctx.translate(left+frame.width,top);this.ctx.scale(-1,1);drawPreservedSprite(this.ctx,compiled,palette,0,0);this.ctx.restore();}
+        else drawPreservedSprite(this.ctx,compiled,palette,left,top);
+        this.drawCoverage.vectorSprites++;return;
+      }
+    }
+    const hd=this.graphicsMode==='hd'?this.hd?.frame(name,canonicalSlot,canonicalFrame,palette,frame):null;
+    if(hd?.entry){
+      this.drawCoverage.hdSprites++;
+      if(mirror){this.ctx.save();this.ctx.translate(x+frame.pivotX,top);this.ctx.scale(-1,1);this.paintHD(hd,0,0);this.ctx.restore();}
+      else this.paintHD(hd,x-frame.pivotX,top);
+      return;
+    }
+    this.drawCoverage.originalSprites++;if(this.graphicsMode==='hd')this.fallback(hd?.reason||'missing');
+    const left=mirror?x-frame.width+frame.pivotX:x-frame.pivotX;
+    if(mirror){this.ctx.save();this.ctx.translate(left+frame.width,top);this.ctx.scale(-1,1);this.ctx.drawImage(image,0,0);this.ctx.restore();}
+    else this.ctx.drawImage(image,left,top);
+  }
+  drawMap(map,palette,state,camera) {
+    const original=this.mapImage(map,palette,state.mapTileOverrides,state.mapRevision),id=this.canonicalMapId(map),ctx=this.ctx;
+    ctx.drawImage(original,Math.trunc(camera.x),Math.trunc(camera.y),this.assets.playfieldWidth,200,0,0,this.assets.playfieldWidth,200);
+    Object.assign(this.drawCoverage,{hdBaseNativeArea:0,originalBaseNativeArea:this.assets.playfieldWidth*200});
+    if(this.graphicsMode!=='hd')return;
+    const regions=this.hd?.mapRegions(id,palette,[camera.x,camera.y,this.assets.playfieldWidth,200])||[];
+    if(!regions.length){this.fallback('map-missing-or-variant');return;}
+    ctx.save();ctx.translate(-Math.trunc(camera.x),-Math.trunc(camera.y));
+    const drawn=[];
+    for(const found of regions){const e=found.entry,[x,y,w,h]=e.nativeRect;if(x+w<=camera.x||y+h<=camera.y||x>=camera.x+this.assets.playfieldWidth||y>=camera.y+200)continue;
+      ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.drawImage(found.image,...e.rectPixels,x,y,w,h);ctx.restore();drawn.push(e.nativeRect);this.drawCoverage.hdMapRegions++;
+    }
+    Object.assign(this.drawCoverage,mapRegionCoverage(drawn,[camera.x,camera.y,this.assets.playfieldWidth,200]));
+    if(!drawn.length)this.fallback('map-region-uncovered');
+    const changed=new Map((state.mapTileOverrides||[]).map(e=>[e.index,e.value]));
+    const statePatches=this.hd?.statePatches?.(id,palette,map,state.mapTileOverrides||[],[camera.x,camera.y,this.assets.playfieldWidth,200])||[];
+    const base=this.assets.maps[id];
+    if(base && base.cells!==map.cells)for(let i=0;i<map.cells.length;i++)if((base.cells[i]&0x7fe)!==(map.cells[i]&0x7fe))changed.set(i,map.cells[i]);
+    for(const[index,value]of changed){if(base&&(base.cells[index]&0x7fe)===(value&0x7fe))continue;const x=(index%map.width)*8,y=Math.floor(index/map.width)*8;
+      if(!drawn.some(([rx,ry,rw,rh])=>x<rx+rw&&x+8>rx&&y<ry+rh&&y+8>ry))continue;
+      if(statePatches.some(p=>patchCoversCell(p.entry,x,y))){this.drawCoverage.hdStateCells++;continue;}
+      const tile=(value&0x7ff)>>1,hd=this.hd?.tile(id,tile,palette);
+      // Repaint native tile FIRST so transparent HD patches cannot retain stale door pixels.
+      ctx.drawImage(original,x,y,8,8,x,y,8,8);
+      if(hd?.entry)this.paintHD(hd,x,y);
+      else{this.drawCoverage.dynamicOriginalCells++;this.fallback('dynamic-map-cell');}
+    }
+    for(const{entry:e,image}of statePatches){ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.fillStyle='#000';ctx.fillRect(...e.nativeRect);ctx.drawImage(image,...e.rectPixels,...e.nativeRect);ctx.restore();this.drawCoverage.hdMapStatePatches++;}
+    ctx.restore();
   }
   palette(records = [], live = null) {
     const rgb6 = this.assets.basePalette.map(c => [...c]);
@@ -70,12 +164,7 @@ export class Renderer {
     return image;
   }
   getFrame(name, slot, frame) {
-    const group = this.assets.sprites[name];
-    if (!group) return null;
-    let resolved = group.slots[slot];
-    if (!resolved) resolved = group.slots[group.slotFallbacks?.[slot]] || group.slots[0];
-    if (!resolved?.frames.length) return null;
-    return resolved.frames[Math.max(0, Math.min(frame || 0, resolved.frames.length - 1))];
+    return resolveSpriteFrame(this.assets.sprites[name],slot,frame)?.nativeFrame??null;
   }
   frameImage(name, slot, frameIndex, palette) {
     const frame = this.getFrame(name, slot, frameIndex);
@@ -116,10 +205,7 @@ export class Renderer {
     const cropped=Number.isFinite(reveal)&&reveal>=0&&reveal<frame.height;
     if(cropped){y+=frame.height-reveal;this.ctx.save();this.ctx.beginPath();this.ctx.rect(0,0,320,Math.max(0,groundY));this.ctx.clip();}
     const mirror = entity.mirrored ?? (entity.direction !== undefined ? entity.direction > 0 && entity.direction < 5 : entity.facing < 0);
-    const left = mirror ? x - frame.width + frame.pivotX : x - frame.pivotX;
-    if (mirror) {
-      this.ctx.save(); this.ctx.translate(left + frame.width, y); this.ctx.scale(-1, 1); this.ctx.drawImage(image, 0, 0); this.ctx.restore();
-    } else this.ctx.drawImage(image, left, y);
+    this.paintFrame(name,entity.animationSlot??0,entity.frame??0,palette,entry,x,y,mirror);
     if(cropped)this.ctx.restore();
   }
   text(text, x, y, color = '#fff') {
@@ -129,6 +215,8 @@ export class Renderer {
       for (let n = 0; n < text.length; n++) {
         const glyph = text.toUpperCase().charCodeAt(n) - 32;
         if (glyph < 0 || glyph >= this.assets.font.glyphs) continue;
+        if(this.graphicsMode==='hd'&&this.vectorFont.drawGlyph(ctx,glyph,x+n*8+dx,y+dy,{foreground:fill})){this.drawCoverage.vectorGlyphs++;continue;}
+        this.drawCoverage.originalGlyphs++;
         for (let yy = 0; yy < 8; yy++) for (let xx = 0; xx < 8; xx++) {
           if (this.assets.fontPixels[glyph * 64 + yy * 8 + xx] === 143) ctx.fillRect(x + n * 8 + xx + dx, y + yy + dy, 1, 1);
         }
@@ -138,10 +226,8 @@ export class Renderer {
   }
   screenSprite(name, slot, index, x, y, palette, mirror = false) {
     const entry=this.frameImage(name,slot,index,palette); if(!entry)return;
-    const {image,frame}=entry,roundX=Math.trunc(x)&~1;
-    const left=mirror?roundX-frame.width+frame.pivotX:roundX-frame.pivotX,top=y-frame.pivotY;
-    if(mirror){this.ctx.save();this.ctx.translate(left+frame.width,top);this.ctx.scale(-1,1);this.ctx.drawImage(image,0,0);this.ctx.restore();}
-    else this.ctx.drawImage(image,left,top);
+    const {frame}=entry,roundX=Math.trunc(x)&~1;
+    this.paintFrame(name,slot,index,palette,entry,roundX,y-frame.pivotY,mirror);
   }
   drawHUD(state,palette) {
     const players=state.players || (state.player?[state.player]:[]),draw=(frame,x,y)=>this.screenSprite('score',0,frame,x,y,palette);
@@ -171,6 +257,7 @@ export class Renderer {
     });
   }
   render(state) {
+    this.beginFrame();
     this.lastState = state;
     const ctx = this.ctx;
     ctx.fillStyle = '#000'; ctx.fillRect(0, 0, 320, 200);
@@ -185,11 +272,11 @@ export class Renderer {
       const record = this.assets.sprites[name]?.defaultPaletteRecord;
       if (Number.isInteger(record)) defaults.push(record);
     }
-    const commonRecords = [...new Set(defaults), map.paletteRecord, ...(state.paletteRecords || [])];
+    const commonRecords = [...new Set(defaults), nativeMapPaletteRecord(state,map), ...(state.paletteRecords || [])];
     const palette = this.palette(commonRecords, state.livePalette);
     const camera = state.camera || map.initialCamera;
     ctx.save(); ctx.beginPath(); ctx.rect(0, 0, this.assets.playfieldWidth, 200); ctx.clip();
-    ctx.drawImage(this.mapImage(map, palette, state.mapTileOverrides, state.mapRevision), Math.trunc(camera.x), Math.trunc(camera.y), this.assets.playfieldWidth, 200, 0, 0, this.assets.playfieldWidth, 200);
+    this.drawMap(map,palette,state,camera);
     for (const actor of nativeActorDrawOrder(actors,camera.y)) this.drawEntity(actor, state, commonRecords);
     if (state.hideHUD) {ctx.restore(); return;}
     this.drawHUD(state,palette);
@@ -197,6 +284,7 @@ export class Renderer {
     ctx.restore();
   }
   renderMenu(step = 'mode') {
+    this.beginFrame();
     if (step === 'character') {
       this.render({stage:'c',camera:this.assets.maps.c.initialCamera,entities:[],hideHUD:true});
     } else {
@@ -205,6 +293,10 @@ export class Renderer {
   }
   fontChar(code,x,y,palette){
     const glyph=code-32;if(glyph<0||glyph>=this.assets.font.glyphs)return;
+    const hd=this.graphicsMode==='hd'?this.hd?.font(glyph,palette):null;
+    if(hd?.entry){this.drawCoverage.hdGlyphs++;this.paintHD(hd,x,y);return;}
+    if(this.graphicsMode==='hd'&&this.vectorFont.drawCode(this.ctx,code,x,y,palette)){this.drawCoverage.vectorGlyphs++;return;}
+    this.drawCoverage.originalGlyphs++;if(this.graphicsMode==='hd')this.fallback(hd?.reason||'font-missing');
     for(let yy=0;yy<8;yy++)for(let xx=0;xx<8;xx++){
       const index=this.assets.fontPixels[glyph*64+yy*8+xx],color=palette[index];
       this.ctx.fillStyle=`rgb(${color.join(',')})`;this.ctx.fillRect(x+xx,y+yy,1,1);

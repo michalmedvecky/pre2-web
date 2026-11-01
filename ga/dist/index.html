@@ -11,8 +11,9 @@
   <main id="game-shell">
     <header class="topbar">
       <a class="wordmark" href="./" aria-label="Golden Axe, úvod">GOLDEN <span>AXE</span></a>
-      <span class="edition">PŮVODNÍ GRAFIKA <i></i> PRACOVNÍ VERZE</span>
+      <span id="graphics-edition" class="edition">HD · GRAFIKA SE DOPLŇUJE</span>
       <div class="toolbar">
+        <button data-open-hd class="icon-button" disabled aria-pressed="true" title="Přepnout HD a původní grafiku">HD</button>
         <button id="sound" class="icon-button" aria-label="Ztlumit původní zvuk" title="Původní hudba a zvuky">♪</button>
         <button id="fullscreen" class="icon-button" aria-label="Celá obrazovka" title="Celá obrazovka">⛶</button>
         <button id="pause" class="icon-button" aria-label="Pozastavit hru" title="Pozastavit hru">Ⅱ</button>
@@ -68,7 +69,8 @@
             <button id="resume" class="primary">Pokračovat <span>→</span></button>
             <button id="restart" class="secondary">Začít znovu</button>
             <button data-open-level class="secondary">Vybrat úroveň</button>
-            <button data-open-hd class="secondary">HD ukázka</button>
+            <button data-open-hd class="secondary" aria-pressed="true">HD → originál</button>
+            <p id="graphics-coverage" class="scope">HD grafika se doplňuje.</p>
             <div class="cheat-actions"><button data-open-map class="secondary">MAP</button><button data-toggle-god class="secondary" aria-pressed="false">IDDQD: vypnuto</button></div>
             <button data-return-menu class="menu-back">Hlavní menu</button>
             <p>Šipky pohyb v obou osách<br>J / Num 5 útok · K / Insert skok<br>L / pravý Shift magie · mezerník pauza</p>
@@ -121,7 +123,8 @@
     </footer>
     <aside id="about" hidden>
       <p>Samostatná webová rekonstrukce z původních herních dat a analýzy DOS verze Golden Axe. Nejde o emulátor. Tato pracovní verze není dokončeným remasterem; přesné shodě mechanik a celému průchodu se věnuje probíhající ověřování.</p>
-      <p>Původní sprity, mapy, hudba a zvuky. Živá hra používá původní grafiku; HD pilot je samostatná neschválená ukázka. Commit se zobrazuje pouze z metadat čistého CI sestavení, místní pracovní snapshot nemá ověřený build commit.</p>
+      <p>Malovaná HD grafika je výchozí; nepokryté snímky a varianty zatím používají originál. Přepínač HD / originál funguje i během hry. Původní hudba a zvuky zůstávají. Commit se zobrazuje pouze z metadat čistého CI sestavení, místní pracovní snapshot nemá ověřený build commit.</p>
+      <p>Pozdní Duel: barevná varianta bosse odpovídá současnému portu; shoda s DOS originálem není ověřená.</p>
     </aside>
   </main>
   <script type="module" src="./js/app.js"></script>

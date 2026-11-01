@@ -35,9 +35,11 @@ Po záměrné a zkontrolované změně runtime použijte `node scripts/refresh-m
 
 Core75 má75 přenesených mechanických regresí, nikoli úplný byteexact native replay. Cílené Stage4 skoky, mountedJ animace/offsety a Knightexit mají native/browser důkazy v původním výzkumu. Globální IRQ/RNG/wallclock, hit ordering a některé near-goods útoky mají známé meze; fyzický iOS/Gamepad nebyl ověřen. Uživatel samostatně hlásil dokončení hry; není to verzovaný machine/nativefullrun receipt.
 
-Výchozí grafika je původní. HD je pouze pauzovaný **preview**; starý pilot neprošel geometry/alpha gate a nikdy nenahrazuje live sprite/terrain. Další důsledný HD remaster běží odděleně; výzkumné `golden-axe-research/hd-lab/`, `reports/hd-material-pilot.md` a `HANDOFF-HD.md` nejsou deployment dependencies ani schválená hotová HD hra. Nepřidávejte je do image narychlo.
+Výchozí je nyní **HD remaster**, přepínatelný tlačítkem nebo cheatem `HD` na původní grafiku. Zahrnuje úvod, otáčený výběr postav, všechny mapy a jejich původní barevné varianty, postavy, bossy, předměty, kouzla, meziscény a výsledky. Také přehled `MAP` podporuje HD. Herní jádro a výchozí původní hudba zůstávají zachované. Podrobnosti a přiznané výtvarné limity: [HD remaster](reports/hd-remaster.md).
 
-Prohlížeč potřebuje pro vzdálené OPL AudioWorklet **HTTPS** a uživatelské gesto; localhost je vývojová výjimka. Publikujte na kořeni samostatného hostu `/`, ne pod URL `/ga/`: `/ga` je cesta v Git repo a HDiframe používá `/hd-pilot.html`. Node server je pouze lokální preview, produkci obsluhuje nginx8080. Žádný nový CSP/COOP/COEP se nezavádí bez ověření Worklet/iframe.
+Pozdní1P Duel obsahuje **předběžnou barevnou variantu bosse podle současného portu**; její dosažitelnost/shoda s DOS originálem není ověřená. Je odděleně označená v diagnostice a UI „O této verzi“. Vydání netvrdí úplnou nativní IRQ/fyzikální ekvivalenci.
+
+Prohlížeč potřebuje pro vzdálené OPL AudioWorklet **HTTPS** a uživatelské gesto; localhost je vývojová výjimka. Publikujte na kořeni samostatného hostu `/`, ne pod URL `/ga/`: `/ga` je cesta v Git repo; starý `/hd-pilot.html` zůstává pouze historickou referencí. Node server je pouze lokální preview, produkci obsluhuje nginx8080. Žádný nový CSP/COOP/COEP se nezavádí bez ověření Workletu.
 
 ## Licence
 
@@ -50,3 +52,9 @@ Samostatné Golden Axe vydání používá tagprefix `ga-v*` a ručně přilože
 Samostatný preview [localhost5790](http://127.0.0.1:5790/) obnovuje původní scénu modré kostry a obíhajících hrdinů. Ve2P vybírají oba hráči současně na vlastních rukách; potvrzení stejného hrdiny je zakázané. Dotykové šipky/názvy/potvrzení jsou pod plátnem. VýchozíP1 Num4/Num6 aNum5 (navíc šipky/J/Enter),P2 A/D aS; Options mohou vstupní zařízení prohodit. Zahrnuto v samostatném preview vydání ga-v0.1.1; existující release ga-v0.1.0 zůstává beze změny. Skutečný releasecommit/image/CI jsou uvedené v GitHub release notes.
 
 Důkazy a meze: [character-select report](reports/character-select.md), `evidence/character-select/checks.json`,6nových cílených presenter testů. Počáteční1P obraz souhlasí62400/62400RGBpixelů s původním DOS capture; ostatní pózy nejsou tímto jedním snímkem plošně ověřené.
+
+## Verze0.2.0 — HD grafika výchozí
+
+142 testů a kontrola runtime manifestu prošly; všechny šest kombinací režimu/počtu hráčů mají nové portové průchody a browser zakončení. Kontroly původního DOS runtime mají užší, výslovně popsaný rozsah. Vizuálně prohlédnutá místa jsou odlišena od automatických kontrol v [souhrnu QA](evidence/hd-release/README.md).
+
+Balíček obsahuje196 HD atlasů,111 mapových regionů a10 dynamických dveřních stavů. Původní fonty a jedna scoring tečka zůstávají přesně zachovanou vektorovou typografií. Původní melodie a zvuky se nemění; nový hudební remaster součástí tohoto vydání není.

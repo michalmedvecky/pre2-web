@@ -1,0 +1,1013 @@
+{
+  "scope": "Fresh current75 normal-input controller and actual current-app deterministic RLE with real RAF/UI presentation flow, not realtime keyboard/DOS fullruns.",
+  "normal": {
+    "scope": "Fresh current75 normal-input JS controller, only step/legitimate advance/Continue; not native DOS/real-time keyboard proof. Arcade1P uses documented legal prefix+input suffix after controller corner, no gameplay mutation.",
+    "coreGAEqualsResearch": true,
+    "results": [
+      {
+        "file": "hd-final-current-1p.json",
+        "fileSHA": "2bf8abad941cc9bc3581dd84d0d72923e7b57436b0c9a9bc1e3f0b8ae363fabd",
+        "mode": "beginner",
+        "players": 1,
+        "steps": 8306,
+        "index": 18,
+        "stopped": "ending-incomplete",
+        "sourceCheckpoint": "evidence/full-mode-runs/sources/a5a6c2aaeb292434cc43/",
+        "sourcesBefore": {
+          "simulation.js": "5213829f351f710dddefc27a37edbd2f4a715a901e86da62bf81ab0bb073b1e0",
+          "logic-data.js": "1689a8402be5d88c7e94d256a4839f4f3c7991e1d3095b70c787819b41bd22ba",
+          "magic.js": "462ebe32744407aa222456b98c5fd2c848a25d0332350a2758c2f059322ae08a",
+          "speaker-clock.js": "022006f1ddeea9609a66c6e0a12cd5a08a10f7e35ab3c7443315cea58292f7b3"
+        },
+        "sourcesAfter": {
+          "simulation.js": "5213829f351f710dddefc27a37edbd2f4a715a901e86da62bf81ab0bb073b1e0",
+          "logic-data.js": "1689a8402be5d88c7e94d256a4839f4f3c7991e1d3095b70c787819b41bd22ba",
+          "magic.js": "462ebe32744407aa222456b98c5fd2c848a25d0332350a2758c2f059322ae08a",
+          "speaker-clock.js": "022006f1ddeea9609a66c6e0a12cd5a08a10f7e35ab3c7443315cea58292f7b3"
+        },
+        "sourceStable": true,
+        "actors": [
+          {
+            "type": "dwarf",
+            "health": 20,
+            "lives": 2,
+            "eliminated": false,
+            "removed": false
+          }
+        ],
+        "options": {
+          "character": "dwarf",
+          "players": 1,
+          "character2": "hero",
+          "healthBars": 5,
+          "p2Continue": "accept",
+          "lookahead": true,
+          "horizon": 48
+        }
+      },
+      {
+        "file": "hd-final-current-1p.json",
+        "fileSHA": "2bf8abad941cc9bc3581dd84d0d72923e7b57436b0c9a9bc1e3f0b8ae363fabd",
+        "mode": "duel",
+        "players": 1,
+        "steps": 6606,
+        "index": 14,
+        "stopped": "ending-incomplete",
+        "sourceCheckpoint": "evidence/full-mode-runs/sources/a5a6c2aaeb292434cc43/",
+        "sourcesBefore": {
+          "simulation.js": "5213829f351f710dddefc27a37edbd2f4a715a901e86da62bf81ab0bb073b1e0",
+          "logic-data.js": "1689a8402be5d88c7e94d256a4839f4f3c7991e1d3095b70c787819b41bd22ba",
+          "magic.js": "462ebe32744407aa222456b98c5fd2c848a25d0332350a2758c2f059322ae08a",
+          "speaker-clock.js": "022006f1ddeea9609a66c6e0a12cd5a08a10f7e35ab3c7443315cea58292f7b3"
+        },
+        "sourcesAfter": {
+          "simulation.js": "5213829f351f710dddefc27a37edbd2f4a715a901e86da62bf81ab0bb073b1e0",
+          "logic-data.js": "1689a8402be5d88c7e94d256a4839f4f3c7991e1d3095b70c787819b41bd22ba",
+          "magic.js": "462ebe32744407aa222456b98c5fd2c848a25d0332350a2758c2f059322ae08a",
+          "speaker-clock.js": "022006f1ddeea9609a66c6e0a12cd5a08a10f7e35ab3c7443315cea58292f7b3"
+        },
+        "sourceStable": true,
+        "actors": [
+          {
+            "type": "dwarf",
+            "health": 24,
+            "lives": 1,
+            "eliminated": false,
+            "removed": false
+          }
+        ],
+        "options": {
+          "character": "dwarf",
+          "players": 1,
+          "character2": "hero",
+          "healthBars": 5,
+          "p2Continue": "accept",
+          "lookahead": true,
+          "horizon": 48
+        }
+      },
+      {
+        "file": "hd-final-current-2p.json",
+        "fileSHA": "37bc80dd9069fab754c4cdedcf513eb7ec4a90d18d9ef0d35699a96f1582770d",
+        "mode": "arcade",
+        "players": 2,
+        "steps": 19223,
+        "index": 7,
+        "stopped": "ending-incomplete",
+        "sourceCheckpoint": "evidence/full-mode-runs/sources/a5a6c2aaeb292434cc43/",
+        "sourcesBefore": {
+          "simulation.js": "5213829f351f710dddefc27a37edbd2f4a715a901e86da62bf81ab0bb073b1e0",
+          "logic-data.js": "1689a8402be5d88c7e94d256a4839f4f3c7991e1d3095b70c787819b41bd22ba",
+          "magic.js": "462ebe32744407aa222456b98c5fd2c848a25d0332350a2758c2f059322ae08a",
+          "speaker-clock.js": "022006f1ddeea9609a66c6e0a12cd5a08a10f7e35ab3c7443315cea58292f7b3"
+        },
+        "sourcesAfter": {
+          "simulation.js": "5213829f351f710dddefc27a37edbd2f4a715a901e86da62bf81ab0bb073b1e0",
+          "logic-data.js": "1689a8402be5d88c7e94d256a4839f4f3c7991e1d3095b70c787819b41bd22ba",
+          "magic.js": "462ebe32744407aa222456b98c5fd2c848a25d0332350a2758c2f059322ae08a",
+          "speaker-clock.js": "022006f1ddeea9609a66c6e0a12cd5a08a10f7e35ab3c7443315cea58292f7b3"
+        },
+        "sourceStable": true,
+        "actors": [
+          {
+            "type": "dwarf",
+            "health": 20,
+            "lives": 3,
+            "eliminated": false,
+            "removed": false
+          },
+          {
+            "type": "hero",
+            "health": 0,
+            "lives": 0,
+            "eliminated": true,
+            "removed": true
+          }
+        ],
+        "options": {
+          "character": "dwarf",
+          "players": 2,
+          "character2": "hero",
+          "healthBars": 5,
+          "p2Continue": "decline",
+          "lookahead": true,
+          "horizon": 48
+        }
+      },
+      {
+        "file": "hd-final-current-2p.json",
+        "fileSHA": "37bc80dd9069fab754c4cdedcf513eb7ec4a90d18d9ef0d35699a96f1582770d",
+        "mode": "beginner",
+        "players": 2,
+        "steps": 7923,
+        "index": 18,
+        "stopped": "ending-incomplete",
+        "sourceCheckpoint": "evidence/full-mode-runs/sources/a5a6c2aaeb292434cc43/",
+        "sourcesBefore": {
+          "simulation.js": "5213829f351f710dddefc27a37edbd2f4a715a901e86da62bf81ab0bb073b1e0",
+          "logic-data.js": "1689a8402be5d88c7e94d256a4839f4f3c7991e1d3095b70c787819b41bd22ba",
+          "magic.js": "462ebe32744407aa222456b98c5fd2c848a25d0332350a2758c2f059322ae08a",
+          "speaker-clock.js": "022006f1ddeea9609a66c6e0a12cd5a08a10f7e35ab3c7443315cea58292f7b3"
+        },
+        "sourcesAfter": {
+          "simulation.js": "5213829f351f710dddefc27a37edbd2f4a715a901e86da62bf81ab0bb073b1e0",
+          "logic-data.js": "1689a8402be5d88c7e94d256a4839f4f3c7991e1d3095b70c787819b41bd22ba",
+          "magic.js": "462ebe32744407aa222456b98c5fd2c848a25d0332350a2758c2f059322ae08a",
+          "speaker-clock.js": "022006f1ddeea9609a66c6e0a12cd5a08a10f7e35ab3c7443315cea58292f7b3"
+        },
+        "sourceStable": true,
+        "actors": [
+          {
+            "type": "dwarf",
+            "health": 20,
+            "lives": 1,
+            "eliminated": false,
+            "removed": false
+          },
+          {
+            "type": "hero",
+            "health": 0,
+            "lives": 0,
+            "eliminated": true,
+            "removed": true
+          }
+        ],
+        "options": {
+          "character": "dwarf",
+          "players": 2,
+          "character2": "hero",
+          "healthBars": 5,
+          "p2Continue": "decline",
+          "lookahead": true,
+          "horizon": 48
+        }
+      },
+      {
+        "file": "hd-final-current-2p.json",
+        "fileSHA": "37bc80dd9069fab754c4cdedcf513eb7ec4a90d18d9ef0d35699a96f1582770d",
+        "mode": "duel",
+        "players": 2,
+        "steps": 1339,
+        "index": 1,
+        "stopped": "ending-incomplete",
+        "sourceCheckpoint": "evidence/full-mode-runs/sources/a5a6c2aaeb292434cc43/",
+        "sourcesBefore": {
+          "simulation.js": "5213829f351f710dddefc27a37edbd2f4a715a901e86da62bf81ab0bb073b1e0",
+          "logic-data.js": "1689a8402be5d88c7e94d256a4839f4f3c7991e1d3095b70c787819b41bd22ba",
+          "magic.js": "462ebe32744407aa222456b98c5fd2c848a25d0332350a2758c2f059322ae08a",
+          "speaker-clock.js": "022006f1ddeea9609a66c6e0a12cd5a08a10f7e35ab3c7443315cea58292f7b3"
+        },
+        "sourcesAfter": {
+          "simulation.js": "5213829f351f710dddefc27a37edbd2f4a715a901e86da62bf81ab0bb073b1e0",
+          "logic-data.js": "1689a8402be5d88c7e94d256a4839f4f3c7991e1d3095b70c787819b41bd22ba",
+          "magic.js": "462ebe32744407aa222456b98c5fd2c848a25d0332350a2758c2f059322ae08a",
+          "speaker-clock.js": "022006f1ddeea9609a66c6e0a12cd5a08a10f7e35ab3c7443315cea58292f7b3"
+        },
+        "sourceStable": true,
+        "actors": [
+          {
+            "type": "dwarf",
+            "health": 32,
+            "lives": 1,
+            "eliminated": false,
+            "removed": false
+          },
+          {
+            "type": "hero",
+            "health": 0,
+            "lives": 0,
+            "eliminated": true,
+            "removed": true
+          }
+        ],
+        "options": {
+          "character": "dwarf",
+          "players": 2,
+          "character2": "hero",
+          "healthBars": 5,
+          "p2Continue": "decline",
+          "lookahead": true,
+          "horizon": 48
+        }
+      },
+      {
+        "file": "hd-final-current-1p-arcade-suffix.json",
+        "fileSHA": "7b7a4598ef091463738b556282b333be2082790205d571fbf922948ba2ef55d1",
+        "mode": "arcade",
+        "players": 1,
+        "steps": 22174,
+        "index": 7,
+        "stopped": "ending-incomplete",
+        "sourceCheckpoint": "evidence/full-mode-runs/sources/a5a6c2aaeb292434cc43/",
+        "sourcesBefore": {
+          "simulation.js": "5213829f351f710dddefc27a37edbd2f4a715a901e86da62bf81ab0bb073b1e0",
+          "logic-data.js": "1689a8402be5d88c7e94d256a4839f4f3c7991e1d3095b70c787819b41bd22ba",
+          "magic.js": "462ebe32744407aa222456b98c5fd2c848a25d0332350a2758c2f059322ae08a",
+          "speaker-clock.js": "022006f1ddeea9609a66c6e0a12cd5a08a10f7e35ab3c7443315cea58292f7b3"
+        },
+        "sourcesAfter": {
+          "simulation.js": "5213829f351f710dddefc27a37edbd2f4a715a901e86da62bf81ab0bb073b1e0",
+          "logic-data.js": "1689a8402be5d88c7e94d256a4839f4f3c7991e1d3095b70c787819b41bd22ba",
+          "magic.js": "462ebe32744407aa222456b98c5fd2c848a25d0332350a2758c2f059322ae08a",
+          "speaker-clock.js": "022006f1ddeea9609a66c6e0a12cd5a08a10f7e35ab3c7443315cea58292f7b3"
+        },
+        "sourceStable": true,
+        "actors": [
+          {
+            "type": "dwarf",
+            "health": 18,
+            "lives": 3,
+            "eliminated": false,
+            "removed": false
+          }
+        ],
+        "options": {
+          "character": "dwarf",
+          "players": 1,
+          "character2": "hero",
+          "healthBars": 5,
+          "p2Continue": "accept",
+          "lookahead": true,
+          "horizon": 48
+        }
+      }
+    ]
+  },
+  "browser": [
+    {
+      "mode": "arcade",
+      "players": 1,
+      "file": "browser/arcade-1p/replay.json",
+      "menu": true,
+      "errors": [],
+      "frames": 32,
+      "presentations": 33,
+      "browserClosed": true,
+      "audioDisposed": true,
+      "renderEpoch": "post-alias",
+      "peakDecodedBytes": 50351804,
+      "peakPaletteBytes": 13431544,
+      "peakAtlases": 8,
+      "failedAtlases": 0,
+      "failedPaletteFrames": 0,
+      "maxStepMilliseconds": 2.4000000953674316,
+      "residuals": [
+        {
+          "tick": 1800,
+          "index": 0,
+          "originalSprites": 0,
+          "originalBaseNativeArea": 62400,
+          "reasons": {
+            "map-missing-or-variant": 1
+          },
+          "coldOnly": true
+        },
+        {
+          "tick": 2119,
+          "index": 0,
+          "originalSprites": 0,
+          "originalBaseNativeArea": 62400,
+          "reasons": {
+            "map-missing-or-variant": 1
+          },
+          "coldOnly": false
+        },
+        {
+          "tick": 5052,
+          "index": 1,
+          "originalSprites": 0,
+          "originalBaseNativeArea": 62400,
+          "reasons": {
+            "map-missing-or-variant": 1
+          },
+          "coldOnly": false
+        },
+        {
+          "tick": 5132,
+          "index": 17,
+          "originalSprites": 3,
+          "originalBaseNativeArea": 0,
+          "reasons": {
+            "loading": 3
+          },
+          "coldOnly": false
+        },
+        {
+          "tick": 10655,
+          "index": 3,
+          "originalSprites": 0,
+          "originalBaseNativeArea": 62400,
+          "reasons": {
+            "map-missing-or-variant": 1
+          },
+          "coldOnly": false
+        },
+        {
+          "tick": 13800,
+          "index": 5,
+          "originalSprites": 0,
+          "originalBaseNativeArea": 62400,
+          "reasons": {
+            "map-missing-or-variant": 1
+          },
+          "coldOnly": false
+        },
+        {
+          "tick": 20300,
+          "index": 6,
+          "originalSprites": 0,
+          "originalBaseNativeArea": 62400,
+          "reasons": {
+            "map-missing-or-variant": 1
+          },
+          "coldOnly": true
+        },
+        {
+          "tick": 20624,
+          "index": 6,
+          "originalSprites": 0,
+          "originalBaseNativeArea": 62400,
+          "reasons": {
+            "map-missing-or-variant": 1
+          },
+          "coldOnly": false
+        }
+      ]
+    },
+    {
+      "mode": "arcade",
+      "players": 2,
+      "file": "browser/arcade-2p/replay.json",
+      "menu": true,
+      "errors": [],
+      "frames": 33,
+      "presentations": 33,
+      "browserClosed": true,
+      "audioDisposed": true,
+      "renderEpoch": "post-alias",
+      "peakDecodedBytes": 50358920,
+      "peakPaletteBytes": 13390700,
+      "peakAtlases": 8,
+      "failedAtlases": 0,
+      "failedPaletteFrames": 0,
+      "maxStepMilliseconds": 1.0999999046325684,
+      "residuals": [
+        {
+          "tick": 2000,
+          "index": 0,
+          "originalSprites": 0,
+          "originalBaseNativeArea": 62400,
+          "reasons": {
+            "map-missing-or-variant": 1
+          },
+          "coldOnly": true
+        },
+        {
+          "tick": 2404,
+          "index": 0,
+          "originalSprites": 0,
+          "originalBaseNativeArea": 62400,
+          "reasons": {
+            "map-missing-or-variant": 1
+          },
+          "coldOnly": false
+        },
+        {
+          "tick": 2484,
+          "index": 16,
+          "originalSprites": 0,
+          "originalBaseNativeArea": 62400,
+          "reasons": {
+            "map-missing-or-variant": 1
+          },
+          "coldOnly": true
+        },
+        {
+          "tick": 5575,
+          "index": 1,
+          "originalSprites": 0,
+          "originalBaseNativeArea": 62400,
+          "reasons": {
+            "map-missing-or-variant": 1
+          },
+          "coldOnly": true
+        },
+        {
+          "tick": 5795,
+          "index": 1,
+          "originalSprites": 0,
+          "originalBaseNativeArea": 62400,
+          "reasons": {
+            "map-missing-or-variant": 1
+          },
+          "coldOnly": false
+        },
+        {
+          "tick": 8611,
+          "index": 18,
+          "originalSprites": 0,
+          "originalBaseNativeArea": 3120,
+          "reasons": {},
+          "coldOnly": true
+        },
+        {
+          "tick": 8936,
+          "index": 18,
+          "originalSprites": 0,
+          "originalBaseNativeArea": 3120,
+          "reasons": {},
+          "coldOnly": true
+        },
+        {
+          "tick": 11202,
+          "index": 3,
+          "originalSprites": 0,
+          "originalBaseNativeArea": 62400,
+          "reasons": {
+            "map-missing-or-variant": 1
+          },
+          "coldOnly": false
+        },
+        {
+          "tick": 17100,
+          "index": 6,
+          "originalSprites": 0,
+          "originalBaseNativeArea": 62400,
+          "reasons": {
+            "map-missing-or-variant": 1
+          },
+          "coldOnly": true
+        },
+        {
+          "tick": 17652,
+          "index": 6,
+          "originalSprites": 0,
+          "originalBaseNativeArea": 62400,
+          "reasons": {
+            "map-missing-or-variant": 1
+          },
+          "coldOnly": false
+        }
+      ]
+    },
+    {
+      "mode": "beginner",
+      "players": 1,
+      "file": "browser/beginner-1p/replay.json",
+      "menu": true,
+      "errors": [],
+      "frames": 16,
+      "presentations": 8,
+      "browserClosed": true,
+      "audioDisposed": true,
+      "renderEpoch": "post-alias",
+      "peakDecodedBytes": 50331900,
+      "peakPaletteBytes": 13307408,
+      "peakAtlases": 8,
+      "failedAtlases": 0,
+      "failedPaletteFrames": 0,
+      "maxStepMilliseconds": 0.5,
+      "residuals": [
+        {
+          "tick": 3337,
+          "index": 0,
+          "originalSprites": 0,
+          "originalBaseNativeArea": 62400,
+          "reasons": {
+            "map-missing-or-variant": 1
+          },
+          "coldOnly": true
+        },
+        {
+          "tick": 3418,
+          "index": 0,
+          "originalSprites": 0,
+          "originalBaseNativeArea": 62400,
+          "reasons": {
+            "map-missing-or-variant": 1
+          },
+          "coldOnly": false
+        },
+        {
+          "tick": 5780,
+          "index": 1,
+          "originalSprites": 0,
+          "originalBaseNativeArea": 62400,
+          "reasons": {
+            "map-missing-or-variant": 1
+          },
+          "coldOnly": true
+        },
+        {
+          "tick": 5860,
+          "index": 17,
+          "originalSprites": 0,
+          "originalBaseNativeArea": 24960,
+          "reasons": {},
+          "coldOnly": false
+        }
+      ]
+    },
+    {
+      "mode": "beginner",
+      "players": 2,
+      "file": "browser/beginner-2p/replay.json",
+      "menu": true,
+      "errors": [],
+      "frames": 13,
+      "presentations": 8,
+      "browserClosed": true,
+      "audioDisposed": true,
+      "renderEpoch": "pre-alias-cold-cache",
+      "peakDecodedBytes": 50329888,
+      "peakPaletteBytes": 8873539,
+      "peakAtlases": 8,
+      "failedAtlases": 0,
+      "failedPaletteFrames": 0,
+      "maxStepMilliseconds": 2.0999999046325684,
+      "residuals": [
+        {
+          "tick": 500,
+          "index": 0,
+          "originalSprites": 1,
+          "originalBaseNativeArea": 57600,
+          "reasons": {
+            "missing": 1
+          },
+          "coldOnly": false
+        },
+        {
+          "tick": 1488,
+          "index": 0,
+          "originalSprites": 1,
+          "originalBaseNativeArea": 62400,
+          "reasons": {
+            "map-missing-or-variant": 1,
+            "missing": 1
+          },
+          "coldOnly": false
+        },
+        {
+          "tick": 1568,
+          "index": 16,
+          "originalSprites": 0,
+          "originalBaseNativeArea": 62400,
+          "reasons": {
+            "map-missing-or-variant": 1
+          },
+          "coldOnly": false
+        },
+        {
+          "tick": 2270,
+          "index": 16,
+          "originalSprites": 1,
+          "originalBaseNativeArea": 0,
+          "reasons": {
+            "loading": 1
+          },
+          "coldOnly": false
+        },
+        {
+          "tick": 3278,
+          "index": 1,
+          "originalSprites": 4,
+          "originalBaseNativeArea": 21840,
+          "reasons": {
+            "palette-transform-loading": 3,
+            "loading": 1
+          },
+          "coldOnly": false
+        },
+        {
+          "tick": 4730,
+          "index": 1,
+          "originalSprites": 2,
+          "originalBaseNativeArea": 62400,
+          "reasons": {
+            "map-missing-or-variant": 1,
+            "palette-transform-loading": 2
+          },
+          "coldOnly": false
+        },
+        {
+          "tick": 4810,
+          "index": 17,
+          "originalSprites": 5,
+          "originalBaseNativeArea": 0,
+          "reasons": {
+            "loading": 5
+          },
+          "coldOnly": false
+        },
+        {
+          "tick": 5161,
+          "index": 17,
+          "originalSprites": 0,
+          "originalBaseNativeArea": 14352,
+          "reasons": {},
+          "coldOnly": false
+        },
+        {
+          "tick": 7923,
+          "index": 18,
+          "originalSprites": 0,
+          "originalBaseNativeArea": 56160,
+          "reasons": {},
+          "coldOnly": false
+        }
+      ]
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "file": "browser/duel-1p/replay.json",
+      "menu": true,
+      "errors": [],
+      "frames": 31,
+      "presentations": 1,
+      "browserClosed": true,
+      "audioDisposed": true,
+      "renderEpoch": "pre-alias-cold-cache",
+      "peakDecodedBytes": 48511176,
+      "peakPaletteBytes": 13187916,
+      "peakAtlases": 8,
+      "failedAtlases": 0,
+      "failedPaletteFrames": 0,
+      "maxStepMilliseconds": 1,
+      "residuals": [
+        {
+          "tick": 310,
+          "index": 1,
+          "originalSprites": 1,
+          "originalBaseNativeArea": 0,
+          "reasons": {
+            "palette-transform-loading": 1
+          },
+          "coldOnly": false
+        },
+        {
+          "tick": 435,
+          "index": 2,
+          "originalSprites": 2,
+          "originalBaseNativeArea": 0,
+          "reasons": {
+            "palette-transform-loading": 2
+          },
+          "coldOnly": false
+        },
+        {
+          "tick": 500,
+          "index": 2,
+          "originalSprites": 1,
+          "originalBaseNativeArea": 1152,
+          "reasons": {
+            "palette-transform-loading": 1
+          },
+          "coldOnly": false
+        },
+        {
+          "tick": 656,
+          "index": 3,
+          "originalSprites": 1,
+          "originalBaseNativeArea": 0,
+          "reasons": {
+            "palette-transform-loading": 1
+          },
+          "coldOnly": false
+        },
+        {
+          "tick": 883,
+          "index": 4,
+          "originalSprites": 2,
+          "originalBaseNativeArea": 1152,
+          "reasons": {
+            "palette-transform-loading": 1,
+            "missing": 1
+          },
+          "coldOnly": false
+        },
+        {
+          "tick": 1169,
+          "index": 5,
+          "originalSprites": 3,
+          "originalBaseNativeArea": 0,
+          "reasons": {
+            "palette-transform-loading": 2,
+            "missing": 1
+          },
+          "coldOnly": false
+        },
+        {
+          "tick": 1362,
+          "index": 5,
+          "originalSprites": 1,
+          "originalBaseNativeArea": 0,
+          "reasons": {
+            "missing": 1
+          },
+          "coldOnly": false
+        },
+        {
+          "tick": 1442,
+          "index": 6,
+          "originalSprites": 3,
+          "originalBaseNativeArea": 0,
+          "reasons": {
+            "palette-transform-loading": 3
+          },
+          "coldOnly": false
+        },
+        {
+          "tick": 1641,
+          "index": 6,
+          "originalSprites": 1,
+          "originalBaseNativeArea": 0,
+          "reasons": {
+            "palette-transform-loading": 1
+          },
+          "coldOnly": false
+        },
+        {
+          "tick": 1721,
+          "index": 7,
+          "originalSprites": 2,
+          "originalBaseNativeArea": 0,
+          "reasons": {
+            "palette-transform-loading": 2
+          },
+          "coldOnly": false
+        },
+        {
+          "tick": 2027,
+          "index": 8,
+          "originalSprites": 0,
+          "originalBaseNativeArea": 1152,
+          "reasons": {},
+          "coldOnly": false
+        },
+        {
+          "tick": 2245,
+          "index": 9,
+          "originalSprites": 0,
+          "originalBaseNativeArea": 24512,
+          "reasons": {},
+          "coldOnly": false
+        },
+        {
+          "tick": 2336,
+          "index": 9,
+          "originalSprites": 0,
+          "originalBaseNativeArea": 24512,
+          "reasons": {},
+          "coldOnly": false
+        },
+        {
+          "tick": 2566,
+          "index": 9,
+          "originalSprites": 0,
+          "originalBaseNativeArea": 1152,
+          "reasons": {},
+          "coldOnly": false
+        },
+        {
+          "tick": 2646,
+          "index": 10,
+          "originalSprites": 1,
+          "originalBaseNativeArea": 21312,
+          "reasons": {
+            "palette-transform-loading": 1
+          },
+          "coldOnly": false
+        },
+        {
+          "tick": 3143,
+          "index": 11,
+          "originalSprites": 2,
+          "originalBaseNativeArea": 0,
+          "reasons": {
+            "palette-transform-loading": 2
+          },
+          "coldOnly": false
+        },
+        {
+          "tick": 3838,
+          "index": 12,
+          "originalSprites": 4,
+          "originalBaseNativeArea": 0,
+          "reasons": {
+            "palette-transform-loading": 4
+          },
+          "coldOnly": false
+        },
+        {
+          "tick": 4534,
+          "index": 13,
+          "originalSprites": 1,
+          "originalBaseNativeArea": 1152,
+          "reasons": {
+            "palette-variant": 1
+          },
+          "coldOnly": false
+        },
+        {
+          "tick": 5126,
+          "index": 14,
+          "originalSprites": 1,
+          "originalBaseNativeArea": 21312,
+          "reasons": {
+            "palette-variant": 1
+          },
+          "coldOnly": false
+        }
+      ]
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "file": "browser/duel-2p/replay.json",
+      "menu": true,
+      "errors": [],
+      "frames": 4,
+      "presentations": 0,
+      "browserClosed": true,
+      "audioDisposed": true,
+      "renderEpoch": "pre-alias-cold-cache",
+      "peakDecodedBytes": 43844524,
+      "peakPaletteBytes": 0,
+      "peakAtlases": 8,
+      "failedAtlases": 0,
+      "failedPaletteFrames": 0,
+      "maxStepMilliseconds": 0.6000001430511475,
+      "residuals": [
+        {
+          "tick": 500,
+          "index": 0,
+          "originalSprites": 0,
+          "originalBaseNativeArea": 1152,
+          "reasons": {},
+          "coldOnly": false
+        },
+        {
+          "tick": 747,
+          "index": 1,
+          "originalSprites": 0,
+          "originalBaseNativeArea": 1152,
+          "reasons": {},
+          "coldOnly": false
+        }
+      ]
+    }
+  ],
+  "sourceChecks": {
+    "simulation.js": {
+      "GAEqualsResearch": true,
+      "sha256": "5213829f351f710dddefc27a37edbd2f4a715a901e86da62bf81ab0bb073b1e0"
+    },
+    "logic-data.js": {
+      "GAEqualsResearch": true,
+      "sha256": "1689a8402be5d88c7e94d256a4839f4f3c7991e1d3095b70c787819b41bd22ba"
+    },
+    "magic.js": {
+      "GAEqualsResearch": true,
+      "sha256": "462ebe32744407aa222456b98c5fd2c848a25d0332350a2758c2f059322ae08a"
+    },
+    "speaker-clock.js": {
+      "GAEqualsResearch": true,
+      "sha256": "022006f1ddeea9609a66c6e0a12cd5a08a10f7e35ab3c7443315cea58292f7b3"
+    }
+  },
+  "unit": {
+    "tests": 142,
+    "pass": 142,
+    "fail": 0,
+    "receipt": "final-current-unit.log",
+    "scope": "single final full current-tree npm test after provisional Death rendering freeze; prior127/140receipts retained"
+  },
+  "packageVerify": {
+    "pass": true,
+    "command": "node scripts/refresh-manifest.mjs --local-build-info && npm run verify",
+    "snapshotSHA256": "80dd4aee69233a1c3c4480dfe690c8017b991299d830888ba01d322dc01f1b3f",
+    "runtimeFiles": 372,
+    "build": {
+      "repository": "https://github.com/michalmedvecky/pre2-web",
+      "commit": null,
+      "buildSource": "dirty-snapshot",
+      "dirty": true,
+      "sourceSnapshot": "80dd4aee69233a1c3c4480dfe690c8017b991299d830888ba01d322dc01f1b3f"
+    },
+    "checks": [
+      "exact runtime manifest",
+      "required OPL/HD/identity dependencies",
+      "retained LGPL source/license",
+      "honest dirty local snapshot"
+    ]
+  },
+  "overall": "Fresh six-mode current75 JS gameflow PASS; targeted HD/Original/MAP/mobile/cache render checks PASS;142unitPASS; finalmanifestverifyPASS. Native late-Duel palette reachability remains UNVERIFIED and observed-context rendering is explicitly PROVISIONAL.",
+  "gameflowPass": true,
+  "mapPaletteTargeted": {
+    "cases": 21,
+    "allHDBase62400": true,
+    "rawReceipt": "palette-recheck/checks.json",
+    "coldSpritePendingResolvedReceipt": "palette-pending-recheck/checks.json",
+    "boundedExtraWaitMs": {
+      "1800": 2277.7,
+      "20300": 1517.9
+    },
+    "mapsPersonallyViewed": "palette-recheck/eight-palette-review.png",
+    "scope": "17 persistent contexts plus4 native bonus palette initializations, not another six-mode run"
+  },
+  "mapOverview": {
+    "unitPass": 5,
+    "browserReceipt": "map/checks.json",
+    "personallyViewed": [
+      "map/desktop-door-hd.png",
+      "map/mobile-bonus-tap.png"
+    ],
+    "scope": "original1x/HD2x logicalworldcoords; Stage3door/bonuspalette/mobiletap/closeepoch and worldimmutability"
+  },
+  "mobile": {
+    "receipt": "mobile/checks.json",
+    "cases": 4,
+    "p2TouchSupported": false,
+    "limitation": "touch controls P1; P2 requires keyboard/controller"
+  },
+  "cache": {
+    "receipt": "cache-checks-default.json",
+    "maxAtlases": 16,
+    "maxDecodedBytes": 67108864,
+    "maxPaletteBytes": 16777216
+  },
+  "nativeDuel": {
+    "receipt": "../../../evidence/native-duel-palette/final-summary.json",
+    "initializedMenuCounts": [
+      32,
+      36
+    ],
+    "actualDuelFinalReachability": "UNVERIFIED",
+    "nativeMode3Confirmed": false,
+    "simulationChanged": false
+  },
+  "cleanup": {
+    "ownServer5796Closed": true,
+    "userServer5790Untouched": true,
+    "ownBrowsersClosed": true,
+    "audioDisposed": true,
+    "nativeOwned180SecondProcessExited": true,
+    "nativeBridgeClosed": true
+  },
+  "provisionalDeath": {
+    "receipt": "death-provisional-recheck/checks.json",
+    "ticks": [
+      4534,
+      5126
+    ],
+    "originalSprites": 0,
+    "originalMapArea": 0,
+    "worldUnchanged": true,
+    "personallyViewedBothSourceHDPNGs": true,
+    "authority": "current-runtime observed exact source colors/26SHA-bound anchors",
+    "nativeReachabilityVerified": false,
+    "provisional": true,
+    "originalRegistryScopeUnchanged": 983
+  }
+}

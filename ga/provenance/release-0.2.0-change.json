@@ -1,0 +1,28 @@
+{
+  "version": "0.2.0",
+  "previousTag": "ga-v0.1.1",
+  "previousCommit": "5b20aa28b1cf462a09fdfe184146c8760e39ca1f",
+  "runtimeSnapshot": "d446a5ca9b1ec3d396e9c55868203a140697ff9cc6047c6d8ffc8eec9dd0af87",
+  "gameplayCoreUnchanged": true,
+  "core75SHA256": "5213829f351f710dddefc27a37edbd2f4a715a901e86da62bf81ab0bb073b1e0",
+  "HDDefault": true,
+  "originalModeRetained": true,
+  "originalAudioRetained": true,
+  "frameRecords": {
+    "painted": 580,
+    "preservedVectorSprite": 1,
+    "preservedVectorFont": 72
+  },
+  "HDAtlases": 196,
+  "mapRegions": 111,
+  "doorStates": 10,
+  "testsAtFeatureFreeze": 142,
+  "knownLimit": "Late Duel boss palette is runtime-observed/provisional; nativeReachabilityVerified:false. Full DOS equivalence is not established.",
+  "portableEvidence": "evidence/hd-release/",
+  "newOriginalEXEorZIPCopied": false,
+  "clusterDeployment": false,
+  "featureFreezeSnapshot": "80dd4aee69233a1c3c4480dfe690c8017b991299d830888ba01d322dc01f1b3f",
+  "changesAfterFeatureFreeze": [
+    "Remove trailing whitespace from dist/js/app.js; no semantic change."
+  ]
+}

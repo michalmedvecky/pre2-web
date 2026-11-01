@@ -1,0 +1,19 @@
+{
+  "pass": true,
+  "command": "node scripts/refresh-manifest.mjs --local-build-info && npm run verify",
+  "snapshotSHA256": "80dd4aee69233a1c3c4480dfe690c8017b991299d830888ba01d322dc01f1b3f",
+  "runtimeFiles": 372,
+  "build": {
+    "repository": "https://github.com/michalmedvecky/pre2-web",
+    "commit": null,
+    "buildSource": "dirty-snapshot",
+    "dirty": true,
+    "sourceSnapshot": "80dd4aee69233a1c3c4480dfe690c8017b991299d830888ba01d322dc01f1b3f"
+  },
+  "checks": [
+    "exact runtime manifest",
+    "required OPL/HD/identity dependencies",
+    "retained LGPL source/license",
+    "honest dirty local snapshot"
+  ]
+}

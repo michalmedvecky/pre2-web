@@ -64,7 +64,7 @@ Workload má2repliky, Service80→8080, nonroot UID/GID10001, tokenoff, RuntimeD
 
 Nejprve případně interní port-forward Servicega, potom ověřte skutečný dedikovaný HTTPS host na `/` bez pathrewrite. Traefik template nastavuje explicitní router.tls:true i potvrzený entrypoint; samotný tls.secretName TLS nezapíná. Certifikát/DNS musí obstarat existující cluster postup.
 
-Ověřte `/healthz`, `/build.json`, title/LEVEL, vstup+audio po kliknutí, OPLWorklet/WASM i FLACfallback, HDpreview (jenpreview), konzoli/404 a skutečný mobil zvlášť. `/build.json.commit` musí být plný buildSHA a sourceSnapshot musí souhlasit s release manifestem. Skutečný CIcommit se neplete s původním dirty parentHEAD ve source-state. Probe200 není game/playthrough důkaz. Reload během aktualizace může resetovat současnou partii; hráče upozorněte, userpartie se při přípravě nereloadovala.
+Ověřte `/healthz`, `/build.json`, title/LEVEL, vstup+audio po kliknutí, OPLWorklet/WASM i FLACfallback, výchozí HD grafiku, přepnutí `HD` do původního režimu a HD přehled `MAP`, konzoli/404 a skutečný mobil zvlášť. `/build.json.commit` musí být plný buildSHA a sourceSnapshot musí souhlasit s release manifestem. Skutečný CIcommit se neplete s původním dirty parentHEAD ve source-state. Probe200 není game/playthrough důkaz. Reload během aktualizace může resetovat současnou partii; hráče upozorněte, userpartie se při přípravě nereloadovala.
 
 Preferovaný rollback: doplňte předchozí **ověřený digest** do configu, znovu render/dry-run/diff/apply. Nouzově `kubectl --context "$KUBE_CONTEXT" -n "$NAMESPACE" rollout undo deployment/ga`, ověřte rollout a pak opravte deklarovanou image konfiguraci, aby další apply rollback nezrušil. Neměňte host/origin bez důvodu: browser storage je vázaná na origin.
 
@@ -76,10 +76,10 @@ Předávací zápis po skutečné práci: build commit+snapshot, image digest/pl
 
 ## Samostatný GitHub release Golden Axe
 
-Verze balíčku0.1.1 používá vlastní prefix `ga-v0.1.1`, nikoli existující Pre2tag `v*`. Image se staví na main/workflow_dispatch; tagpush sám další image ani release nevytváří. Po úspěšném GA CI vytvoří release owner tag na přesném otestovaném packaging commitu a samostatný GitHub release s názvem Golden Axe. Před vytvořením musí znovu ověřit nepoužitý tag.
+Verze balíčku0.2.0 používá vlastní prefix `ga-v0.2.0`, nikoli existující Pre2tag `v*`. Image se staví na main/workflow_dispatch; tagpush sám další image ani release nevytváří. Po úspěšném GA CI vytvoří release owner tag na přesném otestovaném packaging commitu a samostatný GitHub release s názvem Golden Axe. Před vytvořením musí znovu ověřit nepoužitý tag.
 
-Deployer asset je explicitní `ga-v0.1.1.tar.gz` z committed `ga/` subtree a `ga-v0.1.1.SHA256SUMS`; GitHub automatický SourcecodeZIP obsahuje celý parentrepo a není GA-only balíček. Archiv ponechává tracked build.json jako poctivý lokální template; skutečný čistý buildcommit se ověřuje vCI image. Pro CI-integrační test použijte cílový repo včetně obou rootworkflow; samotný GA kontejner/render nepotřebují Pre2runtime.
+Deployer asset je explicitní `ga-v0.2.0.tar.gz` z committed `ga/` subtree a `ga-v0.2.0.SHA256SUMS`; GitHub automatický SourcecodeZIP obsahuje celý parentrepo a není GA-only balíček. Archiv ponechává tracked build.json jako poctivý lokální template; skutečný čistý buildcommit se ověřuje vCI image. Pro CI-integrační test použijte cílový repo včetně obou rootworkflow; samotný GA kontejner/render nepotřebují Pre2runtime.
 
-Release notes uvedou actual packagingcommit, runtime snapshot, GA CIrun, skutečný image digest/platformy, checksum přiloženého archivu, známé meze a žádný clusterdeploy. Release se nevydává jako dokončený HD/nativeexact remaster; HD zůstává preview. Žádný release/push při původním balení neproběhl.
+Release notes uvedou actual packagingcommit, runtime snapshot, GA CIrun, skutečný image digest/platformy, checksum přiloženého archivu, známé meze a žádný clusterdeploy. HD je výchozí remaster; release netvrdí úplnou nativeexact věrnost. Pozdní1P Duel má jasně označený předběžný bossův barevný kontext podle současného portu, shoda s DOS zůstává neověřená. Žádný release/push při původním balení neproběhl.
 
 Požadovaný deployment host pro toto předání je `ga.500miles.cz`. Je to vstup pro deployera, nikoli potvrzení změnyDNS/TLS/Ingressu nebo skutečného nasazení; žádný cluster se při vydání nemění. Historický ga-v0.1.0 zůstává neměnný.
