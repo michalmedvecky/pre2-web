@@ -14,6 +14,7 @@ import {createMapOverlay} from './map-overlay.js';
 import {createLevelOverlay} from './level-overlay.js';
 import {preloadPresentationHD} from './hd-presentation.js';
 import {warmStatePalettes} from './hd-palette-warmup.js';
+import {HDFramePresenter} from './hd-frame-presenter.js';
 
 const $ = selector => document.querySelector(selector);
 const canvas = $('#game');
@@ -51,6 +52,7 @@ function makePassword(){warmPresentation('password');const presenter=new Origina
 let mapOverlay=null,levelOverlay=null,lastGodMode=false;
 const hdWarmups=new Map();
 let paletteWarmupRunning=false,lastPaletteWarmup=-Infinity;
+let hdPresenter=null,hdLoading={waiting:false,failed:false};
 function warmActorPalettes(now=performance.now()) {
   if(!assets?.hd||!renderer||!simulation||paletteWarmupRunning||now-lastPaletteWarmup<250)return;
   lastPaletteWarmup=now;paletteWarmupRunning=true;
@@ -182,7 +184,7 @@ function jumpToLevel(index) {
   levelOverlay?.close({resume:false,focus:false});mapOverlay?.close();
   resetAudio();sequence=null;calibration=null;$('#calibration-panel').hidden=true;
   openingShown=true;interludeShown=false;input?.clear();
-  start();renderer.render({...simulation.state,mode:simulation.mode});return result;
+  start();return result;
 }
 function returnMenu() {
 
@@ -425,7 +427,7 @@ try {
     try {
     const frameStart=performance.now(),rawElapsed=now-prior;let maxStepMs=0,steps=0;
     const elapsed = Math.min(100, Math.max(0, now - prior)); prior = now;
-    if (started && !paused || calibration || menuStep==='soundtest'||!started&&menuStep==='character') {
+    if (!hdLoading.waiting&&(started && !paused || calibration || menuStep==='soundtest'||!started&&menuStep==='character')) {
       accumulated += elapsed;
       while (accumulated >= tickMs) {
         if(!started&&menuStep==='character'){simulation.advanceSpeakerPIT?.();characterSelect.step(input.sample(simulation.state.players));drainCharacterEvents();menuSync();finishCharacterSelect();accumulated=Math.max(0,accumulated-tickMs);continue;}
@@ -448,7 +450,15 @@ try {
     }
     renderer.beginFrame();
     if(started)warmActorPalettes(now);
+    hdPresenter??=new HDFramePresenter(renderer);
+    hdPresenter.begin();
     if (started) {if(sequence)sequence.render(renderer);else renderer.render({...simulation.state,mode:simulation.mode});} else if(menuStep==='character'&&characterSelect)characterSelect.render(renderer);else renderer.renderMenu(menuStep);
+    hdLoading=hdPresenter.finish(now);window.goldenAxe.hdLoading=hdLoading;
+    if(hdLoading.waiting)accumulated=0;
+    if(audio.paused!==(paused||hdLoading.waiting))audio.setPaused(paused||hdLoading.waiting);
+    $('#loading').hidden=!hdLoading.waiting;
+    $('#loading').classList.toggle('hd-loading',hdLoading.waiting);
+    if(hdLoading.waiting)$('#loading').textContent=hdLoading.failed?'HD grafiku se nepodařilo připravit. Zkus obnovit stránku nebo tlačítkem HD přepni na původní grafiku.':'Načítání HD grafiky…';
     updateGraphicsUI();
     if (simulation.state.status !== lastStatus) sync();
     if(lastGodMode!==!!simulation.state.godMode){lastGodMode=!!simulation.state.godMode;$('#status').textContent=`Původní data${lastGodMode?' · IDDQD':''}`;for(const button of document.querySelectorAll('[data-toggle-god]')){button.textContent=`IDDQD: ${lastGodMode?'zapnuto':'vypnuto'}`;button.setAttribute('aria-pressed',String(lastGodMode));}}

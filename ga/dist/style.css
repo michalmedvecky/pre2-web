@@ -33,4 +33,5 @@ footer{display:flex;gap:20px;align-items:center;color:var(--muted);font-size:10p
 
 /* HD uses real4xbacking; only original mode requests nearest CSS scaling. */
 #game.graphics-hd{image-rendering:auto}
+.loading.hd-loading{background:#111a;padding:24px;text-align:center;line-height:1.6}
 @media(max-width:600px){#graphics-edition{display:none}}

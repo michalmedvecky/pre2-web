@@ -1,5 +1,27 @@
 # Golden Axe — předání deployerovi pro k3s
 
+## Patch ga-v0.2.1
+
+Oprava problikávání SD/HD při načítání animací a map. Vydání používá samostatný
+GA image a nemění Prehistorik. Přesný commit, CI a nový image digest jsou v
+[release ga-v0.2.1](https://github.com/michalmedvecky/pre2-web/releases/tag/ga-v0.2.1).
+Runtime snapshot: `c5889e843987d61dd5ea6adc6d0290fd5914829790794dcf03845ab5b318d2f6`.
+GA-only archiv: `ga-v0.2.1.tar.gz` + `ga-v0.2.1.SHA256SUMS`.
+
+Cílový host je `ga.500miles.cz`; zachovejte nynější GA namespace, service,
+ingress a TLS. Použijte nový image přes digest z release. Cluster konfiguraci
+zde neodhadujeme ani neměníme. Rollback 0.2.0:
+`ghcr.io/michalmedvecky/pre2-web-ga@sha256:e0c37b426105b49ebb7038f63757a39a60ac23a914c0f88dd16ea8d55d01bda0`.
+
+Přijetí: ověřte `/build.json`, poté se studenou cache pohyb, útoky protivníků
+a přechod scénou. HD má při chybějících souborech podržet hotový obraz a
+pozastavit herní čas i zvuk s hláškou načítání; nesmí zobrazit SD mezisnímek.
+Při výpadku souboru musí fungovat ruční přepnutí tlačítkem HD do originálu.
+146 testů a cílený Chrome test se zpožděním PNG 450 ms prošly; celá hra
+proti DOS se kvůli tomuto patchi znovu netestovala. Detaily:
+[reports/hd-loading.md](reports/hd-loading.md). Níže je obecný postup a
+historický popis původní přípravy; vydání samo nic do k3s nenasazuje.
+
 **Připraveno, nenasazeno.** Žádný push, publish ani cluster access během přípravy. Lokální Docker není dostupný: skutečný image build, nginx runtime a registry manifest smoke zatím čekají na CI/deployera. Browser QA se skutečně provedla nad místním Node preview, nikoli uvnitř kontejneru.
 
 Repo: `https://github.com/michalmedvecky/pre2-web`, aplikace a buildcontext `ga/`, Deployment/Service `ga`. Původní Prehistorik2 aplikace/data se neměnily. Jediná schválená změna starého workflow je `push.paths-ignore` pro `ga/**`, nový GAworkflow a Pre2workflow samotný; přesný patch `provenance/parent-workflow-delta.patch`. GA-only včetně prvního commitu s oběma workflow spustí jen GA, Pre2-app-only jen Pre2, mixed app změny obě. Samotná Pre2workflow-only změna image automaticky nepublikuje; workflow_dispatch zůstává. Platí standardní GitHub limity diff filtrů; není to nová cluster izolace.

@@ -1,0 +1,23 @@
+{
+  "version": "0.2.1",
+  "previousTag": "ga-v0.2.0",
+  "previousCommit": "51110c5c541048bffeb85fd303ad66b8d32b1f8b",
+  "runtimeSnapshot": "c5889e843987d61dd5ea6adc6d0290fd5914829790794dcf03845ab5b318d2f6",
+  "gameplayCoreUnchanged": true,
+  "HDArtUnchanged": true,
+  "originalAudioRetained": true,
+  "unitTests": 146,
+  "browserEvidence": "evidence/hd-loading/browser-checks.json",
+  "changes": [
+    "Atomic HD frame commit; loading dependencies never expose transient SD placeholders",
+    "Suspend simulation, presentation clocks and audio while waiting, no wall-clock catch-up",
+    "Visible atlas/palette eviction priority within existing memory limits",
+    "Warm matching base atlases for upcoming animation frames",
+    "Explicit load failure and manual original-mode recovery"
+  ],
+  "knownLimits": [
+    "Cold dependencies can briefly pause gameplay",
+    "Original palette/native-equivalence caveats from 0.2.0 remain"
+  ],
+  "clusterDeployment": false
+}

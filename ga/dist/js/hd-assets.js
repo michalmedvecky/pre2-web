@@ -105,12 +105,19 @@ export class HDAssetBank {
     this.paletteLUTs=new PaletteRGBACache({maxBytes:Math.min(4*1024*1024,Math.max(0,maxPaletteLUTBytes)),maxEntries:Math.min(8,Math.max(1,maxPaletteLUTs))});
   }
   touch(id) {const image=this.images.get(id);if(image){this.images.delete(id);this.images.set(id,image);}return image;}
-  prune() {let bytes=[...this.images.values()].reduce((n,i)=>n+i.width*i.height*4,0);while(this.images.size>1&&(this.images.size>this.maxAtlases||bytes>this.maxDecodedBytes)){const [id,image]=this.images.entries().next().value;this.images.delete(id);bytes-=image.width*image.height*4;image.close?.();this.evictions++;}}
+  beginDemandFrame() {this.demandAtlases=new Set();this.demandPalettes=new Set();this.trackingDemand=true;}
+  endDemandFrame() {
+    this.trackingDemand=false;
+    const atlases=[...(this.demandAtlases||[])].filter(id=>!this.images.has(id)),palettes=[...(this.demandPalettes||[])].filter(key=>!this.paletteImages.has(key));
+    return {ready:!atlases.length&&!palettes.length,atlases,palettes,failed:atlases.some(id=>this.failures.has(id))||palettes.some(key=>this.paletteFailures.has(key))};
+  }
+  prune() {let bytes=[...this.images.values()].reduce((n,i)=>n+i.width*i.height*4,0);while(this.images.size>1&&(this.images.size>this.maxAtlases||bytes>this.maxDecodedBytes)){const [id,image]=[...this.images.entries()].find(([key])=>!this.demandAtlases?.has(key))||this.images.entries().next().value;this.images.delete(id);bytes-=image.width*image.height*4;image.close?.();this.evictions++;}}
   async preloadAtlases(ids) {
     return Promise.all([...new Set(ids)].map(id=>this.ensureAtlas(id)));
   }
   async preloadScene(id) { return this.preloadAtlases(this.manifest.scenes?.[id]?.atlases || []); }
   ensureAtlas(id) {
+    if(this.trackingDemand)this.demandAtlases.add(id);
     if(this.images.has(id)){this.touch(id);return Promise.resolve(true);}
     if(this.pending.has(id))return this.pending.get(id);
     if(this.failures.has(id)||!this.manifest.atlases[id])return Promise.resolve(false);
@@ -126,7 +133,7 @@ export class HDAssetBank {
   drainLoads() {while(this.activeLoads<this.maxConcurrentLoads&&this.loadQueue.length){const work=this.loadQueue.shift();this.activeLoads++;work().finally(()=>{this.activeLoads--;this.drainLoads();});}}
   pick(kind, predicate, palette) {
     const candidates=this.entries[kind].filter(predicate), matched=candidates.filter(e=>paletteVariantMatches(this.manifest.paletteVariants[e.paletteVariant],palette));
-    for(const entry of matched){const image=this.touch(entry.atlas);if(image)return {entry,image};this.ensureAtlas(entry.atlas);}
+    for(const entry of matched){if(this.trackingDemand)this.demandAtlases.add(entry.atlas);const image=this.touch(entry.atlas);if(image)return {entry,image};this.ensureAtlas(entry.atlas);}
     return {reason:!candidates.length?'missing':!matched.length?'palette-variant':matched.some(e=>this.failures.has(e.atlas))?'atlas-failed':'loading'};
   }
   frame(sprite,slot,frame,palette,nativeFrame) {
@@ -139,6 +146,7 @@ export class HDAssetBank {
         if(!plan)continue;
         if(!plan.supported)return {reason:plan.status};
         const key=this.paletteKey(entry,plan),image=this.paletteImages.get(key);
+        if(this.trackingDemand)this.demandPalettes.add(key);
         if(image){this.paletteImages.delete(key);this.paletteImages.set(key,image);return {image,entry:{...entry,rectPixels:[0,0,...entry.rectPixels.slice(2)]},paletteTransform:{variant:plan.variantId,...(plan.provisional?{authority:plan.authority,nativeReachabilityVerified:false,provisional:true,contractSHA256:plan.contractSHA256}:{}),approximate:true,materialGeometryReviewed:plan.materialGeometryReviewed===true,majorityMappingApproximate:plan.majorityMappingApproximate===true,colorCoverageApproved:false}};}
         this.ensurePaletteFrame(entry,plan);
         return {reason:this.paletteFailures.has(key)?'palette-transform-failed':'palette-transform-loading'};
@@ -170,7 +178,7 @@ export class HDAssetBank {
         if(result.width!==entry.rectPixels[2]||result.height!==entry.rectPixels[3])throw Error('Palette result must preserve exact crop size.');
         if(bytes>this.maxPaletteBytes){result.close?.();finish(false);return;}
         this.paletteImages.set(key,result);this.paletteBytes+=bytes;
-        while(this.paletteBytes>this.maxPaletteBytes||this.paletteImages.size>this.maxPaletteFrames){const[k,old]=this.paletteImages.entries().next().value;this.paletteImages.delete(k);this.paletteBytes-=old.width*old.height*4;old.close?.();this.paletteEvictions++;}
+        while(this.paletteBytes>this.maxPaletteBytes||this.paletteImages.size>this.maxPaletteFrames){const[k,old]=[...this.paletteImages.entries()].find(([key])=>!this.demandPalettes?.has(key))||this.paletteImages.entries().next().value;this.paletteImages.delete(k);this.paletteBytes-=old.width*old.height*4;old.close?.();this.paletteEvictions++;}
         finish(true);
       }catch(error){this.paletteFailures.set(key,String(error.message||error));while(this.paletteFailures.size>64)this.paletteFailures.delete(this.paletteFailures.keys().next().value);finish(false);}
       finally{this.palettePending.delete(key);}
@@ -180,7 +188,7 @@ export class HDAssetBank {
   async preloadPaletteFrames(sprite,palette,{slots=null,frames=null,limit=8}={}){
     const results=[];
     for(const entry of this.entries.frames.filter(e=>e.sprite===sprite&&(!slots||slots.includes(e.slot))&&(!frames||frames.some(f=>f.slot===e.slot&&f.frame===e.frame))).slice(0,Math.max(0,Math.min(64,limit)))){
-      if(paletteVariantMatches(this.manifest.paletteVariants[entry.paletteVariant],palette))continue;
+      if(paletteVariantMatches(this.manifest.paletteVariants[entry.paletteVariant],palette)){results.push(await this.ensureAtlas(entry.atlas));continue;}
       const plan=verifiedPalettePlan(sprite,this.manifest.paletteVariants[entry.paletteVariant].colors,palette,{entry,atlas:this.manifest.atlases[entry.atlas]});
       results.push(!!plan?.supported&&await this.ensurePaletteFrame(entry,plan));
     }
@@ -190,12 +198,12 @@ export class HDAssetBank {
     const records=[]; for(const entry of this.entries.maps.filter(e=>e.mapId===mapId)) {
       if(viewport){const[x,y,w,h]=entry.nativeRect,[vx,vy,vw,vh]=viewport;if(x+w<=vx||y+h<=vy||x>=vx+vw||y>=vy+vh)continue;}
       if(!paletteVariantMatches(this.manifest.paletteVariants[entry.paletteVariant],palette))continue;
-      const image=this.touch(entry.atlas);if(image)records.push({entry,image});else this.ensureAtlas(entry.atlas);
+      if(this.trackingDemand)this.demandAtlases.add(entry.atlas);const image=this.touch(entry.atlas);if(image)records.push({entry,image});else this.ensureAtlas(entry.atlas);
     } return records;
   }
   statePatches(mapId,palette,map,overrides=[],viewport=null){
     const candidates=this.entries.mapStatePatches.filter(e=>paletteVariantMatches(this.manifest.paletteVariants[e.paletteVariant],palette));
-    return matchingMapStatePatches(candidates,mapId,palette,map,overrides,viewport).flatMap(entry=>{const image=this.touch(entry.atlas);if(image)return[{entry,image}];this.ensureAtlas(entry.atlas);return[];});
+    return matchingMapStatePatches(candidates,mapId,palette,map,overrides,viewport).flatMap(entry=>{if(this.trackingDemand)this.demandAtlases.add(entry.atlas);const image=this.touch(entry.atlas);if(image)return[{entry,image}];this.ensureAtlas(entry.atlas);return[];});
   }
   tile(mapId,tileId,palette) { return this.pick('tilePatches',e=>e.mapId===mapId&&e.tileId===tileId,palette); }
   font(glyph,palette) { return this.pick('fonts',e=>e.glyph===glyph,palette); }
