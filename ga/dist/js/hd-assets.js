@@ -1,3 +1,4 @@
+import {drawHDImage,imageBytes,displayBitmap} from './hd-image.js';
 import {HD_OBSERVED_DEATH_CONTEXT} from './hd-observed-death-context.js';
 import {HD_PALETTE_WRITES} from './hd-palette-writes.js';
 import {HD_MATERIAL_ANNOTATIONS} from './hd-material-annotations.js';
@@ -41,12 +42,12 @@ function cropCanvas(width,height){
 }
 async function defaultRecolorFrame(image,entry,plan,lut){
   const[x,y,width,height]=entry.rectPixels,canvas=cropCanvas(width,height),ctx=canvas.getContext('2d',{willReadFrequently:true});
-  ctx.drawImage(image,x,y,width,height,0,0,width,height);
+  drawHDImage(ctx,image,x,y,width,height,0,0,width,height);
   const pixels=ctx.getImageData(0,0,width,height);
-  let result=await applyPaletteRGBAAsync(pixels.data,plan,{lut});
-  if(plan.paintMaterials)result=await applyPaintMaterialsAsync(pixels.data,result.pixels,width,plan.paintMaterials);
+  let result=await applyPaletteRGBAAsync(pixels.data,plan,{lut,chunkPixels:32768});
+  if(plan.paintMaterials)result=await applyPaintMaterialsAsync(pixels.data,result.pixels,width,{...plan.paintMaterials,chunkRows:64});
   if(!result.pixels)throw Error(result.reason);
-  pixels.data.set(result.pixels);ctx.putImageData(pixels,0,0);return canvas;
+  pixels.data.set(result.pixels);ctx.putImageData(pixels,0,0);return displayBitmap(canvas);
 }
 function finite(value) { return Number.isFinite(value); }
 function rect(value) { return Array.isArray(value) && value.length === 4 && value.every(finite) && value[0] >= 0 && value[1] >= 0 && value[2] > 0 && value[3] > 0; }
@@ -92,7 +93,7 @@ export function validateHDManifest(manifest) {
   return errors;
 }
 function defaultImageLoader(url) {
-  return new Promise((resolve,reject) => { const image=new Image(); image.onload=()=>resolve(image); image.onerror=()=>reject(new Error('HD atlas unavailable.')); image.src=url.href; });
+  return new Promise((resolve,reject) => { const image=new Image(); image.onload=()=>displayBitmap(image).then(resolve,reject); image.onerror=()=>reject(new Error('HD atlas unavailable.')); image.src=url.href; });
 }
 export class HDAssetBank {
   constructor(manifest, {base, loadImage=defaultImageLoader,maxDecodedBytes=64*1024*1024,maxAtlases=16,recolorFrame=defaultRecolorFrame,maxPaletteBytes=12*1024*1024,maxPaletteFrames=56,maxPaletteLUTBytes=4*1024*1024,maxPaletteLUTs=8}={}) {
@@ -101,7 +102,7 @@ export class HDAssetBank {
     this.images=new Map(); this.pending=new Map(); this.failures=new Map();this.maxDecodedBytes=maxDecodedBytes;this.maxAtlases=maxAtlases;this.evictions=0;this.activeLoads=0;this.loadQueue=[];this.maxConcurrentLoads=4;
     this.entries={}; for(const k of ['frames','maps','mapStatePatches','tilePatches','fonts'])this.entries[k]=(manifest[k]||[]).filter(e=>e.status===APPROVED);
     this.paletteImages=new Map();this.paletteBytes=0;this.palettePending=new Map();this.paletteFailures=new Map();this.paletteQueue=[];this.paletteActive=false;this.paletteEvictions=0;this.recolorFrame=recolorFrame;
-    this.maxPaletteBytes=Math.min(12*1024*1024,Math.max(0,maxPaletteBytes));this.maxPaletteFrames=Math.min(56,Math.max(1,maxPaletteFrames));
+    this.maxPaletteBytes=Math.min(64*1024*1024,Math.max(0,maxPaletteBytes));this.maxPaletteFrames=Math.min(512,Math.max(1,maxPaletteFrames));
     this.paletteLUTs=new PaletteRGBACache({maxBytes:Math.min(4*1024*1024,Math.max(0,maxPaletteLUTBytes)),maxEntries:Math.min(8,Math.max(1,maxPaletteLUTs))});
   }
   touch(id) {const image=this.images.get(id);if(image){this.images.delete(id);this.images.set(id,image);}return image;}
@@ -111,7 +112,7 @@ export class HDAssetBank {
     const atlases=[...(this.demandAtlases||[])].filter(id=>!this.images.has(id)),palettes=[...(this.demandPalettes||[])].filter(key=>!this.paletteImages.has(key));
     return {ready:!atlases.length&&!palettes.length,atlases,palettes,failed:atlases.some(id=>this.failures.has(id))||palettes.some(key=>this.paletteFailures.has(key))};
   }
-  prune() {let bytes=[...this.images.values()].reduce((n,i)=>n+i.width*i.height*4,0);while(this.images.size>1&&(this.images.size>this.maxAtlases||bytes>this.maxDecodedBytes)){const [id,image]=[...this.images.entries()].find(([key])=>!this.demandAtlases?.has(key))||this.images.entries().next().value;this.images.delete(id);bytes-=image.width*image.height*4;image.close?.();this.evictions++;}}
+  prune() {let bytes=[...this.images.values()].reduce((n,i)=>n+imageBytes(i),0);while(this.images.size>1&&(this.images.size>this.maxAtlases||bytes>this.maxDecodedBytes)){const [id,image]=[...this.images.entries()].find(([key])=>!this.demandAtlases?.has(key)&&!this.stageAtlases?.has(key))||[...this.images.entries()].find(([key])=>!this.demandAtlases?.has(key))||this.images.entries().next().value;this.images.delete(id);bytes-=imageBytes(image);image.close?.();this.evictions++;}}
   async preloadAtlases(ids) {
     return Promise.all([...new Set(ids)].map(id=>this.ensureAtlas(id)));
   }
@@ -157,7 +158,7 @@ export class HDAssetBank {
   paletteKey(entry,plan){return JSON.stringify([this.manifest.atlases[entry.atlas].sha256||this.manifest.atlases[entry.atlas].src,entry.rectPixels,plan.signature]);}
   ensurePaletteFrame(entry,plan){
     const key=this.paletteKey(entry,plan);
-    if(this.paletteImages.has(key))return Promise.resolve(true);
+    if(this.paletteImages.has(key)){const image=this.paletteImages.get(key);this.paletteImages.delete(key);this.paletteImages.set(key,image);return Promise.resolve(true);}
     if(this.palettePending.has(key))return this.palettePending.get(key);
     if(!plan.supported||this.paletteFailures.has(key)||this.palettePending.size>=64)return Promise.resolve(false);
     let finish;const promise=new Promise(resolve=>{finish=resolve;});this.palettePending.set(key,promise);
@@ -174,11 +175,11 @@ export class HDAssetBank {
         if(!this.images.has(entry.atlas))await this.ensureAtlas(entry.atlas);
         image=this.touch(entry.atlas);
         if(!image)throw Error('Source atlas unavailable before crop.');
-        const result=await this.recolorFrame(image,entry,plan,lut),bytes=result.width*result.height*4;
+        const result=await this.recolorFrame(image,entry,plan,lut),bytes=imageBytes(result);
         if(result.width!==entry.rectPixels[2]||result.height!==entry.rectPixels[3])throw Error('Palette result must preserve exact crop size.');
         if(bytes>this.maxPaletteBytes){result.close?.();finish(false);return;}
         this.paletteImages.set(key,result);this.paletteBytes+=bytes;
-        while(this.paletteBytes>this.maxPaletteBytes||this.paletteImages.size>this.maxPaletteFrames){const[k,old]=[...this.paletteImages.entries()].find(([key])=>!this.demandPalettes?.has(key))||this.paletteImages.entries().next().value;this.paletteImages.delete(k);this.paletteBytes-=old.width*old.height*4;old.close?.();this.paletteEvictions++;}
+        while(this.paletteBytes>this.maxPaletteBytes||this.paletteImages.size>this.maxPaletteFrames){const[k,old]=[...this.paletteImages.entries()].find(([key])=>!this.demandPalettes?.has(key)&&!this.stagePalettes?.has(key))||[...this.paletteImages.entries()].find(([key])=>!this.demandPalettes?.has(key))||this.paletteImages.entries().next().value;this.paletteImages.delete(k);this.paletteBytes-=imageBytes(old);old.close?.();this.paletteEvictions++;}
         finish(true);
       }catch(error){this.paletteFailures.set(key,String(error.message||error));while(this.paletteFailures.size>64)this.paletteFailures.delete(this.paletteFailures.keys().next().value);finish(false);}
       finally{this.palettePending.delete(key);}
@@ -187,7 +188,7 @@ export class HDAssetBank {
   drainPalette(){if(this.paletteActive||!this.paletteQueue.length)return;this.paletteActive=true;this.paletteQueue.shift()().finally(()=>{this.paletteActive=false;this.drainPalette();});}
   async preloadPaletteFrames(sprite,palette,{slots=null,frames=null,limit=8}={}){
     const results=[];
-    for(const entry of this.entries.frames.filter(e=>e.sprite===sprite&&(!slots||slots.includes(e.slot))&&(!frames||frames.some(f=>f.slot===e.slot&&f.frame===e.frame))).slice(0,Math.max(0,Math.min(64,limit)))){
+    for(const entry of this.entries.frames.filter(e=>e.sprite===sprite&&(!slots||slots.includes(e.slot))&&(!frames||frames.some(f=>f.slot===e.slot&&f.frame===e.frame))).slice(0,Math.max(0,Math.min(512,limit)))){
       if(paletteVariantMatches(this.manifest.paletteVariants[entry.paletteVariant],palette)){results.push(await this.ensureAtlas(entry.atlas));continue;}
       const plan=verifiedPalettePlan(sprite,this.manifest.paletteVariants[entry.paletteVariant].colors,palette,{entry,atlas:this.manifest.atlases[entry.atlas]});
       results.push(!!plan?.supported&&await this.ensurePaletteFrame(entry,plan));
@@ -217,7 +218,7 @@ export class HDAssetBank {
     if(request.kind==='font')return Array.from({length:request.glyphCount},(_,i)=>i).every(g=>entries.some(e=>e.glyph===g&&this.images.has(e.atlas)));
     return loaded.some(Boolean);
   }
-  coverage() { return {approvedFrames:new Set(this.entries.frames.map(e=>`${e.sprite}:${e.slot}:${e.frame}`)).size,approvedFrameVariants:this.entries.frames.length,approvedMapRegions:this.entries.maps.length,approvedMapStatePatches:this.entries.mapStatePatches.length,approvedTilePatches:this.entries.tilePatches.length,approvedGlyphs:this.entries.fonts.length,loadedAtlases:this.images.size,pendingAtlases:this.pending.size,failedAtlases:this.failures.size,decodedBytes:[...this.images.values()].reduce((n,i)=>n+i.width*i.height*4,0),evictions:this.evictions,paletteDerivedFrames:this.paletteImages.size,palettePending:this.palettePending.size,paletteFailed:this.paletteFailures.size,paletteCacheBytes:this.paletteBytes+this.paletteLUTs.bytes,paletteEvictions:this.paletteEvictions,paletteColorCoverageApproved:false,declaredComplete:this.manifest.coverage?.complete===true&&this.manifest.coverage?.paletteComplete===true}; }
+  coverage() { return {approvedFrames:new Set(this.entries.frames.map(e=>`${e.sprite}:${e.slot}:${e.frame}`)).size,approvedFrameVariants:this.entries.frames.length,approvedMapRegions:this.entries.maps.length,approvedMapStatePatches:this.entries.mapStatePatches.length,approvedTilePatches:this.entries.tilePatches.length,approvedGlyphs:this.entries.fonts.length,loadedAtlases:this.images.size,pendingAtlases:this.pending.size,failedAtlases:this.failures.size,decodedBytes:[...this.images.values()].reduce((n,i)=>n+imageBytes(i),0),evictions:this.evictions,paletteDerivedFrames:this.paletteImages.size,palettePending:this.palettePending.size,paletteFailed:this.paletteFailures.size,paletteCacheBytes:this.paletteBytes+this.paletteLUTs.bytes,paletteEvictions:this.paletteEvictions,paletteColorCoverageApproved:false,declaredComplete:this.manifest.coverage?.complete===true&&this.manifest.coverage?.paletteComplete===true}; }
 }
 export async function loadHDAssets(base, options={}) {
   try { const response=await fetch(new URL('manifest.json',base)); if(!response.ok)throw Error('HD manifest unavailable.'); return new HDAssetBank(await response.json(),{...options,base}); }

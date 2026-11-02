@@ -1,0 +1,1409 @@
+{
+  "authority": "Static projected bitmap sizes and exact supported palette signatures; not browser playthrough or total browser process RSS.",
+  "rows": [
+    {
+      "mode": "arcade",
+      "players": 1,
+      "character": "dwarf",
+      "index": 0,
+      "sourceBytes": 72867440,
+      "paletteBytes": 36317516,
+      "paletteFrames": 180
+    },
+    {
+      "mode": "arcade",
+      "players": 1,
+      "character": "dwarf",
+      "index": 1,
+      "sourceBytes": 81977988,
+      "paletteBytes": 30491784,
+      "paletteFrames": 172
+    },
+    {
+      "mode": "arcade",
+      "players": 1,
+      "character": "dwarf",
+      "index": 2,
+      "sourceBytes": 80221060,
+      "paletteBytes": 49232604,
+      "paletteFrames": 244
+    },
+    {
+      "mode": "arcade",
+      "players": 1,
+      "character": "dwarf",
+      "index": 3,
+      "sourceBytes": 76592168,
+      "paletteBytes": 25708912,
+      "paletteFrames": 127
+    },
+    {
+      "mode": "arcade",
+      "players": 1,
+      "character": "dwarf",
+      "index": 4,
+      "sourceBytes": 73883336,
+      "paletteBytes": 22040060,
+      "paletteFrames": 113
+    },
+    {
+      "mode": "arcade",
+      "players": 1,
+      "character": "dwarf",
+      "index": 5,
+      "sourceBytes": 69549084,
+      "paletteBytes": 19004396,
+      "paletteFrames": 84
+    },
+    {
+      "mode": "arcade",
+      "players": 1,
+      "character": "dwarf",
+      "index": 6,
+      "sourceBytes": 78958272,
+      "paletteBytes": 47627708,
+      "paletteFrames": 239
+    },
+    {
+      "mode": "arcade",
+      "players": 1,
+      "character": "dwarf",
+      "index": 7,
+      "sourceBytes": 62969160,
+      "paletteBytes": 5549848,
+      "paletteFrames": 23
+    },
+    {
+      "mode": "arcade",
+      "players": 1,
+      "character": "hero",
+      "index": 0,
+      "sourceBytes": 69719912,
+      "paletteBytes": 36317516,
+      "paletteFrames": 180
+    },
+    {
+      "mode": "arcade",
+      "players": 1,
+      "character": "hero",
+      "index": 1,
+      "sourceBytes": 78830460,
+      "paletteBytes": 30491784,
+      "paletteFrames": 172
+    },
+    {
+      "mode": "arcade",
+      "players": 1,
+      "character": "hero",
+      "index": 2,
+      "sourceBytes": 77073532,
+      "paletteBytes": 49232604,
+      "paletteFrames": 244
+    },
+    {
+      "mode": "arcade",
+      "players": 1,
+      "character": "hero",
+      "index": 3,
+      "sourceBytes": 73444640,
+      "paletteBytes": 25708912,
+      "paletteFrames": 127
+    },
+    {
+      "mode": "arcade",
+      "players": 1,
+      "character": "hero",
+      "index": 4,
+      "sourceBytes": 70735808,
+      "paletteBytes": 22040060,
+      "paletteFrames": 113
+    },
+    {
+      "mode": "arcade",
+      "players": 1,
+      "character": "hero",
+      "index": 5,
+      "sourceBytes": 66401556,
+      "paletteBytes": 19004396,
+      "paletteFrames": 84
+    },
+    {
+      "mode": "arcade",
+      "players": 1,
+      "character": "hero",
+      "index": 6,
+      "sourceBytes": 75810744,
+      "paletteBytes": 47627708,
+      "paletteFrames": 239
+    },
+    {
+      "mode": "arcade",
+      "players": 1,
+      "character": "hero",
+      "index": 7,
+      "sourceBytes": 59821632,
+      "paletteBytes": 5549848,
+      "paletteFrames": 23
+    },
+    {
+      "mode": "arcade",
+      "players": 1,
+      "character": "amazon",
+      "index": 0,
+      "sourceBytes": 69714488,
+      "paletteBytes": 36317516,
+      "paletteFrames": 180
+    },
+    {
+      "mode": "arcade",
+      "players": 1,
+      "character": "amazon",
+      "index": 1,
+      "sourceBytes": 78825036,
+      "paletteBytes": 30491784,
+      "paletteFrames": 172
+    },
+    {
+      "mode": "arcade",
+      "players": 1,
+      "character": "amazon",
+      "index": 2,
+      "sourceBytes": 77068108,
+      "paletteBytes": 49232604,
+      "paletteFrames": 244
+    },
+    {
+      "mode": "arcade",
+      "players": 1,
+      "character": "amazon",
+      "index": 3,
+      "sourceBytes": 73439216,
+      "paletteBytes": 25708912,
+      "paletteFrames": 127
+    },
+    {
+      "mode": "arcade",
+      "players": 1,
+      "character": "amazon",
+      "index": 4,
+      "sourceBytes": 70730384,
+      "paletteBytes": 22040060,
+      "paletteFrames": 113
+    },
+    {
+      "mode": "arcade",
+      "players": 1,
+      "character": "amazon",
+      "index": 5,
+      "sourceBytes": 66396132,
+      "paletteBytes": 19004396,
+      "paletteFrames": 84
+    },
+    {
+      "mode": "arcade",
+      "players": 1,
+      "character": "amazon",
+      "index": 6,
+      "sourceBytes": 75805320,
+      "paletteBytes": 47627708,
+      "paletteFrames": 239
+    },
+    {
+      "mode": "arcade",
+      "players": 1,
+      "character": "amazon",
+      "index": 7,
+      "sourceBytes": 59816208,
+      "paletteBytes": 5549848,
+      "paletteFrames": 23
+    },
+    {
+      "mode": "arcade",
+      "players": 2,
+      "character": "dwarf",
+      "index": 0,
+      "sourceBytes": 83883884,
+      "paletteBytes": 36317516,
+      "paletteFrames": 180
+    },
+    {
+      "mode": "arcade",
+      "players": 2,
+      "character": "dwarf",
+      "index": 1,
+      "sourceBytes": 92994432,
+      "paletteBytes": 30491784,
+      "paletteFrames": 172
+    },
+    {
+      "mode": "arcade",
+      "players": 2,
+      "character": "dwarf",
+      "index": 2,
+      "sourceBytes": 91237504,
+      "paletteBytes": 49232604,
+      "paletteFrames": 244
+    },
+    {
+      "mode": "arcade",
+      "players": 2,
+      "character": "dwarf",
+      "index": 3,
+      "sourceBytes": 87608612,
+      "paletteBytes": 25708912,
+      "paletteFrames": 127
+    },
+    {
+      "mode": "arcade",
+      "players": 2,
+      "character": "dwarf",
+      "index": 4,
+      "sourceBytes": 84899780,
+      "paletteBytes": 22040060,
+      "paletteFrames": 113
+    },
+    {
+      "mode": "arcade",
+      "players": 2,
+      "character": "dwarf",
+      "index": 5,
+      "sourceBytes": 80565528,
+      "paletteBytes": 19004396,
+      "paletteFrames": 84
+    },
+    {
+      "mode": "arcade",
+      "players": 2,
+      "character": "dwarf",
+      "index": 6,
+      "sourceBytes": 89974716,
+      "paletteBytes": 47627708,
+      "paletteFrames": 239
+    },
+    {
+      "mode": "arcade",
+      "players": 2,
+      "character": "dwarf",
+      "index": 7,
+      "sourceBytes": 73985604,
+      "paletteBytes": 5549848,
+      "paletteFrames": 23
+    },
+    {
+      "mode": "arcade",
+      "players": 2,
+      "character": "hero",
+      "index": 0,
+      "sourceBytes": 80736356,
+      "paletteBytes": 36317516,
+      "paletteFrames": 180
+    },
+    {
+      "mode": "arcade",
+      "players": 2,
+      "character": "hero",
+      "index": 1,
+      "sourceBytes": 89846904,
+      "paletteBytes": 30491784,
+      "paletteFrames": 172
+    },
+    {
+      "mode": "arcade",
+      "players": 2,
+      "character": "hero",
+      "index": 2,
+      "sourceBytes": 88089976,
+      "paletteBytes": 49232604,
+      "paletteFrames": 244
+    },
+    {
+      "mode": "arcade",
+      "players": 2,
+      "character": "hero",
+      "index": 3,
+      "sourceBytes": 84461084,
+      "paletteBytes": 25708912,
+      "paletteFrames": 127
+    },
+    {
+      "mode": "arcade",
+      "players": 2,
+      "character": "hero",
+      "index": 4,
+      "sourceBytes": 81752252,
+      "paletteBytes": 22040060,
+      "paletteFrames": 113
+    },
+    {
+      "mode": "arcade",
+      "players": 2,
+      "character": "hero",
+      "index": 5,
+      "sourceBytes": 77418000,
+      "paletteBytes": 19004396,
+      "paletteFrames": 84
+    },
+    {
+      "mode": "arcade",
+      "players": 2,
+      "character": "hero",
+      "index": 6,
+      "sourceBytes": 86827188,
+      "paletteBytes": 47627708,
+      "paletteFrames": 239
+    },
+    {
+      "mode": "arcade",
+      "players": 2,
+      "character": "hero",
+      "index": 7,
+      "sourceBytes": 70838076,
+      "paletteBytes": 5549848,
+      "paletteFrames": 23
+    },
+    {
+      "mode": "arcade",
+      "players": 2,
+      "character": "amazon",
+      "index": 0,
+      "sourceBytes": 83883884,
+      "paletteBytes": 36317516,
+      "paletteFrames": 180
+    },
+    {
+      "mode": "arcade",
+      "players": 2,
+      "character": "amazon",
+      "index": 1,
+      "sourceBytes": 92994432,
+      "paletteBytes": 30491784,
+      "paletteFrames": 172
+    },
+    {
+      "mode": "arcade",
+      "players": 2,
+      "character": "amazon",
+      "index": 2,
+      "sourceBytes": 91237504,
+      "paletteBytes": 49232604,
+      "paletteFrames": 244
+    },
+    {
+      "mode": "arcade",
+      "players": 2,
+      "character": "amazon",
+      "index": 3,
+      "sourceBytes": 87608612,
+      "paletteBytes": 25708912,
+      "paletteFrames": 127
+    },
+    {
+      "mode": "arcade",
+      "players": 2,
+      "character": "amazon",
+      "index": 4,
+      "sourceBytes": 84899780,
+      "paletteBytes": 22040060,
+      "paletteFrames": 113
+    },
+    {
+      "mode": "arcade",
+      "players": 2,
+      "character": "amazon",
+      "index": 5,
+      "sourceBytes": 80565528,
+      "paletteBytes": 19004396,
+      "paletteFrames": 84
+    },
+    {
+      "mode": "arcade",
+      "players": 2,
+      "character": "amazon",
+      "index": 6,
+      "sourceBytes": 89974716,
+      "paletteBytes": 47627708,
+      "paletteFrames": 239
+    },
+    {
+      "mode": "arcade",
+      "players": 2,
+      "character": "amazon",
+      "index": 7,
+      "sourceBytes": 73985604,
+      "paletteBytes": 5549848,
+      "paletteFrames": 23
+    },
+    {
+      "mode": "beginner",
+      "players": 1,
+      "character": "dwarf",
+      "index": 0,
+      "sourceBytes": 72867440,
+      "paletteBytes": 36317516,
+      "paletteFrames": 180
+    },
+    {
+      "mode": "beginner",
+      "players": 1,
+      "character": "dwarf",
+      "index": 1,
+      "sourceBytes": 81977988,
+      "paletteBytes": 30491784,
+      "paletteFrames": 172
+    },
+    {
+      "mode": "beginner",
+      "players": 1,
+      "character": "dwarf",
+      "index": 2,
+      "sourceBytes": 81794372,
+      "paletteBytes": 54782452,
+      "paletteFrames": 267
+    },
+    {
+      "mode": "beginner",
+      "players": 1,
+      "character": "hero",
+      "index": 0,
+      "sourceBytes": 69719912,
+      "paletteBytes": 36317516,
+      "paletteFrames": 180
+    },
+    {
+      "mode": "beginner",
+      "players": 1,
+      "character": "hero",
+      "index": 1,
+      "sourceBytes": 78830460,
+      "paletteBytes": 30491784,
+      "paletteFrames": 172
+    },
+    {
+      "mode": "beginner",
+      "players": 1,
+      "character": "hero",
+      "index": 2,
+      "sourceBytes": 78646844,
+      "paletteBytes": 54782452,
+      "paletteFrames": 267
+    },
+    {
+      "mode": "beginner",
+      "players": 1,
+      "character": "amazon",
+      "index": 0,
+      "sourceBytes": 69714488,
+      "paletteBytes": 36317516,
+      "paletteFrames": 180
+    },
+    {
+      "mode": "beginner",
+      "players": 1,
+      "character": "amazon",
+      "index": 1,
+      "sourceBytes": 78825036,
+      "paletteBytes": 30491784,
+      "paletteFrames": 172
+    },
+    {
+      "mode": "beginner",
+      "players": 1,
+      "character": "amazon",
+      "index": 2,
+      "sourceBytes": 78641420,
+      "paletteBytes": 54782452,
+      "paletteFrames": 267
+    },
+    {
+      "mode": "beginner",
+      "players": 2,
+      "character": "dwarf",
+      "index": 0,
+      "sourceBytes": 83883884,
+      "paletteBytes": 36317516,
+      "paletteFrames": 180
+    },
+    {
+      "mode": "beginner",
+      "players": 2,
+      "character": "dwarf",
+      "index": 1,
+      "sourceBytes": 92994432,
+      "paletteBytes": 30491784,
+      "paletteFrames": 172
+    },
+    {
+      "mode": "beginner",
+      "players": 2,
+      "character": "dwarf",
+      "index": 2,
+      "sourceBytes": 92810816,
+      "paletteBytes": 54782452,
+      "paletteFrames": 267
+    },
+    {
+      "mode": "beginner",
+      "players": 2,
+      "character": "hero",
+      "index": 0,
+      "sourceBytes": 80736356,
+      "paletteBytes": 36317516,
+      "paletteFrames": 180
+    },
+    {
+      "mode": "beginner",
+      "players": 2,
+      "character": "hero",
+      "index": 1,
+      "sourceBytes": 89846904,
+      "paletteBytes": 30491784,
+      "paletteFrames": 172
+    },
+    {
+      "mode": "beginner",
+      "players": 2,
+      "character": "hero",
+      "index": 2,
+      "sourceBytes": 89663288,
+      "paletteBytes": 54782452,
+      "paletteFrames": 267
+    },
+    {
+      "mode": "beginner",
+      "players": 2,
+      "character": "amazon",
+      "index": 0,
+      "sourceBytes": 83883884,
+      "paletteBytes": 36317516,
+      "paletteFrames": 180
+    },
+    {
+      "mode": "beginner",
+      "players": 2,
+      "character": "amazon",
+      "index": 1,
+      "sourceBytes": 92994432,
+      "paletteBytes": 30491784,
+      "paletteFrames": 172
+    },
+    {
+      "mode": "beginner",
+      "players": 2,
+      "character": "amazon",
+      "index": 2,
+      "sourceBytes": 92810816,
+      "paletteBytes": 54782452,
+      "paletteFrames": 267
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "dwarf",
+      "index": 0,
+      "sourceBytes": 54998828,
+      "paletteBytes": 5625624,
+      "paletteFrames": 31
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "dwarf",
+      "index": 1,
+      "sourceBytes": 54998828,
+      "paletteBytes": 7289464,
+      "paletteFrames": 33
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "dwarf",
+      "index": 2,
+      "sourceBytes": 54998828,
+      "paletteBytes": 12915088,
+      "paletteFrames": 64
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "dwarf",
+      "index": 3,
+      "sourceBytes": 59721428,
+      "paletteBytes": 4398032,
+      "paletteFrames": 32
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "dwarf",
+      "index": 4,
+      "sourceBytes": 59721428,
+      "paletteBytes": 12915088,
+      "paletteFrames": 64
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "dwarf",
+      "index": 5,
+      "sourceBytes": 56572508,
+      "paletteBytes": 12915088,
+      "paletteFrames": 64
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "dwarf",
+      "index": 6,
+      "sourceBytes": 58148660,
+      "paletteBytes": 16070096,
+      "paletteFrames": 77
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "dwarf",
+      "index": 7,
+      "sourceBytes": 61295512,
+      "paletteBytes": 19004396,
+      "paletteFrames": 84
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "dwarf",
+      "index": 8,
+      "sourceBytes": 61290712,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "dwarf",
+      "index": 9,
+      "sourceBytes": 62871260,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "dwarf",
+      "index": 10,
+      "sourceBytes": 59719020,
+      "paletteBytes": 7289464,
+      "paletteFrames": 33
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "dwarf",
+      "index": 11,
+      "sourceBytes": 59719020,
+      "paletteBytes": 4726940,
+      "paletteFrames": 17
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "dwarf",
+      "index": 12,
+      "sourceBytes": 66015704,
+      "paletteBytes": 23731336,
+      "paletteFrames": 101
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "dwarf",
+      "index": 13,
+      "sourceBytes": 67584216,
+      "paletteBytes": 5549848,
+      "paletteFrames": 23
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "dwarf",
+      "index": 14,
+      "sourceBytes": 67584216,
+      "paletteBytes": 5549848,
+      "paletteFrames": 23
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "hero",
+      "index": 0,
+      "sourceBytes": 51851300,
+      "paletteBytes": 5625624,
+      "paletteFrames": 31
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "hero",
+      "index": 1,
+      "sourceBytes": 51851300,
+      "paletteBytes": 7289464,
+      "paletteFrames": 33
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "hero",
+      "index": 2,
+      "sourceBytes": 51851300,
+      "paletteBytes": 12915088,
+      "paletteFrames": 64
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "hero",
+      "index": 3,
+      "sourceBytes": 56573900,
+      "paletteBytes": 4398032,
+      "paletteFrames": 32
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "hero",
+      "index": 4,
+      "sourceBytes": 56573900,
+      "paletteBytes": 12915088,
+      "paletteFrames": 64
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "hero",
+      "index": 5,
+      "sourceBytes": 53424980,
+      "paletteBytes": 12915088,
+      "paletteFrames": 64
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "hero",
+      "index": 6,
+      "sourceBytes": 55001132,
+      "paletteBytes": 16070096,
+      "paletteFrames": 77
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "hero",
+      "index": 7,
+      "sourceBytes": 58147984,
+      "paletteBytes": 19004396,
+      "paletteFrames": 84
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "hero",
+      "index": 8,
+      "sourceBytes": 58143184,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "hero",
+      "index": 9,
+      "sourceBytes": 59723732,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "hero",
+      "index": 10,
+      "sourceBytes": 56571492,
+      "paletteBytes": 7289464,
+      "paletteFrames": 33
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "hero",
+      "index": 11,
+      "sourceBytes": 56571492,
+      "paletteBytes": 4726940,
+      "paletteFrames": 17
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "hero",
+      "index": 12,
+      "sourceBytes": 62868176,
+      "paletteBytes": 23731336,
+      "paletteFrames": 101
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "hero",
+      "index": 13,
+      "sourceBytes": 64436688,
+      "paletteBytes": 5549848,
+      "paletteFrames": 23
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "hero",
+      "index": 14,
+      "sourceBytes": 64436688,
+      "paletteBytes": 5549848,
+      "paletteFrames": 23
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "amazon",
+      "index": 0,
+      "sourceBytes": 51845876,
+      "paletteBytes": 5625624,
+      "paletteFrames": 31
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "amazon",
+      "index": 1,
+      "sourceBytes": 51845876,
+      "paletteBytes": 7289464,
+      "paletteFrames": 33
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "amazon",
+      "index": 2,
+      "sourceBytes": 51845876,
+      "paletteBytes": 12915088,
+      "paletteFrames": 64
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "amazon",
+      "index": 3,
+      "sourceBytes": 56568476,
+      "paletteBytes": 4398032,
+      "paletteFrames": 32
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "amazon",
+      "index": 4,
+      "sourceBytes": 56568476,
+      "paletteBytes": 12915088,
+      "paletteFrames": 64
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "amazon",
+      "index": 5,
+      "sourceBytes": 53419556,
+      "paletteBytes": 12915088,
+      "paletteFrames": 64
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "amazon",
+      "index": 6,
+      "sourceBytes": 54995708,
+      "paletteBytes": 16070096,
+      "paletteFrames": 77
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "amazon",
+      "index": 7,
+      "sourceBytes": 58142560,
+      "paletteBytes": 19004396,
+      "paletteFrames": 84
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "amazon",
+      "index": 8,
+      "sourceBytes": 58137760,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "amazon",
+      "index": 9,
+      "sourceBytes": 59718308,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "amazon",
+      "index": 10,
+      "sourceBytes": 56566068,
+      "paletteBytes": 7289464,
+      "paletteFrames": 33
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "amazon",
+      "index": 11,
+      "sourceBytes": 56566068,
+      "paletteBytes": 4726940,
+      "paletteFrames": 17
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "amazon",
+      "index": 12,
+      "sourceBytes": 62862752,
+      "paletteBytes": 23731336,
+      "paletteFrames": 101
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "amazon",
+      "index": 13,
+      "sourceBytes": 64431264,
+      "paletteBytes": 5549848,
+      "paletteFrames": 23
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "character": "amazon",
+      "index": 14,
+      "sourceBytes": 64431264,
+      "paletteBytes": 5549848,
+      "paletteFrames": 23
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "dwarf",
+      "index": 0,
+      "sourceBytes": 66015272,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "dwarf",
+      "index": 1,
+      "sourceBytes": 66015272,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "dwarf",
+      "index": 2,
+      "sourceBytes": 66015272,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "dwarf",
+      "index": 3,
+      "sourceBytes": 70737872,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "dwarf",
+      "index": 4,
+      "sourceBytes": 70737872,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "dwarf",
+      "index": 5,
+      "sourceBytes": 67588952,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "dwarf",
+      "index": 6,
+      "sourceBytes": 69165104,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "dwarf",
+      "index": 7,
+      "sourceBytes": 72311956,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "dwarf",
+      "index": 8,
+      "sourceBytes": 72307156,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "dwarf",
+      "index": 9,
+      "sourceBytes": 73887704,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "dwarf",
+      "index": 10,
+      "sourceBytes": 70735464,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "dwarf",
+      "index": 11,
+      "sourceBytes": 70735464,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "dwarf",
+      "index": 12,
+      "sourceBytes": 77032148,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "dwarf",
+      "index": 13,
+      "sourceBytes": 78600660,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "dwarf",
+      "index": 14,
+      "sourceBytes": 78600660,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "hero",
+      "index": 0,
+      "sourceBytes": 62867744,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "hero",
+      "index": 1,
+      "sourceBytes": 62867744,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "hero",
+      "index": 2,
+      "sourceBytes": 62867744,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "hero",
+      "index": 3,
+      "sourceBytes": 67590344,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "hero",
+      "index": 4,
+      "sourceBytes": 67590344,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "hero",
+      "index": 5,
+      "sourceBytes": 64441424,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "hero",
+      "index": 6,
+      "sourceBytes": 66017576,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "hero",
+      "index": 7,
+      "sourceBytes": 69164428,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "hero",
+      "index": 8,
+      "sourceBytes": 69159628,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "hero",
+      "index": 9,
+      "sourceBytes": 70740176,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "hero",
+      "index": 10,
+      "sourceBytes": 67587936,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "hero",
+      "index": 11,
+      "sourceBytes": 67587936,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "hero",
+      "index": 12,
+      "sourceBytes": 73884620,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "hero",
+      "index": 13,
+      "sourceBytes": 75453132,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "hero",
+      "index": 14,
+      "sourceBytes": 75453132,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "amazon",
+      "index": 0,
+      "sourceBytes": 66015272,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "amazon",
+      "index": 1,
+      "sourceBytes": 66015272,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "amazon",
+      "index": 2,
+      "sourceBytes": 66015272,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "amazon",
+      "index": 3,
+      "sourceBytes": 70737872,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "amazon",
+      "index": 4,
+      "sourceBytes": 70737872,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "amazon",
+      "index": 5,
+      "sourceBytes": 67588952,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "amazon",
+      "index": 6,
+      "sourceBytes": 69165104,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "amazon",
+      "index": 7,
+      "sourceBytes": 72311956,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "amazon",
+      "index": 8,
+      "sourceBytes": 72307156,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "amazon",
+      "index": 9,
+      "sourceBytes": 73887704,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "amazon",
+      "index": 10,
+      "sourceBytes": 70735464,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "amazon",
+      "index": 11,
+      "sourceBytes": 70735464,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "amazon",
+      "index": 12,
+      "sourceBytes": 77032148,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "amazon",
+      "index": 13,
+      "sourceBytes": 78600660,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "character": "amazon",
+      "index": 14,
+      "sourceBytes": 78600660,
+      "paletteBytes": 0,
+      "paletteFrames": 0
+    }
+  ]
+}

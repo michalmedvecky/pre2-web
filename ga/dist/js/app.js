@@ -14,6 +14,7 @@ import {createMapOverlay} from './map-overlay.js';
 import {createLevelOverlay} from './level-overlay.js';
 import {preloadPresentationHD} from './hd-presentation.js';
 import {warmStatePalettes} from './hd-palette-warmup.js';
+import {HDStageLoader} from './hd-stage-loader.js';
 import {HDFramePresenter} from './hd-frame-presenter.js';
 
 const $ = selector => document.querySelector(selector);
@@ -52,6 +53,7 @@ function makePassword(){warmPresentation('password');const presenter=new Origina
 let mapOverlay=null,levelOverlay=null,lastGodMode=false;
 const hdWarmups=new Map();
 let paletteWarmupRunning=false,lastPaletteWarmup=-Infinity;
+let hdStageLoader=null;
 let hdPresenter=null,hdLoading={waiting:false,failed:false};
 function warmActorPalettes(now=performance.now()) {
   if(!assets?.hd||!renderer||!simulation||paletteWarmupRunning||now-lastPaletteWarmup<250)return;
@@ -427,7 +429,9 @@ try {
     try {
     const frameStart=performance.now(),rawElapsed=now-prior;let maxStepMs=0,steps=0;
     const elapsed = Math.min(100, Math.max(0, now - prior)); prior = now;
-    if (!hdLoading.waiting&&(started && !paused || calibration || menuStep==='soundtest'||!started&&menuStep==='character')) {
+    hdStageLoader??=new HDStageLoader(assets,renderer);
+    const stageLoad=started&&renderer.graphicsMode==='hd'&&!['title','password'].includes(sequence?.kind)?hdStageLoader.prepare(simulation):{waiting:false,failed:false};
+    if (!stageLoad.waiting&&!hdLoading.waiting&&(started && !paused || calibration || menuStep==='soundtest'||!started&&menuStep==='character')) {
       accumulated += elapsed;
       while (accumulated >= tickMs) {
         if(!started&&menuStep==='character'){simulation.advanceSpeakerPIT?.();characterSelect.step(input.sample(simulation.state.players));drainCharacterEvents();menuSync();finishCharacterSelect();accumulated=Math.max(0,accumulated-tickMs);continue;}
@@ -453,7 +457,9 @@ try {
     hdPresenter??=new HDFramePresenter(renderer);
     hdPresenter.begin();
     if (started) {if(sequence)sequence.render(renderer);else renderer.render({...simulation.state,mode:simulation.mode});} else if(menuStep==='character'&&characterSelect)characterSelect.render(renderer);else renderer.renderMenu(menuStep);
-    hdLoading=hdPresenter.finish(now);window.goldenAxe.hdLoading=hdLoading;
+    hdLoading=hdPresenter.finish(now);
+    if(stageLoad.waiting)hdLoading={...hdLoading,waiting:true,failed:stageLoad.failed,phase:'stage',error:stageLoad.error};
+    window.goldenAxe.hdLoading=hdLoading;
     if(hdLoading.waiting)accumulated=0;
     if(audio.paused!==(paused||hdLoading.waiting))audio.setPaused(paused||hdLoading.waiting);
     $('#loading').hidden=!hdLoading.waiting;

@@ -1,3 +1,4 @@
+import {drawHDImage} from './hd-image.js';
 import {paletteVariantMatches,mapRegionCoverage} from './hd-assets.js';
 import {matchingMapStatePatches,patchCoversCell} from './hd-map-state.js';
 import {nativeMapPaletteRecord} from './native-map-palette.js';
@@ -30,7 +31,7 @@ export async function renderMapOverview({renderer,assets,state,canvas,mode=rende
   for(const entry of entries){
     await hd.ensureAtlas(entry.atlas);if(!isCurrent())return cancelled();
     const found=hd.mapRegions(id,palette,entry.nativeRect).find(f=>f.entry===entry);if(!found)continue;
-    ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.drawImage(found.image,...entry.rectPixels,...entry.nativeRect);drawn.push(entry.nativeRect);result.hdMapRegions++;
+    ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';drawHDImage(ctx,found.image,...entry.rectPixels,...entry.nativeRect);drawn.push(entry.nativeRect);result.hdMapRegions++;
   }
   if(!isCurrent())return cancelled();
   Object.assign(result,mapRegionCoverage(drawn,viewport));
@@ -46,7 +47,7 @@ export async function renderMapOverview({renderer,assets,state,canvas,mode=rende
   for(const entry of patchEntries){
     await hd.ensureAtlas(entry.atlas);if(!isCurrent())return cancelled();
     const found=hd.statePatches(id,palette,map,overrides,viewport).find(f=>f.entry===entry);if(!found)continue;
-    ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.fillStyle='#000';ctx.fillRect(...entry.nativeRect);ctx.drawImage(found.image,...entry.rectPixels,...entry.nativeRect);patches.push(entry);result.hdMapStatePatches++;
+    ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.fillStyle='#000';ctx.fillRect(...entry.nativeRect);drawHDImage(ctx,found.image,...entry.rectPixels,...entry.nativeRect);patches.push(entry);result.hdMapStatePatches++;
   }
   result.hdStateCells=changedCells.filter(([x,y])=>patches.some(p=>patchCoversCell(p,x,y))).length;
   result.dynamicOriginalCells=changedCells.length-result.hdStateCells;

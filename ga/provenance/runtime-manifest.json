@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "snapshotSHA256": "c5889e843987d61dd5ea6adc6d0290fd5914829790794dcf03845ab5b318d2f6",
+  "snapshotSHA256": "4607e6161f2cbe2c33729b1621c5fcc09182c90ecc020e5432d12d317477b137",
   "excluded": [
     "build.json (injected per build)"
   ],
@@ -1294,8 +1294,8 @@
       "size": 12110
     },
     "js/app.js": {
-      "sha256": "b08f33edae3c220a76627fe7716661897f58cb48eeb36397f500625064a4f7f6",
-      "size": 39415
+      "sha256": "ae4a7febd2688471fc276a17cb41da98821bcefa1fdb3c0ef76d93ecbe481513",
+      "size": 39866
     },
     "js/audio.js": {
       "sha256": "4ada6251296f9a08ca7ee5bf07800b6f1478cc6ce3fe69a3e2cbb53e5137e902",
@@ -1318,16 +1318,20 @@
       "size": 7119
     },
     "js/hd-assets.js": {
-      "sha256": "8123dc99f9415aac22c6b51c647a3e8616c1792251c11803366a6b8797260b97",
-      "size": 22225
+      "sha256": "4c7800d1ca081d1d005a67ffab2261fd18faf3ccc9ce6e237216254f3d91c505",
+      "size": 22661
     },
     "js/hd-frame-presenter.js": {
       "sha256": "f510cce8fb5d1a00ee848539b1e875aadc77e4e8bc3d0c9b9e63ee78ec364386",
       "size": 1626
     },
+    "js/hd-image.js": {
+      "sha256": "a95fdc13609ce2aa629d66d77bb65bb7b74735ace193ddd531d59ebceb08d178",
+      "size": 1287
+    },
     "js/hd-map-overview.js": {
-      "sha256": "42376c1425ce0c3881dfb37d027ee26e547c0384ce9bc39fb287bb2742d1ade5",
-      "size": 4692
+      "sha256": "16c574143a0f4a215a3ef09dca0458b41ca24ae2847bd59c691c9cfdc3b7065d",
+      "size": 4739
     },
     "js/hd-map-state.js": {
       "sha256": "ad149287841116b592ed4785e8441aa05ebba8bd6f53f2d35b1538793c4a8a62",
@@ -1338,8 +1342,8 @@
       "size": 37597
     },
     "js/hd-materials.js": {
-      "sha256": "3671875629a72e33c98abd7ea2ba1aec5243e5582bc547035f12cdd43cdc94af",
-      "size": 5843
+      "sha256": "fd8520c2a513f4011bd58e223144f26db4e818ab950eb90e17367beb65b108d8",
+      "size": 5961
     },
     "js/hd-native-font.js": {
       "sha256": "d4ef6035ace079e117a6efb488a2ded1ef772e733251d60baec43079193dcfb2",
@@ -1376,6 +1380,10 @@
     "js/hd-qa.js": {
       "sha256": "fc04f7c2b42bcf6eab0820fbe16f56829e1cb930a8891aa1325cfa7b2c13b6c7",
       "size": 2107
+    },
+    "js/hd-stage-loader.js": {
+      "sha256": "c08bb074860dd512384d4f99fc830640e3a4bebd1365dee8d7097e83489e17ad",
+      "size": 5183
     },
     "js/input.js": {
       "sha256": "d6d509333f504ab07250ed4b14f17be10017e2233e03aa74bb677d31b5fd8efc",
@@ -1474,8 +1482,8 @@
       "size": 2455
     },
     "js/renderer.js": {
-      "sha256": "509e581db6c71a7c5ef952860e6e1d2b5a460bc5c561dc25c20aa533a3e2f3c9",
-      "size": 20668
+      "sha256": "5a1016e4dd0ae8c22cc09747cae16afe254c1844cb5fa21571cf1eb434124be9",
+      "size": 20814
     },
     "js/simulation.js": {
       "sha256": "5213829f351f710dddefc27a37edbd2f4a715a901e86da62bf81ab0bb073b1e0",

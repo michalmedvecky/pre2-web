@@ -1,3 +1,4 @@
+import {drawHDImage} from './hd-image.js';
 import {loadHDAssets,mapRegionCoverage} from './hd-assets.js';
 import {NativeVectorFont} from './hd-native-font.js';
 import {compilePreservedSprite,drawPreservedSprite} from './hd-native-sprite.js';
@@ -22,7 +23,7 @@ export async function loadAssets(base = new URL('../assets/', import.meta.url)) 
     map.cells = Uint16Array.from({length: cells.byteLength / 2}, (_, i) => view.getUint16(i * 2, true));
     map.tiles = new Uint8Array(tiles);
   }));
-  assets.hd = await loadHDAssets(new URL('hd/',base));
+  assets.hd = await loadHDAssets(new URL('hd/',base),{maxDecodedBytes:128*1024*1024,maxAtlases:128,maxPaletteBytes:64*1024*1024,maxPaletteFrames:512});
   await assets.hd.preloadScene('startup');
   return assets;
 }
@@ -76,7 +77,7 @@ export class Renderer {
   paintHD(found,x,y) {
     const {entry:e,image}=found,[sx,sy,sw,sh]=e.rectPixels,s=e.scaleNativePerPixel;
     this.ctx.save(); this.ctx.imageSmoothingEnabled=true;this.ctx.imageSmoothingQuality='high';
-    this.ctx.drawImage(image,sx,sy,sw,sh,x+e.translationNative[0],y+e.translationNative[1],sw*s,sh*s);
+    drawHDImage(this.ctx,image,sx,sy,sw,sh,x+e.translationNative[0],y+e.translationNative[1],sw*s,sh*s);
     this.ctx.restore();
   }
   paintFrame(name,slot,index,palette,entry,x,top,mirror) {
@@ -115,7 +116,7 @@ export class Renderer {
     ctx.save();ctx.translate(-Math.trunc(camera.x),-Math.trunc(camera.y));
     const drawn=[];
     for(const found of regions){const e=found.entry,[x,y,w,h]=e.nativeRect;if(x+w<=camera.x||y+h<=camera.y||x>=camera.x+this.assets.playfieldWidth||y>=camera.y+200)continue;
-      ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.drawImage(found.image,...e.rectPixels,x,y,w,h);ctx.restore();drawn.push(e.nativeRect);this.drawCoverage.hdMapRegions++;
+      ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';drawHDImage(ctx,found.image,...e.rectPixels,x,y,w,h);ctx.restore();drawn.push(e.nativeRect);this.drawCoverage.hdMapRegions++;
     }
     Object.assign(this.drawCoverage,mapRegionCoverage(drawn,[camera.x,camera.y,this.assets.playfieldWidth,200]));
     if(!drawn.length)this.fallback('map-region-uncovered');
@@ -132,7 +133,7 @@ export class Renderer {
       if(hd?.entry)this.paintHD(hd,x,y);
       else{this.drawCoverage.dynamicOriginalCells++;this.fallback('dynamic-map-cell');}
     }
-    for(const{entry:e,image}of statePatches){ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.fillStyle='#000';ctx.fillRect(...e.nativeRect);ctx.drawImage(image,...e.rectPixels,...e.nativeRect);ctx.restore();this.drawCoverage.hdMapStatePatches++;}
+    for(const{entry:e,image}of statePatches){ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.fillStyle='#000';ctx.fillRect(...e.nativeRect);drawHDImage(ctx,image,...e.rectPixels,...e.nativeRect);ctx.restore();this.drawCoverage.hdMapStatePatches++;}
     ctx.restore();
   }
   palette(records = [], live = null) {

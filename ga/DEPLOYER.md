@@ -1,5 +1,31 @@
 # Golden Axe — předání deployerovi pro k3s
 
+## Patch ga-v0.2.2
+
+Opravuje regresi 0.2.1, která zastavovala hru při změnách animací kvůli načítání
+HD. Celý level a jeho skriptované barevné varianty se nyní připravují před
+hraním. Přesný commit, úspěšné CI a nový digest jsou v
+[release ga-v0.2.2](https://github.com/michalmedvecky/pre2-web/releases/tag/ga-v0.2.2).
+Runtime snapshot: `4607e6161f2cbe2c33729b1621c5fcc09182c90ecc020e5432d12d317477b137`.
+Přílohy: `ga-v0.2.2.tar.gz` a `ga-v0.2.2.SHA256SUMS`, pouze GA subtree.
+
+Zachovejte stávající samostatnou GA aplikaci na `ga.500miles.cz`, namespace,
+Ingress a TLS; změňte jen image na nový digest z release. Prehistorik neměňte.
+Vydání samo do clusteru nic nenasazuje. 0.2.1 má známou regresi hratelnosti;
+pro případný rollback je v předchozích poznámkách také digest 0.2.0.
+
+Po rollout ověřte `/build.json` proti releasu a studený start levelu. Jednorázová
+příprava může trvat déle (v Chrome s PNG uměle +450ms přibližně15–30s), ale
+následná souvislá chůze, útoky a skoky nemají opakovaně ukazovat načítání.
+Ověřte i 2P a ruční HD/originál přepnutí. Lokálně152testů a cílený desktop/mobilní
+Chromium test prošly. Nový celý native DOS průchod ani fyzický iOS/Safari test
+se neprovedl. Display bitmapy jsou paměťově zmenšené; source PNG se nemění.
+Cache limity128MiB atlasy +64MiB palety +4MiB LUT nejsou limitem celého procesu
+prohlížeče. Podrobnosti [reports/hd-loading.md](reports/hd-loading.md).
+
+Níže jsou historické release poznámky a obecný deployment postup.
+
+
 ## Patch ga-v0.2.1
 
 Oprava problikávání SD/HD při načítání animací a map. Vydání používá samostatný

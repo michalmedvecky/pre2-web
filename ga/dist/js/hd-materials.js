@@ -58,11 +58,12 @@ export function preservePaintRegions(source,base,width,regions,{originY=0}={}){
  }
  return{pixels,changed,alphaPreserved:true,approximate:true,colorCoverageApproved:false};
 }
-export async function applyPaintMaterialsAsync(source,base,width,{annotations=[],preserveRegions=[]}={}){
+export async function applyPaintMaterialsAsync(source,base,width,{annotations=[],preserveRegions=[],chunkRows=8}={}){
+ if(!Number.isInteger(chunkRows)||chunkRows<1)throw Error('Invalid material chunk size');
  annotations=prepareAnnotations(source,width,annotations);
  const pixels=new Uint8ClampedArray(base);
- for(let offset=0;offset<source.length;offset+=width*4*8){
-  const end=Math.min(source.length,offset+width*4*8),raw=source.subarray(offset,end),part=base.subarray(offset,end),originY=offset/(width*4);
+ for(let offset=0;offset<source.length;offset+=width*4*chunkRows){
+  const end=Math.min(source.length,offset+width*4*chunkRows),raw=source.subarray(offset,end),part=base.subarray(offset,end),originY=offset/(width*4);
   let out=annotations.length?applyMaterialAnnotations(raw,part,width,annotations,{originY}).pixels:part;
   if(preserveRegions.length)out=preservePaintRegions(raw,out,width,preserveRegions,{originY}).pixels;
   pixels.set(out,offset);await new Promise(resolve=>setTimeout(resolve,0));
