@@ -1,3 +1,4 @@
+import {qualifyInterfaceAssets,drawInterfaceSprite,hasQualifiedSelectionHeading,drawSelectionHeading} from './hd-interface.js';
 import {drawHDImage} from './hd-image.js';
 import {loadHDAssets,mapRegionCoverage} from './hd-assets.js';
 import {NativeVectorFont} from './hd-native-font.js';
@@ -23,6 +24,7 @@ export async function loadAssets(base = new URL('../assets/', import.meta.url)) 
     map.cells = Uint16Array.from({length: cells.byteLength / 2}, (_, i) => view.getUint16(i * 2, true));
     map.tiles = new Uint8Array(tiles);
   }));
+  assets.hdInterface = await qualifyInterfaceAssets(assets);
   assets.hd = await loadHDAssets(new URL('hd/',base),{maxDecodedBytes:128*1024*1024,maxAtlases:128,maxPaletteBytes:64*1024*1024,maxPaletteFrames:512});
   await assets.hd.preloadScene('startup');
   return assets;
@@ -50,7 +52,7 @@ export class Renderer {
     this.ctx.imageSmoothingEnabled = false;
     this.lastState = null;
     this.hd = assets.hd;
-    this.vectorFont = new NativeVectorFont(assets.fontPixels,{glyphCount:assets.font.glyphs});
+    this.vectorFont = new NativeVectorFont(assets.fontPixels,{glyphCount:assets.font.glyphs,smooth:assets.hdInterface?.font===true});
     this.graphicsMode = null;
     this.setGraphicsMode(graphicsMode);
   }
@@ -64,11 +66,15 @@ export class Renderer {
     this.beginFrame(); return this.getGraphicsStatus();
   }
   toggleGraphicsMode() {return this.setGraphicsMode(this.graphicsMode==='hd'?'original':'hd');}
-  beginFrame() {this.drawCoverage={hdSprites:0,vectorSprites:0,originalSprites:0,hdMapRegions:0,hdMapStatePatches:0,hdStateCells:0,hdGlyphs:0,vectorGlyphs:0,originalGlyphs:0,dynamicOriginalCells:0,reasons:{}};}
+  beginFrame() {this.drawCoverage={hdSprites:0,vectorSprites:0,smoothInterfaceSprites:0,smoothMapText:0,originalSprites:0,hdMapRegions:0,hdMapStatePatches:0,hdStateCells:0,hdGlyphs:0,vectorGlyphs:0,originalGlyphs:0,dynamicOriginalCells:0,reasons:{}};}
   fallback(reason) {this.drawCoverage.reasons[reason]=(this.drawCoverage.reasons[reason]||0)+1;}
   getGraphicsStatus() {
     const sourceFrames=Object.values(this.assets.sprites).reduce((n,g)=>n+Object.values(g.slots||{}).reduce((a,s)=>a+(s?.frames?.length||0),0),0);
-    return {mode:this.graphicsMode,backingScale:this.backingScale,canvas:[this.canvas.width,this.canvas.height],sourceFrames,sourceMaps:Object.keys(this.assets.maps).length,available:this.hd?.coverage()||{},draw:this.drawCoverage,typography:{classification:this.graphicsMode==='hd'?this.vectorFont.classification:'original-pixels',sourceGlyphs:this.vectorFont.glyphCount},manifestError:this.hd?.manifestError||null};
+    return {mode:this.graphicsMode,backingScale:this.backingScale,canvas:[this.canvas.width,this.canvas.height],sourceFrames,sourceMaps:Object.keys(this.assets.maps).length,available:this.hd?.coverage()||{},draw:this.drawCoverage,typography:{classification:this.graphicsMode==='hd'?this.vectorFont.classification:'original-pixels',sourceGlyphs:this.vectorFont.glyphCount,qualifiedInterfaceSprites:this.assets.hdInterface?.sprites.size||0,drawnInterfaceSprites:this.drawCoverage.smoothInterfaceSprites||0,sourceMismatchCount:this.assets.hdInterface?.rejected.length||0},manifestError:this.hd?.manifestError||null};
+  }
+  hasHDVectorFrame(sprite,slot,index) {
+    const identity=resolveSpriteFrame(this.assets.sprites[sprite],slot,index);
+    return !!identity&&!!this.assets.hdInterface?.sprites.has(`${sprite}/${identity.slot}/${identity.frame}`);
   }
   canonicalMapId(map) {
     const match=Object.entries(this.assets.maps).find(([,m])=>m===map || m.cellsFile===map.cellsFile&&m.tilesFile===map.tilesFile);
@@ -84,6 +90,13 @@ export class Renderer {
     const {image,frame}=entry;
     const identity=resolveSpriteFrame(this.assets.sprites[name],slot,index);
     const canonicalSlot=identity?.slot??slot,canonicalFrame=identity?.frame??index;
+    const interfaceSpec=this.graphicsMode==='hd'?this.assets.hdInterface?.sprites.get(`${name}/${canonicalSlot}/${canonicalFrame}`):null;
+    if(interfaceSpec){
+      const left=mirror?x-frame.width+frame.pivotX:x-frame.pivotX;this.ctx.save();
+      if(mirror){this.ctx.translate(left+frame.width,top);this.ctx.scale(-1,1);}else this.ctx.translate(left,top);
+      const drawn=drawInterfaceSprite(this.ctx,interfaceSpec,palette);this.ctx.restore();
+      if(drawn){this.drawCoverage.vectorSprites++;this.drawCoverage.smoothInterfaceSprites++;return;}
+    }
     const preserved=this.graphicsMode==='hd'&&this.hd?.manifest?.preservedNativeFrames?.find(e=>e.sprite===name&&e.slot===canonicalSlot&&e.frame===canonicalFrame);
     if(preserved){
       const key=`${name}/${canonicalSlot}/${canonicalFrame}`;if(!this.preservedSprites.has(key))this.preservedSprites.set(key,compilePreservedSprite(preserved,frame,this.assets.spritePixels));
@@ -134,6 +147,7 @@ export class Renderer {
       else{this.drawCoverage.dynamicOriginalCells++;this.fallback('dynamic-map-cell');}
     }
     for(const{entry:e,image}of statePatches){ctx.save();ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.fillStyle='#000';ctx.fillRect(...e.nativeRect);drawHDImage(ctx,image,...e.rectPixels,...e.nativeRect);ctx.restore();this.drawCoverage.hdMapStatePatches++;}
+    if(id==='c'&&state.characterSelect&&map===this.assets.maps.c&&!state.mapTileOverrides?.length&&hasQualifiedSelectionHeading(this.assets)){drawSelectionHeading(ctx,palette);this.drawCoverage.smoothMapText++;}
     ctx.restore();
   }
   palette(records = [], live = null) {

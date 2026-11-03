@@ -1,5 +1,27 @@
 # Golden Axe — předání deployerovi pro k3s
 
+## Patch ga-v0.2.3
+
+Rychlejší příprava HD levelů, bezztrátový WebP přenos (o 35,34 % méně dat),
+hladší rozhraní a doplněné efekty ohně, titulní scény a výsledků.
+Při stejných vstupních PNG se příprava Stage 1 v izolovaném Chrome měření
+zkrátila z 20,042 s na 2,490 s; skutečná doba závisí na zařízení a síti.
+Runtime snapshot: `ca1bd6c7401ef188f61eef5083c724457d7a864c49528f4dcd916d3ddb4aed1c`.
+Přesný commit, CI, nový image digest a GA-only archiv jsou v
+[release ga-v0.2.3](https://github.com/michalmedvecky/pre2-web/releases/tag/ga-v0.2.3).
+
+Zachovejte stávající GA aplikaci na `ga.500miles.cz`, její namespace, Ingress
+ a TLS. Změňte jen image na digest z release; Prehistorik neměňte.
+Pokud je před aplikací další proxy, musí podporovat `image/webp` a nesmí
+přepisovat nová cache pravidla. Po rollout ověřte `/build.json`, studený
+start, pohyb bez opakovaného načítání a přepnutí HD/originál.
+Vydání samo do k3s nic nenasazuje.
+
+163 testů a šest automatických průchodů režimů do menu prošlo. Herní jádro
+zůstává stejné jako v 0.2.2; úplná shoda s native DOS není prokázaná
+(IRQ časování a pozdní Duel paleta zůstávají otevřené). Fyzický iOS/Safari
+nebyl ověřen. Podrobnosti: [reports/remaster-20261103.md](reports/remaster-20261103.md).
+
 ## Patch ga-v0.2.2
 
 Opravuje regresi 0.2.1, která zastavovala hru při změnách animací kvůli načítání

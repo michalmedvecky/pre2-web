@@ -27,7 +27,7 @@ export function stageHDPlan(assets,renderer,simulation){
     contexts.push({palette:request.palette,names:new Set([request.sprite])});
   }
   const palette=contexts[0].palette;
-  const atlases=new Set(assets.hd.entries.frames.filter(e=>names.has(e.sprite)).map(e=>e.atlas));
+  const atlases=new Set(assets.hd.entries.frames.filter(e=>names.has(e.sprite)&&!renderer.hasHDVectorFrame?.(e.sprite,e.slot,e.frame)).map(e=>e.atlas));
   for(const e of [...assets.hd.entries.maps,...assets.hd.entries.mapStatePatches])if(e.mapId===String(s.stage).toLowerCase()&&contexts.some(c=>paletteVariantMatches(assets.hd.manifest.paletteVariants[e.paletteVariant],c.palette)))atlases.add(e.atlas);
   return {names:[...names].filter(n=>assets.sprites[n]),palette,contexts,atlases:[...atlases]};
 }
@@ -42,19 +42,20 @@ export class HDStageLoader {
     const plan=stageHDPlan(this.assets,this.renderer,simulation),bank=this.assets.hd;
     bank.stageAtlases=new Set(plan.atlases);
     bank.stagePalettes=new Set();
-    for(const c of plan.contexts)for(const e of bank.entries.frames.filter(e=>c.names.has(e.sprite))){
+    for(const c of plan.contexts)for(const e of bank.entries.frames.filter(e=>c.names.has(e.sprite)&&!this.renderer.hasHDVectorFrame?.(e.sprite,e.slot,e.frame))){
       if(paletteVariantMatches(bank.manifest.paletteVariants[e.paletteVariant],c.palette))continue;
       const p=verifiedPalettePlan(e.sprite,bank.manifest.paletteVariants[e.paletteVariant].colors,c.palette,{entry:e,atlas:bank.manifest.atlases[e.atlas]});
       if(p?.supported)bank.stagePalettes.add(bank.paletteKey(e,p));
     }
+    const rasterFrames=sprite=>bank.entries.frames.filter(e=>e.sprite===sprite&&!this.renderer.hasHDVectorFrame?.(e.sprite,e.slot,e.frame)).map(e=>({slot:e.slot,frame:e.frame}));
     this.promise=(async()=>{
       const loaded=await bank.preloadAtlases(plan.atlases);
       if(this.key!==key)return;
       if(loaded.some(ok=>!ok))throw Error('HD level atlas unavailable.');
-      for(const context of plan.contexts)for(const sprite of context.names){if(this.key!==key)return;if(this.assets.sprites[sprite])await bank.preloadPaletteFrames(sprite,context.palette,{limit:512});}
+      for(const context of plan.contexts)for(const sprite of context.names){if(this.key!==key)return;if(this.assets.sprites[sprite])await bank.preloadPaletteFrames(sprite,context.palette,{limit:512,frames:rasterFrames(sprite)});}
       // Actual initial actor overrides take precedence over the stage-wide plan.
       const requests=statePaletteRequests(this.assets,this.renderer,simulation.state,{limit:64}),seen=new Set();
-      for(const r of requests){const id=JSON.stringify([r.sprite,r.palette]);if(seen.has(id))continue;seen.add(id);if(this.key!==key)return;await bank.preloadPaletteFrames(r.sprite,r.palette,{limit:512});}
+      for(const r of requests){const id=JSON.stringify([r.sprite,r.palette]);if(seen.has(id))continue;seen.add(id);if(this.key!==key)return;await bank.preloadPaletteFrames(r.sprite,r.palette,{limit:512,frames:rasterFrames(r.sprite)});}
       if(this.key!==key)return;
       const missing=plan.atlases.filter(id=>!bank.images.has(id));
       if(missing.length)throw Error('HD level exceeds the decoded image budget.');

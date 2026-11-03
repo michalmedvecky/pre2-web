@@ -36,7 +36,7 @@ function warmPresentation(kind) {
   if(!assets?.hd)return Promise.resolve(null);
   const characters=[selection.character,...(selection.players===2?[selection.character2]:[])];
   const key=kind+':'+characters.join(',');
-  if(!hdWarmups.has(key))hdWarmups.set(key,preloadPresentationHD(assets,kind,{characters,load:request=>request.kind==='font'&&renderer?.vectorFont?true:assets.hd.preloadRequest(request.kind==='map'?{...request,viewport:[assets.maps[request.mapId].initialCamera.x,assets.maps[request.mapId].initialCamera.y,assets.playfieldWidth,200]}:request)}).then(report=>{report.typography=renderer?.vectorFont?.classification;if(window.goldenAxe)(window.goldenAxe.hdPresentationCoverage??={})[key]=report;return report;}).catch(error=>({kind,complete:false,error:String(error.message||error)})));
+  if(!hdWarmups.has(key))hdWarmups.set(key,preloadPresentationHD(assets,kind,{characters,load:request=>request.kind==='font'&&renderer?.vectorFont||request.kind==='sprite'&&renderer?.hasHDVectorFrame?.(request.bank,request.slot,request.frame)?true:assets.hd.preloadRequest(request.kind==='map'?{...request,viewport:[assets.maps[request.mapId].initialCamera.x,assets.maps[request.mapId].initialCamera.y,assets.playfieldWidth,200]}:request)}).then(report=>{report.typography=renderer?.vectorFont?.classification;if(window.goldenAxe)(window.goldenAxe.hdPresentationCoverage??={})[key]=report;return report;}).catch(error=>({kind,complete:false,error:String(error.message||error)})));
   return hdWarmups.get(key);
 }
 function updateGraphicsUI() {

@@ -1,3 +1,4 @@
+import {yieldHDTask} from './hd-task.js';
 // Explicit actual-painting material annotations. Geometry is NOT a source alpha stamp.
 const luma=c=>.2126*c[0]+.7152*c[1]+.0722*c[2];
 const clamp=x=>Math.max(0,Math.min(255,Math.round(x)));
@@ -66,7 +67,7 @@ export async function applyPaintMaterialsAsync(source,base,width,{annotations=[]
   const end=Math.min(source.length,offset+width*4*chunkRows),raw=source.subarray(offset,end),part=base.subarray(offset,end),originY=offset/(width*4);
   let out=annotations.length?applyMaterialAnnotations(raw,part,width,annotations,{originY}).pixels:part;
   if(preserveRegions.length)out=preservePaintRegions(raw,out,width,preserveRegions,{originY}).pixels;
-  pixels.set(out,offset);await new Promise(resolve=>setTimeout(resolve,0));
+  pixels.set(out,offset);await yieldHDTask();
  }
  return{pixels,alphaPreserved:true,approximate:true,colorCoverageApproved:false};
 }

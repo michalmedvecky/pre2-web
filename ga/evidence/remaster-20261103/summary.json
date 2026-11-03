@@ -1,0 +1,129 @@
+{
+  "baselineTag": "ga-v0.2.2",
+  "baselineCommit": "b9392ca34951140bc9c9e1349ba5fe91cdac6711",
+  "runtimeSnapshot": "ca1bd6c7401ef188f61eef5083c724457d7a864c49528f4dcd916d3ddb4aed1c",
+  "runtimeFileCount": 580,
+  "published": false,
+  "deployed": false,
+  "gameplayCoreAndOriginalDataUnchanged": true,
+  "performance": {
+    "sameAssetsStage1Seconds": [
+      20.042,
+      2.49
+    ],
+    "sameAssetsStage4Seconds": [
+      10.839,
+      1.276
+    ],
+    "warmBackMilliseconds": [
+      9,
+      12
+    ],
+    "scope": "Isolated Chrome CPU comparison at identical baseline PNG bytes, not universal network duration guarantee",
+    "final": {
+      "snapshot": "ca1bd6c7401ef188f61eef5083c724457d7a864c49528f4dcd916d3ddb4aed1c",
+      "scope": "Actual Chrome desktop and emulated mobile2P Stage1/4 movement/attack/jump with450ms added per PNG/WebP; forced WebP failure then PNG fallback Stage3. Not fullgame/native equivalence.",
+      "rows": [
+        {
+          "name": "desktop",
+          "pass": true,
+          "browserClosed": true,
+          "errors": [],
+          "runs": [
+            {
+              "stageIndex": 0,
+              "prepareMs": 7466.599999904633,
+              "tickRatio": 0.9997393418767484,
+              "waitingSamples": 0,
+              "sourceEvictions": 0,
+              "paletteEvictions": 0,
+              "originalSprites": 0,
+              "originalMapArea": 0
+            },
+            {
+              "stageIndex": 3,
+              "prepareMs": 3747.2000000476837,
+              "tickRatio": 1.0008489048522025,
+              "waitingSamples": 0,
+              "sourceEvictions": 0,
+              "paletteEvictions": 0,
+              "originalSprites": 0,
+              "originalMapArea": 0
+            }
+          ],
+          "normalWebPLoads": 72,
+          "normalFallbacks": 0,
+          "forcedWebPFallbacks": 18,
+          "failedAtlases": 0
+        },
+        {
+          "name": "mobile-2p",
+          "pass": true,
+          "browserClosed": true,
+          "errors": [],
+          "runs": [
+            {
+              "stageIndex": 0,
+              "prepareMs": 8410.799999952316,
+              "tickRatio": 0.9975735586982658,
+              "waitingSamples": 0,
+              "sourceEvictions": 0,
+              "paletteEvictions": 0,
+              "originalSprites": 0,
+              "originalMapArea": 0
+            },
+            {
+              "stageIndex": 3,
+              "prepareMs": 3815.100000143051,
+              "tickRatio": 1.0001435849866482,
+              "waitingSamples": 0,
+              "sourceEvictions": 0,
+              "paletteEvictions": 0,
+              "originalSprites": 0,
+              "originalMapArea": 0
+            }
+          ],
+          "normalWebPLoads": 79,
+          "normalFallbacks": 0,
+          "forcedWebPFallbacks": 18,
+          "failedAtlases": 0
+        }
+      ]
+    }
+  },
+  "graphics": {
+    "sourceQualifiedSmoothUIFrames": 82,
+    "smoothSourceFontGlyphs": 72,
+    "sourceQualifiedMapHeading": 1,
+    "refinedPaintedFrames": 13,
+    "atlasRecords": 199,
+    "deliveryAtlasRecords": 199,
+    "sourcePNGBytes": 307433753,
+    "deliveryWebPBytes": 198783478,
+    "losslessRGBAProof": "Every source/delivery RGBA byte including alpha and hidden RGB compared; all source PNGs retained.",
+    "nativeModePNGComparisons": 79,
+    "imageTool": "built-in image_gen; one SEGA raster rejected; final SEGA source-derived vector",
+    "artPromptSet": "golden-axe-research/hd-remaster/refinements-20261103/prompts.md"
+  },
+  "finalPlaythrough": {
+    "allSixPass": true,
+    "normalInputTicks": 65571,
+    "worldCheckpoints": 138,
+    "presentationPhases": 83,
+    "scope": "Final frozen current app; batched legal normal-input world replay plus actual RAF native presentations, not realtime keyboard/nativeDOS fullrun"
+  },
+  "tests": {
+    "unit": 163,
+    "unitPass": 163,
+    "packageManifest": true,
+    "actualLocalNginx": true
+  },
+  "knownLimits": [
+    "Full native DOS equivalence not established: default IRQ phase, IRQ-inside-body and throw/hit-order need further evidence.",
+    "Late Duel boss palette remains runtime-observed/provisional, native reachability unverified.",
+    "Experimental native-IRQ research export is not shipped in the game.",
+    "Physical iOS/Safari and platform font differences are not personally verified.",
+    "Flame raw alpha has faint1\u20134/255 crop-edge residue; visible clipping/bleed not observed.",
+    "Atomic loading barrier remains for genuinely unexpected missing resources."
+  ]
+}

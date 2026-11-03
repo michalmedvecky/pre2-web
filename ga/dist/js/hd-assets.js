@@ -24,6 +24,7 @@ export function verifiedPalettePlan(sprite,sourceColors,palette,{entry=null,atla
       if(needsMaterial&&!annotation)return {status:'requires-material-annotation',supported:false,variantId:`${sprite}@record${write.record}`,colorCoverageApproved:false,detail:'Actual painted material review found a color error; exact reviewed artwork registration is required.'};
       const exclude=knightConflict&&annotation?.kind==='index18-highlight'?[18]:[];
       const used=sourceColors.filter(c=>!exclude.includes(c[0])),plan=createPalettePlan(used,targetColorsForPalette(used,palette),{knownVariant:write.observed!==true,observedContext:write.observed===true,variantId:`${sprite}@record${write.record}`});
+      if(plan.supported)plan.lutSignature=plan.signature;
       if(plan.supported&&annotation&&(needsMaterial||exclude.length)){
         let annotations=[],preserveRegions=[];
         if(exclude.length){const[tx,ty]=entry.translationNative,s=entry.scaleNativePerPixel;preserveRegions=[{sourceIndex:18,sourcePixel:[31,10],center:[(31.5-tx)/s,(10.5-ty)/s],radius:.5/s,innerRadius:.22/s}];}
@@ -74,6 +75,10 @@ export function validateHDManifest(manifest) {
   if (manifest?.version !== 1) errors.push('Unsupported HD manifest version.');
   const atlases = manifest?.atlases || {}, variants = manifest?.paletteVariants || {};
   for (const [id,a] of Object.entries(atlases)) if (!localPath(a.src) || !finite(a.width) || !finite(a.height) || a.width <= 0 || a.height <= 0) errors.push(`Invalid atlas ${id}.`);
+  for(const[id,a]of Object.entries(atlases))if(a.delivery){
+    const d=a.delivery,sha=v=>typeof v==='string'&&/^[a-f0-9]{64}$/i.test(v);
+    if(!localPath(d.src)||!sha(d.sha256)||!sha(d.sourceSHA256)||!sha(d.rgbaSHA256)||!Number.isSafeInteger(d.size)||d.size<=0)errors.push(`Invalid delivery atlas ${id}.`);
+  }
   for (const [id,v] of Object.entries(variants)) if (!Array.isArray(v.colors) || v.colors.some(c => !Array.isArray(c) || c.length !== 4 || c.some(n => !Number.isInteger(n) || n < 0 || n > 255))) errors.push(`Invalid palette variant ${id}.`);
   for (const kind of ['frames','maps','mapStatePatches','tilePatches','fonts']) for (const e of manifest?.[kind] || []) {
     const a = atlases[e.atlas];
@@ -99,7 +104,7 @@ export class HDAssetBank {
   constructor(manifest, {base, loadImage=defaultImageLoader,maxDecodedBytes=64*1024*1024,maxAtlases=16,recolorFrame=defaultRecolorFrame,maxPaletteBytes=12*1024*1024,maxPaletteFrames=56,maxPaletteLUTBytes=4*1024*1024,maxPaletteLUTs=8}={}) {
     const errors=validateHDManifest(manifest); if(errors.length) throw new Error(errors.join(' '));
     this.manifest=manifest; this.base=base || new URL('../assets/hd/',import.meta.url); this.loadImage=loadImage;
-    this.images=new Map(); this.pending=new Map(); this.failures=new Map();this.maxDecodedBytes=maxDecodedBytes;this.maxAtlases=maxAtlases;this.evictions=0;this.activeLoads=0;this.loadQueue=[];this.maxConcurrentLoads=4;
+    this.images=new Map(); this.pending=new Map(); this.failures=new Map();this.maxDecodedBytes=maxDecodedBytes;this.maxAtlases=maxAtlases;this.evictions=0;this.activeLoads=0;this.loadQueue=[];this.maxConcurrentLoads=4;this.deliveryLoads=0;this.deliveryFallbacks=0;
     this.entries={}; for(const k of ['frames','maps','mapStatePatches','tilePatches','fonts'])this.entries[k]=(manifest[k]||[]).filter(e=>e.status===APPROVED);
     this.paletteImages=new Map();this.paletteBytes=0;this.palettePending=new Map();this.paletteFailures=new Map();this.paletteQueue=[];this.paletteActive=false;this.paletteEvictions=0;this.recolorFrame=recolorFrame;
     this.maxPaletteBytes=Math.min(64*1024*1024,Math.max(0,maxPaletteBytes));this.maxPaletteFrames=Math.min(512,Math.max(1,maxPaletteFrames));
@@ -124,9 +129,22 @@ export class HDAssetBank {
     if(this.failures.has(id)||!this.manifest.atlases[id])return Promise.resolve(false);
     const meta=this.manifest.atlases[id], url=new URL(meta.src,this.base);
     if(url.origin!==this.base.origin)return Promise.resolve(false);
+    // Optional delivery encodings never change the source SHA used by reviewed
+    // frame/material registrations. Stale delivery metadata safely uses PNG.
+    const delivery=meta.delivery&&meta.delivery.sourceSHA256===meta.sha256?new URL(meta.delivery.src,this.base):null;
+    if(delivery&&delivery.origin!==this.base.origin)return Promise.resolve(false);
     let finish;const promise=new Promise(resolve=>{finish=resolve;});this.pending.set(id,promise);
-    this.loadQueue.push(async()=>{try{const image=await this.loadImage(url);
-      if(image.width!==meta.width||image.height!==meta.height)throw new Error('HD atlas dimensions differ from manifest.');
+    this.loadQueue.push(async()=>{try{
+      let image,error;
+      for(const candidate of delivery?[delivery,url]:[url]){
+        try{
+          image=await this.loadImage(candidate);
+          if(image.width!==meta.width||image.height!==meta.height){image.close?.();throw new Error('HD atlas dimensions differ from manifest.');}
+          if(candidate===delivery)this.deliveryLoads++;
+          break;
+        }catch(cause){error=cause;image=null;if(candidate===delivery)this.deliveryFallbacks++;}
+      }
+      if(!image)throw error||new Error('HD atlas unavailable.');
       this.images.set(id,image);this.prune();finish(true);
     }catch(error){this.failures.set(id,String(error.message||error));finish(false);}finally{this.pending.delete(id);}});
     this.drainLoads();return promise;
@@ -168,9 +186,10 @@ export class HDAssetBank {
         // Atlas may be evicted by other asynchronous loads; retry rather than retain a stale bitmap.
         let image=this.touch(entry.atlas);if(!image){await this.ensureAtlas(entry.atlas);image=this.touch(entry.atlas);}
         if(!image)throw Error('Source atlas evicted before crop.');
-        let values=this.paletteLUTs.get(plan.signature),lut;
+        const lutKey=plan.lutSignature||plan.signature;
+        let values=this.paletteLUTs.get(lutKey),lut;
         if(values)lut={supported:true,size:33,signature:plan.signature,values};
-        else{lut=await compilePaletteLUTAsync(plan);this.paletteLUTs.set(plan.signature,lut.values);}
+        else{lut=await compilePaletteLUTAsync(plan);this.paletteLUTs.set(lutKey,lut.values);}
         // An atlas can be closed during LUT generation; reacquire immediately before copying crop.
         if(!this.images.has(entry.atlas))await this.ensureAtlas(entry.atlas);
         image=this.touch(entry.atlas);
@@ -218,7 +237,7 @@ export class HDAssetBank {
     if(request.kind==='font')return Array.from({length:request.glyphCount},(_,i)=>i).every(g=>entries.some(e=>e.glyph===g&&this.images.has(e.atlas)));
     return loaded.some(Boolean);
   }
-  coverage() { return {approvedFrames:new Set(this.entries.frames.map(e=>`${e.sprite}:${e.slot}:${e.frame}`)).size,approvedFrameVariants:this.entries.frames.length,approvedMapRegions:this.entries.maps.length,approvedMapStatePatches:this.entries.mapStatePatches.length,approvedTilePatches:this.entries.tilePatches.length,approvedGlyphs:this.entries.fonts.length,loadedAtlases:this.images.size,pendingAtlases:this.pending.size,failedAtlases:this.failures.size,decodedBytes:[...this.images.values()].reduce((n,i)=>n+imageBytes(i),0),evictions:this.evictions,paletteDerivedFrames:this.paletteImages.size,palettePending:this.palettePending.size,paletteFailed:this.paletteFailures.size,paletteCacheBytes:this.paletteBytes+this.paletteLUTs.bytes,paletteEvictions:this.paletteEvictions,paletteColorCoverageApproved:false,declaredComplete:this.manifest.coverage?.complete===true&&this.manifest.coverage?.paletteComplete===true}; }
+  coverage() { return {deliveryLoads:this.deliveryLoads,deliveryFallbacks:this.deliveryFallbacks,approvedFrames:new Set(this.entries.frames.map(e=>`${e.sprite}:${e.slot}:${e.frame}`)).size,approvedFrameVariants:this.entries.frames.length,approvedMapRegions:this.entries.maps.length,approvedMapStatePatches:this.entries.mapStatePatches.length,approvedTilePatches:this.entries.tilePatches.length,approvedGlyphs:this.entries.fonts.length,loadedAtlases:this.images.size,pendingAtlases:this.pending.size,failedAtlases:this.failures.size,decodedBytes:[...this.images.values()].reduce((n,i)=>n+imageBytes(i),0),evictions:this.evictions,paletteDerivedFrames:this.paletteImages.size,palettePending:this.palettePending.size,paletteFailed:this.paletteFailures.size,paletteCacheBytes:this.paletteBytes+this.paletteLUTs.bytes,paletteEvictions:this.paletteEvictions,paletteColorCoverageApproved:false,declaredComplete:this.manifest.coverage?.complete===true&&this.manifest.coverage?.paletteComplete===true}; }
 }
 export async function loadHDAssets(base, options={}) {
   try { const response=await fetch(new URL('manifest.json',base)); if(!response.ok)throw Error('HD manifest unavailable.'); return new HDAssetBank(await response.json(),{...options,base}); }

@@ -1,3 +1,4 @@
+import {yieldHDTask} from './hd-task.js';
 // Palette rendering over genuine painted RGB. Never changes alpha, geometry or
 // creates HD artwork from original pixels. Continuous-color accuracy needs QA.
 const clamp = value => Math.max(0, Math.min(255, Math.round(value)));
@@ -94,13 +95,17 @@ export function compilePaletteLUT(plan, {size=33} = {}) {
   return {status:'ready',supported:true,size,values,signature:plan.signature,approximate:true};
 }
 
-function lutRGB(lut,color) {
-  const n=lut.size,scale=(n-1)/255,v=color.map(value=>value*scale),lo=v.map(Math.floor),hi=lo.map(x=>Math.min(n-1,x+1)),f=v.map((value,c)=>value-lo[c]),out=[0,0,0];
-  for(let r=0;r<2;r++)for(let g=0;g<2;g++)for(let b=0;b<2;b++){
-    const weight=(r?f[0]:1-f[0])*(g?f[1]:1-f[1])*(b?f[2]:1-f[2]),index=(((r?hi[0]:lo[0])*n+(g?hi[1]:lo[1]))*n+(b?hi[2]:lo[2]))*3;
-    for(let c=0;c<3;c++)out[c]+=weight*lut.values[index+c];
+// Same r/g/b summation order as the reference trilinear interpolation, without
+// allocating several temporary arrays for every painted pixel.
+function writeLUTRGB(lut,r,g,b,pixels,offset){
+  const n=lut.size,scale=(n-1)/255,rv=r*scale,gv=g*scale,bv=b*scale;
+  const r0=Math.floor(rv),g0=Math.floor(gv),b0=Math.floor(bv),r1=Math.min(n-1,r0+1),g1=Math.min(n-1,g0+1),b1=Math.min(n-1,b0+1),fr=rv-r0,fg=gv-g0,fb=bv-b0,values=lut.values;
+  let red=0,green=0,blue=0;
+  for(let ri=0;ri<2;ri++)for(let gi=0;gi<2;gi++)for(let bi=0;bi<2;bi++){
+    const weight=(ri?fr:1-fr)*(gi?fg:1-fg)*(bi?fb:1-fb),index=(((ri?r1:r0)*n+(gi?g1:g0))*n+(bi?b1:b0))*3;
+    red+=weight*values[index];green+=weight*values[index+1];blue+=weight*values[index+2];
   }
-  return out.map(clamp);
+  pixels[offset]=clamp(red);pixels[offset+1]=clamp(green);pixels[offset+2]=clamp(blue);
 }
 
 /** Pure RGBA buffer transform. Unsupported plans return no drawable result. */
@@ -112,14 +117,15 @@ export function applyPaletteRGBA(source,plan,{lut=null}={}) {
   const pixels=new Uint8ClampedArray(source);
   for(let offset=0;offset<pixels.length;offset+=4){
     if(pixels[offset+3]===0)continue;
-    const color=[pixels[offset],pixels[offset+1],pixels[offset+2]],exact=plan.anchorMap.get(rgbKey(color));
-    const next=exact || (lut?lutRGB(lut,color):samplePaletteRGB(plan,color));
+    const r=pixels[offset],g=pixels[offset+1],b=pixels[offset+2],exact=plan.anchorMap.get((r<<16)|(g<<8)|b);
+    if(lut&&!exact){writeLUTRGB(lut,r,g,b,pixels,offset);continue;}
+    const next=exact||samplePaletteRGB(plan,[r,g,b]);
     pixels[offset]=next[0];pixels[offset+1]=next[1];pixels[offset+2]=next[2];
   }
   return {status:'transformed',pixels,alphaPreserved:true,inputPreserved:true,approximate:true,colorCoverageApproved:false};
 }
 
-const yieldTask = () => new Promise(resolve => setTimeout(resolve,0));
+const yieldTask = yieldHDTask;
 /** Same LUT math, yielding bounded chunks so artwork preparation does not stop play. */
 export async function compilePaletteLUTAsync(plan,{size=33,chunk=2048,yieldControl=yieldTask}={}) {
   if(!plan?.supported || plan.status==='identity')return compilePaletteLUT(plan,{size});
