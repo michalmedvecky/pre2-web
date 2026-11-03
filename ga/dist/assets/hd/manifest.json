@@ -3017,6 +3017,32 @@
         "sourceSHA256": "df1ca114a71c66443c2a71dc5065abdfed02c368761c2fb7e3db75c4c145f1ee",
         "rgbaSHA256": "febfca78b0d798b5138cd01ba514bbca332f38f2a7c92ef86a27ff098f22c2db"
       }
+    },
+    "dwarf-mounted-seated-v2": {
+      "src": "sprites/dwarf-mounted-seated-v2.png",
+      "width": 1312,
+      "height": 1199,
+      "sha256": "4966945ecc6ea09cf8303d0e45f2cdbbfca6f0c380c50690ec6be33f36094663",
+      "delivery": {
+        "src": "delivery/dwarf-mounted-seated-v2-2f9f0a51c93ee4b2.webp",
+        "sha256": "2f9f0a51c93ee4b22e3054020660792c0943301bfc5122c8f695016c3e2a50b2",
+        "size": 847216,
+        "sourceSHA256": "4966945ecc6ea09cf8303d0e45f2cdbbfca6f0c380c50690ec6be33f36094663",
+        "rgbaSHA256": "5427c78f34b2ad5d31f996a344c39bb6256dbd13be2b317285bca277dc98db43"
+      }
+    },
+    "walk-facing-v2": {
+      "src": "sprites/gilius-walk-facing-v2.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "7b0da2cb913682e7be56745e943b0940f08fc37a83800db192eb6ee787eed554",
+      "delivery": {
+        "src": "delivery/walk-facing-v2-93f29aafdf15369f.webp",
+        "sha256": "93f29aafdf15369f56b580ab05d8b12f7e8c8fc91efd3a31db7ea3e829af4ac4",
+        "size": 776700,
+        "sourceSHA256": "7b0da2cb913682e7be56745e943b0940f08fc37a83800db192eb6ee787eed554",
+        "rgbaSHA256": "794bf57603d7424845c4023c5bbcac435e2e8831c6a8c3bba70ef7da2a581e92"
+      }
     }
   },
   "paletteVariants": {
@@ -36624,7 +36650,7 @@
       "slot": 1,
       "frame": 0,
       "paletteVariant": "dwarf-walk-0",
-      "atlas": "walk",
+      "atlas": "walk-facing-v2",
       "rectPixels": [
         0,
         0,
@@ -36644,14 +36670,14 @@
       "sourceIndexedSHA": "0c6cb4050139ea71f00921fdb87e9cb7911416f3c96c7191bd04ac256726ef96",
       "durationTicks35Hz": 3,
       "status": "approved",
-      "approval": "User approved four-frame animation; residual pose/sole/reach differences documented in original pilot QA."
+      "approval": "Walk facial orientation corrected to face original unmirrored LEFT; four approved body poses, cell layout, native registration, source identities and durations retained. Browser both-direction review documented separately."
     },
     {
       "sprite": "dwarf",
       "slot": 1,
       "frame": 1,
       "paletteVariant": "dwarf-walk-1",
-      "atlas": "walk",
+      "atlas": "walk-facing-v2",
       "rectPixels": [
         627,
         0,
@@ -36671,14 +36697,14 @@
       "sourceIndexedSHA": "a898b008217ffecef30712ac118f39586442ca0a662a93304cdc2c24cff3512c",
       "durationTicks35Hz": 3,
       "status": "approved",
-      "approval": "User approved four-frame animation; residual pose/sole/reach differences documented in original pilot QA."
+      "approval": "Walk facial orientation corrected to face original unmirrored LEFT; four approved body poses, cell layout, native registration, source identities and durations retained. Browser both-direction review documented separately."
     },
     {
       "sprite": "dwarf",
       "slot": 1,
       "frame": 2,
       "paletteVariant": "dwarf-walk-2",
-      "atlas": "walk",
+      "atlas": "walk-facing-v2",
       "rectPixels": [
         0,
         627,
@@ -36698,14 +36724,14 @@
       "sourceIndexedSHA": "279fe75ed6e9f5100cf80a9c1cad1588c81f03477f9c85daab229000b39e407c",
       "durationTicks35Hz": 3,
       "status": "approved",
-      "approval": "User approved four-frame animation; residual pose/sole/reach differences documented in original pilot QA."
+      "approval": "Walk facial orientation corrected to face original unmirrored LEFT; four approved body poses, cell layout, native registration, source identities and durations retained. Browser both-direction review documented separately."
     },
     {
       "sprite": "dwarf",
       "slot": 1,
       "frame": 3,
       "paletteVariant": "dwarf-walk-3",
-      "atlas": "walk",
+      "atlas": "walk-facing-v2",
       "rectPixels": [
         627,
         627,
@@ -36725,7 +36751,7 @@
       "sourceIndexedSHA": "3f0785e8c66609daa87e10503ef0ad1e42a3f7f5d88c5d5bd4974bc0c4d7e068",
       "durationTicks35Hz": 3,
       "status": "approved",
-      "approval": "User approved four-frame animation; residual pose/sole/reach differences documented in original pilot QA."
+      "approval": "Walk facial orientation corrected to face original unmirrored LEFT; four approved body poses, cell layout, native registration, source identities and durations retained. Browser both-direction review documented separately."
     },
     {
       "sprite": "amazon",
@@ -41837,17 +41863,17 @@
       "slot": 20,
       "frame": 0,
       "paletteVariant": "palette-dwarf-05-7",
-      "atlas": "sprite-dwarf-05",
+      "atlas": "dwarf-mounted-seated-v2",
       "rectPixels": [
-        484,
-        769,
-        508,
-        358
+        0,
+        0,
+        1312,
+        1199
       ],
-      "scaleNativePerPixel": 0.175,
+      "scaleNativePerPixel": 0.04423963133640553,
       "translationNative": [
-        -14.825,
-        -5.2375
+        -3.3179723502304164,
+        -0.8405529953917039
       ],
       "nativePivot": [
         29,
@@ -41857,7 +41883,7 @@
       "sourceIndexedSHA": "2c03be16f30678d11cde6a97b7bb8fa61a807e97d60d8f246c886f97d2ede117",
       "durationTicks35Hz": 50,
       "status": "approved",
-      "approval": "Root viewed actual generated page and accepted approved painted style/pose ordering; original collision metadata unchanged. Registered pose deviations remain documented, no blanket native-pixel fidelity claim."
+      "approval": "Targeted seated anatomy correction: compact bent near leg, far leg occluded, source native pivot/identity/duration unchanged. Actual mounted renderer QA documented separately."
     },
     {
       "sprite": "dwarf",

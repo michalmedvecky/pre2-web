@@ -1,5 +1,29 @@
 # Golden Axe — předání deployerovi pro k3s
 
+## Patch ga-v0.2.4
+
+Opravuje HD sed jezdce na obou typech zvířat a směr pohledu trpaslíka ve
+všech čtyřech snímcích chůze. Původní grafika, fyzika, kolize, body uchycení
+jezdce a časování snímků jsou beze změny. Doplněna nápověda pro běh a skok
+z rozběhu přes vysoký schod ve stage 4.
+
+Runtime snapshot: `05612ae5c83ec7ce93f37935d70d94d5f2fda407326e8143012d84dd0af212c9`
+(584 souborů). Přesný commit, úspěšné CI a image digest jsou v
+[release ga-v0.2.4](https://github.com/michalmedvecky/pre2-web/releases/tag/ga-v0.2.4).
+Přílohy: `ga-v0.2.4.tar.gz` a `ga-v0.2.4.SHA256SUMS`, pouze GA subtree.
+
+Zachovejte stávající samostatnou GA aplikaci na `ga.500miles.cz`, namespace,
+Ingress a TLS. Změňte jen image na digest z release; Prehistorik neměňte.
+Po rollout ověřte `/build.json`, sed jezdce na obou zvířatech a chůzi vlevo
+ i vpravo. Ponechte WebP/cache konfiguraci z 0.2.3. Vydání nic do k3s nenasazuje.
+
+Cílená kontrola ve skutečném Chrome rendereru: 42 jezdeckých fixture,
+8 snímků/směrů chůze a 3 scény s pozadím bez SD fallbacku. 163 testů PASS.
+Stage 4 překonána 3/3 skutečnými klávesnicovými pokusy: dvakrát rychle
+stejný směr, druhý stisk držet, potom K. Běžný skok na první schod nestačí
+ani podle původních dat. Nový celý DOS průchod nebyl proveden; dříve popsané
+meze shody zůstávají. Detail: [reports/rider-and-walk.md](reports/rider-and-walk.md).
+
 ## Patch ga-v0.2.3
 
 Rychlejší příprava HD levelů, bezztrátový WebP přenos (o 35,34 % méně dat),

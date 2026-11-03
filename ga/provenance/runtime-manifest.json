@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "snapshotSHA256": "ca1bd6c7401ef188f61eef5083c724457d7a864c49528f4dcd916d3ddb4aed1c",
+  "snapshotSHA256": "05612ae5c83ec7ce93f37935d70d94d5f2fda407326e8143012d84dd0af212c9",
   "excluded": [
     "build.json (injected per build)"
   ],
@@ -320,6 +320,10 @@
     "assets/hd/delivery/dwarf-jump-correction-v1-c8cf49d1f0ae1791.webp": {
       "sha256": "c8cf49d1f0ae1791bb525c6c20ad6ba0877bf1589626d51cd318b02fed85ee65",
       "size": 679244
+    },
+    "assets/hd/delivery/dwarf-mounted-seated-v2-2f9f0a51c93ee4b2.webp": {
+      "sha256": "2f9f0a51c93ee4b22e3054020660792c0943301bfc5122c8f695016c3e2a50b2",
+      "size": 847216
     },
     "assets/hd/delivery/map-1-owned-0-0-89f38d8bf396a729.webp": {
       "sha256": "89f38d8bf396a7292934dc1a852c70f01df325183f9bf03eebc5a93c2e5ccb66",
@@ -1113,9 +1117,13 @@
       "sha256": "00e21b36d57ecde4ea00523e2c747019f8a9ec84ba1117c40b3c09364ba53253",
       "size": 801034
     },
+    "assets/hd/delivery/walk-facing-v2-93f29aafdf15369f.webp": {
+      "sha256": "93f29aafdf15369f56b580ab05d8b12f7e8c8fc91efd3a31db7ea3e829af4ac4",
+      "size": 776700
+    },
     "assets/hd/manifest.json": {
-      "sha256": "702e8d3f2929b2d538a501387048dbb952236013ce728c68bc88169d868f8ff0",
-      "size": 1347225
+      "sha256": "67bd939c36c0a880673b57f3fdf0a981d99ea063923b5dd05a0cf3a20ee6b806",
+      "size": 1348945
     },
     "assets/hd/maps/1/map-1-owned-0-0.png": {
       "sha256": "1e617784198ddfb3ae2ec4684683b39865606e5a1ac247be09e2bd9a4a2f7433",
@@ -1773,6 +1781,10 @@
       "sha256": "e0108a18307266b3b630225aec89c92adf08315680b3ee9399d8a2ab446880ec",
       "size": 1021875
     },
+    "assets/hd/sprites/dwarf-mounted-seated-v2.png": {
+      "sha256": "4966945ecc6ea09cf8303d0e45f2cdbbfca6f0c380c50690ec6be33f36094663",
+      "size": 1269576
+    },
     "assets/hd/sprites/evillady-00.png": {
       "sha256": "130753763e18216b7760787216dca93f671453156294ecc2c243289a6c161890",
       "size": 1238098
@@ -1800,6 +1812,10 @@
     "assets/hd/sprites/gilius-walk-approved.png": {
       "sha256": "c4189cf9f066022bb844da3805f78cacfd94d9e456c1bb4ba850aad6d12aecea",
       "size": 1190970
+    },
+    "assets/hd/sprites/gilius-walk-facing-v2.png": {
+      "sha256": "7b0da2cb913682e7be56745e943b0940f08fc37a83800db192eb6ee787eed554",
+      "size": 1156290
     },
     "assets/hd/sprites/heninger-00.png": {
       "sha256": "ee3d13bec3613aee937614d9d5b646fa25f0fd3ab9043f870a8597e33dad3efe",
@@ -2098,8 +2114,8 @@
       "size": 5828
     },
     "index.html": {
-      "sha256": "599fa0bd0018e6ce68f5cdb9e31d11eae298cb33bea5b8ec1783cc57300c2bb1",
-      "size": 12110
+      "sha256": "38c598a8081ed0b594ccaf6f51c6ee90d5ab99aa0de2b47c5078522cb09c072c",
+      "size": 12371
     },
     "js/app.js": {
       "sha256": "c56c2f64f1aab8d9e527855c6ca8f6ab902bbf51a3c23749aa78f1ea7c588c68",

@@ -1,0 +1,109 @@
+{
+  "baselineTag": "ga-v0.2.3",
+  "runtimeSnapshot": "05612ae5c83ec7ce93f37935d70d94d5f2fda407326e8143012d84dd0af212c9",
+  "runtimeFiles": 584,
+  "deployed": false,
+  "gameplayCoreUnchanged": true,
+  "mounted": {
+    "pass": true,
+    "fixtures": 42,
+    "riderFrames": [
+      0,
+      1
+    ],
+    "registration": {
+      "oldRegistration": {
+        "sprite": "dwarf",
+        "slot": 20,
+        "frame": 0,
+        "paletteVariant": "palette-dwarf-05-7",
+        "atlas": "sprite-dwarf-05",
+        "rectPixels": [
+          484,
+          769,
+          508,
+          358
+        ],
+        "scaleNativePerPixel": 0.175,
+        "translationNative": [
+          -14.825,
+          -5.2375
+        ],
+        "nativePivot": [
+          29,
+          39
+        ],
+        "sourceHeaderSHA": "36d185e42fd956501f34c001eb8f25d8d09516ca90eebea2355ed1fda7d2a833",
+        "sourceIndexedSHA": "2c03be16f30678d11cde6a97b7bb8fa61a807e97d60d8f246c886f97d2ede117",
+        "durationTicks35Hz": 50,
+        "status": "approved",
+        "approval": "Root viewed actual generated page and accepted approved painted style/pose ordering; original collision metadata unchanged. Registered pose deviations remain documented, no blanket native-pixel fidelity claim."
+      },
+      "newRegistration": {
+        "sprite": "dwarf",
+        "slot": 20,
+        "frame": 0,
+        "paletteVariant": "palette-dwarf-05-7",
+        "atlas": "dwarf-mounted-seated-v2",
+        "rectPixels": [
+          0,
+          0,
+          1312,
+          1199
+        ],
+        "scaleNativePerPixel": 0.04423963133640553,
+        "translationNative": [
+          -3.3179723502304164,
+          -0.8405529953917039
+        ],
+        "nativePivot": [
+          29,
+          39
+        ],
+        "sourceHeaderSHA": "36d185e42fd956501f34c001eb8f25d8d09516ca90eebea2355ed1fda7d2a833",
+        "sourceIndexedSHA": "2c03be16f30678d11cde6a97b7bb8fa61a807e97d60d8f246c886f97d2ede117",
+        "durationTicks35Hz": 50,
+        "status": "approved",
+        "approval": "Targeted seated anatomy correction: compact bent near leg, far leg occluded, source native pivot/identity/duration unchanged. Actual mounted renderer QA documented separately."
+      },
+      "rawAlphaBounds": [
+        75,
+        69,
+        1160,
+        1104
+      ],
+      "nativeOpaqueBounds": [
+        0,
+        0,
+        48,
+        48
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "artSHA256": "4966945ecc6ea09cf8303d0e45f2cdbbfca6f0c380c50690ec6be33f36094663",
+      "uniformScaleOnly": true,
+      "sourceAlphaStamp": false
+    }
+  },
+  "walk": {
+    "pass": true,
+    "fixtures": 8,
+    "cellLayoutAndSourceRegistrationUnchanged": true
+  },
+  "worldScenes": {
+    "pass": true,
+    "fixtures": 3
+  },
+  "stage4": {
+    "physicsChanged": false,
+    "actualKeyboardRunRoutesPass": 3,
+    "nativeStateSamplesMatch": 29,
+    "helpAdded": true
+  },
+  "imageTool": "built-in image_gen",
+  "prompts": "golden-axe-research/hd-remaster/mounted-fix-20261103/prompts.md",
+  "intendedRelease": "ga-v0.2.4",
+  "qaRecordedBeforePublication": true
+}
