@@ -1,5 +1,36 @@
 # Golden Axe — předání deployerovi pro k3s
 
+## Patch ga-v0.2.5
+
+Úvod přechází rovnou do menu bez hesla. HD písmena a čísla nyní používají
+původní arkádové tvary místo systémového patkového fontu. Příprava HD levelů
+byla v řízeném Chrome měření při stejných datech o16–17% rychlejší.
+
+Stage4: nové přímé ovládání původního běhu **R pro P1 / F pro P2** a dotykové
+**BĚH**. Současný stisk běhu, směru a skoku správně zahájí běhový skok.
+Pro první schod držte **R + doprava + K**; na telefonu BĚH + doprava + SKOK.
+Fyzika, kolize, výšky skoku a původní dvojklep se nemění.
+
+Runtime snapshot: `6d4cf0dae70ae96f83298769637ca8f31e9516b4e3885fc0566ec15d2a741e6f`
+(584 souborů). Přesný commit, úspěšné CI a image digest jsou v
+[release ga-v0.2.5](https://github.com/michalmedvecky/pre2-web/releases/tag/ga-v0.2.5).
+Přílohy: `ga-v0.2.5.tar.gz` a `ga-v0.2.5.SHA256SUMS`, pouze GA subtree.
+
+Zachovejte samostatnou GA aplikaci na `ga.500miles.cz`, namespace, Service,
+Ingress, TLS a WebP/cache pravidla. Změňte pouze image na digest z release;
+Prehistorik neměňte. Vydání samo nic do k3s nenasazuje.
+Po rollout ověřte `/build.json`, průchod bez hesla, arkádové písmo a nový
+běhový skok ve stage4, na mobilu také dosažitelnost tlačítka BĚH.
+
+172 testů PASS, skutečný browser startup/audio/HD-switch smoke PASS, osm
+cílených klávesnicových/dotykových případů Stage4 PASS včetně všech hrdinů
+ a P2, šest original-mode prezentací byte-identických. Testy načítání s
++450ms na každý obrázek neukázaly herní loading pauzy. Nový úplný native
+DOS průchod ani fyzický iOS/Safari test se neprovedl. Podrobnosti:
+`provenance/ga-v0.2.5-qa.json`, `reports/startup-no-password.md`,
+`reports/arcade-typography.md`, `reports/stage4-run-shortcut.md`,
+`reports/hd-loading-performance.md`.
+
 ## Patch ga-v0.2.4
 
 Opravuje HD sed jezdce na obou typech zvířat a směr pohledu trpaslíka ve

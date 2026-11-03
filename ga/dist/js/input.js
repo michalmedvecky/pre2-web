@@ -13,15 +13,33 @@ const p2 = new Map([
 ]);
 const onePlayerAliases = new Map([['KeyA',['left']],['KeyD',['right']],['KeyW',['up']],['KeyS',['down']]]);
 const empty = () => ({left:false,right:false,up:false,down:false,attack:false,jump:false,magic:false});
+// Optional web run shortcut feeds the existing native run state. If run and
+// jump arrive in one poll, retain the fresh jump until native WALK→RUN has
+// completed (at most four polls). Ordinary/native doubletap input is untouched.
+export function adaptRunShortcut(value,actor,pending=null) {
+  const direction=value.right&&!value.left&&!value.up&&!value.down?2:value.left&&!value.right&&!value.up&&!value.down?6:8;
+  if(!value.heldRun||!actor||direction===8)return null;
+  value.run=true;value.explicitRun=true;
+  if(value.attack||value.magic||actor.state===19)return null;
+  const grounded=actor.z===0&&actor.vz===0&&actor.fallSpeed===0;
+  const settlingLanding=actor.state===3&&actor.transition===1;
+  if(value.pressed?.jump&&grounded&&([0,1].includes(actor.state)||settlingLanding))pending={direction,polls:4};
+  if(!pending)return null;
+  if(!grounded||!([0,1,2].includes(actor.state)||settlingLanding)||pending.direction!==direction)return null;
+  value.jump=false;value.pressed.jump=false;
+  if(actor.state===2){value.jump=true;value.pressed.jump=true;return null;}
+  return pending.polls>1?{...pending,polls:pending.polls-1}:null;
+}
 export class Input {
   constructor({onPause,onStart}) {
     this.keyboard = new Set(); this.pendingKeys = new Set(); this.pendingActions = new Set(); this.pointers = new Map(); this.pulses = new Map();
-    this.playerCount = 1; this.active = false;
+    this.playerCount = 1; this.active = false; this.runJumps=[null,null];
     this.devices=['keypad','keyboard'];
     this.legacy=new LegacyControls({element:document.querySelector('#game'),devices:this.devices});
     window.addEventListener('keydown',e => {
       const interactive=!!e.target?.closest?.('button,input,select,textarea,a[href]');
-      if (this.active && !interactive && [0,1].some(index=>index<this.playerCount&&this.actions(e.code,index).length)) {
+      const browserShortcut=['KeyR','KeyF'].includes(e.code)&&(e.ctrlKey||e.metaKey||e.altKey);
+      if (this.active && !interactive && !browserShortcut && [0,1].some(index=>index<this.playerCount&&this.actions(e.code,index).length)) {
         e.preventDefault();
         if(!e.repeat&&!this.keyboard.has(e.code))this.pendingKeys.add(e.code);
         this.keyboard.add(e.code);
@@ -32,7 +50,7 @@ export class Input {
     window.addEventListener('keyup',e => {if(this.keyboard.has(e.code))e.preventDefault();this.keyboard.delete(e.code);});
     window.addEventListener('blur',()=>this.clear());
     for (const button of document.querySelectorAll('[data-hold]')) {
-      const action=button.dataset.hold;
+      const action=button.dataset.hold==='run'?'heldRun':button.dataset.hold;
       button.addEventListener('pointerdown',e => {e.preventDefault();if(!this.active)return;button.setPointerCapture(e.pointerId);this.pointers.set(e.pointerId,action);this.pendingActions.add(action);button.classList.add('active');});
       const end=e=>{this.pointers.delete(e.pointerId);button.classList.remove('active');};
       button.addEventListener('pointerup',end);button.addEventListener('pointercancel',end);button.addEventListener('lostpointercapture',end);
@@ -52,6 +70,7 @@ export class Input {
   setDevices(devices){this.legacy.setDevices(devices);this.devices=[...devices];this.clear();}
   actions(code,index){
     const device=this.devices[index],actions=[];
+    if(code===(index===0?'KeyR':'KeyF'))actions.push('heldRun');
     if(device==='keypad'&&(code.startsWith('Numpad')||['Insert','Backquote','Backslash'].includes(code)))actions.push(...(p1.get(code)||[]));
     if(device==='keyboard'&&code!=='ShiftLeft')actions.push(...(p2.get(code)||[]));
     if(code===(index===0?'ShiftRight':'ShiftLeft'))actions.push('magic');
@@ -86,15 +105,17 @@ export class Input {
     for(const code of this.pendingKeys)for(let index=0;index<this.playerCount;index++)for(const action of this.actions(code,index)){value[index][action]=true;pressed[index][action]=true;}
     for(const code of this.pendingKeys)for(let index=0;index<this.playerCount;index++){const binding=this.runBinding(code,index);if(binding>=0)runBindingFresh[index][binding]=true;}
     this.pendingKeys.clear();
+    const heldShortcuts=value.map(v=>!!v.heldRun);
     const physical=this.legacy.sample(actors,value.map(v=>v.magic));
     for(let index=0;index<this.playerCount;index++)if(!['keypad','keyboard'].includes(this.devices[index])){value[index]=physical[index];pressed[index].attack=!!physical[index].attack;pressed[index].jump=!!physical[index].jump;}
+    for(let index=0;index<this.playerCount;index++)if(heldShortcuts[index])value[index].heldRun=true;
     for(const action of this.pointers.values())value[0][action]=true;
     for(const[action,left]of this.pulses){value[0][action]=true;if(left<=1)this.pulses.delete(action);else this.pulses.set(action,left-1);}
     for(const action of this.pendingActions){value[0][action]=true;pressed[0][action]=true;if(action==='left')runBindingFresh[0][0]=true;if(action==='right')runBindingFresh[0][1]=true;}this.pendingActions.clear();
-    for(let index=0;index<this.playerCount;index++){value[index].pressed=pressed[index];value[index].runBindingFresh=runBindingFresh[index];}
+    for(let index=0;index<this.playerCount;index++){value[index].pressed=pressed[index];value[index].runBindingFresh=runBindingFresh[index];this.runJumps[index]=adaptRunShortcut(value[index],actors[index],this.runJumps[index]);delete value[index].heldRun;delete pressed[index].heldRun;}
     return this.playerCount===2?{players:value}:value[0];
   }
-  clear(){this.keyboard.clear();this.pendingKeys.clear();this.pendingActions.clear();this.gestureStarts?.clear();this.pointers.clear();this.pulses.clear();this.legacy?.clear();document.querySelectorAll('.active').forEach(el=>el.classList.remove('active'));}
+  clear(){this.runJumps=[null,null];this.keyboard.clear();this.pendingKeys.clear();this.pendingActions.clear();this.gestureStarts?.clear();this.pointers.clear();this.pulses.clear();this.legacy?.clear();document.querySelectorAll('.active').forEach(el=>el.classList.remove('active'));}
   dispose(){this.active=false;this.clear();this.legacy.dispose();}
 }
 import {LegacyControls} from './legacy-controls.js';

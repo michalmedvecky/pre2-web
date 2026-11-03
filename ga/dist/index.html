@@ -23,7 +23,6 @@
       <div class="screen-wrap">
         <canvas id="game" width="320" height="200" aria-label="Golden Axe, herní obraz" tabindex="0"></canvas>
         <div id="loading" class="loading">Načítání původních dat…</div>
-        <form id="password-entry" class="password-entry" hidden><label><span>Heslo · zadej libovolné neprázdné slovo</span><input id="password-text" aria-label="Původní heslo" maxlength="16" autocomplete="off" autocapitalize="characters" spellcheck="false" inputmode="text"></label><button type="submit">Potvrdit</button></form>
         <div id="start-screen" class="overlay menu-overlay" hidden>
           <div id="mode-menu" class="original-menu">
             <img class="original-logo" src="./assets/ui/logo.png" alt="Golden Axe" width="224" height="32">
@@ -49,7 +48,7 @@
             <p class="scope">Hráči používají odlišné vstupy. Keyboard znamená QWE / A·D / ZXC; Keypad numerickou klávesnici.</p>
             <details class="control-help"><summary>Ovládání</summary><p>Keypad: 789 / 4·6 / 123 pro pohyb<br>Num 5 útok · Insert skok.<br>Keyboard: QWE / A·D / ZXC pro pohyb<br>S útok · Tab skok.</p>
             <p>Dotyk: směry pro pohyb, tap pro útok,<br>swipe nahoru pro skok.</p>
-            <p>P1 má navíc šipky a J/K/L.<br>Magie: P1 pravý Shift, P2 levý Shift.<br>Běh: dvakrát rychle stejný směr, druhý stisk držet.<br>Skok z rozběhu: za běhu K / Insert — překoná vysoký schod ve stage 4.<br>Mezerník: pauza.</p>
+            <p>P1 má navíc šipky a J/K/L.<br>Magie: P1 pravý Shift, P2 levý Shift.<br>Běh: drž R (P1) / F (P2), nebo dvakrát rychle stejný směr.<br>Skok z rozběhu: drž R + směr a stiskni K / Insert.<br>Mezerník: pauza.</p>
             <p>Mouse: pohyb myši · levé tlačítko útok<br>pravé tlačítko skok · Shift magie.<br>Joystick: páčka · tlačítka 1/2 útok/skok.</p></details>
             <p id="device-status" class="scope">Joystick 1/2 používá první/druhý připojený gamepad.</p>
             <div class="device-calibration"><button data-calibrate-port="0" class="secondary">Kalibrace Joystick 1</button><button data-calibrate-port="1" class="secondary">Kalibrace Joystick 2</button></div>
@@ -73,7 +72,7 @@
             <p id="graphics-coverage" class="scope">HD grafika se doplňuje.</p>
             <div class="cheat-actions"><button data-open-map class="secondary">MAP</button><button data-toggle-god class="secondary" aria-pressed="false">IDDQD: vypnuto</button></div>
             <button data-return-menu class="menu-back">Hlavní menu</button>
-            <p>Šipky pohyb v obou osách<br>J / Num 5 útok · K / Insert skok<br>L / pravý Shift magie · mezerník pauza<br>Běh: dvakrát rychle stejný směr, druhý stisk držet.<br>Vysoký schod ve stage 4: rozběh doprava a K / Insert.</p>
+            <p>Šipky pohyb v obou osách<br>J / Num 5 útok · K / Insert skok<br>L / pravý Shift magie · mezerník pauza<br>Běh: drž R (P1) / F (P2), nebo dvakrát rychle stejný směr.<br>Vysoký schod ve stage 4: drž R + doprava a stiskni K / Insert.</p>
           </div>
         </div>
         <div id="result-screen" class="overlay" hidden>
@@ -110,6 +109,7 @@
       </div>
       <div class="touch-actions">
         <div class="small-actions">
+          <button data-hold="run" class="action-small action-run" aria-label="Držet pro běh">BĚH <span>»</span></button>
           <button data-hold="jump" class="action-small">SKOK <span>↑</span></button>
           <button data-hold="magic" class="action-small magic">MAGIE <span>✦</span></button>
         </div>
@@ -118,7 +118,7 @@
     </section>
     <footer>
       <span style="display:flex;flex-direction:column;gap:2px"><span id="status">Původní data</span><span aria-label="Identita sestavení"><a id="build-repository">GitHub</a> · <a id="build-commit">Neověřené sestavení</a></span></span>
-      <span class="desktop-hint">← ↑ ↓ → <b>POHYB</b> &nbsp; J <b>ÚTOK</b> &nbsp; K <b>SKOK</b> &nbsp; L <b>MAGIE</b></span>
+      <span class="desktop-hint">← ↑ ↓ → <b>POHYB</b> &nbsp; J <b>ÚTOK</b> &nbsp; K <b>SKOK</b> &nbsp; R <b>BĚH</b> &nbsp; L <b>MAGIE</b></span>
       <button id="about-toggle" aria-expanded="false" aria-controls="about">O této verzi ↗</button>
     </footer>
     <aside id="about" hidden>

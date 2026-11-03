@@ -1,0 +1,72 @@
+{
+  "intendedRelease": "ga-v0.2.5",
+  "baselineTag": "ga-v0.2.4",
+  "qaRecordedBeforePublication": true,
+  "deployed": false,
+  "runtimeSnapshot": "6d4cf0dae70ae96f83298769637ca8f31e9516b4e3885fc0566ec15d2a741e6f",
+  "runtimeFiles": 584,
+  "unitTests": 172,
+  "unitPass": 172,
+  "gameplayCoreAndOriginalDataUnchanged": true,
+  "startup": {
+    "pass": true,
+    "passwordFormAbsent": true,
+    "desktop1P2PAndEmulatedMobile2P": true,
+    "browserClosed": true
+  },
+  "runtimeSmoke": {
+    "pass": true,
+    "oplWorklet": true,
+    "levelCheatAndHDSwitch": true,
+    "errors": [],
+    "unexpectedHTTP": [],
+    "browserClosed": true
+  },
+  "stage4": {
+    "pass": true,
+    "actualBrowserCases": 8,
+    "allThreeHeroesAndP2": true,
+    "actualMultiTouchPortraitLandscape": true,
+    "physicsChanged": false,
+    "normalJumpNegativeControlUnchanged": true,
+    "keys": {
+      "P1": "R + horizontal direction + K",
+      "P2": "F + A/D + Tab"
+    },
+    "touch": "Hold B\u011aH + horizontal direction + SKOK",
+    "browserClosed": true
+  },
+  "typography": {
+    "pass": true,
+    "sourceASCIIMasks": 64,
+    "nativePresentationsByteIdentical": 6,
+    "sourceDerivedChamferedVectors": true,
+    "OSFontDependency": false
+  },
+  "performance": {
+    "authoritativeBaselineRuntimeHashesVerified": 584,
+    "delayMsPerImage": 80,
+    "stage1Ms": [
+      2711,
+      2285
+    ],
+    "stage4Ms": [
+      1392,
+      1156
+    ],
+    "warmMs": [
+      5,
+      5
+    ],
+    "outputByteIdentical": true,
+    "continuousDesktopAndEmulatedMobile2P": true,
+    "gameplayLoadingWaitSamples": 0,
+    "forcedWebPFallbacks": 18
+  },
+  "limits": [
+    "Targeted regressions; no new fullgame/nativeDOS replay.",
+    "Physical iOS/Safari not verified.",
+    "Native IRQ-phase/throw-order and late Duel palette uncertainties unchanged.",
+    "Decode concurrency6 may increase transient memory; cache limits are not total browser RSS limits."
+  ]
+}

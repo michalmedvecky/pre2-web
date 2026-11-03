@@ -4,6 +4,15 @@ Tato složka obsahuje Golden Axe, nikoli Prehistorik2. Je umístěná v repozit�
 
 **Pro deployera: [DEPLOYER.md](DEPLOYER.md).** Připravené jsou Dockerfile, samostatné CI a parametrické k3s manifesty. Při původní přípravě nic nebylo commitnuto, pushnuto ani publikováno; skutečný release commit/CI/image digest je uvedený v samostatném GitHub vydání `ga-v*`. Lokální Docker není dostupný, image build/smoke provádí CI nebo deployer. Žádný cluster deployment není součástí vydání.
 
+## Ovládání v ga-v0.2.5
+
+Po úvodu se přejde rovnou do menu bez hesla. P1: šipky, J útok, K skok,
+L magie, **R + vlevo/vpravo běh**. P2: QWE/A·D/ZXC, S útok, Tab skok,
+levý Shift magie, **F + A/D běh**. Původní dvojklep směru pro běh zůstává.
+Na telefonu držte tlačítko **BĚH** současně se směrem a SKOKem.
+První vysoký schod ve stage 4 vyžaduje běhový skok: R + doprava + K.
+Zkratka bezpečně zahájí rozběh před skokem i při současném stisku.
+
 ## Lokální spuštění a kontroly
 
 Node24+, žádné npm závislosti ani instalace:

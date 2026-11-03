@@ -95,17 +95,44 @@ export function compilePaletteLUT(plan, {size=33} = {}) {
   return {status:'ready',supported:true,size,values,signature:plan.signature,approximate:true};
 }
 
-// Same r/g/b summation order as the reference trilinear interpolation, without
-// allocating several temporary arrays for every painted pixel.
-function writeLUTRGB(lut,r,g,b,pixels,offset){
-  const n=lut.size,scale=(n-1)/255,rv=r*scale,gv=g*scale,bv=b*scale;
-  const r0=Math.floor(rv),g0=Math.floor(gv),b0=Math.floor(bv),r1=Math.min(n-1,r0+1),g1=Math.min(n-1,g0+1),b1=Math.min(n-1,b0+1),fr=rv-r0,fg=gv-g0,fb=bv-b0,values=lut.values;
-  let red=0,green=0,blue=0;
-  for(let ri=0;ri<2;ri++)for(let gi=0;gi<2;gi++)for(let bi=0;bi<2;bi++){
-    const weight=(ri?fr:1-fr)*(gi?fg:1-fg)*(bi?fb:1-fb),index=(((ri?r1:r0)*n+(gi?g1:g0))*n+(bi?b1:b0))*3;
-    red+=weight*values[index];green+=weight*values[index+1];blue+=weight*values[index+2];
-  }
+// For byte RGB inputs, reuse the exact same scaled coordinate/fraction values.
+// The 8 contributions retain the released r/g/b order and multiplication order.
+const lutAxes=new WeakMap();
+function interpolationAxes(lut){
+  let axes=lutAxes.get(lut.values);if(axes&&axes.size===lut.size)return axes;
+  const size=lut.size,scale=(size-1)/255,lo=new Uint16Array(256),hi=new Uint16Array(256),f=new Float64Array(256),inv=new Float64Array(256);
+  for(let v=0;v<256;v++){const p=v*scale,l=Math.floor(p);lo[v]=l;hi[v]=Math.min(size-1,l+1);f[v]=p-l;inv[v]=1-f[v];}
+  axes={size,lo,hi,f,inv};lutAxes.set(lut.values,axes);return axes;
+}
+function writeLUTRGB(lut,r,g,b,pixels,offset,axes){
+  const n=lut.size,{lo,hi,f,inv}=axes,values=lut.values;
+  const r0=lo[r]*n*n,r1=hi[r]*n*n,g0=lo[g]*n,g1=hi[g]*n,b0=lo[b],b1=hi[b];
+  const rg00=inv[r]*inv[g],rg01=inv[r]*f[g],rg10=f[r]*inv[g],rg11=f[r]*f[g],bLow=inv[b],bHigh=f[b];
+  let red=0,green=0,blue=0,index=(r0+g0+b0)*3,weight=rg00*bLow;
+  red+=weight*values[index];green+=weight*values[index+1];blue+=weight*values[index+2];
+  index=(r0+g0+b1)*3;weight=rg00*bHigh;
+  red+=weight*values[index];green+=weight*values[index+1];blue+=weight*values[index+2];
+  index=(r0+g1+b0)*3;weight=rg01*bLow;
+  red+=weight*values[index];green+=weight*values[index+1];blue+=weight*values[index+2];
+  index=(r0+g1+b1)*3;weight=rg01*bHigh;
+  red+=weight*values[index];green+=weight*values[index+1];blue+=weight*values[index+2];
+  index=(r1+g0+b0)*3;weight=rg10*bLow;
+  red+=weight*values[index];green+=weight*values[index+1];blue+=weight*values[index+2];
+  index=(r1+g0+b1)*3;weight=rg10*bHigh;
+  red+=weight*values[index];green+=weight*values[index+1];blue+=weight*values[index+2];
+  index=(r1+g1+b0)*3;weight=rg11*bLow;
+  red+=weight*values[index];green+=weight*values[index+1];blue+=weight*values[index+2];
+  index=(r1+g1+b1)*3;weight=rg11*bHigh;
+  red+=weight*values[index];green+=weight*values[index+1];blue+=weight*values[index+2];
   pixels[offset]=clamp(red);pixels[offset+1]=clamp(green);pixels[offset+2]=clamp(blue);
+}
+function transformPaletteRange(pixels,plan,lut,start,end,axes){
+  for(let offset=start;offset<end;offset+=4){
+    if(pixels[offset+3]===0)continue;
+    const r=pixels[offset],g=pixels[offset+1],b=pixels[offset+2],exact=plan.anchorMap.get((r<<16)|(g<<8)|b);
+    if(lut&&!exact){writeLUTRGB(lut,r,g,b,pixels,offset,axes);continue;}
+    const next=exact||samplePaletteRGB(plan,[r,g,b]);pixels[offset]=next[0];pixels[offset+1]=next[1];pixels[offset+2]=next[2];
+  }
 }
 
 /** Pure RGBA buffer transform. Unsupported plans return no drawable result. */
@@ -114,14 +141,8 @@ export function applyPaletteRGBA(source,plan,{lut=null}={}) {
   if (!plan?.supported) return {status:'unsupported',pixels:null,reason:plan?.status || 'missing-plan',colorCoverageApproved:false};
   if(plan.status==='identity')return {status:'identity',pixels:source,alphaPreserved:true,inputPreserved:true,approximate:false,colorCoverageApproved:false};
   if(lut && (lut.signature!==plan.signature || !lut.supported))return {status:'unsupported',pixels:null,reason:'lut-plan-mismatch',colorCoverageApproved:false};
-  const pixels=new Uint8ClampedArray(source);
-  for(let offset=0;offset<pixels.length;offset+=4){
-    if(pixels[offset+3]===0)continue;
-    const r=pixels[offset],g=pixels[offset+1],b=pixels[offset+2],exact=plan.anchorMap.get((r<<16)|(g<<8)|b);
-    if(lut&&!exact){writeLUTRGB(lut,r,g,b,pixels,offset);continue;}
-    const next=exact||samplePaletteRGB(plan,[r,g,b]);
-    pixels[offset]=next[0];pixels[offset+1]=next[1];pixels[offset+2]=next[2];
-  }
+  const pixels=new Uint8ClampedArray(source),axes=lut?interpolationAxes(lut):null;
+  transformPaletteRange(pixels,plan,lut,0,pixels.length,axes);
   return {status:'transformed',pixels,alphaPreserved:true,inputPreserved:true,approximate:true,colorCoverageApproved:false};
 }
 
@@ -144,9 +165,9 @@ export async function applyPaletteRGBAAsync(source,plan,{lut=null,chunkPixels=20
   if(!plan?.supported || plan.status==='identity')return applyPaletteRGBA(source,plan,{lut});
   if(lut && (lut.signature!==plan.signature||!lut.supported))return applyPaletteRGBA(source,plan,{lut});
   if(!source||source.length%4!==0)throw new TypeError('Expected a complete RGBA buffer.');
-  const pixels=new Uint8ClampedArray(source.length);
-  for(let offset=0;offset<source.length;offset+=chunkPixels*4){
-    pixels.set(applyPaletteRGBA(source.subarray(offset,Math.min(source.length,offset+chunkPixels*4)),plan,{lut}).pixels,offset);
+  const pixels=new Uint8ClampedArray(source),axes=lut?interpolationAxes(lut):null;
+  for(let offset=0;offset<pixels.length;offset+=chunkPixels*4){
+    transformPaletteRange(pixels,plan,lut,offset,Math.min(pixels.length,offset+chunkPixels*4),axes);
     await yieldControl();
   }
   return {status:'transformed',pixels,alphaPreserved:true,inputPreserved:true,approximate:true,colorCoverageApproved:false};

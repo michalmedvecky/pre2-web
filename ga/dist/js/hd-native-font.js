@@ -1,4 +1,4 @@
-import {fittedInterfaceText} from './hd-interface.js';
+import {compileArcadeGlyph,drawArcadeGlyph} from './hd-interface.js';
 // Source cell inventory plus an opt-in, SHA-qualified smooth typography remaster.
 // Both paths are vector typography, never generated painted artwork.
 export class NativeVectorFont {
@@ -10,6 +10,7 @@ export class NativeVectorFont {
     this.foregroundIndex = foregroundIndex;
     this.backgroundIndex = backgroundIndex;
     this.smooth=smooth;this.classification=smooth?'remastered-vector-typography':'preserved-vector-typography';
+    this.arcadeGlyphs = smooth ? Array.from({length:glyphCount},(_,glyph)=>compileArcadeGlyph(Array.from({length:height},(_,y)=>Array.from({length:width},(_,x)=>pixels[glyph*width*height+y*width+x]===foregroundIndex?1<<(7-x):0).reduce((a,b)=>a|b,0)))) : null;
     this.glyphs = Array.from({length: glyphCount}, (_, glyph) => {
       const rectangles = [], active = new Map();
       for (let y = 0; y < height; y++) {
@@ -33,9 +34,7 @@ export class NativeVectorFont {
     if(this.smooth){
       const code=glyph+32;
       if(code>=96){this.drawBorder(ctx,code,x,y,foreground,background);return true;}
-      const rects=this.glyphs[glyph];if(!rects.length)return true;
-      const left=Math.min(...rects.map(r=>r[0])),top=Math.min(...rects.map(r=>r[1])),right=Math.max(...rects.map(r=>r[0]+r[2])),bottom=Math.max(...rects.map(r=>r[1]+r[3]));
-      fittedInterfaceText(ctx,String.fromCharCode(code),[x+left,y+top,right-left,bottom-top],{fill:foreground});return true;
+      drawArcadeGlyph(ctx,this.arcadeGlyphs[glyph],x,y,{fill:foreground});return true;
     }
     ctx.fillStyle = foreground;
     ctx.beginPath();

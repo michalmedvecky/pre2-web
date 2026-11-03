@@ -20,7 +20,6 @@ footer{display:flex;gap:20px;align-items:center;color:var(--muted);font-size:10p
 
 .device-calibration{display:grid;grid-template-columns:1fr 1fr;gap:8px}.device-calibration button{font-size:11px;padding:9px 5px}#calibration-panel{border:1px solid var(--gold);padding:12px;margin-top:12px}#calibration-panel p{margin:0}.device-options select:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 
-.password-entry{position:absolute;left:6%;right:6%;bottom:8px;z-index:8;display:flex;gap:8px;align-items:end;padding:8px;background:#15150fea;border:1px solid #565345;font-size:10px}.password-entry label{display:grid;gap:4px;flex:1;min-width:0;text-align:left}.password-entry input{width:100%;min-width:0;background:#050504;border:1px solid var(--gold);color:var(--text);padding:6px;font:16px monospace}.password-entry button{padding:8px;background:var(--gold);color:#17150d;border:0;border-radius:2px}
 .sound-test-tracks{display:grid;grid-template-columns:1fr 1fr;gap:5px}.sound-test-tracks button{padding:7px 5px;font-size:11px;background:#202019;border:1px solid #454337;border-radius:2px;text-align:left}.sound-test-tracks button.selected{border-color:var(--gold);color:var(--gold)}.sound-effect-row{display:flex;align-items:center;justify-content:space-between;gap:9px;margin-top:16px;font-size:12px}.sound-effect-row button{border:1px solid var(--gold);background:none;padding:5px 12px}
 .control-help{margin:12px 0;font-size:12px;color:var(--muted)}.control-help summary{cursor:pointer;color:var(--gold)}#options-menu>.scope{margin-top:10px}
 
@@ -35,3 +34,7 @@ footer{display:flex;gap:20px;align-items:center;color:var(--muted);font-size:10p
 #game.graphics-hd{image-rendering:auto}
 .loading.hd-loading{background:#111a;padding:24px;text-align:center;line-height:1.6}
 @media(max-width:600px){#graphics-edition{display:none}}
+
+/* Keep hold-run reachable together with movement and jump on phones. */
+.action-run{border-color:#786b42}.action-small{min-height:44px}
+@media(pointer:coarse) and (orientation:landscape),(max-height:500px) and (orientation:landscape){.small-actions{display:grid;grid-template-columns:repeat(2,48px)}.action-run{grid-column:1/-1}.action-small{min-width:0;min-height:44px}}

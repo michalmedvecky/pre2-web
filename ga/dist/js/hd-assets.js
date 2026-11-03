@@ -104,7 +104,7 @@ export class HDAssetBank {
   constructor(manifest, {base, loadImage=defaultImageLoader,maxDecodedBytes=64*1024*1024,maxAtlases=16,recolorFrame=defaultRecolorFrame,maxPaletteBytes=12*1024*1024,maxPaletteFrames=56,maxPaletteLUTBytes=4*1024*1024,maxPaletteLUTs=8}={}) {
     const errors=validateHDManifest(manifest); if(errors.length) throw new Error(errors.join(' '));
     this.manifest=manifest; this.base=base || new URL('../assets/hd/',import.meta.url); this.loadImage=loadImage;
-    this.images=new Map(); this.pending=new Map(); this.failures=new Map();this.maxDecodedBytes=maxDecodedBytes;this.maxAtlases=maxAtlases;this.evictions=0;this.activeLoads=0;this.loadQueue=[];this.maxConcurrentLoads=4;this.deliveryLoads=0;this.deliveryFallbacks=0;
+    this.images=new Map(); this.pending=new Map(); this.failures=new Map();this.maxDecodedBytes=maxDecodedBytes;this.maxAtlases=maxAtlases;this.evictions=0;this.activeLoads=0;this.loadQueue=[];this.maxConcurrentLoads=6;this.deliveryLoads=0;this.deliveryFallbacks=0;
     this.entries={}; for(const k of ['frames','maps','mapStatePatches','tilePatches','fonts'])this.entries[k]=(manifest[k]||[]).filter(e=>e.status===APPROVED);
     this.paletteImages=new Map();this.paletteBytes=0;this.palettePending=new Map();this.paletteFailures=new Map();this.paletteQueue=[];this.paletteActive=false;this.paletteEvictions=0;this.recolorFrame=recolorFrame;
     this.maxPaletteBytes=Math.min(64*1024*1024,Math.max(0,maxPaletteBytes));this.maxPaletteFrames=Math.min(512,Math.max(1,maxPaletteFrames));

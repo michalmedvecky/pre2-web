@@ -7,7 +7,6 @@ import {OriginalSequence} from './ending.js';
 import {OriginalIntro,openingReady} from './intro.js';
 import {OriginalInterlude,interludeReady} from './interlude.js';
 import {OriginalCharacterSelect} from './character-select.js';
-import {OriginalPassword} from './password.js';
 import {SOUND_TEST_DATA} from './sound-test-data.js';
 import {LEGACY_DATA,averageJoystickSamples} from './legacy-controls.js';
 import {createMapOverlay} from './map-overlay.js';
@@ -30,7 +29,6 @@ const selection = {mode:'arcade',character:'hero',players:1,character2:'amazon',
 let sequence=null;
 let titlePending=true,openingShown=false,interludeShown=false;
 let calibration=null;
-let acceptedPasswordByte=0;
 let soundTestCursor=0,soundTestEffect=SOUND_TEST_DATA.effect.initial,soundTestMusicTicket=0,soundTestEffectTicket=0;
 function warmPresentation(kind) {
   if(!assets?.hd)return Promise.resolve(null);
@@ -49,7 +47,6 @@ function updateGraphicsUI() {
 }
 function setGraphicsMode(mode) {const result=renderer.setGraphicsMode(mode);try{localStorage.setItem('ga.graphics',mode);}catch{}updateGraphicsUI();return result;}
 function toggleHD() {return setGraphicsMode(renderer.graphicsMode==='hd'?'original':'hd');}
-function makePassword(){warmPresentation('password');const presenter=new OriginalPassword({acceptedByte:acceptedPasswordByte});presenter.kind='password';presenter.phase='password';presenter.advance=()=>presenter.key('Enter');return presenter;}
 let mapOverlay=null,levelOverlay=null,lastGodMode=false;
 const hdWarmups=new Map();
 let paletteWarmupRunning=false,lastPaletteWarmup=-Infinity;
@@ -180,7 +177,7 @@ function launch() {
   start();
 }
 function jumpToLevel(index) {
-  if(!started||['title','password'].includes(sequence?.kind))return {ok:false,reason:'inactive-game'};
+  if(!started||(sequence?.kind==='title'))return {ok:false,reason:'inactive-game'};
   const result=simulation.jumpToStage(index);
   if(!result.ok)return result;
   levelOverlay?.close({resume:false,focus:false});mapOverlay?.close();
@@ -223,13 +220,8 @@ async function measureCalibration(){const current=calibration;if(!current||curre
 }catch(error){current.error=error.message;current.step=0;current.points=[];}finally{if(calibration===current){current.busy=false;calibrationPrompt();}}}
 for(const button of document.querySelectorAll('[data-calibrate-port]'))button.addEventListener('click',()=>beginCalibration(Number(button.dataset.calibratePort)));
 $('#calibration-measure').addEventListener('click',measureCalibration);$('#calibration-cancel').addEventListener('click',closeCalibration);
-window.addEventListener('keydown',event=>{if(sequence?.kind==='password')return;if(calibration){event.stopImmediatePropagation();if(event.code==='Escape'){event.preventDefault();measureCalibration();}return;}if(event.ctrlKey||event.altKey||event.metaKey||event.repeat)return;if(['F2','F3','F4','F5'].includes(event.code)){event.preventDefault();event.stopImmediatePropagation();if(event.code==='F2')audio.toggleEffects();else if(event.code==='F3')audio.toggleMusic();else beginCalibration(event.code==='F4'?0:1);syncSoundGates();}},true);
+window.addEventListener('keydown',event=>{if(calibration){event.stopImmediatePropagation();if(event.code==='Escape'){event.preventDefault();measureCalibration();}return;}if(event.ctrlKey||event.altKey||event.metaKey||event.repeat)return;if(['F2','F3','F4','F5'].includes(event.code)){event.preventDefault();event.stopImmediatePropagation();if(event.code==='F2')audio.toggleEffects();else if(event.code==='F3')audio.toggleMusic();else beginCalibration(event.code==='F4'?0:1);syncSoundGates();}},true);
 window.addEventListener('pagehide',()=>{if(calibration){cancelAnimationFrame(calibration.raf);calibration=null;}});
-function syncPasswordField(){if(sequence?.kind==='password')$('#password-text').value=sequence.text;}
-window.addEventListener('keydown',event=>{if(sequence?.kind!=='password'||event.ctrlKey||event.metaKey||event.altKey||event.isComposing)return;event.stopImmediatePropagation();if(/^[a-z]$/i.test(event.key)||['Enter','Escape','Backspace'].includes(event.key)){event.preventDefault();sequence.key(event.key);syncPasswordField();finishSequence();}},true);
-$('#password-text').addEventListener('input',event=>{if(sequence?.kind!=='password')return;const text=event.target.value;sequence.text='';for(const letter of text)sequence.key(letter);syncPasswordField();});
-$('#password-entry').addEventListener('submit',event=>{event.preventDefault();if(sequence?.kind==='password'){sequence.key('Enter');syncPasswordField();finishSequence();}});
-
 $('#menu-back').addEventListener('click',()=>{characterSelect=null;menuStep='mode';input?.clear();menuSync();});
 $('#open-options').addEventListener('click',()=>{menuCursor=3;menuStep='options';menuSync();});
 $('#options-back').addEventListener('click',()=>{menuStep='mode';menuSync();});
@@ -272,7 +264,6 @@ function sync() {
   document.querySelector('.stage').classList.toggle('selecting',!started&&menuStep==='character');
   document.querySelector('.stage').classList.toggle('two-selectors',!started&&menuStep==='character'&&selection.players===2);
   $('#start-screen').hidden = started||menuStep==='character';
-  $('#password-entry').hidden=sequence?.kind!=='password';
   input?.setActive(started||menuStep==='character');
   $('#pause-screen').hidden = !started || !paused;
   $('#pause').textContent = paused ? '▶' : 'Ⅱ';
@@ -370,11 +361,6 @@ function continueStage(skipTravel=false){
 function finishSequence(){
   if(!sequence?.done)return;
   const finished=sequence,next=finished.next;sequence=null;
-  if(finished.kind==='title'&&next==='menu'&&!acceptedPasswordByte){resetAudio();sequence=makePassword();input?.clear();sync();$('#password-text').value='';$('#password-text').focus();return;}
-  if(finished.kind==='password'){
-    if(finished.accepted)acceptedPasswordByte=finished.acceptedByte;
-    if(next==='title'){sequence=new OriginalIntro(simulation,'title');warmPresentation('title');resetAudio();const generation=audioGeneration;audio.unlock().then(ok=>{if(ok&&generation===audioGeneration&&sequence?.kind==='title')audio.playTrack('opening');});input?.clear();sync();canvas.focus();return;}
-  }
   if(next==='resume-game'){input?.clear();return;}
   if(finished.kind==='rescue'){
     const plan=simulation.transitionPlan?.();if(plan){beginSequence('travel',plan);return;}
@@ -430,7 +416,7 @@ try {
     const frameStart=performance.now(),rawElapsed=now-prior;let maxStepMs=0,steps=0;
     const elapsed = Math.min(100, Math.max(0, now - prior)); prior = now;
     hdStageLoader??=new HDStageLoader(assets,renderer);
-    const stageLoad=started&&renderer.graphicsMode==='hd'&&!['title','password'].includes(sequence?.kind)?hdStageLoader.prepare(simulation):{waiting:false,failed:false};
+    const stageLoad=started&&renderer.graphicsMode==='hd'&&!(sequence?.kind==='title')?hdStageLoader.prepare(simulation):{waiting:false,failed:false};
     if (!stageLoad.waiting&&!hdLoading.waiting&&(started && !paused || calibration || menuStep==='soundtest'||!started&&menuStep==='character')) {
       accumulated += elapsed;
       while (accumulated >= tickMs) {

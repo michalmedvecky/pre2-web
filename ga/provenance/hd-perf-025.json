@@ -1,0 +1,205 @@
+{
+  "baselineIdentity": {
+    "baselineTag": "ga-v0.2.4",
+    "baselineCommit": "f1b97dfc134c660bbf863cd51bcf360ca310861d",
+    "baselineRuntimeSnapshot": "05612ae5c83ec7ce93f37935d70d94d5f2fda407326e8143012d84dd0af212c9",
+    "baselineFileCount": 584,
+    "allBaselineRuntimeHashesVerified": true,
+    "authoritativeMeasurements": [
+      "baseline-release-80ms.json",
+      "candidate-release-80ms.json"
+    ],
+    "exploratoryMeasurements": "Earlier80ms files captured3concurrent app/index/style edits, so only the release-named repetitions are authoritative. Both exploratory runs used the same capture, but it was not exact0.2.4.",
+    "overriddenCandidateFiles": [
+      "hd-assets.js",
+      "hd-palette.js",
+      "hd-materials.js",
+      "hd-image.js",
+      "hd-task.js"
+    ],
+    "scope": "Only hd-assets/hd-palette changed; other3 overridden files baseline-identical. All non-performance app/font/art files remain immutable baseline for CPU/network comparison.",
+    "candidateFilesSHA256": {
+      "hd-assets.js": "42d98653defa0082cf3c74375386825e3de0fdef8ba33905cb86364e79a78376",
+      "hd-palette.js": "44041adbc5d367633ffa0e4c07ac4baed3a92dacf0ac65beb7e059be4cf1a5bf",
+      "hd-materials.js": "f327358b949a59c25d135f6d0431964679d86020289e65b3df207d425f0a32ca",
+      "hd-image.js": "a95fdc13609ce2aa629d66d77bb65bb7b74735ace193ddd531d59ebceb08d178",
+      "hd-task.js": "0c2c3e591c55b51b787991297edf0656aecec49923005a4b9ab8a2a1659b4769"
+    }
+  },
+  "controlledComparison": {
+    "scope": "Exact ga-v0.2.4 assets/app/font plus only2candidate performance modules;80ms artificial delay perPNG/WebP. One measured pair, not universal performance guarantee. Earlier non-release names are exploratory.",
+    "baselineAll584HashesVerified": true,
+    "rows": [
+      {
+        "stageIndex": 0,
+        "baselineMs": 2711,
+        "candidateMs": 2285,
+        "improvementPercent": 15.713758760604943,
+        "sameRequestedHDResources": true,
+        "resourceCount": 52,
+        "baselineTransferBytes": 46280439,
+        "candidateTransferBytes": 46280439
+      },
+      {
+        "stageIndex": 3,
+        "baselineMs": 1392,
+        "candidateMs": 1156,
+        "improvementPercent": 16.95402298850575,
+        "sameRequestedHDResources": true,
+        "resourceCount": 74,
+        "baselineTransferBytes": 75945207,
+        "candidateTransferBytes": 75945207
+      },
+      {
+        "stageIndex": 0,
+        "baselineMs": 5,
+        "candidateMs": 5,
+        "improvementPercent": 0.0,
+        "sameRequestedHDResources": true,
+        "resourceCount": 74,
+        "baselineTransferBytes": 75945207,
+        "candidateTransferBytes": 75945207
+      }
+    ],
+    "baselineBrowserClosed": true,
+    "candidateBrowserClosed": true,
+    "pageErrors": [],
+    "pass": true
+  },
+  "integration": {
+    "scope": "Current checkout integration after performance edits, not a final release freeze.450ms added perPNG/WebP, real keyboard continuous input Stage1/4 and forcedWebPabort Stage3; mobile is emulated Chromium, not physicaliOS.",
+    "rows": [
+      {
+        "name": "integrated-desktop",
+        "pass": true,
+        "browserClosed": true,
+        "errors": [],
+        "runs": [
+          {
+            "stageIndex": 0,
+            "prepareMs": 5420.5,
+            "tickRatio": 0.9983443299478587,
+            "waitingSamples": 0,
+            "sourceEvictions": 0,
+            "paletteEvictions": 0
+          },
+          {
+            "stageIndex": 3,
+            "prepareMs": 2800.300000190735,
+            "tickRatio": 1.0005134648530158,
+            "waitingSamples": 0,
+            "sourceEvictions": 0,
+            "paletteEvictions": 0
+          }
+        ],
+        "deliveryFallbacksNormal": 0,
+        "forcedPNGDeliveryFallbacks": 18,
+        "failedAtlases": 0
+      },
+      {
+        "name": "integrated-mobile-2p",
+        "pass": true,
+        "browserClosed": true,
+        "errors": [],
+        "runs": [
+          {
+            "stageIndex": 0,
+            "prepareMs": 5969.299999952316,
+            "tickRatio": 1.001962726321883,
+            "waitingSamples": 0,
+            "sourceEvictions": 0,
+            "paletteEvictions": 0
+          },
+          {
+            "stageIndex": 3,
+            "prepareMs": 2744.399999856949,
+            "tickRatio": 1.0008720469154273,
+            "waitingSamples": 0,
+            "sourceEvictions": 0,
+            "paletteEvictions": 0
+          }
+        ],
+        "deliveryFallbacksNormal": 0,
+        "forcedPNGDeliveryFallbacks": 18,
+        "failedAtlases": 0
+      }
+    ],
+    "pass": true
+  },
+  "numericalTests": {
+    "targetedUnitPass": 25,
+    "independentReleasedInterpolationOraclePixels": 65536,
+    "lutSizes": [
+      9,
+      33
+    ],
+    "asyncChunkSizes": [
+      1,
+      31,
+      2048,
+      32768
+    ],
+    "alphaAndHiddenRGBPreserved": true,
+    "inputImmutable": true
+  },
+  "microbenchmark": {
+    "rows": [
+      {
+        "name": "baseline",
+        "repeat": 0,
+        "ms": 55.16874999999999
+      },
+      {
+        "name": "candidate",
+        "repeat": 0,
+        "ms": 41.441874999999996
+      },
+      {
+        "name": "baseline",
+        "repeat": 1,
+        "ms": 49.577875000000006
+      },
+      {
+        "name": "candidate",
+        "repeat": 1,
+        "ms": 39.31095800000003
+      },
+      {
+        "name": "baseline",
+        "repeat": 2,
+        "ms": 49.93083300000001
+      },
+      {
+        "name": "candidate",
+        "repeat": 2,
+        "ms": 39.31983299999996
+      },
+      {
+        "name": "baseline",
+        "repeat": 3,
+        "ms": 50.18345800000003
+      },
+      {
+        "name": "candidate",
+        "repeat": 3,
+        "ms": 39.247457999999995
+      }
+    ],
+    "byteEqual": true,
+    "pixels": 1048576
+  },
+  "runtimeChanges": [
+    "HDAssetBank maximumconcurrentloads4\u21926",
+    "Precomputedbyte-axis trilinearLUT interpolation, same8contribution/arithmeticorder",
+    "AsyncRGBA usesoneoutputbuffer preservingboundedchunkyields"
+  ],
+  "limits": [
+    "One measuredcontrolled Chrome pair withartificial80ms latency; notuniversalnetworkpromise",
+    "Currentintegrationprecedesfinalapp/font/inputfreeze",
+    "MobileisemulatedChromium, notphysicaliOS/Safari",
+    "Sixconcurrentdecodes canraisesmalltransientpeak; source/derived/LUTcachelimitsunchanged;RSSnotboundedbythosecounts"
+  ],
+  "published": false,
+  "deployed": false,
+  "ownBenchmarkServerStopped": true
+}

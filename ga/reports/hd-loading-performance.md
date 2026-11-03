@@ -54,3 +54,49 @@ from this checkout in the browser; use an immutable baseline URL for a controlle
 comparison. The test disposes audio and closes its isolated browser. Authoritative
 research evidence is under `golden-axe-research/evidence/hd-perf-20261103/`, with
 baseline-isolated.json, candidate-isolated.json and source-identities.json.
+
+
+## Incremental optimization prepared for ga-v0.2.5
+
+RGB LUT application now precomputes each byte-channel interpolation coordinate
+and unrolls the eight contributions in the released arithmetic order. Async
+application uses one owned output buffer instead of allocating/copying an extra
+buffer for each chunk. Transparent pixels, hidden RGB, exact anchors and rounding
+are unchanged. Small coordinate tables are weakly associated with LUT storage;
+eviction does not retain LUT arrays (5,120 extra bytes per retained LUT table).
+Image delivery/decode concurrency is bounded at six instead of four. This does
+not alter stage completeness, pinning, required palette work or cache limits;
+transient decode memory can be somewhat higher and is not a browser RSS bound.
+
+A Node numerical oracle test independently compares the released trilinear math;
+65,536 varied RGBA pixels at LUT sizes9 and33 remain byte-identical. Async chunk
+sizes1,31,2048,32768 also match that independent oracle, preserve the input and
+retain exactly the expected yields. One1,048,576-pixel microbenchmark after warmup
+improved about50ms→39ms (~21%); this is transform CPU only, not game load time.
+
+An immutable baseline was verified against all584 runtime hashes of ga-v0.2.4.
+The actual Chrome comparison uses that same app, font and asset data for both
+runs; only the performance modules are overridden. With80ms artificial delay on
+every PNG/WebP request, Stage1 preparation was2711→2285ms (15.7% faster), Stage4
+1392→1156ms (17.0% faster), retained-cache Stage1 remained5ms. Requested resources
+and transfer bytes were identical:46,280,439B cumulative at Stage1 and75,945,207B
+at Stage4. These are one local measured pair, not a universal network guarantee.
+Both browsers closed/audio disposed; neither sample had settled fallback.
+
+Authoritative research receipts: `evidence/hd-perf-025/source-identities.json`,
+`comparison.json`, `baseline-release-80ms.json`, `candidate-release-80ms.json`.
+Earlier80ms files are explicitly exploratory: the first immutable copy contained
+three concurrently edited app/index/style files, corrected before the release-
+named authoritative repetitions. They are not used for the figures above.
+
+`tests/hd-profile-browser.mjs` now accepts GA_PERF_DELAY_MS and asserts gameplay
+readiness/no settled SD fallback. GA_PERF_CANDIDATE routes only performance files
+from the checkout; baseline artifacts must remain immutable for comparison.
+
+Current-checkout integration passed desktop and emulated-mobile2P Stage1/4
+continuous real keyboard movement/attack/jump with450ms added perPNG/WebP:
+zero loading-wait samples or cache evictions, tick ratios0.9983/1.0005 desktop
+and1.0020/1.0009 mobile2P. ForcedWebPfailure Stage3 used18PNG fallbacks with
+zero failed atlases in both. All test browsers closed/audio disposed. This is
+a pre-final-freeze integration check while other app/font/input work continues,
+not a physical mobile or fullgame/native proof. Research `hd-perf-025/integrated-summary.json`.

@@ -1,5 +1,5 @@
 import test from 'node:test';import assert from 'node:assert/strict';
-import {createPalettePlan,compilePaletteLUT,applyPaletteRGBA} from '../dist/js/hd-palette.js';
+import {createPalettePlan,compilePaletteLUT,applyPaletteRGBA,applyPaletteRGBAAsync} from '../dist/js/hd-palette.js';
 import {HDAssetBank} from '../dist/js/hd-assets.js';
 const source=[[1,12,24,40],[2,90,45,20],[3,150,110,80],[4,210,180,150]],target=[[1,40,20,30],[2,20,80,120],[3,110,150,180],[4,210,180,150]];
 const plan=()=>createPalettePlan(source,target,{knownVariant:true});
@@ -20,3 +20,5 @@ test('stage atlas selection skips exact qualified vector frames but keeps mixed-
   assert(after.atlases.includes(raster.atlas));assert(before.atlases.length>after.atlases.length);
   const vectorOnly=manifest.frames.filter(e=>e.sprite==='score'&&e.atlas!==raster.atlas).map(e=>e.atlas);assert(vectorOnly.some(id=>before.atlases.includes(id)&&!after.atlases.includes(id)));
 });
+
+test('async LUT chunks preserve the independent released oracle without changing source or alpha',async()=>{const p=plan(),lut=compilePaletteLUT(p,{size:33}),input=new Uint8ClampedArray(4099*4);let seed=0xcafe;for(let i=0;i<input.length;i++){seed=(Math.imul(seed,1664525)+1013904223)>>>0;input[i]=seed>>>24;}for(let i=17;i<23;i++)input[i*4+3]=0;const before=new Uint8ClampedArray(input),expected=reference(input,p,lut);for(const chunkPixels of[1,31,2048,32768]){let yielded=0;const actual=await applyPaletteRGBAAsync(input,p,{lut,chunkPixels,yieldControl:async()=>{yielded++;}});assert.deepEqual(actual.pixels,expected);assert.deepEqual(input,before);assert.equal(yielded,Math.ceil(input.length/4/chunkPixels));}});

@@ -1,4 +1,4 @@
-import {HD_INTERFACE_FONT_SHA,HD_INTERFACE_SPECS,HD_SELECTION_HEADING} from './hd-interface-spec.js';
+import {HD_INTERFACE_FONT_SHA,HD_INTERFACE_SPECS,HD_SELECTION_HEADING,HD_ARCADE_FONT_ROWS} from './hd-interface-spec.js';
 const color=(palette,index,fallback='#fff')=>palette?.[index]?`rgb(${palette[index].join(',')})`:fallback;
 const hash=async bytes=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),n=>n.toString(16).padStart(2,'0')).join('');
 export async function qualifyInterfaceAssets(assets){
@@ -18,18 +18,54 @@ export async function qualifyInterfaceAssets(assets){
  }
  }catch{result.font=false;result.selectionHeading=false;result.sprites.clear();result.rejected.push({reason:'source-validation-unavailable'});}return result;
 }
-// Draw measured smooth glyph outlines into the source's logical ink rectangle.
-// Fixed source positions/advance remain controlled by the original presenter.
-export function fittedInterfaceText(ctx,text,[x,y,width,height],{fill='#fff',stroke=null,style='roman',outline=.35}={}){
+// Source-era heavy arcade typography. Exact source ink becomes continuous
+// chamfered paths; no OS font substitution, platform font metrics or serif face.
+export function compileArcadeGlyph(rows,width=8){
+ const edges=[],at=(x,y)=>y>=0&&y<rows.length&&x>=0&&x<width&&!!(rows[y]&(1<<(width-1-x)));
+ let left=width,top=rows.length,right=0,bottom=0;
+ for(let y=0;y<rows.length;y++)for(let x=0;x<width;x++)if(at(x,y)){
+  left=Math.min(left,x);top=Math.min(top,y);right=Math.max(right,x+1);bottom=Math.max(bottom,y+1);
+  if(!at(x,y-1))edges.push({a:[x,y],b:[x+1,y],d:0});
+  if(!at(x+1,y))edges.push({a:[x+1,y],b:[x+1,y+1],d:1});
+  if(!at(x,y+1))edges.push({a:[x+1,y+1],b:[x,y+1],d:2});
+  if(!at(x-1,y))edges.push({a:[x,y+1],b:[x,y],d:3});
+ }
+ const starts=new Map();for(const e of edges){const key=e.a.join();if(!starts.has(key))starts.set(key,[]);starts.get(key).push(e);}
+ const paths=[];
+ for(const first of edges){if(first.used)continue;const points=[];let e=first;
+  for(let guard=0;guard<=edges.length;guard++){
+   e.used=true;points.push(e.a);if(e.b[0]===first.a[0]&&e.b[1]===first.a[1])break;
+   const choices=(starts.get(e.b.join())||[]).filter(n=>!n.used),rank=n=>[1,0,3,2].indexOf((n.d-e.d+4)%4);
+   choices.sort((a,b)=>rank(a)-rank(b));e=choices[0];if(!e)throw Error('Open arcade glyph contour');
+  }
+  const compact=points.filter((b,i)=>{const a=points[(i+points.length-1)%points.length],c=points[(i+1)%points.length];return(b[0]-a[0])*(c[1]-b[1])!==(b[1]-a[1])*(c[0]-b[0]);});
+  if(compact.length>=3)paths.push(compact);
+ }
+ return{paths,bounds:paths.length?[left,top,right,bottom]:null,width,height:rows.length};
+}
+export function appendArcadeGlyph(ctx,glyph,x=0,y=0){
+ for(const points of glyph.paths){for(let i=0;i<points.length;i++){
+  const a=points[(i+points.length-1)%points.length],b=points[i],c=points[(i+1)%points.length],ab=Math.hypot(b[0]-a[0],b[1]-a[1]),bc=Math.hypot(c[0]-b[0],c[1]-b[1]),cut=Math.min(.18,ab/3,bc/3);
+  const incoming=[x+b[0]+(a[0]-b[0])*cut/ab,y+b[1]+(a[1]-b[1])*cut/ab],outgoing=[x+b[0]+(c[0]-b[0])*cut/bc,y+b[1]+(c[1]-b[1])*cut/bc];
+  if(i===0)ctx.moveTo(...incoming);else ctx.lineTo(...incoming);ctx.lineTo(...outgoing);
+ }ctx.closePath();}
+}
+const arcadeGlyphs=new Map(HD_ARCADE_FONT_ROWS.map((rows,i)=>[String.fromCharCode(i+32),compileArcadeGlyph(rows)]));
+// Source FONT reserves96+ for frame borders, so these source UI symbols have
+// explicit small arcade outlines instead of a system-font fallback.
+for(const[c,rows]of Object.entries({'©':[60,66,157,161,161,157,66,60],'~':[0,0,0,50,76,0,0,0]}))arcadeGlyphs.set(c,compileArcadeGlyph(rows));
+arcadeGlyphs.set('™',compileArcadeGlyph(['111110100010','001000110110','001000101010','001000100010','001000100010'].map(r=>parseInt(r,2)),12));
+export function drawArcadeGlyph(ctx,glyph,x,y,{fill='#fff'}={}){if(!glyph?.bounds)return;ctx.beginPath();appendArcadeGlyph(ctx,glyph,x,y);ctx.fillStyle=fill;ctx.fill('evenodd');}
+// Fixed source positions and advance remain controlled by the original presenter.
+export function fittedInterfaceText(ctx,text,[x,y,width,height],{fill='#fff',stroke=null,style='arcade',outline=.35}={}){
  if(!text||width<=0||height<=0)return;
- ctx.save();ctx.font=`${style==='logo'?'900':'700'} 100px Georgia, "Times New Roman", serif`;ctx.textAlign='left';ctx.textBaseline='alphabetic';
- const m=ctx.measureText(text),left=m.actualBoundingBoxLeft||0,right=m.actualBoundingBoxRight||m.width,ascent=m.actualBoundingBoxAscent||75,descent=m.actualBoundingBoxDescent||0;
- const inset=stroke?Math.min(outline,width/8,height/8):0,sx=(width-2*inset)/Math.max(1,left+right),sy=(height-2*inset)/Math.max(1,ascent+descent);
- ctx.translate(x+inset,y+inset);ctx.scale(sx,sy);ctx.translate(left,ascent);ctx.lineJoin='round';ctx.lineCap='round';
- if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=inset*2/Math.max(sy,.001);ctx.strokeText(text,0,0);}
- if(style==='outline'){
-  ctx.strokeStyle=fill;ctx.lineWidth=Math.max(1,Math.min(6,.8/Math.max(sy,.001)));ctx.strokeText(text,0,0);
- }else{ctx.fillStyle=fill;ctx.fillText(text,0,0);}
+ const glyphs=Array.from(text,c=>arcadeGlyphs.get(c)||arcadeGlyphs.get(c.toUpperCase())||arcadeGlyphs.get('?'));
+ let left=Infinity,top=Infinity,right=-Infinity,bottom=-Infinity;
+ glyphs.forEach((g,i)=>{if(g.bounds){const[l,t,r,b]=g.bounds;left=Math.min(left,l+i*8);top=Math.min(top,t);right=Math.max(right,r+i*8);bottom=Math.max(bottom,b);}});if(!Number.isFinite(left))return;
+ const inset=stroke?Math.min(outline,width/8,height/8):0,sx=(width-2*inset)/(right-left),sy=(height-2*inset)/(bottom-top);
+ ctx.save();ctx.translate(x+inset,y+inset);ctx.scale(sx,sy);ctx.translate(-left,-top);ctx.beginPath();glyphs.forEach((g,i)=>appendArcadeGlyph(ctx,g,i*8,0));ctx.lineJoin='bevel';
+ if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=inset*2/Math.max(sx,sy,.001);ctx.stroke();}
+ if(style==='outline'){ctx.strokeStyle=fill;ctx.lineWidth=.45;ctx.stroke();}else{ctx.fillStyle=fill;ctx.fill('evenodd');}
  ctx.restore();
 }
 function rounded(ctx,x,y,w,h,r){r=Math.min(r,w/2,h/2);ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);ctx.closePath();}
