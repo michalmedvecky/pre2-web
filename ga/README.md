@@ -4,6 +4,12 @@ Tato složka obsahuje Golden Axe, nikoli Prehistorik2. Je umístěná v repozit�
 
 **Pro deployera: [DEPLOYER.md](DEPLOYER.md).** Připravené jsou Dockerfile, samostatné CI a parametrické k3s manifesty. Při původní přípravě nic nebylo commitnuto, pushnuto ani publikováno; skutečný release commit/CI/image digest je uvedený v samostatném GitHub vydání `ga-v*`. Lokální Docker není dostupný, image build/smoke provádí CI nebo deployer. Žádný cluster deployment není součástí vydání.
 
+## Auditní opravy ga-v0.2.6
+
+Restart meziscén, body jezdce, původní rozestup komba, Duel HUD, ukončování audia
+a zadní jezdecká póza byly opraveny a cíleně ověřeny.
+Souhrn: [provenance/ga-v0.2.6-qa.json](provenance/ga-v0.2.6-qa.json).
+
 ## Ovládání v ga-v0.2.5
 
 Po úvodu se přejde rovnou do menu bez hesla. P1: šipky, J útok, K skok,

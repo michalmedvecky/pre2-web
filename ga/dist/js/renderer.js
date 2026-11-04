@@ -254,7 +254,8 @@ export class Renderer {
       if(players.length===1){
         draw(25,16,33);
         const health=(state.entities||[]).filter(e=>!e.isPlayer&&!e.isEffect&&!e.removed&&![10,11,16,17].includes(e.typeId)).reduce((sum,e)=>sum+Math.max(0,e.health||0),0);
-        for(let i=0;i<Math.ceil(health/4);i++)draw(9,64+i*24,33);
+        // AXE5bab–5bb0 caps only the single-player enemy meter at nine cells.
+        for(let i=0;i<Math.min(9,Math.ceil(health/4));i++)draw(9,64+i*24,33);
       }
       return;
     }

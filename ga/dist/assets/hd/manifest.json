@@ -3043,6 +3043,19 @@
         "sourceSHA256": "7b0da2cb913682e7be56745e943b0940f08fc37a83800db192eb6ee787eed554",
         "rgbaSHA256": "794bf57603d7424845c4023c5bbcac435e2e8831c6a8c3bba70ef7da2a581e92"
       }
+    },
+    "evillady-mounted-rear-v2": {
+      "src": "sprites/evillady-mounted-rear-v2.png",
+      "width": 965,
+      "height": 1630,
+      "sha256": "ca51c3febd03eff897dab64e1118df1d44c5bfcbff47a3d326a29c0664780614",
+      "delivery": {
+        "src": "delivery/evillady-mounted-rear-v2-614c35a6b49a0b62.webp",
+        "sha256": "614c35a6b49a0b62529ed054e96a3c02575a08b3b0dfeba9bb23b70728ddceeb",
+        "size": 641250,
+        "sourceSHA256": "ca51c3febd03eff897dab64e1118df1d44c5bfcbff47a3d326a29c0664780614",
+        "rgbaSHA256": "3637be5e6d5591521f6a12fda2b9ae7de4139bba1aa9a235802a974ebaab0ffd"
+      }
     }
   },
   "paletteVariants": {
@@ -42894,17 +42907,17 @@
       "slot": 20,
       "frame": 1,
       "paletteVariant": "palette-evillady-02-9",
-      "atlas": "sprite-evillady-02",
+      "atlas": "evillady-mounted-rear-v2",
       "rectPixels": [
-        382,
-        674,
-        412,
-        342
+        0,
+        0,
+        965,
+        1630
       ],
-      "scaleNativePerPixel": 0.180602,
+      "scaleNativePerPixel": 0.034112444725205304,
       "translationNative": [
-        -23.76214743,
-        -2.48201765
+        -0.5615919140871739,
+        -0.5799115603284832
       ],
       "nativePivot": [
         15,
@@ -42915,7 +42928,7 @@
       "sourceIndexedSHA": "38f87bab5263bbbfab59360b53c0f2201cecc91f563ac45c37924fd47254dbe1",
       "durationTicks35Hz": 50,
       "status": "approved",
-      "approval": "Root/executables viewed actual generated page and accepted painted identity/source pose ordering; this metadata applies only rigid uniform placement. Actual pose/temporal QA is separate, original physics and source RGBA unchanged."
+      "approval": "Targeted source-pose correction: true back view, compact seated hip/near leg, far leg occluded. Original identity/pivot/duration preserved; uniform registration only, generated alpha retained. Material variants qualified separately."
     },
     {
       "sprite": "evillady",

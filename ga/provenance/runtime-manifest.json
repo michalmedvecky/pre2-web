@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "snapshotSHA256": "6d4cf0dae70ae96f83298769637ca8f31e9516b4e3885fc0566ec15d2a741e6f",
+  "snapshotSHA256": "6f5dd207fe67a5b96580bbf0b6e11f56c6fa63a49d72a9e27490b704192c3e2d",
   "excluded": [
     "build.json (injected per build)"
   ],
@@ -324,6 +324,10 @@
     "assets/hd/delivery/dwarf-mounted-seated-v2-2f9f0a51c93ee4b2.webp": {
       "sha256": "2f9f0a51c93ee4b22e3054020660792c0943301bfc5122c8f695016c3e2a50b2",
       "size": 847216
+    },
+    "assets/hd/delivery/evillady-mounted-rear-v2-614c35a6b49a0b62.webp": {
+      "sha256": "614c35a6b49a0b62529ed054e96a3c02575a08b3b0dfeba9bb23b70728ddceeb",
+      "size": 641250
     },
     "assets/hd/delivery/map-1-owned-0-0-89f38d8bf396a729.webp": {
       "sha256": "89f38d8bf396a7292934dc1a852c70f01df325183f9bf03eebc5a93c2e5ccb66",
@@ -1122,8 +1126,8 @@
       "size": 776700
     },
     "assets/hd/manifest.json": {
-      "sha256": "67bd939c36c0a880673b57f3fdf0a981d99ea063923b5dd05a0cf3a20ee6b806",
-      "size": 1348945
+      "sha256": "a8a562324e52c74879601caef49d24da9f26926ee06c9f30d5bb12e616e2bb8a",
+      "size": 1349590
     },
     "assets/hd/maps/1/map-1-owned-0-0.png": {
       "sha256": "1e617784198ddfb3ae2ec4684683b39865606e5a1ac247be09e2bd9a4a2f7433",
@@ -1797,6 +1801,10 @@
       "sha256": "293d4ae7c032db2176cb117ee87f3bff6a1cca80115c03759b2c37f177eab63e",
       "size": 966162
     },
+    "assets/hd/sprites/evillady-mounted-rear-v2.png": {
+      "sha256": "ca51c3febd03eff897dab64e1118df1d44c5bfcbff47a3d326a29c0664780614",
+      "size": 931113
+    },
     "assets/hd/sprites/fire-effects-00.png": {
       "sha256": "cb0fc1e7a090cc59497c5bc61d80c14de18d378475e7dc0105d47a43443caa0f",
       "size": 633792
@@ -2118,12 +2126,12 @@
       "size": 12180
     },
     "js/app.js": {
-      "sha256": "f3d3779fbcd2e53f6edd3203c7f9be79d8b231fbeae77e980d5fdc04d6cc08e6",
-      "size": 38064
+      "sha256": "6847b8bd7453e8794f7105330b71591555b9542e94422855f5ea4cefaa5026a6",
+      "size": 38407
     },
     "js/audio.js": {
-      "sha256": "4ada6251296f9a08ca7ee5bf07800b6f1478cc6ce3fe69a3e2cbb53e5137e902",
-      "size": 11837
+      "sha256": "d12e2bb5f7219bbb990c945eb33582c75c0d1ab76ca67598f0d2a9fd403edb0f",
+      "size": 13511
     },
     "js/build-info.js": {
       "sha256": "92489d725bec0102c8133632cdd9a6cd52cab4381fc891ebcf05274ed4bf5cb3",
@@ -2170,8 +2178,8 @@
       "size": 1367
     },
     "js/hd-material-annotations.js": {
-      "sha256": "9939a598925395fc2ae3b17667f0940f6fb8dda8690a53a0279e7baceafa40ba",
-      "size": 37597
+      "sha256": "9ea561fabdc59fcb86ce787885ea54efad5769b76e221663be6e9571312c64d7",
+      "size": 37621
     },
     "js/hd-materials.js": {
       "sha256": "f327358b949a59c25d135f6d0431964679d86020289e65b3df207d425f0a32ca",
@@ -2270,8 +2278,8 @@
       "size": 582
     },
     "js/opl-audio.js": {
-      "sha256": "e926f1953d9bd45adb9688902b7cd056e8ae2cbf579f4449b5f57ae4f1d35f4f",
-      "size": 3830
+      "sha256": "9c33d923ed6860fcc8b69f32d62ea5c4267c4a528ab2c20620cc291fcfeea0d4",
+      "size": 4001
     },
     "js/opl-engine.js": {
       "sha256": "b384ed98676593ac5d9729b58e21a274bcacef9847e4b1393183832cbb9c05fa",
@@ -2294,8 +2302,8 @@
       "size": 2174
     },
     "js/opl-sequence-worklet.js": {
-      "sha256": "02a6b6529fd6b8f0af245262c4fc729391432a2b313ce7104a58bc5f8d207f32",
-      "size": 1921
+      "sha256": "b6559da065b61fefb7c02d4bd011a7bf12349c43e0c6e80e338ffb5809995d60",
+      "size": 1951
     },
     "js/opl-sequence.js": {
       "sha256": "5bd03e58291cd9757b31564016d6c3b30bb1b628021d0030a3124b370a47f4d4",
@@ -2318,12 +2326,12 @@
       "size": 2455
     },
     "js/renderer.js": {
-      "sha256": "d620c2ba3fcd7cfd2f1dd63587254a82780364da4e5f54d1834841dc7f8b335d",
-      "size": 22283
+      "sha256": "429c65c0a4e03e9c6a60c313a0cc50ca439f8e3a1aa074ead7f8c4dc2b8a9712",
+      "size": 22376
     },
     "js/simulation.js": {
-      "sha256": "5213829f351f710dddefc27a37edbd2f4a715a901e86da62bf81ab0bb073b1e0",
-      "size": 49274
+      "sha256": "6ca2e6f98c1e97ae148aca3f21f69b4b44fa0b3bdab13465b04e2cc0a05c589e",
+      "size": 49859
     },
     "js/sound-test-data.js": {
       "sha256": "26178d71d0733ce465eb6584b437ad8649099ba35f765fdf5037371f8c0be9bc",

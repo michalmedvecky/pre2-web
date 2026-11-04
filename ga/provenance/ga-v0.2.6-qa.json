@@ -1,0 +1,1325 @@
+{
+  "intendedRelease": "ga-v0.2.6",
+  "qaRecordedBeforePublication": true,
+  "baselineTag": "ga-v0.2.5",
+  "runtimeSnapshot": "6f5dd207fe67a5b96580bbf0b6e11f56c6fa63a49d72a9e27490b704192c3e2d",
+  "runtimeFiles": 586,
+  "unitTests": 192,
+  "unitPass": 192,
+  "nativeFragments": {
+    "scoreCases": 8,
+    "comboCases": 9,
+    "duelHUDCases": 12,
+    "fullNativeDOSRun": false
+  },
+  "browserPlaythrough": {
+    "scope": "Batched legal normal inputs in actual frozen browser app with real RAF presentation flow. Not continuous realtime keyboard/nativeDOS fullgame proof. Options LifeMeter5; P2 decline policy is explicit and P2 often eliminated before end.",
+    "runtimeSnapshot": "6f5dd207fe67a5b96580bbf0b6e11f56c6fa63a49d72a9e27490b704192c3e2d",
+    "runtimeFiles": 586,
+    "simulationSHA256": "6ca2e6f98c1e97ae148aca3f21f69b4b44fa0b3bdab13465b04e2cc0a05c589e",
+    "cases": [
+      {
+        "case": "candidate-browser-amazon/arcade-1p",
+        "mode": "arcade",
+        "character": "amazon",
+        "players": 1,
+        "characters": [
+          "amazon"
+        ],
+        "pass": true,
+        "returnedMenu": true,
+        "normalInputTicks": 24807,
+        "worldCheckpoints": 33,
+        "presentationPhases": 33,
+        "settledPresentationRenders": 33,
+        "pageErrors": [],
+        "settledFallbacks": [],
+        "runtimeStable": true,
+        "runtimeFileCount": 586,
+        "browserClosed": true,
+        "audioDisposed": true,
+        "playersAtEnd": [
+          {
+            "type": "amazon",
+            "health": 15,
+            "lives": 2,
+            "removed": false,
+            "eliminated": false
+          }
+        ]
+      },
+      {
+        "case": "candidate-browser-amazon/beginner-1p",
+        "mode": "beginner",
+        "character": "amazon",
+        "players": 1,
+        "characters": [
+          "amazon"
+        ],
+        "pass": true,
+        "returnedMenu": true,
+        "normalInputTicks": 8166,
+        "worldCheckpoints": 18,
+        "presentationPhases": 8,
+        "settledPresentationRenders": 9,
+        "pageErrors": [],
+        "settledFallbacks": [],
+        "runtimeStable": true,
+        "runtimeFileCount": 586,
+        "browserClosed": true,
+        "audioDisposed": true,
+        "playersAtEnd": [
+          {
+            "type": "amazon",
+            "health": 20,
+            "lives": 3,
+            "removed": false,
+            "eliminated": false
+          }
+        ]
+      },
+      {
+        "case": "candidate-browser-amazon/duel-1p",
+        "mode": "duel",
+        "character": "amazon",
+        "players": 1,
+        "characters": [
+          "amazon"
+        ],
+        "pass": true,
+        "returnedMenu": true,
+        "normalInputTicks": 12629,
+        "worldCheckpoints": 36,
+        "presentationPhases": 1,
+        "settledPresentationRenders": 1,
+        "pageErrors": [],
+        "settledFallbacks": [],
+        "runtimeStable": true,
+        "runtimeFileCount": 586,
+        "browserClosed": true,
+        "audioDisposed": true,
+        "playersAtEnd": [
+          {
+            "type": "amazon",
+            "health": 12,
+            "lives": 1,
+            "removed": false,
+            "eliminated": false
+          }
+        ]
+      },
+      {
+        "case": "candidate-browser-hero/arcade-1p",
+        "mode": "arcade",
+        "character": "hero",
+        "players": 1,
+        "characters": [
+          "hero"
+        ],
+        "pass": true,
+        "returnedMenu": true,
+        "normalInputTicks": 25838,
+        "worldCheckpoints": 34,
+        "presentationPhases": 33,
+        "settledPresentationRenders": 34,
+        "pageErrors": [],
+        "settledFallbacks": [],
+        "runtimeStable": true,
+        "runtimeFileCount": 586,
+        "browserClosed": true,
+        "audioDisposed": true,
+        "playersAtEnd": [
+          {
+            "type": "hero",
+            "health": 8,
+            "lives": 1,
+            "removed": false,
+            "eliminated": false
+          }
+        ]
+      },
+      {
+        "case": "candidate-browser-hero/beginner-1p",
+        "mode": "beginner",
+        "character": "hero",
+        "players": 1,
+        "characters": [
+          "hero"
+        ],
+        "pass": true,
+        "returnedMenu": true,
+        "normalInputTicks": 9485,
+        "worldCheckpoints": 17,
+        "presentationPhases": 8,
+        "settledPresentationRenders": 9,
+        "pageErrors": [],
+        "settledFallbacks": [],
+        "runtimeStable": true,
+        "runtimeFileCount": 586,
+        "browserClosed": true,
+        "audioDisposed": true,
+        "playersAtEnd": [
+          {
+            "type": "hero",
+            "health": 16,
+            "lives": 2,
+            "removed": false,
+            "eliminated": false
+          }
+        ]
+      },
+      {
+        "case": "candidate-browser-hero/duel-1p",
+        "mode": "duel",
+        "character": "hero",
+        "players": 1,
+        "characters": [
+          "hero"
+        ],
+        "pass": true,
+        "returnedMenu": true,
+        "normalInputTicks": 7886,
+        "worldCheckpoints": 37,
+        "presentationPhases": 1,
+        "settledPresentationRenders": 2,
+        "pageErrors": [],
+        "settledFallbacks": [],
+        "runtimeStable": true,
+        "runtimeFileCount": 586,
+        "browserClosed": true,
+        "audioDisposed": true,
+        "playersAtEnd": [
+          {
+            "type": "hero",
+            "health": 30,
+            "lives": 1,
+            "removed": false,
+            "eliminated": false
+          }
+        ]
+      },
+      {
+        "case": "candidate-browser-main/arcade-1p",
+        "mode": "arcade",
+        "character": "dwarf",
+        "players": 1,
+        "characters": [
+          "dwarf"
+        ],
+        "pass": true,
+        "returnedMenu": true,
+        "normalInputTicks": 22174,
+        "worldCheckpoints": 31,
+        "presentationPhases": 33,
+        "settledPresentationRenders": 34,
+        "pageErrors": [],
+        "settledFallbacks": [],
+        "runtimeStable": true,
+        "runtimeFileCount": 586,
+        "browserClosed": true,
+        "audioDisposed": true,
+        "playersAtEnd": [
+          {
+            "type": "dwarf",
+            "health": 18,
+            "lives": 3,
+            "removed": false,
+            "eliminated": false
+          }
+        ]
+      },
+      {
+        "case": "candidate-browser-main/arcade-2p",
+        "mode": "arcade",
+        "character": "dwarf",
+        "players": 2,
+        "characters": [
+          "dwarf",
+          "hero"
+        ],
+        "pass": true,
+        "returnedMenu": true,
+        "normalInputTicks": 19223,
+        "worldCheckpoints": 31,
+        "presentationPhases": 33,
+        "settledPresentationRenders": 34,
+        "pageErrors": [],
+        "settledFallbacks": [],
+        "runtimeStable": true,
+        "runtimeFileCount": 586,
+        "browserClosed": true,
+        "audioDisposed": true,
+        "playersAtEnd": [
+          {
+            "type": "dwarf",
+            "health": 20,
+            "lives": 3,
+            "removed": false,
+            "eliminated": false
+          },
+          {
+            "type": "hero",
+            "health": 0,
+            "lives": 0,
+            "removed": true,
+            "eliminated": true
+          }
+        ]
+      },
+      {
+        "case": "candidate-browser-main/beginner-1p",
+        "mode": "beginner",
+        "character": "dwarf",
+        "players": 1,
+        "characters": [
+          "dwarf"
+        ],
+        "pass": true,
+        "returnedMenu": true,
+        "normalInputTicks": 8306,
+        "worldCheckpoints": 15,
+        "presentationPhases": 8,
+        "settledPresentationRenders": 9,
+        "pageErrors": [],
+        "settledFallbacks": [],
+        "runtimeStable": true,
+        "runtimeFileCount": 586,
+        "browserClosed": true,
+        "audioDisposed": true,
+        "playersAtEnd": [
+          {
+            "type": "dwarf",
+            "health": 20,
+            "lives": 2,
+            "removed": false,
+            "eliminated": false
+          }
+        ]
+      },
+      {
+        "case": "candidate-browser-main/beginner-2p",
+        "mode": "beginner",
+        "character": "dwarf",
+        "players": 2,
+        "characters": [
+          "dwarf",
+          "hero"
+        ],
+        "pass": true,
+        "returnedMenu": true,
+        "normalInputTicks": 7923,
+        "worldCheckpoints": 16,
+        "presentationPhases": 8,
+        "settledPresentationRenders": 9,
+        "pageErrors": [],
+        "settledFallbacks": [],
+        "runtimeStable": true,
+        "runtimeFileCount": 586,
+        "browserClosed": true,
+        "audioDisposed": true,
+        "playersAtEnd": [
+          {
+            "type": "dwarf",
+            "health": 20,
+            "lives": 1,
+            "removed": false,
+            "eliminated": false
+          },
+          {
+            "type": "hero",
+            "health": 0,
+            "lives": 0,
+            "removed": true,
+            "eliminated": true
+          }
+        ]
+      },
+      {
+        "case": "candidate-browser-main/duel-1p",
+        "mode": "duel",
+        "character": "dwarf",
+        "players": 1,
+        "characters": [
+          "dwarf"
+        ],
+        "pass": true,
+        "returnedMenu": true,
+        "normalInputTicks": 6606,
+        "worldCheckpoints": 36,
+        "presentationPhases": 1,
+        "settledPresentationRenders": 2,
+        "pageErrors": [],
+        "settledFallbacks": [],
+        "runtimeStable": true,
+        "runtimeFileCount": 586,
+        "browserClosed": true,
+        "audioDisposed": true,
+        "playersAtEnd": [
+          {
+            "type": "dwarf",
+            "health": 24,
+            "lives": 1,
+            "removed": false,
+            "eliminated": false
+          }
+        ]
+      },
+      {
+        "case": "candidate-browser-main/duel-2p",
+        "mode": "duel",
+        "character": "dwarf",
+        "players": 2,
+        "characters": [
+          "dwarf",
+          "hero"
+        ],
+        "pass": true,
+        "returnedMenu": true,
+        "normalInputTicks": 1339,
+        "worldCheckpoints": 4,
+        "presentationPhases": 0,
+        "settledPresentationRenders": 1,
+        "pageErrors": [],
+        "settledFallbacks": [],
+        "runtimeStable": true,
+        "runtimeFileCount": 586,
+        "browserClosed": true,
+        "audioDisposed": true,
+        "playersAtEnd": [
+          {
+            "type": "dwarf",
+            "health": 32,
+            "lives": 1,
+            "removed": false,
+            "eliminated": false
+          },
+          {
+            "type": "hero",
+            "health": 0,
+            "lives": 0,
+            "removed": true,
+            "eliminated": true
+          }
+        ]
+      },
+      {
+        "case": "candidate-browser-pair-dwarf-amazon/beginner-2p",
+        "mode": "beginner",
+        "character": "dwarf",
+        "players": 2,
+        "characters": [
+          "dwarf",
+          "amazon"
+        ],
+        "pass": true,
+        "returnedMenu": true,
+        "normalInputTicks": 7209,
+        "worldCheckpoints": 16,
+        "presentationPhases": 8,
+        "settledPresentationRenders": 9,
+        "pageErrors": [],
+        "settledFallbacks": [],
+        "runtimeStable": true,
+        "runtimeFileCount": 586,
+        "browserClosed": true,
+        "audioDisposed": true,
+        "playersAtEnd": [
+          {
+            "type": "dwarf",
+            "health": 20,
+            "lives": 1,
+            "removed": false,
+            "eliminated": false
+          },
+          {
+            "type": "amazon",
+            "health": 0,
+            "lives": 0,
+            "removed": true,
+            "eliminated": true
+          }
+        ]
+      },
+      {
+        "case": "candidate-browser-pair-hero-amazon/beginner-2p",
+        "mode": "beginner",
+        "character": "hero",
+        "players": 2,
+        "characters": [
+          "hero",
+          "amazon"
+        ],
+        "pass": true,
+        "returnedMenu": true,
+        "normalInputTicks": 9473,
+        "worldCheckpoints": 16,
+        "presentationPhases": 8,
+        "settledPresentationRenders": 9,
+        "pageErrors": [],
+        "settledFallbacks": [],
+        "runtimeStable": true,
+        "runtimeFileCount": 586,
+        "browserClosed": true,
+        "audioDisposed": true,
+        "playersAtEnd": [
+          {
+            "type": "hero",
+            "health": 20,
+            "lives": 3,
+            "removed": false,
+            "eliminated": false
+          },
+          {
+            "type": "amazon",
+            "health": 0,
+            "lives": 0,
+            "removed": true,
+            "eliminated": true
+          }
+        ]
+      }
+    ],
+    "totals": {
+      "normalInputTicks": 171064,
+      "worldCheckpoints": 340,
+      "presentationPhases": 183,
+      "settledPresentationRenders": 195
+    },
+    "pass": true
+  },
+  "audio": {
+    "baselineTag": "ga-v0.2.5",
+    "unitTests": 10,
+    "browser": {
+      "scope": "Actual Chrome WebAudio pendingresume/close and normal originalOPL shutdown. Not native sound-data validation or a fullgame run.",
+      "cases": [
+        {
+          "name": "baseline-pendingresume",
+          "before": {
+            "state": "suspended",
+            "pending": true
+          },
+          "resolved": false,
+          "status": "closed",
+          "contextState": "closed",
+          "rejections": [
+            {
+              "name": "InvalidStateError",
+              "message": "AudioContext closed before a pending resume() could complete."
+            }
+          ]
+        },
+        {
+          "name": "candidate-pendingresume",
+          "before": {
+            "state": "suspended",
+            "pending": true
+          },
+          "resolved": true,
+          "value": false,
+          "status": "closed",
+          "contextState": "closed",
+          "rejections": []
+        },
+        {
+          "name": "candidate-healthy-play-pause-close",
+          "backend": "opl",
+          "playingFrame": 3072,
+          "resumedFrame": 4608,
+          "pauseState": "suspended",
+          "disposeMs": 0.8999998569488525,
+          "contextState": "closed",
+          "status": "closed",
+          "portHandler": null,
+          "workletDisposed": true
+        }
+      ],
+      "errors": [],
+      "pass": true,
+      "browserClosed": true
+    },
+    "sourceFiles": {
+      "audio.js": "d12e2bb5f7219bbb990c945eb33582c75c0d1ab76ca67598f0d2a9fd403edb0f",
+      "opl-audio.js": "9c33d923ed6860fcc8b69f32d62ea5c4267c4a528ab2c20620cc291fcfeea0d4",
+      "opl-sequence-worklet.js": "b6559da065b61fefb7c02d4bd011a7bf12349c43e0c6e80e338ffb5809995d60"
+    },
+    "musicAndEngineDataChanged": false,
+    "published": false,
+    "deployed": false
+  },
+  "rootFinalRestart": {
+    "scope": "Actual UI restart during conditionally initialized source Stage6 interlude and travel. Conditional setup, not fullmode/native DOS proof.",
+    "base": "http://127.0.0.1:5894/",
+    "errors": [],
+    "cases": [
+      {
+        "kind": "interlude",
+        "before": {
+          "kind": "interlude",
+          "stage": 5,
+          "tick": 0,
+          "phase": "walk-a"
+        },
+        "after": {
+          "kind": null,
+          "stage": 0,
+          "tick": 3,
+          "phase": null,
+          "paused": false
+        }
+      },
+      {
+        "kind": "travel",
+        "before": {
+          "kind": "travel",
+          "stage": 16,
+          "tick": 0,
+          "phase": "message"
+        },
+        "after": {
+          "kind": null,
+          "stage": 0,
+          "tick": 3,
+          "phase": null,
+          "paused": false
+        }
+      },
+      {
+        "kind": "opening-after-newrun-0",
+        "observed": true
+      },
+      {
+        "kind": "opening-after-newrun-1",
+        "observed": true
+      },
+      {
+        "kind": "play-again-paused-gameover",
+        "after": {
+          "kind": null,
+          "stage": 0,
+          "paused": false
+        }
+      },
+      {
+        "kind": "restart-selected-level",
+        "expectedStage": 3,
+        "after": {
+          "kind": null,
+          "stage": 3,
+          "paused": false
+        }
+      }
+    ],
+    "pass": true,
+    "audioDisposed": true,
+    "browserClosed": true
+  },
+  "duelHUD": {
+    "nativeFixture": "tests/fixtures/native-duel-hud-5b63.json",
+    "nativeCases": 12,
+    "unitTests": 3,
+    "sharedRendererEnemyCap": 9,
+    "enemyHPChanged": false,
+    "browser": {
+      "errors": [],
+      "result": {
+        "hd": {
+          "enemyCells": [
+            {
+              "x": 64,
+              "y": 33
+            },
+            {
+              "x": 88,
+              "y": 33
+            },
+            {
+              "x": 112,
+              "y": 33
+            },
+            {
+              "x": 136,
+              "y": 33
+            },
+            {
+              "x": 160,
+              "y": 33
+            },
+            {
+              "x": 184,
+              "y": 33
+            },
+            {
+              "x": 208,
+              "y": 33
+            },
+            {
+              "x": 232,
+              "y": 33
+            },
+            {
+              "x": 256,
+              "y": 33
+            }
+          ],
+          "coverage": {
+            "hdSprites": 5,
+            "vectorSprites": 18,
+            "smoothInterfaceSprites": 18,
+            "smoothMapText": 0,
+            "originalSprites": 0,
+            "hdMapRegions": 4,
+            "hdMapStatePatches": 0,
+            "hdStateCells": 0,
+            "hdGlyphs": 0,
+            "vectorGlyphs": 0,
+            "originalGlyphs": 0,
+            "dynamicOriginalCells": 0,
+            "reasons": {},
+            "hdBaseNativeArea": 62400,
+            "originalBaseNativeArea": 0
+          }
+        },
+        "original": {
+          "enemyCells": [
+            {
+              "x": 64,
+              "y": 33
+            },
+            {
+              "x": 88,
+              "y": 33
+            },
+            {
+              "x": 112,
+              "y": 33
+            },
+            {
+              "x": 136,
+              "y": 33
+            },
+            {
+              "x": 160,
+              "y": 33
+            },
+            {
+              "x": 184,
+              "y": 33
+            },
+            {
+              "x": 208,
+              "y": 33
+            },
+            {
+              "x": 232,
+              "y": 33
+            },
+            {
+              "x": 256,
+              "y": 33
+            }
+          ],
+          "coverage": {
+            "hdSprites": 0,
+            "vectorSprites": 0,
+            "smoothInterfaceSprites": 0,
+            "smoothMapText": 0,
+            "originalSprites": 23,
+            "hdMapRegions": 0,
+            "hdMapStatePatches": 0,
+            "hdStateCells": 0,
+            "hdGlyphs": 0,
+            "vectorGlyphs": 0,
+            "originalGlyphs": 0,
+            "dynamicOriginalCells": 0,
+            "reasons": {},
+            "hdBaseNativeArea": 0,
+            "originalBaseNativeArea": 62400
+          }
+        },
+        "worldUnchanged": true,
+        "enemyHealth": [
+          28,
+          66,
+          28
+        ]
+      },
+      "pass": true,
+      "browserClosed": true
+    },
+    "scope": "Exact source count fragment and actual same-state original/HD render; native late Duel reachability still unverified."
+  },
+  "HD": {
+    "paintedFrames": 580,
+    "worldStates": 23,
+    "RAFLoops": 14,
+    "RAFFrames": 151,
+    "spellAssemblyFrames": 23,
+    "correctedRiderPaletteDirections": 6,
+    "rawAlphaAndWebPVerified": true
+  },
+  "knownLimits": [
+    "Batched legal input replay + real browser presenters, not realtime keyboard/native DOS fullgame proof.",
+    "Source Options LifeMeter5 used; P2 continue-decline policy recorded, not both players surviving every coop run.",
+    "Global IRQ phase and native late Duel palette/loader reachability remain open.",
+    "No physical iOS/Safari/gamepad fullrun."
+  ],
+  "deployed": false,
+  "gameplayAudit": {
+    "scope": "Batched legal normal inputs in actual frozen browser app with real RAF presentation flow. Not continuous realtime keyboard/nativeDOS fullgame proof. Options LifeMeter5; P2 decline policy is explicit and P2 often eliminated before end.",
+    "runtimeSnapshot": "6f5dd207fe67a5b96580bbf0b6e11f56c6fa63a49d72a9e27490b704192c3e2d",
+    "runtimeFiles": 586,
+    "simulationSHA256": "6ca2e6f98c1e97ae148aca3f21f69b4b44fa0b3bdab13465b04e2cc0a05c589e",
+    "cases": [
+      {
+        "case": "candidate-browser-amazon/arcade-1p",
+        "mode": "arcade",
+        "character": "amazon",
+        "players": 1,
+        "characters": [
+          "amazon"
+        ],
+        "pass": true,
+        "returnedMenu": true,
+        "normalInputTicks": 24807,
+        "worldCheckpoints": 33,
+        "presentationPhases": 33,
+        "settledPresentationRenders": 33,
+        "pageErrors": [],
+        "settledFallbacks": [],
+        "runtimeStable": true,
+        "runtimeFileCount": 586,
+        "browserClosed": true,
+        "audioDisposed": true,
+        "playersAtEnd": [
+          {
+            "type": "amazon",
+            "health": 15,
+            "lives": 2,
+            "removed": false,
+            "eliminated": false
+          }
+        ]
+      },
+      {
+        "case": "candidate-browser-amazon/beginner-1p",
+        "mode": "beginner",
+        "character": "amazon",
+        "players": 1,
+        "characters": [
+          "amazon"
+        ],
+        "pass": true,
+        "returnedMenu": true,
+        "normalInputTicks": 8166,
+        "worldCheckpoints": 18,
+        "presentationPhases": 8,
+        "settledPresentationRenders": 9,
+        "pageErrors": [],
+        "settledFallbacks": [],
+        "runtimeStable": true,
+        "runtimeFileCount": 586,
+        "browserClosed": true,
+        "audioDisposed": true,
+        "playersAtEnd": [
+          {
+            "type": "amazon",
+            "health": 20,
+            "lives": 3,
+            "removed": false,
+            "eliminated": false
+          }
+        ]
+      },
+      {
+        "case": "candidate-browser-amazon/duel-1p",
+        "mode": "duel",
+        "character": "amazon",
+        "players": 1,
+        "characters": [
+          "amazon"
+        ],
+        "pass": true,
+        "returnedMenu": true,
+        "normalInputTicks": 12629,
+        "worldCheckpoints": 36,
+        "presentationPhases": 1,
+        "settledPresentationRenders": 1,
+        "pageErrors": [],
+        "settledFallbacks": [],
+        "runtimeStable": true,
+        "runtimeFileCount": 586,
+        "browserClosed": true,
+        "audioDisposed": true,
+        "playersAtEnd": [
+          {
+            "type": "amazon",
+            "health": 12,
+            "lives": 1,
+            "removed": false,
+            "eliminated": false
+          }
+        ]
+      },
+      {
+        "case": "candidate-browser-hero/arcade-1p",
+        "mode": "arcade",
+        "character": "hero",
+        "players": 1,
+        "characters": [
+          "hero"
+        ],
+        "pass": true,
+        "returnedMenu": true,
+        "normalInputTicks": 25838,
+        "worldCheckpoints": 34,
+        "presentationPhases": 33,
+        "settledPresentationRenders": 34,
+        "pageErrors": [],
+        "settledFallbacks": [],
+        "runtimeStable": true,
+        "runtimeFileCount": 586,
+        "browserClosed": true,
+        "audioDisposed": true,
+        "playersAtEnd": [
+          {
+            "type": "hero",
+            "health": 8,
+            "lives": 1,
+            "removed": false,
+            "eliminated": false
+          }
+        ]
+      },
+      {
+        "case": "candidate-browser-hero/beginner-1p",
+        "mode": "beginner",
+        "character": "hero",
+        "players": 1,
+        "characters": [
+          "hero"
+        ],
+        "pass": true,
+        "returnedMenu": true,
+        "normalInputTicks": 9485,
+        "worldCheckpoints": 17,
+        "presentationPhases": 8,
+        "settledPresentationRenders": 9,
+        "pageErrors": [],
+        "settledFallbacks": [],
+        "runtimeStable": true,
+        "runtimeFileCount": 586,
+        "browserClosed": true,
+        "audioDisposed": true,
+        "playersAtEnd": [
+          {
+            "type": "hero",
+            "health": 16,
+            "lives": 2,
+            "removed": false,
+            "eliminated": false
+          }
+        ]
+      },
+      {
+        "case": "candidate-browser-hero/duel-1p",
+        "mode": "duel",
+        "character": "hero",
+        "players": 1,
+        "characters": [
+          "hero"
+        ],
+        "pass": true,
+        "returnedMenu": true,
+        "normalInputTicks": 7886,
+        "worldCheckpoints": 37,
+        "presentationPhases": 1,
+        "settledPresentationRenders": 2,
+        "pageErrors": [],
+        "settledFallbacks": [],
+        "runtimeStable": true,
+        "runtimeFileCount": 586,
+        "browserClosed": true,
+        "audioDisposed": true,
+        "playersAtEnd": [
+          {
+            "type": "hero",
+            "health": 30,
+            "lives": 1,
+            "removed": false,
+            "eliminated": false
+          }
+        ]
+      },
+      {
+        "case": "candidate-browser-main/arcade-1p",
+        "mode": "arcade",
+        "character": "dwarf",
+        "players": 1,
+        "characters": [
+          "dwarf"
+        ],
+        "pass": true,
+        "returnedMenu": true,
+        "normalInputTicks": 22174,
+        "worldCheckpoints": 31,
+        "presentationPhases": 33,
+        "settledPresentationRenders": 34,
+        "pageErrors": [],
+        "settledFallbacks": [],
+        "runtimeStable": true,
+        "runtimeFileCount": 586,
+        "browserClosed": true,
+        "audioDisposed": true,
+        "playersAtEnd": [
+          {
+            "type": "dwarf",
+            "health": 18,
+            "lives": 3,
+            "removed": false,
+            "eliminated": false
+          }
+        ]
+      },
+      {
+        "case": "candidate-browser-main/arcade-2p",
+        "mode": "arcade",
+        "character": "dwarf",
+        "players": 2,
+        "characters": [
+          "dwarf",
+          "hero"
+        ],
+        "pass": true,
+        "returnedMenu": true,
+        "normalInputTicks": 19223,
+        "worldCheckpoints": 31,
+        "presentationPhases": 33,
+        "settledPresentationRenders": 34,
+        "pageErrors": [],
+        "settledFallbacks": [],
+        "runtimeStable": true,
+        "runtimeFileCount": 586,
+        "browserClosed": true,
+        "audioDisposed": true,
+        "playersAtEnd": [
+          {
+            "type": "dwarf",
+            "health": 20,
+            "lives": 3,
+            "removed": false,
+            "eliminated": false
+          },
+          {
+            "type": "hero",
+            "health": 0,
+            "lives": 0,
+            "removed": true,
+            "eliminated": true
+          }
+        ]
+      },
+      {
+        "case": "candidate-browser-main/beginner-1p",
+        "mode": "beginner",
+        "character": "dwarf",
+        "players": 1,
+        "characters": [
+          "dwarf"
+        ],
+        "pass": true,
+        "returnedMenu": true,
+        "normalInputTicks": 8306,
+        "worldCheckpoints": 15,
+        "presentationPhases": 8,
+        "settledPresentationRenders": 9,
+        "pageErrors": [],
+        "settledFallbacks": [],
+        "runtimeStable": true,
+        "runtimeFileCount": 586,
+        "browserClosed": true,
+        "audioDisposed": true,
+        "playersAtEnd": [
+          {
+            "type": "dwarf",
+            "health": 20,
+            "lives": 2,
+            "removed": false,
+            "eliminated": false
+          }
+        ]
+      },
+      {
+        "case": "candidate-browser-main/beginner-2p",
+        "mode": "beginner",
+        "character": "dwarf",
+        "players": 2,
+        "characters": [
+          "dwarf",
+          "hero"
+        ],
+        "pass": true,
+        "returnedMenu": true,
+        "normalInputTicks": 7923,
+        "worldCheckpoints": 16,
+        "presentationPhases": 8,
+        "settledPresentationRenders": 9,
+        "pageErrors": [],
+        "settledFallbacks": [],
+        "runtimeStable": true,
+        "runtimeFileCount": 586,
+        "browserClosed": true,
+        "audioDisposed": true,
+        "playersAtEnd": [
+          {
+            "type": "dwarf",
+            "health": 20,
+            "lives": 1,
+            "removed": false,
+            "eliminated": false
+          },
+          {
+            "type": "hero",
+            "health": 0,
+            "lives": 0,
+            "removed": true,
+            "eliminated": true
+          }
+        ]
+      },
+      {
+        "case": "candidate-browser-main/duel-1p",
+        "mode": "duel",
+        "character": "dwarf",
+        "players": 1,
+        "characters": [
+          "dwarf"
+        ],
+        "pass": true,
+        "returnedMenu": true,
+        "normalInputTicks": 6606,
+        "worldCheckpoints": 36,
+        "presentationPhases": 1,
+        "settledPresentationRenders": 2,
+        "pageErrors": [],
+        "settledFallbacks": [],
+        "runtimeStable": true,
+        "runtimeFileCount": 586,
+        "browserClosed": true,
+        "audioDisposed": true,
+        "playersAtEnd": [
+          {
+            "type": "dwarf",
+            "health": 24,
+            "lives": 1,
+            "removed": false,
+            "eliminated": false
+          }
+        ]
+      },
+      {
+        "case": "candidate-browser-main/duel-2p",
+        "mode": "duel",
+        "character": "dwarf",
+        "players": 2,
+        "characters": [
+          "dwarf",
+          "hero"
+        ],
+        "pass": true,
+        "returnedMenu": true,
+        "normalInputTicks": 1339,
+        "worldCheckpoints": 4,
+        "presentationPhases": 0,
+        "settledPresentationRenders": 1,
+        "pageErrors": [],
+        "settledFallbacks": [],
+        "runtimeStable": true,
+        "runtimeFileCount": 586,
+        "browserClosed": true,
+        "audioDisposed": true,
+        "playersAtEnd": [
+          {
+            "type": "dwarf",
+            "health": 32,
+            "lives": 1,
+            "removed": false,
+            "eliminated": false
+          },
+          {
+            "type": "hero",
+            "health": 0,
+            "lives": 0,
+            "removed": true,
+            "eliminated": true
+          }
+        ]
+      },
+      {
+        "case": "candidate-browser-pair-dwarf-amazon/beginner-2p",
+        "mode": "beginner",
+        "character": "dwarf",
+        "players": 2,
+        "characters": [
+          "dwarf",
+          "amazon"
+        ],
+        "pass": true,
+        "returnedMenu": true,
+        "normalInputTicks": 7209,
+        "worldCheckpoints": 16,
+        "presentationPhases": 8,
+        "settledPresentationRenders": 9,
+        "pageErrors": [],
+        "settledFallbacks": [],
+        "runtimeStable": true,
+        "runtimeFileCount": 586,
+        "browserClosed": true,
+        "audioDisposed": true,
+        "playersAtEnd": [
+          {
+            "type": "dwarf",
+            "health": 20,
+            "lives": 1,
+            "removed": false,
+            "eliminated": false
+          },
+          {
+            "type": "amazon",
+            "health": 0,
+            "lives": 0,
+            "removed": true,
+            "eliminated": true
+          }
+        ]
+      },
+      {
+        "case": "candidate-browser-pair-hero-amazon/beginner-2p",
+        "mode": "beginner",
+        "character": "hero",
+        "players": 2,
+        "characters": [
+          "hero",
+          "amazon"
+        ],
+        "pass": true,
+        "returnedMenu": true,
+        "normalInputTicks": 9473,
+        "worldCheckpoints": 16,
+        "presentationPhases": 8,
+        "settledPresentationRenders": 9,
+        "pageErrors": [],
+        "settledFallbacks": [],
+        "runtimeStable": true,
+        "runtimeFileCount": 586,
+        "browserClosed": true,
+        "audioDisposed": true,
+        "playersAtEnd": [
+          {
+            "type": "hero",
+            "health": 20,
+            "lives": 3,
+            "removed": false,
+            "eliminated": false
+          },
+          {
+            "type": "amazon",
+            "health": 0,
+            "lives": 0,
+            "removed": true,
+            "eliminated": true
+          }
+        ]
+      }
+    ],
+    "totals": {
+      "normalInputTicks": 171064,
+      "worldCheckpoints": 340,
+      "presentationPhases": 183,
+      "settledPresentationRenders": 195
+    },
+    "pass": true,
+    "qaRecordedBeforePublication": true,
+    "baselineTag": "ga-v0.2.5",
+    "baselineSixModes": {
+      "pass": true,
+      "normalInputTicks": 65571,
+      "worldCheckpoints": 138,
+      "presentationPhases": 83
+    },
+    "fix": {
+      "file": "dist/js/app.js",
+      "behavior": "Restart and Playagain clear prior presenter and opening/interlude flags before existing Simulation.reset/start.",
+      "baselineTravelException": "Cannot set properties of undefined (setting phase)",
+      "restartCasesPass": 6,
+      "conditionalFixture": true
+    },
+    "uiEdges": {
+      "checks": [
+        {
+          "name": "MAP restores pause false",
+          "pass": true
+        },
+        {
+          "name": "MAP restores pause true",
+          "pass": true
+        },
+        {
+          "name": "MAP keyword and Escape preserve paused state",
+          "pass": true
+        },
+        {
+          "name": "MAP player2 teleport",
+          "pass": true,
+          "x": 27,
+          "y": 187
+        },
+        {
+          "name": "fullscreen enter/exit",
+          "pass": true,
+          "element": true,
+          "fallback": false
+        },
+        {
+          "name": "P2 continue true",
+          "pass": true,
+          "credits": 3,
+          "health": 12,
+          "eliminated": false
+        },
+        {
+          "name": "P2 continue false",
+          "pass": true,
+          "credits": 4,
+          "health": 0,
+          "eliminated": true
+        }
+      ],
+      "scope": "Actual browser keyboard/click MAP/pause/fullscreen and conditional2P death/continue fixtures. Cheat use/conditional state declared; not a normalfullrun/native proof.",
+      "browserClosed": true,
+      "audioDisposed": true
+    },
+    "cleanup": {
+      "allBrowsersClosed": true,
+      "allAudioDisposed": true,
+      "ownedServer5892Stopped": true,
+      "rootServer5894LeftAlone": true
+    },
+    "personallyViewed": [
+      "baseline Arcade Stage8 Death",
+      "baseline mounted red dragon/flame",
+      "baseline late Duel enemy-bar overflow",
+      "candidate Hero Stage8 Death",
+      "candidate Amazon Stage8 Death",
+      "candidate late Duel clipped nine-bar HUD",
+      "candidate Hero+Amazon2P initial combat"
+    ],
+    "limits": [
+      "Batched legal Simulation input replay with actual app/RAF presentations, not continuous keyboard or native DOS fullrun.",
+      "All fullmode runs use original Options LifeMeter5.",
+      "P2 Continue refusal was explicit, and P2 is often eliminated before end; no claim of both players surviving fullrun.",
+      "Remaining candidate controller stalls/gameovers are retained as failures, not converted into pass or proof of game bugs.",
+      "Physical iOS/Safari/gamepad not covered."
+    ]
+  }
+}

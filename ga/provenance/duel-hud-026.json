@@ -1,0 +1,135 @@
+{
+  "nativeFixture": "tests/fixtures/native-duel-hud-5b63.json",
+  "nativeCases": 12,
+  "unitTests": 3,
+  "sharedRendererEnemyCap": 9,
+  "enemyHPChanged": false,
+  "browser": {
+    "errors": [],
+    "result": {
+      "hd": {
+        "enemyCells": [
+          {
+            "x": 64,
+            "y": 33
+          },
+          {
+            "x": 88,
+            "y": 33
+          },
+          {
+            "x": 112,
+            "y": 33
+          },
+          {
+            "x": 136,
+            "y": 33
+          },
+          {
+            "x": 160,
+            "y": 33
+          },
+          {
+            "x": 184,
+            "y": 33
+          },
+          {
+            "x": 208,
+            "y": 33
+          },
+          {
+            "x": 232,
+            "y": 33
+          },
+          {
+            "x": 256,
+            "y": 33
+          }
+        ],
+        "coverage": {
+          "hdSprites": 5,
+          "vectorSprites": 18,
+          "smoothInterfaceSprites": 18,
+          "smoothMapText": 0,
+          "originalSprites": 0,
+          "hdMapRegions": 4,
+          "hdMapStatePatches": 0,
+          "hdStateCells": 0,
+          "hdGlyphs": 0,
+          "vectorGlyphs": 0,
+          "originalGlyphs": 0,
+          "dynamicOriginalCells": 0,
+          "reasons": {},
+          "hdBaseNativeArea": 62400,
+          "originalBaseNativeArea": 0
+        }
+      },
+      "original": {
+        "enemyCells": [
+          {
+            "x": 64,
+            "y": 33
+          },
+          {
+            "x": 88,
+            "y": 33
+          },
+          {
+            "x": 112,
+            "y": 33
+          },
+          {
+            "x": 136,
+            "y": 33
+          },
+          {
+            "x": 160,
+            "y": 33
+          },
+          {
+            "x": 184,
+            "y": 33
+          },
+          {
+            "x": 208,
+            "y": 33
+          },
+          {
+            "x": 232,
+            "y": 33
+          },
+          {
+            "x": 256,
+            "y": 33
+          }
+        ],
+        "coverage": {
+          "hdSprites": 0,
+          "vectorSprites": 0,
+          "smoothInterfaceSprites": 0,
+          "smoothMapText": 0,
+          "originalSprites": 23,
+          "hdMapRegions": 0,
+          "hdMapStatePatches": 0,
+          "hdStateCells": 0,
+          "hdGlyphs": 0,
+          "vectorGlyphs": 0,
+          "originalGlyphs": 0,
+          "dynamicOriginalCells": 0,
+          "reasons": {},
+          "hdBaseNativeArea": 0,
+          "originalBaseNativeArea": 62400
+        }
+      },
+      "worldUnchanged": true,
+      "enemyHealth": [
+        28,
+        66,
+        28
+      ]
+    },
+    "pass": true,
+    "browserClosed": true
+  },
+  "scope": "Exact source count fragment and actual same-state original/HD render; native late Duel reachability still unverified."
+}

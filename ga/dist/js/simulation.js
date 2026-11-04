@@ -322,7 +322,7 @@ export class Simulation {
     if(b.isPlayer&&this.state.godMode)return false;
         if(b.state===16){const victim=this.state.entities.find(v=>v.followActorID===b.id);if(victim){victim.vz=10;this.setState(victim,13);this.refresh(victim);}}
         this.emitEvents({kind:'sfx',id:3,actor:b.id,authority:'AXE308a'});if(b.isPlayer){b.combo=0;b.lastTarget=null;}a.hitActive=false;b.hitActive=true;b.backward=false;if(![12,13].includes(b.typeId))b.nativeWait=0;const wasMounted=b.mountID!=null;if(b.mountID!=null)this.detachRider(b);const hitOrigin=[16,17].includes(a.typeId)?this.state.entities.find(e=>e.id===(a.ownerID??a.riderID))||a:a;b.direction=hitOrigin.x<=b.x?6:2;
-        if(a.isPlayer){a.combo=b.state===15&&a.lastTarget===b.id?a.combo+1:0;a.lastTarget=b.id;a.lastDistance=Math.max([6,7,8].includes(b.typeId)?31:0,Math.abs(a.x-b.x));}
+        if(a.isPlayer)this.recordComboHit(a,b);
         const knock=wasMounted||[12,13].includes(b.typeId)||[6,7,8,10,11,16,17].includes(a.typeId)||[8,9,10].includes(a.state)||b.isPlayer&&b.state===15&&b.frame+1>=this.frames(b).length;
         if(knock){b.vz=10;this.setState(b,13);this.refresh(b);}
         else if(b.state!==15){this.setState(b,15);this.refresh(b);}else {b.frame++;b.frameTimer=15;if(b.frame>=this.frames(b).length)b.frame=0;}
@@ -330,10 +330,23 @@ export class Simulation {
         const damage=[12,13].includes(b.typeId)?0:LOGIC.damage[a.typeId*16+([16,17].includes(a.typeId)?5:a.state)]||0;b.health=Math.max(0,b.health-damage);
         if(a.typeId===16){this.setState(a,0);this.refresh(a);}
         if(a.state===16){b.followActorID=a.id;b.vz=0;this.setState(b,17);this.refresh(b);}
-        if(b.health===0){if(a.isPlayer){a.killPoints=(a.killPoints||0)+(b.parameter||0);this.state.score=a.killPoints;}b.dead=true;b.lifecycle=255;b.vz=10;this.setState(b,13);this.refresh(b);}
+        if(b.health===0){this.awardKill(a,b);b.dead=true;b.lifecycle=255;b.vz=10;this.setState(b,13);this.refresh(b);}
         if(a.typeId===7&&this.state.stageIndex===7)this.state.enemyMagicTrigger=true;
         this.emitEvents({kind:'hit',attacker:a.id,target:b.id,damage,source:'AXE2ee2/frameheaders'});
     return true;
+  }
+  recordComboHit(attacker,victim){
+    // AXE30cb–3106 latches spacing only when a new hurt chain starts.
+    if(victim.state===15&&attacker.lastTarget===victim.id)attacker.combo=(attacker.combo+1)&0xff;
+    else{attacker.lastTarget=victim.id;attacker.combo=0;attacker.lastDistance=Math.max([6,7,8].includes(victim.typeId)?31:0,Math.abs(signed16(attacker.x-victim.x)));}
+  }
+  awardKill(attacker,victim){
+    // AXE32b4 redirects mount/projectile SI through actor+46, then performs
+    // a 16-bit ADD of victim+2a into the credited actor's kill-points word+0b.
+    const owner=[10,11,16,17].includes(attacker.typeId)?this.state.entities.find(a=>a.id===attacker.riderID):attacker;
+    if(!owner)return;
+    owner.killPoints=((owner.killPoints||0)+(victim.parameter||0))&0xffff;
+    if(owner.isPlayer)this.state.score=owner.killPoints;
   }
   updateCamera(){if(this.mode==='duel')return;const s=this.state,m=this.map(),ps=s.players.filter(a=>!a.removed);if(!ps.length)return;
     const left=Math.min(...ps.map(p=>p.x-s.camera.x)),right=Math.max(...ps.map(p=>p.x-s.camera.x));
@@ -458,7 +471,7 @@ export class Simulation {
         }
         if([12,13].includes(e.typeId)){if(e.magicPots>0){this.dropPickup(e);this.emitEvents({kind:'sfx',id:8,actor:e.id,authority:'AXE1ea2/1eb9'});}continue;}
         e.health=Math.max(0,e.health-damage);e.dead=e.health===0;
-        if(e.dead){e.lifecycle=255;if(e.state===14){e.lifecycle=254;this.deathVoice(e);}p.killPoints=(p.killPoints||0)+(e.parameter||0);this.state.score=p.killPoints;}
+        if(e.dead){e.lifecycle=255;if(e.state===14){e.lifecycle=254;this.deathVoice(e);}this.awardKill(p,e);}
 
       }
       p.magicPots-=this.mode==='beginner'?Math.ceil(p.magicPots/2):p.magicPots;

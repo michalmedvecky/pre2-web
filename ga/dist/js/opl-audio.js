@@ -26,10 +26,10 @@ export class OriginalOPLAudio {
   setEnabled(enabled){if(!this.disposed)this.node.port.postMessage({type:'enabled',enabled:!!enabled});}
   stop(){this.generation++;if(!this.disposed)this.node.port.postMessage({type:'stop'});}
   status(){return this.request('status');}
-  async dispose(){
+  async dispose({waitForAck=true}={}){
     if(this.disposePromise)return this.disposePromise;
     this.disposed=true;this.generation++;
     for(const pending of this.pending.values()){clearTimeout(pending.timer);pending.reject(new Error('Original OPL disposed.'));}this.pending.clear();
-    this.disposePromise=(async()=>{if(!this.error)await this.request('dispose').catch(()=>{});this.node.disconnect();this.onError=null;})();return this.disposePromise;
+    this.disposePromise=(async()=>{if(!this.error){if(waitForAck)await this.request('dispose').catch(()=>{});else this.node.port.postMessage({type:'dispose'});}this.node.disconnect();this.node.port.onmessage=null;this.node.port.close();this.node.onprocessorerror=null;this.onError=null;})();return this.disposePromise;
   }
 }

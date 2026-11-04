@@ -1,0 +1,60 @@
+{
+  "baselineTag": "ga-v0.2.5",
+  "unitTests": 10,
+  "browser": {
+    "scope": "Actual Chrome WebAudio pendingresume/close and normal originalOPL shutdown. Not native sound-data validation or a fullgame run.",
+    "cases": [
+      {
+        "name": "baseline-pendingresume",
+        "before": {
+          "state": "suspended",
+          "pending": true
+        },
+        "resolved": false,
+        "status": "closed",
+        "contextState": "closed",
+        "rejections": [
+          {
+            "name": "InvalidStateError",
+            "message": "AudioContext closed before a pending resume() could complete."
+          }
+        ]
+      },
+      {
+        "name": "candidate-pendingresume",
+        "before": {
+          "state": "suspended",
+          "pending": true
+        },
+        "resolved": true,
+        "value": false,
+        "status": "closed",
+        "contextState": "closed",
+        "rejections": []
+      },
+      {
+        "name": "candidate-healthy-play-pause-close",
+        "backend": "opl",
+        "playingFrame": 3072,
+        "resumedFrame": 4608,
+        "pauseState": "suspended",
+        "disposeMs": 0.8999998569488525,
+        "contextState": "closed",
+        "status": "closed",
+        "portHandler": null,
+        "workletDisposed": true
+      }
+    ],
+    "errors": [],
+    "pass": true,
+    "browserClosed": true
+  },
+  "sourceFiles": {
+    "audio.js": "d12e2bb5f7219bbb990c945eb33582c75c0d1ab76ca67598f0d2a9fd403edb0f",
+    "opl-audio.js": "9c33d923ed6860fcc8b69f32d62ea5c4267c4a528ab2c20620cc291fcfeea0d4",
+    "opl-sequence-worklet.js": "b6559da065b61fefb7c02d4bd011a7bf12349c43e0c6e80e338ffb5809995d60"
+  },
+  "musicAndEngineDataChanged": false,
+  "published": false,
+  "deployed": false
+}

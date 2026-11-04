@@ -1,0 +1,35 @@
+{
+  "baselineCoreSHA256": "5213829f351f710dddefc27a37edbd2f4a715a901e86da62bf81ab0bb073b1e0",
+  "candidateCoreSHA256": "6ca2e6f98c1e97ae148aca3f21f69b4b44fa0b3bdab13465b04e2cc0a05c589e",
+  "nativeEXESHA256": "70117422872e0f09d6619a5e5473fce7eccb917597a700d2222ecfa5b87fe8fb",
+  "nativeScoreCases": 8,
+  "nativeComboCases": 9,
+  "targetedMechanicsTests": 74,
+  "targetedMechanicsPass": 74,
+  "newTests": 7,
+  "selectedBaselineIntegrationMismatches": 6,
+  "candidateSelectedIntegrationPass": 6,
+  "scope": "Isolated exact native x86 snippets + actual JS source-header hits, not a fresh native fullgame/IRQ run",
+  "globalIRQPolicyChanged": false,
+  "nativeProcessesClosed": true,
+  "reaTargetClosed": true,
+  "files": {
+    "../web/ga/dist/js/simulation.js": "6ca2e6f98c1e97ae148aca3f21f69b4b44fa0b3bdab13465b04e2cc0a05c589e",
+    "../web/ga/tests/mechanics-score-owner.mjs": "f91625c2623eb80f5aa0ca494a9879fa7500a075e782ce1baff48009aafc972f",
+    "../web/ga/tests/fixtures/native-score-32b4.json": "9e30be90fc3469caf0c844153361d4a1c4af6dcd53bc66ad1792fd6e7bb09260",
+    "../web/ga/tests/fixtures/native-combo-30cb.json": "88fdd2bd8ed86187431e52972fc9510386e09a702018aa32c4d7c3de6bf384d2",
+    "../web/ga/tests/fixtures/native-duel-hud-5b63.json": "8cff89c98663c301183d637baf68b9f7115f0812e98d71d99fce66318341626f"
+  },
+  "duelEnemyHUD": {
+    "sourceFunction": "AXE5b63",
+    "enemyCellCap": 9,
+    "nativeFragmentBytes": 80,
+    "nativeCases": 12,
+    "nativeCasesPass": 12,
+    "hpChanged": false,
+    "playerRowsCapped": false,
+    "nativeLateDuelReachabilityVerified": false,
+    "fixture": "tests/fixtures/native-duel-hud-5b63.json",
+    "readEvidence": "ev_fbf58602b66245efd452e2b00f9dfbdaea617ed0b32963f43d7d91364af27dd4"
+  }
+}

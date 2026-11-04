@@ -29,34 +29,42 @@ export class OriginalAudio {
     this.buffers = new Map();
     this.status = 'locked';
     this.error = null;
+    this.disposed = false;
+    this.disposePromise = null;
   }
 
   async unlock() {
+    if (this.disposed) return false;
     const Context = globalThis.AudioContext || globalThis.webkitAudioContext;
     if (!Context) {this.status = 'unsupported';return false;}
-    // Create/resume synchronously inside the user's Start/Resume gesture.
-    if (!this.context) {
-      this.context = new Context();
-      this.master = this.context.createGain();
-      this.master.gain.value = this.muted ? 0 : 1;
-      this.master.connect(this.context.destination);
-      this.musicGain = this.context.createGain();
-      this.musicGain.gain.value = this.musicEnabled ? 1 : 0;
-      this.musicGain.connect(this.master);
-      this.effectsGain = this.context.createGain();
-      this.effectsGain.gain.value = this.effectsEnabled ? 1 : 0;
-      this.effectsGain.connect(this.master);
-      this.speakerFilter = this.context.createBiquadFilter();
-      this.speakerFilter.type = 'highpass';
-      this.speakerFilter.frequency.value = 20;
-      this.speakerFilter.connect(this.effectsGain);
-    }
-    if (!this.paused) await this.context.resume();
     try {
+      // Create/resume synchronously inside the user's Start/Resume gesture.
+      if (!this.context) {
+        this.context = new Context();
+        this.master = this.context.createGain();
+        this.master.gain.value = this.muted ? 0 : 1;
+        this.master.connect(this.context.destination);
+        this.musicGain = this.context.createGain();
+        this.musicGain.gain.value = this.musicEnabled ? 1 : 0;
+        this.musicGain.connect(this.master);
+        this.effectsGain = this.context.createGain();
+        this.effectsGain.gain.value = this.effectsEnabled ? 1 : 0;
+        this.effectsGain.connect(this.master);
+        this.speakerFilter = this.context.createBiquadFilter();
+        this.speakerFilter.type = 'highpass';
+        this.speakerFilter.frequency.value = 20;
+        this.speakerFilter.connect(this.effectsGain);
+      }
+      const context = this.context;
+      if (!this.paused) await context.resume();
+      if (this.disposed || context !== this.context || context.state === 'closed') return false;
       if (!this.manifest) {
         const response = await fetch(this.manifestURL);
+        if (this.disposed || context !== this.context) return false;
         if (!response.ok) throw new Error(`Original audio manifest: HTTP ${response.status}`);
-        this.manifest = await response.json();
+        const manifest = await response.json();
+        if (this.disposed || context !== this.context) return false;
+        this.manifest = manifest;
       }
       if (!this.manifest.faithfulSupported) throw new Error('Original audio has not passed register validation.');
       await this.ensureLiveMusic();
@@ -66,7 +74,7 @@ export class OriginalAudio {
       this.pendingTrack = null;
       if (pending) await this.playTrack(pending.id, pending.options);
       return true;
-    } catch (error) {this.error = String(error);this.status = 'unavailable';return false;}
+    } catch (error) {if (!this.disposed) {this.error = String(error);this.status = 'unavailable';}return false;}
   }
 
   setMuted(value) {
@@ -92,13 +100,20 @@ export class OriginalAudio {
 
   async setPaused(value) {
     this.paused = Boolean(value);
-    if (!this.context || this.context.state === 'closed') return;
-    if (this.paused) await this.context.suspend();
-    else await this.context.resume();
+    const context = this.context;
+    if (this.disposed || !context || context.state === 'closed') return false;
+    try {
+      if (this.paused) await context.suspend();
+      else await context.resume();
+      return !this.disposed && context === this.context && context.state !== 'closed';
+    } catch (error) {
+      if (!this.disposed && context === this.context) this.error = String(error);
+      return false;
+    }
   }
 
   async ensureLiveMusic() {
-    if (this.backendPreference === 'flac' || this.liveFailed || !this.context) return false;
+    if (this.disposed || this.backendPreference === 'flac' || this.liveFailed || !this.context) return false;
     if (this.liveMusic) return true;
     if (this.liveInitPromise) return this.liveInitPromise;
     const context = this.context;
@@ -115,6 +130,7 @@ export class OriginalAudio {
         this.musicGain.gain.setValueAtTime(1, context.currentTime);
         return true;
       } catch (error) {
+        if (this.disposed || context !== this.context || controller.signal.aborted) return false;
         this.liveFailed = true;
         this.fallbackReason = String(error);
         this.musicBackend = 'flac';
@@ -149,13 +165,17 @@ export class OriginalAudio {
   }
 
   async loadBuffer(record) {
-    if (!this.context) return null;
+    const context = this.context;
+    if (this.disposed || !context || context.state === 'closed') return null;
     const key = record.file;
     if (!this.buffers.has(key)) {
       const promise = (async () => {
         const response = await fetch(new URL(record.file, this.manifestURL));
+        if (this.disposed || context !== this.context || context.state === 'closed') return null;
         if (!response.ok) throw new Error(`Original audio asset: HTTP ${response.status}`);
-        return this.context.decodeAudioData(await response.arrayBuffer());
+        const bytes = await response.arrayBuffer();
+        if (this.disposed || context !== this.context || context.state === 'closed') return null;
+        return context.decodeAudioData(bytes);
       })();
       this.buffers.set(key, promise);
       promise.catch(() => this.buffers.delete(key));
@@ -175,6 +195,7 @@ export class OriginalAudio {
   }
 
   async playTrack(id, options = {}) {
+    if (this.disposed) return false;
     if (!this.context || !this.manifest) {
       this.pendingTrack = {id, options};
       return false;
@@ -213,7 +234,7 @@ export class OriginalAudio {
       this.musicSource = source;
       source.start();
       return true;
-    } catch (error) {this.error = String(error);this.status = 'unavailable';return false;}
+    } catch (error) {if (!this.disposed) {this.error = String(error);this.status = 'unavailable';}return false;}
   }
 
   async triggerEffect(id, {loop = false} = {}) {
@@ -235,7 +256,7 @@ export class OriginalAudio {
       this.effectSource = source;
       source.start();
       return true;
-    } catch (error) {this.error = String(error);return false;}
+    } catch (error) {if (!this.disposed) this.error = String(error);return false;}
   }
 
   stopEffect() {
@@ -258,7 +279,9 @@ export class OriginalAudio {
     this.effectSource = null;
   }
 
-  async dispose() {
+  dispose() {
+    if (this.disposePromise) return this.disposePromise;
+    this.disposed = true;
     this.stop();
     this.buffers.clear();
     this.liveAbortController?.abort();
@@ -266,7 +289,13 @@ export class OriginalAudio {
     this.context = null;
     this.liveMusic = null;
     this.status = 'closed';
-    if (live) await live.dispose();
-    if (context && context.state !== 'closed') await context.close();
+    // Closing the context can reject pending resume promises. Both paths own
+    // their completion; a suspended processor cannot acknowledge a worklet RPC.
+    this.disposePromise = (async () => {
+      const liveClose = live ? live.dispose({waitForAck:false}) : Promise.resolve();
+      const contextClose = context && context.state !== 'closed' ? context.close() : Promise.resolve();
+      await Promise.allSettled([liveClose, contextClose]);
+    })();
+    return this.disposePromise;
   }
 }

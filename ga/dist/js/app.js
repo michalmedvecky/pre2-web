@@ -300,8 +300,17 @@ $('#start').addEventListener('click', primaryAction);
 $('#launch').addEventListener('click', launchSelection);
 $('#pause').addEventListener('click', pause);
 $('#resume').addEventListener('click', () => {if (paused) pause();});
-$('#restart').addEventListener('click', () => {resetAudio();simulation.reset(); start();});
-$('#play-again').addEventListener('click', () => {resetAudio();simulation.reset(); start();});
+// A new run must not retain a presenter copied from the previous world's map.
+// Keep Simulation.reset() so an explicit LEVEL start still restarts that stage.
+function restartGame(){
+  if(!simulation)return;
+  levelOverlay?.close({resume:false,focus:false});mapOverlay?.close();
+  if(calibration)closeCalibration();
+  resetAudio();sequence=null;openingShown=false;interludeShown=false;
+  simulation.reset();start();
+}
+$('#restart').addEventListener('click', restartGame);
+$('#play-again').addEventListener('click', restartGame);
 $('#continue').addEventListener('click', () => {if(simulation.state.status==='continue'){simulation.continueGame(true);start();}else continueStage();});
 $('#decline').addEventListener('click',()=>{simulation.continueGame(false);sync();});
 $('#fullscreen').addEventListener('click', async () => {

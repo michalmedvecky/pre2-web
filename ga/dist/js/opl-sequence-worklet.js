@@ -18,6 +18,6 @@ class OriginalOPLProcessor extends AudioWorkletProcessor {
       else if(m.type==='status')this.port.postMessage({type:'status',request:m.request,...this.player?.status()});
     }catch(error){this.port.postMessage({type:'error',request:m.request,message:String(error)});}
   }
-  process(_input,outputs){const out=outputs[0]?.[0];if(!out)return true;if(!this.player||this.disposed){out.fill(0);return true;}if(this.scratch.length!==out.length)this.scratch=new Int16Array(out.length);this.player.renderInto(this.scratch);for(let i=0;i<out.length;i++)out[i]=this.scratch[i]/32768;return true;}
+  process(_input,outputs){const out=outputs[0]?.[0];if(this.disposed){out?.fill(0);return false;}if(!out)return true;if(!this.player){out.fill(0);return true;}if(this.scratch.length!==out.length)this.scratch=new Int16Array(out.length);this.player.renderInto(this.scratch);for(let i=0;i<out.length;i++)out[i]=this.scratch[i]/32768;return true;}
 }
 registerProcessor('golden-axe-original-opl',OriginalOPLProcessor);

@@ -1,0 +1,313 @@
+{
+  "sourceEXESHA256": "70117422872e0f09d6619a5e5473fce7eccb917597a700d2222ecfa5b87fe8fb",
+  "fragmentRange": [
+    "5b63",
+    "5bb3-exclusive"
+  ],
+  "fragmentHex": "bff7198b0e592533c032ff83f900742c3b3e9b2074203b3e9d20741a833d107415833d117410833d0b740b833d0a7406268a5d2c03c383c75349ebcf33d2050300b90400f7f18bc883f9097603b90900",
+  "scope": "Exact original80-byte Duel enemyHUD counting fragment, including pointer/type exclusions, unsignedHPbytes, sum/4 and explicit nine-cell clamp. HarnessRET only after source fragment. Declared fake actorrecords; not native fullgame/reachability proof.",
+  "cases": [
+    {
+      "label": "enemy-hp-0",
+      "actors": [
+        {
+          "type": 2,
+          "hp": 32,
+          "player": 1
+        },
+        {
+          "type": 4,
+          "hp": 0
+        }
+      ],
+      "case": 0,
+      "fileSHA256": "949d7c571f460d1d37fcb31698193ba9b20e5667957b06ffac1aff13e9dd0157",
+      "healthSum": 0,
+      "actualQuotient": 0,
+      "actualCells": 0,
+      "actualRemainder": 3,
+      "expectedCells": 0,
+      "pass": true,
+      "outputSHA256": "48ec3e94f852e60ac3b945facc13e58f3ceb46a8b12b7e50349ccbe8cb25f7cf"
+    },
+    {
+      "label": "enemy-hp-1",
+      "actors": [
+        {
+          "type": 2,
+          "hp": 32,
+          "player": 1
+        },
+        {
+          "type": 4,
+          "hp": 1
+        }
+      ],
+      "case": 1,
+      "fileSHA256": "b500959a1ff60278f448ba9320a09ac23d6906d3f0502ac4e47c55bb7a8e8137",
+      "healthSum": 1,
+      "actualQuotient": 1,
+      "actualCells": 1,
+      "actualRemainder": 0,
+      "expectedCells": 1,
+      "pass": true,
+      "outputSHA256": "7c299e56e830d23602fc111d58af81067d64c393f9ba456bb9dfbb04822e59ae"
+    },
+    {
+      "label": "enemy-hp-4",
+      "actors": [
+        {
+          "type": 2,
+          "hp": 32,
+          "player": 1
+        },
+        {
+          "type": 4,
+          "hp": 4
+        }
+      ],
+      "case": 2,
+      "fileSHA256": "3592bcee691578ca7141124444f2f7df52a2b39c65c4ef7c5bf3a7abfd366b6f",
+      "healthSum": 4,
+      "actualQuotient": 1,
+      "actualCells": 1,
+      "actualRemainder": 3,
+      "expectedCells": 1,
+      "pass": true,
+      "outputSHA256": "f62feb2ef3d8b8c6554c67d329aef773987fc781c6d4337fa94fa64adc64f8be"
+    },
+    {
+      "label": "enemy-hp-32",
+      "actors": [
+        {
+          "type": 2,
+          "hp": 32,
+          "player": 1
+        },
+        {
+          "type": 4,
+          "hp": 32
+        }
+      ],
+      "case": 3,
+      "fileSHA256": "521dce516ceb5fb12460c592c342b4693fcba107f79e14dd38088afa0d6b71d3",
+      "healthSum": 32,
+      "actualQuotient": 8,
+      "actualCells": 8,
+      "actualRemainder": 3,
+      "expectedCells": 8,
+      "pass": true,
+      "outputSHA256": "13412f7350e07ffea4e3ad0ba114a6c9d4848a1e7fce5dbfa823735c575beb4c"
+    },
+    {
+      "label": "enemy-hp-33",
+      "actors": [
+        {
+          "type": 2,
+          "hp": 32,
+          "player": 1
+        },
+        {
+          "type": 4,
+          "hp": 33
+        }
+      ],
+      "case": 4,
+      "fileSHA256": "f0d3fd4d0e8aadf9c62fed8dbeca57b3315ccb5d1cb47b8b6ed07c5c35da9813",
+      "healthSum": 33,
+      "actualQuotient": 9,
+      "actualCells": 9,
+      "actualRemainder": 0,
+      "expectedCells": 9,
+      "pass": true,
+      "outputSHA256": "b91e8073b0ce069632ab80584c383fc6560cf4294f953bed433652d1b8ee414f"
+    },
+    {
+      "label": "enemy-hp-36",
+      "actors": [
+        {
+          "type": 2,
+          "hp": 32,
+          "player": 1
+        },
+        {
+          "type": 4,
+          "hp": 36
+        }
+      ],
+      "case": 5,
+      "fileSHA256": "631e4e6763511f057d95be6dd9dc9763bda1b00d1eeec958be8f54e76a877e7b",
+      "healthSum": 36,
+      "actualQuotient": 9,
+      "actualCells": 9,
+      "actualRemainder": 3,
+      "expectedCells": 9,
+      "pass": true,
+      "outputSHA256": "6f6012ce44e272478b005cc4d1347dec57e08b44301bb7cf52b9a9a6f58058f6"
+    },
+    {
+      "label": "enemy-hp-37",
+      "actors": [
+        {
+          "type": 2,
+          "hp": 32,
+          "player": 1
+        },
+        {
+          "type": 4,
+          "hp": 37
+        }
+      ],
+      "case": 6,
+      "fileSHA256": "8b88c97451e935ec0e065d20904b724f9e7e7a60c7ff117e3b56dcfc93399da9",
+      "healthSum": 37,
+      "actualQuotient": 10,
+      "actualCells": 9,
+      "actualRemainder": 0,
+      "expectedCells": 9,
+      "pass": true,
+      "outputSHA256": "2f033c89e4e82cf2e505deb3dc5a6018c72673ed5394f336cca2a738d298b5cd"
+    },
+    {
+      "label": "enemy-hp-122",
+      "actors": [
+        {
+          "type": 2,
+          "hp": 32,
+          "player": 1
+        },
+        {
+          "type": 4,
+          "hp": 122
+        }
+      ],
+      "case": 7,
+      "fileSHA256": "943747928f0e9642ae34eb23cf364db4a07dbc334c8145aadb41d2f13f373c06",
+      "healthSum": 122,
+      "actualQuotient": 31,
+      "actualCells": 9,
+      "actualRemainder": 1,
+      "expectedCells": 9,
+      "pass": true,
+      "outputSHA256": "dd7200cc8adb29bb36b246a656a48ac828ace95cbf20619cb14360bf8265f8c5"
+    },
+    {
+      "label": "all-four-exclusions",
+      "actors": [
+        {
+          "type": 2,
+          "hp": 32,
+          "player": 1
+        },
+        {
+          "type": 10,
+          "hp": 255
+        },
+        {
+          "type": 11,
+          "hp": 255
+        },
+        {
+          "type": 16,
+          "hp": 255
+        },
+        {
+          "type": 17,
+          "hp": 255
+        }
+      ],
+      "case": 8,
+      "fileSHA256": "61c920792f149b58eab43dffa9da0a063b0a28e1e4ba310d5cd6fc0742d520ee",
+      "healthSum": 0,
+      "actualQuotient": 0,
+      "actualCells": 0,
+      "actualRemainder": 3,
+      "expectedCells": 0,
+      "pass": true,
+      "outputSHA256": "c51bb3a0a394222e9bbf128014bd248d0357500aa8f5b2b1f750c43303a9f25e"
+    },
+    {
+      "label": "two-player-pointers",
+      "actors": [
+        {
+          "type": 2,
+          "hp": 32,
+          "player": 1
+        },
+        {
+          "type": 1,
+          "hp": 32,
+          "player": 2
+        },
+        {
+          "type": 4,
+          "hp": 36
+        }
+      ],
+      "case": 9,
+      "fileSHA256": "96800ed690c3bc446dc50d73bc30e2bc3d9b2ee42d033a5795fdefe6c933badd",
+      "healthSum": 36,
+      "actualQuotient": 9,
+      "actualCells": 9,
+      "actualRemainder": 3,
+      "expectedCells": 9,
+      "pass": true,
+      "outputSHA256": "51e2b7b7319f4be04ef74b78920355d5d7a66165716eb66004dc7f053984dcf8"
+    },
+    {
+      "label": "late-duel-t5126-exact-healths",
+      "actors": [
+        {
+          "type": 2,
+          "hp": 32,
+          "player": 1
+        },
+        {
+          "type": 3,
+          "hp": 28
+        },
+        {
+          "type": 7,
+          "hp": 66
+        },
+        {
+          "type": 3,
+          "hp": 28
+        }
+      ],
+      "case": 10,
+      "fileSHA256": "566b0ad887b4934877f408a865840fe02afb91d9221f9886c4d65fa7cfd6f362",
+      "healthSum": 122,
+      "actualQuotient": 31,
+      "actualCells": 9,
+      "actualRemainder": 1,
+      "expectedCells": 9,
+      "pass": true,
+      "outputSHA256": "8517973950200449b71f842237861e143467f37d45a21fc2562d62b5bfda2d58"
+    },
+    {
+      "label": "ordinary-nonplayer-pot-included",
+      "actors": [
+        {
+          "type": 2,
+          "hp": 32,
+          "player": 1
+        },
+        {
+          "type": 18,
+          "hp": 8
+        }
+      ],
+      "case": 11,
+      "fileSHA256": "e2bfcb0958f9595924be3e3b15c58b4553b32b8c2436cc4a0dbd5bf8683f926c",
+      "healthSum": 8,
+      "actualQuotient": 2,
+      "actualCells": 2,
+      "actualRemainder": 3,
+      "expectedCells": 2,
+      "pass": true,
+      "outputSHA256": "3fccf04f6e6361bcf13037d8140237ec935b43b4cb29c31b4262f673cbe2b111"
+    }
+  ],
+  "allPass": true
+}

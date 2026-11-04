@@ -1,5 +1,35 @@
 # Golden Axe — předání deployerovi pro k3s
 
+## Patch ga-v0.2.6
+
+Opravy z auditů celé hry:
+
+- Restart a „Hrát znovu“ odstraní starou meziscénu; nehrozí zamrznutí či přeskočení prvního levelu.
+- Body za killy zvířaty a střelami se připisují správnému jezdci, také P2.
+- Combo zachovává původní vzdálenost prvního zásahu a správnou volbu finisheru.
+- Ukazatel zdraví nepřátel v Duelu má původní limit9 dílků. Zdraví nepřátel se nesnižuje.
+- Audio bezpečně ukončí rozbíhání, čekající požadavky i worklet při zavření.
+- Opraven zadní jezdecký HD snímek protivnice včetně původních barevných variant.
+
+Runtime snapshot: `6f5dd207fe67a5b96580bbf0b6e11f56c6fa63a49d72a9e27490b704192c3e2d` (586 souborů).
+Přesný commit, CI a nový image digest jsou v
+[release ga-v0.2.6](https://github.com/michalmedvecky/pre2-web/releases/tag/ga-v0.2.6).
+GA-only přílohy: `ga-v0.2.6.tar.gz` a `ga-v0.2.6.SHA256SUMS`.
+
+Zachovejte samostatnou GA aplikaci na `ga.500miles.cz`, namespace, Service,
+Ingress, TLS a cache pravidla. Změňte jen image na digest z release.
+Prehistorik neměňte. Toto vydání nic do k3s nenasazuje.
+Po rollout ověřte `/build.json`, restart během meziscény, body za kill na drakovi,
+ukazatel ENEMY v Duelu a přepnutí HD/originál. Běh R/F a mobilní BĚH z0.2.5 zůstává.
+
+192 testů PASS. 29 izolovaných případů přesných původních x86 instrukcí.
+Finální browser kandidát:14 průchodů do menu, 171064 legálních vstupních ticků,
+340 world checkpointů a 183 prezentačních fází. Jde o dávkovaný vstup
+ a skutečné browser prezentace; nikoli nový celý realtime/native DOS průchod.
+Použit původní OptionsLifeMeter5 a popsané odmítnutí P2Continue; nejde o přežití
+obou hráčů ve všech co-op bězích. IRQ fáze a pozdní Duel paleta zůstávají otevřené.
+Souhrn `provenance/ga-v0.2.6-qa.json`, podrobnosti v `reports/*026.md`.
+
 ## Patch ga-v0.2.5
 
 Úvod přechází rovnou do menu bez hesla. HD písmena a čísla nyní používají
