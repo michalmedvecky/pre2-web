@@ -3,7 +3,7 @@ name: Publish game image
 on:
   push:
     branches: [main]
-    paths-ignore: ['ga/**', '.github/workflows/publish-ga-image.yml', '.github/workflows/publish-image.yml']
+    paths-ignore: ['ga/**', 'flappy/**', '.github/workflows/publish-ga-image.yml', '.github/workflows/publish-flappy-image.yml', '.github/workflows/publish-image.yml']
   workflow_dispatch:
 
 permissions:

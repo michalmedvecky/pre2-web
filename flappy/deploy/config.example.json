@@ -1,0 +1,11 @@
+{
+  "kubeContext": "",
+  "namespace": "flappy",
+  "image": "",
+  "imagePullSecret": "",
+  "expose": false,
+  "host": "",
+  "tlsSecret": "",
+  "ingressClass": "traefik",
+  "httpsEntrypoint": ""
+}

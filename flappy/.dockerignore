@@ -1,0 +1,8 @@
+*
+!Dockerfile
+!deploy/
+!deploy/nginx.conf
+!dist/
+!dist/**
+!scripts/
+!scripts/write-build-info.sh

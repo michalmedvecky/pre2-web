@@ -1,0 +1,124 @@
+name: Flappy image
+
+on:
+  push:
+    branches: [main]
+    paths: ['flappy/**', '.github/workflows/publish-flappy-image.yml']
+  pull_request:
+    paths: ['flappy/**', '.github/workflows/publish-flappy-image.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  IMAGE: ${{ vars.FLAPPY_IMAGE_REPOSITORY || 'ghcr.io/michalmedvecky/pre2-web-flappy' }}
+  NGINX_IMAGE: ${{ vars.FLAPPY_NGINX_IMAGE || 'nginx:stable-alpine@sha256:0e52bd054126cdc040b1276c0af347aeb02a41b9cfe305d6094767ac30e97949' }}
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6, same as other games
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - run: npm --prefix flappy test
+      - run: npm --prefix flappy run verify
+      - name: Validate separate image and record source snapshot
+        run: |
+          node flappy/scripts/validate-release-env.mjs
+          echo "SOURCE_SNAPSHOT=$(node -p 'JSON.parse(require("fs").readFileSync("flappy/provenance/runtime-manifest.json")).snapshotSHA256')" >> "$GITHUB_ENV"
+      - name: Build candidate image without publishing
+        run: |
+          docker build --build-arg NGINX_IMAGE="$NGINX_IMAGE" \
+            --build-arg VCS_REF="$GITHUB_SHA" --build-arg BUILD_SOURCE=ci \
+            --build-arg BUILD_DIRTY=false --build-arg SOURCE_SNAPSHOT="$SOURCE_SNAPSHOT" \
+            --build-arg BUILD_REPOSITORY="https://github.com/$GITHUB_REPOSITORY" \
+            -t "flappy-check:$GITHUB_SHA" flappy
+      - name: Smoke-test actual container
+        env:
+          FLAPPY_CONTAINER_IMAGE: flappy-check:${{ github.sha }}
+          EXPECTED_COMMIT: ${{ github.sha }}
+        run: node flappy/scripts/smoke-container.mjs
+
+  publish:
+    needs: check
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - name: Verify release inputs
+        run: |
+          test -z "$(git status --porcelain)"
+          node flappy/scripts/validate-release-env.mjs
+          npm --prefix flappy run verify
+          echo "SOURCE_DATE_EPOCH=$(git show -s --format=%ct HEAD)" >> "$GITHUB_ENV"
+          echo "SOURCE_SNAPSHOT=$(node -p 'JSON.parse(require("fs").readFileSync("flappy/provenance/runtime-manifest.json")).snapshotSHA256')" >> "$GITHUB_ENV"
+      - uses: docker/setup-qemu-action@99012661954931238ded8c8b007157a8430204e1 # v4
+        with:
+          platforms: arm64
+      - uses: docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069 # v4
+      - uses: docker/login-action@dbcb813823bdd20940b903addbd779551569679f # v4
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish Flappy for amd64 and arm64
+        id: image
+        uses: docker/build-push-action@c3c9e263c25d99ce0380d002d59b67737d91b0dc # v7
+        env:
+          SOURCE_DATE_EPOCH: ${{ env.SOURCE_DATE_EPOCH }}
+        with:
+          context: ./flappy
+          file: ./flappy/Dockerfile
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ${{ env.IMAGE }}:sha-${{ github.sha }}
+          build-args: |
+            NGINX_IMAGE=${{ env.NGINX_IMAGE }}
+            VCS_REF=${{ github.sha }}
+            BUILD_SOURCE=ci
+            BUILD_DIRTY=false
+            SOURCE_SNAPSHOT=${{ env.SOURCE_SNAPSHOT }}
+            BUILD_REPOSITORY=https://github.com/${{ github.repository }}
+            SOURCE_DATE_EPOCH=${{ env.SOURCE_DATE_EPOCH }}
+          labels: |
+            org.opencontainers.image.source=https://github.com/${{ github.repository }}
+            org.opencontainers.image.revision=${{ github.sha }}
+            org.opencontainers.image.title=Flappy PMD 85 web remaster
+          cache-from: type=gha,scope=flappy
+          cache-to: type=gha,mode=max,scope=flappy
+      - name: Verify published platforms and image
+        env:
+          IMAGE_DIGEST: ${{ steps.image.outputs.digest }}
+          EXPECTED_COMMIT: ${{ github.sha }}
+        run: |
+          docker buildx imagetools inspect --raw "$IMAGE@$IMAGE_DIGEST" > /tmp/flappy-index.json
+          jq -e 'any(.manifests[]; .platform.os == "linux" and .platform.architecture == "amd64") and any(.manifests[]; .platform.os == "linux" and .platform.architecture == "arm64")' /tmp/flappy-index.json
+          FLAPPY_CONTAINER_IMAGE="$IMAGE@$IMAGE_DIGEST" node flappy/scripts/smoke-container.mjs
+      - name: Deployer image reference (no cluster access)
+        env:
+          IMAGE_DIGEST: ${{ steps.image.outputs.digest }}
+        run: |
+          {
+            echo '### Flappy image; not deployed'
+            echo "Image: \`$IMAGE@$IMAGE_DIGEST\`"
+            echo "Build commit: \`$GITHUB_SHA\`"
+            echo "Runtime snapshot: \`$SOURCE_SNAPSHOT\`"
+            echo 'Platforms: linux/amd64, linux/arm64. See flappy/deploy/README.md for k3s rollout.'
+          } >> "$GITHUB_STEP_SUMMARY"
