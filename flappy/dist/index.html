@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111614">
+  <meta name="description" content="Hratelný webový remaster klasické hry pro PMD 85. Vstupte rovnou do stage 9.">
+  <title>Flappy — PMD 85 webový remaster</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="icon-sound" viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15 8a6 6 0 0 1 0 8M18 5a10 10 0 0 1 0 14"/></symbol>
+    <symbol id="icon-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 8.5a2.5 2.5 0 1 1 4 2c-1 .7-1.5 1.2-1.5 2.5M12 16h.01"/></symbol>
+    <symbol id="icon-reset" viewBox="0 0 24 24"><path d="M4 10a8 8 0 1 1 0 5M4 4v6h6"/></symbol>
+    <symbol id="icon-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
+    <symbol id="icon-expand" viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M21 15v6h-6M3 15v6h6"/></symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="m5 12 7-7 7 7M12 5v14"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
+    <symbol id="icon-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M10 4H4v16h16v-6"/></symbol>
+  </defs></svg>
+
+  <div class="page-shell">
+    <header class="site-header">
+      <a href="./" class="brand" aria-label="PMD 85, úvod hry"><span class="brand-mark">PMD<span>85</span></span><span class="brand-caption">MALÝ POČÍTAČ.<br>VELKÉ VZPOMÍNKY.</span></a>
+      <div class="header-tools"><span class="edition">KLASIKA ZNOVU OŽÍVÁ</span><button id="sound-toggle" class="icon-button" type="button" aria-label="Zapnout zvuk" aria-pressed="false" title="Zvuk"><svg><use href="#icon-sound"/></svg></button><button id="help-button" class="icon-button" type="button" aria-label="Návod a ovládání" title="Návod a ovládání"><svg><use href="#icon-help"/></svg></button></div>
+    </header>
+
+    <main>
+      <section class="game-intro" aria-labelledby="game-title"><div><div class="eyebrow"><span class="tiny-square"></span> VBG SOFTWARE <span class="eyebrow-divider">/</span> WEBOVÝ REMASTER</div><h1 id="game-title">Flappy</h1><p class="intro-description" id="game-description">Původní výzva. Nový pohled. Další pokus je na vás.</p></div><div class="stage-badge"><span>AKTUÁLNÍ STAGE</span><strong id="stage-number">09</strong><span class="stage-badge-rule"></span></div></section>
+
+      <div class="play-layout">
+        <section class="game-panel" aria-label="Hra">
+          <div class="game-topbar"><div class="live-label"><span class="live-dot"></span><span id="status" role="status" aria-live="polite">PŘIPRAVENO KE HŘE</span></div><div class="game-stats"><div class="stat life-stat"><svg aria-hidden="true"><use href="#icon-heart"/></svg><span class="sr-only">Životy: </span><span id="lives">5</span></div><span class="stat-divider"></span><div class="stat"><span class="stat-label">TAHY</span><span id="moves">000</span></div><span class="stat-divider"></span><div class="stat"><span class="stat-label">ČAS</span><span id="timer">1500</span></div></div></div>
+          <div id="game-container" class="game-viewport"><canvas id="game" width="768" height="512" tabindex="0" aria-label="Herní plocha. Pro pohyb použijte šipky nebo WASD.">Váš prohlížeč nepodporuje herní plátno. Použijte prosím novější prohlížeč.</canvas><div class="viewport-corner corner-tl" aria-hidden="true"></div><div class="viewport-corner corner-tr" aria-hidden="true"></div><div class="viewport-corner corner-bl" aria-hidden="true"></div><div class="viewport-corner corner-br" aria-hidden="true"></div></div>
+          <div class="game-toolbar"><div class="main-controls"><button class="control-button" id="restart" type="button" title="Restartovat stage (R)"><svg><use href="#icon-reset"/></svg><span>Znovu</span><kbd>R</kbd></button><button class="control-button" id="pause" type="button" title="Pozastavit hru (P)" aria-pressed="false"><svg><use href="#icon-pause"/></svg><span>Pauza</span><kbd>P</kbd></button></div><div class="view-controls"><label for="stage-select" class="stage-select-label">STAGE <select id="stage-select" aria-label="Vybrat stage"><option value="9" selected>09</option></select><span class="select-chevron" aria-hidden="true">⌄</span></label><button id="fullscreen" class="icon-button fullscreen-button" type="button" aria-label="Celá obrazovka" title="Celá obrazovka"><svg><use href="#icon-expand"/></svg></button></div></div>
+          <div class="touch-controls" aria-label="Dotykové ovládání"><div class="d-pad"><button class="direction up" type="button" data-direction="up" aria-label="Nahoru"><svg><use href="#icon-arrow"/></svg></button><button class="direction left" type="button" data-direction="left" aria-label="Doleva"><svg><use href="#icon-arrow"/></svg></button><span class="d-pad-center" aria-hidden="true"></span><button class="direction right" type="button" data-direction="right" aria-label="Doprava"><svg><use href="#icon-arrow"/></svg></button><button class="direction down" type="button" data-direction="down" aria-label="Dolů"><svg><use href="#icon-arrow"/></svg></button></div><button id="touch-action" class="touch-action" type="button"><span>AKCE</span><span class="action-dot" aria-hidden="true"></span></button></div>
+        </section>
+
+        <aside class="side-panel" aria-label="Návod ke hře"><div class="objective-card"><span class="card-number">01 <span>—</span> VÁŠ ÚKOL</span><h2 id="objective-title">Každý tah<br>se počítá.</h2><p id="instruction-text">Projděte původní úroveň a vyřešte její výzvu. Hra začíná rovnou na stage 9.</p><div id="objective-legend" class="objective-legend"><span class="legend-marker" aria-hidden="true"></span><span>Původní herní princip</span></div></div><div class="controls-card"><span class="card-number">02 <span>—</span> OVLÁDÁNÍ</span><div class="keyboard-row"><div class="keyboard-arrows" aria-hidden="true"><kbd>↑</kbd><span><kbd>←</kbd><kbd>↓</kbd><kbd>→</kbd></span></div><div><strong>Pohyb</strong><span>Šipky nebo WASD</span></div></div><div class="key-instruction"><kbd class="wide-key">SPACE</kbd><div><strong id="action-label">Akce</strong><span id="action-description">Mezerník</span></div></div><div class="key-instruction"><kbd>R</kbd><div><strong>Nový pokus</strong><span>Restart aktuální stage</span></div></div><button type="button" class="text-button" id="more-help">Celý návod <span aria-hidden="true">↗</span></button></div><div class="heritage-note"><span class="heritage-symbol" aria-hidden="true">✳</span><p>Malá pocta velké éře<br><strong>československých her.</strong></p></div></aside>
+      </div>
+      <p id="game-hint" class="under-game-hint"><span aria-hidden="true">↳</span> Klikněte do herní plochy a hrajte. Klávesou <kbd>P</kbd> si dejte pauzu.</p>
+    </main>
+
+    <footer class="site-footer"><div><span class="footer-wordmark">PMD / 85</span><span class="footer-divider"></span><span>ORIGINÁL VBG SOFTWARE</span></div><a href="https://pmd85.borik.net/?action=download&amp;did=8" target="_blank" rel="noopener noreferrer">Archiv původní hry<svg aria-hidden="true"><use href="#icon-external"/></svg></a></footer>
+  </div>
+
+  <dialog id="help-dialog" aria-labelledby="help-title"><form method="dialog"><button class="icon-button dialog-close" value="close" aria-label="Zavřít návod"><svg><use href="#icon-close"/></svg></button></form><div class="eyebrow">PMD 85 / WEBOVÝ REMASTER</div><h2 id="help-title">Jak hrát</h2><div id="help-content"><p>Hra je otevřená na stage 9.</p><p>Pohybujte se šipkami nebo klávesami WASD. Mezerník provede herní akci. Klávesa R restartuje aktuální stage a P pozastaví hru.</p><p>Na telefonu použijte tlačítka pod herní plochou.</p></div><form method="dialog"><button class="primary-button" value="close">Zpátky do hry <span aria-hidden="true">→</span></button></form></dialog>
+  <script type="module" src="game.js"></script>
+</body>
+</html>

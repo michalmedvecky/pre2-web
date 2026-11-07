@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "snapshotSHA256": "9b62e6a9d7663c1f5bd6154d5290e88bb1f198c12b537b2d061f2a6e76178e1b",
+  "excluded": [
+    "build.json (injected per build)"
+  ],
+  "files": {
+    "engine.js": {
+      "sha256": "c90eeae0cf1206002c1c55e9a6324844c48162f208f77f7bd6c51c3a92608580",
+      "size": 11835
+    },
+    "favicon.svg": {
+      "sha256": "70548becc934317e0fdc11e2cf23695101421a46227321e8ceb72a24f5af858e",
+      "size": 323
+    },
+    "game.js": {
+      "sha256": "22737a297bb598439a7edf436e37abbb413c118df0b47261018a4a3d2ac2412c",
+      "size": 23385
+    },
+    "index.html": {
+      "sha256": "e00e85f4c8d3de5bdbaf2a891b2ecaf37a1495599e973bc19be4ff103602bc2b",
+      "size": 8448
+    },
+    "levels.json": {
+      "sha256": "3febaa8e665eac2cfbedd179ea61597be9ded37c90c74e0deebe29cc36ab1dcd",
+      "size": 693747
+    },
+    "sprites.json": {
+      "sha256": "58cbb28089f576e0d5d90936606ecad468535aa607908d40834a4776eb40c805",
+      "size": 3014
+    },
+    "style.css": {
+      "sha256": "6ac9416e0285fa1e8a062301b0bb9268e2ef47a13c6115a9882464a66c201f83",
+      "size": 18871
+    }
+  }
+}
