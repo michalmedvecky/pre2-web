@@ -11,6 +11,14 @@ function level(overrides={}) {
 function game(overrides={}) {const engine=new FlappyEngine([level(overrides)],1);return engine;}
 function tick(engine,dx=0,dy=0,fire=false) {engine.step({dx,dy,fire});return engine;}
 
+test('a new game without an explicit stage starts in original sector 1',()=>{
+  const engine=new FlappyEngine(source);
+  assert.equal(engine.stage,1);
+  assert.deepEqual(engine.brickMasks,source.levels[0].brickMasks);
+  assert.deepEqual([engine.objects[0].x,engine.objects[0].y],[source.levels[0].egg.halfX,source.levels[0].egg.halfY]);
+  assert.equal(new FlappyEngine(source,9).stage,9,'explicit stage selection is preserved');
+});
+
 test('original stage9 and all200 extracted scenes load without a replacement map',()=>{
   assert.equal(source.levels.length,200);
   const engine=new FlappyEngine(source,9);

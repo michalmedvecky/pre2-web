@@ -72,6 +72,6 @@ Pak otevřete [lokální hru](http://localhost:8080/) a ověřte také [health e
 
 Před zapnutím ingressu připravte DNS, existující Traefik HTTPS entrypoint a TLS Secret podle zavedené konfigurace clusteru. Šablona neinstaluje ingress controller ani cert-manager a nepřepisuje routy ostatních her. Zachovejte požadovanou autentizaci a přístupovou politiku.
 
-Na výsledném HTTPS hostname ověřte platný certifikát, `/healthz`, `/build.json` se správným commitem a načtení `game.js`, `engine.js`, `levels.json` a `sprites.json`. Hra se má otevřít na stage 09. Vyzkoušejte pohyb, restart, pauzu, výběr stage, původní grafiku a zvuk po kliknutí; na mobilu také dotyková tlačítka a rozložení. Chybějící URL musí vracet 404. Plný test na fyzickém telefonu je samostatné ověření.
+Na výsledném HTTPS hostname ověřte platný certifikát, `/healthz`, `/build.json` se správným commitem a načtení `game.js`, `engine.js`, `levels.json` a `sprites.json`. Hra se má otevřít na stage 01. Vyzkoušejte pohyb, restart, pauzu, výběr stage, původní grafiku a zvuk po kliknutí; na mobilu také dotyková tlačítka a rozložení. Chybějící URL musí vracet 404. Plný test na fyzickém telefonu je samostatné ověření.
 
 Pro další release změňte `image` na nový ověřený digest a opakujte renderování, diff, apply a čekání na rollout. Pro návrat použijte předchozí ověřený digest v konfiguraci a stejný postup. Zachovejte stejný origin hry. Zaznamenejte commit, image digest, context, namespace, stav rolloutu a finální URL; samotné úspěšné `apply` nepotvrzuje běžící hru.

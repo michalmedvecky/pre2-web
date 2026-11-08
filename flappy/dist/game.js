@@ -1,4 +1,4 @@
-import { FlappyEngine, TICK_MS } from './engine.js';
+import { FlappyEngine, TICK_MS, DEFAULT_STAGE } from './engine.js';
 
 const $ = id => document.getElementById(id);
 const canvas = $('game');
@@ -13,7 +13,7 @@ const DIRECTIONS={ArrowUp:[0,-1],KeyW:[0,-1],KeyE:[0,-1],ArrowDown:[0,1],KeyS:[0
 const palette={brick:'#3d5144',edge:'#6d8466',mortar:'#1d2c24',moss:'#7a9962',egg:'#d6fff3',glow:'#88e8c1',rock:'#a4a58e',player:'#f0d779',frog:'#b3d682',ghost:'#a7b6e6'};
 
 canvas.width=W;canvas.height=H;
-canvas.setAttribute('aria-label','Flappy, sektor 9. Pohyb šipkami nebo WASD, mezerník vystřelí houbičku, R nový pokus, P pauza.');
+canvas.setAttribute('aria-label','Flappy, sektor 1. Pohyb šipkami nebo WASD, mezerník vystřelí houbičku, R nový pokus, P pauza.');
 $('game-title').textContent='Flappy';
 $('game-description').textContent='Jedno kuřátko. Jedno vajíčko. Dvě stě původních výzev.';
 $('objective-title').innerHTML='Dostaňte vejce<br>do bezpečí.';
@@ -22,12 +22,12 @@ $('objective-legend').innerHTML='<span class="legend-marker egg-marker"></span><
 $('action-label').textContent='Uspávací houbička';
 $('action-description').textContent='Nejdřív ji seberte, pak vystřelte';
 $('touch-action').querySelector('span').textContent='STŘELA';
-$('game-hint').innerHTML='<span aria-hidden="true">↳</span> <span id="stage-hint">Sektor 9 je připravený. Začněte šipkami.</span> <span class="hint-separator">·</span> <span class="mushroom-hint">✦</span> Houbičky: <strong id="ammo">0</strong>';
-$('help-content').innerHTML=`<p>Vaším cílem je dopravit <strong>světlé vejce na světlou podložku</strong>. V této verzi začínáte přímo v původním sektoru 9.</p><dl class="help-list"><dt>↑ ↓ ← → / WASD</dt><dd>Volný pohyb ve čtyřech směrech. Fungují také původní klávesy E a Y.</dd><dt>Vejce a kameny</dt><dd>Tlačte je ze strany. Podléhají gravitaci a mohou rozdrtit vás i nepřátele. Tmavý kámen lze rozbít přitlačením k překážce nebo nárazem shora či zdola. Světlé vejce nerozbijete.</dd><dt>Mezerník</dt><dd>Vystřelí sebranou houbičku ve směru pohledu. Zasažená příšera na chvíli usne; padající vejce nebo kámen ji odstraní.</dd><dt>R · P · Enter</dt><dd>Nový pokus · pauza · pokračování po vyřešení sektoru.</dd></dl><p>Máte 5 životů a čas 1500. V nabídce STAGE můžete otevřít kterýkoli z 200 původních sektorů. Na telefonu použijte ovladač pod hrou.</p><p class="source-note">Nová webová implementace s daty původního FLAPPY+4 (VBG Software, 1988). <a href="https://pmd85.borik.net/wiki/Flappy" target="_blank" rel="noopener noreferrer">O původní hře ↗</a></p>`;
+$('game-hint').innerHTML='<span aria-hidden="true">↳</span> <span id="stage-hint">Sektor 1 je připravený. Začněte šipkami.</span> <span class="hint-separator">·</span> <span class="mushroom-hint">✦</span> Houbičky: <strong id="ammo">0</strong>';
+$('help-content').innerHTML=`<p>Vaším cílem je dopravit <strong>světlé vejce na světlou podložku</strong>. Výchozí je první původní sektor.</p><dl class="help-list"><dt>↑ ↓ ← → / WASD</dt><dd>Volný pohyb ve čtyřech směrech. Fungují také původní klávesy E a Y.</dd><dt>Vejce a kameny</dt><dd>Tlačte je ze strany. Podléhají gravitaci a mohou rozdrtit vás i nepřátele. Tmavý kámen lze rozbít přitlačením k překážce nebo nárazem shora či zdola. Světlé vejce nerozbijete.</dd><dt>Mezerník</dt><dd>Vystřelí sebranou houbičku ve směru pohledu. Zasažená příšera na chvíli usne; padající vejce nebo kámen ji odstraní.</dd><dt>R · P · Enter</dt><dd>Nový pokus · pauza · pokračování po vyřešení sektoru.</dd></dl><p>Máte 5 životů a čas 1500. V nabídce STAGE můžete otevřít kterýkoli z 200 původních sektorů. Na telefonu použijte ovladač pod hrou.</p><p class="source-note">Nová webová implementace s daty původního FLAPPY+4 (VBG Software, 1988). <a href="https://pmd85.borik.net/wiki/Flappy" target="_blank" rel="noopener noreferrer">O původní hře ↗</a></p>`;
 document.title='Flappy — PMD 85 webový remaster';
-document.querySelector('meta[name="description"]').content='Hrajte Flappy pro PMD 85 v novém webovém zpracování. 200 původních sektorů; hra začíná rovnou na stage 9.';
+document.querySelector('meta[name="description"]').content='Hrajte Flappy pro PMD 85 v novém webovém zpracování. 200 původních sektorů; hra začíná rovnou na stage 1.';
 const selector=$('stage-select');
-selector.innerHTML=Array.from({length:200},(_,i)=>`<option value="${i+1}" ${i===8?'selected':''}>${String(i+1).padStart(2,'0')}</option>`).join('');
+selector.innerHTML=Array.from({length:200},(_,i)=>`<option value="${i+1}" ${i+1===DEFAULT_STAGE?'selected':''}>${String(i+1).padStart(2,'0')}</option>`).join('');
 const graphics=document.createElement('button');graphics.className='control-button graphics-toggle';graphics.id='graphics-toggle';graphics.type='button';graphics.title='Přepnout grafiku';graphics.textContent='PMD režim';graphics.setAttribute('aria-pressed','false');
 document.querySelector('.main-controls').append(graphics);
 const ammoBadge=document.createElement('div');ammoBadge.className='ammo-badge';ammoBadge.innerHTML='<span aria-hidden="true">✦</span> <span class="sr-only">Houbičky: </span><span id="ammo-mobile">0</span>';
@@ -46,9 +46,9 @@ function syncUI(){
  canvas.setAttribute('aria-label',`Flappy, sektor ${engine.stage}, ${engine.lives} životů, ${engine.ammo} houbiček. ${status}.`);
 }
 function start(){if(!engine||engine.status!=='playing')return;active=true;paused=false;canvas.focus({preventScroll:true});}
-function reset(stage=engine.stage){engine.reset(stage);active=false;paused=false;accumulator=0;blend=1;particles=[];keys.clear();pressedDirection=null;fireHeld=false;pendingDirection=null;pendingFire=false;syncUI();canvas.focus({preventScroll:true});const url=new URL(location.href);if(stage===9)url.searchParams.delete('stage');else url.searchParams.set('stage',stage);history.replaceState({},'',url);}
+function reset(stage=engine.stage){engine.reset(stage);active=false;paused=false;accumulator=0;blend=1;particles=[];keys.clear();pressedDirection=null;fireHeld=false;pendingDirection=null;pendingFire=false;syncUI();canvas.focus({preventScroll:true});const url=new URL(location.href);if(stage===DEFAULT_STAGE)url.searchParams.delete('stage');else url.searchParams.set('stage',stage);history.replaceState({},'',url);}
 function pause(){if(!engine||!active||engine.status!=='playing')return;paused=!paused;keys.clear();pressedDirection=null;fireHeld=false;pendingDirection=null;pendingFire=false;syncUI();canvas.focus({preventScroll:true});}
-function continueStage(){if(engine.status==='won'){if(engine.stage<200){engine.advance();active=false;paused=false;accumulator=0;particles=[];syncUI();selector.value=engine.stage;}else reset(9);}else if(engine.status==='gameover')reset();else if(paused)pause();}
+function continueStage(){if(engine.status==='won'){if(engine.stage<200){engine.advance();active=false;paused=false;accumulator=0;particles=[];syncUI();selector.value=engine.stage;}else reset(DEFAULT_STAGE);}else if(engine.status==='gameover')reset();else if(paused)pause();}
 function getInput(){const ds=[...keys].filter(k=>DIRECTIONS[k]);const d=pressedDirection||DIRECTIONS[ds.at(-1)]||pendingDirection||[0,0];const fire=fireHeld||keys.has('Space')||pendingFire;pendingDirection=null;pendingFire=false;return{dx:d[0],dy:d[1],fire};}
 
 window.addEventListener('keydown',e=>{
@@ -104,12 +104,12 @@ function draw(time){
  if(engine.status!=='gameover')drawPlayer(engine.player,time);
  if(!reduceMotion){for(const p of particles){p.x+=p.vx;p.y+=p.vy;p.vy+=.07;p.life-=.02;ctx.globalAlpha=Math.max(0,p.life);ctx.fillStyle=p.color;ctx.fillRect(p.x,p.y,4,4);}particles=particles.filter(p=>p.life>0);ctx.globalAlpha=1;}
  label('VBG SOFTWARE 1988',OX+2,H-15,10,classic?'#3cbd63':'#637a61');label(classic?'PMD / MONOCHROME':'WEB REMASTER',W-OX,H-15,10,classic?'#3cbd63':'#637a61','right');
- if(engine.status==='won')drawOverlay(engine.stage===200?'Všech 200 za vámi!':'Sektor dokončen',engine.stage===200?'Flappy je v bezpečí. Děkujeme za hru.':'Vajíčko našlo své místo.',engine.stage===200?'ENTER / KLIKNUTÍ — ZNOVU OD 9':'ENTER / KLIKNUTÍ — DALŠÍ SEKTOR','win');
+ if(engine.status==='won')drawOverlay(engine.stage===200?'Všech 200 za vámi!':'Sektor dokončen',engine.stage===200?'Flappy je v bezpečí. Děkujeme za hru.':'Vajíčko našlo své místo.',engine.stage===200?'ENTER / KLIKNUTÍ — ZNOVU OD 1':'ENTER / KLIKNUTÍ — DALŠÍ SEKTOR','win');
  else if(engine.status==='gameover')drawOverlay('Ještě jeden pokus?', 'Pět životů pryč. Každý pokus vás posune.', 'R / ENTER / KLIKNUTÍ — HRÁT ZNOVU');
  else if(paused)drawOverlay('Chvilka na rozmyšlenou', 'Váš sektor počká.', 'P / KLIKNUTÍ — POKRAČOVAT');
  else if(engine.status==='dead'){ctx.fillStyle='#442c1930';ctx.fillRect(OX,OY,960,480);}
  if(flash>0&&!reduceMotion){ctx.fillStyle=`rgba(233,148,111,${flash})`;ctx.fillRect(OX,OY,960,480);flash=Math.max(0,flash-.025);}
 }
 function frame(now){const dt=Math.min(now-previous,150);previous=now;if(engine){if(active&&!paused&&engine.status!=='won'&&engine.status!=='gameover'){accumulator+=dt;while(accumulator>=TICK_MS){engine.step(getInput());handleEvents();accumulator-=TICK_MS;syncUI();}blend=Math.min(1,accumulator/TICK_MS);}else blend=1;draw(now);}requestAnimationFrame(frame);}
-async function boot(){try{const response=await fetch('./levels.json');if(!response.ok)throw new Error('Data úrovní nejsou dostupná');const data=await response.json();const spriteResponse=await fetch('./sprites.json');if(spriteResponse.ok)originals=await spriteResponse.json();const requested=Number(new URL(location.href).searchParams.get('stage')||9);const stage=Number.isInteger(requested)&&requested>=1&&requested<=200?requested:9;engine=new FlappyEngine(data,stage);syncUI();requestAnimationFrame(frame);}catch(err){$('status').textContent='HRU SE NEPODAŘILO NAČÍST';ctx.fillStyle='#112018';ctx.fillRect(0,0,W,H);label('Hru se nepodařilo načíst.',W/2,H/2,22,'#f0e6cd','center');label('Obnovte stránku nebo spusťte projekt přes npm start.',W/2,H/2+38,13,'#b4bba4','center');console.error(err);}}
+async function boot(){try{const response=await fetch('./levels.json');if(!response.ok)throw new Error('Data úrovní nejsou dostupná');const data=await response.json();const spriteResponse=await fetch('./sprites.json');if(spriteResponse.ok)originals=await spriteResponse.json();const requested=Number(new URL(location.href).searchParams.get('stage')||DEFAULT_STAGE);const stage=Number.isInteger(requested)&&requested>=1&&requested<=200?requested:DEFAULT_STAGE;engine=new FlappyEngine(data,stage);syncUI();requestAnimationFrame(frame);}catch(err){$('status').textContent='HRU SE NEPODAŘILO NAČÍST';ctx.fillStyle='#112018';ctx.fillRect(0,0,W,H);label('Hru se nepodařilo načíst.',W/2,H/2,22,'#f0e6cd','center');label('Obnovte stránku nebo spusťte projekt přes npm start.',W/2,H/2+38,13,'#b4bba4','center');console.error(err);}}
 boot();

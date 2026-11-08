@@ -1,4 +1,5 @@
 // Flappy uses 6 × 9 pixel half cells; the original level records use 40 columns.
+export const DEFAULT_STAGE = 1;
 export const FIELD_WIDTH = 40;
 export const FIELD_HEIGHT = 20;
 export const OBJECT_SIZE = 2;
@@ -13,7 +14,7 @@ const sign = value => Math.sign(Number(value) || 0);
 const point = source => ({x:Number(source.halfX ?? source.x),y:Number(source.halfY ?? source.y)});
 
 export class FlappyEngine {
-  constructor(levels, stage=9) {
+  constructor(levels, stage=DEFAULT_STAGE) {
     this.levels = Array.isArray(levels) ? levels : levels.levels;
     if (!Array.isArray(this.levels) || !this.levels.length) throw new Error('Missing Flappy level data.');
     this.options = {enemies:true};
