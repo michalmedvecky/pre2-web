@@ -1,6 +1,6 @@
 # Flappy — webový remaster pro PMD 85
 
-Hratelná webová verze Flappy začíná rovnou v **původním sektoru 9**. Obsahuje všech **200 úrovní vytěžených z FLAPPY+4**, moderní i původní pixelovou grafiku a ovládání klávesnicí nebo dotykem.
+Hratelná webová verze Flappy začíná rovnou v **původním sektoru 1**. Obsahuje všech **200 úrovní vytěžených z FLAPPY+4**, moderní i původní pixelovou grafiku a ovládání klávesnicí nebo dotykem.
 
 **Nasazení do k3s:** [deploy/README.md](deploy/README.md). Samostatný Docker context je `flappy/`, image repository `ghcr.io/michalmedvecky/pre2-web-flappy`.
 
@@ -12,7 +12,7 @@ Potřebujete Node.js 24 nebo novější. Projekt nemá externí závislosti; ins
 npm start
 ```
 
-Otevřete [http://localhost:4173](http://localhost:4173). Jiný sektor vyberete v nabídce STAGE nebo pomocí adresy, například [http://localhost:4173/?stage=1](http://localhost:4173/?stage=1). Platné hodnoty jsou 1–200; bez parametru se otevře sektor 9. Hra se rozběhne prvním pohybem nebo střelou.
+Otevřete [http://localhost:4173](http://localhost:4173). Jiný sektor vyberete v nabídce STAGE nebo pomocí adresy, například [http://localhost:4173/?stage=9](http://localhost:4173/?stage=9). Platné hodnoty jsou 1–200; bez parametru se otevře sektor 1. Hra se rozběhne prvním pohybem nebo střelou.
 
 ## Jak hrát
 
@@ -55,7 +55,7 @@ docker run --rm --read-only --tmpfs /tmp:rw,noexec,nosuid,size=64m \
   -p 127.0.0.1:8080:8080 flappy-local
 ```
 
-Pak otevřete `http://127.0.0.1:8080/`. Produkci obsluhuje nginx na 8080; Node server slouží pro lokální vývoj. Kontejner má `/healthz` a `/build.json`. Hra se otevírá v sektoru 9 také po nasazení.
+Pak otevřete `http://127.0.0.1:8080/`. Produkci obsluhuje nginx na 8080; Node server slouží pro lokální vývoj. Kontejner má `/healthz` a `/build.json`. Hra se otevírá v sektoru 1 také po nasazení.
 
 Workflow `.github/workflows/publish-flappy-image.yml` spouští testy a skutečný build/smoke test image v pull requestech. Po začlenění do `main` publikuje samostatný image pro amd64/arm64 s tagem `sha-<commit>`. Přesný digest je v Actions summary. Workflow neprovádí rollout do clusteru.
 
