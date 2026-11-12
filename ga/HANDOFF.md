@@ -1,20 +1,11 @@
-# GA — verze0.1.1 / původní výběr postav
+# Golden Axe — HANDOFF
 
-- Samostatný Golden Axe v `ga/`, repo `https://github.com/michalmedvecky/pre2-web`. Nový release používá `ga-v0.1.1`; publikovaný0.1.0 se nepřepisuje.
-- Přesný releasecommit, úspěšný CIrun, image digest a přílohy jsou v GitHub release notes; netvoří se nepravdivá self-reference commitu tohoto souboru.
-- Změna0.1.1: původní MAPC/SELECT1–3,120originálních orbitálních poloh, současný nezávislý1P/2P výběr a původní confirmation/duplicate gates. Touch ovladače pod plátnem.
-- P1 defaultNum4/6+Num5 (webalias šipky/J/Enter),P2 A/D+S; Options mohou zařízení prohodit. Oba musí potvrdit, pak další původnípresentation update spustí hru.
-- Gameplay core75 zůstává SHA `5213829f351f710dddefc27a37edbd2f4a715a901e86da62bf81ab0bb073b1e0`; žádná změna fyziky/audio engine ani HDliveassetů.
-- Runtime154files bez injektovaného build.json, snapshot `e60da36a1307690d417693bb94ca4bf2d18a58376523a5652e59b68c74aa764b`; manifest/sourceSnapshot a localdirtymetadata poctivě oddělené od CI40SHA.
-- Presenter6unit+identity5PASS a independent read-only/sourcebyte review; actual1P/2P/390px touch browserPASS/0errors. Použity stávající receipts, nevydává se nový whole-game průchod.
-- Počáteční1P312×200 obraz62400/62400RGB shodný se skutečným DOS capture axe_003; jedna póza není všechnyfáze/native2P/wallclock proof.
-- Autority: `reports/character-select.md`, `evidence/character-select/{checks,final-checks,native-pixel-comparison}.json`, raw datovéfixtures místoEXE.
-- Testovacíbrowser/audio zavřené; userpreview5790 ponechán na výslovný pokyn, původní5788 nedotčen. Žádné nové browser/native boot opakování pro release.
-- Release preflight: runtime/provenance/parentchecks +testy v `validation/release-0.1.1-preflight.json` a příslušném unitlogu. Skutečný container smoke až GA CI, ne localNode preview.
--39původních dirty/untrackedPre2souborů mají původníSHA a nesmějí se stageovat; oba rootworkflow beze změny proti0.1.0, GA-onlyCI izolace zachovaná.
-- Repo variablesGA_IMAGE_REPOSITORY/GA_NGINX_IMAGE z0.1.0 se jen ověřují; bez zbytečného přepisu. Žádné tajné hodnoty v repo.
-- Docker lokálně není; CI musí projít testy/manifestem, oběma linuxarchitekturami, registry a skutečným readonly/UID/MIME/commit smoke před vydáním prerelease/latest:false.
-- Přílohyrelease: GA-onlycommittedtar.gz+SHA256SUMS; GitHubautomaticSourceZIP je celýparentrepo. ZdrojovéLGPL C/h/licence/wrapper/buildrecipe součást runtime.
-- Deployer `DEPLOYER.md`: image digest→explicitcontext/namespace→render→manualdiff/apply/verify/rollback. Požadovanýhostga.500miles.cz jen předanývstup; žádnéDNS/TLS/k3s změny.
-- Nadále nejde o úplný nativeexact/HD remaster: IRQ/RNG/wallclock/globalhitordering/near-goods a fyzickýiOS/Gamepad mají doložené meze.
-- HD zatím pouze pozastavenýpreview s failedqualitygate; důslednýupscaling má samostatný workstream až po tomto releasu, neimportuje se narychlo.
+- Verze0.3.0: česká nápověda obou hráčů/bojových kombinací, celý schválený hudební remaster a audio lifecycle opravy. Stav publikace, přesný commit, CI a image digest určuje [GitHub release ga-v0.3.0](https://github.com/michalmedvecky/pre2-web/releases/tag/ga-v0.3.0). K3s rollout není součástí vydání.
+- Runtime `154f24aaeaac84995675c629e4d6eab0d8d53e2a821c901865055e40bb737078`,617 souborů. HD je výchozí; původní hudba výchozí, MUSIC vybírá remaster26 původních programů. F2 efekty/F3 hudba. Žádné nové noty, levely ani režimy.
+- Nápověda v menu/Options/pauze/patičce sleduje aktuální zařízení. Vysvětluje původní i webové vstupy, běh/dvojstisk, běhový skok, útoky a dotyk. Dialog bezpečně pozastaví hru; Esc a focus se vracejí správně. 3 unit +11 desktop/touch/fullscreen/cached browser kontrol PASS.
+- 220 Node testů PASS na izolovaném checkoutu nad remote899c1e6 včetně6 nových úplných world replayů. Nových6 browser průchodů:65571 legálních ticků,133 checkpointů,83 prezentací, bez page errors/ustálených SD fallbacků. Fullrun baseline12b277…; proti finálu se mění pouze nápověda/app/audio/style, core/render/data stejné. Cíleně restart6, UI7, Stage4 klávesy/dotyk4 a mount18/54HD renderů PASS.
+- Finální zvuk: interruption4 + cached lifecycle9 PASS se skutečným post-master PCM. BFCache ponechá objekty a bezpečnou pauzu; neočekávané suspended/interrupted audio při aktivní hře obnoví důvěryhodný běžný vstup bez restartu skladby. Skutečný dispose zůstává terminální. Dřívější userstage2 výpadek není vydáván za reprodukovaný; samostatná interruption fixture je doložená.
+- Důležité: reports/release-030.md, controls-help.md, quality-027.md, music-remaster.md, audio-interruption.md; provenance/ga-v0.3.0-qa.json a quality-027.json. Přenosné browser testy jsou tests/*-browser.mjs; CI world replay tests/full-mode-replays.test.mjs. Raw evidence v golden-axe-research/evidence/{controls-help-20261112,quality-027,audio-interruption-20261112,release-030}/.
+- Meze: úplná nativní IRQ/RNG/wallclock shoda, část hit/throw pořadí a pozdní Duel paleta nejsou potvrzené. Žádný fyzický Safari/iOS/gamepad test. Akustické barvy/envelope/F3 gate se liší od FM originálu. Dávkovaný port replay není realtime/native DOS fullrun.
+- Soukromý náhled https://michals-macbook-pro.quagga-bee.ts.net/ přes launchd cz.500miles.ga.music-preview/5799, soubory /private/tmp/ga-music-preview-501/game. Po odhlášení/rebootu může vyžadovat obnovu. Původní ZIP SHA950eb3ab…ccc zachován; nesouvisející Pre2/Flappy změny a tajné údaje chránit.
+- Další krok: deployer může převzít konkrétní GA image digest z vydání; cluster až na výslovný pokyn. Pro další změny vždy znovu zmrazit checksumy a cíleně ověřit zasažené chování; netvrdit dokonalost nad rámec důkazů.

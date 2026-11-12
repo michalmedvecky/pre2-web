@@ -1,6 +1,8 @@
 /** Original GOLD register-sequenced OPL music and original SND.DAT effects.
  * PCM is derived offline from the original driver; no EXE runs in the browser.
  */
+import {RemasterMusic} from './remaster-music.js';
+
 export class OriginalAudio {
   constructor({muted = false, musicEnabled = true, effectsEnabled = true, musicBackend = 'auto', manifestURL = new URL('../assets/audio/manifest.json', import.meta.url)} = {}) {
     this.manifestURL = manifestURL;
@@ -31,6 +33,11 @@ export class OriginalAudio {
     this.error = null;
     this.disposed = false;
     this.disposePromise = null;
+    this.musicEdition = 'original';
+    this.remasterMusic = null;
+    this.remasterError = null;
+    this.trackStartedAt = null;
+    this.onMusicEditionChange = null;
   }
 
   async unlock() {
@@ -86,7 +93,7 @@ export class OriginalAudio {
     this.musicEnabled = Boolean(value);
     if (this.liveMusic) this.liveMusic.setEnabled(this.musicEnabled);
     // Native F3 drives GOLD TL/dekey state; master mute remains independent.
-    if (this.context && this.musicGain) this.musicGain.gain.setValueAtTime(this.liveMusic ? 1 : (this.musicEnabled ? 1 : 0), this.context.currentTime);
+    this.syncMusicMix();
     return this.musicEnabled;
   }
   setEffectsEnabled(value) {
@@ -98,17 +105,76 @@ export class OriginalAudio {
   toggleMusic() {return this.setMusicEnabled(!this.musicEnabled);}
   toggleEffects() {return this.setEffectsEnabled(!this.effectsEnabled);}
 
+  getMusicEditionStatus() {
+    return {requested:this.musicEdition,effective:this.remasterMusic?.active?'remaster':'original',loading:this.musicEdition==='remaster'&&this.remasterMusic?.state==='loading',error:this.musicEdition==='remaster'?this.remasterError||this.remasterMusic?.error||null:null};
+  }
+
+  syncMusicMix() {
+    const context=this.context;
+    if(this.disposed||!context||context.state==='closed')return;
+    const remastered=this.musicEdition==='remaster'&&this.remasterMusic?.active;
+    // The original GOLD voice keeps its clock and native F3 state even while
+    // inaudible. Restoring it never reselects or restarts the original score.
+    this.musicGain?.gain.setTargetAtTime(remastered?0:(this.liveMusic?1:(this.musicEnabled?1:0)),context.currentTime,.005);
+    this.remasterGain?.gain.setTargetAtTime(remastered&&this.musicEnabled?1:0,context.currentTime,.005);
+    this.onMusicEditionChange?.(this.getMusicEditionStatus());
+  }
+
+  async setMusicEdition(edition) {
+    if(this.disposed)return false;
+    if(!['original','remaster'].includes(edition))throw Error('Unknown music edition.');
+    this.musicEdition=edition;this.remasterError=null;
+    if(edition==='original'){
+      this.remasterMusic?.stop();this.syncMusicMix();return true;
+    }
+    this.syncMusicMix();
+    if(!this.context||!this.currentTrack||this.trackStartedAt===null)return true;
+    return this.syncRemaster();
+  }
+  toggleMusicEdition() {return this.setMusicEdition(this.musicEdition==='original'?'remaster':'original');}
+
+  async syncRemaster() {
+    if(this.disposed||this.musicEdition!=='remaster'||!this.context||this.context.state==='closed'||!this.currentTrack||this.trackStartedAt===null)return false;
+    try {
+    if(!this.remasterMusic){
+      this.remasterGain=this.context.createGain();this.remasterGain.gain.value=0;this.remasterGain.connect(this.master);
+      this.remasterMusic=new RemasterMusic({context:this.context,destination:this.remasterGain,manifestURL:new URL('remaster/manifest.json',this.manifestURL),onChange:()=>this.syncMusicMix()});
+    }
+    return await this.remasterMusic.select(this.currentTrack,{startedAt:this.trackStartedAt,loop:this.currentTrackOptions.loop??true});
+    } catch(error) {if(!this.disposed){this.remasterError=String(error.message||error);this.syncMusicMix();}return false;}
+  }
+
   async setPaused(value) {
     this.paused = Boolean(value);
     const context = this.context;
     if (this.disposed || !context || context.state === 'closed') return false;
     try {
-      if (this.paused) await context.suspend();
+      if (this.paused) {await context.suspend();this.remasterMusic?.releaseRetired();}
       else await context.resume();
       return !this.disposed && context === this.context && context.state !== 'closed';
     } catch (error) {
       if (!this.disposed && context === this.context) this.error = String(error);
       return false;
+    }
+  }
+
+  // Call only from a trusted gesture. A browser/device may suspend the shared
+  // clock independently of our pause intent; restore that clock, never the song.
+  resumeAfterInterruption() {
+    const context=this.context;
+    if(this.disposed||this.paused||!context||!['suspended','interrupted'].includes(context.state))return Promise.resolve(false);
+    if(this.interruptionResumePromise)return this.interruptionResumePromise;
+    try {
+      const resumed=context.resume();
+      const pending=Promise.resolve(resumed).then(()=>!this.disposed&&context===this.context&&!this.paused&&context.state==='running',error=>{
+        if(!this.disposed&&context===this.context)this.error=String(error);
+        return false;
+      }).finally(()=>{if(this.interruptionResumePromise===pending)this.interruptionResumePromise=null;});
+      this.interruptionResumePromise=pending;
+      return pending;
+    } catch(error) {
+      if(!this.disposed&&context===this.context)this.error=String(error);
+      return Promise.resolve(false);
     }
   }
 
@@ -127,14 +193,14 @@ export class OriginalAudio {
         this.liveMusic = live;
         this.musicBackend = 'opl';
         live.setEnabled(this.musicEnabled);
-        this.musicGain.gain.setValueAtTime(1, context.currentTime);
+        this.syncMusicMix();
         return true;
       } catch (error) {
         if (this.disposed || context !== this.context || controller.signal.aborted) return false;
         this.liveFailed = true;
         this.fallbackReason = String(error);
         this.musicBackend = 'flac';
-        if (context === this.context && context.state !== 'closed') this.musicGain.gain.setValueAtTime(this.musicEnabled ? 1 : 0, context.currentTime);
+        this.syncMusicMix();
         return false;
       } finally {this.liveInitPromise = null;}
     })();
@@ -152,7 +218,8 @@ export class OriginalAudio {
     this.musicBackend = 'flac';
     this.liveFailed = true;
     this.fallbackReason = String(error);
-    if (this.context && this.context.state !== 'closed') this.musicGain.gain.setValueAtTime(this.musicEnabled ? 1 : 0, this.context.currentTime);
+    this.remasterMusic?.stop();
+    this.syncMusicMix();
     this.liveRecoveryPromise = (async () => {
       try {
         await live.dispose();
@@ -204,6 +271,8 @@ export class OriginalAudio {
     if (!id || !this.manifest.tracks[id]) return false;
     if (this.currentTrack === id && this.musicSource && !options.restart) return true;
     const token = ++this.musicToken;
+    this.remasterMusic?.stop({clearBuffer:this.remasterMusic.bufferId!==id});
+    this.trackStartedAt = null;
     await this.ensureLiveMusic();
     if (token !== this.musicToken || !this.context || this.context.state === 'closed') return false;
     if (this.musicSource && this.musicSource !== this.liveMusic?.node) {this.musicSource.stop();this.musicSource = null;}
@@ -217,6 +286,8 @@ export class OriginalAudio {
           if (token !== this.musicToken || !this.context) return false;
           if (!ok) return false;
           this.musicSource = this.liveMusic.node;
+          this.trackStartedAt = this.liveMusic.lastStartTime ?? this.context.currentTime;
+          this.syncRemaster();
           return true;
         } catch (error) {
           return await this.recoverLiveMusic(error);
@@ -232,7 +303,9 @@ export class OriginalAudio {
       source.connect(this.musicGain);
       source.onended = () => {if (this.musicSource === source) this.musicSource = null;source.disconnect();};
       this.musicSource = source;
-      source.start();
+      this.trackStartedAt = this.context.currentTime;
+      source.start(this.trackStartedAt);
+      this.syncRemaster();
       return true;
     } catch (error) {if (!this.disposed) {this.error = String(error);this.status = 'unavailable';}return false;}
   }
@@ -272,6 +345,8 @@ export class OriginalAudio {
     this.effectToken++;
     this.pendingTrack = null;
     this.currentTrack = null;
+    this.trackStartedAt = null;
+    this.remasterMusic?.stop({clearBuffer:true});
     this.lastStageKey = null;
     this.liveMusic?.stop();
     for (const source of [this.musicSource === this.liveMusic?.node ? null : this.musicSource, this.effectSource]) if (source) {source.stop();source.disconnect();}
@@ -284,6 +359,8 @@ export class OriginalAudio {
     this.disposed = true;
     this.stop();
     this.buffers.clear();
+    this.remasterMusic?.dispose();
+    this.onMusicEditionChange = null;
     this.liveAbortController?.abort();
     const context = this.context, live = this.liveMusic;
     this.context = null;

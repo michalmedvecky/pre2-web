@@ -1,0 +1,240 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-12",
+  "scope": "Current frozen audio/UI baseline, all six canonical legal input streams replayed in actual Chrome app with HD and MUSIC requested. Batched Simulation world inputs and actual RAF presentation flow. Not real-time keyboard/native DOS fullruns. Audio probes explicitly resume only audio clock while world remains paused; ordinary pause behavior separately covered. Final help/interrupt patch checked separately by root.",
+  "runtimeSnapshot": "12b277f59c0d96434d3085ead1eb610652fdf0c0aa56e15c36a4961bc38de570",
+  "coreSHA256": "6ca2e6f98c1e97ae148aca3f21f69b4b44fa0b3bdab13465b04e2cc0a05c589e",
+  "cases": [
+    {
+      "mode": "arcade",
+      "players": 1,
+      "pass": true,
+      "returnedMenu": true,
+      "ticks": 22174,
+      "worldCheckpoints": 31,
+      "presentationPhases": 33,
+      "settledPresentationRenders": 34,
+      "runtimeStable": true,
+      "snapshot": "12b277f59c0d96434d3085ead1eb610652fdf0c0aa56e15c36a4961bc38de570",
+      "errors": [],
+      "settledFallbacks": 0,
+      "diagnosticAudioProbes": 31,
+      "diagnosticAudioAllNonzero": true,
+      "postMasterRemasterPositiveWindows": 445,
+      "browserClosed": true,
+      "audioDisposed": true
+    },
+    {
+      "mode": "arcade",
+      "players": 2,
+      "pass": true,
+      "returnedMenu": true,
+      "ticks": 19223,
+      "worldCheckpoints": 31,
+      "presentationPhases": 33,
+      "settledPresentationRenders": 34,
+      "runtimeStable": true,
+      "snapshot": "12b277f59c0d96434d3085ead1eb610652fdf0c0aa56e15c36a4961bc38de570",
+      "errors": [],
+      "settledFallbacks": 0,
+      "diagnosticAudioProbes": 31,
+      "diagnosticAudioAllNonzero": true,
+      "postMasterRemasterPositiveWindows": 449,
+      "browserClosed": true,
+      "audioDisposed": true
+    },
+    {
+      "mode": "beginner",
+      "players": 1,
+      "pass": true,
+      "returnedMenu": true,
+      "ticks": 8306,
+      "worldCheckpoints": 15,
+      "presentationPhases": 8,
+      "settledPresentationRenders": 9,
+      "runtimeStable": true,
+      "snapshot": "12b277f59c0d96434d3085ead1eb610652fdf0c0aa56e15c36a4961bc38de570",
+      "errors": [],
+      "settledFallbacks": 0,
+      "diagnosticAudioProbes": 15,
+      "diagnosticAudioAllNonzero": true,
+      "postMasterRemasterPositiveWindows": 229,
+      "browserClosed": true,
+      "audioDisposed": true
+    },
+    {
+      "mode": "beginner",
+      "players": 2,
+      "pass": true,
+      "returnedMenu": true,
+      "ticks": 7923,
+      "worldCheckpoints": 16,
+      "presentationPhases": 8,
+      "settledPresentationRenders": 9,
+      "runtimeStable": true,
+      "snapshot": "12b277f59c0d96434d3085ead1eb610652fdf0c0aa56e15c36a4961bc38de570",
+      "errors": [],
+      "settledFallbacks": 0,
+      "diagnosticAudioProbes": 16,
+      "diagnosticAudioAllNonzero": true,
+      "postMasterRemasterPositiveWindows": 236,
+      "browserClosed": true,
+      "audioDisposed": true
+    },
+    {
+      "mode": "duel",
+      "players": 1,
+      "pass": true,
+      "returnedMenu": true,
+      "ticks": 6606,
+      "worldCheckpoints": 36,
+      "presentationPhases": 1,
+      "settledPresentationRenders": 2,
+      "runtimeStable": true,
+      "snapshot": "12b277f59c0d96434d3085ead1eb610652fdf0c0aa56e15c36a4961bc38de570",
+      "errors": [],
+      "settledFallbacks": 0,
+      "diagnosticAudioProbes": 0,
+      "diagnosticAudioAllNonzero": true,
+      "postMasterRemasterPositiveWindows": 231,
+      "browserClosed": true,
+      "audioDisposed": true
+    },
+    {
+      "mode": "duel",
+      "players": 2,
+      "pass": true,
+      "returnedMenu": true,
+      "ticks": 1339,
+      "worldCheckpoints": 4,
+      "presentationPhases": 0,
+      "settledPresentationRenders": 1,
+      "runtimeStable": true,
+      "snapshot": "12b277f59c0d96434d3085ead1eb610652fdf0c0aa56e15c36a4961bc38de570",
+      "errors": [],
+      "settledFallbacks": 0,
+      "diagnosticAudioProbes": 4,
+      "diagnosticAudioAllNonzero": true,
+      "postMasterRemasterPositiveWindows": 36,
+      "browserClosed": true,
+      "audioDisposed": true
+    }
+  ],
+  "totals": {
+    "ticks": 65571,
+    "checkpoints": 133,
+    "presentationPhases": 83,
+    "settledPresentationRenders": 89,
+    "diagnosticAudioProbes": 97
+  },
+  "allPass": true,
+  "finalRuntimeSnapshot": "154f24aaeaac84995675c629e4d6eab0d8d53e2a821c901865055e40bb737078",
+  "finalCoreBridge": {
+    "finalBuild": {
+      "repository": "https://github.com/michalmedvecky/pre2-web",
+      "commit": null,
+      "buildSource": "dirty-snapshot",
+      "dirty": true,
+      "sourceSnapshot": "154f24aaeaac84995675c629e4d6eab0d8d53e2a821c901865055e40bb737078"
+    },
+    "baselineSnapshot": "12b277f59c0d96434d3085ead1eb610652fdf0c0aa56e15c36a4961bc38de570",
+    "allEqual": true,
+    "modules": {
+      "simulation.js": "6ca2e6f98c1e97ae148aca3f21f69b4b44fa0b3bdab13465b04e2cc0a05c589e",
+      "logic-data.js": "1689a8402be5d88c7e94d256a4839f4f3c7991e1d3095b70c787819b41bd22ba",
+      "magic.js": "462ebe32744407aa222456b98c5fd2c848a25d0332350a2758c2f059322ae08a",
+      "speaker-clock.js": "022006f1ddeea9609a66c6e0a12cd5a08a10f7e35ab3c7443315cea58292f7b3",
+      "renderer.js": "429c65c0a4e03e9c6a60c313a0cc50ca439f8e3a1aa074ead7f8c4dc2b8a9712",
+      "input.js": "cc4760c794e9dd6f0d4ba7cfad2534f0dbda7eb4c3605574dda065fbecac2772"
+    },
+    "scope": "Final HTTP runtime core, renderer and input byte-equal to immutable six-run baseline; final entry/OPL/LEVEL/HD/mobile identity checked separately by runtime-browser.mjs."
+  },
+  "portableWorldReplays": "tests/full-mode-replays.test.mjs",
+  "portableInputFixture": "tests/fixtures/full-mode-replays.json",
+  "targeted": {
+    "restartCases": 6,
+    "uiCases": 7,
+    "stage4Cases": 4,
+    "mountCases": 18,
+    "mountRenders": 54,
+    "finalRuntimeSmoke": true
+  },
+  "personallyViewed": [
+    "Stage4 desktop lower landing",
+    "Stage4 emulated touch upper landing",
+    "Gilius mounted flame attack",
+    "Tyris mounted reverse-facing recovery",
+    "Arcade Stage8 final world"
+  ],
+  "limitations": [
+    "Batched legal input world replays, not continuous realtime keyboard or native DOS fullruns",
+    "Only canonical Gilius1P and Gilius/AxeBattler2P fullmode streams; other heroes targeted mount QA",
+    "Options Life Meter5; cooperative P2 Continue refusal is explicit; not both players surviving to the end",
+    "97 diagnostic audio windows resume only audio clock while world is paused; this is not ordinary pause behavior",
+    "Physical Safari/iOS/gamepad, global IRQ/RNG phase, some hit/throw ordering and late Duel native palette reachability remain unverified",
+    "Final help/audio helper changes have separate owner QA and targeted final runtime smoke; six fullruns were not retroactively relabelled"
+  ],
+  "researchEvidenceDirectory": "golden-axe-research/evidence/quality-027/",
+  "proofs": {
+    "summary.json": {
+      "sha256": "d7fe83c6663774a9a1648e96f8c1905b83b78f2b1883bd13f1317c2fb7b24644",
+      "bytes": 4232
+    },
+    "freeze.json": {
+      "sha256": "9c307831344e919b3754bb137deaca99f1ccf3d9cf7c4f8497e4cbc59c4f0b94",
+      "bytes": 101582
+    },
+    "restart/checks.json": {
+      "sha256": "5ceb3086e40dba2caf2863f3f08f77cca85daa71be37458d3bfaf19036745e5f",
+      "bytes": 1342
+    },
+    "ui/checks.json": {
+      "sha256": "57500b88df4f4e5dde6fb7cbcf1e863cef29a46c2bca2a5142620ebcc0514936",
+      "bytes": 1044
+    },
+    "stage4/checks.json": {
+      "sha256": "4fa069f6fc0e5afbe3b28eb245201f0bf6a87b7690d6e1e771e0ac091c8bf787",
+      "bytes": 2125563
+    },
+    "mounts/checks.json": {
+      "sha256": "3654d9d07ed40bc9eedf1889670feb1efcbf7b95c2b93830188d77a9730d580b",
+      "bytes": 54473
+    },
+    "final-smoke/checks.json": {
+      "sha256": "26616b9c2e1717cf7cb7363262ff443b009981ec0ec2c94df274a32ad22309d2",
+      "bytes": 16186
+    },
+    "final-core-bridge.json": {
+      "sha256": "0b08b62d622548732b4bf22a08e9e716a974aa9fdd2ec3660ccc714fb0610f41",
+      "bytes": 1092
+    },
+    "fullruns/arcade-1p/replay.json": {
+      "sha256": "3926d69bd1b4966e0d3545af908df8ec5b27d03d85e1f7353cf3405d933ae479",
+      "bytes": 3251395
+    },
+    "fullruns/arcade-2p/replay.json": {
+      "sha256": "e71166e0b62729e52554eeb21f06800c33c68cc21d46469e7b07a0a2703b618d",
+      "bytes": 3396878
+    },
+    "fullruns/beginner-1p/replay.json": {
+      "sha256": "182a95f5a71a6c9b1be05fd8a6fb89386f5f47c758c0e7f81ab2182f444762ad",
+      "bytes": 1697289
+    },
+    "fullruns/beginner-2p/replay.json": {
+      "sha256": "c1a1217f353a6aa43347242406c305018fe0b406755f1c7bb054440cf7c569f1",
+      "bytes": 1886702
+    },
+    "fullruns/duel-1p/replay.json": {
+      "sha256": "c97d29253a86c5ed5e66e76c1a352f45ddc99322a4c30cd40c749ffe8595de2d",
+      "bytes": 3494518
+    },
+    "fullruns/duel-2p/replay.json": {
+      "sha256": "296c18c4f27b0d844a8d5acfed76b45eac9ea34cbfb8970d5dfca844d2f798be",
+      "bytes": 596972
+    }
+  },
+  "allOwnedBrowsersAndAudioClosed": true,
+  "ownedServer5931Stopped": true,
+  "noRuntimeCoreChanges": true,
+  "noCommitPushOrClusterDeploymentByThisAudit": true
+}

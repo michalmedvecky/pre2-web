@@ -1,5 +1,31 @@
 # Golden Axe — předání deployerovi pro k3s
 
+## Vydání ga-v0.3.0 — podklady před publikací
+
+Toto je předávací postup; image a archiv lze nasadit až po ověření skutečného
+[release ga-v0.3.0](https://github.com/michalmedvecky/pre2-web/releases/tag/ga-v0.3.0).
+Do té doby nevydávejte pracovní snapshot za publikovaný image. Release owner
+doplní do vydání přesný commit, úspěšný CI run, runtime snapshot, image digest
+a GA-only přílohy `ga-v0.3.0.tar.gz` / `ga-v0.3.0.SHA256SUMS`.
+
+Původní hudba je výchozí, cheat MUSIC a tlačítko v Options/pauze vybírá
+volitelný remaster všech26 původních programů. Nové soubory mají celkem
+100700490B; stahuje se jen aktuální skladba. Původní efekty jsou beze změny.
+
+Nové FLAC soubory `assets/audio/remaster/<id>-<sha16>.flac` potřebují
+`audio/flac` a dlouhou immutable cache; seznam `manifest.json` zůstává
+no-cache. To obsahuje nynější Nginx v image i rozšířený kontejnerový smoke.
+Zachovejte existující samostatnou GA aplikaci na `ga.500miles.cz`, její
+namespace, Service, Ingress a TLS. Změňte pouze image na digest z vydání;
+Prehistorik ani Flappy neměňte. Vydání samo nic do k3s nenasazuje.
+Po případném výslovně autorizovaném rollout ověřte původní hudbu jako default,
+MUSIC zap/vyp, první načtení, menu/level/meziscénu, F3/pauzu a návrat k originálu
+při nedostupném remasteru. Ověřte i zvuk po návratu z historie a dialog ovládání
+pro oba hráče včetně prohozených vstupů v Options a zavření bez ztráty pauzy.
+Podrobnosti: `reports/music-remaster.md`, `reports/audio-history-recovery.md`
+a aktuální report ovládání. Jednorázové hlášení ticha ve stage2 z6.11. nebylo
+v cílených14 PCM kontrolách zopakováno; není vydáváno za opravenou závadu.
+
 ## Patch ga-v0.2.6
 
 Opravy z auditů celé hry:
@@ -155,14 +181,17 @@ proti DOS se kvůli tomuto patchi znovu netestovala. Detaily:
 [reports/hd-loading.md](reports/hd-loading.md). Níže je obecný postup a
 historický popis původní přípravy; vydání samo nic do k3s nenasazuje.
 
-**Připraveno, nenasazeno.** Žádný push, publish ani cluster access během přípravy. Lokální Docker není dostupný: skutečný image build, nginx runtime a registry manifest smoke zatím čekají na CI/deployera. Browser QA se skutečně provedla nad místním Node preview, nikoli uvnitř kontejneru.
+**Historická první příprava.** V této části původně nebyl proveden push ani publish;
+pozdější vydání výše již mají vlastní CI image a kontejnerový smoke. Lokální
+Docker stále není dostupný: nové kandidáty skutečně staví a testuje CI. Browser
+QA nad Node preview se neoznačuje za kontrolu běžícího kontejneru.
 
 Repo: `https://github.com/michalmedvecky/pre2-web`, aplikace a buildcontext `ga/`, Deployment/Service `ga`. Původní Prehistorik2 aplikace/data se neměnily. Jediná schválená změna starého workflow je `push.paths-ignore` pro `ga/**`, nový GAworkflow a Pre2workflow samotný; přesný patch `provenance/parent-workflow-delta.patch`. GA-only včetně prvního commitu s oběma workflow spustí jen GA, Pre2-app-only jen Pre2, mixed app změny obě. Samotná Pre2workflow-only změna image automaticky nepublikuje; workflow_dispatch zůstává. Platí standardní GitHub limity diff filtrů; není to nová cluster izolace.
 
 ## Nejkratší cesta
 
-1. Zkontrolujte změny a checksumy; pro budoucí commit vyberte **jen** `ga/`, nový `.github/workflows/publish-ga-image.yml` a schválený jednořádkový patch `.github/workflows/publish-image.yml`. Neberte již existující dirty Pre2 README/app/cheats/render ani nesouvisející untracked art. Commit/push zde nebyl proveden.
-2. Nastavte dvě repository **variables**, nikoli secrets: `GA_IMAGE_REPOSITORY` = vámi zvolený nový GHCR repository pro Golden Axe, bez tagu; `GA_NGINX_IMAGE` = ověřený oficiální multiarch nginx pin `nginx:stable-alpine@sha256:<64hex>`. Nepoužívejte `ghcr.io/michalmedvecky/pre2-web`; renderer/CI jej pro Golden odmítají. Nezadané hodnoty publishing zastaví. Existující digest staré hry se nepřenáší.
+1. Zkontrolujte změny a checksumy; při běžném GA vydání vyberte **jen** `ga/`. Oba root workflow jsou již verzované; jejich změnu přidávejte pouze při konkrétní ověřené potřebě. Neberte existující dirty Pre2 README/app/cheats/render ani nesouvisející untracked art. Před push ověřte aktuální remote main a zachovejte souběžné změny jiných aplikací. Stará lokální kopie GA integračního testu nesmí přepsat novější upstream verzi.
+2. Ověřte dvě repository **variables**, nikoli secrets: `GA_IMAGE_REPOSITORY` = `ghcr.io/michalmedvecky/pre2-web-ga` a `GA_NGINX_IMAGE` = ověřený oficiální multiarch nginx pin `nginx:stable-alpine@sha256:<64hex>`. Obě byly12.11.2026 přes GitHub read-only ověřeny; při změně se znovu kontrolují. Nepoužívejte `ghcr.io/michalmedvecky/pre2-web`; renderer/CI jej pro Golden odmítají. Nezadané hodnoty publishing zastaví. Existující digest staré hry se nepřenáší.
 3. Po vlastním schváleném pushi na main nebo workflow_dispatch nechte [Golden Axe image](../../.github/workflows/publish-ga-image.yml) úspěšně projít. Pinned actions jsou převzaté z reference, nikoli automaticky aktualizované. CI testuje, ověřuje manifest, vyžaduje clean checkout, používá SOURCE_DATE_EPOCH z commit timestampu, staví amd64+arm64 a publikuje jen `sha-<fullSHA>` do odděleného repository. Pak ověří oba platformní manifesty a skutečný readonly/UID/MIME/buildmetadata container smoke. Žádné latest ani Kubernetes credentials.
 4. Z Actions summary převezměte **nový** `registry/repository@sha256:<digest>`, odpovídající build commit a runtime snapshot. Digest je deployment/rollback autorita; GitHubtag není nezměnitelná registry policy. Pin+checksumy+SOURCE_DATE_EPOCH zafixují vstupy; bitově shodný opakovaný image build zde nebyl proveden.
 5. Doplňte konfiguraci, vyrenderujte a až s vlastní deploy autorizací postupujte níže. Zde nejsou žádné implicitní context/namespace/domain/registry hodnoty.
@@ -231,9 +260,9 @@ Předávací zápis po skutečné práci: build commit+snapshot, image digest/pl
 
 ## Samostatný GitHub release Golden Axe
 
-Verze balíčku0.2.0 používá vlastní prefix `ga-v0.2.0`, nikoli existující Pre2tag `v*`. Image se staví na main/workflow_dispatch; tagpush sám další image ani release nevytváří. Po úspěšném GA CI vytvoří release owner tag na přesném otestovaném packaging commitu a samostatný GitHub release s názvem Golden Axe. Před vytvořením musí znovu ověřit nepoužitý tag.
+Každá verze balíčku používá vlastní prefix `ga-v<verze>`, nikoli Pre2tag `v*`. Image se staví na main/workflow_dispatch; tagpush sám další image ani release nevytváří. Po úspěšném GA CI vytvoří release owner tag na přesném otestovaném packaging commitu a samostatný GitHub release s názvem Golden Axe. Před vytvořením musí znovu ověřit nepoužitý tag. Dosavadní GA vydání jsou pre-release a nenahrazují repository Latest jiných aplikací; tuto volbu zachovejte, dokud release owner výslovně neurčí změnu.
 
-Deployer asset je explicitní `ga-v0.2.0.tar.gz` z committed `ga/` subtree a `ga-v0.2.0.SHA256SUMS`; GitHub automatický SourcecodeZIP obsahuje celý parentrepo a není GA-only balíček. Archiv ponechává tracked build.json jako poctivý lokální template; skutečný čistý buildcommit se ověřuje vCI image. Pro CI-integrační test použijte cílový repo včetně obou rootworkflow; samotný GA kontejner/render nepotřebují Pre2runtime.
+Deployer asset je explicitní `ga-v<verze>.tar.gz` z committed `ga/` subtree a `ga-v<verze>.SHA256SUMS`; GitHub automatický SourcecodeZIP obsahuje celý parentrepo a není GA-only balíček. Archiv ponechává tracked build.json jako poctivý lokální template; skutečný čistý buildcommit se ověřuje vCI image. Pro CI-integrační test použijte cílový repo včetně rootworkflow; samotný GA kontejner/render nepotřebují Pre2 ani Flappy runtime.
 
 Release notes uvedou actual packagingcommit, runtime snapshot, GA CIrun, skutečný image digest/platformy, checksum přiloženého archivu, známé meze a žádný clusterdeploy. HD je výchozí remaster; release netvrdí úplnou nativeexact věrnost. Pozdní1P Duel má jasně označený předběžný bossův barevný kontext podle současného portu, shoda s DOS zůstává neověřená. Žádný release/push při původním balení neproběhl.
 

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "snapshotSHA256": "6f5dd207fe67a5b96580bbf0b6e11f56c6fa63a49d72a9e27490b704192c3e2d",
+  "snapshotSHA256": "154f24aaeaac84995675c629e4d6eab0d8d53e2a821c901865055e40bb737078",
   "excluded": [
     "build.json (injected per build)"
   ],
@@ -276,6 +276,122 @@
     "assets/audio/rd6part4.flac": {
       "sha256": "395b0227bd38f250d5385a9d1d68d6133e6b3b43bb9edd44e89ad98ca6b009c6",
       "size": 896710
+    },
+    "assets/audio/remaster/LICENSE": {
+      "sha256": "36ffd9dc085d529a7e60e1276d73ae5a030b020313e6c5408593a6ae2af39673",
+      "size": 6555
+    },
+    "assets/audio/remaster/intro-f338f5bf67c9bb3d.flac": {
+      "sha256": "f338f5bf67c9bb3d57f432c9541c8605206a7a037ab5c5edeacfcae936fc7b72",
+      "size": 3412672
+    },
+    "assets/audio/remaster/intro2-e16a9f9a657b7f34.flac": {
+      "sha256": "e16a9f9a657b7f348f5efafeae663cf36ae455c2898695419cdeb4d49bf9009c",
+      "size": 2345595
+    },
+    "assets/audio/remaster/manifest.json": {
+      "sha256": "865d011c74ff10341b2bfa86072430090dff5b713bf03d669d6be56cdf587648",
+      "size": 30656
+    },
+    "assets/audio/remaster/oldmap-734b973a020c00dc.flac": {
+      "sha256": "734b973a020c00dc728c233de76a835c33a4df99c7c72147db902cc33664b6aa",
+      "size": 1879180
+    },
+    "assets/audio/remaster/opening-9af7f431fecbd446.flac": {
+      "sha256": "9af7f431fecbd4460f27f0dfdfceb0e92f097883e0e0ad13af0b8ca0d1b84898",
+      "size": 5663467
+    },
+    "assets/audio/remaster/rd1beg-06237b8f7fa0624a.flac": {
+      "sha256": "06237b8f7fa0624a6360ef48681303fbaf5ea8d1816c2f977be993fe82d10dbb",
+      "size": 1403147
+    },
+    "assets/audio/remaster/rd1end1-f81b8310e5c63adc.flac": {
+      "sha256": "f81b8310e5c63adc98eefed62934e4327785aed92115c84e06d298c889b4c839",
+      "size": 1213185
+    },
+    "assets/audio/remaster/rd1end2-ff75c9969f3fa272.flac": {
+      "sha256": "ff75c9969f3fa272c0b2418fb85e16e1e5ce6571b85a638f35245c8ea46050c4",
+      "size": 1319724
+    },
+    "assets/audio/remaster/rd1end3-42f4a6d412770e24.flac": {
+      "sha256": "42f4a6d412770e2480f83f920b2b18e23caa293ce49d907cd7f04e817afba7d9",
+      "size": 776141
+    },
+    "assets/audio/remaster/rd2part1-60898ea07bd5f876.flac": {
+      "sha256": "60898ea07bd5f8769ce66f8ad9563fe9311cbddac1c0fec9c33dafc8d0fcf173",
+      "size": 3097777
+    },
+    "assets/audio/remaster/rd2part2-e42edaae6cda4d5e.flac": {
+      "sha256": "e42edaae6cda4d5e5859ccad3c293afca90bc6ad7e1920f8ae45647662e1a217",
+      "size": 1856184
+    },
+    "assets/audio/remaster/rd3part1-8085ed2dcb5db5f9.flac": {
+      "sha256": "8085ed2dcb5db5f9fca376d99edb002e304bfc2c0d8c947dc41d7632d988eddc",
+      "size": 7354533
+    },
+    "assets/audio/remaster/rd3part2-3ca61653e5edf28c.flac": {
+      "sha256": "3ca61653e5edf28cd51a924d0b578bf71adef1ebdc67883738d4851d1ec5d162",
+      "size": 2170430
+    },
+    "assets/audio/remaster/rd4-1aae3dd56a33eb13.flac": {
+      "sha256": "1aae3dd56a33eb13559feb89c609bedb75b64eb81f3239bf6729e4be4f96a3c6",
+      "size": 3426210
+    },
+    "assets/audio/remaster/rd5-7b7740cb261ae123.flac": {
+      "sha256": "7b7740cb261ae123d5aab8d1be24fd5edf31f4b2ffd95ac97400aab0cfaa5f74",
+      "size": 4575702
+    },
+    "assets/audio/remaster/rd6part1-7a0fe8359cbec85d.flac": {
+      "sha256": "7a0fe8359cbec85d146266167c700764d83aa265e1ae8b5e7711e23d42a71919",
+      "size": 4456849
+    },
+    "assets/audio/remaster/rd6part2-64021342be2df56e.flac": {
+      "sha256": "64021342be2df56ecf412c68ce5515756ac5426d0c44d562573ed733d14deb26",
+      "size": 854771
+    },
+    "assets/audio/remaster/rd6part3-11ebbf2c70793f47.flac": {
+      "sha256": "11ebbf2c70793f47b2354010754f200214e6e4d0f12fc54ac923320435198a20",
+      "size": 1755272
+    },
+    "assets/audio/remaster/rd6part4-2de8edafd86d7935.flac": {
+      "sha256": "2de8edafd86d79352597f5141111c9645d25e8434180c05a4fc7518e42ecd180",
+      "size": 1511346
+    },
+    "assets/audio/remaster/sassa-bdf72670964a4ec9.flac": {
+      "sha256": "bdf72670964a4ec97822ffa17f3136ab43becc9efd577b65519f13dc0db99200",
+      "size": 3057181
+    },
+    "assets/audio/remaster/score-eddb0fc48ef4f89e.flac": {
+      "sha256": "eddb0fc48ef4f89e06f6b742c751bcd5fc68e464dbe03f04dcd684814aaf6439",
+      "size": 990975
+    },
+    "assets/audio/remaster/showdown-5175a93a59ea3d17.flac": {
+      "sha256": "5175a93a59ea3d179ca5bd08dbf14212a7f76a5024b3b434fb81f707e92597c9",
+      "size": 8689131
+    },
+    "assets/audio/remaster/sources.json": {
+      "sha256": "8c18e83afbe34eb1f3d727cd7bc40472087013c8c3ad50e3083d1786617a5d36",
+      "size": 17449
+    },
+    "assets/audio/remaster/stage1-63138c2563b609e9.flac": {
+      "sha256": "63138c2563b609e94da642725e368b45ff7d1ef8cfed6b7ec0c8f3e855d29bc1",
+      "size": 13175894
+    },
+    "assets/audio/remaster/stage2-23b818f5b09a6b04.flac": {
+      "sha256": "23b818f5b09a6b0467a8f2b93a8035015359479a54cdb8e1a4a0fd8e7210cbe6",
+      "size": 4766735
+    },
+    "assets/audio/remaster/stage3-7da993585291375f.flac": {
+      "sha256": "7da993585291375f92be0ee6e1870481578ddbd86d5cd269423c1d5d619a39f3",
+      "size": 9376604
+    },
+    "assets/audio/remaster/stage6-c381f5dfd3319fee.flac": {
+      "sha256": "c381f5dfd3319fee2538dbf69056e84a09828c1cbb0771e6dc2a46b61f1fb3ab",
+      "size": 9656159
+    },
+    "assets/audio/remaster/thief-e262537431a498b2.flac": {
+      "sha256": "e262537431a498b2539557031f337ceec7eb40b49d1e4667279729baf451adb0",
+      "size": 1915626
     },
     "assets/audio/sassa.flac": {
       "sha256": "d6ccbc1e5b0599d1cab9ea57e3540ccde0ede9dee13dffb1704cd3ea187db6ef",
@@ -2122,16 +2238,16 @@
       "size": 5828
     },
     "index.html": {
-      "sha256": "57b0569700a21c098db27427fabad295eb83f970b738084c48e83654d9fffac2",
-      "size": 12180
+      "sha256": "d6e65a809b594fb09680eda02536f21ba0f40df9b34a676fbff79bfe713c4c19",
+      "size": 12258
     },
     "js/app.js": {
-      "sha256": "6847b8bd7453e8794f7105330b71591555b9542e94422855f5ea4cefaa5026a6",
-      "size": 38407
+      "sha256": "abac24db557fc0fb94d1be9c61f1a61ec20ff34343af3a1e92b486113f4075e8",
+      "size": 41961
     },
     "js/audio.js": {
-      "sha256": "d12e2bb5f7219bbb990c945eb33582c75c0d1ab76ca67598f0d2a9fd403edb0f",
-      "size": 13511
+      "sha256": "73cd3c8854d53ad7d0c046e19d48b9ca929bddfe9cf50614feedb42d5daa4090",
+      "size": 17248
     },
     "js/build-info.js": {
       "sha256": "92489d725bec0102c8133632cdd9a6cd52cab4381fc891ebcf05274ed4bf5cb3",
@@ -2144,6 +2260,10 @@
     "js/character-select.js": {
       "sha256": "ed5ba4a78dac79f6b105f0c72d71b715a07101e44c926478f7437f38427a9e78",
       "size": 3849
+    },
+    "js/controls-help.js": {
+      "sha256": "dcae16b61d8601f3baa741500be9523c62b809ba448ac86e19b049cb7903011f",
+      "size": 8532
     },
     "js/ending.js": {
       "sha256": "6a9558c82954eed92233c96a04d2e514cfa1a05755845d97aede09604c5bd8b3",
@@ -2278,8 +2398,8 @@
       "size": 582
     },
     "js/opl-audio.js": {
-      "sha256": "9c33d923ed6860fcc8b69f32d62ea5c4267c4a528ab2c20620cc291fcfeea0d4",
-      "size": 4001
+      "sha256": "4065896d79b5db9bce611d752f1cc3a92dc2c58c2f005e93be50f95c2831440a",
+      "size": 4074
     },
     "js/opl-engine.js": {
       "sha256": "b384ed98676593ac5d9729b58e21a274bcacef9847e4b1393183832cbb9c05fa",
@@ -2302,8 +2422,8 @@
       "size": 2174
     },
     "js/opl-sequence-worklet.js": {
-      "sha256": "b6559da065b61fefb7c02d4bd011a7bf12349c43e0c6e80e338ffb5809995d60",
-      "size": 1951
+      "sha256": "2323f7f1502e2c39e773fdacc2667ddf57e6ca6b241619f21105405b2d1f4176",
+      "size": 2135
     },
     "js/opl-sequence.js": {
       "sha256": "5bd03e58291cd9757b31564016d6c3b30bb1b628021d0030a3124b370a47f4d4",
@@ -2324,6 +2444,10 @@
     "js/password.js": {
       "sha256": "ba38f74c08ac1af1dd7c6e1117029643fdc7bf49f1d94df8342f9012065c6e38",
       "size": 2455
+    },
+    "js/remaster-music.js": {
+      "sha256": "6cc8f3a1b5b05196f5ba9076491da1f1696af7f5aa845bd2011bc9efb4ee6fea",
+      "size": 9463
     },
     "js/renderer.js": {
       "sha256": "429c65c0a4e03e9c6a60c313a0cc50ca439f8e3a1aa074ead7f8c4dc2b8a9712",
@@ -2346,8 +2470,8 @@
       "size": 675
     },
     "style.css": {
-      "sha256": "553437cdf90e46c78cc06813d99d666eaffc648aede57ad27c1aa2963850b1e7",
-      "size": 15602
+      "sha256": "da4b0fc0b591afed1729afe1c9a58532b32f3355ba9453208385b3d52529c304",
+      "size": 19496
     }
   }
 }

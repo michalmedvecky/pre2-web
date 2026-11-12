@@ -1,0 +1,985 @@
+{
+  "status": "pilot-style-approved-and-integrated",
+  "baseCommit": "948a63da647628a25fe3fed8cd6fc49d6e540a9c",
+  "scope": "One Stage1 excerpt only. No game-runtime change, no MUSIC integration, no release or deployment. Automated checks do not establish subjective musical quality.",
+  "contentSeconds": 42,
+  "tailSeconds": 3,
+  "noteOns": 999,
+  "activeVoices": 8,
+  "nativeSemanticRowsCompared": 8640,
+  "allStage1NotesCompared": 3504,
+  "currentGoldVoiceNativeRegisterMatches": 16111,
+  "sampleLicense": "CC0-1.0",
+  "sampleRepository": "https://github.com/sgossner/VSCO-2-CE",
+  "sampleCommit": "440300901dfe9275fd84e0b7763af1f8443ae62e",
+  "newSampleDownloadBytes": 10672244,
+  "paidGenerationUsed": false,
+  "cost": 0,
+  "subjectiveListeningPerformed": false,
+  "previewURL": "https://michals-macbook-pro.quagga-bee.ts.net/music-pilot/",
+  "files": [
+    {
+      "path": "golden-axe-research/evidence/music-pilot-20261104/score/events.json",
+      "bytes": 2654284,
+      "sha256": "3ac5d5d5fefe8e0f6f18061c92e3ab19af079c11dad001c233fbfdd12bfa5fad"
+    },
+    {
+      "path": "golden-axe-research/evidence/music-pilot-20261104/score/notes.json",
+      "bytes": 2253494,
+      "sha256": "5848f47f0d8a0856674d42f5541d61e91eff2d05200028e35f981774a3bef1de"
+    },
+    {
+      "path": "golden-axe-research/evidence/music-pilot-20261104/score/pilot-notes.json",
+      "bytes": 648756,
+      "sha256": "ef7936b49d26f734ec541ddab6bd7c867004d69572eff524271e34d90c564b7d"
+    },
+    {
+      "path": "golden-axe-research/evidence/music-pilot-20261104/score/stage1-native-timing.mid",
+      "bytes": 33040,
+      "sha256": "2786cfb9fd429de1e6b8ef3b714b7c61ecdb7a9d89288035d1ea0fe7e0479063"
+    },
+    {
+      "path": "golden-axe-research/evidence/music-pilot-20261104/score/original-stage1-42s-release3s.wav",
+      "bytes": 4320044,
+      "sha256": "cdc501f126024c020881cd8509c229a1fa41e39bf89f067d45567b179b671eb1"
+    },
+    {
+      "path": "golden-axe-research/evidence/music-pilot-20261104/render/render_pilot.py",
+      "bytes": 11564,
+      "sha256": "41ed0c7e8cf602ec3c58581cb8736d226586d19efcc3232b75374eeb44767571"
+    },
+    {
+      "path": "golden-axe-research/evidence/music-pilot-20261104/render/balance_ab.py",
+      "bytes": 2257,
+      "sha256": "3f30d7b1fcdd1fb95bcfab7275e5712ea282404f20a9773e40b687cdf425bba0"
+    },
+    {
+      "path": "golden-axe-research/evidence/music-pilot-20261104/render/final/ab-proof.json",
+      "bytes": 2060,
+      "sha256": "2bf113b364c470a6e698b1c48bb867ae6dc6d3400f423966642b6038e06366a0"
+    },
+    {
+      "path": "golden-axe-research/evidence/music-pilot-20261104/preview/original.wav",
+      "bytes": 8640044,
+      "sha256": "ea4433540e8ce1201d7d11bde0c5ba34bba1a67edba8a9d7745ccc17c3592c07"
+    },
+    {
+      "path": "golden-axe-research/evidence/music-pilot-20261104/preview/remaster.wav",
+      "bytes": 8640044,
+      "sha256": "b935ee8642c78b5d30e35c16e9d091f69964e2354c907ea1e0d5ecd86ca786de"
+    },
+    {
+      "path": "golden-axe-research/evidence/music-pilot-20261104/preview/comparison.wav",
+      "bytes": 17395244,
+      "sha256": "4286f27492c2549e48c358bc17674e2ceb3428adc88d4a4f619cc7a646b366d0"
+    },
+    {
+      "path": "golden-axe-research/evidence/music-pilot-20261104/preview/index.html",
+      "bytes": 4634,
+      "sha256": "8ca728621e002aa450fe002fbbb97a97610a0b650047268f979ead81e1538706"
+    },
+    {
+      "path": "golden-axe-research/evidence/music-pilot-20261104/preview/comparison.js",
+      "bytes": 5378,
+      "sha256": "7170e36dcaca934a08c88c177fa6c5b75ce9253617372bb9a30a8e120a413df5"
+    },
+    {
+      "path": "golden-axe-research/evidence/music-pilot-20261104/preview/manifest.json",
+      "bytes": 952,
+      "sha256": "8c89ca74d31f76ef26c899df23e651843a1a62edba69af4af443860bed6dc303"
+    },
+    {
+      "path": "golden-axe-research/evidence/music-pilot-20261104/preview/checks.json",
+      "bytes": 854,
+      "sha256": "8ff66a67d4830038298577238e6498868124dc4a7865f284e1fa159c14ac1b01"
+    }
+  ],
+  "proofs": {
+    "source": {
+      "scope": "Independent actual STAGE1.EVT vs catalog single-score concatenation, then independent native-row monophonic-note decoder. Not a fresh DOS execution or a subjective listening result.",
+      "nativeFile": "golden-axe-research/derived/audio/live-opl/all-native/STAGE1.EVT",
+      "nativeSHA256": "895c3a598c0232bd43f6ed202afe90edfc3b2bc6c9572dc011c01f07117453e3",
+      "rawRows": 8676,
+      "eventRowsCompared": 8640,
+      "allRawSemanticEventsExact": true,
+      "kindCounts": {
+        "2": 12,
+        "3": 24,
+        "1": 120,
+        "0": 8520
+      },
+      "segments": [
+        {
+          "index": 0,
+          "score": "rd1beg",
+          "firstEventBaseTick": 0,
+          "lastTick": 13440,
+          "sha256": "b553cacfa7d1ecc6cc803289b3c075b72205734fb563a911cdd19a8e8b22ac46"
+        },
+        {
+          "index": 1,
+          "score": "rd1beg",
+          "firstEventBaseTick": 13441,
+          "lastTick": 26881,
+          "sha256": "b553cacfa7d1ecc6cc803289b3c075b72205734fb563a911cdd19a8e8b22ac46"
+        },
+        {
+          "index": 2,
+          "score": "rd1end1",
+          "firstEventBaseTick": 26882,
+          "lastTick": 40322,
+          "sha256": "93c22c83e4f01543681a7cc581350863c9c7e3168341239f04cd9b5470e4b474"
+        },
+        {
+          "index": 3,
+          "score": "rd1end1",
+          "firstEventBaseTick": 40323,
+          "lastTick": 53763,
+          "sha256": "93c22c83e4f01543681a7cc581350863c9c7e3168341239f04cd9b5470e4b474"
+        },
+        {
+          "index": 4,
+          "score": "rd1beg",
+          "firstEventBaseTick": 53764,
+          "lastTick": 67204,
+          "sha256": "b553cacfa7d1ecc6cc803289b3c075b72205734fb563a911cdd19a8e8b22ac46"
+        },
+        {
+          "index": 5,
+          "score": "rd1beg",
+          "firstEventBaseTick": 67205,
+          "lastTick": 80645,
+          "sha256": "b553cacfa7d1ecc6cc803289b3c075b72205734fb563a911cdd19a8e8b22ac46"
+        },
+        {
+          "index": 6,
+          "score": "rd1end2",
+          "firstEventBaseTick": 80646,
+          "lastTick": 97446,
+          "sha256": "53cefc9765f5c4e2498888f738abd94974a56f99328583446562fd6381d2a2f0"
+        },
+        {
+          "index": 7,
+          "score": "rd1end2",
+          "firstEventBaseTick": 97447,
+          "lastTick": 114247,
+          "sha256": "53cefc9765f5c4e2498888f738abd94974a56f99328583446562fd6381d2a2f0"
+        },
+        {
+          "index": 8,
+          "score": "rd1beg",
+          "firstEventBaseTick": 114248,
+          "lastTick": 127688,
+          "sha256": "b553cacfa7d1ecc6cc803289b3c075b72205734fb563a911cdd19a8e8b22ac46"
+        },
+        {
+          "index": 9,
+          "score": "rd1beg",
+          "firstEventBaseTick": 127689,
+          "lastTick": 141129,
+          "sha256": "b553cacfa7d1ecc6cc803289b3c075b72205734fb563a911cdd19a8e8b22ac46"
+        },
+        {
+          "index": 10,
+          "score": "rd1end3",
+          "firstEventBaseTick": 141130,
+          "lastTick": 147850,
+          "sha256": "8ac02a9d3db2c7c0b9f286944750b6460f0c1ffae43602300b1af767b53cd4cb"
+        },
+        {
+          "index": 11,
+          "score": "rd1end3",
+          "firstEventBaseTick": 147851,
+          "lastTick": 154571,
+          "sha256": "8ac02a9d3db2c7c0b9f286944750b6460f0c1ffae43602300b1af767b53cd4cb"
+        }
+      ],
+      "endTick": 154571,
+      "loopSeconds": 154.15878717580387,
+      "pilotStartSeconds": 0,
+      "pilotContentSeconds": 42,
+      "pilotEvents": 2417,
+      "fullNoteCount": 3504,
+      "pilotNoteCount": 999,
+      "pilotNotesByChannel": {
+        "0": 79,
+        "1": 61,
+        "2": 71,
+        "3": 78,
+        "4": 57,
+        "6": 176,
+        "7": 402,
+        "8": 75
+      },
+      "fullControlsByType": {
+        "0xe0": 10,
+        "0xe1": 12,
+        "0xe2": 10,
+        "0xe3": 10,
+        "0xe4": 12,
+        "0xe6": 12,
+        "0xe7": 12,
+        "0xe8": 12,
+        "0xd4": 2
+      },
+      "noncenterPitchEvents": 0,
+      "zeroDurationNotes": 0,
+      "MIDI_NOTE_NUMBER_IS_AUDIO_OCTAVE_CORRECT": true,
+      "pitchAuthority": "GOLD internal note-12 is compensated by native frequency/octave tables. Native raw MIDI81 corresponds approx879.9829Hz, so standard sampler MIDI81 is correct; do not transpose down12.",
+      "independentSpanComparison": {
+        "notesCompared": 3504,
+        "exactFields": [
+          "channel",
+          "midiNote",
+          "velocity",
+          "startTick",
+          "endTick"
+        ],
+        "allPass": true
+      }
+    },
+    "render": {
+      "scope": "Independent source/native note identity, exact rounded onset/off sample grid, sample pitch-ratio identities, current sample SHA/pinned-source/CC0 checks, actual decoded ten WAVs, eight nonzero stems and PCM dry/wet reconstruction. No subjective listening, physical device or music remaster approval claim.",
+      "sourceTimelineSHA256": "ef7936b49d26f734ec541ddab6bd7c867004d69572eff524271e34d90c564b7d",
+      "renderManifestSHA256": "1bffe3f076f87f6ef0094d08775e6205e79c64591f2db96c848d9a5c8a0e5f1d",
+      "notes": 999,
+      "exactNoteFields": [
+        "channel",
+        "midiNote",
+        "velocity",
+        "startTick",
+        "endTick",
+        "startSeconds",
+        "endSeconds",
+        "instrumentId",
+        "nativeRow",
+        "sourceScore",
+        "sequenceIndex"
+      ],
+      "newPitchedNotes": 0,
+      "doubledNotes": 0,
+      "sampleGridMaximumOnsetErrorSeconds": 1.0411620635863983e-05,
+      "sampleGridMaximumGateErrorSeconds": 1.0411620635863983e-05,
+      "pitchRatioChecksExact": true,
+      "pilotNoncenterBends": 0,
+      "inGateVolumeChanges": 0,
+      "volumeBoundaryExplanation": "D4 pressure event at tick40322 coincides with EOT/noteoff, so it changes no positive-length gated note in the pilot.",
+      "usedSampleCount": 21,
+      "samples": [
+        {
+          "file": "LLVln_ArcoVib_C6_f.wav",
+          "sha256": "7ec8e0c2dde75282a4aaacccc713c84faa3e84daa9cf43df45ffc0e209964d46",
+          "rootMidi": 84,
+          "measuredFundamentalHz": 1034.7713470458984,
+          "tuningCents": -19.516101106564527,
+          "license": "CC0-1.0"
+        },
+        {
+          "file": "LLVln_ArcoVib_E5_f.wav",
+          "sha256": "5c278e263fd59650190fc58294945cd291906eb1abd8293f728a96a878d1d478",
+          "rootMidi": 76,
+          "measuredFundamentalHz": 658.6132049560547,
+          "tuningCents": -1.6865032168136143,
+          "license": "CC0-1.0"
+        },
+        {
+          "file": "LLVln_ArcoVib_A4_f.wav",
+          "sha256": "19e5374658351508a9e2c929e871a43caff41e62d5e3363ead6f88428a9ab863",
+          "rootMidi": 69,
+          "measuredFundamentalHz": 443.4494018554687,
+          "tuningCents": 13.51917217876472,
+          "license": "CC0-1.0"
+        },
+        {
+          "file": "LLVln_ArcoVib_G5_f.wav",
+          "sha256": "b5bb27541d6187e6eeb20baf50625ca35fc9d44c7f113936a9369bc7ce490a68",
+          "rootMidi": 79,
+          "measuredFundamentalHz": 787.9806518554689,
+          "tuningCents": 8.788018770561198,
+          "license": "CC0-1.0"
+        },
+        {
+          "file": "LLVln_ArcoVib_A6_f.wav",
+          "sha256": "37f6cc2f12b1b443a77d3ee370178da4a002a2ac3b6529663cc7ee002728ddcf",
+          "rootMidi": 93,
+          "measuredFundamentalHz": 1769.2554473876953,
+          "tuningCents": 9.080318854386515,
+          "license": "CC0-1.0"
+        },
+        {
+          "file": "LLVln_ArcoVib_C5_f.wav",
+          "sha256": "af72f852ef2892233699851dacf5f8d97d446822d8eb4ce9e0ec27d5a721b118",
+          "rootMidi": 72,
+          "measuredFundamentalHz": 522.8530883789062,
+          "tuningCents": -1.3174677416449716,
+          "license": "CC0-1.0"
+        },
+        {
+          "file": "LLVln_ArcoVib_E6_f.wav",
+          "sha256": "8d1712f5659274a83aa90807132084559633e4817027c8a5b5f40826b3d9bc84",
+          "rootMidi": 88,
+          "measuredFundamentalHz": 1331.694030761719,
+          "tuningCents": 17.224662626117496,
+          "license": "CC0-1.0"
+        },
+        {
+          "file": "LLVln_ArcoVib_G6_f.wav",
+          "sha256": "68c49e55565810ea822866e3d39e51c1a5ad53cfa1a67bc25836ca7feac3fe0c",
+          "rootMidi": 91,
+          "measuredFundamentalHz": 1565.6993865966797,
+          "tuningCents": -2.5218235400987323,
+          "license": "CC0-1.0"
+        },
+        {
+          "file": "LLVln_ArcoVib_A5_f.wav",
+          "sha256": "0558d79d23db55c710e664e6283b62619f5a582ce261a5c082700a0d01536627",
+          "rootMidi": 81,
+          "measuredFundamentalHz": 877.1415710449219,
+          "tuningCents": -5.632572788229562,
+          "license": "CC0-1.0"
+        },
+        {
+          "file": "LLVln_ArcoVib_G4_f.wav",
+          "sha256": "14e3ea3d5172722d4d2686bae5da3d603800a7a474fa295d98275a9410913822",
+          "rootMidi": 67,
+          "measuredFundamentalHz": 392.81272888183594,
+          "tuningCents": 3.6057876855319915,
+          "license": "CC0-1.0"
+        },
+        {
+          "file": "VlnEns_susVib_A3_v1.wav",
+          "sha256": "72817a53dfd2eb61eca94658c14e1cab6017629ca2f27bab8e394c6675bfaad7",
+          "rootMidi": 69,
+          "measuredFundamentalHz": 438.4025573730469,
+          "tuningCents": -6.29677154913574,
+          "license": "CC0-1.0"
+        },
+        {
+          "file": "susvib_D2_v1_1.wav",
+          "sha256": "e8640dec9febc6e39fcf06b19d2c95a85d5ff8c38f13c9879e69f551eaf38ab8",
+          "rootMidi": 50,
+          "measuredFundamentalHz": 146.52671813964844,
+          "tuningCents": -3.6077235122597866,
+          "license": "CC0-1.0"
+        },
+        {
+          "file": "Sum_SHTrumpet_sus_C3_v3_rr1.wav",
+          "sha256": "4a55ab4d867cfa3499fbcf1c5d8d530f757621a9979aee5b46d3fd69a2931c99",
+          "rootMidi": 60,
+          "measuredFundamentalHz": 261.4265441894531,
+          "tuningCents": -1.3174677416449716,
+          "license": "CC0-1.0"
+        },
+        {
+          "file": "Sum_SHTrumpet_sus_G3_v3_rr1.wav",
+          "sha256": "e916631d4ef5c7d2afa356b76cb0d3a18ba2702d1229535edf4fb6d73c2e521c",
+          "rootMidi": 67,
+          "measuredFundamentalHz": 393.2052612304688,
+          "tuningCents": 5.33492221516133,
+          "license": "CC0-1.0"
+        },
+        {
+          "file": "Sum_SHTrumpet_stac_C3_v3_rr1.wav",
+          "sha256": "6ee12d20bfc94165d3d900e40274c8d4343e683fed2fee64f1bfcb5e94d99aa4",
+          "rootMidi": 60,
+          "measuredFundamentalHz": 263.78173828125,
+          "tuningCents": 14.209399107352795,
+          "license": "CC0-1.0"
+        },
+        {
+          "file": "Sum_SHTrumpet_stac_G3_v3_rr1.wav",
+          "sha256": "fc88e87885839b5fb45e2fb63cc70afef0b3c0f13c129c7d0ee4aee3458f293d",
+          "rootMidi": 67,
+          "measuredFundamentalHz": 394.1585540771484,
+          "tuningCents": 9.527072804865384,
+          "license": "CC0-1.0"
+        },
+        {
+          "file": "MOHorn_sus_C3_v3_1.wav",
+          "sha256": "75156ce041d9c60e4de0099b4c6d81cafffd34f45be7bca3e6fa7ebff0eadb80",
+          "rootMidi": 60,
+          "measuredFundamentalHz": 261.51065826416016,
+          "tuningCents": -0.7605322216201906,
+          "license": "CC0-1.0"
+        },
+        {
+          "file": "MOHorn_stac_C3_v3_rr1.wav",
+          "sha256": "7ea5a48590310d32b29aa3046f7ca2708b8f233067352001e6043095d6dac1b6",
+          "rootMidi": 60,
+          "measuredFundamentalHz": 263.78173828125,
+          "tuningCents": 14.209399107352795,
+          "license": "CC0-1.0"
+        },
+        {
+          "file": "BDrumNewhit_v4_rr1_Sum.wav",
+          "sha256": "7d8603e6802b51bc5acd3f73275f8e6408c7f2ccdd36d1a55b27e74034101589",
+          "rootMidi": 38,
+          "measuredFundamentalHz": null,
+          "tuningCents": 0.0,
+          "license": "CC0-1.0"
+        },
+        {
+          "file": "Snare2-HitSN_v5_rr1_Sum.wav",
+          "sha256": "8deb654b739f6dfb01f192b7043a9aad92b7973995246252571240fe712d0876",
+          "rootMidi": 44,
+          "measuredFundamentalHz": null,
+          "tuningCents": 0.0,
+          "license": "CC0-1.0"
+        },
+        {
+          "file": "tenor_f_1.wav",
+          "sha256": "9c3b1d9c840a9dd884121f7dd6841368ca69e1465f1de864b82f05cc368d84c2",
+          "rootMidi": 38,
+          "measuredFundamentalHz": null,
+          "tuningCents": 0.0,
+          "license": "CC0-1.0"
+        }
+      ],
+      "outputFiles": [
+        {
+          "file": "render/output/GA-stage1-remaster-pilot.wav",
+          "sha256": "115aef10d82093676e739086c34895c71d7f3ccb9e50d23c2228a17336389b08",
+          "bytes": 8640044,
+          "sampleRate": 48000,
+          "channels": 2,
+          "frames": 2160000,
+          "seconds": 45.0,
+          "contentSeconds": 42,
+          "samplePeak": 0.819976806640625,
+          "samplePeakDBFS": -1.7239686325804904,
+          "contentRMS": 0.1471014192695584,
+          "contentRMSDBFS": -16.64766274151139,
+          "crestFactorDB": 14.923694108930901,
+          "clippingRailSamples": 0,
+          "dcMean": [
+            0.00014255623994050202,
+            0.00012602807504159434
+          ],
+          "tailRMS": 0.012533075302496569,
+          "last20msPeak": 0.0,
+          "firstNonzeroFrame": 11
+        },
+        {
+          "file": "render/output/GA-stage1-remaster-dry.wav",
+          "sha256": "544f9803a4c557b6d56be143ce652cc8ba7ae2080f3bac7287498c8e61643b42",
+          "bytes": 8640044,
+          "sampleRate": 48000,
+          "channels": 2,
+          "frames": 2160000,
+          "seconds": 45.0,
+          "contentSeconds": 42,
+          "samplePeak": 0.815216064453125,
+          "samplePeakDBFS": -1.7745454162787755,
+          "contentRMS": 0.14626748346315552,
+          "contentRMSDBFS": -16.69704421188889,
+          "crestFactorDB": 14.922498795610116,
+          "clippingRailSamples": 0,
+          "dcMean": [
+            0.00011830060040509259,
+            9.623064111780237e-05
+          ],
+          "tailRMS": 0.012101797224338821,
+          "last20msPeak": 0.0,
+          "firstNonzeroFrame": 11
+        },
+        {
+          "file": "render/output/GA-stage1-stem-00-violin.wav",
+          "sha256": "7723c0161828286ba8851da542304a66a9a742c7a5bb7a6d89754c66c866aa5b",
+          "bytes": 8640044,
+          "sampleRate": 48000,
+          "channels": 2,
+          "frames": 2160000,
+          "seconds": 45.0,
+          "contentSeconds": 42,
+          "samplePeak": 0.2213134765625,
+          "samplePeakDBFS": -13.099842790724939,
+          "contentRMS": 0.04178422896161669,
+          "contentRMSDBFS": -27.579752147932908,
+          "crestFactorDB": 14.47990935720797,
+          "clippingRailSamples": 0,
+          "dcMean": [
+            -1.5051665129484953e-06,
+            -8.06709572120949e-07
+          ],
+          "tailRMS": 0.008419132697266688,
+          "last20msPeak": 0.0,
+          "firstNonzeroFrame": 25
+        },
+        {
+          "file": "render/output/GA-stage1-stem-01-horn.wav",
+          "sha256": "910016d8242557ffc2a60ef0bbf1e64c8bd9bffe29ad82bbd8c2d44ba5056baf",
+          "bytes": 8640044,
+          "sampleRate": 48000,
+          "channels": 2,
+          "frames": 2160000,
+          "seconds": 45.0,
+          "contentSeconds": 42,
+          "samplePeak": 0.24884033203125,
+          "samplePeakDBFS": -12.0815845568716,
+          "contentRMS": 0.05404121565499304,
+          "contentRMSDBFS": -25.345497802061132,
+          "crestFactorDB": 13.263913245189533,
+          "clippingRailSamples": 0,
+          "dcMean": [
+            -5.066483109085648e-08,
+            -6.655940303096064e-08
+          ],
+          "tailRMS": 0.00039391724685569965,
+          "last20msPeak": 0.0,
+          "firstNonzeroFrame": 30
+        },
+        {
+          "file": "render/output/GA-stage1-stem-02-string-section.wav",
+          "sha256": "aa46f357e62cda1131f349251b61a06331e1180eba6b2cf3af7f5cace0dc0df8",
+          "bytes": 8640044,
+          "sampleRate": 48000,
+          "channels": 2,
+          "frames": 2160000,
+          "seconds": 45.0,
+          "contentSeconds": 42,
+          "samplePeak": 0.123199462890625,
+          "samplePeakDBFS": -18.18782371098807,
+          "contentRMS": 0.01284974653384387,
+          "contentRMSDBFS": -37.822108777453145,
+          "crestFactorDB": 19.634285066465075,
+          "clippingRailSamples": 0,
+          "dcMean": [
+            1.4495849609375e-08,
+            5.8477896231192127e-08
+          ],
+          "tailRMS": 0.000712976282705837,
+          "last20msPeak": 0.0,
+          "firstNonzeroFrame": 76
+        },
+        {
+          "file": "render/output/GA-stage1-stem-03-cello.wav",
+          "sha256": "491e3597f33f511f9dce85bfb0f2daa7b243bb5e9731a32774f2ac2e8c53341c",
+          "bytes": 8640044,
+          "sampleRate": 48000,
+          "channels": 2,
+          "frames": 2160000,
+          "seconds": 45.0,
+          "contentSeconds": 42,
+          "samplePeak": 0.16680908203125,
+          "samplePeakDBFS": -15.555606152061522,
+          "contentRMS": 0.025531455265651995,
+          "contentRMSDBFS": -31.858488603382312,
+          "crestFactorDB": 16.30288245132079,
+          "clippingRailSamples": 0,
+          "dcMean": [
+            3.327263726128472e-08,
+            -3.578327320240162e-07
+          ],
+          "tailRMS": 0.00065790408634206,
+          "last20msPeak": 0.0,
+          "firstNonzeroFrame": 44
+        },
+        {
+          "file": "render/output/GA-stage1-stem-04-trumpet.wav",
+          "sha256": "63caffbc7b9c943fb78a2c1315e2f027f4ff5c9b5acb91a9d16c4816b11c94d0",
+          "bytes": 8640044,
+          "sampleRate": 48000,
+          "channels": 2,
+          "frames": 2160000,
+          "seconds": 45.0,
+          "contentSeconds": 42,
+          "samplePeak": 0.571014404296875,
+          "samplePeakDBFS": -4.867058723778477,
+          "contentRMS": 0.10050731980247202,
+          "contentRMSDBFS": -19.956046161076763,
+          "crestFactorDB": 15.088987437298282,
+          "clippingRailSamples": 0,
+          "dcMean": [
+            1.2763143468786169e-05,
+            1.4266897130895544e-05
+          ],
+          "tailRMS": 0.00976050066265468,
+          "last20msPeak": 0.0,
+          "firstNonzeroFrame": 15
+        },
+        {
+          "file": "render/output/GA-stage1-stem-06-bass-drum.wav",
+          "sha256": "87b4502053bdb6d6a6241a4edc9cc0dcb2886d34a1d52ca6b60d987bd0b1db75",
+          "bytes": 8640044,
+          "sampleRate": 48000,
+          "channels": 2,
+          "frames": 2160000,
+          "seconds": 45.0,
+          "contentSeconds": 42,
+          "samplePeak": 0.334228515625,
+          "samplePeakDBFS": -9.519129996675687,
+          "contentRMS": 0.07222627178413019,
+          "contentRMSDBFS": -22.826096044305398,
+          "crestFactorDB": 13.306966047629711,
+          "clippingRailSamples": 0,
+          "dcMean": [
+            2.4802158496997974e-05,
+            4.683671174225984e-06
+          ],
+          "tailRMS": 0.003226119659981496,
+          "last20msPeak": 0.0,
+          "firstNonzeroFrame": 11
+        },
+        {
+          "file": "render/output/GA-stage1-stem-07-snare.wav",
+          "sha256": "a2991ebc0eb566a3640ad6fe957e0c4a2c297a4909b791d5002edd407e8eb3ea",
+          "bytes": 8640044,
+          "sampleRate": 48000,
+          "channels": 2,
+          "frames": 2160000,
+          "seconds": 45.0,
+          "contentSeconds": 42,
+          "samplePeak": 0.11865234375,
+          "samplePeakDBFS": -18.51447357410962,
+          "contentRMS": 0.021222558551456053,
+          "contentRMSDBFS": -33.46404519116635,
+          "crestFactorDB": 14.949571617056726,
+          "clippingRailSamples": 0,
+          "dcMean": [
+            8.292110584400319e-05,
+            7.806273566351997e-05
+          ],
+          "tailRMS": 0.003319388905192817,
+          "last20msPeak": 0.0,
+          "firstNonzeroFrame": 9
+        },
+        {
+          "file": "render/output/GA-stage1-stem-08-tom.wav",
+          "sha256": "75a10e8fca89cede0acb18822c33ce9f913d4a78bc41c96d6cff7cc56b310091",
+          "bytes": 8640044,
+          "sampleRate": 48000,
+          "channels": 2,
+          "frames": 2160000,
+          "seconds": 45.0,
+          "contentSeconds": 42,
+          "samplePeak": 0.23101806640625,
+          "samplePeakDBFS": -12.727081109192904,
+          "contentRMS": 0.01792387119307193,
+          "contentRMSDBFS": -34.93136371466113,
+          "crestFactorDB": 22.20428260546823,
+          "clippingRailSamples": 0,
+          "dcMean": [
+            -6.202556468822338e-07,
+            3.324438024450231e-07
+          ],
+          "tailRMS": 0.0,
+          "last20msPeak": 0.0,
+          "firstNonzeroFrame": 20134
+        }
+      ],
+      "dryStemSummationMaxAbsoluteError": 9.1552734375e-05,
+      "wetRoomReconstructionMaxAbsoluteError": 3.271484375000008e-05,
+      "subjectiveListeningPerformed": false,
+      "allPass": true
+    },
+    "ab": {
+      "scope": "Independent exact PCM constant gain+tail fade reconstruction for both final A/B variants, actual WAV samples and 90.6s comparison concatenation. Broadband RMS matching is not perceptual LUFS equality or subjective approval.",
+      "files": [
+        {
+          "file": "render/final/GA-stage1-original-balanced.wav",
+          "sha256": "ea4433540e8ce1201d7d11bde0c5ba34bba1a67edba8a9d7745ccc17c3592c07",
+          "bytes": 8640044,
+          "sampleRate": 48000,
+          "channels": 2,
+          "frames": 2160000,
+          "seconds": 45.0,
+          "contentSeconds": 42,
+          "samplePeak": 0.696319580078125,
+          "samplePeakDBFS": -3.143827851182439,
+          "contentRMS": 0.11999633495083356,
+          "contentRMSDBFS": -18.41664036820358,
+          "crestFactorDB": 15.272812517021139,
+          "clippingRailSamples": 0,
+          "dcMean": [
+            -0.009832228498105649,
+            -0.009832228498105649
+          ],
+          "tailRMS": 0.0019515850748314393,
+          "last20msPeak": 9.1552734375e-05,
+          "firstNonzeroFrame": 5
+        },
+        {
+          "file": "render/final/GA-stage1-remaster-balanced.wav",
+          "sha256": "b935ee8642c78b5d30e35c16e9d091f69964e2354c907ea1e0d5ecd86ca786de",
+          "bytes": 8640044,
+          "sampleRate": 48000,
+          "channels": 2,
+          "frames": 2160000,
+          "seconds": 45.0,
+          "contentSeconds": 42,
+          "samplePeak": 0.66888427734375,
+          "samplePeakDBFS": -3.492980247283153,
+          "contentRMS": 0.11999634523865749,
+          "contentRMSDBFS": -18.41663962352334,
+          "crestFactorDB": 14.923659376240188,
+          "clippingRailSamples": 0,
+          "dcMean": [
+            0.00011629141348379629,
+            0.00010279805218731915
+          ],
+          "tailRMS": 0.010223719141096332,
+          "last20msPeak": 0.0,
+          "firstNonzeroFrame": 11
+        }
+      ],
+      "comparisonSeconds": 90.6,
+      "comparisonReconstructionMaxAbsoluteError": 0.0,
+      "gainOnlyVerified": true,
+      "RMSDifferenceDB": -7.446802389223862e-07,
+      "subjectiveListeningPerformed": false,
+      "allPass": true
+    },
+    "samples": {
+      "scope": "Independent new pinned sample subset content identity and declared upstream license; does not certify original Golden Axe composition rights.",
+      "upstreamCommit": "440300901dfe9275fd84e0b7763af1f8443ae62e",
+      "licenseURL": "https://github.com/sgossner/VSCO-2-CE/blob/440300901dfe9275fd84e0b7763af1f8443ae62e/LICENSE",
+      "licenseSHA256": "36ffd9dc085d529a7e60e1276d73ae5a030b020313e6c5408593a6ae2af39673",
+      "license": "CC0-1.0",
+      "files": [
+        {
+          "file": "Sum_SHTrumpet_sus_C3_v3_rr1.wav",
+          "bytes": 1234136,
+          "sha256": "4a55ab4d867cfa3499fbcf1c5d8d530f757621a9979aee5b46d3fd69a2931c99",
+          "gitBlobSHA1": "d5490467cf68db010843924b975fd71edfc41273"
+        },
+        {
+          "file": "Sum_SHTrumpet_sus_G3_v3_rr1.wav",
+          "bytes": 1638452,
+          "sha256": "e916631d4ef5c7d2afa356b76cb0d3a18ba2702d1229535edf4fb6d73c2e521c",
+          "gitBlobSHA1": "a301819024fe8d1fb8cdf86f9b5d0d8121c8c073"
+        },
+        {
+          "file": "Sum_SHTrumpet_stac_C3_v3_rr1.wav",
+          "bytes": 214984,
+          "sha256": "6ee12d20bfc94165d3d900e40274c8d4343e683fed2fee64f1bfcb5e94d99aa4",
+          "gitBlobSHA1": "2f50c4afc81b078ba9d67d75212d398b5115bfe6"
+        },
+        {
+          "file": "Sum_SHTrumpet_stac_G3_v3_rr1.wav",
+          "bytes": 226840,
+          "sha256": "fc88e87885839b5fb45e2fb63cc70afef0b3c0f13c129c7d0ee4aee3458f293d",
+          "gitBlobSHA1": "53ef5d48ac2c8263da2f6e70f73302e84e520227"
+        },
+        {
+          "file": "MOHorn_sus_C3_v3_1.wav",
+          "bytes": 2114316,
+          "sha256": "75156ce041d9c60e4de0099b4c6d81cafffd34f45be7bca3e6fa7ebff0eadb80",
+          "gitBlobSHA1": "69e3187ccc4d4338931d412a9f50978ca576db5c"
+        },
+        {
+          "file": "MOHorn_sus_F2_v3_1.wav",
+          "bytes": 1692688,
+          "sha256": "87351ffabbfb953553edb38d0f53c5f2a3f95a9085024461346ea977afb296bc",
+          "gitBlobSHA1": "af9345753c5b31083a3e344dd7bbf6c978de59c3"
+        },
+        {
+          "file": "MOHorn_stac_C3_v3_rr1.wav",
+          "bytes": 280932,
+          "sha256": "7ea5a48590310d32b29aa3046f7ca2708b8f233067352001e6043095d6dac1b6",
+          "gitBlobSHA1": "e7974939bf27e3b7c6bc7b79340f1a251d8ad869"
+        },
+        {
+          "file": "MOHorn_stac_F2_v3_rr1.wav",
+          "bytes": 302936,
+          "sha256": "1f6df484f8b62e31f1add13ea2599ecfcfeec5ecbe4701b26480f13478df7ba8",
+          "gitBlobSHA1": "be315404c5fafc92dd9a064607db00c488f369e4"
+        },
+        {
+          "file": "BDrumNewhit_v4_rr1_Sum.wav",
+          "bytes": 539748,
+          "sha256": "7d8603e6802b51bc5acd3f73275f8e6408c7f2ccdd36d1a55b27e74034101589",
+          "gitBlobSHA1": "2c50b244be4321074ce64fffcf87f8f570634f6e"
+        },
+        {
+          "file": "Snare2-HitSN_v5_rr1_Sum.wav",
+          "bytes": 360722,
+          "sha256": "8deb654b739f6dfb01f192b7043a9aad92b7973995246252571240fe712d0876",
+          "gitBlobSHA1": "102f740d546c8f147847ea4243b7c75b6eaa3119"
+        },
+        {
+          "file": "tenor_f_1.wav",
+          "bytes": 439828,
+          "sha256": "9c3b1d9c840a9dd884121f7dd6841368ca69e1465f1de864b82f05cc368d84c2",
+          "gitBlobSHA1": "d01b47f59e05076c1f14e2eb7ce41f59f89db47d"
+        },
+        {
+          "file": "crash_hit_ff_tight.wav",
+          "bytes": 786478,
+          "sha256": "ac2846a7e0b48fbfe282c52c0e5cf2331d7c26cd592437eaaa8e86d418346b1d",
+          "gitBlobSHA1": "4124599388653f003b82e2d421821f6720744815"
+        },
+        {
+          "file": "susp_hit_metal_1.wav",
+          "bytes": 840184,
+          "sha256": "11abcf76b08eff4a66b79f7fea48b58a55245d75a39b4ecde012fd4b47591d1b",
+          "gitBlobSHA1": "e26574aa240b9dea4c9ea94410202468c04f3cfd"
+        }
+      ],
+      "allPass": true
+    },
+    "effects": {
+      "scope": "Current packaged WAV SHA + independently rebuilt every sample from preserved SND.DAT at original PIT170/1193182; static current callsite binding checks only. No new sound generation, acoustic listening or fresh full DOS run.",
+      "sourceSndSHA256": "637447aa9ab7215621dab97d0889a41b8426f03f8045be02600bc99e090c1c5c",
+      "sourceBytes": 5071,
+      "effectCount": 15,
+      "sourceSlicesPartitionAllBytes": true,
+      "effects": [
+        {
+          "id": 0,
+          "file": "effect-0.wav",
+          "sha256": "049b14ee4665ae3f394d2a0eefe89f1ffbdd64f6b61d42497e9b424aef477cf6",
+          "frames": 40268,
+          "sourceBitSamplesExact": true
+        },
+        {
+          "id": 1,
+          "file": "effect-1.wav",
+          "sha256": "2dc82e9d14bd0f6d5a7054193287c83e4516924a549f9e59c7c0a48f90602440",
+          "frames": 39447,
+          "sourceBitSamplesExact": true
+        },
+        {
+          "id": 2,
+          "file": "effect-2.wav",
+          "sha256": "c471281f43ea2aefcd4932258e7ddf0437a3ecb3cc443587cf3bad21e3e54026",
+          "frames": 7003,
+          "sourceBitSamplesExact": true
+        },
+        {
+          "id": 3,
+          "file": "effect-3.wav",
+          "sha256": "daefce31dec962d4ecf6e5ffa4b1a339333165fa4c31227bd8422ac81e17651a",
+          "frames": 9028,
+          "sourceBitSamplesExact": true
+        },
+        {
+          "id": 4,
+          "file": "effect-4.wav",
+          "sha256": "a5b20cd120e824a89f1109d087d7780c4ff7bac400a449758f2d5e886a9a3a0b",
+          "frames": 2408,
+          "sourceBitSamplesExact": true
+        },
+        {
+          "id": 5,
+          "file": "effect-5.wav",
+          "sha256": "274c1bafb58047083c7538d5abf14ad32a938cda64f466940632d9d99a74db61",
+          "frames": 4870,
+          "sourceBitSamplesExact": true
+        },
+        {
+          "id": 6,
+          "file": "effect-6.wav",
+          "sha256": "8371c4b83c4eb2198ee63129eb2d7f112696aef03878fcd2c1606d4faeee353d",
+          "frames": 20079,
+          "sourceBitSamplesExact": true
+        },
+        {
+          "id": 7,
+          "file": "effect-7.wav",
+          "sha256": "2248b1b984fe4b948de8b28513fca4f9c22596ca55bf25b69f77dd5675958501",
+          "frames": 8481,
+          "sourceBitSamplesExact": true
+        },
+        {
+          "id": 8,
+          "file": "effect-8.wav",
+          "sha256": "b66e1a9820d9f2c6d338ac804a4c494f4aede06be0821e0108326abe6fd33057",
+          "frames": 12693,
+          "sourceBitSamplesExact": true
+        },
+        {
+          "id": 9,
+          "file": "effect-9.wav",
+          "sha256": "7e38a7c448f41af91de75b83fb88b556a39562393516f84d0c85c1630a15dd62",
+          "frames": 9465,
+          "sourceBitSamplesExact": true
+        },
+        {
+          "id": 10,
+          "file": "effect-10.wav",
+          "sha256": "5808bf5bf7656c84aa7f5621dc612addbe1db9b61c66dea9fcbf1b07cb175585",
+          "frames": 33429,
+          "sourceBitSamplesExact": true
+        },
+        {
+          "id": 11,
+          "file": "effect-11.wav",
+          "sha256": "c04046eba37febb76720a964bb085fd9bc3bac220f3fcedaeae821d600916208",
+          "frames": 8317,
+          "sourceBitSamplesExact": true
+        },
+        {
+          "id": 12,
+          "file": "effect-12.wav",
+          "sha256": "91233e0a4b3e3021cfcdf72ac80ba2b203c92fd644df63b542505af538bc1f1b",
+          "frames": 32663,
+          "sourceBitSamplesExact": true
+        },
+        {
+          "id": 13,
+          "file": "effect-13.wav",
+          "sha256": "2c25e304db4582026c10994ebfcd83878636934a3b93e9e62455897408dad6df",
+          "frames": 27082,
+          "sourceBitSamplesExact": true
+        },
+        {
+          "id": 14,
+          "file": "effect-14.wav",
+          "sha256": "d203011c1ab67d349045800c3a680b26ef1947a4366aa7d19534945c53c2a86a",
+          "frames": 22213,
+          "sourceBitSamplesExact": true
+        }
+      ],
+      "currentBindingChecks": {
+        "deathVoice": true,
+        "magicLoop10": true,
+        "magicStop": true,
+        "hit3": true,
+        "pickup9": true,
+        "appLoopDispatch": true,
+        "appStopDispatch": true
+      },
+      "historicalNativeAuthority": "golden-axe-research/evidence/death-magic-audio/native-proof.json; native hero magic1f4dAX10/stop1a3c, Heninger death2cfe→1ef3AX1. See reports/death-magic-audio.md for unmodified scanner vs conditional state scope.",
+      "remasteredEffectsAdded": 0,
+      "allPass": true
+    },
+    "browser": {
+      "checks": [
+        "no audio context or autoplay before gesture",
+        "trusted click loads both actual WAV files and starts playback",
+        "A/B switches gains while retaining the running timeline",
+        "pause holds position",
+        "resume continues from paused position",
+        "pointer seek works during playback",
+        "restart begins the same pair at zero",
+        "excerpt reaches the end and stops without an audio loop",
+        "pagehide closes AudioContext",
+        "390px mobile touch player and controls fit the viewport",
+        "preview only serves explicitly allowed artifacts",
+        "actual Tailscale HTTPS serves the identical pilot page, manifest and player"
+      ],
+      "errors": [],
+      "scope": "Actual muted Google Chrome desktop and emulated mobile touch. No subjective listening or physical mobile claim.",
+      "browserClosed": true,
+      "audioClosed": true
+    },
+    "gestureUnlock": {
+      "pass": true,
+      "scope": "Actual muted Chrome; WAV requests held until after gesture-backed AudioContext.resume. This verifies call order, not physical Safari playback.",
+      "resumeBeforeDownloadsComplete": true,
+      "resumeDuringActiveUserGesture": true,
+      "audioClosed": true,
+      "browserClosed": true,
+      "errors": []
+    }
+  },
+  "previewService": {
+    "label": "cz.500miles.ga.music-preview",
+    "publicCopy": "/private/tmp/ga-music-preview-501",
+    "launchDomain": "gui/501",
+    "independentOfChatSession": true,
+    "persistsAcrossLogoutOrReboot": false
+  },
+  "approvedByUser": "2026-11-05: dobrý, pokračuj",
+  "fullCatalogProvenance": "music-remaster-v1.json"
+}

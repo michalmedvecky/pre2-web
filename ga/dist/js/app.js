@@ -11,6 +11,7 @@ import {SOUND_TEST_DATA} from './sound-test-data.js';
 import {LEGACY_DATA,averageJoystickSamples} from './legacy-controls.js';
 import {createMapOverlay} from './map-overlay.js';
 import {createLevelOverlay} from './level-overlay.js';
+import {createControlsHelp} from './controls-help.js';
 import {preloadPresentationHD} from './hd-presentation.js';
 import {warmStatePalettes} from './hd-palette-warmup.js';
 import {HDStageLoader} from './hd-stage-loader.js';
@@ -19,6 +20,7 @@ import {HDFramePresenter} from './hd-frame-presenter.js';
 const $ = selector => document.querySelector(selector);
 const canvas = $('#game');
 let started = false, paused = false, simulation, renderer, input;
+let pageAudioHeld = false;
 let prior = performance.now(), accumulated = 0;
 let lastStatus;
 let assets, menuStep = 'mode';
@@ -47,7 +49,7 @@ function updateGraphicsUI() {
 }
 function setGraphicsMode(mode) {const result=renderer.setGraphicsMode(mode);try{localStorage.setItem('ga.graphics',mode);}catch{}updateGraphicsUI();return result;}
 function toggleHD() {return setGraphicsMode(renderer.graphicsMode==='hd'?'original':'hd');}
-let mapOverlay=null,levelOverlay=null,lastGodMode=false;
+let mapOverlay=null,levelOverlay=null,controlsHelp=null,lastGodMode=false;
 const hdWarmups=new Map();
 let paletteWarmupRunning=false,lastPaletteWarmup=-Infinity;
 let hdStageLoader=null;
@@ -70,14 +72,34 @@ function syncAudioStage(){
   audio.playStage(simulation.state.stageIndex,{mode:simulation.mode}).then(ok=>{if(!ok&&generation===audioGeneration&&audioStageKey===key)audioStageKey=null;});
 }
 function unlockAudio(){
-  audio.setPaused(paused);
+  audio.setPaused(paused||pageAudioHeld||!!controlsHelp?.isOpen);
   const generation=audioGeneration;
   audio.unlock().then(ready=>{if(ready&&started&&generation===audioGeneration)syncAudioStage();});
 }
 // AXE3ae6 selects INTRO before the title; mode-menu initialization8952→01ee stops it.
-function menuAudio(){audio.setPaused(false);}
+function menuAudio(){audio.setPaused(pageAudioHeld||!!controlsHelp?.isOpen);}
 function resetAudio(){audioGeneration++;audio.stop();audioStageKey=null;}
 function syncSoundGates(){for(const button of document.querySelectorAll('[data-toggle-effects]')){button.textContent=`Zvuky: ${audio.effectsEnabled?'zapnuto':'vypnuto'} · F2`;button.setAttribute('aria-pressed',String(audio.effectsEnabled));}for(const button of document.querySelectorAll('[data-toggle-music]')){button.textContent=`Hudba: ${audio.musicEnabled?'zapnuto':'vypnuto'} · F3`;button.setAttribute('aria-pressed',String(audio.musicEnabled));}}
+function syncMusicEditionUI(){
+  const state=audio.getMusicEditionStatus();
+  for(const button of document.querySelectorAll('[data-toggle-music-edition]')){
+    button.textContent=`Hudba: ${state.requested==='remaster'?'remaster':'původní'} · MUSIC`;
+    button.setAttribute('aria-pressed',String(state.requested==='remaster'));
+  }
+  for(const label of document.querySelectorAll('[data-music-edition-status]')){
+    label.textContent=state.error?'Remaster teď není dostupný, pokračuje původní hudba.':state.loading?'Připravuji remaster, zatím hraje původní hudba.':'';
+    label.hidden=!label.textContent;
+  }
+}
+function toggleMusicEdition(){
+  const pending=audio.toggleMusicEdition();
+  unlockAudio();
+  pending.then(syncMusicEditionUI);
+  syncMusicEditionUI();
+}
+audio.onMusicEditionChange=syncMusicEditionUI;
+for(const button of document.querySelectorAll('[data-toggle-music-edition]'))button.addEventListener('click',toggleMusicEdition);
+syncMusicEditionUI();
 for(const button of document.querySelectorAll('[data-toggle-effects]'))button.addEventListener('click',()=>{audio.toggleEffects();syncSoundGates();});
 for(const button of document.querySelectorAll('[data-toggle-music]'))button.addEventListener('click',()=>{audio.toggleMusic();syncSoundGates();});
 function dispatchSound(event){
@@ -85,13 +107,42 @@ function dispatchSound(event){
   else if(event.kind==='sfx-loop-start')audio.triggerEffect(event.id,{loop:true});
   else if(event.kind==='sfx-stop')audio.stopEffect();
 }
-$('#sound').addEventListener('click',()=>{
-  audio.setMuted(!audio.muted);
+$('#sound').addEventListener('click',event=>{
+  const restoring=pageAudioHeld&&event.isTrusted;
+  if(restoring)pageAudioHeld=false;
+  audio.setMuted(restoring?false:!audio.muted);
   $('#sound').textContent=audio.muted?'♩':'♪';
-  $('#sound').setAttribute('aria-label',audio.muted?'Zapnout původní zvuk':'Ztlumit původní zvuk');
-  if(!audio.muted){if(started)unlockAudio();else if(menuStep!=='character')menuAudio();}
+  $('#sound').setAttribute('aria-label',audio.muted?'Zapnout zvuk':'Ztlumit zvuk');
+  if(!audio.muted){if(restoring||started)unlockAudio();else if(menuStep!=='character')menuAudio();}
 });
-window.addEventListener('pagehide',()=>audio.dispose());
+window.addEventListener('pagehide',event=>{
+  if(!event.persisted){audio.dispose();return;}
+  // A cached document will return with these same objects. Suspend it; terminal
+  // dispose belongs only to a document which is actually being discarded.
+  pageAudioHeld=true;
+  if(started)paused=true;
+  input?.clear();audio.setPaused(true);
+});
+window.addEventListener('pageshow',event=>{
+  if(!event.persisted)return;
+  pageAudioHeld=true;
+  if(started)paused=true;
+  prior=performance.now();accumulated=0;input?.clear();
+  audio.setPaused(true);
+  if(simulation){sync();menuSync();}
+});
+function restoreCachedAudio(event){
+  if(controlsHelp?.isOpen)return;
+  if(event.isTrusted&&!pageAudioHeld&&!document.hidden&&!paused&&!hdLoading.waiting)audio.resumeAfterInterruption();
+  if(!pageAudioHeld||!event.isTrusted)return;
+  if(event.target?.closest?.('#sound'))return;
+  pageAudioHeld=false;
+  // The running game remains safely paused until Resume. A menu can restore
+  // its existing music clock immediately inside this new trusted gesture.
+  unlockAudio();
+}
+window.addEventListener('pointerdown',restoreCachedAudio,true);
+window.addEventListener('keydown',restoreCachedAudio,true);
 
 function menuSync() {
   $('#mode-menu').hidden = menuStep !== 'mode';
@@ -220,8 +271,8 @@ async function measureCalibration(){const current=calibration;if(!current||curre
 }catch(error){current.error=error.message;current.step=0;current.points=[];}finally{if(calibration===current){current.busy=false;calibrationPrompt();}}}
 for(const button of document.querySelectorAll('[data-calibrate-port]'))button.addEventListener('click',()=>beginCalibration(Number(button.dataset.calibratePort)));
 $('#calibration-measure').addEventListener('click',measureCalibration);$('#calibration-cancel').addEventListener('click',closeCalibration);
-window.addEventListener('keydown',event=>{if(calibration){event.stopImmediatePropagation();if(event.code==='Escape'){event.preventDefault();measureCalibration();}return;}if(event.ctrlKey||event.altKey||event.metaKey||event.repeat)return;if(['F2','F3','F4','F5'].includes(event.code)){event.preventDefault();event.stopImmediatePropagation();if(event.code==='F2')audio.toggleEffects();else if(event.code==='F3')audio.toggleMusic();else beginCalibration(event.code==='F4'?0:1);syncSoundGates();}},true);
-window.addEventListener('pagehide',()=>{if(calibration){cancelAnimationFrame(calibration.raf);calibration=null;}});
+window.addEventListener('keydown',event=>{if(controlsHelp?.isOpen)return;if(calibration){event.stopImmediatePropagation();if(event.code==='Escape'){event.preventDefault();measureCalibration();}return;}if(event.ctrlKey||event.altKey||event.metaKey||event.repeat)return;if(['F2','F3','F4','F5'].includes(event.code)){event.preventDefault();event.stopImmediatePropagation();if(event.code==='F2')audio.toggleEffects();else if(event.code==='F3')audio.toggleMusic();else beginCalibration(event.code==='F4'?0:1);syncSoundGates();}},true);
+window.addEventListener('pagehide',()=>{if(calibration){cancelAnimationFrame(calibration.raf);calibration=null;$('#calibration-panel').hidden=true;}});
 $('#menu-back').addEventListener('click',()=>{characterSelect=null;menuStep='mode';input?.clear();menuSync();});
 $('#open-options').addEventListener('click',()=>{menuCursor=3;menuStep='options';menuSync();});
 $('#options-back').addEventListener('click',()=>{menuStep='mode';menuSync();});
@@ -236,6 +287,7 @@ $('#sound-effect-prev').addEventListener('click',()=>stepSoundTestEffect(-1));$(
 $('#options-fullscreen').addEventListener('click',()=>$('#fullscreen').click());
 for (const button of document.querySelectorAll('[data-return-menu]')) button.addEventListener('click',returnMenu);
 window.addEventListener('keydown',event=>{
+  if(controlsHelp?.isOpen)return;
   if(!started&&menuStep==='soundtest'&&!event.repeat){
     if(['ArrowUp','ArrowDown'].includes(event.code)){event.preventDefault();soundTestCursor=(soundTestCursor+(event.code==='ArrowDown'?1:12))%13;soundTestSync();(soundTestCursor<11?document.querySelector(`[data-sound-track="${soundTestCursor}"]`):soundTestCursor===11?$('#sound-effect-next'):$('#sound-test-exit')).focus();}
     else if(soundTestCursor===11&&['ArrowLeft','ArrowRight'].includes(event.code)){event.preventDefault();stepSoundTestEffect(event.code==='ArrowLeft'?-1:1);}
@@ -327,7 +379,7 @@ $('#about-toggle').addEventListener('click', () => {
 });
 document.addEventListener('visibilitychange', () => {
   if(document.hidden){if(started&&!paused)pause();else audio.setPaused(true);}
-  else if(!started&&audio.currentTrack)audio.setPaused(false);
+  else if(!pageAudioHeld&&!controlsHelp?.isOpen&&!started&&audio.currentTrack)audio.setPaused(false);
 });
 
 function beginSequence(kind,plan=null){
@@ -389,7 +441,7 @@ try {
   let graphicsMode='hd';try{if(localStorage.getItem('ga.graphics')==='original')graphicsMode='original';}catch{}
   renderer = new Renderer(canvas, assets,{graphicsMode});
   input = new Input({onPause:code=>{if(sequence?.kind==='title'&&code==='Space'){primaryAction();return;}if(!started&&code==='Escape')return;pause();},onStart:primaryAction});
-  window.addEventListener('pagehide',()=>input.dispose());
+  window.addEventListener('pagehide',event=>{if(!event.persisted)input.dispose();});
   canvas.addEventListener('pointerdown',event=>{if(event.pointerType==='mouse'&&started&&!paused&&!sequence&&selection.devices.includes('mouse'))input.legacy.requestMouseLock();});
   renderer.renderMenu(menuStep);
   $('#loading').hidden = true; menuSync();sync();
@@ -397,6 +449,18 @@ try {
   showBuildInfo($('#build-repository'),$('#build-commit')).then(info=>{window.goldenAxe.buildInfo=info;});
   mapOverlay=createMapOverlay({getGame:()=>window.goldenAxe});window.goldenAxe.mapOverlay=mapOverlay;
   levelOverlay=createLevelOverlay({getGame:()=>window.goldenAxe,onSelect:jumpToLevel});window.goldenAxe.levelOverlay=levelOverlay;
+  controlsHelp=createControlsHelp({getSettings:()=>selection,onOpen:()=>{
+    const saved={started,paused,audioPaused:audio.paused,simulation};
+    if(started&&!paused)pause();else audio.setPaused(true);
+    input?.clear();return saved;
+  },onClose:(saved,{restore})=>{
+    input?.clear();prior=performance.now();accumulated=0;
+    if(!restore||!saved||saved.simulation!==simulation)return;
+    if(saved.started&&!saved.paused&&paused&&!document.hidden&&!pageAudioHeld)pause();
+    else if(!started)audio.setPaused(saved.audioPaused||pageAudioHeld||document.hidden);
+    if(started&&!paused)return canvas;
+  }});window.goldenAxe.controlsHelp=controlsHelp;
+  window.addEventListener('pagehide',event=>{if(!event.persisted)controlsHelp.dispose();});
   window.goldenAxe.graphics={toggle:toggleHD,set:setGraphicsMode,status:()=>renderer.getGraphicsStatus()};
   for(const button of document.querySelectorAll('[data-open-hd]'))button.addEventListener('click',toggleHD);
   updateGraphicsUI();
@@ -405,16 +469,19 @@ try {
   for(const button of document.querySelectorAll('[data-toggle-god]'))button.addEventListener('click',()=>mapOverlay.toggleGodMode());
   let cheatWord='';
   window.addEventListener('keydown',event=>{
-    if(!started||event.ctrlKey||event.metaKey||event.altKey||event.target?.closest?.('input,select,textarea')||mapOverlay.isOpen||levelOverlay.isOpen)return;
+    if(controlsHelp?.isOpen)return;
+    if(event.ctrlKey||event.metaKey||event.altKey||event.repeat||event.target?.closest?.('input,select,textarea'))return;
     if(!/^[a-z]$/i.test(event.key))return;
     cheatWord=(cheatWord+event.key.toUpperCase()).slice(-5);
+    if(cheatWord.endsWith('MUSIC')){toggleMusicEdition();cheatWord='';return;}
+    if(!started||mapOverlay.isOpen||levelOverlay.isOpen)return;
     if(cheatWord.endsWith('HD')){toggleHD();cheatWord='';return;}
     if(cheatWord.endsWith('LEVEL')){levelOverlay.open();cheatWord='';return;}
     if(sequence||simulation.state.status!=='playing')return;
     if(cheatWord.endsWith('IDDQD')){mapOverlay.toggleGodMode();cheatWord='';}
     else if(cheatWord.endsWith('MAP')){mapOverlay.toggle();cheatWord='';}
   });
-  window.addEventListener('pagehide',()=>{levelOverlay.dispose();mapOverlay.dispose();});
+  window.addEventListener('pagehide',event=>{if(!event.persisted){levelOverlay.dispose();mapOverlay.dispose();}});
   const tickMs = 1000 / rate;
   const frameDiagnostics=[];
   const frameAnomalies=[];
@@ -426,7 +493,7 @@ try {
     const elapsed = Math.min(100, Math.max(0, now - prior)); prior = now;
     hdStageLoader??=new HDStageLoader(assets,renderer);
     const stageLoad=started&&renderer.graphicsMode==='hd'&&!(sequence?.kind==='title')?hdStageLoader.prepare(simulation):{waiting:false,failed:false};
-    if (!stageLoad.waiting&&!hdLoading.waiting&&(started && !paused || calibration || menuStep==='soundtest'||!started&&menuStep==='character')) {
+    if (!controlsHelp?.isOpen&&!stageLoad.waiting&&!hdLoading.waiting&&(started && !paused || calibration || menuStep==='soundtest'||!started&&menuStep==='character')) {
       accumulated += elapsed;
       while (accumulated >= tickMs) {
         if(!started&&menuStep==='character'){simulation.advanceSpeakerPIT?.();characterSelect.step(input.sample(simulation.state.players));drainCharacterEvents();menuSync();finishCharacterSelect();accumulated=Math.max(0,accumulated-tickMs);continue;}
@@ -456,7 +523,7 @@ try {
     if(stageLoad.waiting)hdLoading={...hdLoading,waiting:true,failed:stageLoad.failed,phase:'stage',error:stageLoad.error};
     window.goldenAxe.hdLoading=hdLoading;
     if(hdLoading.waiting)accumulated=0;
-    if(audio.paused!==(paused||hdLoading.waiting))audio.setPaused(paused||hdLoading.waiting);
+    if(audio.paused!==(pageAudioHeld||paused||hdLoading.waiting||!!controlsHelp?.isOpen))audio.setPaused(pageAudioHeld||paused||hdLoading.waiting||!!controlsHelp?.isOpen);
     $('#loading').hidden=!hdLoading.waiting;
     $('#loading').classList.toggle('hd-loading',hdLoading.waiting);
     if(hdLoading.waiting)$('#loading').textContent=hdLoading.failed?'HD grafiku se nepodařilo připravit. Zkus obnovit stránku nebo tlačítkem HD přepni na původní grafiku.':'Načítání HD grafiky…';

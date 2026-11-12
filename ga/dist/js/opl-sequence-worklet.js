@@ -1,5 +1,6 @@
 import {NukedOPL} from './opl-engine.js';
 import {OriginalOPLSequencePlayer} from './opl-sequence-player.js';
+import {frameForTick} from './opl-trace.js';
 class OriginalOPLProcessor extends AudioWorkletProcessor {
   constructor(){super();this.player=null;this.generation=0;this.disposed=false;this.scratch=new Int16Array(128);this.port.onmessage=e=>this.command(e.data);}
   async command(m){
@@ -12,7 +13,7 @@ class OriginalOPLProcessor extends AudioWorkletProcessor {
       }
       if(m.type==='dispose'){this.disposed=true;this.generation++;this.player?.dispose();this.player=null;this.port.postMessage({type:'disposed',request:m.request});return;}
       if(this.disposed)return;
-      if(m.type==='select'){if(!this.player)throw new Error('OPL not ready.');this.player.selectProgram(m.name,m.options);this.port.postMessage({type:'selected',request:m.request,name:m.name});}
+      if(m.type==='select'){if(!this.player)throw new Error('OPL not ready.');this.player.selectProgram(m.name,m.options);const delay=(frameForTick(this.player.sequence.baseTick,sampleRate)-this.player.cursor)/sampleRate;this.port.postMessage({type:'selected',request:m.request,name:m.name,startTime:currentTime+Math.max(0,delay)});}
       else if(m.type==='enabled')this.player?.setEnabled(m.enabled);
       else if(m.type==='stop')this.player?.stop();
       else if(m.type==='status')this.port.postMessage({type:'status',request:m.request,...this.player?.status()});

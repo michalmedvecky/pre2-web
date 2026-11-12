@@ -18,6 +18,16 @@ function audioContext(t,{pendingResume=false,pendingSuspend=false}={}){
 }
 const manifest={faithfulSupported:true,tracks:{},effects:{}};
 function readyFetch(t){replace(t,'fetch',async()=>({ok:true,json:async()=>manifest}));}
+test('unexpected context suspension recovers the same clock without selecting music or changing gates',async t=>{
+ const contexts=audioContext(t);readyFetch(t);const a=new OriginalAudio({musicBackend:'flac'});await a.unlock();const c=contexts[0],source={stop(){},disconnect(){}};a.musicSource=source;a.currentTrack='stage2';a.trackStartedAt=3;a.musicEdition='remaster';a.musicEnabled=false;c.state='suspended';
+ assert.equal(await a.resumeAfterInterruption(),true);assert.equal(a.context,c);assert.equal(a.musicSource,source);assert.equal(a.currentTrack,'stage2');assert.equal(a.trackStartedAt,3);assert.equal(a.musicEdition,'remaster');assert.equal(a.musicEnabled,false);await a.dispose();
+});
+test('interruption recovery never starts locked, explicitly paused or terminal audio',async t=>{
+ const contexts=audioContext(t);readyFetch(t);const a=new OriginalAudio({musicBackend:'flac'});assert.equal(await a.resumeAfterInterruption(),false);assert.equal(contexts.length,0);await a.unlock();await a.setPaused(true);assert.equal(await a.resumeAfterInterruption(),false);assert.equal(a.context.state,'suspended');await a.dispose();assert.equal(await a.resumeAfterInterruption(),false);assert.equal(contexts.length,1);
+});
+test('interrupted context recovery is deduplicated and safe if disposed while resume is pending',async t=>{
+ const contexts=audioContext(t);readyFetch(t);const a=new OriginalAudio({musicBackend:'flac'});await a.unlock();const c=contexts[0];c.state='interrupted';c.pendingResume=true;const first=a.resumeAfterInterruption(),second=a.resumeAfterInterruption();assert.equal(first,second);assert.equal(c.waits.length,1);await a.dispose();assert.deepEqual(await Promise.all([first,second]),[false,false]);assert.equal(a.context,null);assert.equal(a.status,'closed');
+});
 test('closing during concurrent pending unlocks resolves false without fetching or resurrecting audio',async t=>{
  const contexts=audioContext(t,{pendingResume:true});let fetches=0;replace(t,'fetch',async()=>{fetches++;throw Error('must not fetch after close');});const a=new OriginalAudio({musicBackend:'flac'}),first=a.unlock(),second=a.unlock();await a.dispose();assert.deepEqual(await Promise.all([first,second]),[false,false]);assert.equal(contexts.length,1);assert.equal(contexts[0].closeCalls,1);assert.equal(fetches,0);assert.equal(a.status,'closed');assert.equal(a.error,null);assert.equal(a.context,null);
 });

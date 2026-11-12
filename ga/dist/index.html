@@ -14,7 +14,7 @@
       <span id="graphics-edition" class="edition">HD · GRAFIKA SE DOPLŇUJE</span>
       <div class="toolbar">
         <button data-open-hd class="icon-button" disabled aria-pressed="true" title="Přepnout HD a původní grafiku">HD</button>
-        <button id="sound" class="icon-button" aria-label="Ztlumit původní zvuk" title="Původní hudba a zvuky">♪</button>
+        <button id="sound" class="icon-button" aria-label="Ztlumit zvuk" title="Hudba a zvukové efekty">♪</button>
         <button id="fullscreen" class="icon-button" aria-label="Celá obrazovka" title="Celá obrazovka">⛶</button>
         <button id="pause" class="icon-button" aria-label="Pozastavit hru" title="Pozastavit hru">Ⅱ</button>
       </div>
@@ -38,6 +38,7 @@
               <button id="open-options"><span>›</span> Options</button>
             </div>
             <button id="start" class="primary">Vybrat hrdinu <span>→</span></button>
+            <button data-open-controls class="menu-help">Ovládání a kombinace</button>
             <p class="scope">Pracovní rekonstrukce · shoda s originálem se ověřuje</p>
             <p id="two-player-note" class="scope" hidden>Dva hráči · vstupy vyber v Options · původní 2P se ještě porovnává</p>
           </div>
@@ -46,14 +47,12 @@
             <div class="life-meter"><span>Life Meter</span><div><button data-health-bars="3" class="selected" aria-pressed="true">***</button><button data-health-bars="4" aria-pressed="false">****</button><button data-health-bars="5" aria-pressed="false">*****</button></div></div>
             <div class="device-options"><label>Player 1 <select data-device-player="0" aria-label="Ovládání hráče 1"></select></label><label>Player 2 <select data-device-player="1" aria-label="Ovládání hráče 2"></select></label></div>
             <p class="scope">Hráči používají odlišné vstupy. Keyboard znamená QWE / A·D / ZXC; Keypad numerickou klávesnici.</p>
-            <details class="control-help"><summary>Ovládání</summary><p>Keypad: 789 / 4·6 / 123 pro pohyb<br>Num 5 útok · Insert skok.<br>Keyboard: QWE / A·D / ZXC pro pohyb<br>S útok · Tab skok.</p>
-            <p>Dotyk: směry pro pohyb, tap pro útok,<br>swipe nahoru pro skok.</p>
-            <p>P1 má navíc šipky a J/K/L.<br>Magie: P1 pravý Shift, P2 levý Shift.<br>Běh: drž R (P1) / F (P2), nebo dvakrát rychle stejný směr.<br>Skok z rozběhu: drž R + směr a stiskni K / Insert.<br>Mezerník: pauza.</p>
-            <p>Mouse: pohyb myši · levé tlačítko útok<br>pravé tlačítko skok · Shift magie.<br>Joystick: páčka · tlačítka 1/2 útok/skok.</p></details>
+            <button data-open-controls class="secondary">Ovládání obou hráčů a kombinace</button>
             <p id="device-status" class="scope">Joystick 1/2 používá první/druhý připojený gamepad.</p>
             <div class="device-calibration"><button data-calibrate-port="0" class="secondary">Kalibrace Joystick 1</button><button data-calibrate-port="1" class="secondary">Kalibrace Joystick 2</button></div>
             <div id="calibration-panel" class="overlay" role="dialog" aria-modal="true" aria-labelledby="calibration-prompt" hidden><div class="pause-card"><div class="menu-caption">JOYSTICK CALIBRATION</div><p id="calibration-prompt" role="status"></p><p>Polohu potvrď tlačítkem gamepadu, Esc nebo tlačítkem níže.</p><button id="calibration-measure" class="secondary">Změřit polohu</button><button id="calibration-cancel" class="menu-back">Zrušit</button></div></div>
             <div class="device-calibration"><button data-toggle-effects class="secondary">Zvuky: zapnuto · F2</button><button data-toggle-music class="secondary">Hudba: zapnuto · F3</button></div>
+            <button data-toggle-music-edition class="secondary" aria-pressed="false">Hudba: původní · MUSIC</button><p data-music-edition-status class="scope" role="status" hidden></p>
             <button id="open-sound-test" class="secondary">Sound Test</button>
             <button id="mouse-lock" class="secondary">Zachytit myš</button>
             <button id="options-fullscreen" class="secondary">Celá obrazovka</button>
@@ -66,13 +65,15 @@
             <div class="eyebrow">GOLDEN AXE</div>
             <h2>Hra pozastavena</h2>
             <button id="resume" class="primary">Pokračovat <span>→</span></button>
+            <button data-open-controls class="secondary">Ovládání a bojové kombinace</button>
             <button id="restart" class="secondary">Začít znovu</button>
             <button data-open-level class="secondary">Vybrat úroveň</button>
             <button data-open-hd class="secondary" aria-pressed="true">HD → originál</button>
+            <button data-toggle-music-edition class="secondary" aria-pressed="false">Hudba: původní · MUSIC</button><p data-music-edition-status class="scope" role="status" hidden></p>
             <p id="graphics-coverage" class="scope">HD grafika se doplňuje.</p>
             <div class="cheat-actions"><button data-open-map class="secondary">MAP</button><button data-toggle-god class="secondary" aria-pressed="false">IDDQD: vypnuto</button></div>
             <button data-return-menu class="menu-back">Hlavní menu</button>
-            <p>Šipky pohyb v obou osách<br>J / Num 5 útok · K / Insert skok<br>L / pravý Shift magie · mezerník pauza<br>Běh: drž R (P1) / F (P2), nebo dvakrát rychle stejný směr.<br>Vysoký schod ve stage 4: drž R + doprava a stiskni K / Insert.</p>
+            <p>Vysoký schod ve stage 4 vyžaduje skok z běhu. Přehled výše ukáže aktuální klávesy obou hráčů.</p>
           </div>
         </div>
         <div id="result-screen" class="overlay" hidden>
@@ -117,13 +118,14 @@
       </div>
     </section>
     <footer>
-      <span style="display:flex;flex-direction:column;gap:2px"><span id="status">Původní data</span><span aria-label="Identita sestavení"><a id="build-repository">GitHub</a> · <a id="build-commit">Neověřené sestavení</a></span></span>
+      <span style="display:flex;flex-direction:column;gap:2px"><span id="status">Původní data</span><span data-music-edition-status role="status" hidden></span><span aria-label="Identita sestavení"><a id="build-repository">GitHub</a> · <a id="build-commit">Neověřené sestavení</a></span></span>
       <span class="desktop-hint">← ↑ ↓ → <b>POHYB</b> &nbsp; J <b>ÚTOK</b> &nbsp; K <b>SKOK</b> &nbsp; R <b>BĚH</b> &nbsp; L <b>MAGIE</b></span>
+      <button data-open-controls class="footer-help">Ovládání</button>
       <button id="about-toggle" aria-expanded="false" aria-controls="about">O této verzi ↗</button>
     </footer>
     <aside id="about" hidden>
       <p>Samostatná webová rekonstrukce z původních herních dat a analýzy DOS verze Golden Axe. Nejde o emulátor. Tato pracovní verze není dokončeným remasterem; přesné shodě mechanik a celému průchodu se věnuje probíhající ověřování.</p>
-      <p>Malovaná HD grafika je výchozí; nepokryté snímky a varianty zatím používají originál. Přepínač HD / originál funguje i během hry. Původní hudba a zvuky zůstávají. Commit se zobrazuje pouze z metadat čistého CI sestavení, místní pracovní snapshot nemá ověřený build commit.</p>
+      <p>Malovaná HD grafika je výchozí; nepokryté snímky a varianty zatím používají originál. Přepínač HD / originál funguje i během hry. Hudba a zvukové efekty zůstávají výchozí. Cheatem MUSIC nebo tlačítkem v Options a pauze přepneš remasterovanou hudbu; F3 hudbu zapíná a vypíná. Commit se zobrazuje pouze z metadat čistého CI sestavení, místní pracovní snapshot nemá ověřený build commit.</p>
       <p>Pozdní Duel: barevná varianta bosse odpovídá současnému portu; shoda s DOS originálem není ověřená.</p>
     </aside>
   </main>

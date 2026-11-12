@@ -1,0 +1,4926 @@
+{
+  "status": "implemented-and-verified-local-candidate",
+  "published": false,
+  "deployedToCluster": false,
+  "baseRelease": "ga-v0.2.6",
+  "baseCommit": "948a63da647628a25fe3fed8cd6fc49d6e540a9c",
+  "approvedPilot": "user2026-11-05: dobrý, pokračuj",
+  "runtimeSnapshot": "394b40bf36cd8a278e4a2d2a85638605cd22253721733fc717949911cb4d29f8",
+  "runtimeFiles": 616,
+  "unitTestsPassed": 208,
+  "musicPrograms": 26,
+  "nativeSemanticEventsCompared": 54535,
+  "nativeNoteSpansCompared": 22891,
+  "flacBytes": 100700490,
+  "largestDecodedBufferBytesAt48kHz": 59965360,
+  "usedCC0Samples": 33,
+  "newDownloadsThisPhase": 0,
+  "paidToolsUsed": false,
+  "subjectiveFullCatalogListeningPerformed": false,
+  "sourceAndPrehistorikPreserved": true,
+  "publicPreview": "https://michals-macbook-pro.quagga-bee.ts.net/",
+  "knownDifferences": [
+    "Acoustic instrument mapping replaces FM patches/envelopes. SASSA mid-note patch changes at ticks34335/ch2 and35385/ch0 remain the same acoustic voice.",
+    "Remaster F3 gates PCM at the running position; native original F3 dekeys and does not restore a held note.",
+    "Fixed source periods are48kHz sample quantized; scheduling uses the actual AudioContext sample grid. Hypothetical worst drift3.771ms/h at48kHz,4.075ms/h at44.1kHz; no hour-long browser run claim.",
+    "No physical Safari/iOS or subjective listening of the complete catalog; user approved the Stage1 pilot."
+  ],
+  "checks": {
+    "independent": {
+      "status": "PASS",
+      "runtimeSnapshot": "394b40bf36cd8a278e4a2d2a85638605cd22253721733fc717949911cb4d29f8",
+      "runtimeFiles": 616,
+      "nativePrograms": 26,
+      "nativeSemanticEvents": 54535,
+      "nativeNoteSpans": 22891,
+      "deliveredFLACAndPCMVerified": 26,
+      "usedSampleSourcesVerified": 33,
+      "uniqueSustainNotesChecked": 2,
+      "actualOfflineMusicCases": 13,
+      "actualSchedulerGridCases": 40,
+      "actualOfflineMusicMaxError": 0,
+      "actualSchedulerGridMaxError": 0,
+      "originalAudioAssetCoreFilesPreserved": 81,
+      "originalEffectsPCMVerified": 15,
+      "subjectiveListeningPerformed": false,
+      "browsersAndAudioClosed": true,
+      "runtimeOrAssetEditsByReviewer": false,
+      "proofs": {
+        "source-proof.json": {
+          "sha256": "37b12828e5e6f206dec5dfd11ade63e6bea6beebd4eb48ea2b98d017b2351a0f",
+          "bytes": 39041,
+          "allPass": true
+        },
+        "export-proof.json": {
+          "sha256": "437843e506769a29660f49bc859f8838e4b1468d31b9021c0ea8a69717e4af70",
+          "bytes": 5809,
+          "allPass": true
+        },
+        "render-proof.json": {
+          "sha256": "0b6f5c699c7ca9efcd8bf173f1c600c3cf5f5d282455b63acac877d3c8f223c7",
+          "bytes": 35757,
+          "allPass": true
+        },
+        "sustain-proof.json": {
+          "sha256": "16b1472afb936f07416904555207d4bc8ced6784d7691248b2a6403060c4ef4e",
+          "bytes": 3214,
+          "allPass": true
+        },
+        "effects-proof.json": {
+          "sha256": "9d645aae756d98c1d61540de87cdfefd611309ef5f989e6349937858310e4a1f",
+          "bytes": 3957,
+          "allPass": true
+        },
+        "original-preservation-proof.json": {
+          "sha256": "f55d5a63432210f68f06c0cb6dd7683ce3edf5cda360252822c223bc0fa45534",
+          "bytes": 13556,
+          "allPass": true
+        },
+        "period-quantization-proof.json": {
+          "sha256": "f482f10c202ebfb97c0b648b1ec85376122a91bc347859639f488beb71ee94e0",
+          "bytes": 13906,
+          "allPass": true
+        },
+        "browser-offline-proof.json": {
+          "sha256": "64aa64a295ad4c0f8a8beab5abe50476c067e2c2bf1d4d4e92cfe38e33e8992d",
+          "bytes": 4980,
+          "allPass": true
+        },
+        "browser-scheduling-grid-proof.json": {
+          "sha256": "1496c9efd4f6cfe53ca2a0d2a9dd277055f460af0cff4322d5966ac45fcad341",
+          "bytes": 8390,
+          "allPass": true
+        },
+        "v3-freeze-before.json": {
+          "sha256": "3d0754caee0201e74edca3b201fedf53aea45c42c610d8dff5381e91ba95c847",
+          "bytes": 141,
+          "allPass": true
+        },
+        "v3-freeze-after.json": {
+          "sha256": "3d0754caee0201e74edca3b201fedf53aea45c42c610d8dff5381e91ba95c847",
+          "bytes": 141,
+          "allPass": true
+        }
+      },
+      "limits": "See README: deliberate acoustic patch/F3 differences, fixed-period source/context quantization, no fresh full native DOS run or subjective full catalog/Safari listening."
+    },
+    "source": {
+      "scope": "Independent retained native EVT vs all shipped21score+5playlist programs, independent monophonic GOLD channel interpretation. No fresh DOS run or subjective listening.",
+      "programs": {
+        "intro": {
+          "nativeSHA256": "70995b547cc1f5e5e40057cb5d0ebbfec611025b170597a2af45b074faf4530f",
+          "rawRows": 3061,
+          "semanticRows": 3058,
+          "semanticExact": true,
+          "endTick": 33300,
+          "nextCycleFirstSemanticTick": 33301,
+          "logicalPrefixTicks": 0,
+          "logicalLoopTicks": 33301,
+          "logicalPrefixSeconds": 0.0,
+          "logicalLoopSeconds": 33.21219227242784,
+          "segments": [
+            {
+              "score": "intro",
+              "index": 0,
+              "eventBaseTick": 0,
+              "endTick": 33300,
+              "restartTick": 0
+            }
+          ],
+          "notes": 1387,
+          "notesByChannel": {
+            "6": 240,
+            "8": 40,
+            "1": 600,
+            "2": 216,
+            "3": 16,
+            "4": 4,
+            "0": 271
+          },
+          "noteRange": [
+            33,
+            93
+          ],
+          "rhythmRoles": {
+            "bass-drum": 240,
+            "tom": 40,
+            "melodic": 1107
+          },
+          "noncenterBends": 0,
+          "inGatePressureEvents": 0,
+          "zeroDurationNotes": 0,
+          "sourceNoteOnsIgnoredByGoldVoice": 0,
+          "sourceBendsIgnoredByGoldVoice": 1,
+          "rhythmModeChangesDuringActiveNotes": 0,
+          "instrumentChangesDuringActiveNotes": 0,
+          "controls": {
+            "rhythm-mode": 1,
+            "pitch-range": 1,
+            "instrument": 7,
+            "pitch-bend": 7
+          }
+        },
+        "intro2": {
+          "nativeSHA256": "893a11ff51805714892864dc44013fd22e957640546d14f77cba29a045979e36",
+          "rawRows": 1719,
+          "semanticRows": 1716,
+          "semanticExact": true,
+          "endTick": 19968,
+          "nextCycleFirstSemanticTick": 19969,
+          "logicalPrefixTicks": 0,
+          "logicalLoopTicks": 19969,
+          "logicalPrefixSeconds": 0.0,
+          "logicalLoopSeconds": 19.915746298552946,
+          "segments": [
+            {
+              "score": "intro2",
+              "index": 0,
+              "eventBaseTick": 0,
+              "endTick": 19968,
+              "restartTick": 0
+            }
+          ],
+          "notes": 807,
+          "notesByChannel": {
+            "0": 192,
+            "1": 384,
+            "2": 144,
+            "3": 12,
+            "4": 3,
+            "6": 48,
+            "8": 24
+          },
+          "noteRange": [
+            33,
+            93
+          ],
+          "rhythmRoles": {
+            "melodic": 735,
+            "bass-drum": 48,
+            "tom": 24
+          },
+          "noncenterBends": 0,
+          "inGatePressureEvents": 0,
+          "zeroDurationNotes": 0,
+          "sourceNoteOnsIgnoredByGoldVoice": 0,
+          "sourceBendsIgnoredByGoldVoice": 1,
+          "rhythmModeChangesDuringActiveNotes": 0,
+          "instrumentChangesDuringActiveNotes": 0,
+          "controls": {
+            "rhythm-mode": 1,
+            "pitch-range": 1,
+            "instrument": 7,
+            "pitch-bend": 7
+          }
+        },
+        "oldmap": {
+          "nativeSHA256": "c67b798560a9f94b1eb1544e264f4036e21e77eff680c1b04d112806bf5212fc",
+          "rawRows": 235,
+          "semanticRows": 232,
+          "semanticExact": true,
+          "endTick": 31920,
+          "nextCycleFirstSemanticTick": 31921,
+          "logicalPrefixTicks": 0,
+          "logicalLoopTicks": 31921,
+          "logicalPrefixSeconds": 0.0,
+          "logicalLoopSeconds": 31.835872482152766,
+          "segments": [
+            {
+              "score": "oldmap",
+              "index": 0,
+              "eventBaseTick": 0,
+              "endTick": 31920,
+              "restartTick": 0
+            }
+          ],
+          "notes": 102,
+          "notesByChannel": {
+            "1": 7,
+            "2": 7,
+            "3": 19,
+            "4": 6,
+            "0": 63
+          },
+          "noteRange": [
+            55,
+            93
+          ],
+          "rhythmRoles": {
+            "melodic": 102
+          },
+          "noncenterBends": 0,
+          "inGatePressureEvents": 0,
+          "zeroDurationNotes": 0,
+          "sourceNoteOnsIgnoredByGoldVoice": 0,
+          "sourceBendsIgnoredByGoldVoice": 0,
+          "rhythmModeChangesDuringActiveNotes": 0,
+          "instrumentChangesDuringActiveNotes": 0,
+          "controls": {
+            "rhythm-mode": 1,
+            "pitch-range": 1,
+            "instrument": 5,
+            "pitch-bend": 5
+          }
+        },
+        "rd1beg": {
+          "nativeSHA256": "4295454afe3b40d9964dee75a1744bb9288311e8a3a4df7146dadd102880b9bb",
+          "rawRows": 768,
+          "semanticRows": 765,
+          "semanticExact": true,
+          "endTick": 13440,
+          "nextCycleFirstSemanticTick": 13441,
+          "logicalPrefixTicks": 0,
+          "logicalLoopTicks": 13441,
+          "logicalPrefixSeconds": 0.0,
+          "logicalLoopSeconds": 13.405155290643004,
+          "segments": [
+            {
+              "score": "rd1beg",
+              "index": 0,
+              "eventBaseTick": 0,
+              "endTick": 13440,
+              "restartTick": 0
+            }
+          ],
+          "notes": 323,
+          "notesByChannel": {
+            "0": 21,
+            "1": 24,
+            "2": 24,
+            "3": 25,
+            "4": 21,
+            "6": 56,
+            "7": 128,
+            "8": 24
+          },
+          "noteRange": [
+            38,
+            93
+          ],
+          "rhythmRoles": {
+            "melodic": 115,
+            "bass-drum": 56,
+            "snare": 128,
+            "tom": 24
+          },
+          "noncenterBends": 0,
+          "inGatePressureEvents": 0,
+          "zeroDurationNotes": 0,
+          "sourceNoteOnsIgnoredByGoldVoice": 0,
+          "sourceBendsIgnoredByGoldVoice": 2,
+          "rhythmModeChangesDuringActiveNotes": 0,
+          "instrumentChangesDuringActiveNotes": 1,
+          "controls": {
+            "rhythm-mode": 1,
+            "pitch-range": 1,
+            "instrument": 9,
+            "pitch-bend": 8
+          }
+        },
+        "rd1end1": {
+          "nativeSHA256": "45e715c616d97afa8c9c9660d7b726e8f450ccf51ea11585e2818f877181b174",
+          "rawRows": 750,
+          "semanticRows": 747,
+          "semanticExact": true,
+          "endTick": 13440,
+          "nextCycleFirstSemanticTick": 13441,
+          "logicalPrefixTicks": 0,
+          "logicalLoopTicks": 13441,
+          "logicalPrefixSeconds": 0.0,
+          "logicalLoopSeconds": 13.405155290643004,
+          "segments": [
+            {
+              "score": "rd1end1",
+              "index": 0,
+              "eventBaseTick": 0,
+              "endTick": 13440,
+              "restartTick": 0
+            }
+          ],
+          "notes": 302,
+          "notesByChannel": {
+            "4": 13,
+            "6": 56,
+            "7": 128,
+            "0": 29,
+            "2": 18,
+            "3": 23,
+            "8": 24,
+            "1": 11
+          },
+          "noteRange": [
+            38,
+            86
+          ],
+          "rhythmRoles": {
+            "melodic": 94,
+            "bass-drum": 56,
+            "snare": 128,
+            "tom": 24
+          },
+          "noncenterBends": 0,
+          "inGatePressureEvents": 1,
+          "zeroDurationNotes": 0,
+          "sourceNoteOnsIgnoredByGoldVoice": 0,
+          "sourceBendsIgnoredByGoldVoice": 2,
+          "rhythmModeChangesDuringActiveNotes": 0,
+          "instrumentChangesDuringActiveNotes": 0,
+          "controls": {
+            "rhythm-mode": 1,
+            "pitch-range": 1,
+            "instrument": 8,
+            "pitch-bend": 8,
+            "volume": 1
+          }
+        },
+        "rd1end2": {
+          "nativeSHA256": "4406e64dbaa33f06a2c91648aa30eefdcb5d0f532fa863f8a6cbe95a289dba85",
+          "rawRows": 935,
+          "semanticRows": 932,
+          "semanticExact": true,
+          "endTick": 16800,
+          "nextCycleFirstSemanticTick": 16801,
+          "logicalPrefixTicks": 0,
+          "logicalLoopTicks": 16801,
+          "logicalPrefixSeconds": 0.0,
+          "logicalLoopSeconds": 16.756194780008414,
+          "segments": [
+            {
+              "score": "rd1end2",
+              "index": 0,
+              "eventBaseTick": 0,
+              "endTick": 16800,
+              "restartTick": 0
+            }
+          ],
+          "notes": 338,
+          "notesByChannel": {
+            "1": 70,
+            "4": 80,
+            "6": 40,
+            "7": 70,
+            "8": 50,
+            "2": 14,
+            "3": 14
+          },
+          "noteRange": [
+            36,
+            76
+          ],
+          "rhythmRoles": {
+            "melodic": 178,
+            "bass-drum": 40,
+            "snare": 70,
+            "tom": 50
+          },
+          "noncenterBends": 0,
+          "inGatePressureEvents": 0,
+          "zeroDurationNotes": 0,
+          "sourceNoteOnsIgnoredByGoldVoice": 0,
+          "sourceBendsIgnoredByGoldVoice": 2,
+          "rhythmModeChangesDuringActiveNotes": 0,
+          "instrumentChangesDuringActiveNotes": 0,
+          "controls": {
+            "rhythm-mode": 1,
+            "pitch-range": 1,
+            "instrument": 7,
+            "pitch-bend": 7
+          }
+        },
+        "rd1end3": {
+          "nativeSHA256": "6b6160c73babb0c5d7b69997b31cff6e08c3f53678545ba7e0512dbec59968a3",
+          "rawRows": 349,
+          "semanticRows": 346,
+          "semanticExact": true,
+          "endTick": 6720,
+          "nextCycleFirstSemanticTick": 6721,
+          "logicalPrefixTicks": 0,
+          "logicalLoopTicks": 6721,
+          "logicalPrefixSeconds": 0.0,
+          "logicalLoopSeconds": 6.703076311912181,
+          "segments": [
+            {
+              "score": "rd1end3",
+              "index": 0,
+              "eventBaseTick": 0,
+              "endTick": 6720,
+              "restartTick": 0
+            }
+          ],
+          "notes": 143,
+          "notesByChannel": {
+            "0": 13,
+            "1": 13,
+            "4": 13,
+            "6": 28,
+            "7": 64,
+            "8": 12
+          },
+          "noteRange": [
+            38,
+            86
+          ],
+          "rhythmRoles": {
+            "melodic": 39,
+            "bass-drum": 28,
+            "snare": 64,
+            "tom": 12
+          },
+          "noncenterBends": 0,
+          "inGatePressureEvents": 0,
+          "zeroDurationNotes": 0,
+          "sourceNoteOnsIgnoredByGoldVoice": 0,
+          "sourceBendsIgnoredByGoldVoice": 2,
+          "rhythmModeChangesDuringActiveNotes": 0,
+          "instrumentChangesDuringActiveNotes": 0,
+          "controls": {
+            "rhythm-mode": 1,
+            "pitch-range": 1,
+            "instrument": 6,
+            "pitch-bend": 6
+          }
+        },
+        "rd2part1": {
+          "nativeSHA256": "b23d62bf72754d94f11b4bf3f956aebc2f5271676473f80c364d4e6cc2a9dbdf",
+          "rawRows": 2177,
+          "semanticRows": 2174,
+          "semanticExact": true,
+          "endTick": 33600,
+          "nextCycleFirstSemanticTick": 33601,
+          "logicalPrefixTicks": 0,
+          "logicalLoopTicks": 33601,
+          "logicalPrefixSeconds": 0.0,
+          "logicalLoopSeconds": 33.51139222683547,
+          "segments": [
+            {
+              "score": "rd2part1",
+              "index": 0,
+              "eventBaseTick": 0,
+              "endTick": 33600,
+              "restartTick": 0
+            }
+          ],
+          "notes": 704,
+          "notesByChannel": {
+            "0": 48,
+            "1": 132,
+            "2": 32,
+            "6": 120,
+            "8": 160,
+            "10": 180,
+            "3": 16,
+            "4": 16
+          },
+          "noteRange": [
+            28,
+            83
+          ],
+          "rhythmRoles": {
+            "melodic": 244,
+            "bass-drum": 120,
+            "tom": 160,
+            "hi-hat": 180
+          },
+          "noncenterBends": 0,
+          "inGatePressureEvents": 0,
+          "zeroDurationNotes": 0,
+          "sourceNoteOnsIgnoredByGoldVoice": 0,
+          "sourceBendsIgnoredByGoldVoice": 2,
+          "rhythmModeChangesDuringActiveNotes": 0,
+          "instrumentChangesDuringActiveNotes": 0,
+          "controls": {
+            "rhythm-mode": 1,
+            "pitch-range": 1,
+            "instrument": 8,
+            "pitch-bend": 8
+          }
+        },
+        "rd2part2": {
+          "nativeSHA256": "ee62f8f970cfbe8ab91fcb2a84dbbed59431aa1a49f955d60ba8b8cc2d37fab8",
+          "rawRows": 1697,
+          "semanticRows": 1694,
+          "semanticExact": true,
+          "endTick": 18387,
+          "nextCycleFirstSemanticTick": 18388,
+          "logicalPrefixTicks": 0,
+          "logicalLoopTicks": 18388,
+          "logicalPrefixSeconds": 0.0,
+          "logicalLoopSeconds": 18.338962538824756,
+          "segments": [
+            {
+              "score": "rd2part2",
+              "index": 0,
+              "eventBaseTick": 0,
+              "endTick": 18387,
+              "restartTick": 0
+            }
+          ],
+          "notes": 654,
+          "notesByChannel": {
+            "0": 176,
+            "1": 194,
+            "2": 6,
+            "6": 66,
+            "8": 88,
+            "10": 99,
+            "3": 25
+          },
+          "noteRange": [
+            28,
+            84
+          ],
+          "rhythmRoles": {
+            "melodic": 401,
+            "bass-drum": 66,
+            "tom": 88,
+            "hi-hat": 99
+          },
+          "noncenterBends": 0,
+          "inGatePressureEvents": 0,
+          "zeroDurationNotes": 0,
+          "sourceNoteOnsIgnoredByGoldVoice": 0,
+          "sourceBendsIgnoredByGoldVoice": 2,
+          "rhythmModeChangesDuringActiveNotes": 0,
+          "instrumentChangesDuringActiveNotes": 0,
+          "controls": {
+            "rhythm-mode": 1,
+            "pitch-range": 1,
+            "instrument": 7,
+            "pitch-bend": 7
+          }
+        },
+        "rd3part1": {
+          "nativeSHA256": "61023a794ef4bdd6cde882d7bfc5119850b663b7554de02f661eeec8cd45ed66",
+          "rawRows": 4173,
+          "semanticRows": 4170,
+          "semanticExact": true,
+          "endTick": 94072,
+          "nextCycleFirstSemanticTick": 94073,
+          "logicalPrefixTicks": 0,
+          "logicalLoopTicks": 94073,
+          "logicalPrefixSeconds": 0.0,
+          "logicalLoopSeconds": 93.822124369962,
+          "segments": [
+            {
+              "score": "rd3part1",
+              "index": 0,
+              "eventBaseTick": 0,
+              "endTick": 94072,
+              "restartTick": 0
+            }
+          ],
+          "notes": 1938,
+          "notesByChannel": {
+            "0": 187,
+            "1": 211,
+            "2": 187,
+            "3": 341,
+            "6": 456,
+            "4": 544,
+            "5": 12
+          },
+          "noteRange": [
+            36,
+            86
+          ],
+          "rhythmRoles": {
+            "melodic": 1482,
+            "bass-drum": 456
+          },
+          "noncenterBends": 0,
+          "inGatePressureEvents": 0,
+          "zeroDurationNotes": 0,
+          "sourceNoteOnsIgnoredByGoldVoice": 0,
+          "sourceBendsIgnoredByGoldVoice": 0,
+          "rhythmModeChangesDuringActiveNotes": 0,
+          "instrumentChangesDuringActiveNotes": 0,
+          "controls": {
+            "rhythm-mode": 1,
+            "pitch-range": 1,
+            "instrument": 7,
+            "pitch-bend": 7
+          }
+        },
+        "rd3part2": {
+          "nativeSHA256": "64da82a1d31bfc7620c870ab156f411ac273fe6927e59b10f0fc588302874925",
+          "rawRows": 791,
+          "semanticRows": 788,
+          "semanticExact": true,
+          "endTick": 23520,
+          "nextCycleFirstSemanticTick": 23521,
+          "logicalPrefixTicks": 0,
+          "logicalLoopTicks": 23521,
+          "logicalPrefixSeconds": 0.0,
+          "logicalLoopSeconds": 23.458273758739235,
+          "segments": [
+            {
+              "score": "rd3part2",
+              "index": 0,
+              "eventBaseTick": 0,
+              "endTick": 23520,
+              "restartTick": 0
+            }
+          ],
+          "notes": 382,
+          "notesByChannel": {
+            "0": 31,
+            "1": 31,
+            "2": 31,
+            "3": 30,
+            "4": 217,
+            "6": 42
+          },
+          "noteRange": [
+            36,
+            84
+          ],
+          "rhythmRoles": {
+            "melodic": 340,
+            "bass-drum": 42
+          },
+          "noncenterBends": 0,
+          "inGatePressureEvents": 0,
+          "zeroDurationNotes": 0,
+          "sourceNoteOnsIgnoredByGoldVoice": 0,
+          "sourceBendsIgnoredByGoldVoice": 0,
+          "rhythmModeChangesDuringActiveNotes": 0,
+          "instrumentChangesDuringActiveNotes": 0,
+          "controls": {
+            "rhythm-mode": 1,
+            "pitch-range": 1,
+            "instrument": 6,
+            "pitch-bend": 6
+          }
+        },
+        "rd4": {
+          "nativeSHA256": "7f83c5a8a5427e2c3fe3232026d74ec8ea5468a9d0f130affe52134cd5938232",
+          "rawRows": 1101,
+          "semanticRows": 1098,
+          "semanticExact": true,
+          "endTick": 63840,
+          "nextCycleFirstSemanticTick": 63841,
+          "logicalPrefixTicks": 0,
+          "logicalLoopTicks": 63841,
+          "logicalPrefixSeconds": 0.0,
+          "logicalLoopSeconds": 63.67074763112417,
+          "segments": [
+            {
+              "score": "rd4",
+              "index": 0,
+              "eventBaseTick": 0,
+              "endTick": 63840,
+              "restartTick": 0
+            }
+          ],
+          "notes": 485,
+          "notesByChannel": {
+            "1": 268,
+            "3": 122,
+            "8": 42,
+            "0": 53
+          },
+          "noteRange": [
+            36,
+            79
+          ],
+          "rhythmRoles": {
+            "melodic": 443,
+            "tom": 42
+          },
+          "noncenterBends": 0,
+          "inGatePressureEvents": 0,
+          "zeroDurationNotes": 0,
+          "sourceNoteOnsIgnoredByGoldVoice": 0,
+          "sourceBendsIgnoredByGoldVoice": 1,
+          "rhythmModeChangesDuringActiveNotes": 0,
+          "instrumentChangesDuringActiveNotes": 0,
+          "controls": {
+            "rhythm-mode": 1,
+            "pitch-range": 1,
+            "instrument": 4,
+            "pitch-bend": 4
+          }
+        },
+        "rd5": {
+          "nativeSHA256": "8000ee68857c6157b547ce1e95f9bb88104150016e1fff655397c60f5410c9de",
+          "rawRows": 1931,
+          "semanticRows": 1928,
+          "semanticExact": true,
+          "endTick": 62160,
+          "nextCycleFirstSemanticTick": 62161,
+          "logicalPrefixTicks": 0,
+          "logicalLoopTicks": 62161,
+          "logicalPrefixSeconds": 0.0,
+          "logicalLoopSeconds": 61.99522788644146,
+          "segments": [
+            {
+              "score": "rd5",
+              "index": 0,
+              "eventBaseTick": 0,
+              "endTick": 62160,
+              "restartTick": 0
+            }
+          ],
+          "notes": 740,
+          "notesByChannel": {
+            "2": 64,
+            "6": 35,
+            "7": 20,
+            "8": 259,
+            "1": 95,
+            "3": 34,
+            "0": 69,
+            "4": 164
+          },
+          "noteRange": [
+            43,
+            84
+          ],
+          "rhythmRoles": {
+            "melodic": 426,
+            "bass-drum": 35,
+            "snare": 20,
+            "tom": 259
+          },
+          "noncenterBends": 0,
+          "inGatePressureEvents": 0,
+          "zeroDurationNotes": 0,
+          "sourceNoteOnsIgnoredByGoldVoice": 0,
+          "sourceBendsIgnoredByGoldVoice": 2,
+          "rhythmModeChangesDuringActiveNotes": 0,
+          "instrumentChangesDuringActiveNotes": 0,
+          "controls": {
+            "rhythm-mode": 1,
+            "pitch-range": 1,
+            "instrument": 8,
+            "pitch-bend": 8
+          }
+        },
+        "rd6part1": {
+          "nativeSHA256": "1eb1842a688fe2a090944ba50fa9e83d398cbe19e2c3d0221fce53397e59251b",
+          "rawRows": 1589,
+          "semanticRows": 1586,
+          "semanticExact": true,
+          "endTick": 53336,
+          "nextCycleFirstSemanticTick": 53337,
+          "logicalPrefixTicks": 0,
+          "logicalLoopTicks": 53337,
+          "logicalPrefixSeconds": 0.0,
+          "logicalLoopSeconds": 53.19475989413183,
+          "segments": [
+            {
+              "score": "rd6part1",
+              "index": 0,
+              "eventBaseTick": 0,
+              "endTick": 53336,
+              "restartTick": 0
+            }
+          ],
+          "notes": 702,
+          "notesByChannel": {
+            "0": 136,
+            "2": 422,
+            "1": 28,
+            "3": 24,
+            "4": 24,
+            "6": 60,
+            "9": 8
+          },
+          "noteRange": [
+            36,
+            86
+          ],
+          "rhythmRoles": {
+            "melodic": 634,
+            "bass-drum": 60,
+            "cymbal": 8
+          },
+          "noncenterBends": 0,
+          "inGatePressureEvents": 0,
+          "zeroDurationNotes": 0,
+          "sourceNoteOnsIgnoredByGoldVoice": 0,
+          "sourceBendsIgnoredByGoldVoice": 1,
+          "rhythmModeChangesDuringActiveNotes": 0,
+          "instrumentChangesDuringActiveNotes": 0,
+          "controls": {
+            "rhythm-mode": 1,
+            "pitch-range": 1,
+            "instrument": 7,
+            "pitch-bend": 7
+          }
+        },
+        "rd6part2": {
+          "nativeSHA256": "ddd3f85abc0b5b2111ae0ccfe7329be9f02a2d13cca105b336a5ef6ede523b41",
+          "rawRows": 369,
+          "semanticRows": 366,
+          "semanticExact": true,
+          "endTick": 8789,
+          "nextCycleFirstSemanticTick": 8790,
+          "logicalPrefixTicks": 0,
+          "logicalLoopTicks": 8790,
+          "logicalPrefixSeconds": 0.0,
+          "logicalLoopSeconds": 8.766558664143442,
+          "segments": [
+            {
+              "score": "rd6part2",
+              "index": 0,
+              "eventBaseTick": 0,
+              "endTick": 8789,
+              "restartTick": 0
+            }
+          ],
+          "notes": 146,
+          "notesByChannel": {
+            "0": 63,
+            "2": 24,
+            "7": 46,
+            "6": 13
+          },
+          "noteRange": [
+            31,
+            65
+          ],
+          "rhythmRoles": {
+            "melodic": 87,
+            "snare": 46,
+            "bass-drum": 13
+          },
+          "noncenterBends": 0,
+          "inGatePressureEvents": 0,
+          "zeroDurationNotes": 0,
+          "sourceNoteOnsIgnoredByGoldVoice": 0,
+          "sourceBendsIgnoredByGoldVoice": 1,
+          "rhythmModeChangesDuringActiveNotes": 0,
+          "instrumentChangesDuringActiveNotes": 0,
+          "controls": {
+            "rhythm-mode": 1,
+            "pitch-range": 1,
+            "instrument": 5,
+            "pitch-bend": 4,
+            "volume": 1
+          }
+        },
+        "rd6part3": {
+          "nativeSHA256": "9d642abc66f8c6cd2c1380651aecd355ef83ab9824de2fcfc9d05e1c45babe76",
+          "rawRows": 625,
+          "semanticRows": 622,
+          "semanticExact": true,
+          "endTick": 16797,
+          "nextCycleFirstSemanticTick": 16798,
+          "logicalPrefixTicks": 0,
+          "logicalLoopTicks": 16798,
+          "logicalPrefixSeconds": 0.0,
+          "logicalLoopSeconds": 16.75320278046434,
+          "segments": [
+            {
+              "score": "rd6part3",
+              "index": 0,
+              "eventBaseTick": 0,
+              "endTick": 16797,
+              "restartTick": 0
+            }
+          ],
+          "notes": 269,
+          "notesByChannel": {
+            "0": 60,
+            "2": 60,
+            "6": 29,
+            "7": 120
+          },
+          "noteRange": [
+            36,
+            84
+          ],
+          "rhythmRoles": {
+            "melodic": 120,
+            "bass-drum": 29,
+            "snare": 120
+          },
+          "noncenterBends": 0,
+          "inGatePressureEvents": 0,
+          "zeroDurationNotes": 0,
+          "sourceNoteOnsIgnoredByGoldVoice": 0,
+          "sourceBendsIgnoredByGoldVoice": 1,
+          "rhythmModeChangesDuringActiveNotes": 0,
+          "instrumentChangesDuringActiveNotes": 0,
+          "controls": {
+            "rhythm-mode": 1,
+            "pitch-range": 1,
+            "instrument": 4,
+            "pitch-bend": 4
+          }
+        },
+        "rd6part4": {
+          "nativeSHA256": "74ab20eb3d7ea3caba452f97d87cf6186217906ad9bada7bf3b6b56e8dc2273f",
+          "rawRows": 581,
+          "semanticRows": 578,
+          "semanticExact": true,
+          "endTick": 17606,
+          "nextCycleFirstSemanticTick": 17607,
+          "logicalPrefixTicks": 0,
+          "logicalLoopTicks": 17607,
+          "logicalPrefixSeconds": 0.0,
+          "logicalLoopSeconds": 17.56004532418357,
+          "segments": [
+            {
+              "score": "rd6part4",
+              "index": 0,
+              "eventBaseTick": 0,
+              "endTick": 17606,
+              "restartTick": 0
+            }
+          ],
+          "notes": 230,
+          "notesByChannel": {
+            "0": 126,
+            "2": 48,
+            "6": 8,
+            "7": 48
+          },
+          "noteRange": [
+            36,
+            65
+          ],
+          "rhythmRoles": {
+            "melodic": 174,
+            "bass-drum": 8,
+            "snare": 48
+          },
+          "noncenterBends": 0,
+          "inGatePressureEvents": 0,
+          "zeroDurationNotes": 0,
+          "sourceNoteOnsIgnoredByGoldVoice": 0,
+          "sourceBendsIgnoredByGoldVoice": 1,
+          "rhythmModeChangesDuringActiveNotes": 0,
+          "instrumentChangesDuringActiveNotes": 0,
+          "controls": {
+            "rhythm-mode": 1,
+            "pitch-range": 1,
+            "instrument": 4,
+            "pitch-bend": 4
+          }
+        },
+        "sassa": {
+          "nativeSHA256": "f9139ddf9c0b16e8fe66bbaf4b2b98312412e23628f08a04c4f283715cb441e8",
+          "rawRows": 1472,
+          "semanticRows": 1469,
+          "semanticExact": true,
+          "endTick": 40320,
+          "nextCycleFirstSemanticTick": 40321,
+          "logicalPrefixTicks": 0,
+          "logicalLoopTicks": 40321,
+          "logicalPrefixSeconds": 0.0,
+          "logicalLoopSeconds": 40.21347120556629,
+          "segments": [
+            {
+              "score": "sassa",
+              "index": 0,
+              "eventBaseTick": 0,
+              "endTick": 40320,
+              "restartTick": 0
+            }
+          ],
+          "notes": 585,
+          "notesByChannel": {
+            "0": 90,
+            "1": 133,
+            "6": 134,
+            "7": 184,
+            "2": 44
+          },
+          "noteRange": [
+            36,
+            81
+          ],
+          "rhythmRoles": {
+            "melodic": 267,
+            "bass-drum": 134,
+            "snare": 184
+          },
+          "noncenterBends": 0,
+          "inGatePressureEvents": 3,
+          "zeroDurationNotes": 0,
+          "sourceNoteOnsIgnoredByGoldVoice": 0,
+          "sourceBendsIgnoredByGoldVoice": 1,
+          "rhythmModeChangesDuringActiveNotes": 0,
+          "instrumentChangesDuringActiveNotes": 2,
+          "controls": {
+            "rhythm-mode": 1,
+            "pitch-range": 1,
+            "instrument": 7,
+            "pitch-bend": 5,
+            "volume": 3
+          }
+        },
+        "score": {
+          "nativeSHA256": "093327f73f3288da81b82fb6fc96c4b9678990044d35d15baea48789040e124b",
+          "rawRows": 397,
+          "semanticRows": 394,
+          "semanticExact": true,
+          "endTick": 14700,
+          "nextCycleFirstSemanticTick": 14701,
+          "logicalPrefixTicks": 0,
+          "logicalLoopTicks": 14701,
+          "logicalPrefixSeconds": 0.0,
+          "logicalLoopSeconds": 14.661795099155032,
+          "segments": [
+            {
+              "score": "score",
+              "index": 0,
+              "eventBaseTick": 0,
+              "endTick": 14700,
+              "restartTick": 0
+            }
+          ],
+          "notes": 161,
+          "notesByChannel": {
+            "0": 20,
+            "1": 20,
+            "3": 23,
+            "4": 33,
+            "7": 59,
+            "2": 6
+          },
+          "noteRange": [
+            44,
+            83
+          ],
+          "rhythmRoles": {
+            "melodic": 102,
+            "snare": 59
+          },
+          "noncenterBends": 0,
+          "inGatePressureEvents": 0,
+          "zeroDurationNotes": 0,
+          "sourceNoteOnsIgnoredByGoldVoice": 0,
+          "sourceBendsIgnoredByGoldVoice": 1,
+          "rhythmModeChangesDuringActiveNotes": 0,
+          "instrumentChangesDuringActiveNotes": 1,
+          "controls": {
+            "rhythm-mode": 1,
+            "pitch-range": 1,
+            "instrument": 11,
+            "pitch-bend": 6,
+            "volume": 1
+          }
+        },
+        "showdown": {
+          "nativeSHA256": "6dfc58eaeb3885bcb33cb6cf2fd855177cc6182e9e0df9835f2518944820b4bf",
+          "rawRows": 3291,
+          "semanticRows": 3288,
+          "semanticExact": true,
+          "endTick": 109200,
+          "nextCycleFirstSemanticTick": 109201,
+          "logicalPrefixTicks": 0,
+          "logicalLoopTicks": 109201,
+          "logicalPrefixSeconds": 0.0,
+          "logicalLoopSeconds": 108.90978073755723,
+          "segments": [
+            {
+              "score": "showdown",
+              "index": 0,
+              "eventBaseTick": 0,
+              "endTick": 109200,
+              "restartTick": 0
+            }
+          ],
+          "notes": 1283,
+          "notesByChannel": {
+            "0": 245,
+            "1": 349,
+            "3": 213,
+            "10": 269,
+            "8": 37,
+            "6": 19,
+            "2": 40,
+            "4": 111
+          },
+          "noteRange": [
+            36,
+            88
+          ],
+          "rhythmRoles": {
+            "melodic": 958,
+            "hi-hat": 269,
+            "tom": 37,
+            "bass-drum": 19
+          },
+          "noncenterBends": 0,
+          "inGatePressureEvents": 0,
+          "zeroDurationNotes": 0,
+          "sourceNoteOnsIgnoredByGoldVoice": 0,
+          "sourceBendsIgnoredByGoldVoice": 2,
+          "rhythmModeChangesDuringActiveNotes": 0,
+          "instrumentChangesDuringActiveNotes": 0,
+          "controls": {
+            "rhythm-mode": 1,
+            "pitch-range": 1,
+            "instrument": 8,
+            "pitch-bend": 8
+          }
+        },
+        "thief": {
+          "nativeSHA256": "fe82a42ebcd57548e55764c0b99897dfc52b9d9f1e63ebd99e954f34a1717107",
+          "rawRows": 573,
+          "semanticRows": 570,
+          "semanticExact": true,
+          "endTick": 29685,
+          "nextCycleFirstSemanticTick": 29686,
+          "logicalPrefixTicks": 0,
+          "logicalLoopTicks": 29686,
+          "logicalPrefixSeconds": 0.0,
+          "logicalLoopSeconds": 29.60683282181595,
+          "segments": [
+            {
+              "score": "thief",
+              "index": 0,
+              "eventBaseTick": 0,
+              "endTick": 29685,
+              "restartTick": 0
+            }
+          ],
+          "notes": 218,
+          "notesByChannel": {
+            "0": 80,
+            "8": 35,
+            "7": 11,
+            "9": 4,
+            "1": 44,
+            "2": 44
+          },
+          "noteRange": [
+            34,
+            85
+          ],
+          "rhythmRoles": {
+            "melodic": 168,
+            "tom": 35,
+            "snare": 11,
+            "cymbal": 4
+          },
+          "noncenterBends": 0,
+          "inGatePressureEvents": 0,
+          "zeroDurationNotes": 0,
+          "sourceNoteOnsIgnoredByGoldVoice": 0,
+          "sourceBendsIgnoredByGoldVoice": 3,
+          "rhythmModeChangesDuringActiveNotes": 0,
+          "instrumentChangesDuringActiveNotes": 1,
+          "controls": {
+            "rhythm-mode": 1,
+            "pitch-range": 1,
+            "instrument": 10,
+            "pitch-bend": 6,
+            "volume": 2
+          }
+        },
+        "stage1": {
+          "nativeSHA256": "895c3a598c0232bd43f6ed202afe90edfc3b2bc6c9572dc011c01f07117453e3",
+          "rawRows": 8676,
+          "semanticRows": 8640,
+          "semanticExact": true,
+          "endTick": 154571,
+          "nextCycleFirstSemanticTick": 154572,
+          "logicalPrefixTicks": 0,
+          "logicalLoopTicks": 154572,
+          "logicalPrefixSeconds": 0.0,
+          "logicalLoopSeconds": 154.1597845089852,
+          "segments": [
+            {
+              "score": "rd1beg",
+              "index": 0,
+              "eventBaseTick": 0,
+              "endTick": 13440,
+              "restartTick": 0
+            },
+            {
+              "score": "rd1beg",
+              "index": 1,
+              "eventBaseTick": 13441,
+              "endTick": 26881,
+              "restartTick": 13440
+            },
+            {
+              "score": "rd1end1",
+              "index": 2,
+              "eventBaseTick": 26882,
+              "endTick": 40322,
+              "restartTick": 26881
+            },
+            {
+              "score": "rd1end1",
+              "index": 3,
+              "eventBaseTick": 40323,
+              "endTick": 53763,
+              "restartTick": 40322
+            },
+            {
+              "score": "rd1beg",
+              "index": 4,
+              "eventBaseTick": 53764,
+              "endTick": 67204,
+              "restartTick": 53763
+            },
+            {
+              "score": "rd1beg",
+              "index": 5,
+              "eventBaseTick": 67205,
+              "endTick": 80645,
+              "restartTick": 67204
+            },
+            {
+              "score": "rd1end2",
+              "index": 6,
+              "eventBaseTick": 80646,
+              "endTick": 97446,
+              "restartTick": 80645
+            },
+            {
+              "score": "rd1end2",
+              "index": 7,
+              "eventBaseTick": 97447,
+              "endTick": 114247,
+              "restartTick": 97446
+            },
+            {
+              "score": "rd1beg",
+              "index": 8,
+              "eventBaseTick": 114248,
+              "endTick": 127688,
+              "restartTick": 114247
+            },
+            {
+              "score": "rd1beg",
+              "index": 9,
+              "eventBaseTick": 127689,
+              "endTick": 141129,
+              "restartTick": 127688
+            },
+            {
+              "score": "rd1end3",
+              "index": 10,
+              "eventBaseTick": 141130,
+              "endTick": 147850,
+              "restartTick": 141129
+            },
+            {
+              "score": "rd1end3",
+              "index": 11,
+              "eventBaseTick": 147851,
+              "endTick": 154571,
+              "restartTick": 147850
+            }
+          ],
+          "notes": 3504,
+          "notesByChannel": {
+            "0": 210,
+            "1": 332,
+            "2": 208,
+            "3": 224,
+            "4": 338,
+            "6": 584,
+            "7": 1292,
+            "8": 316
+          },
+          "noteRange": [
+            36,
+            93
+          ],
+          "rhythmRoles": {
+            "melodic": 1312,
+            "bass-drum": 584,
+            "snare": 1292,
+            "tom": 316
+          },
+          "noncenterBends": 0,
+          "inGatePressureEvents": 2,
+          "zeroDurationNotes": 0,
+          "sourceNoteOnsIgnoredByGoldVoice": 0,
+          "sourceBendsIgnoredByGoldVoice": 24,
+          "rhythmModeChangesDuringActiveNotes": 0,
+          "instrumentChangesDuringActiveNotes": 6,
+          "controls": {
+            "rhythm-mode": 12,
+            "pitch-range": 12,
+            "instrument": 96,
+            "pitch-bend": 90,
+            "volume": 2
+          }
+        },
+        "stage2": {
+          "nativeSHA256": "fcec1771f5b313e825a5767aa270dc86a7b98dc84b47a17a3e71e4c199e43311",
+          "rawRows": 3874,
+          "semanticRows": 3868,
+          "semanticExact": true,
+          "endTick": 51988,
+          "nextCycleFirstSemanticTick": 51989,
+          "logicalPrefixTicks": 0,
+          "logicalLoopTicks": 51989,
+          "logicalPrefixSeconds": 0.0,
+          "logicalLoopSeconds": 51.85035476566023,
+          "segments": [
+            {
+              "score": "rd2part1",
+              "index": 0,
+              "eventBaseTick": 0,
+              "endTick": 33600,
+              "restartTick": 0
+            },
+            {
+              "score": "rd2part2",
+              "index": 1,
+              "eventBaseTick": 33601,
+              "endTick": 51988,
+              "restartTick": 33600
+            }
+          ],
+          "notes": 1358,
+          "notesByChannel": {
+            "0": 224,
+            "1": 326,
+            "2": 38,
+            "6": 186,
+            "8": 248,
+            "10": 279,
+            "3": 41,
+            "4": 16
+          },
+          "noteRange": [
+            28,
+            84
+          ],
+          "rhythmRoles": {
+            "melodic": 645,
+            "bass-drum": 186,
+            "tom": 248,
+            "hi-hat": 279
+          },
+          "noncenterBends": 0,
+          "inGatePressureEvents": 0,
+          "zeroDurationNotes": 0,
+          "sourceNoteOnsIgnoredByGoldVoice": 0,
+          "sourceBendsIgnoredByGoldVoice": 4,
+          "rhythmModeChangesDuringActiveNotes": 0,
+          "instrumentChangesDuringActiveNotes": 0,
+          "controls": {
+            "rhythm-mode": 2,
+            "pitch-range": 2,
+            "instrument": 15,
+            "pitch-bend": 15
+          }
+        },
+        "stage3": {
+          "nativeSHA256": "5a3fc430c20484b90fe7d4e6fd633f508bb088b831123f8b8b6b77c5d676558d",
+          "rawRows": 4964,
+          "semanticRows": 4958,
+          "semanticExact": true,
+          "endTick": 117593,
+          "nextCycleFirstSemanticTick": 117594,
+          "logicalPrefixTicks": 0,
+          "logicalLoopTicks": 117594,
+          "logicalPrefixSeconds": 0.0,
+          "logicalLoopSeconds": 117.28039812870124,
+          "segments": [
+            {
+              "score": "rd3part1",
+              "index": 0,
+              "eventBaseTick": 0,
+              "endTick": 94072,
+              "restartTick": 0
+            },
+            {
+              "score": "rd3part2",
+              "index": 1,
+              "eventBaseTick": 94073,
+              "endTick": 117593,
+              "restartTick": 94072
+            }
+          ],
+          "notes": 2320,
+          "notesByChannel": {
+            "0": 218,
+            "1": 242,
+            "2": 218,
+            "3": 371,
+            "6": 498,
+            "4": 761,
+            "5": 12
+          },
+          "noteRange": [
+            36,
+            86
+          ],
+          "rhythmRoles": {
+            "melodic": 1822,
+            "bass-drum": 498
+          },
+          "noncenterBends": 0,
+          "inGatePressureEvents": 0,
+          "zeroDurationNotes": 0,
+          "sourceNoteOnsIgnoredByGoldVoice": 0,
+          "sourceBendsIgnoredByGoldVoice": 0,
+          "rhythmModeChangesDuringActiveNotes": 0,
+          "instrumentChangesDuringActiveNotes": 0,
+          "controls": {
+            "rhythm-mode": 2,
+            "pitch-range": 2,
+            "instrument": 13,
+            "pitch-bend": 13
+          }
+        },
+        "stage6": {
+          "nativeSHA256": "caba45f8db0d652566a91cc6426e3b0ba5aa8fcdb3ca377803947904a02b19c8",
+          "rawRows": 3789,
+          "semanticRows": 3774,
+          "semanticExact": true,
+          "endTick": 113329,
+          "nextCycleFirstSemanticTick": 113330,
+          "logicalPrefixTicks": 0,
+          "logicalLoopTicks": 113330,
+          "logicalPrefixSeconds": 0.0,
+          "logicalLoopSeconds": 113.02776944338751,
+          "segments": [
+            {
+              "score": "rd6part1",
+              "index": 0,
+              "eventBaseTick": 0,
+              "endTick": 53336,
+              "restartTick": 0
+            },
+            {
+              "score": "rd6part2",
+              "index": 1,
+              "eventBaseTick": 53337,
+              "endTick": 62126,
+              "restartTick": 53336
+            },
+            {
+              "score": "rd6part3",
+              "index": 2,
+              "eventBaseTick": 62127,
+              "endTick": 78924,
+              "restartTick": 62126
+            },
+            {
+              "score": "rd6part4",
+              "index": 3,
+              "eventBaseTick": 78925,
+              "endTick": 96531,
+              "restartTick": 78924
+            },
+            {
+              "score": "rd6part3",
+              "index": 4,
+              "eventBaseTick": 96532,
+              "endTick": 113329,
+              "restartTick": 96531
+            }
+          ],
+          "notes": 1616,
+          "notesByChannel": {
+            "0": 445,
+            "2": 614,
+            "1": 28,
+            "3": 24,
+            "4": 24,
+            "6": 139,
+            "9": 8,
+            "7": 334
+          },
+          "noteRange": [
+            31,
+            86
+          ],
+          "rhythmRoles": {
+            "melodic": 1135,
+            "bass-drum": 139,
+            "cymbal": 8,
+            "snare": 334
+          },
+          "noncenterBends": 0,
+          "inGatePressureEvents": 0,
+          "zeroDurationNotes": 0,
+          "sourceNoteOnsIgnoredByGoldVoice": 0,
+          "sourceBendsIgnoredByGoldVoice": 5,
+          "rhythmModeChangesDuringActiveNotes": 0,
+          "instrumentChangesDuringActiveNotes": 0,
+          "controls": {
+            "rhythm-mode": 5,
+            "pitch-range": 5,
+            "instrument": 24,
+            "pitch-bend": 23,
+            "volume": 1
+          }
+        },
+        "opening": {
+          "nativeSHA256": "3314f8d52267ac2ac1edaff64365857b5bd9ed42abf97b70e814ea29ec9a15f5",
+          "rawRows": 4780,
+          "semanticRows": 4774,
+          "semanticExact": true,
+          "endTick": 53269,
+          "nextCycleFirstSemanticTick": 53270,
+          "logicalPrefixTicks": 33301,
+          "logicalLoopTicks": 19969,
+          "logicalPrefixSeconds": 33.21219227242784,
+          "logicalLoopSeconds": 19.915746298552946,
+          "segments": [
+            {
+              "score": "intro",
+              "index": 0,
+              "eventBaseTick": 0,
+              "endTick": 33300,
+              "restartTick": 0
+            },
+            {
+              "score": "intro2",
+              "index": 1,
+              "eventBaseTick": 33301,
+              "endTick": 53269,
+              "restartTick": 33300
+            }
+          ],
+          "notes": 2194,
+          "notesByChannel": {
+            "6": 288,
+            "8": 64,
+            "1": 984,
+            "2": 360,
+            "3": 28,
+            "4": 7,
+            "0": 463
+          },
+          "noteRange": [
+            33,
+            93
+          ],
+          "rhythmRoles": {
+            "bass-drum": 288,
+            "tom": 64,
+            "melodic": 1842
+          },
+          "noncenterBends": 0,
+          "inGatePressureEvents": 0,
+          "zeroDurationNotes": 0,
+          "sourceNoteOnsIgnoredByGoldVoice": 0,
+          "sourceBendsIgnoredByGoldVoice": 2,
+          "rhythmModeChangesDuringActiveNotes": 0,
+          "instrumentChangesDuringActiveNotes": 0,
+          "controls": {
+            "rhythm-mode": 2,
+            "pitch-range": 2,
+            "instrument": 14,
+            "pitch-bend": 14
+          }
+        }
+      },
+      "totals": {
+        "programs": 26,
+        "semanticRows": 54535,
+        "notes": 22891,
+        "inGatePressureEvents": 6,
+        "noncenterBends": 0
+      },
+      "selectors": {
+        "0": "stage1",
+        "1": "stage2",
+        "2": "stage3",
+        "3": "rd4",
+        "4": "rd5",
+        "5": "stage6",
+        "6": "stage6",
+        "7": "showdown",
+        "9": "score",
+        "10": "opening",
+        "11": "oldmap",
+        "12": "opening",
+        "13": "sassa",
+        "16": "thief",
+        "17": "thief",
+        "18": "thief",
+        "19": "thief"
+      },
+      "allPass": true,
+      "positiveDurationControls": {
+        "instrumentChanges": [
+          {
+            "program": "sassa",
+            "channel": 2,
+            "tick": 34335,
+            "startTick": 33390,
+            "endTick": 34440,
+            "sourceNativeRow": 1286
+          },
+          {
+            "program": "sassa",
+            "channel": 0,
+            "tick": 35385,
+            "startTick": 35070,
+            "endTick": 36540,
+            "sourceNativeRow": 1327
+          }
+        ],
+        "volumeChanges": [
+          {
+            "program": "sassa",
+            "channel": 0,
+            "tick": 105,
+            "value": 88,
+            "startTick": 0,
+            "endTick": 420
+          },
+          {
+            "program": "sassa",
+            "channel": 0,
+            "tick": 12495,
+            "value": 88,
+            "startTick": 11550,
+            "endTick": 13020
+          },
+          {
+            "program": "sassa",
+            "channel": 0,
+            "tick": 12600,
+            "value": 88,
+            "startTick": 11550,
+            "endTick": 13020
+          }
+        ]
+      }
+    },
+    "render": {
+      "scope": "Independent native note spans vs all render records; actual26 delivered FLAC decode→PCM→master WAV identity; frame layout/native period quantization, pressure, sample source SHA/CC0/pinned origin, melodic sustain coverage, level/peak, compact first-play RMS and mathematical release+room warmup bound. Producer cold/steady equality assertion crosschecked against code and support bound, not a separate complete sampler implementation. No subjective listening.",
+      "programs": [
+        {
+          "program": "intro",
+          "notes": 1387,
+          "allNoteAndPressureFieldsExact": true,
+          "sampleGridMaxOnsetErrorFrames": 0.4993320381036028,
+          "sampleGridMaxGateErrorFrames": 0.4993320381036028,
+          "rationalLoopQuantizationErrorFrames": -0.22907653637230396,
+          "releasePlusRoomBoundFrames": 31056,
+          "coldWarmupFrames": 96000,
+          "producerColdSteadyMaxDifference": 0.0,
+          "fileSHA256": "f338f5bf67c9bb3d57f432c9541c8605206a7a037ab5c5edeacfcae936fc7b72",
+          "pcm": {
+            "channels": 2,
+            "sampleRate": 48000,
+            "frames": 1690185,
+            "rms": 0.06751993767092886,
+            "peak": 0.361328125,
+            "railSamples": 0,
+            "pcmSHA256": "596cc6da4d75ab917406e5a1600bf9af05bc8bcc1f4b1955e63159b4bdf505af"
+          },
+          "firstPlayRMS": 0.06863918850599489,
+          "originalFirstPlayRMS": 0.06864128350747016,
+          "timbralDeviations": []
+        },
+        {
+          "program": "intro2",
+          "notes": 807,
+          "allNoteAndPressureFieldsExact": true,
+          "sampleGridMaxOnsetErrorFrames": 0.4998231618665159,
+          "sampleGridMaxGateErrorFrames": 0.4998231618665159,
+          "rationalLoopQuantizationErrorFrames": 0.1776694585569203,
+          "releasePlusRoomBoundFrames": 31056,
+          "coldWarmupFrames": 96000,
+          "producerColdSteadyMaxDifference": 0.0,
+          "fileSHA256": "e16a9f9a657b7f348f5efafeae663cf36ae455c2898695419cdeb4d49bf9009c",
+          "pcm": {
+            "channels": 2,
+            "sampleRate": 48000,
+            "frames": 1051956,
+            "rms": 0.07442626371131558,
+            "peak": 0.422119140625,
+            "railSamples": 0,
+            "pcmSHA256": "39dd4f054126c3416ca644cbb0f666f874375cb18c4f082b8514a54a25164c5e"
+          },
+          "firstPlayRMS": 0.07306633016297902,
+          "originalFirstPlayRMS": 0.07306856198679344,
+          "timbralDeviations": []
+        },
+        {
+          "program": "oldmap",
+          "notes": 102,
+          "allNoteAndPressureFieldsExact": true,
+          "sampleGridMaxOnsetErrorFrames": 0.4982123431400396,
+          "sampleGridMaxGateErrorFrames": 0.4982123431400396,
+          "rationalLoopQuantizationErrorFrames": 0.12085666717030108,
+          "releasePlusRoomBoundFrames": 31056,
+          "coldWarmupFrames": 96000,
+          "producerColdSteadyMaxDifference": 0.0,
+          "fileSHA256": "734b973a020c00dc728c233de76a835c33a4df99c7c72147db902cc33664b6aa",
+          "pcm": {
+            "channels": 2,
+            "sampleRate": 48000,
+            "frames": 1624122,
+            "rms": 0.005186369920049085,
+            "peak": 0.02691650390625,
+            "railSamples": 0,
+            "pcmSHA256": "1762d69822d99993b749e31cf4b7e2b65545a04d743c840116287707c65a2784"
+          },
+          "firstPlayRMS": 0.005201964198765106,
+          "originalFirstPlayRMS": 0.005202113589788736,
+          "timbralDeviations": []
+        },
+        {
+          "program": "opening",
+          "notes": 2194,
+          "allNoteAndPressureFieldsExact": true,
+          "sampleGridMaxOnsetErrorFrames": 0.49954994255676866,
+          "sampleGridMaxGateErrorFrames": 0.49954994255676866,
+          "rationalLoopQuantizationErrorFrames": 0.1776694585569203,
+          "releasePlusRoomBoundFrames": 31056,
+          "coldWarmupFrames": 96000,
+          "producerColdSteadyMaxDifference": 0.0,
+          "fileSHA256": "9af7f431fecbd4460f27f0dfdfceb0e92f097883e0e0ad13af0b8ca0d1b84898",
+          "pcm": {
+            "channels": 2,
+            "sampleRate": 48000,
+            "frames": 2646141,
+            "rms": 0.07071963579763661,
+            "peak": 0.38909912109375,
+            "railSamples": 0,
+            "pcmSHA256": "b08e80ba3ed606d5ff6094296cb44698150b60f9b1ad7fb6e60b3c6626b537de"
+          },
+          "firstPlayRMS": 0.07035245315472334,
+          "originalFirstPlayRMS": 0.07035459967264063,
+          "timbralDeviations": []
+        },
+        {
+          "program": "rd1beg",
+          "notes": 323,
+          "allNoteAndPressureFieldsExact": true,
+          "sampleGridMaxOnsetErrorFrames": 0.4982123431400396,
+          "sampleGridMaxGateErrorFrames": 0.4982123431400396,
+          "rationalLoopQuantizationErrorFrames": -0.4539508641464636,
+          "releasePlusRoomBoundFrames": 31056,
+          "coldWarmupFrames": 96000,
+          "producerColdSteadyMaxDifference": 0.0,
+          "fileSHA256": "06237b8f7fa0624a6360ef48681303fbaf5ea8d1816c2f977be993fe82d10dbb",
+          "pcm": {
+            "channels": 2,
+            "sampleRate": 48000,
+            "frames": 739447,
+            "rms": 0.02839700202318494,
+            "peak": 0.15228271484375,
+            "railSamples": 0,
+            "pcmSHA256": "9a40244bfb834d347a4fe7cd0ce7f86ed129da56aa087842dffcd6f4f3f66a58"
+          },
+          "firstPlayRMS": 0.02838494573477386,
+          "originalFirstPlayRMS": 0.02838580478463609,
+          "timbralDeviations": []
+        },
+        {
+          "program": "rd1end1",
+          "notes": 302,
+          "allNoteAndPressureFieldsExact": true,
+          "sampleGridMaxOnsetErrorFrames": 0.4982123431400396,
+          "sampleGridMaxGateErrorFrames": 0.4982123431400396,
+          "rationalLoopQuantizationErrorFrames": -0.4539508641464636,
+          "releasePlusRoomBoundFrames": 31056,
+          "coldWarmupFrames": 96000,
+          "producerColdSteadyMaxDifference": 0.0,
+          "fileSHA256": "f81b8310e5c63adc98eefed62934e4327785aed92115c84e06d298c889b4c839",
+          "pcm": {
+            "channels": 2,
+            "sampleRate": 48000,
+            "frames": 739447,
+            "rms": 0.028100215036822203,
+            "peak": 0.1683349609375,
+            "railSamples": 0,
+            "pcmSHA256": "fffe00522593a3bc75f3967b8c8db52c3af455e8a45815dd6e01787bdf72b20c"
+          },
+          "firstPlayRMS": 0.028479967730674433,
+          "originalFirstPlayRMS": 0.028480828484829294,
+          "timbralDeviations": []
+        },
+        {
+          "program": "rd1end2",
+          "notes": 338,
+          "allNoteAndPressureFieldsExact": true,
+          "sampleGridMaxOnsetErrorFrames": 0.4982123431400396,
+          "sampleGridMaxGateErrorFrames": 0.4982123431400396,
+          "rationalLoopQuantizationErrorFrames": -0.349440403864719,
+          "releasePlusRoomBoundFrames": 30096,
+          "coldWarmupFrames": 96000,
+          "producerColdSteadyMaxDifference": 0.0,
+          "fileSHA256": "ff75c9969f3fa272c0b2418fb85e16e1e5ce6571b85a638f35245c8ea46050c4",
+          "pcm": {
+            "channels": 2,
+            "sampleRate": 48000,
+            "frames": 900297,
+            "rms": 0.025447347617117172,
+            "peak": 0.139434814453125,
+            "railSamples": 0,
+            "pcmSHA256": "175ba887dac274d375c0e0aa620e1d65d134eeb57fa75bb5e94c60166d166392"
+          },
+          "firstPlayRMS": 0.025551804273134766,
+          "originalFirstPlayRMS": 0.025552581122943265,
+          "timbralDeviations": []
+        },
+        {
+          "program": "rd1end3",
+          "notes": 143,
+          "allNoteAndPressureFieldsExact": true,
+          "sampleGridMaxOnsetErrorFrames": 0.49302118201740086,
+          "sampleGridMaxGateErrorFrames": 0.49302118201740086,
+          "rationalLoopQuantizationErrorFrames": 0.3370282153482549,
+          "releasePlusRoomBoundFrames": 31056,
+          "coldWarmupFrames": 96000,
+          "producerColdSteadyMaxDifference": 0.0,
+          "fileSHA256": "42f4a6d412770e2480f83f920b2b18e23caa293ce49d907cd7f04e817afba7d9",
+          "pcm": {
+            "channels": 2,
+            "sampleRate": 48000,
+            "frames": 417748,
+            "rms": 0.02828388852180524,
+            "peak": 0.158416748046875,
+            "railSamples": 0,
+            "pcmSHA256": "1196a71bc213e4ba3257e492382dcc9659f353d3842bf4b4a6d1d5066173b210"
+          },
+          "firstPlayRMS": 0.028956201325708236,
+          "originalFirstPlayRMS": 0.0289571095398202,
+          "timbralDeviations": []
+        },
+        {
+          "program": "rd2part1",
+          "notes": 704,
+          "allNoteAndPressureFieldsExact": true,
+          "sampleGridMaxOnsetErrorFrames": 0.4982123431400396,
+          "sampleGridMaxGateErrorFrames": 0.49982819030992687,
+          "rationalLoopQuantizationErrorFrames": 0.1731118974275887,
+          "releasePlusRoomBoundFrames": 31056,
+          "coldWarmupFrames": 96000,
+          "producerColdSteadyMaxDifference": 0.0,
+          "fileSHA256": "60898ea07bd5f8769ce66f8ad9563fe9311cbddac1c0fec9c33dafc8d0fcf173",
+          "pcm": {
+            "channels": 2,
+            "sampleRate": 48000,
+            "frames": 1704547,
+            "rms": 0.03204398562801167,
+            "peak": 0.1923828125,
+            "railSamples": 0,
+            "pcmSHA256": "4f83ae9e859df7337c89e7dfba4807ea45dd704ed1eeaeea619e91737f63ccf5"
+          },
+          "firstPlayRMS": 0.032693898492353254,
+          "originalFirstPlayRMS": 0.032694883464973686,
+          "timbralDeviations": []
+        },
+        {
+          "program": "rd2part2",
+          "notes": 654,
+          "allNoteAndPressureFieldsExact": true,
+          "sampleGridMaxOnsetErrorFrames": 0.4994057904696092,
+          "sampleGridMaxGateErrorFrames": 0.4994057904696092,
+          "rationalLoopQuantizationErrorFrames": -0.20186358829960227,
+          "releasePlusRoomBoundFrames": 31056,
+          "coldWarmupFrames": 96000,
+          "producerColdSteadyMaxDifference": 0.0,
+          "fileSHA256": "e42edaae6cda4d5e5859ccad3c293afca90bc6ad7e1920f8ae45647662e1a217",
+          "pcm": {
+            "channels": 2,
+            "sampleRate": 48000,
+            "frames": 976270,
+            "rms": 0.03559334259764481,
+            "peak": 0.2178955078125,
+            "railSamples": 0,
+            "pcmSHA256": "d8c750e4cd5b2b7ba9e0dbe22d482622f5c6c6815a31f149c41813801c43b593"
+          },
+          "firstPlayRMS": 0.035427238966879895,
+          "originalFirstPlayRMS": 0.03542832217170346,
+          "timbralDeviations": []
+        },
+        {
+          "program": "rd3part1",
+          "notes": 1938,
+          "allNoteAndPressureFieldsExact": true,
+          "sampleGridMaxOnsetErrorFrames": 0.4998902096413076,
+          "sampleGridMaxGateErrorFrames": 0.4998902096413076,
+          "rationalLoopQuantizationErrorFrames": 0.030241823755204678,
+          "releasePlusRoomBoundFrames": 31056,
+          "coldWarmupFrames": 96000,
+          "producerColdSteadyMaxDifference": 0.0,
+          "fileSHA256": "8085ed2dcb5db5f9fca376d99edb002e304bfc2c0d8c947dc41d7632d988eddc",
+          "pcm": {
+            "channels": 2,
+            "sampleRate": 48000,
+            "frames": 4599462,
+            "rms": 0.012085200487980181,
+            "peak": 0.074554443359375,
+            "railSamples": 0,
+            "pcmSHA256": "ac5a3f7c1c87ecd0d43b47001168b04943ef49747e8b3356c622e9220cd86000"
+          },
+          "firstPlayRMS": 0.012109003318449328,
+          "originalFirstPlayRMS": 0.012109367007665281,
+          "timbralDeviations": []
+        },
+        {
+          "program": "rd3part2",
+          "notes": 382,
+          "allNoteAndPressureFieldsExact": true,
+          "sampleGridMaxOnsetErrorFrames": 0.4982123431400396,
+          "sampleGridMaxGateErrorFrames": 0.4982123431400396,
+          "rationalLoopQuantizationErrorFrames": -0.14041948318481445,
+          "releasePlusRoomBoundFrames": 31056,
+          "coldWarmupFrames": 96000,
+          "producerColdSteadyMaxDifference": 0.0,
+          "fileSHA256": "3ca61653e5edf28cd51a924d0b578bf71adef1ebdc67883738d4851d1ec5d162",
+          "pcm": {
+            "channels": 2,
+            "sampleRate": 48000,
+            "frames": 1221997,
+            "rms": 0.009289685159570111,
+            "peak": 0.06097412109375,
+            "railSamples": 0,
+            "pcmSHA256": "63ca088b81ac2caa6b79a9fd17347b1d85c5df9c5daa875b3402d24d44a31ed7"
+          },
+          "firstPlayRMS": 0.009334500403467654,
+          "originalFirstPlayRMS": 0.009334779236997189,
+          "timbralDeviations": []
+        },
+        {
+          "program": "rd4",
+          "notes": 485,
+          "allNoteAndPressureFieldsExact": true,
+          "sampleGridMaxOnsetErrorFrames": 0.49982819030992687,
+          "sampleGridMaxGateErrorFrames": 0.4985559624619782,
+          "rationalLoopQuantizationErrorFrames": 0.11370603973045945,
+          "releasePlusRoomBoundFrames": 31056,
+          "coldWarmupFrames": 96000,
+          "producerColdSteadyMaxDifference": 0.0,
+          "fileSHA256": "1aae3dd56a33eb13559feb89c609bedb75b64eb81f3239bf6729e4be4f96a3c6",
+          "pcm": {
+            "channels": 2,
+            "sampleRate": 48000,
+            "frames": 3152196,
+            "rms": 0.007012467177791623,
+            "peak": 0.0404052734375,
+            "railSamples": 0,
+            "pcmSHA256": "493656bae775a3e973d880412bf476409ae62e09874091e53c8d62dd5a85a8ee"
+          },
+          "firstPlayRMS": 0.007037199939980037,
+          "originalFirstPlayRMS": 0.007037413791788071,
+          "timbralDeviations": []
+        },
+        {
+          "program": "rd5",
+          "notes": 740,
+          "allNoteAndPressureFieldsExact": true,
+          "sampleGridMaxOnsetErrorFrames": 0.4985559624619782,
+          "sampleGridMaxGateErrorFrames": 0.4985559624619782,
+          "rationalLoopQuantizationErrorFrames": 0.061450809706002474,
+          "releasePlusRoomBoundFrames": 31056,
+          "coldWarmupFrames": 96000,
+          "producerColdSteadyMaxDifference": 0.0,
+          "fileSHA256": "7b7740cb261ae123d5aab8d1be24fd5edf31f4b2ffd95ac97400aab0cfaa5f74",
+          "pcm": {
+            "channels": 2,
+            "sampleRate": 48000,
+            "frames": 3071771,
+            "rms": 0.013559972704995574,
+            "peak": 0.10150146484375,
+            "railSamples": 0,
+            "pcmSHA256": "41c42bda3149e6785e0838f486b6fa1c9cb53b605fd8a8a106f8d02a16f16a46"
+          },
+          "firstPlayRMS": 0.013700443197742721,
+          "originalFirstPlayRMS": 0.013700857843469838,
+          "timbralDeviations": []
+        },
+        {
+          "program": "rd6part1",
+          "notes": 702,
+          "allNoteAndPressureFieldsExact": true,
+          "sampleGridMaxOnsetErrorFrames": 0.4982123431400396,
+          "sampleGridMaxGateErrorFrames": 0.4982123431400396,
+          "rationalLoopQuantizationErrorFrames": -0.47491832775995135,
+          "releasePlusRoomBoundFrames": 37776,
+          "coldWarmupFrames": 96000,
+          "producerColdSteadyMaxDifference": 0.0,
+          "fileSHA256": "7a0fe8359cbec85d146266167c700764d83aa265e1ae8b5e7711e23d42a71919",
+          "pcm": {
+            "channels": 2,
+            "sampleRate": 48000,
+            "frames": 2649348,
+            "rms": 0.02615937746436112,
+            "peak": 0.22784423828125,
+            "railSamples": 0,
+            "pcmSHA256": "d614cdafdc16d843b0d4971d3a5ac4d94cd809a8d51a8b91e1b52ada888f276e"
+          },
+          "firstPlayRMS": 0.02624632749093533,
+          "originalFirstPlayRMS": 0.026247128845503048,
+          "timbralDeviations": []
+        },
+        {
+          "program": "rd6part2",
+          "notes": 146,
+          "allNoteAndPressureFieldsExact": true,
+          "sampleGridMaxOnsetErrorFrames": 0.4958958482602611,
+          "sampleGridMaxGateErrorFrames": 0.4958958482602611,
+          "rationalLoopQuantizationErrorFrames": 0.18412111478392035,
+          "releasePlusRoomBoundFrames": 31056,
+          "coldWarmupFrames": 96000,
+          "producerColdSteadyMaxDifference": 0.0,
+          "fileSHA256": "64021342be2df56ecf412c68ce5515756ac5426d0c44d562573ed733d14deb26",
+          "pcm": {
+            "channels": 2,
+            "sampleRate": 48000,
+            "frames": 516795,
+            "rms": 0.02818957916690141,
+            "peak": 0.19146728515625,
+            "railSamples": 0,
+            "pcmSHA256": "02e70273f69d72b70e2fa824b82b63caa412b907646574c68501a05f12b05ab3"
+          },
+          "firstPlayRMS": 0.029140506650372384,
+          "originalFirstPlayRMS": 0.02914138086785026,
+          "timbralDeviations": []
+        },
+        {
+          "program": "rd6part3",
+          "notes": 269,
+          "allNoteAndPressureFieldsExact": true,
+          "sampleGridMaxOnsetErrorFrames": 0.4938643057830632,
+          "sampleGridMaxGateErrorFrames": 0.4982123431400396,
+          "rationalLoopQuantizationErrorFrames": 0.2665377117227763,
+          "releasePlusRoomBoundFrames": 31056,
+          "coldWarmupFrames": 96000,
+          "producerColdSteadyMaxDifference": 0.0,
+          "fileSHA256": "11ebbf2c70793f47b2354010754f200214e6e4d0f12fc54ac923320435198a20",
+          "pcm": {
+            "channels": 2,
+            "sampleRate": 48000,
+            "frames": 900154,
+            "rms": 0.029339959555990808,
+            "peak": 0.175933837890625,
+            "railSamples": 0,
+            "pcmSHA256": "d148a823ffa8b8e636c4ba1fa0e3708ec654516841ec6d534feaa33f9679f56f"
+          },
+          "firstPlayRMS": 0.02943500157379263,
+          "originalFirstPlayRMS": 0.029435896310288385,
+          "timbralDeviations": []
+        },
+        {
+          "program": "rd6part4",
+          "notes": 230,
+          "allNoteAndPressureFieldsExact": true,
+          "sampleGridMaxOnsetErrorFrames": 0.49884426686912775,
+          "sampleGridMaxGateErrorFrames": 0.49884426686912775,
+          "rationalLoopQuantizationErrorFrames": -0.17556081130169332,
+          "releasePlusRoomBoundFrames": 31056,
+          "coldWarmupFrames": 96000,
+          "producerColdSteadyMaxDifference": 0.0,
+          "fileSHA256": "2de8edafd86d79352597f5141111c9645d25e8434180c05a4fc7518e42ecd180",
+          "pcm": {
+            "channels": 2,
+            "sampleRate": 48000,
+            "frames": 938882,
+            "rms": 0.026500554781737892,
+            "peak": 0.16778564453125,
+            "railSamples": 0,
+            "pcmSHA256": "60367a4e210e365ee1e5c52d2a8f7af201303d0b4782df690252ea11ccb521eb"
+          },
+          "firstPlayRMS": 0.026709653054818885,
+          "originalFirstPlayRMS": 0.026710475348201784,
+          "timbralDeviations": []
+        },
+        {
+          "program": "sassa",
+          "notes": 585,
+          "allNoteAndPressureFieldsExact": true,
+          "sampleGridMaxOnsetErrorFrames": 0.49982819030992687,
+          "sampleGridMaxGateErrorFrames": 0.49982819030992687,
+          "rationalLoopQuantizationErrorFrames": 0.3821328179910779,
+          "releasePlusRoomBoundFrames": 31056,
+          "coldWarmupFrames": 96000,
+          "producerColdSteadyMaxDifference": 0.0,
+          "fileSHA256": "bdf72670964a4ec97822ffa17f3136ab43becc9efd577b65519f13dc0db99200",
+          "pcm": {
+            "channels": 2,
+            "sampleRate": 48000,
+            "frames": 2026247,
+            "rms": 0.018851036089041342,
+            "peak": 0.124664306640625,
+            "railSamples": 0,
+            "pcmSHA256": "1f6c8b5862ddb31bf4983ff815d896d85190af2703a8ca734a03d228f4cdac54"
+          },
+          "firstPlayRMS": 0.01861892970011129,
+          "originalFirstPlayRMS": 0.018619491314232798,
+          "timbralDeviations": [
+            {
+              "tick": 34335,
+              "seconds": 34.24343478195279,
+              "kind": "instrument",
+              "channel": 2,
+              "instrumentId": "04c4513b4f88106fb262c4ae6c04c79599bc8844680968eb443e1b7859e7ae17",
+              "nativeRow": 1286
+            },
+            {
+              "tick": 35385,
+              "seconds": 35.290634622379486,
+              "kind": "instrument",
+              "channel": 0,
+              "instrumentId": "c0ead3297ed88594d26b5d832638619ace5a8211d0d8779a3d5e55d49f612397",
+              "nativeRow": 1327
+            }
+          ]
+        },
+        {
+          "program": "score",
+          "notes": 161,
+          "allNoteAndPressureFieldsExact": true,
+          "sampleGridMaxOnsetErrorFrames": 0.4982123431400396,
+          "sampleGridMaxGateErrorFrames": 0.4994041143800132,
+          "rationalLoopQuantizationErrorFrames": -0.16475944151170552,
+          "releasePlusRoomBoundFrames": 31056,
+          "coldWarmupFrames": 96000,
+          "producerColdSteadyMaxDifference": 0.0,
+          "fileSHA256": "eddb0fc48ef4f89e06f6b742c751bcd5fc68e464dbe03f04dcd684814aaf6439",
+          "pcm": {
+            "channels": 2,
+            "sampleRate": 48000,
+            "frames": 799766,
+            "rms": 0.008074081079738296,
+            "peak": 0.0399169921875,
+            "railSamples": 0,
+            "pcmSHA256": "3fe06fa4bbf41d4896f744a93a4a938a1ae8b508f0bacab69f299f926f9ac2ba"
+          },
+          "firstPlayRMS": 0.008156808946942703,
+          "originalFirstPlayRMS": 0.008157058457605091,
+          "timbralDeviations": []
+        },
+        {
+          "program": "showdown",
+          "notes": 1283,
+          "allNoteAndPressureFieldsExact": true,
+          "sampleGridMaxOnsetErrorFrames": 0.4985559624619782,
+          "sampleGridMaxGateErrorFrames": 0.4985559624619782,
+          "rationalLoopQuantizationErrorFrames": -0.4754027472808957,
+          "releasePlusRoomBoundFrames": 31056,
+          "coldWarmupFrames": 96000,
+          "producerColdSteadyMaxDifference": 0.0,
+          "fileSHA256": "5175a93a59ea3d179ca5bd08dbf14212a7f76a5024b3b434fb81f707e92597c9",
+          "pcm": {
+            "channels": 2,
+            "sampleRate": 48000,
+            "frames": 5323669,
+            "rms": 0.014613215377087069,
+            "peak": 0.103515625,
+            "railSamples": 0,
+            "pcmSHA256": "dba7c95e7f60dfdf157b0ab9ab956e2331b745ab6eb93cdcbe837d0eaa8a3be9"
+          },
+          "firstPlayRMS": 0.014672683033127321,
+          "originalFirstPlayRMS": 0.01467313018971259,
+          "timbralDeviations": []
+        },
+        {
+          "program": "stage1",
+          "notes": 3504,
+          "allNoteAndPressureFieldsExact": true,
+          "sampleGridMaxOnsetErrorFrames": 0.49975779047235847,
+          "sampleGridMaxGateErrorFrames": 0.49975779047235847,
+          "rationalLoopQuantizationErrorFrames": 0.3435687096789479,
+          "releasePlusRoomBoundFrames": 31056,
+          "coldWarmupFrames": 96000,
+          "producerColdSteadyMaxDifference": 0.0,
+          "fileSHA256": "63138c2563b609e94da642725e368b45ff7d1ef8cfed6b7ec0c8f3e855d29bc1",
+          "pcm": {
+            "channels": 2,
+            "sampleRate": 48000,
+            "frames": 7495670,
+            "rms": 0.02744769439752651,
+            "peak": 0.1705322265625,
+            "railSamples": 0,
+            "pcmSHA256": "af632a0dc948b4d3a9fa9463d7cc96eddc7e3f64d19597faf8deb722d25d7880"
+          },
+          "firstPlayRMS": 0.027419495387590177,
+          "originalFirstPlayRMS": 0.027420327297515545,
+          "timbralDeviations": []
+        },
+        {
+          "program": "stage2",
+          "notes": 1358,
+          "allNoteAndPressureFieldsExact": true,
+          "sampleGridMaxOnsetErrorFrames": 0.49954826664179564,
+          "sampleGridMaxGateErrorFrames": 0.49982819030992687,
+          "rationalLoopQuantizationErrorFrames": -0.02875169087201357,
+          "releasePlusRoomBoundFrames": 31056,
+          "coldWarmupFrames": 96000,
+          "producerColdSteadyMaxDifference": 0.0,
+          "fileSHA256": "23b818f5b09a6b0467a8f2b93a8035015359479a54cdb8e1a4a0fd8e7210cbe6",
+          "pcm": {
+            "channels": 2,
+            "sampleRate": 48000,
+            "frames": 2584817,
+            "rms": 0.03325528181685859,
+            "peak": 0.203948974609375,
+            "railSamples": 0,
+            "pcmSHA256": "96e80b45b0374bf195a09e210568731796c35e7b4cd70f15cef6442a7fc2d5b4"
+          },
+          "firstPlayRMS": 0.033695328247612226,
+          "originalFirstPlayRMS": 0.033696349059174284,
+          "timbralDeviations": []
+        },
+        {
+          "program": "stage3",
+          "notes": 2320,
+          "allNoteAndPressureFieldsExact": true,
+          "sampleGridMaxOnsetErrorFrames": 0.4998902096413076,
+          "sampleGridMaxGateErrorFrames": 0.4998902096413076,
+          "rationalLoopQuantizationErrorFrames": -0.11017765942960978,
+          "releasePlusRoomBoundFrames": 31056,
+          "coldWarmupFrames": 96000,
+          "producerColdSteadyMaxDifference": 0.0,
+          "fileSHA256": "7da993585291375f92be0ee6e1870481578ddbd86d5cd269423c1d5d619a39f3",
+          "pcm": {
+            "channels": 2,
+            "sampleRate": 48000,
+            "frames": 5725459,
+            "rms": 0.011576845305664876,
+            "peak": 0.076446533203125,
+            "railSamples": 0,
+            "pcmSHA256": "0c2324f8b3e9d68cfedbf98ec903dafefa0550ecd88e3ded07e5dd48949b63c4"
+          },
+          "firstPlayRMS": 0.011592491462717205,
+          "originalFirstPlayRMS": 0.011592838567787327,
+          "timbralDeviations": []
+        },
+        {
+          "program": "stage6",
+          "notes": 1616,
+          "allNoteAndPressureFieldsExact": true,
+          "sampleGridMaxOnsetErrorFrames": 0.4984118100255728,
+          "sampleGridMaxGateErrorFrames": 0.4984118100255728,
+          "rationalLoopQuantizationErrorFrames": 0.06671739928424358,
+          "releasePlusRoomBoundFrames": 37776,
+          "coldWarmupFrames": 96000,
+          "producerColdSteadyMaxDifference": 0.0,
+          "fileSHA256": "c381f5dfd3319fee2538dbf69056e84a09828c1cbb0771e6dc2a46b61f1fb3ab",
+          "pcm": {
+            "channels": 2,
+            "sampleRate": 48000,
+            "frames": 5521333,
+            "rms": 0.02736398803967233,
+            "peak": 0.232147216796875,
+            "railSamples": 0,
+            "pcmSHA256": "2c802efb834af4bd4c47848ee1531da1a66d411862aa3fa086b099d05aa06b63"
+          },
+          "firstPlayRMS": 0.02741765255972815,
+          "originalFirstPlayRMS": 0.02741848775906257,
+          "timbralDeviations": []
+        },
+        {
+          "program": "thief",
+          "notes": 218,
+          "allNoteAndPressureFieldsExact": true,
+          "sampleGridMaxOnsetErrorFrames": 0.4976524955127388,
+          "sampleGridMaxGateErrorFrames": 0.4976524955127388,
+          "rationalLoopQuantizationErrorFrames": 0.024552834453061223,
+          "releasePlusRoomBoundFrames": 37776,
+          "coldWarmupFrames": 96000,
+          "producerColdSteadyMaxDifference": 0.0,
+          "fileSHA256": "e262537431a498b2539557031f337ceec7eb40b49d1e4667279729baf451adb0",
+          "pcm": {
+            "channels": 2,
+            "sampleRate": 48000,
+            "frames": 1517128,
+            "rms": 0.026114569569839943,
+            "peak": 0.211669921875,
+            "railSamples": 0,
+            "pcmSHA256": "1a5bf313944385f6e0a6ce2b6ef1a1a4536e1d7f00f7d1b07a57443bd2135283"
+          },
+          "firstPlayRMS": 0.026393566480833353,
+          "originalFirstPlayRMS": 0.02639436378421894,
+          "timbralDeviations": []
+        }
+      ],
+      "usedSamples": [
+        {
+          "file": "BDrumNewhit_v4_rr1_Sum.wav",
+          "sha256": "7d8603e6802b51bc5acd3f73275f8e6408c7f2ccdd36d1a55b27e74034101589",
+          "license": "CC0-1.0",
+          "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Percussion/BDrumNewhit_v4_rr1_Sum.wav"
+        },
+        {
+          "file": "LLVln_ArcoVib_A3_f.wav",
+          "sha256": "76934f3a85e4ba3b6518132c2fe6effa340c33fbb02f94e88c60b00073dc722f",
+          "license": "CC0-1.0",
+          "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Solo%20Violin/Arco%20Vib/LLVln_ArcoVib_A3_f.wav"
+        },
+        {
+          "file": "LLVln_ArcoVib_A4_f.wav",
+          "sha256": "19e5374658351508a9e2c929e871a43caff41e62d5e3363ead6f88428a9ab863",
+          "license": "CC0-1.0",
+          "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Solo%20Violin/Arco%20Vib/LLVln_ArcoVib_A4_f.wav"
+        },
+        {
+          "file": "LLVln_ArcoVib_A5_f.wav",
+          "sha256": "0558d79d23db55c710e664e6283b62619f5a582ce261a5c082700a0d01536627",
+          "license": "CC0-1.0",
+          "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Solo%20Violin/Arco%20Vib/LLVln_ArcoVib_A5_f.wav"
+        },
+        {
+          "file": "LLVln_ArcoVib_A6_f.wav",
+          "sha256": "37f6cc2f12b1b443a77d3ee370178da4a002a2ac3b6529663cc7ee002728ddcf",
+          "license": "CC0-1.0",
+          "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Solo%20Violin/Arco%20Vib/LLVln_ArcoVib_A6_f.wav"
+        },
+        {
+          "file": "LLVln_ArcoVib_C4_f.wav",
+          "sha256": "4169605b51a72454f11bc2c34efc66c1d9993fd2b7d5f097a025ef9d3a2dbdfa",
+          "license": "CC0-1.0",
+          "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Solo%20Violin/Arco%20Vib/LLVln_ArcoVib_C4_f.wav"
+        },
+        {
+          "file": "LLVln_ArcoVib_C5_f.wav",
+          "sha256": "af72f852ef2892233699851dacf5f8d97d446822d8eb4ce9e0ec27d5a721b118",
+          "license": "CC0-1.0",
+          "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Solo%20Violin/Arco%20Vib/LLVln_ArcoVib_C5_f.wav"
+        },
+        {
+          "file": "LLVln_ArcoVib_C6_f.wav",
+          "sha256": "7ec8e0c2dde75282a4aaacccc713c84faa3e84daa9cf43df45ffc0e209964d46",
+          "license": "CC0-1.0",
+          "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Solo%20Violin/Arco%20Vib/LLVln_ArcoVib_C6_f.wav"
+        },
+        {
+          "file": "LLVln_ArcoVib_E4_f.wav",
+          "sha256": "418512905f3294a23cf999f0587bf8e04d60192fe317ea8c80c150a85670eda2",
+          "license": "CC0-1.0",
+          "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Solo%20Violin/Arco%20Vib/LLVln_ArcoVib_E4_f.wav"
+        },
+        {
+          "file": "LLVln_ArcoVib_E5_f.wav",
+          "sha256": "5c278e263fd59650190fc58294945cd291906eb1abd8293f728a96a878d1d478",
+          "license": "CC0-1.0",
+          "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Solo%20Violin/Arco%20Vib/LLVln_ArcoVib_E5_f.wav"
+        },
+        {
+          "file": "LLVln_ArcoVib_E6_f.wav",
+          "sha256": "8d1712f5659274a83aa90807132084559633e4817027c8a5b5f40826b3d9bc84",
+          "license": "CC0-1.0",
+          "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Solo%20Violin/Arco%20Vib/LLVln_ArcoVib_E6_f.wav"
+        },
+        {
+          "file": "LLVln_ArcoVib_G3_f.wav",
+          "sha256": "80bae3776b0ccd3d4774f47429e829c7764f5fe6061ff844a8affc6ac68b7899",
+          "license": "CC0-1.0",
+          "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Solo%20Violin/Arco%20Vib/LLVln_ArcoVib_G3_f.wav"
+        },
+        {
+          "file": "LLVln_ArcoVib_G4_f.wav",
+          "sha256": "14e3ea3d5172722d4d2686bae5da3d603800a7a474fa295d98275a9410913822",
+          "license": "CC0-1.0",
+          "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Solo%20Violin/Arco%20Vib/LLVln_ArcoVib_G4_f.wav"
+        },
+        {
+          "file": "LLVln_ArcoVib_G5_f.wav",
+          "sha256": "b5bb27541d6187e6eeb20baf50625ca35fc9d44c7f113936a9369bc7ce490a68",
+          "license": "CC0-1.0",
+          "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Solo%20Violin/Arco%20Vib/LLVln_ArcoVib_G5_f.wav"
+        },
+        {
+          "file": "LLVln_ArcoVib_G6_f.wav",
+          "sha256": "68c49e55565810ea822866e3d39e51c1a5ad53cfa1a67bc25836ca7feac3fe0c",
+          "license": "CC0-1.0",
+          "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Solo%20Violin/Arco%20Vib/LLVln_ArcoVib_G6_f.wav"
+        },
+        {
+          "file": "MOHorn_stac_C3_v3_rr1.wav",
+          "sha256": "7ea5a48590310d32b29aa3046f7ca2708b8f233067352001e6043095d6dac1b6",
+          "license": "CC0-1.0",
+          "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Brass/F%20Horn/stac/MOHorn_stac_C3_v3_rr1.wav"
+        },
+        {
+          "file": "MOHorn_stac_F2_v3_rr1.wav",
+          "sha256": "1f6df484f8b62e31f1add13ea2599ecfcfeec5ecbe4701b26480f13478df7ba8",
+          "license": "CC0-1.0",
+          "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Brass/F%20Horn/stac/MOHorn_stac_F2_v3_rr1.wav"
+        },
+        {
+          "file": "MOHorn_sus_C3_v3_1.wav",
+          "sha256": "75156ce041d9c60e4de0099b4c6d81cafffd34f45be7bca3e6fa7ebff0eadb80",
+          "license": "CC0-1.0",
+          "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Brass/F%20Horn/sus/MOHorn_sus_C3_v3_1.wav"
+        },
+        {
+          "file": "MOHorn_sus_F2_v3_1.wav",
+          "sha256": "87351ffabbfb953553edb38d0f53c5f2a3f95a9085024461346ea977afb296bc",
+          "license": "CC0-1.0",
+          "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Brass/F%20Horn/sus/MOHorn_sus_F2_v3_1.wav"
+        },
+        {
+          "file": "Snare2-HitSN_v5_rr1_Sum.wav",
+          "sha256": "8deb654b739f6dfb01f192b7043a9aad92b7973995246252571240fe712d0876",
+          "license": "CC0-1.0",
+          "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Percussion/Snare2-HitSN_v5_rr1_Sum.wav"
+        },
+        {
+          "file": "Sum_SHTrumpet_stac_C3_v3_rr1.wav",
+          "sha256": "6ee12d20bfc94165d3d900e40274c8d4343e683fed2fee64f1bfcb5e94d99aa4",
+          "license": "CC0-1.0",
+          "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Brass/Trumpet/stac/Sum_SHTrumpet_stac_C3_v3_rr1.wav"
+        },
+        {
+          "file": "Sum_SHTrumpet_stac_G3_v3_rr1.wav",
+          "sha256": "fc88e87885839b5fb45e2fb63cc70afef0b3c0f13c129c7d0ee4aee3458f293d",
+          "license": "CC0-1.0",
+          "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Brass/Trumpet/stac/Sum_SHTrumpet_stac_G3_v3_rr1.wav"
+        },
+        {
+          "file": "Sum_SHTrumpet_sus_C3_v3_rr1.wav",
+          "sha256": "4a55ab4d867cfa3499fbcf1c5d8d530f757621a9979aee5b46d3fd69a2931c99",
+          "license": "CC0-1.0",
+          "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Brass/Trumpet/sus/Sum_SHTrumpet_sus_C3_v3_rr1.wav"
+        },
+        {
+          "file": "Sum_SHTrumpet_sus_G3_v3_rr1.wav",
+          "sha256": "e916631d4ef5c7d2afa356b76cb0d3a18ba2702d1229535edf4fb6d73c2e521c",
+          "license": "CC0-1.0",
+          "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Brass/Trumpet/sus/Sum_SHTrumpet_sus_G3_v3_rr1.wav"
+        },
+        {
+          "file": "VlnEns_susVib_A3_v1.wav",
+          "sha256": "72817a53dfd2eb61eca94658c14e1cab6017629ca2f27bab8e394c6675bfaad7",
+          "license": "CC0-1.0",
+          "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/susVib/VlnEns_susVib_A3_v1.wav"
+        },
+        {
+          "file": "VlnEns_susVib_D3_v1.wav",
+          "sha256": "583e660bc5daa4e094aef5fc014fbb92751040be8741ed7a16847306a1fe0a99",
+          "license": "CC0-1.0",
+          "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/susVib/VlnEns_susVib_D3_v1.wav"
+        },
+        {
+          "file": "crash_hit_ff_tight.wav",
+          "sha256": "ac2846a7e0b48fbfe282c52c0e5cf2331d7c26cd592437eaaa8e86d418346b1d",
+          "license": "CC0-1.0",
+          "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/VSCO%201%20Percussion/varMetal/Cymbals/clash/crash_hit_ff_tight.wav"
+        },
+        {
+          "file": "susp_hit_metal_1.wav",
+          "sha256": "11abcf76b08eff4a66b79f7fea48b58a55245d75a39b4ecde012fd4b47591d1b",
+          "license": "CC0-1.0",
+          "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/VSCO%201%20Percussion/varMetal/Cymbals/susp/susp_hit_metal_1.wav"
+        },
+        {
+          "file": "susvib_B1_v1_1.wav",
+          "sha256": "4f95c087c4b8d87ee591e9d39c3c9caf085c6f1b9125eac3ca9e4e637da628ee",
+          "license": "CC0-1.0",
+          "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Cello%20Section/susvib/susvib_B1_v1_1.wav"
+        },
+        {
+          "file": "susvib_D2_v1_1.wav",
+          "sha256": "e8640dec9febc6e39fcf06b19d2c95a85d5ff8c38f13c9879e69f551eaf38ab8",
+          "license": "CC0-1.0",
+          "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Cello%20Section/susvib/susvib_D2_v1_1.wav"
+        },
+        {
+          "file": "susvib_E1_v1_1.wav",
+          "sha256": "de31a61b02d4e1d5a79b8bc432b0f35fe2e434290ad34402cc0f2dd7dc278cde",
+          "license": "CC0-1.0",
+          "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Cello%20Section/susvib/susvib_E1_v1_1.wav"
+        },
+        {
+          "file": "susvib_G1_v1_1.wav",
+          "sha256": "9e5d24e8e28d6c7f650f9bb2b33d43c13e341a8bd33124c64e23881378b181ba",
+          "license": "CC0-1.0",
+          "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Cello%20Section/susvib/susvib_G1_v1_1.wav"
+        },
+        {
+          "file": "tenor_f_1.wav",
+          "sha256": "9c3b1d9c840a9dd884121f7dd6841368ca69e1465f1de864b82f05cc368d84c2",
+          "license": "CC0-1.0",
+          "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/VSCO%201%20Percussion/drums/tenor/tenor_lower/tenor_f_1.wav"
+        }
+      ],
+      "totalNotes": 22891,
+      "allPass": true,
+      "subjectiveListeningPerformed": false
+    },
+    "sustain": {
+      "scope": "Two unique sustained acoustic notes (intro45/cello, score79/horn), opening aliases intro. Producer filtered sample/voice generation reused, but independent scalar loop-address oracle, analytic joins, actual note-signal derivative outlier and FFT pitch checks. Not subjective listening and not proof of perceptual seamlessness.",
+      "codeSHA256": "8093f68c75241d1966c74803cd204807fc6144c2f4e4619a544bc86ecdfbb6d7",
+      "notes": [
+        {
+          "program": "intro",
+          "channel": 4,
+          "midiNote": 45,
+          "sample": "susvib_G1_v1_1.wav",
+          "gateSeconds": 8.297812068904827,
+          "loop": {
+            "startFrame": 13230,
+            "endFrame": 48105,
+            "crossfadeFrames": 1544,
+            "effectivePeriodFrames": 33331
+          },
+          "scalarOracleMaxDifference": 1.3877787807814457e-17,
+          "analyticalJoinLimitDifferences": [
+            3.823023578264362e-09,
+            1.598060425309078e-09,
+            3.822995767177595e-09,
+            1.5980487974576185e-09
+          ],
+          "fundamentalCyclesInLoop": 73.99994659423828,
+          "fundamentalPhaseErrorCycles": -5.340576171875e-05,
+          "actualSignalLoopBoundarySamples": [
+            45108,
+            77399,
+            109690,
+            141981,
+            174272,
+            206562,
+            238853,
+            271144,
+            303435,
+            335726,
+            368017,
+            400308
+          ],
+          "loopJoinDerivativeVsWholeNoteP999": 0.5500909146093517,
+          "expectedEqualTemperamentHz": 110.0,
+          "actualSignalFFTFundamentalHz": [
+            110.04638671875,
+            110.04638671875
+          ],
+          "actualSignalFundamentalCents": [
+            0.7299030837229724,
+            0.7299030837229724
+          ]
+        },
+        {
+          "program": "score",
+          "channel": 1,
+          "midiNote": 79,
+          "sample": "MOHorn_sus_C3_v3_1.wav",
+          "gateSeconds": 7.749278819157514,
+          "loop": {
+            "startFrame": 13230,
+            "endFrame": 48501,
+            "crossfadeFrames": 1544,
+            "effectivePeriodFrames": 33727
+          },
+          "scalarOracleMaxDifference": 2.7755575615628914e-17,
+          "analyticalJoinLimitDifferences": [
+            4.144142515261073e-09,
+            8.556714975460622e-09,
+            4.144112358828167e-09,
+            8.556652719704516e-09
+          ],
+          "fundamentalCyclesInLoop": 199.9993190765381,
+          "fundamentalPhaseErrorCycles": -0.0006809234619140625,
+          "actualSignalLoopBoundarySamples": [
+            17048,
+            29293,
+            41538,
+            53783,
+            66028,
+            78273,
+            90518,
+            102763,
+            115008,
+            127253,
+            139498,
+            151743,
+            163988,
+            176233,
+            188478,
+            200723,
+            212968,
+            225213,
+            237458,
+            249703,
+            261948,
+            274193,
+            286438,
+            298683,
+            310928,
+            323173,
+            335418,
+            347663,
+            359908,
+            372153
+          ],
+          "loopJoinDerivativeVsWholeNoteP999": 0.4626212169118369,
+          "expectedEqualTemperamentHz": 783.9908719634985,
+          "actualSignalFFTFundamentalHz": [
+            784.0576171875,
+            784.0576171875
+          ],
+          "actualSignalFundamentalCents": [
+            0.14738269291201242,
+            0.14738269291201242
+          ]
+        }
+      ],
+      "allPass": true,
+      "subjectiveListeningPerformed": false
+    },
+    "originalPreservation": {
+      "scope": "All original audio assets and unmodified voice/sequence/chip core compared byte-for-byte with published0.2.6 runtime manifest. Adapter/worklet start acknowledgement is reviewed separately.",
+      "baseCommit": "948a63da647628a25fe3fed8cd6fc49d6e540a9c",
+      "files": [
+        {
+          "file": "assets/audio/effect-0.wav",
+          "sha256": "049b14ee4665ae3f394d2a0eefe89f1ffbdd64f6b61d42497e9b424aef477cf6",
+          "size": 80580
+        },
+        {
+          "file": "assets/audio/effect-1.wav",
+          "sha256": "2dc82e9d14bd0f6d5a7054193287c83e4516924a549f9e59c7c0a48f90602440",
+          "size": 78938
+        },
+        {
+          "file": "assets/audio/effect-10.wav",
+          "sha256": "5808bf5bf7656c84aa7f5621dc612addbe1db9b61c66dea9fcbf1b07cb175585",
+          "size": 66902
+        },
+        {
+          "file": "assets/audio/effect-11.wav",
+          "sha256": "c04046eba37febb76720a964bb085fd9bc3bac220f3fcedaeae821d600916208",
+          "size": 16678
+        },
+        {
+          "file": "assets/audio/effect-12.wav",
+          "sha256": "91233e0a4b3e3021cfcdf72ac80ba2b203c92fd644df63b542505af538bc1f1b",
+          "size": 65370
+        },
+        {
+          "file": "assets/audio/effect-13.wav",
+          "sha256": "2c25e304db4582026c10994ebfcd83878636934a3b93e9e62455897408dad6df",
+          "size": 54208
+        },
+        {
+          "file": "assets/audio/effect-14.wav",
+          "sha256": "d203011c1ab67d349045800c3a680b26ef1947a4366aa7d19534945c53c2a86a",
+          "size": 44470
+        },
+        {
+          "file": "assets/audio/effect-2.wav",
+          "sha256": "c471281f43ea2aefcd4932258e7ddf0437a3ecb3cc443587cf3bad21e3e54026",
+          "size": 14050
+        },
+        {
+          "file": "assets/audio/effect-3.wav",
+          "sha256": "daefce31dec962d4ecf6e5ffa4b1a339333165fa4c31227bd8422ac81e17651a",
+          "size": 18100
+        },
+        {
+          "file": "assets/audio/effect-4.wav",
+          "sha256": "a5b20cd120e824a89f1109d087d7780c4ff7bac400a449758f2d5e886a9a3a0b",
+          "size": 4860
+        },
+        {
+          "file": "assets/audio/effect-5.wav",
+          "sha256": "274c1bafb58047083c7538d5abf14ad32a938cda64f466940632d9d99a74db61",
+          "size": 9784
+        },
+        {
+          "file": "assets/audio/effect-6.wav",
+          "sha256": "8371c4b83c4eb2198ee63129eb2d7f112696aef03878fcd2c1606d4faeee353d",
+          "size": 40202
+        },
+        {
+          "file": "assets/audio/effect-7.wav",
+          "sha256": "2248b1b984fe4b948de8b28513fca4f9c22596ca55bf25b69f77dd5675958501",
+          "size": 17006
+        },
+        {
+          "file": "assets/audio/effect-8.wav",
+          "sha256": "b66e1a9820d9f2c6d338ac804a4c494f4aede06be0821e0108326abe6fd33057",
+          "size": 25430
+        },
+        {
+          "file": "assets/audio/effect-9.wav",
+          "sha256": "7e38a7c448f41af91de75b83fb88b556a39562393516f84d0c85c1630a15dd62",
+          "size": 18974
+        },
+        {
+          "file": "assets/audio/intro.flac",
+          "sha256": "7635eed1950eb873920ccb4593e2f073bc5fc561e89398b9fa5bd0158358e31a",
+          "size": 1334387
+        },
+        {
+          "file": "assets/audio/intro2.flac",
+          "sha256": "07272ee195fe80cd629e8d8898e3857e35b83ec13295c70d102fba9bca6e3329",
+          "size": 859901
+        },
+        {
+          "file": "assets/audio/manifest.json",
+          "sha256": "db670bf99b261cd29fff34ed2b773a508b9d674944f314df69ed9a921a23dc05",
+          "size": 13745
+        },
+        {
+          "file": "assets/audio/oldmap.flac",
+          "sha256": "9cf9f8aee4b36066f4384eb595b42480804ec23833a181ec501caf36946df82e",
+          "size": 689977
+        },
+        {
+          "file": "assets/audio/opening.flac",
+          "sha256": "54f81da0f480f6f78632afadb5a2463ddd0b9d39c8d726ebaac133c05d7c96d1",
+          "size": 2177909
+        },
+        {
+          "file": "assets/audio/opl/LICENSE",
+          "sha256": "20c17d8b8c48a600800dfd14f95d5cb9ff47066a9641ddeab48dc54aec96e331",
+          "size": 26526
+        },
+        {
+          "file": "assets/audio/opl/NOTICE.txt",
+          "sha256": "7594fb86712fa64078f95ef9e2775307e2f0f106d459a4b7e542c9587ac46a6c",
+          "size": 397
+        },
+        {
+          "file": "assets/audio/opl/catalog.json",
+          "sha256": "78dab0635bb351df14c8e2d77c0bead09e309fc31b08aaaa760103b41dcd1d25",
+          "size": 7223
+        },
+        {
+          "file": "assets/audio/opl/gold-tables.json",
+          "sha256": "21e1ed4c877c3fc99d1f02e9e9605ec04c7463ab23220bc4662b1b45172871e4",
+          "size": 2157
+        },
+        {
+          "file": "assets/audio/opl/intro.events.json",
+          "sha256": "ac4b2aa712f0ef99473ba2009776e9095d632b0b82e75d81dd7612d0b07a2403",
+          "size": 163682
+        },
+        {
+          "file": "assets/audio/opl/intro.reg",
+          "sha256": "d550adfa4c0767f726ffe00393b07c20e2d27884bb6cbfa7549131b188ca45ac",
+          "size": 32346
+        },
+        {
+          "file": "assets/audio/opl/nuked-opl3.wasm",
+          "sha256": "a3e772f76416ccdbd3aaa96866e76a9c1d92427e0b6832b972769356be4ccaaf",
+          "size": 9969
+        },
+        {
+          "file": "assets/audio/opl/scores/intro.json",
+          "sha256": "fa623f337059c8c28e3ea1bf5ccd15b4b3eade7b7b900b6c8f4784d9a34f879d",
+          "size": 163709
+        },
+        {
+          "file": "assets/audio/opl/scores/intro2.json",
+          "sha256": "0f57ae340c0e82222f75e47924ae1c4052b5440f4b6363550b6252787a46a26c",
+          "size": 91605
+        },
+        {
+          "file": "assets/audio/opl/scores/oldmap.json",
+          "sha256": "9cc0287e0cf2dc8e16feddb5eb54607827795e0b1db8fd64f51397182cbefb3d",
+          "size": 12563
+        },
+        {
+          "file": "assets/audio/opl/scores/rd1beg.json",
+          "sha256": "b553cacfa7d1ecc6cc803289b3c075b72205734fb563a911cdd19a8e8b22ac46",
+          "size": 40717
+        },
+        {
+          "file": "assets/audio/opl/scores/rd1end1.json",
+          "sha256": "93c22c83e4f01543681a7cc581350863c9c7e3168341239f04cd9b5470e4b474",
+          "size": 39654
+        },
+        {
+          "file": "assets/audio/opl/scores/rd1end2.json",
+          "sha256": "53cefc9765f5c4e2498888f738abd94974a56f99328583446562fd6381d2a2f0",
+          "size": 49496
+        },
+        {
+          "file": "assets/audio/opl/scores/rd1end3.json",
+          "sha256": "8ac02a9d3db2c7c0b9f286944750b6460f0c1ffae43602300b1af767b53cd4cb",
+          "size": 18402
+        },
+        {
+          "file": "assets/audio/opl/scores/rd2part1.json",
+          "sha256": "fad1aaa796331232278753485e72f4d7884ee38f122332701de8e6f737aaa27c",
+          "size": 115643
+        },
+        {
+          "file": "assets/audio/opl/scores/rd2part2.json",
+          "sha256": "ef77e8010b46b20e37dc5543e040926d88a2601f0487983f3423a824360c7857",
+          "size": 90163
+        },
+        {
+          "file": "assets/audio/opl/scores/rd3part1.json",
+          "sha256": "71da1553bf555ecd38cab587433af852f9379588c1523dcb8b72e2e8e5d221e0",
+          "size": 222861
+        },
+        {
+          "file": "assets/audio/opl/scores/rd3part2.json",
+          "sha256": "49fa5937290c39d3b60401dc47139d14a742187aa803914e0158e91489fec6d8",
+          "size": 42050
+        },
+        {
+          "file": "assets/audio/opl/scores/rd4.json",
+          "sha256": "99ad659bf9a542059d4728b299c558ed2862953fb97b8ef6b3d9023bf983dd04",
+          "size": 59344
+        },
+        {
+          "file": "assets/audio/opl/scores/rd5.json",
+          "sha256": "ebed359230f4836c8f41954fda5289b7e169b72921b0a24db9b244e87d64a6e4",
+          "size": 103012
+        },
+        {
+          "file": "assets/audio/opl/scores/rd6part1.json",
+          "sha256": "f062844c0bb5faa9e767d05500e2b88b478f8d4d5357a0a5f8ba8d7feecb18d3",
+          "size": 86353
+        },
+        {
+          "file": "assets/audio/opl/scores/rd6part2.json",
+          "sha256": "5faa8f942b8dd88e153c1a9c882948e2f43e9e10a036efb9376c4eb1d4dd8b33",
+          "size": 19753
+        },
+        {
+          "file": "assets/audio/opl/scores/rd6part3.json",
+          "sha256": "4640858e920d624154e00c00344f20c9aa204d76fbce1da8ef423fda86658fcc",
+          "size": 33398
+        },
+        {
+          "file": "assets/audio/opl/scores/rd6part4.json",
+          "sha256": "3ada5997d5745364a5ddd53a60d50eb8ab64b0c42b2366a274f96ca88d577307",
+          "size": 31069
+        },
+        {
+          "file": "assets/audio/opl/scores/sassa.json",
+          "sha256": "045fea617793a1338e53bb080bfd6f9772c40e56637f372706f00ead66219bdb",
+          "size": 78731
+        },
+        {
+          "file": "assets/audio/opl/scores/score.json",
+          "sha256": "6017b6e7704de1250a7d35c21bd8d077bbb073c48f43aee8c2772bcf91f864d6",
+          "size": 21361
+        },
+        {
+          "file": "assets/audio/opl/scores/showdown.json",
+          "sha256": "c5f3451b9302acb9b910336d9d192bf1a86d99b78cfbfa8eccadeabe57681fea",
+          "size": 176963
+        },
+        {
+          "file": "assets/audio/opl/scores/thief.json",
+          "sha256": "b0794a8c10670ffac3ff70e041a3ea26d9bb9cdd711f675f45a4669d60c2fd10",
+          "size": 31197
+        },
+        {
+          "file": "assets/audio/opl/source/BUILD.md",
+          "sha256": "0bd201fec41fa0cb0f99f9d8c5bd8a169129a23faeaa06b3b279e6b05fc7a696",
+          "size": 1078
+        },
+        {
+          "file": "assets/audio/opl/source/build-wasm.sh",
+          "sha256": "15ab5577b66eaaefae6a6b856b6dd079d0c1607c90a656fc08ae44c63a9a1be4",
+          "size": 560
+        },
+        {
+          "file": "assets/audio/opl/source/opl3.c",
+          "sha256": "59eb873fdb6d52bc7977a0fcbb97c1bae03dd71cc88e3acddbcc01b7121bfe03",
+          "size": 41716
+        },
+        {
+          "file": "assets/audio/opl/source/opl3.h",
+          "sha256": "a84266b8d71a4929f15f573afbe407fd24310b77757d855835dacabf68763679",
+          "size": 4397
+        },
+        {
+          "file": "assets/audio/opl/source/opl_wasm.c",
+          "sha256": "d03fe5f6fe45cc029ba8b9b34f1dbc825d001313a3f9ef1f9781e1185be53969",
+          "size": 840
+        },
+        {
+          "file": "assets/audio/opl/source/wasm-provenance.json",
+          "sha256": "3d6d2fb28eff72c6703035f6708069b8e7caf7985c19179e5c32e93d02ac7b71",
+          "size": 1947
+        },
+        {
+          "file": "assets/audio/rd1beg.flac",
+          "sha256": "e57caa3b65dd5cbfbf7b0287c518b083add3c5169a94d685be9a428d320df9d2",
+          "size": 786449
+        },
+        {
+          "file": "assets/audio/rd1end1.flac",
+          "sha256": "83844014d36fe3eca8e6fd7142e37182ee0fb237ac8bb5695d551bcf34867b8a",
+          "size": 753594
+        },
+        {
+          "file": "assets/audio/rd1end2.flac",
+          "sha256": "64446df461344401b5e4d180db3640c549c8b3c5347bb56901f3c9ada0e6e970",
+          "size": 908529
+        },
+        {
+          "file": "assets/audio/rd1end3.flac",
+          "sha256": "cf6d18e6c0d31d8adaedcfede5cad915a35bc2f4bb59b79a5ca318037ffa6e96",
+          "size": 397174
+        },
+        {
+          "file": "assets/audio/rd2part1.flac",
+          "sha256": "b24b7a1b98b9a931d615ad61ee038f2d36108e87045ef8fe7b06a0cc1c126e43",
+          "size": 1362909
+        },
+        {
+          "file": "assets/audio/rd2part2.flac",
+          "sha256": "916380c5f0a2360c4c29a1f8aca33873a266808e429efc1efd6817efa29da10a",
+          "size": 785436
+        },
+        {
+          "file": "assets/audio/rd3part1.flac",
+          "sha256": "9c939477d33eb0b90397f920507a2159e8f996c4d1e4f641fafb1f67cff9c07b",
+          "size": 3001735
+        },
+        {
+          "file": "assets/audio/rd3part2.flac",
+          "sha256": "cd0f15fc38cf0dcc8db9f68a3fae5dc9f7157f8330c5ff1ad26c382e1a92e71d",
+          "size": 686313
+        },
+        {
+          "file": "assets/audio/rd4.flac",
+          "sha256": "9d26df5f6bc56479946bab6355fc9bba92479aaa03fa7dc01162e76e3dc04427",
+          "size": 1968699
+        },
+        {
+          "file": "assets/audio/rd5.flac",
+          "sha256": "def0c38b8a2ef2ec94c5be2b876a99f027710a9e544af28933738403b88e00cf",
+          "size": 2396755
+        },
+        {
+          "file": "assets/audio/rd6part1.flac",
+          "sha256": "9aa487c21331f06c72af907f02e0192beac9cad75cb90cf82ed0bb284488f27e",
+          "size": 2054830
+        },
+        {
+          "file": "assets/audio/rd6part2.flac",
+          "sha256": "e44529ab71319afbab133f60a4ce9d5290539810f5e404ac91c23130feae3202",
+          "size": 423520
+        },
+        {
+          "file": "assets/audio/rd6part3.flac",
+          "sha256": "a3319f0eb353ea1d23858c6bf4282eb37d19af9381bc0ac14ae286c2186e6e0b",
+          "size": 670553
+        },
+        {
+          "file": "assets/audio/rd6part4.flac",
+          "sha256": "395b0227bd38f250d5385a9d1d68d6133e6b3b43bb9edd44e89ad98ca6b009c6",
+          "size": 896710
+        },
+        {
+          "file": "assets/audio/sassa.flac",
+          "sha256": "d6ccbc1e5b0599d1cab9ea57e3540ccde0ede9dee13dffb1704cd3ea187db6ef",
+          "size": 1081989
+        },
+        {
+          "file": "assets/audio/score.flac",
+          "sha256": "527e05bfb77d164d3728f08162d739bb8ef1e627f56464dbfb7956de9deff92d",
+          "size": 352984
+        },
+        {
+          "file": "assets/audio/showdown.flac",
+          "sha256": "1548a16f1fd72b7219469a37cf69e572ab3d71f21652d8a3c84cc72ae6e5956c",
+          "size": 4175606
+        },
+        {
+          "file": "assets/audio/stage1.flac",
+          "sha256": "99f375544fb5dbbf1ab6c64326d5f1422baaefce967a5cf3e90dc05296331abb",
+          "size": 8678280
+        },
+        {
+          "file": "assets/audio/stage2.flac",
+          "sha256": "2de5097a5597ef389f3b9b145c6421efd4ac54a6601120adcb73a6f80a992faf",
+          "size": 2135769
+        },
+        {
+          "file": "assets/audio/stage3.flac",
+          "sha256": "f1898f110816dd4255ddcfe6ccd13c7d9c853c4cd33ac2997fcc45081f49f354",
+          "size": 3680614
+        },
+        {
+          "file": "assets/audio/stage6.flac",
+          "sha256": "f552780111fbce814f03586484ec47e08585366adc738a2e3b1c4928b12288fd",
+          "size": 4643644
+        },
+        {
+          "file": "assets/audio/thief.flac",
+          "sha256": "989836125538ebf3eed3f9e66e9edbc6ca5da9843ec3dcf9df2ea6600c5272de",
+          "size": 776623
+        },
+        {
+          "file": "js/opl-engine.js",
+          "sha256": "b384ed98676593ac5d9729b58e21a274bcacef9847e4b1393183832cbb9c05fa",
+          "size": 750
+        },
+        {
+          "file": "js/opl-gold-voice.js",
+          "sha256": "11bed09bdfd9674902f3b65486970368fc64c74bf9382044fba16fee606257d0",
+          "size": 6346
+        },
+        {
+          "file": "js/opl-sequence-player.js",
+          "sha256": "f1cd8b07ef4d8659295c85581b96ad5d410eb5126768024b3007fa419e6facb6",
+          "size": 2174
+        },
+        {
+          "file": "js/opl-sequence.js",
+          "sha256": "5bd03e58291cd9757b31564016d6c3b30bb1b628021d0030a3124b370a47f4d4",
+          "size": 1955
+        },
+        {
+          "file": "js/opl-trace.js",
+          "sha256": "940a05af008c3b70d4b201455f5a89475aef07e01c6cd57fa1a444eb8b0bf3f4",
+          "size": 1252
+        }
+      ],
+      "allPass": true
+    },
+    "periodQuantization": {
+      "scope": "Exact delivered manifest periods rounded to48k/44.1k context frame grid, compared with original rational PIT periods. Constant hypothetical indefinitely repeated-track drift; no wallclock/hour-long browser claim.",
+      "rates": {
+        "48000": {
+          "programs": [
+            {
+              "program": "intro",
+              "runtimeLoopFrames": 1594185,
+              "periodSeconds": 33.2121875,
+              "errorContextFramesPerCycle": -0.2290765364705294,
+              "driftMillisecondsPerHour": -0.5173022775235658
+            },
+            {
+              "program": "intro2",
+              "runtimeLoopFrames": 955956,
+              "periodSeconds": 19.91575,
+              "errorContextFramesPerCycle": 0.17766945853736615,
+              "driftMillisecondsPerHour": 0.669078964653727
+            },
+            {
+              "program": "oldmap",
+              "runtimeLoopFrames": 1528122,
+              "periodSeconds": 31.835875,
+              "errorContextFramesPerCycle": 0.12085666730854427,
+              "driftMillisecondsPerHour": 0.28471810648021517
+            },
+            {
+              "program": "opening",
+              "runtimeLoopFrames": 955956,
+              "periodSeconds": 19.91575,
+              "errorContextFramesPerCycle": 0.17766945853736615,
+              "driftMillisecondsPerHour": 0.669078964653727
+            },
+            {
+              "program": "rd1beg",
+              "runtimeLoopFrames": 643447,
+              "periodSeconds": 13.405145833333334,
+              "errorContextFramesPerCycle": -0.45395086414146135,
+              "driftMillisecondsPerHour": -2.5397944366968233
+            },
+            {
+              "program": "rd1end1",
+              "runtimeLoopFrames": 643447,
+              "periodSeconds": 13.405145833333334,
+              "errorContextFramesPerCycle": -0.45395086414146135,
+              "driftMillisecondsPerHour": -2.5397944366968233
+            },
+            {
+              "program": "rd1end2",
+              "runtimeLoopFrames": 804297,
+              "periodSeconds": 16.7561875,
+              "errorContextFramesPerCycle": -0.34944040390882947,
+              "driftMillisecondsPerHour": -1.5640807488673787
+            },
+            {
+              "program": "rd1end3",
+              "runtimeLoopFrames": 321748,
+              "periodSeconds": 6.703083333333334,
+              "errorContextFramesPerCycle": 0.3370282153412063,
+              "driftMillisecondsPerHour": 3.770968507118436
+            },
+            {
+              "program": "rd2part1",
+              "runtimeLoopFrames": 1608547,
+              "periodSeconds": 33.51139583333333,
+              "errorContextFramesPerCycle": 0.17311189742486022,
+              "driftMillisecondsPerHour": 0.3874321550626104
+            },
+            {
+              "program": "rd2part2",
+              "runtimeLoopFrames": 880270,
+              "periodSeconds": 18.338958333333334,
+              "errorContextFramesPerCycle": -0.2018635882450326,
+              "driftMillisecondsPerHour": -0.8255522938213471
+            },
+            {
+              "program": "rd3part1",
+              "runtimeLoopFrames": 4503462,
+              "periodSeconds": 93.822125,
+              "errorContextFramesPerCycle": 0.030241824106269632,
+              "driftMillisecondsPerHour": 0.024174860758805265
+            },
+            {
+              "program": "rd3part2",
+              "runtimeLoopFrames": 1125997,
+              "periodSeconds": 23.458270833333334,
+              "errorContextFramesPerCycle": -0.14041948327303544,
+              "driftMillisecondsPerHour": -0.44894448189731195
+            },
+            {
+              "program": "rd4",
+              "runtimeLoopFrames": 3056196,
+              "periodSeconds": 63.67075,
+              "errorContextFramesPerCycle": 0.11370603965588089,
+              "driftMillisecondsPerHour": 0.13393831506918116
+            },
+            {
+              "program": "rd5",
+              "runtimeLoopFrames": 2975771,
+              "periodSeconds": 61.99522916666667,
+              "errorContextFramesPerCycle": 0.06145080988062546,
+              "driftMillisecondsPerHour": 0.07434137760272938
+            },
+            {
+              "program": "rd6part1",
+              "runtimeLoopFrames": 2553348,
+              "periodSeconds": 53.19475,
+              "errorContextFramesPerCycle": -0.4749183277681368,
+              "driftMillisecondsPerHour": -0.6695937960533748
+            },
+            {
+              "program": "rd6part2",
+              "runtimeLoopFrames": 420795,
+              "periodSeconds": 8.7665625,
+              "errorContextFramesPerCycle": 0.18412111472798642,
+              "driftMillisecondsPerHour": 1.5751993560302553
+            },
+            {
+              "program": "rd6part3",
+              "runtimeLoopFrames": 804154,
+              "periodSeconds": 16.753208333333333,
+              "errorContextFramesPerCycle": 0.26653771175233487,
+              "driftMillisecondsPerHour": 1.193223887847857
+            },
+            {
+              "program": "rd6part4",
+              "runtimeLoopFrames": 842882,
+              "periodSeconds": 17.560041666666667,
+              "errorContextFramesPerCycle": -0.17556081132852341,
+              "driftMillisecondsPerHour": -0.7498308432054359
+            },
+            {
+              "program": "sassa",
+              "runtimeLoopFrames": 1930247,
+              "periodSeconds": 40.213479166666666,
+              "errorContextFramesPerCycle": 0.382132817890124,
+              "driftMillisecondsPerHour": 0.7126953930789409
+            },
+            {
+              "program": "score",
+              "runtimeLoopFrames": 703766,
+              "periodSeconds": 14.661791666666666,
+              "errorContextFramesPerCycle": -0.16475944158855782,
+              "driftMillisecondsPerHour": -0.8428000069892666
+            },
+            {
+              "program": "showdown",
+              "runtimeLoopFrames": 5227669,
+              "periodSeconds": 108.90977083333334,
+              "errorContextFramesPerCycle": -0.47540274658786075,
+              "driftMillisecondsPerHour": -0.32738298612943906
+            },
+            {
+              "program": "stage1",
+              "runtimeLoopFrames": 7399670,
+              "periodSeconds": 154.15979166666668,
+              "errorContextFramesPerCycle": 0.34356871037743986,
+              "driftMillisecondsPerHour": 0.16714898871960282
+            },
+            {
+              "program": "stage2",
+              "runtimeLoopFrames": 2488817,
+              "periodSeconds": 51.85035416666667,
+              "errorContextFramesPerCycle": -0.02875169082017237,
+              "driftMillisecondsPerHour": -0.041588468317526175
+            },
+            {
+              "program": "stage3",
+              "runtimeLoopFrames": 5629459,
+              "periodSeconds": 117.28039583333333,
+              "errorContextFramesPerCycle": -0.11017765950782632,
+              "driftMillisecondsPerHour": -0.07045784936495225
+            },
+            {
+              "program": "stage6",
+              "runtimeLoopFrames": 5425333,
+              "periodSeconds": 113.02777083333334,
+              "errorContextFramesPerCycle": 0.06671739947705646,
+              "driftMillisecondsPerHour": 0.04427057991046877
+            },
+            {
+              "program": "thief",
+              "runtimeLoopFrames": 1421128,
+              "periodSeconds": 29.606833333333334,
+              "errorContextFramesPerCycle": 0.024552834474889096,
+              "driftMillisecondsPerHour": 0.06219721524704371
+            }
+          ],
+          "maxAbsoluteContextFrameErrorPerCycle": 0.47540274658786075,
+          "maxAbsoluteMillisecondsPerHour": 3.770968507118436
+        },
+        "44100": {
+          "programs": [
+            {
+              "program": "intro",
+              "runtimeLoopFrames": 1464657,
+              "periodSeconds": 33.2121768707483,
+              "errorContextFramesPerCycle": -0.6792140677411851,
+              "driftMillisecondsPerHour": -1.669449327636618
+            },
+            {
+              "program": "intro2",
+              "runtimeLoopFrames": 878285,
+              "periodSeconds": 19.91575963718821,
+              "errorContextFramesPerCycle": 0.5882338150975386,
+              "driftMillisecondsPerHour": 2.4111099863383054
+            },
+            {
+              "program": "oldmap",
+              "runtimeLoopFrames": 1403962,
+              "periodSeconds": 31.835873015873016,
+              "errorContextFramesPerCycle": 0.023537063034595462,
+              "driftMillisecondsPerHour": 0.060353077166293435
+            },
+            {
+              "program": "opening",
+              "runtimeLoopFrames": 878285,
+              "periodSeconds": 19.91575963718821,
+              "errorContextFramesPerCycle": 0.5882338150975386,
+              "driftMillisecondsPerHour": 2.4111099863383054
+            },
+            {
+              "program": "rd1beg",
+              "runtimeLoopFrames": 591167,
+              "periodSeconds": 13.40514739229025,
+              "errorContextFramesPerCycle": -0.3483173564537978,
+              "driftMillisecondsPerHour": -2.1211307181112478
+            },
+            {
+              "program": "rd1end1",
+              "runtimeLoopFrames": 591167,
+              "periodSeconds": 13.40514739229025,
+              "errorContextFramesPerCycle": -0.3483173564537978,
+              "driftMillisecondsPerHour": -2.1211307181112478
+            },
+            {
+              "program": "rd1end2",
+              "runtimeLoopFrames": 738948,
+              "periodSeconds": 16.756190476190476,
+              "errorContextFramesPerCycle": -0.18979837108688002,
+              "driftMillisecondsPerHour": -0.92465794063015
+            },
+            {
+              "program": "rd1end3",
+              "runtimeLoopFrames": 295606,
+              "periodSeconds": 6.7030839002267575,
+              "errorContextFramesPerCycle": 0.334644672832507,
+              "driftMillisecondsPerHour": 4.075427502138066
+            },
+            {
+              "program": "rd2part1",
+              "runtimeLoopFrames": 1477853,
+              "periodSeconds": 33.51140589569161,
+              "errorContextFramesPerCycle": 0.6027965558260462,
+              "driftMillisecondsPerHour": 1.4683920531837513
+            },
+            {
+              "program": "rd2part2",
+              "runtimeLoopFrames": 808748,
+              "periodSeconds": 18.33895691609977,
+              "errorContextFramesPerCycle": -0.24796217180664826,
+              "driftMillisecondsPerHour": -1.1037601558259602
+            },
+            {
+              "program": "rd3part1",
+              "runtimeLoopFrames": 4137556,
+              "periodSeconds": 93.82213151927438,
+              "errorContextFramesPerCycle": 0.315284676011629,
+              "driftMillisecondsPerHour": 0.27432253089550074
+            },
+            {
+              "program": "rd3part2",
+              "runtimeLoopFrames": 1034510,
+              "periodSeconds": 23.45827664399093,
+              "errorContextFramesPerCycle": 0.1272395998036302,
+              "driftMillisecondsPerHour": 0.44278214738675187
+            },
+            {
+              "program": "rd4",
+              "runtimeLoopFrames": 2807880,
+              "periodSeconds": 63.670748299319726,
+              "errorContextFramesPerCycle": 0.029467423931350822,
+              "driftMillisecondsPerHour": 0.0377803631753718
+            },
+            {
+              "program": "rd5",
+              "runtimeLoopFrames": 2733990,
+              "periodSeconds": 61.99523809523809,
+              "errorContextFramesPerCycle": 0.4502079314342211,
+              "driftMillisecondsPerHour": 0.5928143677055132
+            },
+            {
+              "program": "rd6part1",
+              "runtimeLoopFrames": 2345888,
+              "periodSeconds": 53.19473922902495,
+              "errorContextFramesPerCycle": -0.9113312134438445,
+              "driftMillisecondsPerHour": -1.3985289870606952
+            },
+            {
+              "program": "rd6part2",
+              "runtimeLoopFrames": 386605,
+              "periodSeconds": 8.766553287981859,
+              "errorContextFramesPerCycle": -0.23708872583103613,
+              "driftMillisecondsPerHour": -2.2077298870726714
+            },
+            {
+              "program": "rd6part3",
+              "runtimeLoopFrames": 738816,
+              "periodSeconds": 16.753197278911564,
+              "errorContextFramesPerCycle": -0.24261847734372566,
+              "driftMillisecondsPerHour": -1.1821976221920105
+            },
+            {
+              "program": "rd6part4",
+              "runtimeLoopFrames": 774398,
+              "periodSeconds": 17.560045351473924,
+              "errorContextFramesPerCycle": 0.001203504649538445,
+              "driftMillisecondsPerHour": 0.005594819121870668
+            },
+            {
+              "program": "sassa",
+              "runtimeLoopFrames": 1773414,
+              "periodSeconds": 40.213469387755104,
+              "errorContextFramesPerCycle": -0.08016547342108993,
+              "driftMillisecondsPerHour": -0.16273453593798387
+            },
+            {
+              "program": "score",
+              "runtimeLoopFrames": 646585,
+              "periodSeconds": 14.661791383219954,
+              "errorContextFramesPerCycle": -0.16387273693379,
+              "driftMillisecondsPerHour": -0.9123964412438335
+            },
+            {
+              "program": "showdown",
+              "runtimeLoopFrames": 4802921,
+              "periodSeconds": 108.90977324263038,
+              "errorContextFramesPerCycle": -0.33052627399854373,
+              "driftMillisecondsPerHour": -0.24774394298693597
+            },
+            {
+              "program": "stage1",
+              "runtimeLoopFrames": 6798447,
+              "periodSeconds": 154.15979591836734,
+              "errorContextFramesPerCycle": 0.5031537517254492,
+              "driftMillisecondsPerHour": 0.2664363649832994
+            },
+            {
+              "program": "stage2",
+              "runtimeLoopFrames": 2286601,
+              "periodSeconds": 51.850362811791385,
+              "errorContextFramesPerCycle": 0.35483438401939793,
+              "driftMillisecondsPerHour": 0.5586474345414144
+            },
+            {
+              "program": "stage3",
+              "runtimeLoopFrames": 5172065,
+              "periodSeconds": 117.28038548752835,
+              "errorContextFramesPerCycle": -0.5574757243223871,
+              "driftMillisecondsPerHour": -0.3880292702355043
+            },
+            {
+              "program": "stage6",
+              "runtimeLoopFrames": 4984525,
+              "periodSeconds": 113.02777777777777,
+              "errorContextFramesPerCycle": 0.36754661041413783,
+              "driftMillisecondsPerHour": 0.2654551431662789
+            },
+            {
+              "program": "thief",
+              "runtimeLoopFrames": 1305661,
+              "periodSeconds": 29.606825396825396,
+              "errorContextFramesPerCycle": -0.32744208339003933,
+              "driftMillisecondsPerHour": -0.9028312097888668
+            }
+          ],
+          "maxAbsoluteContextFrameErrorPerCycle": 0.9113312134438445,
+          "maxAbsoluteMillisecondsPerHour": 4.075427502138066
+        }
+      }
+    },
+    "actualMusicOffline": {
+      "scope": "Actual muted Chrome OfflineAudioContext rendering of delivered FLAC through production RemasterMusic. Independent physical-frame oracle for cold handoff, whole first period wrap, seek and opening prefix. No hardware listening or Safari claim.",
+      "baseURL": "http://127.0.0.1:5908/",
+      "build": {
+        "repository": "https://github.com/michalmedvecky/pre2-web",
+        "commit": null,
+        "buildSource": "dirty-snapshot",
+        "dirty": true,
+        "sourceSnapshot": "394b40bf36cd8a278e4a2d2a85638605cd22253721733fc717949911cb4d29f8"
+      },
+      "results": [
+        {
+          "program": "stage1",
+          "loopFrames": 7399670,
+          "startupFrames": 96000,
+          "firstCycleFrames": 7399670,
+          "checks": [
+            {
+              "name": "cold-start-through-first-wrap",
+              "elapsedFrame": 0,
+              "outputFrames": 7404470,
+              "maxAbsolutePCMError": 0,
+              "worst": null,
+              "beyondOne16BitLSB": 0,
+              "nearJoinMaxError": 0,
+              "contextState": "closed"
+            },
+            {
+              "name": "seek-before-cold-handoff",
+              "elapsedFrame": 95040,
+              "outputFrames": 1920,
+              "maxAbsolutePCMError": 0,
+              "worst": null,
+              "beyondOne16BitLSB": 0,
+              "nearJoinMaxError": 0,
+              "contextState": "closed"
+            },
+            {
+              "name": "seek-before-first-wrap",
+              "elapsedFrame": 7398710,
+              "outputFrames": 1920,
+              "maxAbsolutePCMError": 0,
+              "worst": null,
+              "beyondOne16BitLSB": 0,
+              "nearJoinMaxError": 0,
+              "contextState": "closed"
+            },
+            {
+              "name": "seek-after-seven-loops",
+              "elapsedFrame": 51810035,
+              "outputFrames": 4096,
+              "maxAbsolutePCMError": 0,
+              "worst": null,
+              "beyondOne16BitLSB": 0,
+              "nearJoinMaxError": 0,
+              "contextState": "closed"
+            }
+          ]
+        },
+        {
+          "program": "opening",
+          "loopFrames": 955956,
+          "startupFrames": 1690185,
+          "firstCycleFrames": 2550141,
+          "checks": [
+            {
+              "name": "cold-start-through-first-wrap",
+              "elapsedFrame": 0,
+              "outputFrames": 2554941,
+              "maxAbsolutePCMError": 0,
+              "worst": null,
+              "beyondOne16BitLSB": 0,
+              "nearJoinMaxError": 0,
+              "contextState": "closed"
+            },
+            {
+              "name": "seek-before-cold-handoff",
+              "elapsedFrame": 1689225,
+              "outputFrames": 1920,
+              "maxAbsolutePCMError": 0,
+              "worst": null,
+              "beyondOne16BitLSB": 0,
+              "nearJoinMaxError": 0,
+              "contextState": "closed"
+            },
+            {
+              "name": "seek-before-first-wrap",
+              "elapsedFrame": 2549181,
+              "outputFrames": 1920,
+              "maxAbsolutePCMError": 0,
+              "worst": null,
+              "beyondOne16BitLSB": 0,
+              "nearJoinMaxError": 0,
+              "contextState": "closed"
+            },
+            {
+              "name": "seek-after-seven-loops",
+              "elapsedFrame": 8298222,
+              "outputFrames": 4096,
+              "maxAbsolutePCMError": 0,
+              "worst": null,
+              "beyondOne16BitLSB": 0,
+              "nearJoinMaxError": 0,
+              "contextState": "closed"
+            },
+            {
+              "name": "seek-before-intro2-first-note",
+              "elapsedFrame": 1593705,
+              "outputFrames": 960,
+              "maxAbsolutePCMError": 0,
+              "worst": null,
+              "beyondOne16BitLSB": 0,
+              "nearJoinMaxError": 0,
+              "contextState": "closed"
+            }
+          ]
+        },
+        {
+          "program": "rd1end3",
+          "loopFrames": 321748,
+          "startupFrames": 96000,
+          "firstCycleFrames": 321748,
+          "checks": [
+            {
+              "name": "cold-start-through-first-wrap",
+              "elapsedFrame": 0,
+              "outputFrames": 326548,
+              "maxAbsolutePCMError": 0,
+              "worst": null,
+              "beyondOne16BitLSB": 0,
+              "nearJoinMaxError": 0,
+              "contextState": "closed"
+            },
+            {
+              "name": "seek-before-cold-handoff",
+              "elapsedFrame": 95040,
+              "outputFrames": 1920,
+              "maxAbsolutePCMError": 0,
+              "worst": null,
+              "beyondOne16BitLSB": 0,
+              "nearJoinMaxError": 0,
+              "contextState": "closed"
+            },
+            {
+              "name": "seek-before-first-wrap",
+              "elapsedFrame": 320788,
+              "outputFrames": 1920,
+              "maxAbsolutePCMError": 0,
+              "worst": null,
+              "beyondOne16BitLSB": 0,
+              "nearJoinMaxError": 0,
+              "contextState": "closed"
+            },
+            {
+              "name": "seek-after-seven-loops",
+              "elapsedFrame": 2264581,
+              "outputFrames": 4096,
+              "maxAbsolutePCMError": 0,
+              "worst": null,
+              "beyondOne16BitLSB": 0,
+              "nearJoinMaxError": 0,
+              "contextState": "closed"
+            }
+          ]
+        }
+      ],
+      "errors": [],
+      "allPass": true,
+      "browserClosed": true,
+      "audioClosed": true
+    },
+    "actualSchedulingGrid": {
+      "scope": "Actual Chrome OfflineAudioContext production scheduler with constant0.25 cached buffer fixture. Isolates head/tail gap or overlap from valid fractional resampling and loop interpolation. Ten remaining durations, two prefix layouts,48k/44.1k. Not delivered music PCM or Safari listening.",
+      "baseURL": "http://127.0.0.1:5908/",
+      "build": {
+        "repository": "https://github.com/michalmedvecky/pre2-web",
+        "commit": null,
+        "buildSource": "dirty-snapshot",
+        "dirty": true,
+        "sourceSnapshot": "394b40bf36cd8a278e4a2d2a85638605cd22253721733fc717949911cb4d29f8"
+      },
+      "results": [
+        {
+          "rate": 48000,
+          "logicalPrefix": 0,
+          "remaining": 2.0833333333333333e-05,
+          "frames": 65,
+          "badFrames": 0,
+          "maxAbsoluteError": 0,
+          "firstMismatch": null
+        },
+        {
+          "rate": 48000,
+          "logicalPrefix": 0,
+          "remaining": 0.0001,
+          "frames": 69,
+          "badFrames": 0,
+          "maxAbsoluteError": 0,
+          "firstMismatch": null
+        },
+        {
+          "rate": 48000,
+          "logicalPrefix": 0,
+          "remaining": 0.001,
+          "frames": 112,
+          "badFrames": 0,
+          "maxAbsoluteError": 0,
+          "firstMismatch": null
+        },
+        {
+          "rate": 48000,
+          "logicalPrefix": 0,
+          "remaining": 0.003,
+          "frames": 208,
+          "badFrames": 0,
+          "maxAbsoluteError": 0,
+          "firstMismatch": null
+        },
+        {
+          "rate": 48000,
+          "logicalPrefix": 0,
+          "remaining": 0.017,
+          "frames": 881,
+          "badFrames": 0,
+          "maxAbsoluteError": 0,
+          "firstMismatch": null
+        },
+        {
+          "rate": 48000,
+          "logicalPrefix": 0,
+          "remaining": 0.02,
+          "frames": 1024,
+          "badFrames": 0,
+          "maxAbsoluteError": 0,
+          "firstMismatch": null
+        },
+        {
+          "rate": 48000,
+          "logicalPrefix": 0,
+          "remaining": 0.029,
+          "frames": 1456,
+          "badFrames": 0,
+          "maxAbsoluteError": 0,
+          "firstMismatch": null
+        },
+        {
+          "rate": 48000,
+          "logicalPrefix": 0,
+          "remaining": 0.037,
+          "frames": 1840,
+          "badFrames": 0,
+          "maxAbsoluteError": 0,
+          "firstMismatch": null
+        },
+        {
+          "rate": 48000,
+          "logicalPrefix": 0,
+          "remaining": 0.1,
+          "frames": 4864,
+          "badFrames": 0,
+          "maxAbsoluteError": 0,
+          "firstMismatch": null
+        },
+        {
+          "rate": 48000,
+          "logicalPrefix": 0,
+          "remaining": 0.123456789,
+          "frames": 5990,
+          "badFrames": 0,
+          "maxAbsoluteError": 0,
+          "firstMismatch": null
+        },
+        {
+          "rate": 48000,
+          "logicalPrefix": 0.1234375,
+          "remaining": 2.0833333333333333e-05,
+          "frames": 65,
+          "badFrames": 0,
+          "maxAbsoluteError": 0,
+          "firstMismatch": null
+        },
+        {
+          "rate": 48000,
+          "logicalPrefix": 0.1234375,
+          "remaining": 0.0001,
+          "frames": 69,
+          "badFrames": 0,
+          "maxAbsoluteError": 0,
+          "firstMismatch": null
+        },
+        {
+          "rate": 48000,
+          "logicalPrefix": 0.1234375,
+          "remaining": 0.001,
+          "frames": 112,
+          "badFrames": 0,
+          "maxAbsoluteError": 0,
+          "firstMismatch": null
+        },
+        {
+          "rate": 48000,
+          "logicalPrefix": 0.1234375,
+          "remaining": 0.003,
+          "frames": 208,
+          "badFrames": 0,
+          "maxAbsoluteError": 0,
+          "firstMismatch": null
+        },
+        {
+          "rate": 48000,
+          "logicalPrefix": 0.1234375,
+          "remaining": 0.017,
+          "frames": 881,
+          "badFrames": 0,
+          "maxAbsoluteError": 0,
+          "firstMismatch": null
+        },
+        {
+          "rate": 48000,
+          "logicalPrefix": 0.1234375,
+          "remaining": 0.02,
+          "frames": 1024,
+          "badFrames": 0,
+          "maxAbsoluteError": 0,
+          "firstMismatch": null
+        },
+        {
+          "rate": 48000,
+          "logicalPrefix": 0.1234375,
+          "remaining": 0.029,
+          "frames": 1456,
+          "badFrames": 0,
+          "maxAbsoluteError": 0,
+          "firstMismatch": null
+        },
+        {
+          "rate": 48000,
+          "logicalPrefix": 0.1234375,
+          "remaining": 0.037,
+          "frames": 1840,
+          "badFrames": 0,
+          "maxAbsoluteError": 0,
+          "firstMismatch": null
+        },
+        {
+          "rate": 48000,
+          "logicalPrefix": 0.1234375,
+          "remaining": 0.1,
+          "frames": 4864,
+          "badFrames": 0,
+          "maxAbsoluteError": 0,
+          "firstMismatch": null
+        },
+        {
+          "rate": 48000,
+          "logicalPrefix": 0.1234375,
+          "remaining": 0.123456789,
+          "frames": 5990,
+          "badFrames": 0,
+          "maxAbsoluteError": 0,
+          "firstMismatch": null
+        },
+        {
+          "rate": 44100,
+          "logicalPrefix": 0,
+          "remaining": 2.2675736961451248e-05,
+          "frames": 65,
+          "badFrames": 0,
+          "maxAbsoluteError": 0,
+          "firstMismatch": null
+        },
+        {
+          "rate": 44100,
+          "logicalPrefix": 0,
+          "remaining": 0.0001,
+          "frames": 69,
+          "badFrames": 0,
+          "maxAbsoluteError": 0,
+          "firstMismatch": null
+        },
+        {
+          "rate": 44100,
+          "logicalPrefix": 0,
+          "remaining": 0.001,
+          "frames": 109,
+          "badFrames": 0,
+          "maxAbsoluteError": 0,
+          "firstMismatch": null
+        },
+        {
+          "rate": 44100,
+          "logicalPrefix": 0,
+          "remaining": 0.003,
+          "frames": 197,
+          "badFrames": 0,
+          "maxAbsoluteError": 0,
+          "firstMismatch": null
+        },
+        {
+          "rate": 44100,
+          "logicalPrefix": 0,
+          "remaining": 0.017,
+          "frames": 814,
+          "badFrames": 0,
+          "maxAbsoluteError": 0,
+          "firstMismatch": null
+        },
+        {
+          "rate": 44100,
+          "logicalPrefix": 0,
+          "remaining": 0.02,
+          "frames": 946,
+          "badFrames": 0,
+          "maxAbsoluteError": 0,
+          "firstMismatch": null
+        },
+        {
+          "rate": 44100,
+          "logicalPrefix": 0,
+          "remaining": 0.029,
+          "frames": 1343,
+          "badFrames": 0,
+          "maxAbsoluteError": 0,
+          "firstMismatch": null
+        },
+        {
+          "rate": 44100,
+          "logicalPrefix": 0,
+          "remaining": 0.037,
+          "frames": 1696,
+          "badFrames": 0,
+          "maxAbsoluteError": 0,
+          "firstMismatch": null
+        },
+        {
+          "rate": 44100,
+          "logicalPrefix": 0,
+          "remaining": 0.1,
+          "frames": 4474,
+          "badFrames": 0,
+          "maxAbsoluteError": 0,
+          "firstMismatch": null
+        },
+        {
+          "rate": 44100,
+          "logicalPrefix": 0,
+          "remaining": 0.123456789,
+          "frames": 5509,
+          "badFrames": 0,
+          "maxAbsoluteError": 0,
+          "firstMismatch": null
+        },
+        {
+          "rate": 44100,
+          "logicalPrefix": 0.1234375,
+          "remaining": 2.2675736961451248e-05,
+          "frames": 65,
+          "badFrames": 0,
+          "maxAbsoluteError": 0,
+          "firstMismatch": null
+        },
+        {
+          "rate": 44100,
+          "logicalPrefix": 0.1234375,
+          "remaining": 0.0001,
+          "frames": 69,
+          "badFrames": 0,
+          "maxAbsoluteError": 0,
+          "firstMismatch": null
+        },
+        {
+          "rate": 44100,
+          "logicalPrefix": 0.1234375,
+          "remaining": 0.001,
+          "frames": 109,
+          "badFrames": 0,
+          "maxAbsoluteError": 0,
+          "firstMismatch": null
+        },
+        {
+          "rate": 44100,
+          "logicalPrefix": 0.1234375,
+          "remaining": 0.003,
+          "frames": 197,
+          "badFrames": 0,
+          "maxAbsoluteError": 0,
+          "firstMismatch": null
+        },
+        {
+          "rate": 44100,
+          "logicalPrefix": 0.1234375,
+          "remaining": 0.017,
+          "frames": 814,
+          "badFrames": 0,
+          "maxAbsoluteError": 0,
+          "firstMismatch": null
+        },
+        {
+          "rate": 44100,
+          "logicalPrefix": 0.1234375,
+          "remaining": 0.02,
+          "frames": 946,
+          "badFrames": 0,
+          "maxAbsoluteError": 0,
+          "firstMismatch": null
+        },
+        {
+          "rate": 44100,
+          "logicalPrefix": 0.1234375,
+          "remaining": 0.029,
+          "frames": 1343,
+          "badFrames": 0,
+          "maxAbsoluteError": 0,
+          "firstMismatch": null
+        },
+        {
+          "rate": 44100,
+          "logicalPrefix": 0.1234375,
+          "remaining": 0.037,
+          "frames": 1696,
+          "badFrames": 0,
+          "maxAbsoluteError": 0,
+          "firstMismatch": null
+        },
+        {
+          "rate": 44100,
+          "logicalPrefix": 0.1234375,
+          "remaining": 0.1,
+          "frames": 4474,
+          "badFrames": 0,
+          "maxAbsoluteError": 0,
+          "firstMismatch": null
+        },
+        {
+          "rate": 44100,
+          "logicalPrefix": 0.1234375,
+          "remaining": 0.123456789,
+          "frames": 5509,
+          "badFrames": 0,
+          "maxAbsoluteError": 0,
+          "firstMismatch": null
+        }
+      ],
+      "errors": [],
+      "allPass": true,
+      "audioClosed": true,
+      "browserClosed": true
+    },
+    "runtimeBrowser": {
+      "scope": "Actual muted Google Chrome, native app SoundTest/menu inputs, current OPL+remaster assets. Emulated touch is not physical mobile/Safari. No subjective listening claim. The word audible in a check means selected gain route; browser master/host audio muted.",
+      "checks": [
+        "fresh game defaults to original without requesting any remaster assets",
+        "MUSIC works in the menu and actual Stage1 FLAC becomes audible within the 64MiB decoded cap",
+        "F3 gates the remaster while preserving native GOLD enable and clock semantics",
+        "MUSIC off releases both cold head and future-scheduled loop nodes after the fade",
+        "returning to original keeps the identical OPL node/start and never reselects the score",
+        "repeated MUSIC reuses its one current decoded buffer without another download",
+        "restarting the same actual SoundTest selection restarts both clocks",
+        "actual remaster HTTP503 keeps playing the original instead of stopping music or gameplay",
+        "actual game pause suspends the shared original/remaster clock and Resume continues it",
+        "390px touch user can select remaster in Options and play the actual Stage1 sample"
+      ],
+      "errors": [],
+      "stage1": {
+        "edition": {
+          "requested": "remaster",
+          "effective": "remaster",
+          "loading": false,
+          "error": null
+        },
+        "original": 0,
+        "remaster": 1,
+        "bufferBytes": 59965360,
+        "clock": {
+          "type": "status",
+          "request": 4,
+          "frame": 18176,
+          "tick": 379.67920224089636,
+          "event": 42,
+          "index": 0,
+          "completed": 0,
+          "name": "stage1",
+          "active": true,
+          "enabled": true
+        },
+        "contextTime": 0.3893333333333333,
+        "start": 0.03760416666666667
+      },
+      "pass": true,
+      "audioClosed": true,
+      "browserClosed": true,
+      "candidateSnapshot": "394b40bf36cd8a278e4a2d2a85638605cd22253721733fc717949911cb4d29f8",
+      "candidateRuntimeFiles": 616,
+      "immutableBeforeAfter": true,
+      "ownServer5896Stopped": true,
+      "visualInspection": {
+        "desktop": "Options screenshot personally viewed in V2; same unchanged HTML/CSS in V3. Desktop warning is intentional injected HTTP503.",
+        "mobile": "390px successful remaster Options screenshot personally viewed in V2; unchanged layout in V3."
+      }
+    },
+    "allProgramsBrowser": {
+      "snapshot": "394b40bf36cd8a278e4a2d2a85638605cd22253721733fc717949911cb4d29f8",
+      "scope": "Actual production OriginalAudio/OPL/Remaster modules in a same-origin isolated fixture, all26 real FLAC decodes. No full native/gameplay playthrough or subjective listening.",
+      "programs": [
+        {
+          "id": "intro",
+          "track": "intro",
+          "edition": {
+            "requested": "remaster",
+            "effective": "remaster",
+            "loading": false,
+            "error": null
+          },
+          "bytes": 13521480,
+          "duration": 35.2121875,
+          "rate": 48000,
+          "sources": 2,
+          "sameOPL": true,
+          "startedAt": 0.02766666666666667,
+          "clock": 0.05333333333333334,
+          "error": null
+        },
+        {
+          "id": "intro2",
+          "track": "intro2",
+          "edition": {
+            "requested": "remaster",
+            "effective": "remaster",
+            "loading": false,
+            "error": null
+          },
+          "bytes": 8415648,
+          "duration": 21.91575,
+          "rate": 48000,
+          "sources": 2,
+          "sameOPL": true,
+          "startedAt": 0.05360416666666667,
+          "clock": 0.08533333333333333,
+          "error": null
+        },
+        {
+          "id": "oldmap",
+          "track": "oldmap",
+          "edition": {
+            "requested": "remaster",
+            "effective": "remaster",
+            "loading": false,
+            "error": null
+          },
+          "bytes": 12992976,
+          "duration": 33.835875,
+          "rate": 48000,
+          "sources": 2,
+          "sameOPL": true,
+          "startedAt": 0.08552083333333332,
+          "clock": 0.11733333333333333,
+          "error": null
+        },
+        {
+          "id": "opening",
+          "track": "opening",
+          "edition": {
+            "requested": "remaster",
+            "effective": "remaster",
+            "loading": false,
+            "error": null
+          },
+          "bytes": 21169128,
+          "duration": 55.1279375,
+          "rate": 48000,
+          "sources": 2,
+          "sameOPL": true,
+          "startedAt": 0.1174375,
+          "clock": 0.17066666666666666,
+          "error": null
+        },
+        {
+          "id": "rd1beg",
+          "track": "rd1beg",
+          "edition": {
+            "requested": "remaster",
+            "effective": "remaster",
+            "loading": false,
+            "error": null
+          },
+          "bytes": 5915576,
+          "duration": 15.405145833333334,
+          "rate": 48000,
+          "sources": 2,
+          "sameOPL": true,
+          "startedAt": 0.17129166666666665,
+          "clock": 0.19733333333333333,
+          "error": null
+        },
+        {
+          "id": "rd1end1",
+          "track": "rd1end1",
+          "edition": {
+            "requested": "remaster",
+            "effective": "remaster",
+            "loading": false,
+            "error": null
+          },
+          "bytes": 5915576,
+          "duration": 15.405145833333334,
+          "rate": 48000,
+          "sources": 2,
+          "sameOPL": true,
+          "startedAt": 0.20320833333333332,
+          "clock": 0.21866666666666668,
+          "error": null
+        },
+        {
+          "id": "rd1end2",
+          "track": "rd1end2",
+          "edition": {
+            "requested": "remaster",
+            "effective": "remaster",
+            "loading": false,
+            "error": null
+          },
+          "bytes": 7202376,
+          "duration": 18.7561875,
+          "rate": 48000,
+          "sources": 2,
+          "sameOPL": true,
+          "startedAt": 0.21916666666666668,
+          "clock": 0.23466666666666666,
+          "error": null
+        },
+        {
+          "id": "rd1end3",
+          "track": "rd1end3",
+          "edition": {
+            "requested": "remaster",
+            "effective": "remaster",
+            "loading": false,
+            "error": null
+          },
+          "bytes": 3341984,
+          "duration": 8.703083333333334,
+          "rate": 48000,
+          "sources": 2,
+          "sameOPL": true,
+          "startedAt": 0.235125,
+          "clock": 0.25066666666666665,
+          "error": null
+        },
+        {
+          "id": "rd2part1",
+          "track": "rd2part1",
+          "edition": {
+            "requested": "remaster",
+            "effective": "remaster",
+            "loading": false,
+            "error": null
+          },
+          "bytes": 13636376,
+          "duration": 35.51139583333333,
+          "rate": 48000,
+          "sources": 2,
+          "sameOPL": true,
+          "startedAt": 0.2510833333333333,
+          "clock": 0.2826666666666667,
+          "error": null
+        },
+        {
+          "id": "rd2part2",
+          "track": "rd2part2",
+          "edition": {
+            "requested": "remaster",
+            "effective": "remaster",
+            "loading": false,
+            "error": null
+          },
+          "bytes": 7810160,
+          "duration": 20.338958333333334,
+          "rate": 48000,
+          "sources": 2,
+          "sameOPL": true,
+          "startedAt": 0.28300000000000003,
+          "clock": 0.31466666666666665,
+          "error": null
+        },
+        {
+          "id": "rd3part1",
+          "track": "rd3part1",
+          "edition": {
+            "requested": "remaster",
+            "effective": "remaster",
+            "loading": false,
+            "error": null
+          },
+          "bytes": 36795696,
+          "duration": 95.822125,
+          "rate": 48000,
+          "sources": 2,
+          "sameOPL": true,
+          "startedAt": 0.3149166666666666,
+          "clock": 0.4,
+          "error": null
+        },
+        {
+          "id": "rd3part2",
+          "track": "rd3part2",
+          "edition": {
+            "requested": "remaster",
+            "effective": "remaster",
+            "loading": false,
+            "error": null
+          },
+          "bytes": 9775976,
+          "duration": 25.458270833333334,
+          "rate": 48000,
+          "sources": 2,
+          "sameOPL": true,
+          "startedAt": 0.40066666666666667,
+          "clock": 0.432,
+          "error": null
+        },
+        {
+          "id": "rd4",
+          "track": "rd4",
+          "edition": {
+            "requested": "remaster",
+            "effective": "remaster",
+            "loading": false,
+            "error": null
+          },
+          "bytes": 25217568,
+          "duration": 65.67075,
+          "rate": 48000,
+          "sources": 2,
+          "sameOPL": true,
+          "startedAt": 0.4325833333333333,
+          "clock": 0.48533333333333334,
+          "error": null
+        },
+        {
+          "id": "rd5",
+          "track": "rd5",
+          "edition": {
+            "requested": "remaster",
+            "effective": "remaster",
+            "loading": false,
+            "error": null
+          },
+          "bytes": 24574168,
+          "duration": 63.99522916666667,
+          "rate": 48000,
+          "sources": 2,
+          "sameOPL": true,
+          "startedAt": 0.4854583333333333,
+          "clock": 0.5493333333333333,
+          "error": null
+        },
+        {
+          "id": "rd6part1",
+          "track": "rd6part1",
+          "edition": {
+            "requested": "remaster",
+            "effective": "remaster",
+            "loading": false,
+            "error": null
+          },
+          "bytes": 21194784,
+          "duration": 55.19475,
+          "rate": 48000,
+          "sources": 2,
+          "sameOPL": true,
+          "startedAt": 0.5502708333333334,
+          "clock": 0.6026666666666667,
+          "error": null
+        },
+        {
+          "id": "rd6part2",
+          "track": "rd6part2",
+          "edition": {
+            "requested": "remaster",
+            "effective": "remaster",
+            "loading": false,
+            "error": null
+          },
+          "bytes": 4134360,
+          "duration": 10.7665625,
+          "rate": 48000,
+          "sources": 2,
+          "sameOPL": true,
+          "startedAt": 0.6031458333333334,
+          "clock": 0.6186666666666667,
+          "error": null
+        },
+        {
+          "id": "rd6part3",
+          "track": "rd6part3",
+          "edition": {
+            "requested": "remaster",
+            "effective": "remaster",
+            "loading": false,
+            "error": null
+          },
+          "bytes": 7201232,
+          "duration": 18.753208333333333,
+          "rate": 48000,
+          "sources": 2,
+          "sameOPL": true,
+          "startedAt": 0.6190833333333333,
+          "clock": 0.6346666666666667,
+          "error": null
+        },
+        {
+          "id": "rd6part4",
+          "track": "rd6part4",
+          "edition": {
+            "requested": "remaster",
+            "effective": "remaster",
+            "loading": false,
+            "error": null
+          },
+          "bytes": 7511056,
+          "duration": 19.560041666666667,
+          "rate": 48000,
+          "sources": 2,
+          "sameOPL": true,
+          "startedAt": 0.6350416666666667,
+          "clock": 0.6666666666666666,
+          "error": null
+        },
+        {
+          "id": "sassa",
+          "track": "sassa",
+          "edition": {
+            "requested": "remaster",
+            "effective": "remaster",
+            "loading": false,
+            "error": null
+          },
+          "bytes": 16209976,
+          "duration": 42.213479166666666,
+          "rate": 48000,
+          "sources": 2,
+          "sameOPL": true,
+          "startedAt": 0.6669583333333333,
+          "clock": 0.704,
+          "error": null
+        },
+        {
+          "id": "score",
+          "track": "score",
+          "edition": {
+            "requested": "remaster",
+            "effective": "remaster",
+            "loading": false,
+            "error": null
+          },
+          "bytes": 6398128,
+          "duration": 16.661791666666666,
+          "rate": 48000,
+          "sources": 2,
+          "sameOPL": true,
+          "startedAt": 0.7048541666666667,
+          "clock": 0.736,
+          "error": null
+        },
+        {
+          "id": "showdown",
+          "track": "showdown",
+          "edition": {
+            "requested": "remaster",
+            "effective": "remaster",
+            "loading": false,
+            "error": null
+          },
+          "bytes": 42589352,
+          "duration": 110.90977083333334,
+          "rate": 48000,
+          "sources": 2,
+          "sameOPL": true,
+          "startedAt": 0.7367708333333334,
+          "clock": 0.832,
+          "error": null
+        },
+        {
+          "id": "stage1",
+          "track": "stage1",
+          "edition": {
+            "requested": "remaster",
+            "effective": "remaster",
+            "loading": false,
+            "error": null
+          },
+          "bytes": 59965360,
+          "duration": 156.15979166666668,
+          "rate": 48000,
+          "sources": 2,
+          "sameOPL": true,
+          "startedAt": 0.8325208333333333,
+          "clock": 0.9653333333333334,
+          "error": null
+        },
+        {
+          "id": "stage2",
+          "track": "stage2",
+          "edition": {
+            "requested": "remaster",
+            "effective": "remaster",
+            "loading": false,
+            "error": null
+          },
+          "bytes": 20678536,
+          "duration": 53.85035416666667,
+          "rate": 48000,
+          "sources": 2,
+          "sameOPL": true,
+          "startedAt": 0.9661666666666667,
+          "clock": 1.0186666666666666,
+          "error": null
+        },
+        {
+          "id": "stage3",
+          "track": "stage3",
+          "edition": {
+            "requested": "remaster",
+            "effective": "remaster",
+            "loading": false,
+            "error": null
+          },
+          "bytes": 45803672,
+          "duration": 119.28039583333333,
+          "rate": 48000,
+          "sources": 2,
+          "sameOPL": true,
+          "startedAt": 1.0190208333333333,
+          "clock": 1.1146666666666667,
+          "error": null
+        },
+        {
+          "id": "stage6",
+          "track": "stage6",
+          "edition": {
+            "requested": "remaster",
+            "effective": "remaster",
+            "loading": false,
+            "error": null
+          },
+          "bytes": 44170664,
+          "duration": 115.02777083333334,
+          "rate": 48000,
+          "sources": 2,
+          "sameOPL": true,
+          "startedAt": 1.1147708333333333,
+          "clock": 1.216,
+          "error": null
+        },
+        {
+          "id": "thief",
+          "track": "thief",
+          "edition": {
+            "requested": "remaster",
+            "effective": "remaster",
+            "loading": false,
+            "error": null
+          },
+          "bytes": 12137024,
+          "duration": 31.606833333333334,
+          "rate": 48000,
+          "sources": 2,
+          "sameOPL": true,
+          "startedAt": 1.2165,
+          "clock": 1.248,
+          "error": null
+        }
+      ],
+      "errors": [],
+      "checks": [
+        "default original creates no remaster network requests",
+        "all26 complete real FLAC tracks verified and decoded into one current buffer beside the unchanged OPL instance",
+        "pause holds the actual shared clock; resume and original restoration retain the OPL instance"
+      ],
+      "all616RuntimeHashesStable": true,
+      "pass": true,
+      "browserClosed": true,
+      "audioDisposed": true
+    },
+    "heldDownloadBrowser": {
+      "scope": "Actual typed MUSIC on warmed HD game, one-second tick windows before/during held FLAC. Not a complete playthrough.",
+      "errors": [],
+      "baselineBefore": {
+        "tick": 31,
+        "stage": 0,
+        "paused": false,
+        "kind": null,
+        "status": "playing",
+        "edition": {
+          "requested": "original",
+          "effective": "original",
+          "loading": false,
+          "error": null
+        },
+        "hd": {
+          "waiting": false,
+          "failed": false,
+          "missingAtlases": 0,
+          "missingPalettes": 0
+        },
+        "graphics": {
+          "mode": "hd",
+          "backingScale": 4,
+          "canvas": [
+            1280,
+            800
+          ],
+          "sourceFrames": 581,
+          "sourceMaps": 13,
+          "available": {
+            "deliveryLoads": 51,
+            "deliveryFallbacks": 0,
+            "approvedFrames": 580,
+            "approvedFrameVariants": 580,
+            "approvedMapRegions": 111,
+            "approvedMapStatePatches": 10,
+            "approvedTilePatches": 0,
+            "approvedGlyphs": 0,
+            "loadedAtlases": 51,
+            "pendingAtlases": 0,
+            "failedAtlases": 0,
+            "decodedBytes": 75677784,
+            "evictions": 0,
+            "paletteDerivedFrames": 180,
+            "palettePending": 0,
+            "paletteFailed": 0,
+            "paletteCacheBytes": 38613680,
+            "paletteEvictions": 0,
+            "paletteColorCoverageApproved": false,
+            "declaredComplete": false
+          },
+          "draw": {
+            "hdSprites": 2,
+            "vectorSprites": 9,
+            "smoothInterfaceSprites": 9,
+            "smoothMapText": 0,
+            "originalSprites": 0,
+            "hdMapRegions": 1,
+            "hdMapStatePatches": 0,
+            "hdStateCells": 0,
+            "hdGlyphs": 0,
+            "vectorGlyphs": 0,
+            "originalGlyphs": 0,
+            "dynamicOriginalCells": 0,
+            "reasons": {},
+            "hdBaseNativeArea": 62400,
+            "originalBaseNativeArea": 0
+          },
+          "typography": {
+            "classification": "remastered-vector-typography",
+            "sourceGlyphs": 72,
+            "qualifiedInterfaceSprites": 82,
+            "drawnInterfaceSprites": 9,
+            "sourceMismatchCount": 0
+          },
+          "manifestError": null
+        }
+      },
+      "baselineAfter": {
+        "tick": 66,
+        "stage": 0,
+        "paused": false,
+        "kind": null,
+        "status": "playing",
+        "edition": {
+          "requested": "original",
+          "effective": "original",
+          "loading": false,
+          "error": null
+        },
+        "hd": {
+          "waiting": false,
+          "failed": false,
+          "missingAtlases": 0,
+          "missingPalettes": 0
+        },
+        "graphics": {
+          "mode": "hd",
+          "backingScale": 4,
+          "canvas": [
+            1280,
+            800
+          ],
+          "sourceFrames": 581,
+          "sourceMaps": 13,
+          "available": {
+            "deliveryLoads": 51,
+            "deliveryFallbacks": 0,
+            "approvedFrames": 580,
+            "approvedFrameVariants": 580,
+            "approvedMapRegions": 111,
+            "approvedMapStatePatches": 10,
+            "approvedTilePatches": 0,
+            "approvedGlyphs": 0,
+            "loadedAtlases": 51,
+            "pendingAtlases": 0,
+            "failedAtlases": 0,
+            "decodedBytes": 75677784,
+            "evictions": 0,
+            "paletteDerivedFrames": 180,
+            "palettePending": 0,
+            "paletteFailed": 0,
+            "paletteCacheBytes": 38613680,
+            "paletteEvictions": 0,
+            "paletteColorCoverageApproved": false,
+            "declaredComplete": false
+          },
+          "draw": {
+            "hdSprites": 2,
+            "vectorSprites": 9,
+            "smoothInterfaceSprites": 9,
+            "smoothMapText": 0,
+            "originalSprites": 0,
+            "hdMapRegions": 1,
+            "hdMapStatePatches": 0,
+            "hdStateCells": 0,
+            "hdGlyphs": 0,
+            "vectorGlyphs": 0,
+            "originalGlyphs": 0,
+            "dynamicOriginalCells": 0,
+            "reasons": {},
+            "hdBaseNativeArea": 62400,
+            "originalBaseNativeArea": 0
+          },
+          "typography": {
+            "classification": "remastered-vector-typography",
+            "sourceGlyphs": 72,
+            "qualifiedInterfaceSprites": 82,
+            "drawnInterfaceSprites": 9,
+            "sourceMismatchCount": 0
+          },
+          "manifestError": null
+        }
+      },
+      "before": {
+        "tick": 67,
+        "stage": 0,
+        "paused": false,
+        "kind": null,
+        "status": "playing",
+        "edition": {
+          "requested": "remaster",
+          "effective": "original",
+          "loading": true,
+          "error": null
+        },
+        "hd": {
+          "waiting": false,
+          "failed": false,
+          "missingAtlases": 0,
+          "missingPalettes": 0
+        },
+        "graphics": {
+          "mode": "hd",
+          "backingScale": 4,
+          "canvas": [
+            1280,
+            800
+          ],
+          "sourceFrames": 581,
+          "sourceMaps": 13,
+          "available": {
+            "deliveryLoads": 51,
+            "deliveryFallbacks": 0,
+            "approvedFrames": 580,
+            "approvedFrameVariants": 580,
+            "approvedMapRegions": 111,
+            "approvedMapStatePatches": 10,
+            "approvedTilePatches": 0,
+            "approvedGlyphs": 0,
+            "loadedAtlases": 51,
+            "pendingAtlases": 0,
+            "failedAtlases": 0,
+            "decodedBytes": 75677784,
+            "evictions": 0,
+            "paletteDerivedFrames": 180,
+            "palettePending": 0,
+            "paletteFailed": 0,
+            "paletteCacheBytes": 38613680,
+            "paletteEvictions": 0,
+            "paletteColorCoverageApproved": false,
+            "declaredComplete": false
+          },
+          "draw": {
+            "hdSprites": 2,
+            "vectorSprites": 9,
+            "smoothInterfaceSprites": 9,
+            "smoothMapText": 0,
+            "originalSprites": 0,
+            "hdMapRegions": 1,
+            "hdMapStatePatches": 0,
+            "hdStateCells": 0,
+            "hdGlyphs": 0,
+            "vectorGlyphs": 0,
+            "originalGlyphs": 0,
+            "dynamicOriginalCells": 0,
+            "reasons": {},
+            "hdBaseNativeArea": 62400,
+            "originalBaseNativeArea": 0
+          },
+          "typography": {
+            "classification": "remastered-vector-typography",
+            "sourceGlyphs": 72,
+            "qualifiedInterfaceSprites": 82,
+            "drawnInterfaceSprites": 9,
+            "sourceMismatchCount": 0
+          },
+          "manifestError": null
+        }
+      },
+      "after": {
+        "tick": 102,
+        "stage": 0,
+        "paused": false,
+        "kind": null,
+        "status": "playing",
+        "edition": {
+          "requested": "remaster",
+          "effective": "original",
+          "loading": true,
+          "error": null
+        },
+        "hd": {
+          "waiting": false,
+          "failed": false,
+          "missingAtlases": 0,
+          "missingPalettes": 0
+        },
+        "graphics": {
+          "mode": "hd",
+          "backingScale": 4,
+          "canvas": [
+            1280,
+            800
+          ],
+          "sourceFrames": 581,
+          "sourceMaps": 13,
+          "available": {
+            "deliveryLoads": 51,
+            "deliveryFallbacks": 0,
+            "approvedFrames": 580,
+            "approvedFrameVariants": 580,
+            "approvedMapRegions": 111,
+            "approvedMapStatePatches": 10,
+            "approvedTilePatches": 0,
+            "approvedGlyphs": 0,
+            "loadedAtlases": 51,
+            "pendingAtlases": 0,
+            "failedAtlases": 0,
+            "decodedBytes": 75677784,
+            "evictions": 0,
+            "paletteDerivedFrames": 180,
+            "palettePending": 0,
+            "paletteFailed": 0,
+            "paletteCacheBytes": 38613680,
+            "paletteEvictions": 0,
+            "paletteColorCoverageApproved": false,
+            "declaredComplete": false
+          },
+          "draw": {
+            "hdSprites": 2,
+            "vectorSprites": 9,
+            "smoothInterfaceSprites": 9,
+            "smoothMapText": 0,
+            "originalSprites": 0,
+            "hdMapRegions": 1,
+            "hdMapStatePatches": 0,
+            "hdStateCells": 0,
+            "hdGlyphs": 0,
+            "vectorGlyphs": 0,
+            "originalGlyphs": 0,
+            "dynamicOriginalCells": 0,
+            "reasons": {},
+            "hdBaseNativeArea": 62400,
+            "originalBaseNativeArea": 0
+          },
+          "typography": {
+            "classification": "remastered-vector-typography",
+            "sourceGlyphs": 72,
+            "qualifiedInterfaceSprites": 82,
+            "drawnInterfaceSprites": 9,
+            "sourceMismatchCount": 0
+          },
+          "manifestError": null
+        }
+      },
+      "requestEntered": true,
+      "tickDeltas": {
+        "baseline": 35,
+        "held": 35
+      },
+      "pass": true,
+      "browserClosed": true
+    },
+    "publicHTTPS": {
+      "scope": "Actual private Tailscale HTTPS, fresh Chrome context, real menu MUSIC/SoundTest FLAC. Muted; no listening claim.",
+      "checks": [
+        "fresh HTTPS game defaults to original without loading remaster",
+        "public HTML/module/catalog build bytes match immutable V3",
+        "typed MUSIC and actual SoundTest play remastered Stage1 over HTTPS",
+        "typed MUSIC restores the same running original OPL node"
+      ],
+      "errors": [],
+      "playback": {
+        "track": "stage1",
+        "backend": "opl",
+        "edition": {
+          "requested": "remaster",
+          "effective": "remaster",
+          "loading": false,
+          "error": null
+        },
+        "context": "running",
+        "bytes": 59965360
+      },
+      "pass": true,
+      "audioDisposed": true,
+      "browserClosed": true
+    }
+  },
+  "proofFiles": [
+    {
+      "path": "golden-axe-research/evidence/music-catalog-20261105/review/review-proof.json",
+      "sha256": "0c454c38ad62778446ce61c8094489c2b546787986009c8539a33648664fd847"
+    },
+    {
+      "path": "golden-axe-research/evidence/music-catalog-20261105/review/source-proof.json",
+      "sha256": "37b12828e5e6f206dec5dfd11ade63e6bea6beebd4eb48ea2b98d017b2351a0f"
+    },
+    {
+      "path": "golden-axe-research/evidence/music-catalog-20261105/review/render-proof.json",
+      "sha256": "0b6f5c699c7ca9efcd8bf173f1c600c3cf5f5d282455b63acac877d3c8f223c7"
+    },
+    {
+      "path": "golden-axe-research/evidence/music-catalog-20261105/review/sustain-proof.json",
+      "sha256": "16b1472afb936f07416904555207d4bc8ced6784d7691248b2a6403060c4ef4e"
+    },
+    {
+      "path": "golden-axe-research/evidence/music-catalog-20261105/review/original-preservation-proof.json",
+      "sha256": "f55d5a63432210f68f06c0cb6dd7683ce3edf5cda360252822c223bc0fa45534"
+    },
+    {
+      "path": "golden-axe-research/evidence/music-catalog-20261105/review/period-quantization-proof.json",
+      "sha256": "f482f10c202ebfb97c0b648b1ec85376122a91bc347859639f488beb71ee94e0"
+    },
+    {
+      "path": "golden-axe-research/evidence/music-catalog-20261105/review/browser-offline-proof.json",
+      "sha256": "64aa64a295ad4c0f8a8beab5abe50476c067e2c2bf1d4d4e92cfe38e33e8992d"
+    },
+    {
+      "path": "golden-axe-research/evidence/music-catalog-20261105/review/browser-scheduling-grid-proof.json",
+      "sha256": "1496c9efd4f6cfe53ca2a0d2a9dd277055f460af0cff4322d5966ac45fcad341"
+    },
+    {
+      "path": "golden-axe-research/evidence/music-catalog-20261105/runtime/browser-checks.json",
+      "sha256": "bf7fe6a7151625e785e1c51e232345e30b87fd4fe49e21625c1600a88f0f1bbc"
+    },
+    {
+      "path": "golden-axe-research/evidence/music-catalog-20261105/final/catalog-browser-checks.json",
+      "sha256": "fa356edf7a8b54d00604eb94829726e72341e76f1c2a767dd0e341141ff860ab"
+    },
+    {
+      "path": "golden-axe-research/evidence/music-catalog-20261105/final/held-download-v3-checks.json",
+      "sha256": "aa2853803a8010837f36a7b3e4bed404bbf545932473638c698abe441228916a"
+    },
+    {
+      "path": "golden-axe-research/evidence/music-catalog-20261105/final/public-browser-checks.json",
+      "sha256": "db8c0518f2b64b513e2e03aca574c1b4de93d27f76ffc3afdc2f17300aeed745"
+    }
+  ],
+  "followupRuntimeSnapshot": "babd1a92606563ff6e36b97dbd1e4604f65708fbbad9bb636f577d4740a61548",
+  "followupProvenance": "audio-history-recovery-v1.json"
+}

@@ -1,0 +1,347 @@
+{
+  "version": "0.3.0",
+  "date": "2026-11-12",
+  "runtimeSnapshot": "154f24aaeaac84995675c629e4d6eab0d8d53e2a821c901865055e40bb737078",
+  "runtimeFiles": 617,
+  "rebasedOnto": "899c1e6e44150603cf24b6ad398f79a72ca70f58",
+  "nodeTestsPassed": 220,
+  "packageVerified": true,
+  "changedFromFullrunSnapshot": [
+    "index.html",
+    "js/app.js",
+    "js/audio.js",
+    "style.css",
+    "js/controls-help.js"
+  ],
+  "gameCoreAndRendererUnchanged": true,
+  "fullModeRuns": {
+    "scope": "Current frozen audio/UI baseline, all six canonical legal input streams replayed in actual Chrome app with HD and MUSIC requested. Batched Simulation world inputs and actual RAF presentation flow. Not real-time keyboard/native DOS fullruns. Audio probes explicitly resume only audio clock while world remains paused; ordinary pause behavior separately covered. Final help/interrupt patch checked separately by root.",
+    "runtimeSnapshot": "12b277f59c0d96434d3085ead1eb610652fdf0c0aa56e15c36a4961bc38de570",
+    "coreSHA256": "6ca2e6f98c1e97ae148aca3f21f69b4b44fa0b3bdab13465b04e2cc0a05c589e",
+    "cases": [
+      {
+        "mode": "arcade",
+        "players": 1,
+        "pass": true,
+        "returnedMenu": true,
+        "ticks": 22174,
+        "worldCheckpoints": 31,
+        "presentationPhases": 33,
+        "settledPresentationRenders": 34,
+        "runtimeStable": true,
+        "snapshot": "12b277f59c0d96434d3085ead1eb610652fdf0c0aa56e15c36a4961bc38de570",
+        "errors": [],
+        "settledFallbacks": 0,
+        "diagnosticAudioProbes": 31,
+        "diagnosticAudioAllNonzero": true,
+        "postMasterRemasterPositiveWindows": 445,
+        "browserClosed": true,
+        "audioDisposed": true
+      },
+      {
+        "mode": "arcade",
+        "players": 2,
+        "pass": true,
+        "returnedMenu": true,
+        "ticks": 19223,
+        "worldCheckpoints": 31,
+        "presentationPhases": 33,
+        "settledPresentationRenders": 34,
+        "runtimeStable": true,
+        "snapshot": "12b277f59c0d96434d3085ead1eb610652fdf0c0aa56e15c36a4961bc38de570",
+        "errors": [],
+        "settledFallbacks": 0,
+        "diagnosticAudioProbes": 31,
+        "diagnosticAudioAllNonzero": true,
+        "postMasterRemasterPositiveWindows": 449,
+        "browserClosed": true,
+        "audioDisposed": true
+      },
+      {
+        "mode": "beginner",
+        "players": 1,
+        "pass": true,
+        "returnedMenu": true,
+        "ticks": 8306,
+        "worldCheckpoints": 15,
+        "presentationPhases": 8,
+        "settledPresentationRenders": 9,
+        "runtimeStable": true,
+        "snapshot": "12b277f59c0d96434d3085ead1eb610652fdf0c0aa56e15c36a4961bc38de570",
+        "errors": [],
+        "settledFallbacks": 0,
+        "diagnosticAudioProbes": 15,
+        "diagnosticAudioAllNonzero": true,
+        "postMasterRemasterPositiveWindows": 229,
+        "browserClosed": true,
+        "audioDisposed": true
+      },
+      {
+        "mode": "beginner",
+        "players": 2,
+        "pass": true,
+        "returnedMenu": true,
+        "ticks": 7923,
+        "worldCheckpoints": 16,
+        "presentationPhases": 8,
+        "settledPresentationRenders": 9,
+        "runtimeStable": true,
+        "snapshot": "12b277f59c0d96434d3085ead1eb610652fdf0c0aa56e15c36a4961bc38de570",
+        "errors": [],
+        "settledFallbacks": 0,
+        "diagnosticAudioProbes": 16,
+        "diagnosticAudioAllNonzero": true,
+        "postMasterRemasterPositiveWindows": 236,
+        "browserClosed": true,
+        "audioDisposed": true
+      },
+      {
+        "mode": "duel",
+        "players": 1,
+        "pass": true,
+        "returnedMenu": true,
+        "ticks": 6606,
+        "worldCheckpoints": 36,
+        "presentationPhases": 1,
+        "settledPresentationRenders": 2,
+        "runtimeStable": true,
+        "snapshot": "12b277f59c0d96434d3085ead1eb610652fdf0c0aa56e15c36a4961bc38de570",
+        "errors": [],
+        "settledFallbacks": 0,
+        "diagnosticAudioProbes": 0,
+        "diagnosticAudioAllNonzero": true,
+        "postMasterRemasterPositiveWindows": 231,
+        "browserClosed": true,
+        "audioDisposed": true
+      },
+      {
+        "mode": "duel",
+        "players": 2,
+        "pass": true,
+        "returnedMenu": true,
+        "ticks": 1339,
+        "worldCheckpoints": 4,
+        "presentationPhases": 0,
+        "settledPresentationRenders": 1,
+        "runtimeStable": true,
+        "snapshot": "12b277f59c0d96434d3085ead1eb610652fdf0c0aa56e15c36a4961bc38de570",
+        "errors": [],
+        "settledFallbacks": 0,
+        "diagnosticAudioProbes": 4,
+        "diagnosticAudioAllNonzero": true,
+        "postMasterRemasterPositiveWindows": 36,
+        "browserClosed": true,
+        "audioDisposed": true
+      }
+    ],
+    "totals": {
+      "ticks": 65571,
+      "checkpoints": 133,
+      "presentationPhases": 83,
+      "settledPresentationRenders": 89,
+      "diagnosticAudioProbes": 97
+    },
+    "allPass": true
+  },
+  "controls": {
+    "checks": [
+      "Main-menu native modal explains both default players and closes without starting the game",
+      "Options device swap updates movement/attack/jump while retaining player-specific magic/run",
+      "Mouse help reflects actual runtime buttons and does not advertise unavailable J/K aliases",
+      "Open help pauses actual tick/audio and blocks movement, MUSIC/HD/LEVEL/IDDQD/MAP and F2/F3/F4",
+      "Escape from running-game help resumes the game, focuses canvas and real ArrowRight moves the player",
+      "Opening from Pause preserves pause and restores its help-button focus",
+      "Native fullscreen retains dialog inside fullscreen root and preserves paused state",
+      "Explicit cached lifecycle fixture preserves help and safe pause; closing cannot bypass held audio, trusted Resume works",
+      "Character selection remains frozen under help and stays selected after close",
+      "Touch 390x844: modal/44px close fit viewport and long help scrolls",
+      "Touch 844x390: modal/44px close fit viewport and long help scrolls"
+    ],
+    "pass": true,
+    "browserClosed": true
+  },
+  "interruption": {
+    "scope": "Real host-muted Chrome, app unmuted, Stage2 post-master PCM; explicit unexpected context.suspend fixture. Not a physical device interruption or proof of the reported incident cause.",
+    "checks": [
+      {
+        "edition": "original",
+        "sample": {
+          "peak": 0.123748779296875,
+          "edition": "original",
+          "context": "running",
+          "muted": false,
+          "master": 1
+        },
+        "sameClockAndTrack": true,
+        "untrustedGestureIgnored": true
+      },
+      {
+        "edition": "remaster",
+        "sample": {
+          "peak": 0.082366943359375,
+          "edition": "remaster",
+          "context": "running",
+          "muted": false,
+          "master": 1
+        },
+        "sameClockAndTrack": true,
+        "untrustedGestureIgnored": true
+      },
+      {
+        "explicitPausePreserved": true
+      },
+      {
+        "terminalDisposePreserved": true
+      }
+    ],
+    "errors": [],
+    "build": {
+      "repository": "https://github.com/michalmedvecky/pre2-web",
+      "commit": null,
+      "buildSource": "dirty-snapshot",
+      "dirty": true,
+      "sourceSnapshot": "154f24aaeaac84995675c629e4d6eab0d8d53e2a821c901865055e40bb737078"
+    },
+    "pass": true,
+    "browserClosed": true,
+    "audioClosed": true
+  },
+  "history": {
+    "checks": [
+      "cached-title-original preserved context/OPL/start/input/styles and resumed real post-master PCM after trusted gesture",
+      "cached-menu-original preserved context/OPL/start/input/styles and resumed real post-master PCM after trusted gesture",
+      "first sound click after cached menu restores audio; subsequent clicks still mute/unmute",
+      "cached-menu-remaster preserved context/OPL/start/input/styles and resumed real post-master PCM after trusted gesture",
+      "cached-game-original preserved context/OPL/start/input/styles and resumed real post-master PCM after trusted gesture",
+      "keyboard listeners remain active after cached game return and key-up clears held movement",
+      "cached-level-dialog preserved context/OPL/start/input/styles and resumed real post-master PCM after trusted gesture",
+      "LEVEL dialog remains connected and closes after cache restore",
+      "real discard still disposes audio/input and OriginalAudio remains terminal"
+    ],
+    "samples": [
+      {
+        "name": "fresh-title-original",
+        "track": "opening",
+        "edition": {
+          "requested": "original",
+          "effective": "original",
+          "loading": false,
+          "error": null
+        },
+        "context": "running",
+        "muted": false,
+        "masterGain": 1,
+        "peak": 0.08111572265625,
+        "rms": 0.04954686528472654
+      },
+      {
+        "name": "cached-title-original",
+        "track": "opening",
+        "edition": {
+          "requested": "original",
+          "effective": "original",
+          "loading": false,
+          "error": null
+        },
+        "context": "running",
+        "muted": false,
+        "masterGain": 1,
+        "peak": 0.17218017578125,
+        "rms": 0.08372521941659353
+      },
+      {
+        "name": "cached-menu-original",
+        "track": "stage1",
+        "edition": {
+          "requested": "original",
+          "effective": "original",
+          "loading": false,
+          "error": null
+        },
+        "context": "running",
+        "muted": false,
+        "masterGain": 1,
+        "peak": 0.13812255859375,
+        "rms": 0.044366241553134594
+      },
+      {
+        "name": "cached-menu-sound-first-click",
+        "track": "stage1",
+        "edition": {
+          "requested": "original",
+          "effective": "original",
+          "loading": false,
+          "error": null
+        },
+        "context": "running",
+        "muted": false,
+        "masterGain": 1,
+        "peak": 0.15606689453125,
+        "rms": 0.04222267028914378
+      },
+      {
+        "name": "cached-menu-remaster",
+        "track": "stage1",
+        "edition": {
+          "requested": "remaster",
+          "effective": "remaster",
+          "loading": false,
+          "error": null
+        },
+        "context": "running",
+        "muted": false,
+        "masterGain": 1,
+        "peak": 0.13998839259147644,
+        "rms": 0.03544609840343386
+      },
+      {
+        "name": "cached-game-original",
+        "track": "stage1",
+        "edition": {
+          "requested": "original",
+          "effective": "original",
+          "loading": false,
+          "error": null
+        },
+        "context": "running",
+        "muted": false,
+        "masterGain": 1,
+        "peak": 0.13031005859375,
+        "rms": 0.0407592729862634
+      },
+      {
+        "name": "cached-level-dialog",
+        "track": "stage1",
+        "edition": {
+          "requested": "original",
+          "effective": "original",
+          "loading": false,
+          "error": null
+        },
+        "context": "running",
+        "muted": false,
+        "masterGain": 1,
+        "peak": 0.15185546875,
+        "rms": 0.04705380800279415
+      }
+    ],
+    "pass": true,
+    "browserClosed": true
+  },
+  "historicalMusicProof": "music-remaster-v1.json",
+  "reports": [
+    "release-030.md",
+    "controls-help.md",
+    "quality-027.md",
+    "audio-interruption.md",
+    "music-remaster.md"
+  ],
+  "limits": [
+    "No new complete native DOS fullrun or claim of IRQ/RNG/wallclock equivalence",
+    "No physical Safari/iOS/gamepad validation",
+    "Historical stage2 incident not reproduced; explicit interruption fixture is a separate proven case",
+    "Fullmode browser replay is batched legal world input plus real presentation flow, not realtime keyboard gameplay"
+  ],
+  "clusterDeployment": false,
+  "ciImageIdentity": "See exact published GitHub release ga-v0.3.0; not inferred from local HEAD"
+}

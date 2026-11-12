@@ -1,0 +1,265 @@
+{
+  "status": "verified-and-live-in-private-preview",
+  "snapshot": "babd1a92606563ff6e36b97dbd1e4604f65708fbbad9bb636f577d4740a61548",
+  "runtimeFiles": 616,
+  "changedRuntimeModule": "js/app.js",
+  "unitTestsPassed": 208,
+  "baseMusicSnapshot": "394b40bf36cd8a278e4a2d2a85638605cd22253721733fc717949911cb4d29f8",
+  "cause": "Unconditional terminal pagehide cleanup on a BFCache-retained document; reproduced in published0.2.6 and prior music candidate.",
+  "fix": "Persisted hide suspends and clears input; cached show pauses safely; trusted Resume or menu gesture restores same live objects. Actual discard remains terminal.",
+  "userMustReloadPreviouslyCachedOldDocumentOnce": true,
+  "newReleaseOrClusterDeployment": false,
+  "checks": {
+    "independentReview": {
+      "status": "PASS-causal-reproduction-and-fixed-runtime",
+      "baselineSnapshot": "6f5dd207fe67a5b96580bbf0b6e11f56c6fa63a49d72a9e27490b704192c3e2d",
+      "beforeFixSnapshot": "394b40bf36cd8a278e4a2d2a85638605cd22253721733fc717949911cb4d29f8",
+      "finalSnapshot": "babd1a92606563ff6e36b97dbd1e4604f65708fbbad9bb636f577d4740a61548",
+      "runtimeFiles": 616,
+      "freshDefaultOriginalPostMixPositiveBothVersions": true,
+      "freshMUSICPostMixPositive": true,
+      "explicitFLACPostMixPositive": true,
+      "actualNativeBFCacheBugBeforeFixBothVersions": true,
+      "actualNativeBFCacheFixedSameDocument": true,
+      "fixedPostReturnOriginalPeak": 0.2959551215171814,
+      "fixedPostReturnRemasterPeak": 0.13998839259147644,
+      "actualPostMixAppMuted": false,
+      "testMuteGlobal": "undefined",
+      "hostBrowserMuted": true,
+      "subjectiveListeningPerformed": false,
+      "directIABMeasurementByReviewer": false,
+      "browsersAndAudioClosed": true,
+      "helperServerClosed": true,
+      "runtimeEditsByReviewer": false,
+      "proofs": {
+        "postmix-proof.json": {
+          "sha256": "9615310f28de40ce9608d4c74531ec842b6d4ee5a14296ebd5e05bc19de2a8b1",
+          "bytes": 51604
+        },
+        "music-only-and-flac-proof.json": {
+          "sha256": "c1baf52c0558e590bb5906256739d8c208fc5bbb9d6904f55b6c3003e66befda",
+          "bytes": 61708
+        },
+        "bfcache-candidate-before-fix.json": {
+          "sha256": "ca13e0b6f3e234829716681399f58b98e30b058356720f8b160eb25cc7e5b511",
+          "bytes": 1909
+        },
+        "bfcache-original-proof.json": {
+          "sha256": "6647f27d07073e0b23f3ea6631d2136bce316b8714fcbaea63f43712b9d0d0e6",
+          "bytes": 1920
+        },
+        "bfcache-audio-final-proof.json": {
+          "sha256": "6a33f989b545b9ee28b2975c94529be362e6fe336e5cef56f739820dcb1d3ce7",
+          "bytes": 17098
+        },
+        "v4-hashes-before.json": {
+          "sha256": "29a06a8638ea9d46a54cfa322af0ddee510aba720f241984aee744f8a165fc81",
+          "bytes": 127
+        },
+        "v4-hashes-after.json": {
+          "sha256": "29a06a8638ea9d46a54cfa322af0ddee510aba720f241984aee744f8a165fc81",
+          "bytes": 127
+        }
+      }
+    },
+    "runtimeFixture": {
+      "base": "http://127.0.0.1:5914/",
+      "scope": "Actual host-muted Chrome, fresh default-unmuted app; post-master PCM AnalyserNode. Explicit persisted lifecycle fixture, not a browser-generated BFCache claim. No physical output listening.",
+      "checks": [
+        "cached-title-original preserved context/OPL/start/input/styles and resumed real post-master PCM after trusted gesture",
+        "cached-menu-original preserved context/OPL/start/input/styles and resumed real post-master PCM after trusted gesture",
+        "first sound click after cached menu restores audio; subsequent clicks still mute/unmute",
+        "cached-menu-remaster preserved context/OPL/start/input/styles and resumed real post-master PCM after trusted gesture",
+        "cached-game-original preserved context/OPL/start/input/styles and resumed real post-master PCM after trusted gesture",
+        "keyboard listeners remain active after cached game return and key-up clears held movement",
+        "cached-level-dialog preserved context/OPL/start/input/styles and resumed real post-master PCM after trusted gesture",
+        "LEVEL dialog remains connected and closes after cache restore",
+        "real discard still disposes audio/input and OriginalAudio remains terminal"
+      ],
+      "samples": [
+        {
+          "name": "fresh-title-original",
+          "track": "opening",
+          "edition": {
+            "requested": "original",
+            "effective": "original",
+            "loading": false,
+            "error": null
+          },
+          "context": "running",
+          "muted": false,
+          "masterGain": 1,
+          "peak": 0.078887939453125,
+          "rms": 0.04381108131868615
+        },
+        {
+          "name": "cached-title-original",
+          "track": "opening",
+          "edition": {
+            "requested": "original",
+            "effective": "original",
+            "loading": false,
+            "error": null
+          },
+          "context": "running",
+          "muted": false,
+          "masterGain": 1,
+          "peak": 0.17218017578125,
+          "rms": 0.07298769817271497
+        },
+        {
+          "name": "cached-menu-original",
+          "track": "stage1",
+          "edition": {
+            "requested": "original",
+            "effective": "original",
+            "loading": false,
+            "error": null
+          },
+          "context": "running",
+          "muted": false,
+          "masterGain": 1,
+          "peak": 0.126373291015625,
+          "rms": 0.046406608006793436
+        },
+        {
+          "name": "cached-menu-sound-first-click",
+          "track": "stage1",
+          "edition": {
+            "requested": "original",
+            "effective": "original",
+            "loading": false,
+            "error": null
+          },
+          "context": "running",
+          "muted": false,
+          "masterGain": 1,
+          "peak": 0.1558837890625,
+          "rms": 0.042746014209093165
+        },
+        {
+          "name": "cached-menu-remaster",
+          "track": "stage1",
+          "edition": {
+            "requested": "remaster",
+            "effective": "remaster",
+            "loading": false,
+            "error": null
+          },
+          "context": "running",
+          "muted": false,
+          "masterGain": 1,
+          "peak": 0.12544633448123932,
+          "rms": 0.03635242562099217
+        },
+        {
+          "name": "cached-game-original",
+          "track": "stage1",
+          "edition": {
+            "requested": "original",
+            "effective": "original",
+            "loading": false,
+            "error": null
+          },
+          "context": "running",
+          "muted": false,
+          "masterGain": 1,
+          "peak": 0.13623046875,
+          "rms": 0.03735995670529745
+        },
+        {
+          "name": "cached-level-dialog",
+          "track": "stage1",
+          "edition": {
+            "requested": "original",
+            "effective": "original",
+            "loading": false,
+            "error": null
+          },
+          "context": "running",
+          "muted": false,
+          "masterGain": 1,
+          "peak": 0.1463623046875,
+          "rms": 0.042517011463270395
+        }
+      ],
+      "errors": [],
+      "beforeCharacterSelection": {
+        "started": false,
+        "sequence": null,
+        "track": "stage1",
+        "audioStatus": "ready",
+        "visibleMenus": [
+          "mode-menu"
+        ],
+        "startText": "Otevřít Options →"
+      },
+      "afterStartClick": {
+        "started": false,
+        "sequence": null,
+        "track": null,
+        "audioStatus": "ready",
+        "visibleMenus": [
+          "character-menu"
+        ]
+      },
+      "inputBeforeKeyboard": {
+        "focused": "game",
+        "active": true,
+        "sequence": null,
+        "paused": false
+      },
+      "pass": true,
+      "browserClosed": true,
+      "audioClosed": true,
+      "candidateSnapshot": "babd1a92606563ff6e36b97dbd1e4604f65708fbbad9bb636f577d4740a61548",
+      "candidateRuntimeFiles": 616,
+      "immutableBeforeAfter": true,
+      "ownServer5896Stopped": true
+    },
+    "actualIABFixture": {
+      "scope": "Actual CUA IAB Chrome156 with passive same-origin production V4 game iframe. Explicit persisted PageTransitionEvent fixture from owned diagnostic UI, not native IAB BFCache. Actual native Chrome BFCache checked independently. No physical listening claim.",
+      "snapshot": "babd1a92606563ff6e36b97dbd1e4604f65708fbbad9bb636f577d4740a61548",
+      "probeIdBeforeAndAfter": 0.6628466125976923,
+      "cached": {
+        "contextState": "suspended",
+        "disposed": false,
+        "muted": false,
+        "clock": 8.853333333333333,
+        "peak": 0,
+        "paused": true
+      },
+      "afterTrustedResume": {
+        "contextState": "running",
+        "disposed": false,
+        "muted": false,
+        "clock": 8.885333333333334,
+        "masterGain": 1,
+        "musicGain": 1,
+        "peak": 0.124755859375,
+        "rms": 0.06988822502726807,
+        "paused": false
+      },
+      "afterTypedMUSIC": {
+        "contextState": "running",
+        "disposed": false,
+        "muted": false,
+        "clock": 48.384,
+        "masterGain": 1,
+        "musicGain": 0,
+        "remasterGain": 1,
+        "peak": 0.15608692169189453,
+        "rms": 0.0471276784087725
+      },
+      "ownDiagnosticTabClosed": true,
+      "temporaryDiagnosticPublicRouteRemoved": true
+    },
+    "publicCopy": {
+      "snapshot": "babd1a92606563ff6e36b97dbd1e4604f65708fbbad9bb636f577d4740a61548",
+      "runtimeFiles": 616,
+      "allRuntimeHashesVerified": true,
+      "onlyRuntimeChange": "js/app.js",
+      "copiedBuildMetadata": true
+    }
+  }
+}

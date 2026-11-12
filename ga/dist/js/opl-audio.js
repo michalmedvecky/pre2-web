@@ -22,7 +22,7 @@ export class OriginalOPLAudio {
     if(this.disposed&&type!=='dispose')return Promise.reject(new Error('Original OPL disposed.'));const request=++this.nextRequest;
     return new Promise((resolve,reject)=>{const timer=setTimeout(()=>{this.pending.delete(request);reject(new Error('Original OPL '+type+' timeout.'));},10000);this.pending.set(request,{resolve,reject,timer});this.node.port.postMessage({type,request,...data},transfer);});
   }
-  async play(name,options={}){const generation=++this.generation;await this.request('select',{name,options:{loop:options.loop??true}});return !this.disposed&&generation===this.generation;}
+  async play(name,options={}){const generation=++this.generation;const selected=await this.request('select',{name,options:{loop:options.loop??true}});if(this.disposed||generation!==this.generation)return false;this.lastStartTime=selected.startTime;return true;}
   setEnabled(enabled){if(!this.disposed)this.node.port.postMessage({type:'enabled',enabled:!!enabled});}
   stop(){this.generation++;if(!this.disposed)this.node.port.postMessage({type:'stop'});}
   status(){return this.request('status');}
