@@ -10,7 +10,7 @@ The shared home is **https://remastered.500miles.cz/**. A responsive tile index 
 | Golden Axe | [ga/](ga/) | `/ga/` |
 | Flappy | [flappy/](flappy/) | `/flappy/` |
 
-Each game keeps its own source, data, tests and research/provenance. The shared application serves all three directories without an ingress rewrite. Keyboard and supported touch controls, original/remastered choices and other features are documented inside each game. The collection does not claim complete bit-exact equivalence with every original hardware configuration.
+Each game keeps its own source, data, tests and research/provenance. Prehistorik2 also includes the explicitly approved existing VOLBY cosmetic mode; it is off by default and available through its cheat/pause controls. The shared application serves all three directories without an ingress rewrite. Keyboard and supported touch controls, original/remastered choices and other features are documented inside each game. The collection does not claim complete bit-exact equivalence with every original hardware configuration.
 
 ## Repository layout
 

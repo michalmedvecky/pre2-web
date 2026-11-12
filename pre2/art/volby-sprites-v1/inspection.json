@@ -1,0 +1,58 @@
+{
+  "hero": {
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA",
+    "frames": 16,
+    "transparentPixels": 1016832,
+    "alphaRange": [
+      0,
+      254
+    ],
+    "maxSolidPixelsOnCuts": 0
+  },
+  "bear-replacement": {
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA",
+    "frames": 8,
+    "transparentPixels": 1147758,
+    "alphaRange": [
+      0,
+      254
+    ],
+    "maxSolidPixelsOnCuts": 0
+  },
+  "tiger-replacement": {
+    "size": [
+      1774,
+      887
+    ],
+    "mode": "RGBA",
+    "frames": 8,
+    "transparentPixels": 931187,
+    "alphaRange": [
+      0,
+      255
+    ],
+    "maxSolidPixelsOnCuts": 0
+  },
+  "hero-unarmed": {
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA",
+    "frames": 16,
+    "transparentPixels": 1068002,
+    "alphaRange": [
+      0,
+      254
+    ],
+    "maxSolidPixelsOnCuts": 0
+  }
+}

@@ -16,9 +16,9 @@ The [GitHub repository-rename contract](https://docs.github.com/en/repositories/
 
 ## What is preserved
 
-The move initially verifies every selected Pre2 file byte-for-byte, including ignored/untracked data. Existing Pre2 WIP is saved separately during clean validation and restored under the new prefix without adding it to the migration commit. Modern metadata/link changes are isolated from engine/game data. Golden Axe and Flappy retain their pergame checksums; the root catalog additionally hashes every public runtime file. No old GitHub releases, original files or research data are removed.
+The move initially verifies every selected Pre2 file byte-for-byte, including ignored/untracked data. Existing Pre2 WIP was saved/restored during baseline validation. The user subsequently explicitly approved its inclusion, so all4modified and35untracked files are included in a follow-up commit, with VOLBY defaultoff and additional desktop/touch QA. Modern metadata/link changes are isolated from engine/game data. Golden Axe and Flappy retain their pergame checksums; the root catalog additionally hashes every public runtime file. No old GitHub releases, original files or research data are removed.
 
-This migration corrects genuine prefix failures, including Golden Axe's historical HD pilot URL/module. It adds no levels, modes or new graphics/music. Portal images are actual game renders. Detailed method/results are in HANDOFF.md and pergame migration reports.
+This migration corrects genuine prefix failures, including Golden Axe's historical HD pilot URL/module. The migration itself generates no levels, modes or graphics/music; the user-approved existing Pre2WIP content is included as supplied. Portal images are actual game renders. Detailed method/results are in HANDOFF.md and pergame migration reports.
 
 ## Fresh Kubernetes application
 

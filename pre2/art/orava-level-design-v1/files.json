@@ -1,0 +1,15 @@
+{
+  "status": "concept-only",
+  "images": {
+    "panorama.png": {
+      "width": 2172,
+      "height": 724,
+      "sha256": "3fbac561dd9d005027133e08fe39b90c390ae0e1c6103cbbe8c2810f4979e925"
+    },
+    "plan.png": {
+      "width": 1536,
+      "height": 1024,
+      "sha256": "994ac812f30cee53c36eb62e5985357a45a09267689b7c893426282bb3cf0893"
+    }
+  }
+}

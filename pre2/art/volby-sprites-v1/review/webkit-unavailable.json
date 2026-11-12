@@ -1,0 +1,7 @@
+{
+  "date": "2026-10-27",
+  "stage": "browser.newPage before game navigation",
+  "error": "Target page, context or browser has been closed",
+  "reproducedInStandaloneBlankPage": true,
+  "gameValidation": "not completed"
+}

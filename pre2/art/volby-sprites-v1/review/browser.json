@@ -1,0 +1,40 @@
+{
+  "chromium": {
+    "weapons": [
+      {
+        "weapon": 1,
+        "body": true,
+        "nativeWeapon": true
+      },
+      {
+        "weapon": 2,
+        "body": true,
+        "nativeWeapon": true
+      },
+      {
+        "weapon": 3,
+        "body": true,
+        "nativeWeapon": true
+      }
+    ],
+    "combat": {
+      "dead": true,
+      "defeat": true
+    },
+    "actorCount": 2,
+    "hd": true,
+    "sd": true,
+    "reversible": true,
+    "stagePersistence": true,
+    "oravaSwitch": true,
+    "pauseControl": true,
+    "renderDoesNotMutateWorld": true,
+    "defaultOff": true,
+    "errors": []
+  },
+  "mobile": {
+    "touchPauseToggle": true,
+    "downwardBonus": true,
+    "errors": []
+  }
+}

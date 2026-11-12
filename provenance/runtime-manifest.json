@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "snapshotSHA256": "e6edda5427899e584ab77723ef6b51a66535dfa2fdc40eebfc205caf490f7405",
+  "snapshotSHA256": "b4209dd46b0d5aa086a13847abe0dc786358d184a0b9ffae74ffc498b0b36495",
   "sites": {
     "flappy": {
       "schemaVersion": 1,
@@ -2634,7 +2634,7 @@
     },
     "pre2": {
       "schemaVersion": 1,
-      "snapshotSHA256": "3656e796d02737f6706fde230249eb0e18cead6560ff28c875b3c4e019af7f17",
+      "snapshotSHA256": "981efa9505ea24f66e74e8db04182a35e13881bc4ace5ce5195eefeb3f8e97be",
       "excluded": [
         "build.json (injected per build)",
         "private/redundant source files"
@@ -3708,6 +3708,26 @@
           "sha256": "c59810d54d3dab5fbe9c820003b89937bd3872ea792c4ac2461961ddc8e8f09a",
           "size": 139264
         },
+        "assets/volby/bear-replacement.png": {
+          "sha256": "9bbb8532ae8474ad74bd258ddae905928fe5df10d9cabfcf73e99be321117e60",
+          "size": 1986340
+        },
+        "assets/volby/hero-unarmed.png": {
+          "sha256": "64e801c9a3b0c1d4b68e0c7a1b94cbd1f26dc915fc5cc3b3455a092e5012bc91",
+          "size": 2143142
+        },
+        "assets/volby/hero.png": {
+          "sha256": "45da441060e2d67c3e178ea4bd434ea270ee3f8763b248cdf9f1ee8cff579786",
+          "size": 2260804
+        },
+        "assets/volby/manifest.json": {
+          "sha256": "551f7f6bb2410e564a4e81cc1335fe7fc644d4a7cedb10a2ec8310a5c38c5cd0",
+          "size": 16875
+        },
+        "assets/volby/tiger-replacement.png": {
+          "sha256": "6d488979043634206cf133bea3dfbb29f0750897982fd2f6a9822b230f02d7e1",
+          "size": 1644263
+        },
         "hd-preview.html": {
           "sha256": "e799328c1ee07afc528a50585b471b53ab8302dea0a21feaa10dc53da448d29e",
           "size": 1583
@@ -3737,8 +3757,8 @@
           "size": 4914
         },
         "js/app.js": {
-          "sha256": "e409acca2e59c6f5e937271da38192a43a4122b02775ca05e4912e61ca0e1260",
-          "size": 26376
+          "sha256": "b21c999eb3e4c733258f4d5fa3d8e1a588b5568c5dbf404dcf35b67b64120cee",
+          "size": 27650
         },
         "js/assets.js": {
           "sha256": "b397478ed2905189560a332ea58fd5c5156687c523987b4dd502a9d67f369e23",
@@ -3773,8 +3793,8 @@
           "size": 835
         },
         "js/cheats.js": {
-          "sha256": "b5aa55329182cfc5ebe2bb2803472bcae41799b359aad840f4a249a68920f59e",
-          "size": 894
+          "sha256": "2e8602a34090d7df25c1846745d28b4eeaab05cbe14e51c84aa377c4cb03e374",
+          "size": 902
         },
         "js/compat.js": {
           "sha256": "17932dfdeddfc8f56b7f39d3980a60e4a72a7de3114b9c96db487a48a85fa6a7",
@@ -3837,8 +3857,8 @@
           "size": 3005
         },
         "js/render.js": {
-          "sha256": "2ee8b9767629c8858fa7d4a1293c782a74577c7d4e3dac5f75b6aa4cd66dd79b",
-          "size": 17422
+          "sha256": "60a1dea18834ac0503fc110d0a7dfbe1330d6dbef6e98143bd0ae4607667beff",
+          "size": 18548
         },
         "js/scene.js": {
           "sha256": "80de589d09f78254350dfad5fd888d55f3c28e1e7bf7b226fbf1f203e3e36871",
@@ -3903,6 +3923,10 @@
         "js/touch-input.js": {
           "sha256": "fd1549de43211e123fbd20026e90c1b2bf52f4e754c6d1bc7957840268005f68",
           "size": 5310
+        },
+        "js/volby.js": {
+          "sha256": "2fda4bbe63f9d99ea1fcd7b2c61c5c081788d1b7d72d3e92a776586bb6b2aaeb",
+          "size": 3203
         },
         "js/world-decor.js": {
           "sha256": "67b6c3913282cc8b4d38e1cc5e479893894b8523dd40a401d20123991341a7ac",

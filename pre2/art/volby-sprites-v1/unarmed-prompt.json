@@ -1,0 +1,4 @@
+{
+  "tool": "built-in image_gen",
+  "prompt": "Precise sprite sheet edit. Input is a 4 columns 4 rows caveman sprite sheet. Preserve exact SAME face, identity, outfit, all sixteen poses, body proportions and identical cell positions and transparent gutters. Remove ONLY every wooden club/weapon from every pose. Keep hands in matching clenched holding poses but EMPTY, no replacement weapon or object. This is weaponless body artwork so the game renders its own weapons. Preserve animation poses, especially downward and upward attacks, idle, walking, crouch, hurt, defeat. Do not change hairstyle or face. No new ground, shadows, background, labels or text. True RGBA transparent background. All isolated sprites contained within own cell with wide empty gutters; maintain input 4x4 layout and landscape aspect ratio."
+}
