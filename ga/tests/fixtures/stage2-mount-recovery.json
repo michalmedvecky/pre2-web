@@ -1,0 +1,289 @@
+{
+  "scope": "Conditional original Stage2 map and source spawn pair. Options Life Meter5; player repositioned only in initial scene. All later changes use ordinary input/control/AI/hit handlers; no state/HP/RNG patches. This is not a complete native or manual Stage2 traversal.",
+  "beforeModuleSHA256": "c6f584e7bf8ae6dac9cda661cf3e76add4b182c390679d7edd760361f8571e07",
+  "initial": {
+    "stageIndex": 1,
+    "character": "dwarf",
+    "healthBars": 5,
+    "camera": {
+      "x": 504,
+      "y": 152
+    },
+    "scrollLimit": 504,
+    "player": {
+      "x": 640,
+      "y": 256
+    },
+    "rider": {
+      "type": 9,
+      "x": 696,
+      "y": 272,
+      "health": 12,
+      "variant": 1,
+      "aux": 2
+    },
+    "mount": {
+      "type": 11,
+      "x": 696,
+      "y": 272,
+      "health": 4,
+      "flag": 4,
+      "variant": 3,
+      "aux": 2
+    }
+  },
+  "inputs": [
+    {
+      "count": 270,
+      "input": {}
+    },
+    {
+      "count": 1,
+      "input": {
+        "left": false,
+        "right": true,
+        "up": false,
+        "down": true,
+        "attack": true
+      }
+    },
+    {
+      "count": 5,
+      "input": {
+        "left": false,
+        "right": true,
+        "up": false,
+        "down": true,
+        "attack": false
+      }
+    },
+    {
+      "count": 3,
+      "input": {
+        "left": false,
+        "right": true,
+        "up": false,
+        "down": false,
+        "attack": false,
+        "run": true,
+        "explicitRun": true
+      }
+    },
+    {
+      "count": 1,
+      "input": {
+        "left": false,
+        "right": true,
+        "up": false,
+        "down": false,
+        "attack": true,
+        "run": true,
+        "explicitRun": true
+      }
+    },
+    {
+      "count": 8,
+      "input": {
+        "left": false,
+        "right": true,
+        "up": false,
+        "down": false,
+        "attack": false,
+        "run": true,
+        "explicitRun": true
+      }
+    },
+    {
+      "count": 1,
+      "input": {
+        "left": false,
+        "right": true,
+        "up": false,
+        "down": false,
+        "attack": true,
+        "run": true,
+        "explicitRun": true
+      }
+    },
+    {
+      "count": 8,
+      "input": {
+        "left": false,
+        "right": true,
+        "up": false,
+        "down": false,
+        "attack": false,
+        "run": true,
+        "explicitRun": true
+      }
+    },
+    {
+      "count": 1,
+      "input": {
+        "left": false,
+        "right": true,
+        "up": false,
+        "down": false,
+        "attack": true,
+        "run": true,
+        "explicitRun": true
+      }
+    },
+    {
+      "count": 8,
+      "input": {
+        "left": false,
+        "right": true,
+        "up": false,
+        "down": false,
+        "attack": false,
+        "run": true,
+        "explicitRun": true
+      }
+    },
+    {
+      "count": 1,
+      "input": {
+        "left": false,
+        "right": true,
+        "up": false,
+        "down": false,
+        "attack": true,
+        "run": true,
+        "explicitRun": true
+      }
+    },
+    {
+      "count": 8,
+      "input": {
+        "left": false,
+        "right": true,
+        "up": false,
+        "down": false,
+        "attack": false,
+        "run": true,
+        "explicitRun": true
+      }
+    },
+    {
+      "count": 1,
+      "input": {
+        "left": false,
+        "right": true,
+        "up": false,
+        "down": false,
+        "attack": true,
+        "run": true,
+        "explicitRun": true
+      }
+    },
+    {
+      "count": 8,
+      "input": {
+        "left": false,
+        "right": true,
+        "up": false,
+        "down": false,
+        "attack": false,
+        "run": true,
+        "explicitRun": true
+      }
+    },
+    {
+      "count": 1,
+      "input": {
+        "left": false,
+        "right": true,
+        "up": false,
+        "down": false,
+        "attack": true,
+        "run": true,
+        "explicitRun": true
+      }
+    },
+    {
+      "count": 8,
+      "input": {
+        "left": false,
+        "right": true,
+        "up": false,
+        "down": false,
+        "attack": false,
+        "run": true,
+        "explicitRun": true
+      }
+    },
+    {
+      "count": 1,
+      "input": {
+        "left": false,
+        "right": true,
+        "up": false,
+        "down": false,
+        "attack": true,
+        "run": true,
+        "explicitRun": true
+      }
+    },
+    {
+      "count": 8,
+      "input": {
+        "left": false,
+        "right": true,
+        "up": false,
+        "down": false,
+        "attack": false,
+        "run": true,
+        "explicitRun": true
+      }
+    },
+    {
+      "count": 1,
+      "input": {
+        "left": false,
+        "right": true,
+        "up": false,
+        "down": false,
+        "attack": true,
+        "run": true,
+        "explicitRun": true
+      }
+    },
+    {
+      "count": 8,
+      "input": {
+        "left": false,
+        "right": true,
+        "up": false,
+        "down": false,
+        "attack": false,
+        "run": true,
+        "explicitRun": true
+      }
+    },
+    {
+      "count": 1,
+      "input": {
+        "left": false,
+        "right": true,
+        "up": false,
+        "down": false,
+        "attack": true,
+        "run": true,
+        "explicitRun": true
+      }
+    },
+    {
+      "count": 2,
+      "input": {
+        "left": false,
+        "right": true,
+        "up": false,
+        "down": false,
+        "attack": false,
+        "run": true,
+        "explicitRun": true
+      }
+    }
+  ]
+}

@@ -1,132 +1,134 @@
 <!doctype html>
-<html lang="cs">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#10100f">
-  <title>Golden Axe — původní hra · pracovní rekonstrukce</title>
+  <title>Golden Axe — HD Remaster</title>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <main id="game-shell">
     <header class="topbar">
-      <a class="wordmark" href="./" aria-label="Golden Axe, úvod">GOLDEN <span>AXE</span></a>
-      <span id="graphics-edition" class="edition">HD · GRAFIKA SE DOPLŇUJE</span>
+      <a class="wordmark" href="./" aria-label="Golden Axe, title screen">GOLDEN <span>AXE</span></a>
+      <span id="graphics-edition" class="edition">HD REMASTER</span>
       <div class="toolbar">
-        <button data-open-hd class="icon-button" disabled aria-pressed="true" title="Přepnout HD a původní grafiku">HD</button>
-        <button id="sound" class="icon-button" aria-label="Ztlumit zvuk" title="Hudba a zvukové efekty">♪</button>
-        <button id="fullscreen" class="icon-button" aria-label="Celá obrazovka" title="Celá obrazovka">⛶</button>
-        <button id="pause" class="icon-button" aria-label="Pozastavit hru" title="Pozastavit hru">Ⅱ</button>
+        <button data-open-hd class="icon-button" disabled aria-pressed="true" title="Switch between HD and original graphics">HD</button>
+        <button id="sound" class="icon-button" aria-label="Mute audio" title="Music and sound effects">♪</button>
+        <button id="fullscreen" class="icon-button" aria-label="Fullscreen" title="Fullscreen">⛶</button>
+        <button id="pause" class="icon-button" aria-label="Pause game" title="Pause game">Ⅱ</button>
       </div>
     </header>
-    <section class="stage" aria-label="Herní plocha">
+    <section class="stage" aria-label="Playfield">
       <div class="screen-wrap">
-        <canvas id="game" width="320" height="200" aria-label="Golden Axe, herní obraz" tabindex="0"></canvas>
-        <div id="loading" class="loading">Načítání původních dat…</div>
+        <canvas id="game" width="320" height="200" aria-label="Golden Axe game view" tabindex="0"></canvas>
+        <div id="loading" class="loading">Loading game data…</div>
         <div id="start-screen" class="overlay menu-overlay" hidden>
           <div id="mode-menu" class="original-menu">
             <img class="original-logo" src="./assets/ui/logo.png" alt="Golden Axe" width="224" height="32">
-            <div class="player-count" aria-label="Počet hráčů">
+            <div class="player-count" aria-label="Number of players">
               <button data-players="1" class="selected" aria-pressed="true">1 Player</button>
-              <button data-players="2" aria-pressed="false" title="Společná klávesnice; port podle původního kódu.">2 Players</button>
+              <button data-players="2" aria-pressed="false" title="Shared keyboard; based on the original game code.">2 Players</button>
             </div>
             <div class="menu-caption">CHOOSE GAME TYPE</div>
-            <div class="mode-options" aria-label="Původní herní režim">
+            <div class="mode-options" aria-label="Original game mode">
               <button data-mode="arcade" class="selected" aria-pressed="true"><span>›</span> Arcade</button>
               <button data-mode="beginner" aria-pressed="false"><span>›</span> Beginner</button>
               <button data-mode="duel" aria-pressed="false"><span>›</span> The Duel</button>
               <button id="open-options"><span>›</span> Options</button>
             </div>
-            <button id="start" class="primary">Vybrat hrdinu <span>→</span></button>
-            <button data-open-controls class="menu-help">Ovládání a kombinace</button>
-            <p class="scope">Pracovní rekonstrukce · shoda s originálem se ověřuje</p>
-            <p id="two-player-note" class="scope" hidden>Dva hráči · vstupy vyber v Options · původní 2P se ještě porovnává</p>
+            <button id="start" class="primary">Choose a hero <span>→</span></button>
+            <button data-open-controls class="menu-help">Controls and combos</button>
+            <p class="scope">Web reconstruction · fidelity checks are ongoing</p>
+            <p id="two-player-note" class="scope" hidden>Two players · choose input devices in Options · original co-op behavior is still being checked</p>
           </div>
           <div id="options-menu" class="pause-card" hidden>
             <div class="menu-caption">OPTIONS</div>
             <div class="life-meter"><span>Life Meter</span><div><button data-health-bars="3" class="selected" aria-pressed="true">***</button><button data-health-bars="4" aria-pressed="false">****</button><button data-health-bars="5" aria-pressed="false">*****</button></div></div>
-            <div class="device-options"><label>Player 1 <select data-device-player="0" aria-label="Ovládání hráče 1"></select></label><label>Player 2 <select data-device-player="1" aria-label="Ovládání hráče 2"></select></label></div>
-            <p class="scope">Hráči používají odlišné vstupy. Keyboard znamená QWE / A·D / ZXC; Keypad numerickou klávesnici.</p>
-            <button data-open-controls class="secondary">Ovládání obou hráčů a kombinace</button>
-            <p id="device-status" class="scope">Joystick 1/2 používá první/druhý připojený gamepad.</p>
-            <div class="device-calibration"><button data-calibrate-port="0" class="secondary">Kalibrace Joystick 1</button><button data-calibrate-port="1" class="secondary">Kalibrace Joystick 2</button></div>
-            <div id="calibration-panel" class="overlay" role="dialog" aria-modal="true" aria-labelledby="calibration-prompt" hidden><div class="pause-card"><div class="menu-caption">JOYSTICK CALIBRATION</div><p id="calibration-prompt" role="status"></p><p>Polohu potvrď tlačítkem gamepadu, Esc nebo tlačítkem níže.</p><button id="calibration-measure" class="secondary">Změřit polohu</button><button id="calibration-cancel" class="menu-back">Zrušit</button></div></div>
-            <div class="device-calibration"><button data-toggle-effects class="secondary">Zvuky: zapnuto · F2</button><button data-toggle-music class="secondary">Hudba: zapnuto · F3</button></div>
-            <button data-toggle-music-edition class="secondary" aria-pressed="false">Hudba: původní · MUSIC</button><p data-music-edition-status class="scope" role="status" hidden></p>
+            <div class="device-options"><label>Player 1 <select data-device-player="0" aria-label="Player 1 controls"></select></label><label>Player 2 <select data-device-player="1" aria-label="Player 2 controls"></select></label></div>
+            <p class="scope">Players use separate input devices. Keyboard means QWE / A·D / ZXC; Keypad means the numeric keypad.</p>
+            <button data-open-controls class="secondary">Both players’ controls and combos</button>
+            <p id="device-status" class="scope">Joystick 1/2 uses the first/second connected gamepad.</p>
+            <div class="device-calibration"><button data-calibrate-port="0" class="secondary">Calibrate Joystick 1</button><button data-calibrate-port="1" class="secondary">Calibrate Joystick 2</button></div>
+            <div id="calibration-panel" class="overlay" role="dialog" aria-modal="true" aria-labelledby="calibration-prompt" hidden><div class="pause-card"><div class="menu-caption">JOYSTICK CALIBRATION</div><p id="calibration-prompt" role="status"></p><p>Confirm each position with a gamepad button, Esc, or the button below.</p><button id="calibration-measure" class="secondary">Measure position</button><button id="calibration-cancel" class="menu-back">Cancel</button></div></div>
+            <div class="device-calibration"><button data-toggle-effects class="secondary">Effects: on · F2</button><button data-toggle-music class="secondary">Music: on · F3</button></div>
+            <button data-toggle-music-edition class="secondary" aria-pressed="true">Music: remastered · MUSIC</button><p data-music-edition-status class="scope" role="status" hidden></p>
+            <button data-toggle-effects-edition class="secondary" aria-pressed="true">Sound effects: Remastered</button><p data-effects-edition-status class="scope" role="status" hidden></p>
             <button id="open-sound-test" class="secondary">Sound Test</button>
-            <button id="mouse-lock" class="secondary">Zachytit myš</button>
-            <button id="options-fullscreen" class="secondary">Celá obrazovka</button>
-            <button id="options-back" class="menu-back">← Zpět</button>
+            <button id="mouse-lock" class="secondary">Capture mouse</button>
+            <button id="options-fullscreen" class="secondary">Fullscreen</button>
+            <button id="options-back" class="menu-back">← Back</button>
           </div>
-          <div id="sound-test-menu" class="pause-card" hidden><div class="menu-caption">SOUND TEST</div><div id="sound-test-tracks" class="sound-test-tracks"></div><div class="sound-effect-row"><span>Sound Effect</span><button id="sound-effect-prev" aria-label="Předchozí zvuk">−</button><output id="sound-effect-number">1</output><button id="sound-effect-next" aria-label="Další zvuk">+</button></div><button id="sound-test-exit" class="secondary">Exit</button></div>
+          <div id="sound-test-menu" class="pause-card" hidden><div class="menu-caption">SOUND TEST</div><div id="sound-test-tracks" class="sound-test-tracks"></div><div class="sound-effect-row"><span>Sound Effect</span><button id="sound-effect-prev" aria-label="Previous sound">−</button><output id="sound-effect-number">1</output><button id="sound-effect-next" aria-label="Next sound">+</button></div><button id="sound-test-exit" class="secondary">Exit</button></div>
         </div>
         <div id="pause-screen" class="overlay" hidden>
           <div class="pause-card">
             <div class="eyebrow">GOLDEN AXE</div>
-            <h2>Hra pozastavena</h2>
-            <button id="resume" class="primary">Pokračovat <span>→</span></button>
-            <button data-open-controls class="secondary">Ovládání a bojové kombinace</button>
-            <button id="restart" class="secondary">Začít znovu</button>
-            <button data-open-level class="secondary">Vybrat úroveň</button>
-            <button data-open-hd class="secondary" aria-pressed="true">HD → originál</button>
-            <button data-toggle-music-edition class="secondary" aria-pressed="false">Hudba: původní · MUSIC</button><p data-music-edition-status class="scope" role="status" hidden></p>
-            <p id="graphics-coverage" class="scope">HD grafika se doplňuje.</p>
-            <div class="cheat-actions"><button data-open-map class="secondary">MAP</button><button data-toggle-god class="secondary" aria-pressed="false">IDDQD: vypnuto</button></div>
-            <button data-return-menu class="menu-back">Hlavní menu</button>
-            <p>Vysoký schod ve stage 4 vyžaduje skok z běhu. Přehled výše ukáže aktuální klávesy obou hráčů.</p>
+            <h2>Game paused</h2>
+            <button id="resume" class="primary">Resume <span>→</span></button>
+            <button data-open-controls class="secondary">Controls and combat combos</button>
+            <button id="restart" class="secondary">Restart game</button>
+            <button data-open-level class="secondary">Select level</button>
+            <button data-open-hd class="secondary" aria-pressed="true">HD → original</button>
+            <button data-toggle-music-edition class="secondary" aria-pressed="true">Music: remastered · MUSIC</button><p data-music-edition-status class="scope" role="status" hidden></p>
+            <button data-toggle-effects-edition class="secondary" aria-pressed="true">Sound effects: Remastered</button><p data-effects-edition-status class="scope" role="status" hidden></p>
+            <p id="graphics-coverage" class="scope">HD graphics are being completed.</p>
+            <div class="cheat-actions"><button data-open-map class="secondary">MAP</button><button data-toggle-god class="secondary" aria-pressed="false">IDDQD: off</button></div>
+            <button data-return-menu class="menu-back">Main menu</button>
+            <p>The high step in stage 4 requires a running jump. The guide above shows both players’ current controls.</p>
           </div>
         </div>
         <div id="result-screen" class="overlay" hidden>
           <div class="pause-card">
             <div class="eyebrow">GOLDEN AXE</div>
-            <h2 id="result-title">Konec hry</h2>
+            <h2 id="result-title">Game over</h2>
             <p id="result-detail"></p>
-            <button id="continue" class="primary" hidden>Pokračovat <span>→</span></button>
-            <button id="decline" class="secondary" hidden>Ukončit hru</button>
-            <button id="play-again" class="secondary">Hrát znovu</button>
-            <button data-return-menu class="menu-back">Hlavní menu</button>
+            <button id="continue" class="primary" hidden>Continue <span>→</span></button>
+            <button id="decline" class="secondary" hidden>End game</button>
+            <button id="play-again" class="secondary">Play again</button>
+            <button data-return-menu class="menu-back">Main menu</button>
           </div>
         </div>
       </div>
       <div id="character-menu" class="character-menu selection-controls" hidden>
         <div class="selection-player" data-selection-player="0">
           <div id="character-player" class="character-player" aria-live="polite">PLAYER 1</div>
-          <div class="selection-row"><button data-select-rotate="-1" data-select-player="0" class="selection-arrow" aria-label="Hráč 1 otočit doleva">←</button><div class="character-options" aria-label="Hráč 1 vyber hrdinu"><button data-character="dwarf" aria-pressed="false">Gilius</button><button data-character="hero" class="selected" aria-pressed="true">Axe Battler</button><button data-character="amazon" aria-pressed="false">Tyris</button></div><button data-select-rotate="1" data-select-player="0" class="selection-arrow" aria-label="Hráč 1 otočit doprava">→</button><button id="launch" class="primary">Vybrat <span>✓</span></button></div>
+          <div class="selection-row"><button data-select-rotate="-1" data-select-player="0" class="selection-arrow" aria-label="Player 1 rotate left">←</button><div class="character-options" aria-label="Player 1 choose a hero"><button data-character="dwarf" aria-pressed="false">Gilius</button><button data-character="hero" class="selected" aria-pressed="true">Axe Battler</button><button data-character="amazon" aria-pressed="false">Tyris</button></div><button data-select-rotate="1" data-select-player="0" class="selection-arrow" aria-label="Player 1 rotate right">→</button><button id="launch" class="primary">Select <span>✓</span></button></div>
         </div>
         <div class="selection-player" data-selection-player="1" hidden>
           <div id="character-player2" class="character-player" aria-live="polite">PLAYER 2</div>
-          <div class="selection-row"><button data-select-rotate="-1" data-select-player="1" class="selection-arrow" aria-label="Hráč 2 otočit doleva">←</button><div class="character-options" aria-label="Hráč 2 vyber hrdinu"><button data-character2="dwarf" aria-pressed="false">Gilius</button><button data-character2="hero" class="selected" aria-pressed="true">Axe Battler</button><button data-character2="amazon" aria-pressed="false">Tyris</button></div><button data-select-rotate="1" data-select-player="1" class="selection-arrow" aria-label="Hráč 2 otočit doprava">→</button><button id="launch2" class="primary">Vybrat <span>✓</span></button></div>
+          <div class="selection-row"><button data-select-rotate="-1" data-select-player="1" class="selection-arrow" aria-label="Player 2 rotate left">←</button><div class="character-options" aria-label="Player 2 choose a hero"><button data-character2="dwarf" aria-pressed="false">Gilius</button><button data-character2="hero" class="selected" aria-pressed="true">Axe Battler</button><button data-character2="amazon" aria-pressed="false">Tyris</button></div><button data-select-rotate="1" data-select-player="1" class="selection-arrow" aria-label="Player 2 rotate right">→</button><button id="launch2" class="primary">Select <span>✓</span></button></div>
         </div>
-        <button id="menu-back" class="menu-back">← Zpět</button>
+        <button id="menu-back" class="menu-back">← Back</button>
       </div>
     </section>
-    <section class="touch-controls" aria-label="Dotykové ovládání">
-      <div class="dpad" aria-label="Pohyb v obou osách">
-        <button data-hold="up" class="up" aria-label="Pohyb dozadu">▲</button>
-        <button data-hold="left" class="left" aria-label="Pohyb vlevo">◀</button>
+    <section class="touch-controls" aria-label="Touch controls">
+      <div class="dpad" aria-label="Movement in both axes">
+        <button data-hold="up" class="up" aria-label="Move up into the scene">▲</button>
+        <button data-hold="left" class="left" aria-label="Move left">◀</button>
         <span class="dpad-center"></span>
-        <button data-hold="right" class="right" aria-label="Pohyb vpravo">▶</button>
-        <button data-hold="down" class="down" aria-label="Pohyb dopředu">▼</button>
+        <button data-hold="right" class="right" aria-label="Move right">▶</button>
+        <button data-hold="down" class="down" aria-label="Move down toward the viewer">▼</button>
       </div>
       <div class="touch-actions">
         <div class="small-actions">
-          <button data-hold="run" class="action-small action-run" aria-label="Držet pro běh">BĚH <span>»</span></button>
-          <button data-hold="jump" class="action-small">SKOK <span>↑</span></button>
-          <button data-hold="magic" class="action-small magic">MAGIE <span>✦</span></button>
+          <button data-hold="run" class="action-small action-run" aria-label="Hold to run">RUN <span>»</span></button>
+          <button data-hold="jump" class="action-small">JUMP <span>↑</span></button>
+          <button data-hold="magic" class="action-small magic">MAGIC <span>✦</span></button>
         </div>
-        <button id="gesture-area" class="attack-pad" aria-label="Tapnutí útok, swipe nahoru skok">ÚTOK <span>↗</span><small>tap · ↑ skok</small></button>
+        <button id="gesture-area" class="attack-pad" aria-label="Tap to attack, swipe up to jump">ATTACK <span>↗</span><small>tap · ↑ jump</small></button>
       </div>
     </section>
     <footer>
-      <span style="display:flex;flex-direction:column;gap:2px"><span id="status">Původní data</span><span data-music-edition-status role="status" hidden></span><span aria-label="Identita sestavení"><a id="build-repository">GitHub</a> · <a id="build-commit">Neověřené sestavení</a></span></span>
-      <span class="desktop-hint">← ↑ ↓ → <b>POHYB</b> &nbsp; J <b>ÚTOK</b> &nbsp; K <b>SKOK</b> &nbsp; R <b>BĚH</b> &nbsp; L <b>MAGIE</b></span>
-      <button data-open-controls class="footer-help">Ovládání</button>
-      <button id="about-toggle" aria-expanded="false" aria-controls="about">O této verzi ↗</button>
+      <span style="display:flex;flex-direction:column;gap:2px"><span id="status">Original game data</span><span data-music-edition-status role="status" hidden></span><span data-effects-edition-status role="status" hidden></span><span aria-label="Build identity"><a id="build-repository">GitHub</a> · <a id="build-commit">Unverified build</a></span></span>
+      <span class="desktop-hint">← ↑ ↓ → <b>MOVE</b> &nbsp; J <b>ATTACK</b> &nbsp; K <b>JUMP</b> &nbsp; R <b>RUN</b> &nbsp; L <b>MAGIC</b></span>
+      <button data-open-controls class="footer-help">Controls</button>
+      <button id="about-toggle" aria-expanded="false" aria-controls="about">About this version ↗</button>
     </footer>
     <aside id="about" hidden>
-      <p>Samostatná webová rekonstrukce z původních herních dat a analýzy DOS verze Golden Axe. Nejde o emulátor. Tato pracovní verze není dokončeným remasterem; přesné shodě mechanik a celému průchodu se věnuje probíhající ověřování.</p>
-      <p>Malovaná HD grafika je výchozí; nepokryté snímky a varianty zatím používají originál. Přepínač HD / originál funguje i během hry. Hudba a zvukové efekty zůstávají výchozí. Cheatem MUSIC nebo tlačítkem v Options a pauze přepneš remasterovanou hudbu; F3 hudbu zapíná a vypíná. Commit se zobrazuje pouze z metadat čistého CI sestavení, místní pracovní snapshot nemá ověřený build commit.</p>
-      <p>Pozdní Duel: barevná varianta bosse odpovídá současnému portu; shoda s DOS originálem není ověřená.</p>
+      <p>A standalone web reconstruction based on the original game data and analysis of Golden Axe for DOS. No emulator is used. Fidelity checks for mechanics and complete playthroughs are ongoing.</p>
+      <p>Painted HD graphics and remastered audio are the defaults. HD/original graphics can be switched during play. MUSIC or the Options/pause button selects the music edition; F3 toggles music on/off. The build commit is shown only from verified clean CI build metadata; a local working snapshot has no verified build commit.</p>
+      <p>Late Duel rounds: the boss color variant follows the current port; equivalence to the original DOS game has not been verified.</p>
     </aside>
   </main>
   <script type="module" src="./js/app.js"></script>

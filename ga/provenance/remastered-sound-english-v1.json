@@ -1,0 +1,593 @@
+{
+  "status": "verified-private-preview-unreleased",
+  "date": "2026-11-12",
+  "baseRelease": "ga-v0.3.0",
+  "runtimeSnapshot": "e75cbeb2683a9eef3099c5f02587b90beaa01530144822137c871c0e7ea6fdc5",
+  "runtimeFiles": 634,
+  "defaults": {
+    "graphics": "hd",
+    "music": "remaster",
+    "effects": "remaster"
+  },
+  "language": "en",
+  "restoredEffects": 15,
+  "restoredWAVBytes": 555552,
+  "originalEffectsPrewarmedForImmediateFallback": true,
+  "originalEffectsUnchanged": true,
+  "musicAssetsUnchanged": true,
+  "paidToolsOrDownloads": false,
+  "nodeTestsPassed": 234,
+  "targetedAudioNodeTestsPassed": 39,
+  "publicHTTPSBrowser": {
+    "scope": "Actual host-muted Chrome, unmuted application, original and reconstructed effect buffers, post-master PCM. Direct audio API fixtures test playback; SoundTest buttons separately test UI dispatch. Not subjective listening or physical mobile/native DOS validation.",
+    "checks": [
+      "unlock preloads the tiny native fallback bank once so later hits never wait for an original download",
+      "fresh English session defaults to actual remastered title music and prepares all fifteen effects without a cheat",
+      "actual SoundTest effect button dispatches the default remastered buffer",
+      "all fifteen source-derived effects use the remastered PCM and produce finite nonzero post-master signal",
+      "magic effect10 remains audible across multiple native-duration loop wraps",
+      "F2 effect gate mutes signal without replacing the native loop cursor or changing F3 music state",
+      "switching an active paused magic loop between original and remastered preserves its native event start and pause",
+      "pause suspends the same shared context and retains the current effect source",
+      "a new pickup replaces the magic loop instead of mixing two effect cursors",
+      "original effects remain selectable and audible independently of remastered music",
+      "explicit magic stop clears the remastered source with no late restart",
+      "failed 50ms effect4 uses its prewarmed original without a hit-time request, while other ready effects remain remastered"
+    ],
+    "effects": [
+      {
+        "id": 0,
+        "peak": 0.3425244688987732,
+        "rms": 0.18572999457108363,
+        "muted": false,
+        "master": 1,
+        "context": "running",
+        "bus": "master",
+        "effectsGain": 1
+      },
+      {
+        "id": 1,
+        "peak": 0.36417296528816223,
+        "rms": 0.18306100132129405,
+        "muted": false,
+        "master": 1,
+        "context": "running",
+        "bus": "master",
+        "effectsGain": 1
+      },
+      {
+        "id": 2,
+        "peak": 0.40309271216392517,
+        "rms": 0.19726677795246997,
+        "muted": false,
+        "master": 1,
+        "context": "running",
+        "bus": "master",
+        "effectsGain": 1
+      },
+      {
+        "id": 3,
+        "peak": 0.39903268218040466,
+        "rms": 0.20351235163386416,
+        "muted": false,
+        "master": 1,
+        "context": "running",
+        "bus": "master",
+        "effectsGain": 1
+      },
+      {
+        "id": 4,
+        "peak": 0.33596405386924744,
+        "rms": 0.1846498670431367,
+        "muted": false,
+        "master": 1,
+        "context": "running",
+        "bus": "master",
+        "effectsGain": 1
+      },
+      {
+        "id": 5,
+        "peak": 0.4005749225616455,
+        "rms": 0.18836238551624687,
+        "muted": false,
+        "master": 1,
+        "context": "running",
+        "bus": "master",
+        "effectsGain": 1
+      },
+      {
+        "id": 6,
+        "peak": 0.34503084421157837,
+        "rms": 0.20590000051762755,
+        "muted": false,
+        "master": 1,
+        "context": "running",
+        "bus": "master",
+        "effectsGain": 1
+      },
+      {
+        "id": 7,
+        "peak": 0.36422714591026306,
+        "rms": 0.19579386212545768,
+        "muted": false,
+        "master": 1,
+        "context": "running",
+        "bus": "master",
+        "effectsGain": 1
+      },
+      {
+        "id": 8,
+        "peak": 0.42052751779556274,
+        "rms": 0.194548947361359,
+        "muted": false,
+        "master": 1,
+        "context": "running",
+        "bus": "master",
+        "effectsGain": 1
+      },
+      {
+        "id": 9,
+        "peak": 0.4596900939941406,
+        "rms": 0.1899514057153983,
+        "muted": false,
+        "master": 1,
+        "context": "running",
+        "bus": "master",
+        "effectsGain": 1
+      },
+      {
+        "id": 10,
+        "peak": 0.3494458794593811,
+        "rms": 0.19008732868100767,
+        "muted": false,
+        "master": 1,
+        "context": "running",
+        "bus": "master",
+        "effectsGain": 1
+      },
+      {
+        "id": 11,
+        "peak": 0.38370367884635925,
+        "rms": 0.20020517522885337,
+        "muted": false,
+        "master": 1,
+        "context": "running",
+        "bus": "master",
+        "effectsGain": 1
+      },
+      {
+        "id": 12,
+        "peak": 0.4685196578502655,
+        "rms": 0.21523300615232122,
+        "muted": false,
+        "master": 1,
+        "context": "running",
+        "bus": "master",
+        "effectsGain": 1
+      },
+      {
+        "id": 13,
+        "peak": 0.42564213275909424,
+        "rms": 0.18799727202685415,
+        "muted": false,
+        "master": 1,
+        "context": "running",
+        "bus": "master",
+        "effectsGain": 1
+      },
+      {
+        "id": 14,
+        "peak": 0.4383789002895355,
+        "rms": 0.17861386255912096,
+        "muted": false,
+        "master": 1,
+        "context": "running",
+        "bus": "master",
+        "effectsGain": 1
+      }
+    ],
+    "errors": [],
+    "build": {
+      "repository": "https://github.com/michalmedvecky/pre2-web",
+      "commit": null,
+      "buildSource": "dirty-snapshot",
+      "dirty": true,
+      "sourceSnapshot": "e75cbeb2683a9eef3099c5f02587b90beaa01530144822137c871c0e7ea6fdc5"
+    },
+    "f2MutedMaster": {
+      "peak": 0.00042724609375,
+      "rms": 0.00031214009501636997,
+      "muted": false,
+      "master": 1,
+      "context": "running",
+      "bus": "master",
+      "effectsGain": 0
+    },
+    "pass": true,
+    "browserClosed": true,
+    "audioClosed": true
+  },
+  "offlineEffects": {
+    "scope": "Actual Chrome WAV decode and offline rendered signal at48000/44100Hz; all fifteen reconstructed effects, three loop periods and native one-shot stop. No subjective listening or device timing claim.",
+    "cases": [
+      {
+        "id": 0,
+        "sampleRate": 48000,
+        "decodedFrames": 40268,
+        "decodedDuration": 0.8389166666666666,
+        "nativeDuration": 0.8388996816914771,
+        "loopEnd": 0.8388996816914771,
+        "peak": 0.383758544921875,
+        "maximumSeamDelta": 0.0010074931778945029,
+        "stoppedTailPeak": 0
+      },
+      {
+        "id": 1,
+        "sampleRate": 48000,
+        "decodedFrames": 39447,
+        "decodedDuration": 0.8218125,
+        "nativeDuration": 0.8218025414396127,
+        "loopEnd": 0.8218025414396127,
+        "peak": 0.357086181640625,
+        "maximumSeamDelta": 0.0011861955281347036,
+        "stoppedTailPeak": 0
+      },
+      {
+        "id": 2,
+        "sampleRate": 48000,
+        "decodedFrames": 7003,
+        "decodedDuration": 0.14589583333333334,
+        "nativeDuration": 0.14589559681590905,
+        "loopEnd": 0.14589559681590905,
+        "peak": 0.39532470703125,
+        "maximumSeamDelta": 0.00030517578125,
+        "stoppedTailPeak": 0
+      },
+      {
+        "id": 3,
+        "sampleRate": 48000,
+        "decodedFrames": 9028,
+        "decodedDuration": 0.18808333333333332,
+        "nativeDuration": 0.18806854277050777,
+        "loopEnd": 0.18806854277050777,
+        "peak": 0.42169189453125,
+        "maximumSeamDelta": 0.0010998481884598732,
+        "stoppedTailPeak": 0
+      },
+      {
+        "id": 4,
+        "sampleRate": 48000,
+        "decodedFrames": 2408,
+        "decodedDuration": 0.050166666666666665,
+        "nativeDuration": 0.05015161140546874,
+        "loopEnd": 0.05015161140546874,
+        "peak": 0.331573486328125,
+        "maximumSeamDelta": 0.0029202343430370092,
+        "stoppedTailPeak": 0
+      },
+      {
+        "id": 5,
+        "sampleRate": 48000,
+        "decodedFrames": 4870,
+        "decodedDuration": 0.10145833333333333,
+        "nativeDuration": 0.10144303216106176,
+        "loopEnd": 0.10144303216106176,
+        "peak": 0.399871826171875,
+        "maximumSeamDelta": 0.0013257371028885245,
+        "stoppedTailPeak": 0
+      },
+      {
+        "id": 6,
+        "sampleRate": 48000,
+        "decodedFrames": 20079,
+        "decodedDuration": 0.4183125,
+        "nativeDuration": 0.41831003149561424,
+        "loopEnd": 0.41831003149561424,
+        "peak": 0.417510986328125,
+        "maximumSeamDelta": 0.00241429777815938,
+        "stoppedTailPeak": 0
+      },
+      {
+        "id": 7,
+        "sampleRate": 48000,
+        "decodedFrames": 8481,
+        "decodedDuration": 0.1766875,
+        "nativeDuration": 0.17667044926926487,
+        "loopEnd": 0.17667044926926487,
+        "peak": 0.362335205078125,
+        "maximumSeamDelta": 0.0012765763094648719,
+        "stoppedTailPeak": 0
+      },
+      {
+        "id": 8,
+        "sampleRate": 48000,
+        "decodedFrames": 12693,
+        "decodedDuration": 0.2644375,
+        "nativeDuration": 0.26443576922883516,
+        "loopEnd": 0.26443576922883516,
+        "peak": 0.464508056640625,
+        "maximumSeamDelta": 0.0011898464290425181,
+        "stoppedTailPeak": 0
+      },
+      {
+        "id": 9,
+        "sampleRate": 48000,
+        "decodedFrames": 9465,
+        "decodedDuration": 0.1971875,
+        "nativeDuration": 0.1971870175715021,
+        "loopEnd": 0.1971870175715021,
+        "peak": 0.457611083984375,
+        "maximumSeamDelta": 0.001173707190901041,
+        "stoppedTailPeak": 0
+      },
+      {
+        "id": 10,
+        "sampleRate": 48000,
+        "decodedFrames": 33429,
+        "decodedDuration": 0.6964375,
+        "nativeDuration": 0.6964235129259408,
+        "loopEnd": 0.6964235129259408,
+        "peak": 0.3644215166568756,
+        "maximumSeamDelta": 0.002578225452452898,
+        "stoppedTailPeak": 0
+      },
+      {
+        "id": 11,
+        "sampleRate": 48000,
+        "decodedFrames": 8317,
+        "decodedDuration": 0.17327083333333335,
+        "nativeDuration": 0.173251021218892,
+        "loopEnd": 0.173251021218892,
+        "peak": 0.392181396484375,
+        "maximumSeamDelta": 0.0016396227874793112,
+        "stoppedTailPeak": 0
+      },
+      {
+        "id": 12,
+        "sampleRate": 48000,
+        "decodedFrames": 32663,
+        "decodedDuration": 0.6804791666666666,
+        "nativeDuration": 0.6804661820242008,
+        "loopEnd": 0.6804661820242008,
+        "peak": 0.4686279296875,
+        "maximumSeamDelta": 0.0009364295983687043,
+        "stoppedTailPeak": 0
+      },
+      {
+        "id": 13,
+        "sampleRate": 48000,
+        "decodedFrames": 27082,
+        "decodedDuration": 0.5642083333333333,
+        "nativeDuration": 0.5642056283115233,
+        "loopEnd": 0.5642056283115233,
+        "peak": 0.439971923828125,
+        "maximumSeamDelta": 0.0010260900598950684,
+        "stoppedTailPeak": 0
+      },
+      {
+        "id": 14,
+        "sampleRate": 48000,
+        "decodedFrames": 22213,
+        "decodedDuration": 0.46277083333333335,
+        "nativeDuration": 0.46276259615046156,
+        "loopEnd": 0.46276259615046156,
+        "peak": 0.43548583984375,
+        "maximumSeamDelta": 0.00042724609375,
+        "stoppedTailPeak": 0
+      },
+      {
+        "id": 0,
+        "sampleRate": 44100,
+        "decodedFrames": 36996,
+        "decodedDuration": 0.8389115646258504,
+        "nativeDuration": 0.8388996816914771,
+        "loopEnd": 0.8388996816914771,
+        "peak": 0.38504329323768616,
+        "maximumSeamDelta": 0.0010780629236251116,
+        "stoppedTailPeak": 0
+      },
+      {
+        "id": 1,
+        "sampleRate": 44100,
+        "decodedFrames": 36241,
+        "decodedDuration": 0.8217913832199546,
+        "nativeDuration": 0.8218025414396127,
+        "loopEnd": 0.8217913832199546,
+        "peak": 0.3564012050628662,
+        "maximumSeamDelta": 0.0013065033126622438,
+        "stoppedTailPeak": 0
+      },
+      {
+        "id": 2,
+        "sampleRate": 44100,
+        "decodedFrames": 6434,
+        "decodedDuration": 0.1458956916099773,
+        "nativeDuration": 0.14589559681590905,
+        "loopEnd": 0.14589559681590905,
+        "peak": 0.3951575756072998,
+        "maximumSeamDelta": 0.00030748744757147506,
+        "stoppedTailPeak": 0
+      },
+      {
+        "id": 3,
+        "sampleRate": 44100,
+        "decodedFrames": 8294,
+        "decodedDuration": 0.18807256235827666,
+        "nativeDuration": 0.18806854277050777,
+        "loopEnd": 0.18806854277050777,
+        "peak": 0.41983968019485474,
+        "maximumSeamDelta": 0.001271639484912157,
+        "stoppedTailPeak": 0
+      },
+      {
+        "id": 4,
+        "sampleRate": 44100,
+        "decodedFrames": 2212,
+        "decodedDuration": 0.05015873015873016,
+        "nativeDuration": 0.05015161140546874,
+        "loopEnd": 0.05015161140546874,
+        "peak": 0.33177855610847473,
+        "maximumSeamDelta": 0.003250153735280037,
+        "stoppedTailPeak": 0
+      },
+      {
+        "id": 5,
+        "sampleRate": 44100,
+        "decodedFrames": 4474,
+        "decodedDuration": 0.10145124716553287,
+        "nativeDuration": 0.10144303216106176,
+        "loopEnd": 0.10144303216106176,
+        "peak": 0.4006554186344147,
+        "maximumSeamDelta": 0.0015394038055092096,
+        "stoppedTailPeak": 0
+      },
+      {
+        "id": 6,
+        "sampleRate": 44100,
+        "decodedFrames": 18447,
+        "decodedDuration": 0.41829931972789114,
+        "nativeDuration": 0.41831003149561424,
+        "loopEnd": 0.41829931972789114,
+        "peak": 0.417074978351593,
+        "maximumSeamDelta": 0.0026000605430454016,
+        "stoppedTailPeak": 0
+      },
+      {
+        "id": 7,
+        "sampleRate": 44100,
+        "decodedFrames": 7791,
+        "decodedDuration": 0.17666666666666667,
+        "nativeDuration": 0.17667044926926487,
+        "loopEnd": 0.17666666666666667,
+        "peak": 0.36084967851638794,
+        "maximumSeamDelta": 0.0012970874086022377,
+        "stoppedTailPeak": 0
+      },
+      {
+        "id": 8,
+        "sampleRate": 44100,
+        "decodedFrames": 11661,
+        "decodedDuration": 0.264421768707483,
+        "nativeDuration": 0.26443576922883516,
+        "loopEnd": 0.264421768707483,
+        "peak": 0.46289628744125366,
+        "maximumSeamDelta": 0.0012915835832245648,
+        "stoppedTailPeak": 0
+      },
+      {
+        "id": 9,
+        "sampleRate": 44100,
+        "decodedFrames": 8695,
+        "decodedDuration": 0.19716553287981858,
+        "nativeDuration": 0.1971870175715021,
+        "loopEnd": 0.19716553287981858,
+        "peak": 0.4558272063732147,
+        "maximumSeamDelta": 0.0013984855613671243,
+        "stoppedTailPeak": 0
+      },
+      {
+        "id": 10,
+        "sampleRate": 44100,
+        "decodedFrames": 30712,
+        "decodedDuration": 0.6964172335600907,
+        "nativeDuration": 0.6964235129259408,
+        "loopEnd": 0.6964172335600907,
+        "peak": 0.3649650812149048,
+        "maximumSeamDelta": 0.00259584654122591,
+        "stoppedTailPeak": 0
+      },
+      {
+        "id": 11,
+        "sampleRate": 44100,
+        "decodedFrames": 7641,
+        "decodedDuration": 0.17326530612244898,
+        "nativeDuration": 0.173251021218892,
+        "loopEnd": 0.173251021218892,
+        "peak": 0.3936924636363983,
+        "maximumSeamDelta": 0.002147163962945342,
+        "stoppedTailPeak": 0
+      },
+      {
+        "id": 12,
+        "sampleRate": 44100,
+        "decodedFrames": 30009,
+        "decodedDuration": 0.6804761904761905,
+        "nativeDuration": 0.6804661820242008,
+        "loopEnd": 0.6804661820242008,
+        "peak": 0.46925151348114014,
+        "maximumSeamDelta": 0.0013016813900321722,
+        "stoppedTailPeak": 0
+      },
+      {
+        "id": 13,
+        "sampleRate": 44100,
+        "decodedFrames": 24881,
+        "decodedDuration": 0.5641950113378685,
+        "nativeDuration": 0.5642056283115233,
+        "loopEnd": 0.5641950113378685,
+        "peak": 0.43972110748291016,
+        "maximumSeamDelta": 0.0010262479772791266,
+        "stoppedTailPeak": 0
+      },
+      {
+        "id": 14,
+        "sampleRate": 44100,
+        "decodedFrames": 20408,
+        "decodedDuration": 0.46276643990929706,
+        "nativeDuration": 0.46276259615046156,
+        "loopEnd": 0.46276259615046156,
+        "peak": 0.43558627367019653,
+        "maximumSeamDelta": 0.00045847809815313667,
+        "stoppedTailPeak": 0
+      }
+    ],
+    "pass": true,
+    "browserClosed": true,
+    "audioClosed": true
+  },
+  "englishUI": {
+    "scope": "Actual automated Chrome, English live UI/aria/status checks; emulated touch is not physical Safari or screen-reader testing.",
+    "checks": [
+      "English document language, initial menu, hidden UI, titles and accessibility labels",
+      "English effects-edition control reports the default and both live selections",
+      "Disconnected-gamepad calibration instructions and status are English",
+      "MAP instructions, controls, feedback and god-mode status are English",
+      "LEVEL instructions, bonus-stage labels and cancel action are English",
+      "Duel round labels and full pause/help content are English",
+      "English touch UI, scrollable audio selector and guide fit 390x844",
+      "English touch UI, scrollable audio selector and guide fit 844x390",
+      "Actual unavailable game-data error uses English"
+    ],
+    "errors": [],
+    "pass": true,
+    "browserClosed": true,
+    "audioClosed": true
+  },
+  "englishControlsBrowserChecksPassed": 11,
+  "existingMusicBrowserChecksPassed": 10,
+  "nativeNginxDelivery": "PASS all15 WAV SHA/MIME/cache; native server not container",
+  "nodeAndHTTPSDelivery": "PASS all15 WAV SHA/MIME/cache",
+  "originalZIP": "950eb3ab07f4cd8100210235279423f82b1a2c3abbf987f65395c4c1e2232ccc",
+  "protectedNonGADiff": "aa202d826d7a9ad06205b68194153f9df17532916daec0a9e35d018ffeb40111",
+  "mechanics": "Only translated message/error literals in simulation/renderer; hashes differ. All6 existing complete world replay outcomes PASS.",
+  "limits": [
+    "Source-derived restoration cannot recover information absent from the one-bit recordings",
+    "No subjective full-catalog listening claim",
+    "No physical Safari/iOS/gamepad or new complete native DOS run",
+    "Historical evidence retains its original language"
+  ],
+  "reports": [
+    "sfx-remaster.md",
+    "remastered-audio-qa.md",
+    "english-ui.md"
+  ],
+  "newRelease": false,
+  "clusterDeployment": false,
+  "followup": {
+    "runtimeSnapshot": "4480a17d3e902ea14c1d30ed153fe218d490ed947f33aa7908020626d0d31f6c",
+    "change": "Expired mount native escape correction and mounting help",
+    "audioModulesAndAssetsUnchanged": true,
+    "evidence": "stage2-mount-recovery.json",
+    "allNodeTestsPassed": 242
+  }
+}

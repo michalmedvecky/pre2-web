@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "snapshotSHA256": "154f24aaeaac84995675c629e4d6eab0d8d53e2a821c901865055e40bb737078",
+  "snapshotSHA256": "961086660f77158f3d3e9b7980e6c40319147637efa3ed95b444dda5eff464ec",
   "excluded": [
     "build.json (injected per build)"
   ],
@@ -392,6 +392,70 @@
     "assets/audio/remaster/thief-e262537431a498b2.flac": {
       "sha256": "e262537431a498b2539557031f337ceec7eb40b49d1e4667279729baf451adb0",
       "size": 1915626
+    },
+    "assets/audio/remaster-effects/effect-0-b9274ddec075c953.wav": {
+      "sha256": "b9274ddec075c9539ff32437e44388ec346e40d2586750874e35b7d92d4ce814",
+      "size": 80580
+    },
+    "assets/audio/remaster-effects/effect-1-aac0f9f9cc007996.wav": {
+      "sha256": "aac0f9f9cc00799690e909ddc4a2e0c090652cc237b4c72cfd9ca537c6d139df",
+      "size": 78938
+    },
+    "assets/audio/remaster-effects/effect-10-b2b40faf1c036393.wav": {
+      "sha256": "b2b40faf1c03639346b9904acbe7fb4b8479e2c0a10d74d7d432dbe9b2c9d8b7",
+      "size": 66902
+    },
+    "assets/audio/remaster-effects/effect-11-ccf0da189eabaf16.wav": {
+      "sha256": "ccf0da189eabaf16ddbdcb708e3a41cdc260796f0594a668dce5159567454da1",
+      "size": 16678
+    },
+    "assets/audio/remaster-effects/effect-12-a115150e0fb74557.wav": {
+      "sha256": "a115150e0fb745575feffba5b07e5ea569061210c94e93115f9d78e810113161",
+      "size": 65370
+    },
+    "assets/audio/remaster-effects/effect-13-a194ed51857d5d0e.wav": {
+      "sha256": "a194ed51857d5d0e1c148216a4d1c10a32baea194447de04d72ef90a27006847",
+      "size": 54208
+    },
+    "assets/audio/remaster-effects/effect-14-34e41f2724c94a8d.wav": {
+      "sha256": "34e41f2724c94a8d163ec4e17d03541befab47ba7b516660cf9df8b81207483a",
+      "size": 44470
+    },
+    "assets/audio/remaster-effects/effect-2-c6a6bbdde7f493c7.wav": {
+      "sha256": "c6a6bbdde7f493c77ab621f0c7477d6cd71ed114b7e432171b262edfef7da7e3",
+      "size": 14050
+    },
+    "assets/audio/remaster-effects/effect-3-3c464f07fc0e5f27.wav": {
+      "sha256": "3c464f07fc0e5f27d4b807e1d1aa803b6f2a90288a654d659d7548e457d5b015",
+      "size": 18100
+    },
+    "assets/audio/remaster-effects/effect-4-36fe613deb74ef2f.wav": {
+      "sha256": "36fe613deb74ef2fba29903a41df421518bd82e677fb59472ed2af2c19f78e84",
+      "size": 4860
+    },
+    "assets/audio/remaster-effects/effect-5-7b28b797edca9142.wav": {
+      "sha256": "7b28b797edca91426e7e9c3589e467dac11470274173065f542a153913f179fb",
+      "size": 9784
+    },
+    "assets/audio/remaster-effects/effect-6-fb9a66a5ae0ca6d4.wav": {
+      "sha256": "fb9a66a5ae0ca6d46dda805ae892e37fab83b872d082ba90b46a1fb20da14f94",
+      "size": 40202
+    },
+    "assets/audio/remaster-effects/effect-7-ee971ef82d3ace9f.wav": {
+      "sha256": "ee971ef82d3ace9fc81fda76aa1388a8aeaf91cdbc20f1e59fb88ecdd8ef3e5e",
+      "size": 17006
+    },
+    "assets/audio/remaster-effects/effect-8-016c4e0a264e52a7.wav": {
+      "sha256": "016c4e0a264e52a7a49420cfa0b8b4c9f0565ecefa1b95026c419fbf03ebbcd0",
+      "size": 25430
+    },
+    "assets/audio/remaster-effects/effect-9-63909601d5ce6538.wav": {
+      "sha256": "63909601d5ce6538f5a2a189cdd860e6f32ba7b8510ad14794abffe23de46613",
+      "size": 18974
+    },
+    "assets/audio/remaster-effects/manifest.json": {
+      "sha256": "75ce453c7d8d4c743857277c2c61374eb262ed271755160508011cfc9ef36d3c",
+      "size": 7356
     },
     "assets/audio/sassa.flac": {
       "sha256": "d6ccbc1e5b0599d1cab9ea57e3540ccde0ede9dee13dffb1704cd3ea187db6ef",
@@ -2234,24 +2298,24 @@
       "size": 747
     },
     "hd-pilot.html": {
-      "sha256": "c3b9da56b67b646ab5a85216ff2c862f0643780a88efa607aa0bfbb92bf9d2e4",
-      "size": 5828
+      "sha256": "c750ea47b13cb7655fba667bf4257c10066be04db26164d598438cd534e728c6",
+      "size": 5812
     },
     "index.html": {
-      "sha256": "d6e65a809b594fb09680eda02536f21ba0f40df9b34a676fbff79bfe713c4c19",
-      "size": 12258
+      "sha256": "7d16a667966d301ea04239425e03d42739b6d04916513eed9236ecb823579904",
+      "size": 12413
     },
     "js/app.js": {
-      "sha256": "abac24db557fc0fb94d1be9c61f1a61ec20ff34343af3a1e92b486113f4075e8",
-      "size": 41961
+      "sha256": "335834000bde09deef6dc5d023f03125210dee4ae3cb0528dbecbc9388fe6a50",
+      "size": 43367
     },
     "js/audio.js": {
-      "sha256": "73cd3c8854d53ad7d0c046e19d48b9ca929bddfe9cf50614feedb42d5daa4090",
-      "size": 17248
+      "sha256": "8c20a1720952f836d826a4217b85bf1d5dca9891708f354a962d255eb03b3d79",
+      "size": 21809
     },
     "js/build-info.js": {
-      "sha256": "92489d725bec0102c8133632cdd9a6cd52cab4381fc891ebcf05274ed4bf5cb3",
-      "size": 2574
+      "sha256": "6508900278cc4ab643d9626a39935795802ce1b56baa32f0f7fd7d6a91a54c82",
+      "size": 2529
     },
     "js/character-select-data.js": {
       "sha256": "c4e2b9b7fd58576849f653601c8d097b53eb8b51e365416ca38d643a4aede9fb",
@@ -2262,8 +2326,8 @@
       "size": 3849
     },
     "js/controls-help.js": {
-      "sha256": "dcae16b61d8601f3baa741500be9523c62b809ba448ac86e19b049cb7903011f",
-      "size": 8532
+      "sha256": "4e9a8a4c81f59c72fc11212662c52bb36413db462db06a9055ad1855e83197db",
+      "size": 9771
     },
     "js/ending.js": {
       "sha256": "6a9558c82954eed92233c96a04d2e514cfa1a05755845d97aede09604c5bd8b3",
@@ -2334,8 +2398,8 @@
       "size": 4545
     },
     "js/hd-preview-overlay.js": {
-      "sha256": "b9d58130a4464d15982b8885c334d45d221773083f59cbb10c0587050d72d23c",
-      "size": 4054
+      "sha256": "13c0931a5b762dce62a8425f734acd0320bf4d6af0b58ebed4618f23d6dc305f",
+      "size": 4031
     },
     "js/hd-qa.js": {
       "sha256": "fc04f7c2b42bcf6eab0820fbe16f56829e1cb930a8891aa1325cfa7b2c13b6c7",
@@ -2350,8 +2414,8 @@
       "size": 700
     },
     "js/input.js": {
-      "sha256": "cc4760c794e9dd6f0d4ba7cfad2534f0dbda7eb4c3605574dda065fbecac2772",
-      "size": 9178
+      "sha256": "93782c42e512e5c4a4ec7539f59c0800a1d1b55024d73c468e9dd9b6ec5a3478",
+      "size": 10163
     },
     "js/interlude-data.js": {
       "sha256": "9a8a5c61fe1425b3423c4bc0028051483086fc8a069e8fed2b44b3f59bd8311b",
@@ -2378,8 +2442,8 @@
       "size": 6534
     },
     "js/level-overlay.js": {
-      "sha256": "f4cb014fecd1b40f84268e2b266c2cabc2da15385f030c5c1959839a708cb14b",
-      "size": 4919
+      "sha256": "eae1268fa6b653ba1ac5e64315a3c1346df42f3a0eebbc100528e162d691a83f",
+      "size": 4895
     },
     "js/logic-data.js": {
       "sha256": "1689a8402be5d88c7e94d256a4839f4f3c7991e1d3095b70c787819b41bd22ba",
@@ -2390,8 +2454,8 @@
       "size": 2446
     },
     "js/map-overlay.js": {
-      "sha256": "4c588323db0ca71fcd58be46b3e1095fcf6b685a53e98da82bfb7aebd86a377e",
-      "size": 9389
+      "sha256": "3abee3f5275bc258a27a8fec8396ae210e2cf26201d41271fbeccc326f8f88a8",
+      "size": 9315
     },
     "js/native-map-palette.js": {
       "sha256": "8d1e33b2ca94f062fe770563cab6343691bff6aa9236c8df7db74616b7cefdb0",
@@ -2445,17 +2509,21 @@
       "sha256": "ba38f74c08ac1af1dd7c6e1117029643fdc7bf49f1d94df8342f9012065c6e38",
       "size": 2455
     },
+    "js/remaster-effects.js": {
+      "sha256": "2c7e4255a3e64bade75a77a5eac7df180bea9f008e1a1846af9a6066377eeb5f",
+      "size": 4757
+    },
     "js/remaster-music.js": {
-      "sha256": "6cc8f3a1b5b05196f5ba9076491da1f1696af7f5aa845bd2011bc9efb4ee6fea",
-      "size": 9463
+      "sha256": "b1c42696eaff3fb46561b0de4fbcd8812fa60e51c73e4fe5aba42c269264c4be",
+      "size": 9476
     },
     "js/renderer.js": {
-      "sha256": "429c65c0a4e03e9c6a60c313a0cc50ca439f8e3a1aa074ead7f8c4dc2b8a9712",
-      "size": 22376
+      "sha256": "91b950eb2fedb7682ce7cf2e918a42367900dad22629358d02396d7a78bbaf5e",
+      "size": 22368
     },
     "js/simulation.js": {
-      "sha256": "6ca2e6f98c1e97ae148aca3f21f69b4b44fa0b3bdab13465b04e2cc0a05c589e",
-      "size": 49859
+      "sha256": "4e856a7b7d9c8994a25f8f88ee51f4553b63c809089014f589033c2f901f215b",
+      "size": 51400
     },
     "js/sound-test-data.js": {
       "sha256": "26178d71d0733ce465eb6584b437ad8649099ba35f765fdf5037371f8c0be9bc",
@@ -2468,6 +2536,10 @@
     "js/sprite-frame-identity.js": {
       "sha256": "0be85326fcbc491610d300b7009c956a6fe00784619b64e78cabed583c7b4c4a",
       "size": 675
+    },
+    "js/typed-cheats.js": {
+      "sha256": "b5a58dbd2cb70ee9e1f9d3a0f90a75848a5ef377a01386a944c1aceccb7d63cf",
+      "size": 2534
     },
     "style.css": {
       "sha256": "da4b0fc0b591afed1729afe1c9a58532b32f3355ba9453208385b3d52529c304",

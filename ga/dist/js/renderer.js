@@ -8,11 +8,11 @@ import {resolveSpriteFrame} from './sprite-frame-identity.js';
 import {nativeMapPaletteRecord} from './native-map-palette.js';
 export async function loadAssets(base = new URL('../assets/', import.meta.url)) {
   const response = await fetch(new URL('game.json', base));
-  if (!response.ok) throw new Error('Nepodařilo se načíst původní herní data.');
+  if (!response.ok) throw new Error('Could not load the original game data.');
   const assets = await response.json();
   async function binary(name) {
     const r = await fetch(new URL(name, base));
-    if (!r.ok) throw new Error(`Chybí soubor ${name}.`);
+    if (!r.ok) throw new Error(`Missing file: ${name}.`);
     return r.arrayBuffer();
   }
   const [sprites, font] = await Promise.all([binary('sprites.bin'), binary(assets.font.file)]);

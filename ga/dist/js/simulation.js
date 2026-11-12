@@ -25,8 +25,8 @@ function frameRect(actor,rect){let [x,y,w,h]=rect;if(actor.direction>0&&actor.di
 
 export class Simulation {
   constructor({assets,mode='arcade',character='hero',players=1,character2='amazon',healthBars=3,stageIndex=0}={}){
-    this.assets=assets||{maps:{},sprites:{}};this.mode=mode;this.character=character;this.character2=character2;this.playerCount=players===2?2:1;if(this.playerCount===2&&character===character2)throw new Error('Původní hra nepovoluje oběma hráčům stejnou postavu (AXE3c10).');
-    if(!LOGIC.options.healthBars.includes(healthBars))throw new RangeError('Původní Life Meter nabízí 3, 4 nebo 5 polí.');this.healthBars=healthBars;this.playerHealth=(healthBars*4)&255;this.initialStage=stageIndex;this.reset();
+    this.assets=assets||{maps:{},sprites:{}};this.mode=mode;this.character=character;this.character2=character2;this.playerCount=players===2?2:1;if(this.playerCount===2&&character===character2)throw new Error('The original game does not allow both players to choose the same hero (AXE3c10).');
+    if(!LOGIC.options.healthBars.includes(healthBars))throw new RangeError('The original Life Meter offers 3, 4, or 5 bars.');this.healthBars=healthBars;this.playerHealth=(healthBars*4)&255;this.initialStage=stageIndex;this.reset();
   }
   reset(){this.nextID=1;this.timerFraction=0;this.lastInput={};this.tapHistory={};
     this.rng=[0x4a4a,0x5252,0x5353];this.magic=null;this.speakerClock=new OriginalSpeakerClock();this.speakerPITRemainder=0;
@@ -110,6 +110,19 @@ export class Simulation {
     s.lives=p.lives;if(s.players.every(a=>a.eliminated)){s.status='game-over';this.calculateResults();}
     return s;
   }
+  nearGoodsAttack(a){
+    // AXE3fea/48cf scans actor order, not nearest distance. Native actor+9
+    // is the remaining inventory word, not the separate health byte.
+    for(const target of this.state.entities){
+      if(target.removed||![12,13,18,19].includes(target.typeId)||!(target.magicPots&0xffff))continue;
+      let dy=signed16(a.y+this.levelHeight(a.level)-target.y-this.levelHeight(target.level));
+      if(dy<0)dy=signed16(-dy);
+      if((dy&0xffff)>10)continue;
+      let dx=signed16(a.x-target.x);if(dx<0)dx=signed16(-dx);
+      if(dx<32)return 5;if(dx<64)return 2;if(dx<96)return 0;
+    }
+    return null;
+  }
   playerControl(a,i){const fresh=i.pressed,pressed=k=>fresh?!!fresh[k]:!!i[k]&&!a.previousInput?.[k];
     const direction=directionFromInput({...i,...Object.fromEntries(['up','down','left','right'].map(k=>[k,!!i[k]||!!fresh?.[k]]))});
     let attack=pressed('attack'),jump=pressed('jump'),magic=pressed('magic'),run=!!i.run;
@@ -119,12 +132,29 @@ export class Simulation {
         if(direction===side&&(side===6?screenX>=72:screenX<=248))run=true;else for(const tap of taps)tap.count=0;}}
     }
     let combo=0;if(a.lastTarget!=null){combo=a.lastDistance<31?(a.combo===0?0:a.combo===1?1:11):(a.combo===0?0:a.combo===1?1:a.combo===2?6:5);}
+    if(attack){const goodsAttack=this.nearGoodsAttack(a);if(goodsAttack!==null)combo=goodsAttack;}
     if(this.scriptWait?.op===5)return {direction:2,attack:false,jump:false,magic:false,run:false,combo:0};
     return {direction,attack,jump,magic,run,combo};
   }
   enemyControl(a,p){const out={direction:8,attack:false,jump:false,magic:false,run:false,combo:0};
     if([14,15].includes(a.typeId)){out.direction=6;out.run=true;if(a.x-this.state.camera.x<1)a.removed=true;return out;}
-    if(a.typeId===10||a.typeId===11){if(a.nativeWait>0){a.nativeWait--;return out;}if(a.riderID!=null)return out;out.direction=a.x-this.state.camera.x<160?6:2;out.run=true;if(a.x-this.state.camera.x<9||a.x-this.state.camera.x>311||a.y-this.state.camera.y<9||a.y-this.state.camera.y>191)a.removed=true;return out;}
+    if(a.typeId===10||a.typeId===11){
+      if(a.nativeWait>0){a.nativeWait--;return out;}if(a.riderID!=null)return out;
+      // AXE539d: an expired, free mount flees. A rider's backward-walk flag
+      // must not reverse that escape; if blocked, probe down before jumping.
+      a.backward=false;
+      const sx=signed16(a.cachedScreenX??a.x-this.state.camera.x),sy=signed16(a.cachedScreenY??a.y-a.z-this.state.camera.y);
+      const valid=(dx,dy)=>{const tile=this.tile(a.x+dx,a.y+dy);return tile.floor&&(!tile.wall||tile.level===a.level);};
+      out.direction=sx<160?6:2;
+      if(!valid(out.direction===6?-12:12,0)){
+        if(valid(0,12))out.direction=4;else out.jump=true;
+      }
+      a.direction=out.direction; // AXE540e writes the direction before control.
+      out.run=out.direction===2||out.direction===6;
+      if(!out.run&&a.state!==1){this.setState(a,1);this.refresh(a);}
+      if(sx<=8||sx>=312||sy<=8||sy>=192)a.lifecycle=253;
+      return out;
+    }
     if([12,13].includes(a.typeId))return this.thiefControl(a);
     if(a.nativeWait===0&&a.lifecycle===1)a.lifecycle=0;
     if(a.reveal!==-1||a.nativeWait>0||a.dead||![0,1,2,3,19].includes(a.state))return out;
@@ -399,12 +429,13 @@ export class Simulation {
   }
 
   thiefControl(a){const c={direction:8,attack:false,jump:false,magic:false,run:false,combo:0};
-    const sx=a.x-this.state.camera.x,sy=a.y-this.state.camera.y;if(a.nativeWait>0)a.nativeWait--;else a.magicPots=0;
-    if(a.nativeWait===0&&(sx<17||sx>303)){a.removed=true;return c;}
-    if(a.state===13||a.state===14)return c;
-    if(a.decisionTimer>0){a.decisionTimer--;if(a.state!==0)c.direction=a.direction;return c;}
+    // AXE5456/54d5 use the prior projected draw cache, and only freeze a
+    // knockback/down actor while its decision counter is still nonzero.
+    const sx=signed16(a.cachedScreenX??a.x-this.state.camera.x),sy=signed16(a.cachedScreenY??a.y-a.z-this.state.camera.y);
+    if(a.nativeWait>0)a.nativeWait--;else a.magicPots=0;
+    if(a.decisionTimer>0){if(a.state===13||a.state===14)return c;a.decisionTimer--;if(a.state!==0)c.direction=a.direction;return c;}
     if(a.state===1&&a.nativeWait>0){this.setState(a,0);this.refresh(a);a.decisionTimer=54;return c;}
-    const fleeing=a.nativeWait===0||a.magicPots<1;this.setState(a,fleeing?2:1);this.refresh(a);
+    const fleeing=a.nativeWait===0||a.magicPots<1;if(fleeing)a.magicPots=0;this.setState(a,fleeing?2:1);
     const maxX=(this.map()?.width||40)*8-320;
     let bits=fleeing?(this.state.camera.x>maxX-8||this.state.stageIndex===3||sx<160&&this.state.camera.x>=8?8:4):(sx<160?4:8),original=bits;
     const valid=(dx,dy)=>{const t=this.tile(a.x+dx,a.y+dy);return t.floor&&(!t.wall||t.level===a.level);};
@@ -414,7 +445,7 @@ export class Simulation {
     else {validVertical=valid(0,-12);if(!validVertical){v+=8;validVertical=valid(0,12);}}
     if(validVertical){if(bits===0)v&=8;bits|=LOGIC.thiefVertical[v];}
     else if(bits===0)bits=original^4;
-    c.direction=LOGIC.directionLookup[bits&15];if(c.direction!==8)a.direction=c.direction;c.run=fleeing;a.decisionTimer=2+(this.random()&3);return c;
+    c.direction=LOGIC.directionLookup[bits&15];if(c.direction!==8)a.direction=c.direction;a.decisionTimer=2+(this.random()&3);this.refresh(a);return c;
   }
 
   playerOwned(a){return a.isPlayer||this.state.entities.some(r=>r.id===a.riderID&&r.isPlayer)||this.state.entities.some(r=>r.id===a.ownerID&&r.isPlayer);}
@@ -497,7 +528,7 @@ export class Simulation {
     const last=this.mode==='arcade'?7:this.mode==='beginner'?2:this.playerCount===1?14:1;
     if(this.mode==='duel'){if(index>=last){this.calculateResults();this.state.status='ending-incomplete';return false;}this.state.status='playing';this.loadStage(index+1);return true;}
     if(index>=16){if(index-16>=last){this.calculateResults();this.state.status='ending-incomplete';return false;}this.state.status='playing';this.loadStage(index-15);return true;}
-    if(index>=last&&index>=4){this.calculateResults();this.state.status='ending-incomplete';this.state.message='Původní zakončení ještě není převedeno.';return false;}
+    if(index>=last&&index>=4){this.calculateResults();this.state.status='ending-incomplete';this.state.message='The original ending has not been ported yet.';return false;}
     this.state.status='playing';this.loadStage(index<4?index+16:index+1);return true;
   }
 

@@ -1,0 +1,160 @@
+{
+  "snapshot": "4480a17d3e902ea14c1d30ed153fe218d490ed947f33aa7908020626d0d31f6c",
+  "preFixModuleSHA256": "c6f584e7bf8ae6dac9cda661cf3e76add4b182c390679d7edd760361f8571e07",
+  "simulationSHA256": "c1ffccd8fbbca61ce9414998240a63527cd81f434f337cbb9ae2da27a216fe6f",
+  "scope": "Conditional original Stage2 map and source spawn pair. Options Life Meter5; player repositioned only in initial scene. All later changes use ordinary input/control/AI/hit handlers; no state/HP/RNG patches. This is not a complete native or manual Stage2 traversal.",
+  "controlledTimerTicksPerStep": 1,
+  "inputUpdates": 354,
+  "preFixIdleUpdatesStillTrapped": 200,
+  "correctedEscapeUpdates": 40,
+  "nodeTestsPassed": 242,
+  "newMountCases": 8,
+  "existingCompleteWorldReplaysUnchanged": 6,
+  "browserCases": [
+    {
+      "version": "before",
+      "atKnockoff": {
+        "tick": 354,
+        "playerHP": 4,
+        "riderHP": 10,
+        "mount": {
+          "x": 660,
+          "y": 260,
+          "backward": true,
+          "wait": 0,
+          "riderID": null,
+          "removed": false
+        }
+      },
+      "final": {
+        "steps": 200,
+        "tick": 554,
+        "camera": {
+          "x": 506,
+          "y": 152
+        },
+        "mount": {
+          "x": 668,
+          "y": 260,
+          "backward": true,
+          "wait": 0,
+          "riderID": null,
+          "removed": false,
+          "lifecycle": 0
+        }
+      },
+      "coverage": [
+        {
+          "hdSprites": 4,
+          "vectorSprites": 7,
+          "smoothInterfaceSprites": 7,
+          "smoothMapText": 0,
+          "originalSprites": 0,
+          "hdMapRegions": 4,
+          "hdMapStatePatches": 0,
+          "hdStateCells": 0,
+          "hdGlyphs": 0,
+          "vectorGlyphs": 0,
+          "originalGlyphs": 0,
+          "dynamicOriginalCells": 0,
+          "reasons": {},
+          "hdBaseNativeArea": 62400,
+          "originalBaseNativeArea": 0
+        },
+        {
+          "hdSprites": 4,
+          "vectorSprites": 10,
+          "smoothInterfaceSprites": 10,
+          "smoothMapText": 0,
+          "originalSprites": 0,
+          "hdMapRegions": 4,
+          "hdMapStatePatches": 0,
+          "hdStateCells": 0,
+          "hdGlyphs": 0,
+          "vectorGlyphs": 0,
+          "originalGlyphs": 0,
+          "dynamicOriginalCells": 0,
+          "reasons": {},
+          "hdBaseNativeArea": 62400,
+          "originalBaseNativeArea": 0
+        }
+      ]
+    },
+    {
+      "version": "after",
+      "atKnockoff": {
+        "tick": 354,
+        "playerHP": 4,
+        "riderHP": 10,
+        "mount": {
+          "x": 660,
+          "y": 260,
+          "backward": true,
+          "wait": 0,
+          "riderID": null,
+          "removed": false
+        }
+      },
+      "final": {
+        "steps": 40,
+        "tick": 394,
+        "camera": {
+          "x": 506,
+          "y": 152
+        },
+        "mount": {
+          "x": 504,
+          "y": 288,
+          "backward": false,
+          "wait": 0,
+          "riderID": null,
+          "removed": true,
+          "lifecycle": 253
+        }
+      },
+      "coverage": [
+        {
+          "hdSprites": 4,
+          "vectorSprites": 7,
+          "smoothInterfaceSprites": 7,
+          "smoothMapText": 0,
+          "originalSprites": 0,
+          "hdMapRegions": 4,
+          "hdMapStatePatches": 0,
+          "hdStateCells": 0,
+          "hdGlyphs": 0,
+          "vectorGlyphs": 0,
+          "originalGlyphs": 0,
+          "dynamicOriginalCells": 0,
+          "reasons": {},
+          "hdBaseNativeArea": 62400,
+          "originalBaseNativeArea": 0
+        },
+        {
+          "hdSprites": 3,
+          "vectorSprites": 7,
+          "smoothInterfaceSprites": 7,
+          "smoothMapText": 0,
+          "originalSprites": 0,
+          "hdMapRegions": 4,
+          "hdMapStatePatches": 0,
+          "hdStateCells": 0,
+          "hdGlyphs": 0,
+          "vectorGlyphs": 0,
+          "originalGlyphs": 0,
+          "dynamicOriginalCells": 0,
+          "reasons": {},
+          "hdBaseNativeArea": 62400,
+          "originalBaseNativeArea": 0
+        }
+      ]
+    }
+  ],
+  "browserPass": true,
+  "browserClosed": true,
+  "audioCreated": false,
+  "ownedServer5962Closed": true,
+  "userPreviewUntouched": true,
+  "newRelease": false,
+  "clusterDeployment": false
+}

@@ -31,11 +31,17 @@ export function adaptRunShortcut(value,actor,pending=null) {
   return pending.polls>1?{...pending,polls:pending.polls-1}:null;
 }
 export class Input {
-  constructor({onPause,onStart}) {
+  constructor({onPause,onStart,cheatCommands=()=>[],cheatContext=()=>null,onCheat=()=>{}}) {
     this.keyboard = new Set(); this.pendingKeys = new Set(); this.pendingActions = new Set(); this.pointers = new Map(); this.pulses = new Map();
     this.playerCount = 1; this.active = false; this.runJumps=[null,null];
     this.devices=['keypad','keyboard'];
     this.legacy=new LegacyControls({element:document.querySelector('#game'),devices:this.devices});
+    this.typedCheats=new TypedCheats({commands:cheatCommands,context:cheatContext,onCommand:onCheat,onMagic:()=>this.pulse('magic',1)});
+    const cancelTypedOnUI=event=>{if(event.target?.closest?.('button,input,select,textarea,a[href],[contenteditable="true"]'))this.typedCheats.cancel();};
+    window.addEventListener('pointerdown',cancelTypedOnUI,true);
+    window.addEventListener('focusin',cancelTypedOnUI,true);
+    window.addEventListener('keydown',e=>{const interactive=!!e.target?.closest?.('button,input,select,textarea,a[href]');if(this.typedCheats.keydown(e,{allowMagic:this.active&&!interactive})){e.preventDefault();e.stopImmediatePropagation();}},true);
+    window.addEventListener('keyup',e=>{if(this.typedCheats.keyup(e)){this.keyboard.delete(e.code);e.preventDefault();e.stopImmediatePropagation();}},true);
     window.addEventListener('keydown',e => {
       const interactive=!!e.target?.closest?.('button,input,select,textarea,a[href]');
       const browserShortcut=['KeyR','KeyF'].includes(e.code)&&(e.ctrlKey||e.metaKey||e.altKey);
@@ -115,7 +121,8 @@ export class Input {
     for(let index=0;index<this.playerCount;index++){value[index].pressed=pressed[index];value[index].runBindingFresh=runBindingFresh[index];this.runJumps[index]=adaptRunShortcut(value[index],actors[index],this.runJumps[index]);delete value[index].heldRun;delete pressed[index].heldRun;}
     return this.playerCount===2?{players:value}:value[0];
   }
-  clear(){this.runJumps=[null,null];this.keyboard.clear();this.pendingKeys.clear();this.pendingActions.clear();this.gestureStarts?.clear();this.pointers.clear();this.pulses.clear();this.legacy?.clear();document.querySelectorAll('.active').forEach(el=>el.classList.remove('active'));}
-  dispose(){this.active=false;this.clear();this.legacy.dispose();}
+  clear(){this.typedCheats?.cancel();this.runJumps=[null,null];this.keyboard.clear();this.pendingKeys.clear();this.pendingActions.clear();this.gestureStarts?.clear();this.pointers.clear();this.pulses.clear();this.legacy?.clear();document.querySelectorAll('.active').forEach(el=>el.classList.remove('active'));}
+  dispose(){this.active=false;this.clear();this.typedCheats.dispose();this.legacy.dispose();}
 }
 import {LegacyControls} from './legacy-controls.js';
+import {TypedCheats} from './typed-cheats.js';

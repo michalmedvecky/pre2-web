@@ -37,8 +37,8 @@ export function remasterFramePlan(now, startedAt, record, loop, sampleRate, buff
 }
 
 function validateRecord(record) {
-  if (!record || typeof record.file !== 'string' || !/^[A-Za-z0-9_-]+\.flac$/.test(record.file) || !/^[a-f0-9]{64}$/.test(record.sha256)) throw Error('Neplatná skladba remasteru.');
-  if (![record.duration,record.loopStart,record.loopEnd,record.firstCycleEnd,record.startupEnd,record.logicalLoopStart,record.sourceLoopDuration,record.steadySkipAtStartup].every(Number.isFinite) || record.loopStart < 0 || record.loopEnd <= record.loopStart || record.loopEnd > record.duration + 1 / 48000 || record.firstCycleEnd <= 0 || record.firstCycleEnd > record.loopEnd || record.steadySkipAtStartup<0 || record.steadySkipAtStartup>=record.sourceLoopDuration || Math.abs(record.startupEnd-record.loopStart)>1/48000 || Math.abs(record.sourceLoopDuration-(record.loopEnd-record.loopStart))>1/48000 || Math.abs(record.startupEnd-record.logicalLoopStart-record.steadySkipAtStartup)>1/48000) throw Error('Neplatná smyčka remasteru.');
+  if (!record || typeof record.file !== 'string' || !/^[A-Za-z0-9_-]+\.flac$/.test(record.file) || !/^[a-f0-9]{64}$/.test(record.sha256)) throw Error('Invalid remastered track.');
+  if (![record.duration,record.loopStart,record.loopEnd,record.firstCycleEnd,record.startupEnd,record.logicalLoopStart,record.sourceLoopDuration,record.steadySkipAtStartup].every(Number.isFinite) || record.loopStart < 0 || record.loopEnd <= record.loopStart || record.loopEnd > record.duration + 1 / 48000 || record.firstCycleEnd <= 0 || record.firstCycleEnd > record.loopEnd || record.steadySkipAtStartup<0 || record.steadySkipAtStartup>=record.sourceLoopDuration || Math.abs(record.startupEnd-record.loopStart)>1/48000 || Math.abs(record.sourceLoopDuration-(record.loopEnd-record.loopStart))>1/48000 || Math.abs(record.startupEnd-record.logicalLoopStart-record.steadySkipAtStartup)>1/48000) throw Error('Invalid remastered music loop.');
   return record;
 }
 
@@ -85,28 +85,28 @@ export class RemasterMusic {
       if(!this.manifest){
         const response=await fetch(this.manifestURL,{signal:controller.signal});
         if(!this.alive(generation))return false;
-        if(!response.ok)throw Error(`Hudební remaster není dostupný (${response.status}).`);
+        if(!response.ok)throw Error(`The music remaster is unavailable (${response.status}).`);
         const manifest=await response.json();if(!this.alive(generation))return false;
-        if(manifest.version!==1||!manifest.tracks)throw Error('Neplatný seznam skladeb remasteru.');
+        if(manifest.version!==1||!manifest.tracks)throw Error('Invalid remastered music catalog.');
         this.manifest=manifest;
       }
       const record=validateRecord(this.manifest.tracks[id]);
       if(!this.buffer){
         const response=await fetch(new URL(record.file,this.manifestURL),{signal:controller.signal});
         if(!this.alive(generation))return false;
-        if(!response.ok)throw Error(`Skladba remasteru není dostupná (${response.status}).`);
+        if(!response.ok)throw Error(`The remastered track is unavailable (${response.status}).`);
         const bytes=await response.arrayBuffer();if(!this.alive(generation))return false;
-        if(!globalThis.crypto?.subtle)throw Error('Ověření hudební skladby není v tomto prohlížeči dostupné.');
+        if(!globalThis.crypto?.subtle)throw Error('Audio integrity verification is unavailable in this browser.');
         const hash=new Uint8Array(await crypto.subtle.digest('SHA-256',bytes));
         if(!this.alive(generation))return false;
-        if([...hash].map(n=>n.toString(16).padStart(2,'0')).join('')!==record.sha256)throw Error('Stažená skladba remasteru není úplná.');
+        if([...hash].map(n=>n.toString(16).padStart(2,'0')).join('')!==record.sha256)throw Error('The downloaded remastered track failed integrity verification.');
         // Browser decode cannot be aborted. Serialize it, and skip superseded
         // selections before they allocate another large decoded PCM buffer.
         const decoded=this.decodeTail.then(()=>this.alive(generation)?this.context.decodeAudioData(bytes):null);
         this.decodeTail=decoded.then(()=>undefined,()=>undefined);
         const buffer=await decoded;if(!this.alive(generation)||!buffer)return false;
-        if(buffer.length*buffer.numberOfChannels*4>64*1024*1024)throw Error('Skladba remasteru je pro tento přehrávač příliš velká.');
-        if(Math.abs(buffer.duration-record.duration)>Math.max(2/buffer.sampleRate,.002))throw Error('Délka skladby remasteru nesouhlasí.');
+        if(buffer.length*buffer.numberOfChannels*4>64*1024*1024)throw Error('The remastered track exceeds the player memory limit.');
+        if(Math.abs(buffer.duration-record.duration)>Math.max(2/buffer.sampleRate,.002))throw Error('The remastered track duration does not match.');
         this.buffer=buffer;this.bufferId=id;
       }
       const rate=this.context.sampleRate||this.buffer.sampleRate,plan=remasterFramePlan(this.context.currentTime,startedAt,record,loop,rate,this.buffer.length);

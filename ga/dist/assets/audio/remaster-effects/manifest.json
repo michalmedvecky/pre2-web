@@ -1,0 +1,193 @@
+{
+  "version": 1,
+  "kind": "source-derived-snd-restoration",
+  "sampleRate": 48000,
+  "sourceBitRate": 7018.717647058824,
+  "effects": {
+    "0": {
+      "file": "effect-0-b9274ddec075c953.wav",
+      "sha256": "b9274ddec075c9539ff32437e44388ec346e40d2586750874e35b7d92d4ce814",
+      "sampleRate": 48000,
+      "frames": 40268,
+      "duration": 0.8389166666666666,
+      "nativeDurationSeconds": 0.8388996816914771,
+      "loopStart": 0,
+      "loopEnd": 0.8388996816914771,
+      "sourceSHA256": "049b14ee4665ae3f394d2a0eefe89f1ffbdd64f6b61d42497e9b424aef477cf6",
+      "bytes": 80580
+    },
+    "1": {
+      "file": "effect-1-aac0f9f9cc007996.wav",
+      "sha256": "aac0f9f9cc00799690e909ddc4a2e0c090652cc237b4c72cfd9ca537c6d139df",
+      "sampleRate": 48000,
+      "frames": 39447,
+      "duration": 0.8218125,
+      "nativeDurationSeconds": 0.8218025414396127,
+      "loopStart": 0,
+      "loopEnd": 0.8218025414396127,
+      "sourceSHA256": "2dc82e9d14bd0f6d5a7054193287c83e4516924a549f9e59c7c0a48f90602440",
+      "bytes": 78938
+    },
+    "2": {
+      "file": "effect-2-c6a6bbdde7f493c7.wav",
+      "sha256": "c6a6bbdde7f493c77ab621f0c7477d6cd71ed114b7e432171b262edfef7da7e3",
+      "sampleRate": 48000,
+      "frames": 7003,
+      "duration": 0.14589583333333334,
+      "nativeDurationSeconds": 0.14589559681590905,
+      "loopStart": 0,
+      "loopEnd": 0.14589559681590905,
+      "sourceSHA256": "c471281f43ea2aefcd4932258e7ddf0437a3ecb3cc443587cf3bad21e3e54026",
+      "bytes": 14050
+    },
+    "3": {
+      "file": "effect-3-3c464f07fc0e5f27.wav",
+      "sha256": "3c464f07fc0e5f27d4b807e1d1aa803b6f2a90288a654d659d7548e457d5b015",
+      "sampleRate": 48000,
+      "frames": 9028,
+      "duration": 0.18808333333333332,
+      "nativeDurationSeconds": 0.18806854277050777,
+      "loopStart": 0,
+      "loopEnd": 0.18806854277050777,
+      "sourceSHA256": "daefce31dec962d4ecf6e5ffa4b1a339333165fa4c31227bd8422ac81e17651a",
+      "bytes": 18100
+    },
+    "4": {
+      "file": "effect-4-36fe613deb74ef2f.wav",
+      "sha256": "36fe613deb74ef2fba29903a41df421518bd82e677fb59472ed2af2c19f78e84",
+      "sampleRate": 48000,
+      "frames": 2408,
+      "duration": 0.050166666666666665,
+      "nativeDurationSeconds": 0.05015161140546874,
+      "loopStart": 0,
+      "loopEnd": 0.05015161140546874,
+      "sourceSHA256": "a5b20cd120e824a89f1109d087d7780c4ff7bac400a449758f2d5e886a9a3a0b",
+      "bytes": 4860
+    },
+    "5": {
+      "file": "effect-5-7b28b797edca9142.wav",
+      "sha256": "7b28b797edca91426e7e9c3589e467dac11470274173065f542a153913f179fb",
+      "sampleRate": 48000,
+      "frames": 4870,
+      "duration": 0.10145833333333333,
+      "nativeDurationSeconds": 0.10144303216106176,
+      "loopStart": 0,
+      "loopEnd": 0.10144303216106176,
+      "sourceSHA256": "274c1bafb58047083c7538d5abf14ad32a938cda64f466940632d9d99a74db61",
+      "bytes": 9784
+    },
+    "6": {
+      "file": "effect-6-fb9a66a5ae0ca6d4.wav",
+      "sha256": "fb9a66a5ae0ca6d46dda805ae892e37fab83b872d082ba90b46a1fb20da14f94",
+      "sampleRate": 48000,
+      "frames": 20079,
+      "duration": 0.4183125,
+      "nativeDurationSeconds": 0.41831003149561424,
+      "loopStart": 0,
+      "loopEnd": 0.41831003149561424,
+      "sourceSHA256": "8371c4b83c4eb2198ee63129eb2d7f112696aef03878fcd2c1606d4faeee353d",
+      "bytes": 40202
+    },
+    "7": {
+      "file": "effect-7-ee971ef82d3ace9f.wav",
+      "sha256": "ee971ef82d3ace9fc81fda76aa1388a8aeaf91cdbc20f1e59fb88ecdd8ef3e5e",
+      "sampleRate": 48000,
+      "frames": 8481,
+      "duration": 0.1766875,
+      "nativeDurationSeconds": 0.17667044926926487,
+      "loopStart": 0,
+      "loopEnd": 0.17667044926926487,
+      "sourceSHA256": "2248b1b984fe4b948de8b28513fca4f9c22596ca55bf25b69f77dd5675958501",
+      "bytes": 17006
+    },
+    "8": {
+      "file": "effect-8-016c4e0a264e52a7.wav",
+      "sha256": "016c4e0a264e52a7a49420cfa0b8b4c9f0565ecefa1b95026c419fbf03ebbcd0",
+      "sampleRate": 48000,
+      "frames": 12693,
+      "duration": 0.2644375,
+      "nativeDurationSeconds": 0.26443576922883516,
+      "loopStart": 0,
+      "loopEnd": 0.26443576922883516,
+      "sourceSHA256": "b66e1a9820d9f2c6d338ac804a4c494f4aede06be0821e0108326abe6fd33057",
+      "bytes": 25430
+    },
+    "9": {
+      "file": "effect-9-63909601d5ce6538.wav",
+      "sha256": "63909601d5ce6538f5a2a189cdd860e6f32ba7b8510ad14794abffe23de46613",
+      "sampleRate": 48000,
+      "frames": 9465,
+      "duration": 0.1971875,
+      "nativeDurationSeconds": 0.1971870175715021,
+      "loopStart": 0,
+      "loopEnd": 0.1971870175715021,
+      "sourceSHA256": "7e38a7c448f41af91de75b83fb88b556a39562393516f84d0c85c1630a15dd62",
+      "bytes": 18974
+    },
+    "10": {
+      "file": "effect-10-b2b40faf1c036393.wav",
+      "sha256": "b2b40faf1c03639346b9904acbe7fb4b8479e2c0a10d74d7d432dbe9b2c9d8b7",
+      "sampleRate": 48000,
+      "frames": 33429,
+      "duration": 0.6964375,
+      "nativeDurationSeconds": 0.6964235129259408,
+      "loopStart": 0,
+      "loopEnd": 0.6964235129259408,
+      "sourceSHA256": "5808bf5bf7656c84aa7f5621dc612addbe1db9b61c66dea9fcbf1b07cb175585",
+      "bytes": 66902
+    },
+    "11": {
+      "file": "effect-11-ccf0da189eabaf16.wav",
+      "sha256": "ccf0da189eabaf16ddbdcb708e3a41cdc260796f0594a668dce5159567454da1",
+      "sampleRate": 48000,
+      "frames": 8317,
+      "duration": 0.17327083333333335,
+      "nativeDurationSeconds": 0.173251021218892,
+      "loopStart": 0,
+      "loopEnd": 0.173251021218892,
+      "sourceSHA256": "c04046eba37febb76720a964bb085fd9bc3bac220f3fcedaeae821d600916208",
+      "bytes": 16678
+    },
+    "12": {
+      "file": "effect-12-a115150e0fb74557.wav",
+      "sha256": "a115150e0fb745575feffba5b07e5ea569061210c94e93115f9d78e810113161",
+      "sampleRate": 48000,
+      "frames": 32663,
+      "duration": 0.6804791666666666,
+      "nativeDurationSeconds": 0.6804661820242008,
+      "loopStart": 0,
+      "loopEnd": 0.6804661820242008,
+      "sourceSHA256": "91233e0a4b3e3021cfcdf72ac80ba2b203c92fd644df63b542505af538bc1f1b",
+      "bytes": 65370
+    },
+    "13": {
+      "file": "effect-13-a194ed51857d5d0e.wav",
+      "sha256": "a194ed51857d5d0e1c148216a4d1c10a32baea194447de04d72ef90a27006847",
+      "sampleRate": 48000,
+      "frames": 27082,
+      "duration": 0.5642083333333333,
+      "nativeDurationSeconds": 0.5642056283115233,
+      "loopStart": 0,
+      "loopEnd": 0.5642056283115233,
+      "sourceSHA256": "2c25e304db4582026c10994ebfcd83878636934a3b93e9e62455897408dad6df",
+      "bytes": 54208
+    },
+    "14": {
+      "file": "effect-14-34e41f2724c94a8d.wav",
+      "sha256": "34e41f2724c94a8d163ec4e17d03541befab47ba7b516660cf9df8b81207483a",
+      "sampleRate": 48000,
+      "frames": 22213,
+      "duration": 0.46277083333333335,
+      "nativeDurationSeconds": 0.46276259615046156,
+      "loopStart": 0,
+      "loopEnd": 0.46276259615046156,
+      "sourceSHA256": "d203011c1ab67d349045800c3a680b26ef1947a4366aa7d19534945c53c2a86a",
+      "bytes": 44470
+    }
+  },
+  "limits": [
+    "One-bit source information is irrecoverable; this is restoration plus restrained source-derived harmonic detail, not new high-fidelity foley.",
+    "Original event IDs and exact PIT durations are retained; native gameplay speaker scheduling is unchanged.",
+    "The first use of the optional original edition plays the unchanged original WAV assets."
+  ]
+}

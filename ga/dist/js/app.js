@@ -42,10 +42,10 @@ function warmPresentation(kind) {
 function updateGraphicsUI() {
   if(!renderer)return;
   const status=renderer.getGraphicsStatus(),hd=status.mode==='hd';
-  for(const button of document.querySelectorAll('[data-open-hd]')){button.disabled=false;button.setAttribute('aria-pressed',String(hd));button.textContent=button.classList.contains('icon-button')?(hd?'HD':'DOS'):(hd?'HD → originál':'Originál → HD');button.setAttribute('aria-label',hd?'Přepnout na původní grafiku':'Přepnout na HD grafiku');}
+  for(const button of document.querySelectorAll('[data-open-hd]')){button.disabled=false;button.setAttribute('aria-pressed',String(hd));button.textContent=button.classList.contains('icon-button')?(hd?'HD':'DOS'):(hd?'HD → original':'Original → HD');button.setAttribute('aria-label',hd?'Switch to original graphics':'Switch to HD graphics');}
   const label=$('#graphics-coverage');
-  if(label)label.textContent=hd?'HD remaster. Tlačítkem HD přepneš původní grafiku.':'Původní grafika.';
-  const edition=$('#graphics-edition');if(edition)edition.textContent=hd?'HD REMASTER':'PŮVODNÍ GRAFIKA';
+  if(label)label.textContent=hd?'HD remaster. Use HD to switch to original graphics.':'Original graphics.';
+  const edition=$('#graphics-edition');if(edition)edition.textContent=hd?'HD REMASTER':'ORIGINAL GRAPHICS';
 }
 function setGraphicsMode(mode) {const result=renderer.setGraphicsMode(mode);try{localStorage.setItem('ga.graphics',mode);}catch{}updateGraphicsUI();return result;}
 function toggleHD() {return setGraphicsMode(renderer.graphicsMode==='hd'?'original':'hd');}
@@ -79,15 +79,15 @@ function unlockAudio(){
 // AXE3ae6 selects INTRO before the title; mode-menu initialization8952→01ee stops it.
 function menuAudio(){audio.setPaused(pageAudioHeld||!!controlsHelp?.isOpen);}
 function resetAudio(){audioGeneration++;audio.stop();audioStageKey=null;}
-function syncSoundGates(){for(const button of document.querySelectorAll('[data-toggle-effects]')){button.textContent=`Zvuky: ${audio.effectsEnabled?'zapnuto':'vypnuto'} · F2`;button.setAttribute('aria-pressed',String(audio.effectsEnabled));}for(const button of document.querySelectorAll('[data-toggle-music]')){button.textContent=`Hudba: ${audio.musicEnabled?'zapnuto':'vypnuto'} · F3`;button.setAttribute('aria-pressed',String(audio.musicEnabled));}}
+function syncSoundGates(){for(const button of document.querySelectorAll('[data-toggle-effects]')){button.textContent=`Effects: ${audio.effectsEnabled?'on':'off'} · F2`;button.setAttribute('aria-pressed',String(audio.effectsEnabled));}for(const button of document.querySelectorAll('[data-toggle-music]')){button.textContent=`Music: ${audio.musicEnabled?'on':'off'} · F3`;button.setAttribute('aria-pressed',String(audio.musicEnabled));}}
 function syncMusicEditionUI(){
   const state=audio.getMusicEditionStatus();
   for(const button of document.querySelectorAll('[data-toggle-music-edition]')){
-    button.textContent=`Hudba: ${state.requested==='remaster'?'remaster':'původní'} · MUSIC`;
+    button.textContent=`Music: ${state.requested==='remaster'?'remastered':'original'} · MUSIC`;
     button.setAttribute('aria-pressed',String(state.requested==='remaster'));
   }
   for(const label of document.querySelectorAll('[data-music-edition-status]')){
-    label.textContent=state.error?'Remaster teď není dostupný, pokračuje původní hudba.':state.loading?'Připravuji remaster, zatím hraje původní hudba.':'';
+    label.textContent=state.error?'Remastered music is unavailable; original music will continue.':state.loading?'Preparing remastered music; original music is playing for now.':'';
     label.hidden=!label.textContent;
   }
 }
@@ -97,9 +97,29 @@ function toggleMusicEdition(){
   pending.then(syncMusicEditionUI);
   syncMusicEditionUI();
 }
+function syncEffectsEditionUI(){
+  const state=audio.getEffectsEditionStatus();
+  for(const button of document.querySelectorAll('[data-toggle-effects-edition]')){
+    button.textContent=`Sound effects: ${state.requested==='remaster'?'Remastered':'Original'}`;
+    button.setAttribute('aria-pressed',String(state.requested==='remaster'));
+  }
+  for(const label of document.querySelectorAll('[data-effects-edition-status]')){
+    label.textContent=state.error?'Some remastered effects are unavailable; original effects will be used.':state.loading?'Preparing remastered sound effects…':'';
+    label.hidden=!label.textContent;
+  }
+}
+function toggleEffectsEdition(){
+  const pending=audio.toggleEffectsEdition();
+  unlockAudio();
+  pending.then(syncEffectsEditionUI);
+  syncEffectsEditionUI();
+}
 audio.onMusicEditionChange=syncMusicEditionUI;
 for(const button of document.querySelectorAll('[data-toggle-music-edition]'))button.addEventListener('click',toggleMusicEdition);
 syncMusicEditionUI();
+audio.onEffectsEditionChange=syncEffectsEditionUI;
+for(const button of document.querySelectorAll('[data-toggle-effects-edition]'))button.addEventListener('click',toggleEffectsEdition);
+syncEffectsEditionUI();
 for(const button of document.querySelectorAll('[data-toggle-effects]'))button.addEventListener('click',()=>{audio.toggleEffects();syncSoundGates();});
 for(const button of document.querySelectorAll('[data-toggle-music]'))button.addEventListener('click',()=>{audio.toggleMusic();syncSoundGates();});
 function dispatchSound(event){
@@ -112,7 +132,7 @@ $('#sound').addEventListener('click',event=>{
   if(restoring)pageAudioHeld=false;
   audio.setMuted(restoring?false:!audio.muted);
   $('#sound').textContent=audio.muted?'♩':'♪';
-  $('#sound').setAttribute('aria-label',audio.muted?'Zapnout zvuk':'Ztlumit zvuk');
+  $('#sound').setAttribute('aria-label',audio.muted?'Unmute audio':'Mute audio');
   if(!audio.muted){if(restoring||started)unlockAudio();else if(menuStep!=='character')menuAudio();}
 });
 window.addEventListener('pagehide',event=>{
@@ -162,7 +182,7 @@ function menuSync() {
       const current=characterSelect.current[index?'p2':'p1'];
       const key=index?'character2':'character';selection[key]=current.character||selection[key];
       const group=document.querySelector(`[data-selection-player="${index}"]`);
-      group.querySelector('.character-player').textContent=`PLAYER ${index+1} · ${current.confirmed?'POTVRZENO':current.rotating?'OTÁČENÍ…':'VYBER HRDINU'}`;
+      group.querySelector('.character-player').textContent=`PLAYER ${index+1} · ${current.confirmed?'CONFIRMED':current.rotating?'ROTATING…':'CHOOSE A HERO'}`;
       for(const button of group.querySelectorAll('[data-character],[data-character2]')){
         const name=button.dataset.character||button.dataset.character2,active=name===current.character;
         button.classList.toggle('selected',active);button.setAttribute('aria-pressed',String(active));
@@ -181,9 +201,9 @@ function menuSync() {
   $('#two-player-note').hidden=selection.players!==2;
   for(const select of document.querySelectorAll('[data-device-player]')){const index=Number(select.dataset.devicePlayer);select.value=selection.devices[index];for(const option of select.options)option.disabled=option.value===selection.devices[1-index];}
   $('#mouse-lock').disabled=!selection.devices.includes('mouse');
-  $('#launch').innerHTML='Vybrat <span>✓</span>';
+  $('#launch').innerHTML='Select <span>✓</span>';
   $('#open-options').classList.toggle('selected',menuCursor===3);
-  $('#start').innerHTML=menuCursor===3?'Otevřít Options <span>→</span>':titlePending?'Spustit původní úvod <span>→</span>':'Vybrat hrdinu <span>→</span>';
+  $('#start').innerHTML=menuCursor===3?'Open Options <span>→</span>':titlePending?'Play original intro <span>→</span>':'Choose a hero <span>→</span>';
 }
 function primaryAction() {
   if(!started&&titlePending&&menuStep==='mode'&&menuCursor!==3){
@@ -236,6 +256,25 @@ function jumpToLevel(index) {
   openingShown=true;interludeShown=false;input?.clear();
   start();return result;
 }
+function typedCheatCommands(){
+  if(controlsHelp?.isOpen||calibration||mapOverlay?.isOpen||levelOverlay?.isOpen||document.hidden)return [];
+  const commands=['MUSIC'];if(!started)return commands;
+  commands.push('HD');if(levelOverlay?.available())commands.push('LEVEL');
+  if(!sequence&&simulation?.state.status==='playing')commands.push('IDDQD','MAP');
+  return commands;
+}
+function cheatMagicContext(){
+  if(!started||paused||pageAudioHeld||sequence||calibration||controlsHelp?.isOpen||mapOverlay?.isOpen||levelOverlay?.isOpen||hdLoading.waiting||document.hidden||simulation?.state.status!=='playing'||simulation.magic)return null;
+  const p=simulation.state.player;if(!p||p.removed||p.health<=0||p.magicPots<1||![0,1,2,19].includes(p.state))return null;
+  if(p.state===19&&simulation.state.entities.find(a=>a.id===p.mountID)?.z!==0)return null;
+  return [simulation,p,p.lives];
+}
+function runTypedCheat(word){
+  if(!typedCheatCommands().includes(word))return false;
+  if(word==='MUSIC')toggleMusicEdition();else if(word==='HD')toggleHD();
+  else if(word==='LEVEL')levelOverlay.open();else if(word==='IDDQD')mapOverlay.toggleGodMode();else if(word==='MAP')mapOverlay.toggle();
+  return true;
+}
 function returnMenu() {
 
   levelOverlay?.close({resume:false,focus:false});
@@ -254,20 +293,20 @@ for(const select of document.querySelectorAll('[data-device-player]')){
   for(const device of LEGACY_DATA.devices){const option=document.createElement('option');option.value=device.id;option.textContent=device.label;select.append(option);}
   select.addEventListener('change',()=>{const index=Number(select.dataset.devicePlayer);selection.devices[index]=select.value;input?.setDevices(selection.devices);menuSync();});
 }
-$('#mouse-lock').addEventListener('click',async()=>{const result=await input?.legacy.requestMouseLock();$('#device-status').textContent=result?.ok?'Myš je zachycena; Escape ji uvolní.':'Zachycení myši není dostupné. Myš funguje nad herní plochou.';});
+$('#mouse-lock').addEventListener('click',async()=>{const result=await input?.legacy.requestMouseLock();$('#device-status').textContent=result?.ok?'Mouse captured; press Escape to release it.':'Mouse capture is unavailable. The mouse still works over the playfield.';});
 document.querySelector('.screen-wrap').append($('#calibration-panel'));
-const calibrationStages=['Střed páčky','Levý horní roh','Pravý dolní roh'];
+const calibrationStages=['Center the stick','Upper-left corner','Lower-right corner'];
 function calibrationPad(port){const pads=Array.from(input?.legacy.getGamepads?.()||[]).filter(p=>p&&p.connected!==false),index=input?.legacy.gamepadIndices[port];return index==null?pads[port]:pads.find(p=>p.index===index);}
 const axisByte=value=>Math.max(1,Math.min(255,Math.round(128+Math.max(-1,Math.min(1,value||0))*127)));
-function calibrationPrompt(){if(!calibration)return;const pad=calibrationPad(calibration.port);$('#calibration-prompt').textContent=calibration.error|| (pad?`Joystick ${calibration.port+1}: ${calibrationStages[calibration.step]}.`:`Joystick ${calibration.port+1} není připojen. Připoj gamepad a stiskni jeho tlačítko.`);$('#calibration-measure').disabled=!pad||calibration.busy;}
+function calibrationPrompt(){if(!calibration)return;const pad=calibrationPad(calibration.port);$('#calibration-prompt').textContent=calibration.error|| (pad?`Joystick ${calibration.port+1}: ${calibrationStages[calibration.step]}.`:`Joystick ${calibration.port+1} is not connected. Connect a gamepad and press one of its buttons.`);$('#calibration-measure').disabled=!pad||calibration.busy;}
 function closeCalibration(){const previous=calibration;if(!previous)return;calibration=null;cancelAnimationFrame(previous.raf);$('#calibration-panel').hidden=true;paused=previous.paused;accumulated=0;input?.clear();audio.setPaused(paused);sync();previous.focus?.focus?.({preventScroll:true});}
 function beginCalibration(port){if(!input)return;if(calibration)closeCalibration();calibration={port,step:0,points:[],busy:false,buttons:0,paused,focus:document.activeElement};paused=true;input.clear();accumulated=0;sync();$('#calibration-panel').hidden=false;calibrationPrompt();$('#calibration-measure').focus();const current=calibration;
   const poll=()=>{if(calibration!==current)return;const pad=calibrationPad(port),buttons=(pad?.buttons[0]?.pressed?1:0)|(pad?.buttons[1]?.pressed?2:0);if(!current.busy){calibrationPrompt();if(buttons&~current.buttons)measureCalibration();}current.buttons=buttons;current.raf=requestAnimationFrame(poll);};current.raf=requestAnimationFrame(poll);
 }
 async function measureCalibration(){const current=calibration;if(!current||current.busy)return;current.busy=true;current.error=null;$('#calibration-measure').disabled=true;const samples=[];try{
-  for(let i=0;i<16;i++){if(i)await new Promise(requestAnimationFrame);if(calibration!==current)return;const pad=calibrationPad(current.port);if(!pad)throw Error('Gamepad není připojen.');input.legacy.setGamepadIndex(current.port,pad.index);samples.push({x:axisByte(pad.axes[0]),y:axisByte(pad.axes[1])});}
+  for(let i=0;i<16;i++){if(i)await new Promise(requestAnimationFrame);if(calibration!==current)return;const pad=calibrationPad(current.port);if(!pad)throw Error('Gamepad is not connected.');input.legacy.setGamepadIndex(current.port,pad.index);samples.push({x:axisByte(pad.axes[0]),y:axisByte(pad.axes[1])});}
   current.points.push(averageJoystickSamples(samples));current.step++;
-  if(current.step===3){const [center,min,max]=current.points;input.legacy.setCalibration(current.port,{centerX:center.x,centerY:center.y,minX:min.x,minY:min.y,maxX:max.x,maxY:max.y});$('#device-status').textContent=`Joystick ${current.port+1}: kalibrace uložena.`;closeCalibration();return;}
+  if(current.step===3){const [center,min,max]=current.points;input.legacy.setCalibration(current.port,{centerX:center.x,centerY:center.y,minX:min.x,minY:min.y,maxX:max.x,maxY:max.y});$('#device-status').textContent=`Joystick ${current.port+1}: calibration saved.`;closeCalibration();return;}
 }catch(error){current.error=error.message;current.step=0;current.points=[];}finally{if(calibration===current){current.busy=false;calibrationPrompt();}}}
 for(const button of document.querySelectorAll('[data-calibrate-port]'))button.addEventListener('click',()=>beginCalibration(Number(button.dataset.calibratePort)));
 $('#calibration-measure').addEventListener('click',measureCalibration);$('#calibration-cancel').addEventListener('click',closeCalibration);
@@ -319,20 +358,20 @@ function sync() {
   input?.setActive(started||menuStep==='character');
   $('#pause-screen').hidden = !started || !paused;
   $('#pause').textContent = paused ? '▶' : 'Ⅱ';
-  $('#pause').setAttribute('aria-label', paused ? 'Pokračovat ve hře' : 'Pozastavit hru');
+  $('#pause').setAttribute('aria-label', paused ? 'Resume game' : 'Pause game');
   const status = simulation?.state.status;
   lastStatus = status;
   const ended = started && !sequence && status && status !== 'playing' && status!=='ending' && status!=='results';
   $('#result-screen').hidden = !ended;
   if (ended) $('#pause-screen').hidden = true;
   if (ended) {
-    const titles = {'game-over':'Konec hry','stage-complete':'Etapa dokončena','duel-result':'Souboj dokončen','continue':'Continue?'};
-    $('#result-title').textContent = titles[status] || 'Konec ověřeného úseku';
+    const titles = {'game-over':'Game over','stage-complete':'Stage complete','duel-result':'Duel complete','continue':'Continue?'};
+    $('#result-title').textContent = titles[status] || 'End of the verified section';
     const canContinue = status === 'continue' || status === 'stage-complete' && typeof simulation.advanceStage === 'function';
     $('#continue').hidden = !canContinue;
     $('#decline').hidden=status!=='continue';
     $('#play-again').hidden=status==='continue';
-    $('#result-detail').textContent = status==='continue'?`Zbývající kredity: ${simulation.state.credits}`:status === 'game-over' ? 'Vyčerpané životy.' : canContinue ? 'Pokračovat do další etapy.' : 'Pokračování této pracovní rekonstrukce se ještě ověřuje.';
+    $('#result-detail').textContent = status==='continue'?`Credits remaining: ${simulation.state.credits}`:status === 'game-over' ? 'No lives remaining.' : canContinue ? 'Continue to the next stage.' : 'The next part of this web reconstruction is still being verified.';
   }
 }
 function start() {
@@ -434,13 +473,13 @@ function finishSequence(){
 
 try {
   assets = await loadAssets();
-  if (typeof engine.Simulation !== 'function') throw new Error('Herní simulace zatím není připravena.');
+  if (typeof engine.Simulation !== 'function') throw new Error('The game simulation is not ready.');
   const rate = engine.TICK_RATE;
-  if (!Number.isFinite(rate) || rate <= 0) throw new Error('Chybí ověřené časování simulace.');
+  if (!Number.isFinite(rate) || rate <= 0) throw new Error('Verified simulation timing is missing.');
   simulation = new engine.Simulation({assets});
   let graphicsMode='hd';try{if(localStorage.getItem('ga.graphics')==='original')graphicsMode='original';}catch{}
   renderer = new Renderer(canvas, assets,{graphicsMode});
-  input = new Input({onPause:code=>{if(sequence?.kind==='title'&&code==='Space'){primaryAction();return;}if(!started&&code==='Escape')return;pause();},onStart:primaryAction});
+  input = new Input({onPause:code=>{if(sequence?.kind==='title'&&code==='Space'){primaryAction();return;}if(!started&&code==='Escape')return;pause();},onStart:primaryAction,cheatCommands:typedCheatCommands,cheatContext:cheatMagicContext,onCheat:runTypedCheat});
   window.addEventListener('pagehide',event=>{if(!event.persisted)input.dispose();});
   canvas.addEventListener('pointerdown',event=>{if(event.pointerType==='mouse'&&started&&!paused&&!sequence&&selection.devices.includes('mouse'))input.legacy.requestMouseLock();});
   renderer.renderMenu(menuStep);
@@ -467,20 +506,6 @@ try {
   for(const button of document.querySelectorAll('[data-open-level]'))button.addEventListener('click',()=>levelOverlay.toggle());
   for(const button of document.querySelectorAll('[data-open-map]'))button.addEventListener('click',()=>mapOverlay.toggle());
   for(const button of document.querySelectorAll('[data-toggle-god]'))button.addEventListener('click',()=>mapOverlay.toggleGodMode());
-  let cheatWord='';
-  window.addEventListener('keydown',event=>{
-    if(controlsHelp?.isOpen)return;
-    if(event.ctrlKey||event.metaKey||event.altKey||event.repeat||event.target?.closest?.('input,select,textarea'))return;
-    if(!/^[a-z]$/i.test(event.key))return;
-    cheatWord=(cheatWord+event.key.toUpperCase()).slice(-5);
-    if(cheatWord.endsWith('MUSIC')){toggleMusicEdition();cheatWord='';return;}
-    if(!started||mapOverlay.isOpen||levelOverlay.isOpen)return;
-    if(cheatWord.endsWith('HD')){toggleHD();cheatWord='';return;}
-    if(cheatWord.endsWith('LEVEL')){levelOverlay.open();cheatWord='';return;}
-    if(sequence||simulation.state.status!=='playing')return;
-    if(cheatWord.endsWith('IDDQD')){mapOverlay.toggleGodMode();cheatWord='';}
-    else if(cheatWord.endsWith('MAP')){mapOverlay.toggle();cheatWord='';}
-  });
   window.addEventListener('pagehide',event=>{if(!event.persisted){levelOverlay.dispose();mapOverlay.dispose();}});
   const tickMs = 1000 / rate;
   const frameDiagnostics=[];
@@ -526,10 +551,10 @@ try {
     if(audio.paused!==(pageAudioHeld||paused||hdLoading.waiting||!!controlsHelp?.isOpen))audio.setPaused(pageAudioHeld||paused||hdLoading.waiting||!!controlsHelp?.isOpen);
     $('#loading').hidden=!hdLoading.waiting;
     $('#loading').classList.toggle('hd-loading',hdLoading.waiting);
-    if(hdLoading.waiting)$('#loading').textContent=hdLoading.failed?'HD grafiku se nepodařilo připravit. Zkus obnovit stránku nebo tlačítkem HD přepni na původní grafiku.':'Načítání HD grafiky…';
+    if(hdLoading.waiting)$('#loading').textContent=hdLoading.failed?'HD graphics could not be prepared. Reload the page or use HD to switch to original graphics.':'Loading HD graphics…';
     updateGraphicsUI();
     if (simulation.state.status !== lastStatus) sync();
-    if(lastGodMode!==!!simulation.state.godMode){lastGodMode=!!simulation.state.godMode;$('#status').textContent=`Původní data${lastGodMode?' · IDDQD':''}`;for(const button of document.querySelectorAll('[data-toggle-god]')){button.textContent=`IDDQD: ${lastGodMode?'zapnuto':'vypnuto'}`;button.setAttribute('aria-pressed',String(lastGodMode));}}
+    if(lastGodMode!==!!simulation.state.godMode){lastGodMode=!!simulation.state.godMode;$('#status').textContent=`Original game data${lastGodMode?' · IDDQD':''}`;for(const button of document.querySelectorAll('[data-toggle-god]')){button.textContent=`IDDQD: ${lastGodMode?'on':'off'}`;button.setAttribute('aria-pressed',String(lastGodMode));}}
     if(started){const sample={now,rawElapsed,frameMs:performance.now()-frameStart,maxStepMs,steps,tick:simulation.state.tick,stageIndex:simulation.state.stageIndex,paused,hidden:document.hidden,status:simulation.state.status,actors:simulation.state.entities.length,magic:simulation.magic?{type:simulation.magic.type,phase:simulation.magic.phase,timer:simulation.magic.timer}:null};frameDiagnostics.push(sample);if(frameDiagnostics.length>180)frameDiagnostics.shift();if(rawElapsed>250||sample.frameMs>250||maxStepMs>50){frameAnomalies.push(sample);if(frameAnomalies.length>120)frameAnomalies.shift();}}
     requestAnimationFrame(animate);
     } catch (error) {
@@ -540,7 +565,7 @@ try {
         entities:structuredClone(simulation.state.entities)};
       console.error(error);
       $('#loading').hidden=false;$('#loading').setAttribute('role','alert');
-      $('#loading').textContent='Hra se zastavila kvůli chybě. Stav zůstal zachován pro diagnostiku.';
+      $('#loading').textContent='The game stopped because of an error. Its state has been preserved for diagnostics.';
     }
   }
   requestAnimationFrame(animate);

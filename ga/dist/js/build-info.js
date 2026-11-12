@@ -12,7 +12,7 @@ export function buildIdentity(value) {
   const verified=!!(repository&&data.buildSource==='ci'&&data.dirty===false&&typeof data.commit==='string'&&/^[0-9a-f]{40}$/.test(data.commit));
   const dirty=data.dirty===true||data.buildSource==='dirty-snapshot';
   const status=verified?'ci':dirty?'dirty-snapshot':data.buildSource==='local'?'local':'unknown';
-  return{repository,commit:verified?data.commit:null,commitURL:verified?`${repository}/commit/${data.commit}`:null,sourceSnapshot,status,label:verified?`Commit ${data.commit.slice(0,7)}`:dirty?'Pracovní snapshot':status==='local'?'Místní sestavení':'Neověřené sestavení'};
+  return{repository,commit:verified?data.commit:null,commitURL:verified?`${repository}/commit/${data.commit}`:null,sourceSnapshot,status,label:verified?`Commit ${data.commit.slice(0,7)}`:dirty?'Working snapshot':status==='local'?'Local build':'Unverified build'};
 }
 function apply(link,{label,url,title}) {
   if(!link)return;link.textContent=label;link.title=title;link.setAttribute('aria-label',title);
@@ -22,8 +22,8 @@ function apply(link,{label,url,title}) {
 export async function showBuildInfo(repositoryLink,commitLink,{fetcher=fetch,metadataURL=new URL('../build.json',import.meta.url)}={}) {
   let identity=buildIdentity(null);
   try{const response=await fetcher(metadataURL,{cache:'no-store'});if(!response.ok)throw Error('Build metadata unavailable');identity=buildIdentity(await response.json());}catch{}
-  apply(repositoryLink,{label:'GitHub',url:identity.repository,title:identity.repository?'Zdrojový repozitář Golden Axe':'Adresa zdrojového repozitáře nebyla ověřena'});
-  const title=identity.commit?`Zdrojový commit sestaveného obrazu: ${identity.commit}`:identity.status==='dirty-snapshot'?'Necommitovaný pracovní snapshot; build commit není ověřený':'Build commit není ověřený';
-  apply(commitLink,{label:identity.label,url:identity.commitURL,title:title+(identity.sourceSnapshot?` · Zdrojový snapshot sha256:${identity.sourceSnapshot}`:'')});
+  apply(repositoryLink,{label:'GitHub',url:identity.repository,title:identity.repository?'Golden Axe source repository':'Source repository address has not been verified'});
+  const title=identity.commit?`Source commit of this image: ${identity.commit}`:identity.status==='dirty-snapshot'?'Uncommitted working snapshot; build commit is unverified':'Build commit is unverified';
+  apply(commitLink,{label:identity.label,url:identity.commitURL,title:title+(identity.sourceSnapshot?` · Source snapshot sha256:${identity.sourceSnapshot}`:'')});
   return identity;
 }

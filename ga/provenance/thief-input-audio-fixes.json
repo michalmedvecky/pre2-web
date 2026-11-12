@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-12",
+  "status": "unreleased working candidate after ga-v0.3.0",
+  "runtimeSnapshotSHA256": "d11308d84fbd85000d11f639a2e1f45499e391d5474e1e0607568028e0461c4e",
+  "runtimeFiles": 635,
+  "simulationSHA256": "4e856a7b7d9c8994a25f8f88ee51f4553b63c809089014f589033c2f901f215b",
+  "changes": [
+    "Bare LEVEL typing buffered before either player's combat input; standalone L delayed300ms by user preference; Right Shift immediate",
+    "Coalesced AudioContext pause/resume transitions prevent stale asynchronous intent from leaving the game silent",
+    "Original AXE3fea contextual attack selection for nearby stocked thieves/items, without expanding hitboxes",
+    "Original AXE5456/54d5 thief counter, cached projection, inventory expiry and deferred cleanup ordering",
+    "Previously corrected AXE539d expired-mount escape retained; source waiting/occupied timers unchanged"
+  ],
+  "nativeEvidence": {
+    "method": "retained disassembly plus read-only selected native bytes/tables; not a new native DOS execution",
+    "unpackedModuleSHA256": "5f607b28bb4cb2580ecaa627665d17d20775d02f28f75c146d89aad27386ea90",
+    "originalZIP_SHA256": "950eb3ab07f4cd8100210235279423f82b1a2c3abbf987f65395c4c1e2232ccc"
+  },
+  "verification": {
+    "nodeTests": {
+      "passed": 264,
+      "failed": 0
+    },
+    "worldReplays": {
+      "modes": [
+        "arcade-1p",
+        "arcade-2p",
+        "beginner-1p",
+        "beginner-2p",
+        "duel-1p",
+        "duel-2p"
+      ],
+      "ticks": 58835,
+      "scope": "ordinary semantic inputs, legal Continue and stage advancement; strict ending states and exact final entities checked; not realtime/native DOS"
+    },
+    "typedLevelBrowserChecks": 12,
+    "actualPostMasterMusicWindows": 8,
+    "cachedLifecycleBrowserChecks": 9,
+    "interruptionBrowserChecks": 4,
+    "mountTimerCases": 4,
+    "mountTimerScope": "conditional original Stage2/Stage3 maps, both mount types, default modeled cadence;265updates, not native wall-clock measurement",
+    "actualAppFullModeBrowser": {
+      "passed": 6,
+      "returnedMenu": 6,
+      "worldHDCheckpoints": 116,
+      "presentationPhaseSnapshots": 83,
+      "pageErrors": 0,
+      "visuallyInspectedImages": 8,
+      "audioScope": "Fullrun PCM probes inconclusive because paused RAF reasserts pause; dedicated8PCM windows are the music authority",
+      "runtimeStable": true,
+      "audioDisposed": true,
+      "browsersClosed": true
+    },
+    "privatePreview": {
+      "all635PublicHashesVerified": true,
+      "httpsChangedModulesIndexAndBuild": 8
+    }
+  },
+  "reports": [
+    "reports/level-cheat-music.md",
+    "reports/thief-hit-detection.md",
+    "reports/thief-native-behavior.md",
+    "reports/thief-fixture-consolidation.md",
+    "reports/thief-fix-arcade-runs.md",
+    "reports/thief-fix-beginner-1p-run.md",
+    "reports/native-mount-lifecycle.md",
+    "reports/final-thief-fix-browser.md"
+  ],
+  "researchEvidence": [
+    "evidence/final-thief-fix",
+    "evidence/level-cheat-music-20261112",
+    "evidence/thief-native-20261112",
+    "evidence/thief-hit-detection-20261112",
+    "evidence/full-mode-runs/thief-fixture-consolidation.json",
+    "evidence/mount-timing-20261112/proof.json"
+  ],
+  "limitations": [
+    "No new complete native DOS replay or uninstrumented native wall-clock comparison",
+    "Full native IRQ/RNG/hit ordering and physical Safari/iOS/gamepad parity remain unverified",
+    "Thief stock is finite; legitimate misses and exhausted stock do not create items",
+    "Expired free mounts remain unboardable by original rules"
+  ],
+  "publication": {
+    "newRelease": false,
+    "clusterDeployment": false
+  }
+}

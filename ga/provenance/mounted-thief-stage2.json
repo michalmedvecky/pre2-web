@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-12",
+  "status": "unreleased candidate after ga-v0.3.0",
+  "runtimeSnapshotSHA256": "961086660f77158f3d3e9b7980e6c40319147637efa3ed95b444dda5eff464ec",
+  "previousRuntimeSnapshotSHA256": "d11308d84fbd85000d11f639a2e1f45499e391d5474e1e0607568028e0461c4e",
+  "changedRuntimeFiles": [
+    "js/controls-help.js"
+  ],
+  "simulationSHA256": "4e856a7b7d9c8994a25f8f88ee51f4553b63c809089014f589033c2f901f215b",
+  "simulationUnchanged": true,
+  "finding": "Original Stage2 flag4 fireball16 passes above a low standing thief. Already-running body strike9 can hit and drop one stocked item. No demonstrated mechanics deviation requiring a fix.",
+  "nativeEvidenceScope": "Retained conditional native flame-hit, run-body-hit(flag5), explicit-fireball-miss captures and selected original bytes/script flags; no new native execution. Applicability of body strike to flag4 follows shared type11 state9 path.",
+  "verification": {
+    "nodeTestsPassed": 267,
+    "newMechanicsTests": 3,
+    "ordinaryVariantCases": 9,
+    "runningPathsControlledAndDefaultCadence": 6,
+    "actualAppBrowserCases": 12,
+    "browserScope": "Three heroes SD/HD, conditional source Stage2 encounter with default-timer ordinary-input prefix, then trusted J; not full realtime keyboard/nativeDOS playthrough",
+    "helpVisualInspection": [
+      "desktop",
+      "390px mobile"
+    ],
+    "all635PublicHashesVerified": true,
+    "httpsRoutesVerified": 5,
+    "ownedBrowserAudioServerClosed": true
+  },
+  "reports": [
+    "reports/mounted-thief-native-followup.md",
+    "reports/mounted-thief-stage2.md",
+    "reports/mounted-thief-browser.md"
+  ],
+  "researchEvidence": [
+    "evidence/mounted-thief-20261112",
+    "evidence/mounted-thief-hit-20261112"
+  ],
+  "limitations": [
+    "Exact user position, target state and input sequence were not captured; not every possible mounted miss is declared legitimate.",
+    "Earlier six complete browser runs were on preceding d11308 snapshot; gameplay core byte-identical."
+  ],
+  "newRelease": false,
+  "clusterDeployment": false
+}

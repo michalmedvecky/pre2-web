@@ -1,102 +1,92 @@
-# Golden Axe — samostatný webový balíček
+# Golden Axe — standalone web package
 
-Tato složka obsahuje Golden Axe, nikoli Prehistorik2. Je umístěná v repozitáři [michalmedvecky/pre2-web](https://github.com/michalmedvecky/pre2-web/tree/main/ga); Prehistorik zatím zůstává na původním místě. `dist/` je ověřená kopie Golden runtime s odděleným build-info hookem, původním OPL/WASM/SND/FLAC a licencovaným zdrojovým kódem Nuked. Neobsahuje EXE, ZIP ani prohlížečový DOS emulátor.
+Golden Axe lives in `ga/` inside the public [michalmedvecky/pre2-web repository](https://github.com/michalmedvecky/pre2-web/tree/main/ga). Prehistorik and Flappy remain separate applications. This is a browser port built from analysis of the DOS executable and game data; the runtime does not contain an EXE, source ZIP or DOS emulator.
 
-Repozitář je veřejný. Golden Axe má samostatná [vydání `ga-v*`](https://github.com/michalmedvecky/pre2-web/releases), GA-only archiv a kontejnerový image; prefix `v*` jiných her nepřebírá. Zveřejnění zdrojů či vydání samo nemění běžící aplikaci.
+**Deployment:** [DEPLOYER.md](DEPLOYER.md). GA has its own container image, CI workflow, release tags and parameterized k3s manifests. A source push or GitHub release does not deploy anything to a cluster.
 
-**Pro deployera: [DEPLOYER.md](DEPLOYER.md).** Dockerfile, samostatné CI a parametrické k3s manifesty jsou připravené. Přesný release commit, CI a image digest patří ke konkrétnímu GitHub vydání. Lokální Docker není dostupný, skutečný image build/smoke provádí CI nebo deployer. Žádný cluster deployment není součástí vydání.
+## Golden Axe 0.4.0
 
-## Vydání ga-v0.3.0
+Release `ga-v0.4.0` adds:
 
-Obsahuje volitelný hudební remaster, opravu návratu zvuku z historie prohlížeče a přehled ovládání obou hráčů přímo ve hře. Původní hudba zůstává výchozí, HD grafika je výchozí. Aktuální stav vydání určuje GitHub release, nikoli tato pracovní dokumentace. Publikační kontrola: [reports/publication-readiness-20261112.md](reports/publication-readiness-20261112.md).
+- An English game interface, controls guide, accessibility labels, overlays and runtime messages.
+- A verified stage2 mount escape correction: expired animals leave using the original terrain-aware rules instead of remaining stranded. Boarding eligibility stays unchanged; see [the recovery report](reports/stage2-mount-recovery.md).
+- Source-derived restorations of all **15 original sound effects**, with their IDs and exact native durations retained. The complete effect bank is about 556 KB.
+- **Remastered music and sound effects by default**, alongside the existing default HD graphics. Original audio and graphics remain selectable.
 
-Souhrn ověření a známých mezí: [reports/release-030.md](reports/release-030.md). Přesný commit a image jsou v [release ga-v0.3.0](https://github.com/michalmedvecky/pre2-web/releases/tag/ga-v0.3.0).
+The exact commit, verified container digest and GA-only archive checksums are published with [ga-v0.4.0](https://github.com/michalmedvecky/pre2-web/releases/tag/ga-v0.4.0). See [the release verification scope](reports/release-040.md). Image publication does not perform a cluster rollout.
 
-## Auditní opravy ga-v0.2.6
+The effects restoration cleans and reconstructs the supplied one-bit recordings; it cannot recover lost studio recording detail and is not newly recorded foley. See [the SFX report](reports/sfx-remaster.md). The approved music remaster covers all 26 original programs without adding notes or compositions; see [the music report](reports/music-remaster.md).
 
-Restart meziscén, body jezdce, původní rozestup komba, Duel HUD, ukončování audia
-a zadní jezdecká póza byly opraveny a cíleně ověřeny.
-Souhrn: [provenance/ga-v0.2.6-qa.json](provenance/ga-v0.2.6-qa.json).
+## Playing and controls
 
-## Hudební remaster
+**Controls and combos** opens the full guide from the main menu, Options, Pause and the footer. Both player cards follow the currently selected devices. The guide pauses play safely and supports keyboard, touch, fullscreen and scrolling; Esc closes it.
 
-Původní hudba zůstává výchozí. Napsáním **MUSIC** v menu nebo během hry se
-přepíná původní zvuk a schválený akustický remaster. Na telefonu slouží
-tlačítko **Hudba: původní / remaster** v Options a v pauze. F3 zapíná/vypíná
-hudbu, F2 zvukové efekty; MUSIC vybírá její zvukovou variantu.
+| Action | Player 1, default Keypad | Player 2, default Keyboard |
+| --- | --- | --- |
+| Move | Numeric keypad directions; also arrow keys | QWE / A·D / ZXC |
+| Attack | Num 5 or J | S |
+| Jump | Insert or K | Tab |
+| Magic | Right Shift or L | Left Shift |
+| Easier run | R + left/right | F + A/D |
 
-Zpracováno je všech 26 původních hudebních programů včetně úvodu, meziscén,
-výsledků a souvislých levelových sekvencí. Nové skladby ani noty nepřibyly.
-Remaster se načítá po jednotlivých skladbách a při chybě pokračuje originál.
-Součást samostatného vydání ga-v0.3.0. Ověření a přesné meze:
-[reports/music-remaster.md](reports/music-remaster.md).
+The original horizontal double-tap run remains available: tap the same direction twice, holding the second press. A running jump clears the first high step in stage 4; for default P1 use **R + right + K**. The guide also explains running attacks, simultaneous attack+jump, airborne attacks and close-range combos. Movement up/down changes depth; it is not crouching.
 
-## Ovládání
+Keypad and Keyboard can be swapped in Options. Movement/attack/jump follow the selected device; magic and R/F remain player-specific. Arrow/J/K aliases are available for P1 keyboard devices, and single-player P1 Keypad also accepts WASD. Mouse/gamepad controls and calibration are documented in the guide. Touch controls operate P1; hold **RUN + direction**, then tap **JUMP** for a running jump.
 
-Tlačítko **Ovládání a kombinace** otevře úplný přehled v hlavním menu, Options, pauze i patičce. Ukazuje oba hráče podle aktuálních zařízení a vysvětluje původní i webové klávesy, běh, skok z běhu a kombinace útoků. Během čtení je hra pozastavená; Esc přehled zavře.
+- **Space / Esc:** pause; **F2:** effects on/off; **F3:** music on/off; **♪:** master mute.
+- Bare cheats are case-insensitive. Standalone **L** waits300ms so typing **LEVEL** does not spend magic; **Right Shift** casts immediately.
+- **MUSIC:** switch original/remastered music. Options and Pause also provide music and sound-effect edition buttons. Edition selection is separate from F2/F3 mute gates.
+- **HD:** original/HD graphics; **IDDQD:** invulnerability; **MAP:** map and validated click/tap teleport; **LEVEL:** choose an original stage. Touch buttons are in Pause.
 
-Po úvodu se přejde rovnou do menu bez hesla. P1: šipky, J útok, K skok,
-L magie, **R + vlevo/vpravo běh**. P2: QWE/A·D/ZXC, S útok, Tab skok,
-levý Shift magie, **F + A/D běh**. Původní dvojklep směru pro běh zůstává.
-Na telefonu držte tlačítko **BĚH** současně se směrem a SKOKem.
-První vysoký schod ve stage 4 vyžaduje běhový skok: R + doprava + K.
-Zkratka bezpečně zahájí rozběh před skokem i při současném stisku.
+The stage2 fireball flies above low standing potion thieves, as in the original. Start the mount running before pressing ATTACK for its body strike. See the in-game guide and [native follow-up](reports/mounted-thief-native-followup.md).
 
-Původní klávesy zůstávají: Keypad používá numerické směry, Num5 útok a Insert skok; Keyboard používá QWE/A·D/ZXC, S útok a Tab skok. Tyto dva typy lze v Options prohodit mezi hráči. Magie zůstává podle hráče: P1 pravý Shift, P2 levý Shift. Šipky/J/K/L jsou rozšíření P1 a R/F jsou webové zkratky pro běh. Nejde o nové herní schopnosti.
+Music loads per program. Effects preload as a small verified bank after audio unlock. During preparation or a delivery failure, original audio remains available; gameplay does not wait for the remaster download. Audio needs a user gesture, and remote OPL AudioWorklet playback requires **HTTPS**; localhost is the development exception.
 
-## Lokální spuštění a kontroly
+## Run and verify locally
 
-Node24+, žádné npm závislosti ani instalace:
+Node 24+, with no npm dependency installation:
 
 ```sh
 cd ga
 node scripts/serve.mjs
-# http://127.0.0.1:5790/ — ukončení Ctrl-C
+# http://127.0.0.1:5790/ — stop with Ctrl-C
 ```
 
-Z druhého terminálu v této složce:
+In another terminal in `ga/`:
 
 ```sh
 npm test
 node scripts/verify-package.mjs
 ```
 
-Je-li k dispozici jen Node: `node --test tests/*.test.mjs tests/mechanics-*.mjs`. Test izolace CI čte také dva workflow soubory v nadřazeném repozitáři; předejte deployerovi repo včetně `.github/workflows/publish-ga-image.yml`, ne pouze vytržený runtime. Samotná aplikace, Docker buildcontext a deploy renderer jsou samostatné uvnitř `ga/`.
+Without npm, use `node --test tests/*.test.mjs tests/mechanics-*.mjs`. The complete suite includes CI-isolation checks that read the parent repository workflows, so use a full repository checkout for that suite. The GA-only release archive is sufficient for the application, container build context and deployment renderer; it does not include the parent workflows.
 
-- `provenance/original-runtime-manifest.json`: nedotčená původní kopie z výzkumného workspace.
-- `provenance/runtime-manifest.json`: současné runtime soubory; `build.json` je záměrně vyjmut, protože se injektuje pro každé sestavení.
-- `provenance/source-state.json`: původní parentHEAD, dirty stav a snapshotSHA; **původní dirty pracovní kopie není commit Golden Axe**.
-- `provenance/parent-protected-files.json`: SHA39 již existujících dirty/untracked souborů a výslovně schválená jednořádková CI výjimka.
-- `validation/` a `evidence/browser/checks.json`: provedené kontroly, nikoli důkaz nasazení.
+Portable browser tests use `GA_TEST_URL`, `GA_QA_OUTPUT`, `GA_PLAYWRIGHT_MODULE` and `GA_CHROME_PATH`; see the corresponding `tests/*-browser.mjs` files. Their output distinguishes automated checks from screenshots actually inspected. A browser/Node preview is not evidence that a container was tested.
 
-Po záměrné a zkontrolované změně runtime použijte `node scripts/refresh-manifest.mjs --local-build-info`, znovu testujte a commitněte nové checksumy. CI manifest automaticky neopravuje. `/build.json` v pracovní kopii poctivě ukazuje `dirty-snapshot`, commitnull. Čistý CI image dostává skutečný plný packaging commit a původní snapshot jako samostatné pole; GitHub odkaz je ve stránce.
+After a reviewed runtime change:
 
-## Rozsah a známé meze
+```sh
+node scripts/refresh-manifest.mjs --local-build-info
+npm test
+node scripts/verify-package.mjs
+```
 
-Core75 má75 přenesených mechanických regresí, nikoli úplný byteexact native replay. Cílené Stage4 skoky, mountedJ animace/offsety a Knightexit mají native/browser důkazy v původním výzkumu. Globální IRQ/RNG/wallclock, hit ordering a některé near-goods útoky mají známé meze; fyzický iOS/Gamepad nebyl ověřen. Uživatel samostatně hlásil dokončení hry; není to verzovaný machine/nativefullrun receipt.
+CI deliberately does not repair checksums automatically. `provenance/runtime-manifest.json` records the runtime files and snapshot; `build.json` is excluded because each image injects its own metadata. The tracked local template truthfully uses `dirty-snapshot` and a null commit. A clean CI image exposes its full packaging commit and source snapshot through `/build.json` and the in-game GitHub links; local HEAD is never presented as a verified deployed commit.
 
-Výchozí je nyní **HD remaster**, přepínatelný tlačítkem nebo cheatem `HD` na původní grafiku. Zahrnuje úvod, otáčený výběr postav, všechny mapy a jejich původní barevné varianty, postavy, bossy, předměty, kouzla, meziscény a výsledky. Také přehled `MAP` podporuje HD. Herní jádro a výchozí původní hudba zůstávají zachované. Podrobnosti a přiznané výtvarné limity: [HD remaster](reports/hd-remaster.md).
+Historical source/validation evidence is retained in `provenance/original-runtime-manifest.json`, `source-state.json`, `parent-protected-files.json`, `validation/` and the reports. Historical dirty parent state is not a GA release identity.
 
-Pozdní1P Duel obsahuje **předběžnou barevnou variantu bosse podle současného portu**; její dosažitelnost/shoda s DOS originálem není ověřená. Je odděleně označená v diagnostice a UI „O této verzi“. Vydání netvrdí úplnou nativní IRQ/fyzikální ekvivalenci.
+## Scope and known limits
 
-Prohlížeč potřebuje pro vzdálené OPL AudioWorklet **HTTPS** a uživatelské gesto; localhost je vývojová výjimka. Publikujte na kořeni samostatného hostu `/`, ne pod URL `/ga/`: `/ga` je cesta v Git repo; starý `/hd-pilot.html` zůstává pouze historickou referencí. Node server je pouze lokální preview, produkci obsluhuje nginx8080. Žádný nový CSP/COOP/COEP se nezavádí bez ověření Workletu.
+HD covers the title, rotating character selection, maps and palette variants, actors, bosses, items, spells, transitions, results and MAP overview. Original graphics remain available. Artwork coverage and limits are described in [reports/hd-remaster.md](reports/hd-remaster.md).
 
-## Licence a původ souborů
+The package preserves the original modes and mechanics. Automated world replays and actual browser presentations cover Arcade, Beginner and Duel in 1P/2P, but they are not a new complete realtime/native DOS replay. Global IRQ/RNG/wall-clock equivalence, some hit/throw ordering and the original reachability of the late 1P Duel boss palette remain unverified. Physical Safari/iOS/gamepad testing is not claimed. See [the quality audit](reports/quality-027.md) and [HANDOFF.md](HANDOFF.md) for the current verified scope.
 
-Původní herní artwork/melodie/data si zachovávají původní autorství; tento balíček jim neuděluje novou licenci. Nuked-OPL3 je LGPL-2.1-or-later, včetně plného původního C/h, licence, wrapperu a přenositelného buildreceptu v `dist/assets/audio/opl/source/`. Podrobnosti [LICENSES.md](LICENSES.md). Tajné údaje do repozitáře nepatří.
+Serve the application at the root `/` of its own host, not beneath a `/ga/` URL path. `ga/` is the repository directory. Production uses nginx on 8080; the Node server is a local preview. Do not introduce CSP/COOP/COEP changes without verifying AudioWorklet operation. The old `/hd-pilot.html` is a historical reference, not the main game.
 
-CC0 u VSCO2 Community Edition se vztahuje k použitým nástrojovým nahrávkám, nikoli k původním melodiím Golden Axe. Veřejný repozitář neznamená, že všechny jeho části mají společnou open-source licenci. Původní EXE ani ZIP se nepublikují.
+## Rights and release packaging
 
-Samostatné Golden Axe vydání používá tagprefix `ga-v*` a ručně přiložený GA-only archiv+SHA256SUMS po úspěšném GA CI; automatický GitHub reposourceZIP není tento balíček. Viz release postup vDEPLOYER.md.
+Original artwork, recordings, melodies and game data retain their original authorship; this package does not grant them a new licence. Public repository visibility does not make every component share one open-source licence. Source EXE/ZIP files and secrets do not belong in the runtime or repository.
 
-## Verze0.1.1 — původní výběr postav
+Nuked-OPL3 is LGPL-2.1-or-later, with its original C/header sources, licence, wrapper and build recipe under `dist/assets/audio/opl/source/`. VSCO 2 Community Edition samples are CC0; that applies to the instrument recordings, not Golden Axe melodies or SND effects. Details: [LICENSES.md](LICENSES.md).
 
-Samostatný preview [localhost5790](http://127.0.0.1:5790/) obnovuje původní scénu modré kostry a obíhajících hrdinů. Ve2P vybírají oba hráči současně na vlastních rukách; potvrzení stejného hrdiny je zakázané. Dotykové šipky/názvy/potvrzení jsou pod plátnem. VýchozíP1 Num4/Num6 aNum5 (navíc šipky/J/Enter),P2 A/D aS; Options mohou vstupní zařízení prohodit. Zahrnuto v samostatném preview vydání ga-v0.1.1; existující release ga-v0.1.0 zůstává beze změny. Skutečný releasecommit/image/CI jsou uvedené v GitHub release notes.
-
-Důkazy a meze: [character-select report](reports/character-select.md), `evidence/character-select/checks.json`,6nových cílených presenter testů. Počáteční1P obraz souhlasí62400/62400RGBpixelů s původním DOS capture; ostatní pózy nejsou tímto jedním snímkem plošně ověřené.
-
-## Verze0.2.0 — HD grafika výchozí
-
-142 testů a kontrola runtime manifestu prošly; všechny šest kombinací režimu/počtu hráčů mají nové portové průchody a browser zakončení. Kontroly původního DOS runtime mají užší, výslovně popsaný rozsah. Vizuálně prohlédnutá místa jsou odlišena od automatických kontrol v [souhrnu QA](evidence/hd-release/README.md).
-
-Balíček obsahuje196 HD atlasů,111 mapových regionů a10 dynamických dveřních stavů. Původní fonty a jedna scoring tečka zůstávají přesně zachovanou vektorovou typografií. Původní melodie a zvuky se nemění; nový hudební remaster součástí tohoto vydání není.
+Golden Axe releases use **`ga-v*`**, separate from other games' tags, and attach a GA-only `ga-v<version>.tar.gz` plus `ga-v<version>.SHA256SUMS` after successful GA CI. GitHub's automatic Sourcecode ZIP contains the entire parent repository and is not that standalone package. Published GA releases remain prereleases and do not replace the repository's Latest release for other applications. See [DEPLOYER.md](DEPLOYER.md) for the release and deployment boundary.

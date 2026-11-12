@@ -1,0 +1,32 @@
+// Actual app + trusted J. Initial conditional Stage2 fixture, not a full traversal.
+import assert from 'node:assert/strict';
+import {mkdir,writeFile,readFile} from 'node:fs/promises';
+import {resolve} from 'node:path';
+import {createHash} from 'node:crypto';
+const {chromium}=await import(process.env.GA_PLAYWRIGHT_MODULE||'playwright');
+const base=process.env.GA_TEST_URL||'http://127.0.0.1:5966/',out=resolve(process.env.GA_QA_OUTPUT||'/tmp/ga-mounted-thief');await mkdir(out,{recursive:true});
+const report={scope:'Actual app, trusted J input. Original Stage2 map/source thief spawn0x399b. Only initial conditional fixture sets the player start position, suppresses stage script and removes other actors. Later input, attack, AI, rectangles and item inventory use normal handlers. Both NPCs use exact source Stage2 spawns. An explicit retained semantic input prefix establishes mounting and a native double-tap run; the final J attack is trusted browser input. Not complete native DOS traversal.',cases:[],errors:[]};
+const plans=JSON.parse(await readFile(process.env.GA_ROUTE_FIXTURE||new URL('./fixtures/stage2-mounted-thief-route.json',import.meta.url),'utf8'));
+const before=process.env.GA_BEFORE_SIMULATION?await readFile(process.env.GA_BEFORE_SIMULATION,'utf8'):null;
+const browser=await chromium.launch({headless:true,...(process.env.GA_CHROME_PATH?{executablePath:process.env.GA_CHROME_PATH}:{}),args:['--mute-audio']});
+try{
+ for(const version of before?['before','after']:['after'])for(const graphics of['original','hd'])for(const character of['amazon','hero','dwarf'])for(const variant of['fireball','run']){
+  if(process.env.GA_CASE_FILTER&&!`${version}-${graphics}-${character}-${variant}`.includes(process.env.GA_CASE_FILTER))continue;
+  const c=await browser.newContext({viewport:{width:1280,height:900}}),p=await c.newPage();p.on('pageerror',e=>report.errors.push(String(e)));if(version==='before')await p.route('**/js/simulation.js',r=>r.fulfill({contentType:'text/javascript',body:before}));
+  await p.addInitScript(mode=>localStorage.setItem('ga.graphics',mode),graphics);await p.goto(base);await p.waitForFunction(()=>window.goldenAxe);await p.locator('#start').click();await p.waitForFunction(()=>goldenAxe.sequence?.kind==='title');await p.locator('#game').focus();await p.keyboard.press('Space');await p.waitForFunction(()=>!goldenAxe.sequence&&!goldenAxe.started);
+  await p.evaluate(character=>{goldenAxe.selection.character=character;goldenAxe.launch();goldenAxe.jumpToLevel(1);goldenAxe.pause();},character);
+  await p.waitForFunction(()=>goldenAxe.paused&&!goldenAxe.hdLoading.waiting);
+  const initial=await p.evaluate(async ({variant,plan})=>{const g=goldenAxe,s=g.simulation,{LOGIC}=await import('/js/logic-data.js'),record=LOGIC.scripts.arcade[1].find(r=>r.offset==='0x399b');s.script=[];s.scriptWait=null;s.runScript=()=>{};s.scrollLimit=1300;s.state.camera={x:504,y:152};
+   const player=s.state.player, mount=s.createActor({...LOGIC.scripts.arcade[1].find(r=>r.offset==='0x3931')}),thief=s.createActor(record);s.state.entities=[player,mount,thief];
+   Object.assign(mount,{direction:2});s.refresh(mount);Object.assign(player,{x:696,y:272,level:s.tile(696,272).level,state:1,direction:2});s.refresh(player);g.input.clear();
+   for(const i of [...plan.prefix,...plan.queue.slice(0,variant==='run'?15:12)])s.step(i);
+   if((variant==='run'?mount.state!==2:![0,1].includes(mount.state))||player.mountID!==mount.id)throw Error('Source replay must establish an occupied running dragon');
+   window.probe={mountID:mount.id,thiefID:thief.id,attacks:[],hits:[],items:new Set(),states:[]};const emit=s.emitEvents.bind(s);s.emitEvents=(...es)=>{probe.hits.push(...es.filter(e=>e.kind==='hit'&&e.target===thief.id));return emit(...es);};const step=s.step.bind(s);s.step=(...args)=>{const result=step(...args);if(mount.state===5||mount.state===9)probe.attacks.push({tick:s.state.tick,state:mount.state});for(const a of s.state.entities)if([16,17,18].includes(a.typeId))probe.items.add(a.id+':'+a.typeId);probe.states.push({tick:s.state.tick,mx:mount.x,my:mount.y,tx:thief.x,ty:thief.y,inventory:thief.magicPots});return result;};return{source:record,player:{x:player.x,y:player.y},mount:{id:mount.id,type:mount.typeId,x:mount.x,y:mount.y,level:mount.level,flame:mount.breathFlame},thief:{id:thief.id,x:thief.x,y:thief.y,level:thief.level,inventory:thief.magicPots},tick:s.state.tick};},{variant,plan:plans.rows.find(r=>r.character===character)});
+  await p.locator('#game').focus();await p.keyboard.press('Space');if(variant==='run')await p.keyboard.down('ArrowRight');await p.keyboard.press('j');if(variant==='run'){await p.waitForFunction(t=>goldenAxe.simulation.state.tick>=t+29,initial.tick);await p.keyboard.up('ArrowRight');}await p.waitForFunction(t=>goldenAxe.simulation.state.tick>=t+35,initial.tick,{timeout:30000});
+  await p.evaluate(()=>{if(!goldenAxe.paused)goldenAxe.pause();});const result=await p.evaluate(()=>{const s=goldenAxe.simulation,t=s.state.entities.find(a=>a.id===probe.thiefID);return{attacks:probe.attacks,hits:probe.hits,items:[...probe.items],inventory:t?.magicPots,states:probe.states};});
+  report.last={version,graphics,character,variant,initial,...result};assert(result.attacks.length>0,'Trusted J must generate a real mount attack');if(variant==='fireball'){assert(result.items.some(i=>i.endsWith(':16')),'Standing J emits the original fireball');assert.equal(result.hits.length,0,'Native fireball passes over the standing low thief');assert.equal(result.inventory,3);assert(!result.items.some(i=>i.endsWith(':18')));}else{assert(result.attacks.some(a=>a.state===9),'Established run J selects original body attack9');assert.equal(result.hits.length,1);assert.equal(result.inventory,2);assert.equal(result.items.filter(i=>i.endsWith(':18')).length,1);}
+  report.cases.push({version,graphics,character,variant,initial,...result});await p.screenshot({path:resolve(out,`${version}-${graphics}-${character}-${variant}.png`)});await p.evaluate(()=>goldenAxe.audio.dispose());await c.close();
+ }
+ assert.deepEqual(report.errors,[]);report.pass=true;
+}catch(error){report.failure=String(error.stack||error);throw error;}finally{await browser.close();report.beforeSHA256=before?createHash('sha256').update(before).digest('hex'):null;report.browserClosed=true;report.audioClosed=true;await writeFile(resolve(out,'checks.json'),JSON.stringify(report,null,2)+'\n');}
+console.log('PASS',report.cases.length,'trusted mounted attack cases');

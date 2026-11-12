@@ -1,0 +1,11 @@
+# Mounted potion-thief browser verification — 12 November 2026
+
+No simulation change was required. Twelve actual-app Chrome cases passed: all three heroes, original/HD graphics, standing fireball versus established running attack. The original Stage2 flag4 dragon's standing J generated one fireball16, no accepted hit and no potion; thief stock remained3. An established native double-tap run followed by a trusted J selected mount body-attack9, accepted one hit and produced exactly one potion; stock fell3→2 and no projectile was created.
+
+`tests/mounted-thief-browser.mjs` uses `tests/fixtures/stage2-mounted-thief-route.json`. The conditional initial scene uses the real Stage2 map, source dragon0x3931 at696/272 and source thief0x399b at960/256. It repositions only the player's initial start, isolates those actors, and suppresses further stage scripting. A retained semantic movement prefix establishes mounting and the run through ordinary handlers; the final J and subsequent held direction are trusted browser events. The prefix uses the application's default timer cadence, with no timerFraction patch. This is an isolated input/contact proof, not a full manual Stage2 traversal or a native DOS comparison.
+
+The native-proof agent supplied the source/default-cadence route. Evidence: `golden-axe-research/evidence/mounted-thief-hit-20261112/final/checks.json` and twelve screenshots. Exact unchanged simulation bytes were retained before investigation with SHA256 `4e856a7b7d9c8994a25f8f88ee51f4553b63c809089014f589033c2f901f215b`; no before/after behavior change is claimed. Exploratory controlled scenes and a fixed-timer prefix that accumulated timer debt were not counted as final proof.
+
+The English mounted-attacks guide was inspected visually in actual desktop1280×900 and mobile390×844 screenshots. Both layouts keep the close button visible and text readable; automated horizontal bounds checks passed. No full guide lifecycle rerun was needed for the text-only change.
+
+Host audio stayed muted. Browsers disposed their game audio and closed; the isolated localhost5966 server was stopped and its listening socket confirmed closed. No release, deployment or user-preview operation was performed by this agent.
