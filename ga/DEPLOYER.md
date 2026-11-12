@@ -1,6 +1,8 @@
-# Golden Axe — independent k3s deployment handoff
+# Golden Axe — historical standalone k3s deployment handoff
 
-GA is a separate application in the public [michalmedvecky/pre2-web repository](https://github.com/michalmedvecky/pre2-web), with build context `ga/`, Deployment/Service name `ga`, an isolated image repository and the requested host **`ga.500miles.cz`**. Preserve the existing GA namespace, Service, Ingress, TLS and access policy. Do not change Prehistorik or Flappy.
+Current repository: [michalmedvecky/remastered](https://github.com/michalmedvecky/remastered). The current unified container serves GA at **https://remastered.500miles.cz/ga/**. Use the root deployment handoff for that container. The standalone configuration below is retained for historical releases and compatibility; do not use it for the unified rollout.
+
+The historical GA package used build context `ga/`, Deployment/Service name `ga`, an isolated image repository and the requested host **`ga.500miles.cz`**. Preserve the existing GA namespace, Service, Ingress, TLS and access policy. Do not change Prehistorik or Flappy.
 
 **A GitHub release or image publication does not authorize a cluster rollout.** Apply changes only when the user explicitly instructs the deployer to deploy. This document does not claim a deployment, DNS/TLS change or successful rollout.
 

@@ -34,7 +34,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1]
   const manifest = await runtimeManifest(fileURLToPath(new URL('dist/', root)));
   await writeFile(new URL('provenance/runtime-manifest.json', root), JSON.stringify(manifest, null, 2) + '\n');
   await writeFile(new URL('dist/build.json', root), JSON.stringify({
-    application: 'flappy', repository: 'https://github.com/michalmedvecky/pre2-web',
+    application: 'flappy', repository: 'https://github.com/michalmedvecky/remastered',
     commit: null, buildSource: 'local', dirty: null, sourceSnapshot: manifest.snapshotSHA256
   }, null, 2) + '\n');
   console.log(`Recorded ${Object.keys(manifest.files).length} runtime files: ${manifest.snapshotSHA256}`);

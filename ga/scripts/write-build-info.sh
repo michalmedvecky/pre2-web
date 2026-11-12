@@ -1,7 +1,7 @@
 #!/bin/sh
 set -eu
 out=${1:?output file required}
-repo=${BUILD_REPOSITORY:-https://github.com/michalmedvecky/pre2-web}
+repo=${BUILD_REPOSITORY:-https://github.com/michalmedvecky/remastered}
 ref=${VCS_REF:-unknown}
 origin=${BUILD_SOURCE:-unknown}
 dirty=${BUILD_DIRTY:-unknown}

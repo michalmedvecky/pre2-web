@@ -1,8 +1,8 @@
 # Golden Axe — standalone web package
 
-Golden Axe lives in `ga/` inside the public [michalmedvecky/pre2-web repository](https://github.com/michalmedvecky/pre2-web/tree/main/ga). Prehistorik and Flappy remain separate applications. This is a browser port built from analysis of the DOS executable and game data; the runtime does not contain an EXE, source ZIP or DOS emulator.
+Golden Axe lives in `ga/` inside the public [michalmedvecky/remastered repository](https://github.com/michalmedvecky/remastered/tree/main/ga). The unified container serves Golden Axe at **https://remastered.500miles.cz/ga/**, alongside `/pre2/` and `/flappy/`. This is a browser port built from analysis of the DOS executable and game data; the runtime does not contain an EXE, source ZIP or DOS emulator.
 
-**Deployment:** [DEPLOYER.md](DEPLOYER.md). GA has its own container image, CI workflow, release tags and parameterized k3s manifests. A source push or GitHub release does not deploy anything to a cluster.
+**Deployment:** use the repository-root unified deployment configuration. [DEPLOYER.md](DEPLOYER.md) retains the historical standalone GA deployment/release handoff; its per-game image and host are not the unified deployment target. A source push or GitHub release does not deploy anything to a cluster.
 
 ## Golden Axe 0.4.0
 

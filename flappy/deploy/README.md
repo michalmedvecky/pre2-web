@@ -1,4 +1,6 @@
-# Flappy: nasazení do k3s
+# Flappy: historické samostatné nasazení do k3s
+
+Aktuální společný kontejner repozitáře [remastered](https://github.com/michalmedvecky/remastered) servíruje Flappy na **https://remastered.500miles.cz/flappy/**; konfigurace společného nasazení je v kořeni repozitáře. Následující návod popisuje pouze zachované původní samostatné nasazení.
 
 Flappy je samostatná statická aplikace. Produkční nginx servíruje celý obsah `flappy/dist/` na portu 8080. Nepotřebuje Node, databázi, PVC ani společný backend s Prehistorikem nebo Golden Axe. Složka `flappy/` je cesta v repozitáři; aplikaci publikujte na `/` vlastního hostname, nikoli pod URL `/flappy/`.
 

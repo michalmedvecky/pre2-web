@@ -1,0 +1,9 @@
+*
+!Dockerfile
+!deploy/
+!deploy/nginx.conf
+!dist/
+!dist/**
+dist/assets/source/
+dist/assets/executable-data.bin
+dist/assets/README.md

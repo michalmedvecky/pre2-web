@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "snapshotSHA256": "961086660f77158f3d3e9b7980e6c40319147637efa3ed95b444dda5eff464ec",
+  "snapshotSHA256": "bca08f6c274564a4968b69ea8afc56beb5b7fb9e366fe26c628e7af4c60843a0",
   "excluded": [
     "build.json (injected per build)"
   ],
@@ -2298,8 +2298,8 @@
       "size": 747
     },
     "hd-pilot.html": {
-      "sha256": "c750ea47b13cb7655fba667bf4257c10066be04db26164d598438cd534e728c6",
-      "size": 5812
+      "sha256": "bf7b41012afaa5c7326f61f9d9ccb6863604a7bfe4c434303c09696a5c8a6366",
+      "size": 5818
     },
     "index.html": {
       "sha256": "7d16a667966d301ea04239425e03d42739b6d04916513eed9236ecb823579904",
@@ -2393,13 +2393,17 @@
       "sha256": "44041adbc5d367633ffa0e4c07ac4baed3a92dacf0ac65beb7e059be4cf1a5bf",
       "size": 12975
     },
+    "js/hd-pilot-assets.js": {
+      "sha256": "c78e91af0083d5181ed50504330f1bcbf68808e4e7388400dbe6b2aa8f38c1fb",
+      "size": 3915
+    },
     "js/hd-presentation.js": {
       "sha256": "0b6a1c7c4ae38e9289fcd519990866b05efe0346d9e3a520ee037f551b0d7b7a",
       "size": 4545
     },
     "js/hd-preview-overlay.js": {
-      "sha256": "13c0931a5b762dce62a8425f734acd0320bf4d6af0b58ebed4618f23d6dc305f",
-      "size": 4031
+      "sha256": "46184f0e38c86c95d837b0597d4f0d8aed8948fd7599559a3f0ee640800332c3",
+      "size": 4063
     },
     "js/hd-qa.js": {
       "sha256": "fc04f7c2b42bcf6eab0820fbe16f56829e1cb930a8891aa1325cfa7b2c13b6c7",

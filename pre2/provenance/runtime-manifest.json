@@ -1,0 +1,1298 @@
+{
+  "schemaVersion": 1,
+  "snapshotSHA256": "3656e796d02737f6706fde230249eb0e18cead6560ff28c875b3c4e019af7f17",
+  "excluded": [
+    "build.json (injected per build)",
+    "private/redundant source files"
+  ],
+  "files": {
+    "assets/amber/level-H.footer": {
+      "sha256": "99587b8a106b0fc14683b18c59f4f47a82d484340e813c8b455323fb6d56bd32",
+      "size": 5029
+    },
+    "assets/amber/level-H.idx": {
+      "sha256": "48bd2580dddba616f32b59ec64d67861ff5ca6f1fa1aaea033692e0e18fa29c3",
+      "size": 1792
+    },
+    "assets/amber/level-H.map": {
+      "sha256": "7c3d21c45d6dfb0d27f2813f2a5c3901a30ee85267f5fe5d5d65afa078b6d650",
+      "size": 10240
+    },
+    "assets/amber/level.json": {
+      "sha256": "6c8fc59e0c929bb86bc74e83336f44f55d5f1f290d809a6c08cb4d647b398ad3",
+      "size": 33786
+    },
+    "assets/amber/sprites.idx": {
+      "sha256": "e7ec8b36e99ccc220d36038be111214e42ef9adf5d4ea0690ae995afc193b43c",
+      "size": 15516
+    },
+    "assets/background-BACK0.idx": {
+      "sha256": "bf34654123093c8d0c9ee906ec71de5df2852369b946f6d03901ec5778c2656b",
+      "size": 64000
+    },
+    "assets/background-BACK1.idx": {
+      "sha256": "f64ddf1c1acbe4d16e308789789985aa18ca0f4b562063ca2550ae84d4e1f66e",
+      "size": 64000
+    },
+    "assets/background-BACK2.idx": {
+      "sha256": "0f41975b4ad8a46342b19e0f42237c12acd2325c5e1525cd3022d656188b8722",
+      "size": 64000
+    },
+    "assets/background-BACK3.idx": {
+      "sha256": "21c677e941df5ca029c5579712936d8bd6fcd95c2a5de9618d7d0dd2a2a98d93",
+      "size": 64000
+    },
+    "assets/background-BACK4.idx": {
+      "sha256": "a9ecdcc59fb5f208f1f43ef86f0f83649abd49d7b6144e35d64ba9e3fcd8f0a9",
+      "size": 64000
+    },
+    "assets/background-BACK5.idx": {
+      "sha256": "2385dc71ffee3fe80b4e441f28b72ea5277452a674908fb3b8cddfd656d945e4",
+      "size": 64000
+    },
+    "assets/background-GAMEOVER.idx": {
+      "sha256": "3e8d8ef46cdb5de276d49a8df6ac17240a4980ac362438f04fd1f77bc7d59e9d",
+      "size": 64000
+    },
+    "assets/background-MAP.idx": {
+      "sha256": "1cc7ae919665fde2d1fdc79d539da5bfd551e9f9cfb989aeb39c81d6cb12df49",
+      "size": 128000
+    },
+    "assets/background-MENU2.idx": {
+      "sha256": "330b3c79746fa3a60828ba157506f83a6a8f88adea08cbc802ea393dedbe0554",
+      "size": 64000
+    },
+    "assets/background-MOTIF.idx": {
+      "sha256": "10dd9667562621afd50e23d41764c31b43ca80df9a0dc381e22edafa9f29b656",
+      "size": 64000
+    },
+    "assets/demo.bin": {
+      "sha256": "62901d89554f43ba8b99d1d4deb49e71885ab536d16f3edd6a8f5df712604520",
+      "size": 2048
+    },
+    "assets/fonts.bin": {
+      "sha256": "eedb134abdfdb2ba36698a0654d8e09b6af58c7ca3774a5ee9e3beea8254ec05",
+      "size": 10528
+    },
+    "assets/footer-1.bin": {
+      "sha256": "95f2065568d4a38301d43c3b3fee5cbbe1a37ec44fd8cb369970c6ed6d11efc4",
+      "size": 5029
+    },
+    "assets/footer-2.bin": {
+      "sha256": "bad8bb8ebedb3b38b9db7646f20dc31c0b070ff5525cdfce9756fed93cc8eda5",
+      "size": 5029
+    },
+    "assets/footer-3.bin": {
+      "sha256": "8a93185642316b0a788a5bc2f5cd73f31565146e5a6c1bf540937c4e9aa600d6",
+      "size": 5029
+    },
+    "assets/footer-4.bin": {
+      "sha256": "f8b3926a1decf722292798f19a380f74cf6731bcb8cd967ae3bcd9b1cd1dc90a",
+      "size": 5029
+    },
+    "assets/footer-5.bin": {
+      "sha256": "a97a46594ba113a2be4af47e3bac6be706f8f3f5a2a06dfc9b1f8b42454e0d82",
+      "size": 5029
+    },
+    "assets/footer-6.bin": {
+      "sha256": "cb31da6907a9a9226ae3f51b6e09878504456b23b139f04268858c6bdb8d23d2",
+      "size": 5029
+    },
+    "assets/footer-7.bin": {
+      "sha256": "be9222895bb84614ab609d1aeb2d49c227149bb3faad8b28c8e9cfc2a9851841",
+      "size": 5029
+    },
+    "assets/footer-8.bin": {
+      "sha256": "6bce59369d7e7667f18d175edb76a0f2bb9dc90e0b083899e459026fd600c217",
+      "size": 5029
+    },
+    "assets/footer-9.bin": {
+      "sha256": "73a439c3e662e35cc2b60a21e360897e591dc2f979825f728442bf25d61acfc2",
+      "size": 5029
+    },
+    "assets/footer-A.bin": {
+      "sha256": "fa6e9c82f46049b7c237b02885a344bd9aa11b0abedcc0e3f3f1568be9c46101",
+      "size": 5029
+    },
+    "assets/footer-B.bin": {
+      "sha256": "d70e080a951942499ad4782683a3af4d97e7ef6d68720dee275f4d7a2e19c147",
+      "size": 5029
+    },
+    "assets/footer-C.bin": {
+      "sha256": "dc626ca874d91d47c6960d356664f56b6bbff91a590a0954b41187f61d82696c",
+      "size": 5029
+    },
+    "assets/footer-D.bin": {
+      "sha256": "051dcf6f86350ebca55afc9ad5132054f33fc22bd2ff5fe1bd81cc37e3e1e512",
+      "size": 5029
+    },
+    "assets/footer-E.bin": {
+      "sha256": "5d53fd68f903ac50c2dff01a1d890ae1bac8b00e5a6ac92fd7839e2dd1a9e4c7",
+      "size": 5029
+    },
+    "assets/footer-F.bin": {
+      "sha256": "2c0455a923972e20846ed64251f6eedc64275ea6d7343e14e5650152aa6ab445",
+      "size": 5029
+    },
+    "assets/footer-G.bin": {
+      "sha256": "bd589f99de2220cd05ccc8553ce8d20853b36dcf789516485a74dd98900a78f9",
+      "size": 5029
+    },
+    "assets/front.idx": {
+      "sha256": "a2c556433b77bfb94be78e35eafab04573b4813d9414f17c188e4a5c3d3b7070",
+      "size": 41728
+    },
+    "assets/game.json": {
+      "sha256": "36e0bf5e4b9348e25093402e1d814ff448662aa661146fa8cbb9260001973fcd",
+      "size": 952668
+    },
+    "assets/hd/amber-background.png": {
+      "sha256": "db8acc61c04dc2542c0aa3eb5bdce8baff068dd0fe9a96e1748c74702efcd933",
+      "size": 3169817
+    },
+    "assets/hd/amber-objects.png": {
+      "sha256": "d757692da4d80c48b994323c32c74a410599993fd9f0d7d862ea300687518080",
+      "size": 1565269
+    },
+    "assets/hd/bears.png": {
+      "sha256": "b1caf28e334c7fb6f14e1659362b3da795f3647a6399d4521c39ff2d35fb3c2e",
+      "size": 199574
+    },
+    "assets/hd/hero-00-15.png": {
+      "sha256": "876999e5d7e6c76b7eb6094cbd4175fb0c5fac5b17149acb2c9a786979466a43",
+      "size": 570951
+    },
+    "assets/hd/hero-16-31.png": {
+      "sha256": "22905a69182993dbe847593350138554b4d2c4013504a3874be623d098a84154",
+      "size": 523406
+    },
+    "assets/hd/hero-32-38.png": {
+      "sha256": "8a5f92f2163d233f1b90e221e593950eeaaa374a89c95c11d4d23b4ec226f2b4",
+      "size": 215539
+    },
+    "assets/hd/hero-gear.png": {
+      "sha256": "f5a11fa1174ee7b032829c80430e0792d6985626920d5f3105d23f4c8f6b467c",
+      "size": 270338
+    },
+    "assets/hd/hero-legs.png": {
+      "sha256": "5c42938049de0eee806134041350523e267b4b2b165566fb79e56f757d3b1ade",
+      "size": 257642
+    },
+    "assets/hd/manifest.json": {
+      "sha256": "f823e5f830134b1b0ec6f335791d03f8add58c5d97dcb7ed68874657ada15931",
+      "size": 1419885
+    },
+    "assets/hd/v10-banquet.png": {
+      "sha256": "9acf66f91882d859c99c44dc536a4c02604be428dcf8cb7aa2c8e5cac5111480",
+      "size": 126466
+    },
+    "assets/hd/v10-cherries.png": {
+      "sha256": "08ebac6cab9c81a13e3459d5c9c40307ef4ebf337db8e98b6646b28cbd667139",
+      "size": 11448
+    },
+    "assets/hd/v10-scene-2.png": {
+      "sha256": "d875d8cc7f630346a3ca2e121c5baf24d7403444f6a8ff99dd0dd9b38b64f8d7",
+      "size": 826638
+    },
+    "assets/hd/v10-scene-3.png": {
+      "sha256": "104843921161ac3ee73f54b09f2e7557ef5a78c402f165379ddd63df0a24bc49",
+      "size": 993878
+    },
+    "assets/hd/v10-scene-4.png": {
+      "sha256": "e0b6ec1551b07590c6eab0d2df8ca438ba2e0e1bd7c269bd93821eea8bb01b16",
+      "size": 2019374
+    },
+    "assets/hd/v10-scene-5.png": {
+      "sha256": "f067f1135fde53e9e831997dc7cb56373a7598c28374e619d950831a9d2b0c4d",
+      "size": 1928557
+    },
+    "assets/hd/v10-scene-6.png": {
+      "sha256": "0e1e2ea1ed9b7398042963e802c52079d8b8208b8a2cd3167328241beab28ee9",
+      "size": 1915597
+    },
+    "assets/hd/v10-scene-7.png": {
+      "sha256": "d5d09b885a2bc52524f6c2d583b50acff8596194f54d3302dce0d1ec42b4c9a0",
+      "size": 1575154
+    },
+    "assets/hd/v10-scene-8.png": {
+      "sha256": "28d3b6bf74f3a8072dff1dba90a6450f387ae069fd060e2d150c47e0daebf8af",
+      "size": 1723568
+    },
+    "assets/hd/v10-scene-9.png": {
+      "sha256": "a594425f3aca1ac2e0e6eba01c82c8779d5576ba4fcc4fd9bc0fe3d309ae1d32",
+      "size": 1596759
+    },
+    "assets/hd/v10-scene-A.png": {
+      "sha256": "34750d4fcd93fc8a3c2f1fa3620133b788db1f8af3edd2efefa4ed108868580e",
+      "size": 836195
+    },
+    "assets/hd/v10-scene-B.png": {
+      "sha256": "0dbabba2a40d8a72ee2762dd56af6c75ffd8a0d9b14aea79a94e03b1846d6b07",
+      "size": 1484975
+    },
+    "assets/hd/v10-scene-E.png": {
+      "sha256": "61bfb2d57c398cb3a46896bd7e9bb474c8c15af4bf24c3f19a67db89377716e9",
+      "size": 1467162
+    },
+    "assets/hd/v11-islands.png": {
+      "sha256": "4ce670088a59b4664bc108cd68b4bb311daa963730f7901bee40528b2baf5b5a",
+      "size": 166617
+    },
+    "assets/hd/v13-banquet.png": {
+      "sha256": "137846e06c0d64f159c1b0363558472b64c920f509eecaec35e2bc9d7b1c0bbb",
+      "size": 138900
+    },
+    "assets/hd/v14-cherries.png": {
+      "sha256": "ba1a481ee574595d13f676483761ab37caa7ae82af4674102be8a97d53fd7485",
+      "size": 114401
+    },
+    "assets/hd/v14-title.png": {
+      "sha256": "c25f85d0ed4389f3c19f3bba84506d15b529cbc68e2d5b63898f5a616beb78c9",
+      "size": 2171939
+    },
+    "assets/hd/v16-boss-poses.png": {
+      "sha256": "80559f1ca57c65fefc9f24a93d15192ed0628164ef9ac5398cd77a08358dfee6",
+      "size": 2413819
+    },
+    "assets/hd/v16-screen-CASTLE.png": {
+      "sha256": "2d3ae86acd95a783157d5d3a55df9751eb2368b19aa0263ff319a3d46a8b6c40",
+      "size": 2551413
+    },
+    "assets/hd/v16-screen-PRESENT.png": {
+      "sha256": "d631b4cd6c5ce76a372ef70e25255af7879274a3bc79e22529403ed178e09f60",
+      "size": 2888107
+    },
+    "assets/hd/v16-screen-THEEND.png": {
+      "sha256": "448cdf9dd018371f6f86cb1d4c5a35021356c30785be7cb8f3343f5073adc0d1",
+      "size": 1703246
+    },
+    "assets/hd/v16-screen-TITUS.png": {
+      "sha256": "d3944147447614c54592bbaec24275adf774b0fcfafec08f99b27d7524c42248",
+      "size": 811587
+    },
+    "assets/hd/v16-stage-2-0.png": {
+      "sha256": "6fea3a41823bda3cddf12bad9404147c9c6c00674fa8513bcb9da89340d20c99",
+      "size": 551317
+    },
+    "assets/hd/v16-stage-2-1.png": {
+      "sha256": "8107808028cacf40e1787d24eb262065e593a1df00e22f76fca275f2513c0644",
+      "size": 637763
+    },
+    "assets/hd/v16-stage-2-2.png": {
+      "sha256": "f053b7e8eb72fb8ec2c46df80f5e0c98ca0f02aec26cb995e60fa6379e248431",
+      "size": 569980
+    },
+    "assets/hd/v16-stage-2-3.png": {
+      "sha256": "556fa56b03815da955478fb8eb3358d20db1073decbfe25883d4c028d91b5465",
+      "size": 499920
+    },
+    "assets/hd/v16-stage-3-0.png": {
+      "sha256": "06318b15b238399270f41e5f1a68c74eaf0f6649345b4c2f4473931ac80c1367",
+      "size": 666536
+    },
+    "assets/hd/v16-stage-3-1.png": {
+      "sha256": "7999a07a03ed79e4d1ae6b89cc70eea3a3680ada93f0d4fb8a1305fe07be7d15",
+      "size": 672689
+    },
+    "assets/hd/v16-stage-3-2.png": {
+      "sha256": "de2e89a549f068564d8f0c2b35152165128e8e9623ec9fe2a200c0ee95081d8e",
+      "size": 671958
+    },
+    "assets/hd/v16-stage-3-3.png": {
+      "sha256": "5c29985391d586c03146887b365379ca495860467f2074faaff7c521aec16436",
+      "size": 597919
+    },
+    "assets/hd/v16-stage-4-0.png": {
+      "sha256": "7dd0a5c192c3d6a314118c4d4d7e9ee9cca0fa3c2537ba7e89906f19f57f18f9",
+      "size": 566981
+    },
+    "assets/hd/v16-stage-4-1.png": {
+      "sha256": "1c248d632e6437c4ae7e481dfc072fdc425571c9593999528be3cf19905b3b06",
+      "size": 655476
+    },
+    "assets/hd/v16-stage-4-2.png": {
+      "sha256": "e98c0046ed2d187317a44f8c90045e26f591471a8444844adb5ea47c5e695c63",
+      "size": 640724
+    },
+    "assets/hd/v16-stage-4-3.png": {
+      "sha256": "7bf8f49e45779484bffd99f9da7e1d0b4a78c039cdd373abbb92f8952d07c27e",
+      "size": 114826
+    },
+    "assets/hd/v16-stage-5-0.png": {
+      "sha256": "145d0a64a258a094d5d70f657e1c80d99a42dca7e8b1dbcf6e9447ca52e79201",
+      "size": 585235
+    },
+    "assets/hd/v16-stage-5-1.png": {
+      "sha256": "60156d7c0813a9c81e77803cdeb700257ffdad7426c4c47203fb1373efeae852",
+      "size": 589443
+    },
+    "assets/hd/v16-stage-5-2.png": {
+      "sha256": "484e9f1313e7bb8a8afe678bd48a2abfab8f66aef354c62297a4c78eaba19806",
+      "size": 497290
+    },
+    "assets/hd/v16-stage-5-3.png": {
+      "sha256": "1a7718a84d08bc022e80181dde4376f456bfdd200554c7667295fa7bc7b7f34f",
+      "size": 75492
+    },
+    "assets/hd/v16-stage-6-0.png": {
+      "sha256": "4164489c6d7f9cbe1947ad7de24a52df3f80c2368d1049b6e4262b29a9fdee99",
+      "size": 647588
+    },
+    "assets/hd/v16-stage-6-1.png": {
+      "sha256": "8e9581ef05065a8d11b8cf7a024bb12d0d1375d296e5903263e7b90235cc3a18",
+      "size": 591377
+    },
+    "assets/hd/v16-stage-6-2.png": {
+      "sha256": "4124c7343563a5dd3092d85788e6d4f73c1762606b2301afb4c9f6fc7421d95c",
+      "size": 593060
+    },
+    "assets/hd/v16-stage-7-0.png": {
+      "sha256": "e44c25772c607b38c631d202ba6728d73ff50c6dbe204bbc6e847a4fdfc02896",
+      "size": 559141
+    },
+    "assets/hd/v16-stage-7-1.png": {
+      "sha256": "32c1a27365b34a9c0e2084013a72c9137bd3553eafc3d776450e53289c14adc6",
+      "size": 556845
+    },
+    "assets/hd/v16-stage-7-2.png": {
+      "sha256": "4360097cab3cbf2d7e2b9bafcee750e056385559874b1e06e192f401816d8ac4",
+      "size": 605648
+    },
+    "assets/hd/v16-stage-7-3.png": {
+      "sha256": "d02c4041e0a48cc8cb2c7cd17526b054909f7e4f0278979dbeb7d4237173d6d6",
+      "size": 414156
+    },
+    "assets/hd/v16-stage-8-0.png": {
+      "sha256": "ba5b57c26e8d59f4216fc08a05cff04671bc20a9507491e55e3c5ae99dd28005",
+      "size": 566276
+    },
+    "assets/hd/v16-stage-8-1.png": {
+      "sha256": "9167d6a62a9eca8a1ac7aaa7f5dbf1e7e2198517084fe27ecaef4c0e6ab048a5",
+      "size": 501717
+    },
+    "assets/hd/v16-stage-8-2.png": {
+      "sha256": "12d0890a5b09011dcaafdf18a0eafc4e28b8a69f525d332f9373188a48364bd2",
+      "size": 560996
+    },
+    "assets/hd/v16-stage-8-3.png": {
+      "sha256": "db7fe43f5b1a6d433fc3dcb13f3884f4f0e62b41db6bdc39485b24a8c77c066c",
+      "size": 448116
+    },
+    "assets/hd/v16-stage-9-0.png": {
+      "sha256": "9952c52bf1b6f47dbf0b55b6a1c2943d8fa45f0ef0c6362055f7a1fcc44fb80f",
+      "size": 619356
+    },
+    "assets/hd/v16-stage-9-1.png": {
+      "sha256": "10c6dd2493812fbaf6d7581daa15b2e64b21ebb6065230a5764250ab4a699fb5",
+      "size": 574770
+    },
+    "assets/hd/v16-stage-9-2.png": {
+      "sha256": "05f8372e399fc684b818374e641141aa04a420b6ede6198237273f25e8cd13f4",
+      "size": 519254
+    },
+    "assets/hd/v16-stage-9-3.png": {
+      "sha256": "6b6807ccb213664ddc44e621af7344adfacda1e2c5fd7814a9588b56ffc5a3b3",
+      "size": 439076
+    },
+    "assets/hd/v16-stage-A-0.png": {
+      "sha256": "7f0571b8f051cbaf0c2c6037ca9069141a5a8bd9f81e70582d0dc1daa7584d86",
+      "size": 691566
+    },
+    "assets/hd/v16-stage-A-1.png": {
+      "sha256": "79a3bb5c70bd99e6ad17068af858655c540fe5c58f38ddcc93ab27cbd8b5e318",
+      "size": 658158
+    },
+    "assets/hd/v16-stage-A-2.png": {
+      "sha256": "ba4fc143321fae3fa065ccd71d50ab295e1d25f0dc0279726c85adcde21e54cc",
+      "size": 584081
+    },
+    "assets/hd/v16-stage-B-0.png": {
+      "sha256": "6fd337098c8dc9a41c8163c90d6716a0a1bad6bb692050f1194a525d8994c462",
+      "size": 197672
+    },
+    "assets/hd/v16-stage-C-0.png": {
+      "sha256": "71a50bd87a11e3ea8e6110e0c94c8f739e5300d11fb6e3577a53c8859f93aeb5",
+      "size": 26249
+    },
+    "assets/hd/v16-stage-E-0.png": {
+      "sha256": "6d7f9a55afcbf3df29ab17714c071082d67e833b56318f0c9442d680a3e3e950",
+      "size": 436358
+    },
+    "assets/hd/v16-stage-E-1.png": {
+      "sha256": "f1342c2782b1dc3dd041312e71518f5bee44c5580b329cc3f85725f1e4ba261f",
+      "size": 512787
+    },
+    "assets/hd/v16-stage-E-2.png": {
+      "sha256": "7da8def797b90454591d244d3c59c4cbbe7aa08d6a43dc02e04d016db2841e28",
+      "size": 538632
+    },
+    "assets/hd/v16-stage-F-0.png": {
+      "sha256": "b8202e8e65848ecdcd88a9aa964ccad69e725fb0e9d9b7e2c42bf694f970e59a",
+      "size": 380819
+    },
+    "assets/hd/v16-stone-sign.png": {
+      "sha256": "a5056035e3a44f2aae7d8b79e70a41f37ef3c2b24436d97bc5c31ddddcc93577",
+      "size": 41825
+    },
+    "assets/hd/v16-world-map.png": {
+      "sha256": "495c8107a9f0cd97872dc49396d88bba32c4d7e72d0c855687093d9b5e53092d",
+      "size": 3060057
+    },
+    "assets/hd/v17-autumn-wood.png": {
+      "sha256": "eee716be359535daee9e9eb73607620adb791c7c07a8bc5652560dea5966ef5b",
+      "size": 2832627
+    },
+    "assets/hd/v17-final-boss-complete.png": {
+      "sha256": "3d3d436f1d2bd6bb2bb80e9d293ac358cfe2a78536f3f1a77095105741202320",
+      "size": 3377848
+    },
+    "assets/hd/v17-green-stone.png": {
+      "sha256": "dd337658620fbe6c61cc1eb10c92c49b28e385e4d3c2fe593ff185dd0dca9d97",
+      "size": 2986278
+    },
+    "assets/hd/v17-purple-stone.png": {
+      "sha256": "36c6311574ae81b8d7e7b264f5105029fe1d72e382ce7468c68ea0bdf21f0bc8",
+      "size": 2343766
+    },
+    "assets/hd/v17-tree-body.png": {
+      "sha256": "c948e4e83f0461d68c2bcb0cec51677416a871ab8a3d29312c3ebfd0f85ad95c",
+      "size": 599966
+    },
+    "assets/hd/v17-wood.png": {
+      "sha256": "a33144281bc77428b7751e972b03c0b1d888e2b9413439bc53406c63eb270637",
+      "size": 2814095
+    },
+    "assets/hd/v18-boss-arena.png": {
+      "sha256": "10ee6d86b843f7046d2f8bbec3f58153a8b032a64b6f8c47170bc318be70de62",
+      "size": 1474379
+    },
+    "assets/hd/v19-autumn-leaves.png": {
+      "sha256": "b698a31d41f8241ac66152d7b91763c4cb5cf5a96ec812f72413adeac5a5bb44",
+      "size": 2482475
+    },
+    "assets/hd/v19-blue-rock.png": {
+      "sha256": "0ca625ad451e6bf932569a990c6793e45fc0d3a50e6490aecc0bc5bf463ac6a6",
+      "size": 2888447
+    },
+    "assets/hd/v19-forest-bark.png": {
+      "sha256": "f438c0b9dfbfad5ef2453bb80a44f425e43dbcfed8b0fe3ca813f344d6f296d1",
+      "size": 3131181
+    },
+    "assets/hd/v19-forest-leaves.png": {
+      "sha256": "5219466c31e956ed03cc38a9e329961b98877050c64a0ed4c85ee6b9f98f578f",
+      "size": 2672684
+    },
+    "assets/hd/v19-gray-rock.png": {
+      "sha256": "5417dd7b121dafb950496834519bb074f128603f0ebf3a0e2c44e15027a3c728",
+      "size": 2049137
+    },
+    "assets/hd/v19-green-rock.png": {
+      "sha256": "43d27683f2bf9e7d901a483dfa8552adedcae144e3efc523d0d8be50b62188ab",
+      "size": 2404850
+    },
+    "assets/hd/v2-background.png": {
+      "sha256": "f9e08934bcd52a6ca0edca2c265a44f17c1cf5a1e8707e7225a728195afa99bf",
+      "size": 1121308
+    },
+    "assets/hd/v2-food-a.png": {
+      "sha256": "a4cde86bf8cee38590275112afc39d1e58623d1a3f46e1fae55fc881159ae165",
+      "size": 260251
+    },
+    "assets/hd/v2-food-b.png": {
+      "sha256": "d2b748d622de9766a5ecbdaafac789f64f3fd3d1a210aec832fabef25008b527",
+      "size": 140257
+    },
+    "assets/hd/v2-local.png": {
+      "sha256": "2f567e675afbb99c75766e386d8abb6bf809e563ae4f36df6ca2157dee575eb5",
+      "size": 239931
+    },
+    "assets/hd/v2-pickups.png": {
+      "sha256": "8407f02046ea9a06ce101428f774122b3e84725ca6b5b63c802e7aea8985ffc1",
+      "size": 337076
+    },
+    "assets/hd/v2-union-0.png": {
+      "sha256": "0bd7fb6458d6cee7636e0f22ab7d9298427481e669473fdf337ccd41c5b2f73e",
+      "size": 557460
+    },
+    "assets/hd/v2-union-1.png": {
+      "sha256": "15f9fbb806e3870e73eaf64d9645153db857fbb27611d83bef855f04a3e03914",
+      "size": 605662
+    },
+    "assets/hd/v2-union-2.png": {
+      "sha256": "35a509f2d821c402c8503b9cedce15fd2f51a5eb1b85a9f8acc15466d5ddc1fb",
+      "size": 355116
+    },
+    "assets/hd/v20-cave-flowstone.png": {
+      "sha256": "d74ec99c361fbe754633853c557c35f6418b78a237569c743fe1ccd2ffaec768",
+      "size": 4238700
+    },
+    "assets/hd/v20-gate9.png": {
+      "sha256": "d5403eb8afc7b0263366f7744e549c1992025d69e861dea9160d87ab9b761e1e",
+      "size": 941415
+    },
+    "assets/hd/v21-grapes-113.png": {
+      "sha256": "66b0a8b9e0fc0d01b1c573c579f0f158f3a79453197b60da3870bf90d1ec21ca",
+      "size": 35176
+    },
+    "assets/hd/v21-grapes-137.png": {
+      "sha256": "cc60ba893c341876d7fc39dea004e4f0e637ede501cdb83ee64138895f0710dd",
+      "size": 8142
+    },
+    "assets/hd/v21-statue.png": {
+      "sha256": "4d9f1839e73f0028bae30b54861afc586f866f20b0e8b65a73e6d8a2891f9902",
+      "size": 149637
+    },
+    "assets/hd/v22-glider.png": {
+      "sha256": "340d6006c1601d4ab22c859ec0b83e835a523b7ad3d126eb8a5dc596194b5982",
+      "size": 771996
+    },
+    "assets/hd/v5-items-0.png": {
+      "sha256": "7b194cc91e6b6d0302f24e4569828c604c666e893fd42dea05142e6a9a6d2844",
+      "size": 490423
+    },
+    "assets/hd/v5-items-1.png": {
+      "sha256": "888c53a5584d565e2bd273860110c8064801f0a35c94abec4f0a9d6fd4c1c123",
+      "size": 177199
+    },
+    "assets/hd/v5-items-2.png": {
+      "sha256": "25763be1fb1e61d43e716a3b94f3dd0c63c0165959b332eba8aa4f93ce383b15",
+      "size": 178068
+    },
+    "assets/hd/v5-items-3.png": {
+      "sha256": "64bcb15750c04560b154fe2c31fd2a833f8aea5ebb55007316568d48fcf28464",
+      "size": 184421
+    },
+    "assets/hd/v5-items-4.png": {
+      "sha256": "38196dab720b9bebbfda13e787bc78b01693415d733503e6a9a01a7deacc9a5b",
+      "size": 55325
+    },
+    "assets/hd/v5-special.png": {
+      "sha256": "12ea68454acb8631cfe7bdb14fa054da6951f8bb5f2eae0606f78598d87991aa",
+      "size": 312076
+    },
+    "assets/hd/v6-actors-0.png": {
+      "sha256": "090769d52038edd682dca63402f1973a97b56e6a04fb0e7d56df31bfd2a2cdbe",
+      "size": 66251
+    },
+    "assets/hd/v6-actors-1.png": {
+      "sha256": "72fe98573e754a32ad144d9c88190c5831d02c8c099dabd39714df42c856a51a",
+      "size": 244974
+    },
+    "assets/hd/v6-actors-10.png": {
+      "sha256": "332f6a3dfdf0d85f00afdf9284db7be2796f53bc05ebbb197a8006122a07040c",
+      "size": 507959
+    },
+    "assets/hd/v6-actors-11.png": {
+      "sha256": "e794210b83bc755fb62f1fe1310fd36a636a2bcca97b85d6d0d4af212ade8da3",
+      "size": 506292
+    },
+    "assets/hd/v6-actors-12.png": {
+      "sha256": "51d1041dcb90d9febbc8121f8dd114058f15b5241d1842773c7e49ac255d2870",
+      "size": 269299
+    },
+    "assets/hd/v6-actors-13.png": {
+      "sha256": "4876d0c181a2cf5b5e538ae000d51afb23915fbb4a96dd2b7c709d6347f19e0e",
+      "size": 239759
+    },
+    "assets/hd/v6-actors-2.png": {
+      "sha256": "6b48004a2da584908a6b76e97068eba52e9dbebff40c0ab224df36938da576e3",
+      "size": 214559
+    },
+    "assets/hd/v6-actors-3.png": {
+      "sha256": "f31a7b9312d5449ca76725d5b8cbda9114f146563faf697521dd0d72b2cf2f07",
+      "size": 164413
+    },
+    "assets/hd/v6-actors-4.png": {
+      "sha256": "e4aa38cb63ec892417090f616159e22d4b253ee2df8ce5dbb3000e04cbcd1f08",
+      "size": 241358
+    },
+    "assets/hd/v6-actors-5.png": {
+      "sha256": "33e9a099db4c89dab7a48bd528f9582335728e8497739ddd540f0bf5342865aa",
+      "size": 234919
+    },
+    "assets/hd/v6-actors-6.png": {
+      "sha256": "a44376f92891ff8f0ff86e932073749ae1cbbfe59549beb906433c87fc273e1c",
+      "size": 208804
+    },
+    "assets/hd/v6-actors-7.png": {
+      "sha256": "586646ba3c7d0811726aa4566ea83d7ccb2f0a4093aa79f10d356e14fefeb2fa",
+      "size": 452383
+    },
+    "assets/hd/v6-actors-8.png": {
+      "sha256": "e45a2c0245a039c206a6887ccb1a4a566a8088cdb432b929ff6d94419ff13e91",
+      "size": 613359
+    },
+    "assets/hd/v6-actors-9.png": {
+      "sha256": "d3a54f1b3d77a4b400742e0bae53efb46a93d3e5aeb0a05063d5277635b9a632",
+      "size": 512602
+    },
+    "assets/hd/v7-local.png": {
+      "sha256": "c37ed030ca27f35b74c2cd5d67edc48fff18498e32066eb9423dd5accde110ac",
+      "size": 254241
+    },
+    "assets/hd/v7-missing-tiles.png": {
+      "sha256": "f4c51c9c8158c5848d339103199ffd0cd31fcbf38610b8a34d7c8e4a9c6765c6",
+      "size": 143604
+    },
+    "assets/hd/v7-union-0.png": {
+      "sha256": "dda9e2e4d16b1066b5f2afe8af2e708ac3a898600d3a735c563b86afed61533d",
+      "size": 603845
+    },
+    "assets/hd/v7-union-1.png": {
+      "sha256": "f9b9d42df6ae28759763023253e55e414d0b17e3da06cf0d0ea5194020d00d14",
+      "size": 699890
+    },
+    "assets/hd/v7-union-2.png": {
+      "sha256": "dea80b7a75056b3a48e6c6772bb9907c2a78ddcc73d024eca586634868c68f53",
+      "size": 394991
+    },
+    "assets/hd/v8-roots.png": {
+      "sha256": "924e2d7778283801b6d3fe36314be0daf5b0830f82af7f4f925a6e126ec0494a",
+      "size": 134589
+    },
+    "assets/hd/v8-wall.png": {
+      "sha256": "871d4dd8723fd05b6658efe6e2a58fe20dc0ed76a9c429163da78422efe470d2",
+      "size": 349126
+    },
+    "assets/hd/v9-column.png": {
+      "sha256": "e62c387e52cdeb07ebd8cdd6c7dad3407edce04a191905b79dcb81305d76df07",
+      "size": 129339
+    },
+    "assets/hd/v9-plants.png": {
+      "sha256": "699c759ed0d302a610b4802242610b86c3553f5ef23413716132b38b33607a30",
+      "size": 235193
+    },
+    "assets/hd/v9-spikes.png": {
+      "sha256": "78ad3cca0878e2d9e267b139da719f8aa9d16a57172b37558fe6d01f85b76d39",
+      "size": 7365
+    },
+    "assets/hd/weapons.png": {
+      "sha256": "5354b7ba937b4de5eb1cb6402e31372c759290868d3e29abeb12b5167f27ec3b",
+      "size": 609092
+    },
+    "assets/hud.idx": {
+      "sha256": "e3e8ac379b36aab08882843fcf81d300cdc94310439004b878a1174bb73d47de",
+      "size": 7360
+    },
+    "assets/level-1.map": {
+      "sha256": "df435eb287a0bd3fc8f2a592faa723065c5552157e0e5da909061ef4c1d51b64",
+      "size": 12544
+    },
+    "assets/level-2.map": {
+      "sha256": "676a56e672067d0799097f41bdbfa018645e0d602660c68a8ea5f87cb9a89511",
+      "size": 26624
+    },
+    "assets/level-3.map": {
+      "sha256": "42e01664a4d0c8e890dfbe7de148b1532570bdfe00be780949c72b3738e1509f",
+      "size": 12544
+    },
+    "assets/level-4.map": {
+      "sha256": "db35d2dd92aadadbc58b92274cb1ce0ea26667e64099d757418ed5ad2d4ac46c",
+      "size": 11520
+    },
+    "assets/level-5.map": {
+      "sha256": "300da65d264bb7f0f957598367fa4ccfb80614d664585cd9a6dfa82c4f54103e",
+      "size": 32768
+    },
+    "assets/level-6.map": {
+      "sha256": "211ebac457cbf291984b641a854586f27b0847a68642c1d2948d60caa4e488d0",
+      "size": 32768
+    },
+    "assets/level-7.map": {
+      "sha256": "1c46cc7f128755f1dd2c384577b2024860bf76c4fab1c38970de905cc82190c9",
+      "size": 32768
+    },
+    "assets/level-8.map": {
+      "sha256": "673d5d9013f1da2b26ef94f0f3a490af62d3b74e90c99cbe0457b327184f241a",
+      "size": 22016
+    },
+    "assets/level-9.map": {
+      "sha256": "82e15d399963ca8ef66e506fe113640a30208a06d64cb144d9788bb754d74452",
+      "size": 28160
+    },
+    "assets/level-A.map": {
+      "sha256": "c63ee291d85be99b688bdeb310fe582b311ac928629f0192ea7e1714cae659f6",
+      "size": 3072
+    },
+    "assets/level-B.map": {
+      "sha256": "57bea0a1242842a006c5a33a11a900aace1d298d364bc681bb93d7bc5d6f6180",
+      "size": 6144
+    },
+    "assets/level-C.map": {
+      "sha256": "0b7d39d00d4ea57456c1744798c975fa30466edc30d2b15ba5596410fdf69d06",
+      "size": 13056
+    },
+    "assets/level-D.map": {
+      "sha256": "a8acbbb42d4c75cb170db880eb5231c2be3be9b90c1e6e6e79f00d2272f0d57a",
+      "size": 13056
+    },
+    "assets/level-E.map": {
+      "sha256": "86f59ba1e4a0a62f6c9c935f2e914f553ec9a4fef15d2e5481b670e77eccf9c1",
+      "size": 9728
+    },
+    "assets/level-F.map": {
+      "sha256": "30b8ed54e1676b433ad200c94eecb1f54b5802a94f0e829bc3203837366e1499",
+      "size": 44288
+    },
+    "assets/level-G.map": {
+      "sha256": "97839c6c7d353b6c27b026abbd2138bc54ba8bacfcd7044209489ec5821ba981",
+      "size": 21504
+    },
+    "assets/manifest.json": {
+      "sha256": "a4060da4880fe914781e3d975c4d03c3f1021ce21fe156fc4e3bf1e2760cf3dd",
+      "size": 17163
+    },
+    "assets/music/BOULA.mod": {
+      "sha256": "d5e20e0f7384934fc11ff2fd3a7dbb929cf65b96aa23cb9fe00d11f00841bbe4",
+      "size": 33706
+    },
+    "assets/music/BRAVO.mod": {
+      "sha256": "026f1e9fc3eca3d7e8c6466da0d6cdf887af19cb06188bd046c3d7facd5f270b",
+      "size": 33548
+    },
+    "assets/music/CARTE.mod": {
+      "sha256": "44adcbba77c85bbb1d2b61b83e6575cb6d5c8bbdb52be2be664b51e06fafd3cb",
+      "size": 6664
+    },
+    "assets/music/CODE.mod": {
+      "sha256": "7fd085d161c20e8a1bed937e84475fe13d226502de98258475755e96915ac4fd",
+      "size": 8012
+    },
+    "assets/music/FINAL.mod": {
+      "sha256": "6f330e89f9bf5d9cac834484eaa1cdcec31b773a68349e1ae44859a8f09e7232",
+      "size": 55516
+    },
+    "assets/music/GLACE.mod": {
+      "sha256": "d2b475d215694241375301b2e5c9d56173a8075c009afc9d52185648d9470471",
+      "size": 43228
+    },
+    "assets/music/KOOL.mod": {
+      "sha256": "c60a01aef08cd771d9a1b14a02ac311a269edc0beb1411db355cbe44ad757320",
+      "size": 43580
+    },
+    "assets/music/MINES.mod": {
+      "sha256": "6319bf3c055b832b5d825dd5b231701ba51d6201f8767a62c80b54c5387274ab",
+      "size": 38764
+    },
+    "assets/music/MONSTER.mod": {
+      "sha256": "3b74d9a611670321ca02884369c32a2c1baf2553bd6e9aaf8665191745f80f65",
+      "size": 38404
+    },
+    "assets/music/MYSTERY.mod": {
+      "sha256": "051b340dab37a73cd8a781f26613adfabb9c63037fd107898933fdaffd70f392",
+      "size": 47414
+    },
+    "assets/music/PRES.mod": {
+      "sha256": "fa61617a7a1499768ae12057901b39fb2766bdb810b43c33fc9742103a9e4ca8",
+      "size": 48580
+    },
+    "assets/music/PRESENTA.mod": {
+      "sha256": "ec29029b0be6841d66fed082dc16af345588b2cdd05fd7b2c23c1473fdf01e47",
+      "size": 66528
+    },
+    "assets/music-orava/LEVEL_1.m4a": {
+      "sha256": "4d861567f435e0ae36fb4c734656a6cc0d88f097e704bb63f9b4496fcd7c68ff",
+      "size": 732393
+    },
+    "assets/music-orava/LEVEL_2.m4a": {
+      "sha256": "ec30a3e3ee134923c4dced15c5077dbc58af0233b45eccc0770da81e8dab7d3e",
+      "size": 734984
+    },
+    "assets/music-orava/LEVEL_3.m4a": {
+      "sha256": "dc0feac51afcf9677a1b6b98a458cd70458d57864066dbcdbd9658f758c01381",
+      "size": 735072
+    },
+    "assets/music-orava/LEVEL_4.m4a": {
+      "sha256": "4fae36e93f54dfc96e780029559decef4f6eae5ac0b5c53109c65f022171a1b5",
+      "size": 734848
+    },
+    "assets/music-orava/LEVEL_5.m4a": {
+      "sha256": "44fbef8207422b782d30e26a38de5441c73910c2278385cd7e804b67e7953f94",
+      "size": 700456
+    },
+    "assets/music-orava/LEVEL_6.m4a": {
+      "sha256": "21064da0fea01a06b14059fd0e2c069c39379eb9d5063dc93de77bcde950ed0f",
+      "size": 748158
+    },
+    "assets/music-orava/LEVEL_7.m4a": {
+      "sha256": "fa5a7ae29b187fd21149cd15fd6e159772b1ed157704f6f471c6f088cbf3bd84",
+      "size": 738183
+    },
+    "assets/music-orava/LEVEL_8.m4a": {
+      "sha256": "a615661cb1a17134efd457ac664059eb979df22cb28d67acf05d7e8bcd9160dc",
+      "size": 731965
+    },
+    "assets/music-orava/LEVEL_9.m4a": {
+      "sha256": "1866268ba070bcea401818461608f23cbf4c5b21cfe67ac998a128ba7bfbf191",
+      "size": 733000
+    },
+    "assets/music-orava/LEVEL_A.m4a": {
+      "sha256": "ce2bace35d4cf84387b3dbc104f0d43c76c56a3f1bb295ec75dfea1a5efa5098",
+      "size": 723373
+    },
+    "assets/music-orava/LEVEL_B.m4a": {
+      "sha256": "32f0fc497c0ec98094e973dc00b02bd74290dea12629181b2ec5e6fbec19f0de",
+      "size": 719631
+    },
+    "assets/music-orava/LEVEL_C.m4a": {
+      "sha256": "68438c83adbbb7250cb004c86f609e55d5f52dabb43b788c6c1b995e9a0acddb",
+      "size": 727435
+    },
+    "assets/music-orava/LEVEL_D.m4a": {
+      "sha256": "1f36b5d7b1d1ff790d4f503104c714a28503aa638e7213e166b98ad39f908bfc",
+      "size": 735220
+    },
+    "assets/music-orava/LEVEL_E.m4a": {
+      "sha256": "f713b288096985d4e5b7e2c06b90c40c533be1ad4183c48dc5f031d8c362a28d",
+      "size": 731582
+    },
+    "assets/music-orava/LEVEL_F.m4a": {
+      "sha256": "f85d06be61f7de7b0974566b90e766425fc6d17f24d4db5587816949078dbc26",
+      "size": 737350
+    },
+    "assets/music-orava/LEVEL_G.m4a": {
+      "sha256": "98cd502e9a029e94e2656065938c042750a05bf64ce61b81190ea7d3e09aae64",
+      "size": 736389
+    },
+    "assets/music-orava/LEVEL_H.m4a": {
+      "sha256": "51f2a745235a01f0336dbbbf96f781c2fcd979ca54f8a0ae1cfd38ab329a8e81",
+      "size": 737891
+    },
+    "assets/music-orava/manifest.json": {
+      "sha256": "ff747d3e369a6deca8561b12f68fedf320f02ecea5128a2257e22fe9e9d24d2d",
+      "size": 10721
+    },
+    "assets/music-remastered/BOULA.m4a": {
+      "sha256": "b6429d29bdf3155e1c24690d4fbe0c84000ba685fc099a2692f58767273fc033",
+      "size": 1276896
+    },
+    "assets/music-remastered/BRAVO.m4a": {
+      "sha256": "fe5b25412f1a9291a08f3dee367a367a832fc1e590cf7825f4ae58a29861584d",
+      "size": 859057
+    },
+    "assets/music-remastered/CARTE.m4a": {
+      "sha256": "e824cb621726d9d24cb3045ec6cfa12dae7b1269ff7f423125a23df4daff7ff5",
+      "size": 378365
+    },
+    "assets/music-remastered/CODE.m4a": {
+      "sha256": "389a38529d64581e9919100a889edd350ef43976a505d3ffecfa771a569a4322",
+      "size": 381173
+    },
+    "assets/music-remastered/FINAL.m4a": {
+      "sha256": "4b058ad93a358a7f19232d98ddaaa74a8f34b2037d94cc18a6fb8a13c486673a",
+      "size": 4017462
+    },
+    "assets/music-remastered/GLACE.m4a": {
+      "sha256": "00ca92e54163c86ae6b7eebaf7b1f5baac9ef914c0bb252e9df8577be7d20064",
+      "size": 3069534
+    },
+    "assets/music-remastered/KOOL.m4a": {
+      "sha256": "babea203ba27592045ca06c7f2e52578fca4f009a7efa6e79ba250d0025c5c78",
+      "size": 2672615
+    },
+    "assets/music-remastered/MINES.m4a": {
+      "sha256": "bfb1954c62730d88ace2eecc7a311f1a8d70bd0abdee39d19f621b47eebe807f",
+      "size": 1832939
+    },
+    "assets/music-remastered/MONSTER.m4a": {
+      "sha256": "3b7ed1a07c32abd202afe6b6cdfdf342faee4c21a52b62c5720f2d6da81f8442",
+      "size": 1562385
+    },
+    "assets/music-remastered/MYSTERY.m4a": {
+      "sha256": "274739684063a7f23e5d4349c2df4079e42fc003edcf17a32f396601fe3a3014",
+      "size": 3446980
+    },
+    "assets/music-remastered/PRES.m4a": {
+      "sha256": "b94b6913708fa789b6ae336d1b612cd9893f8cec82d913b26b10060c31f0aaa8",
+      "size": 2203152
+    },
+    "assets/music-remastered/PRESENTA.m4a": {
+      "sha256": "33c7353fd38b0bda14af0bf3adc849eaa5006b743a6ec6e97c69f98a32fe9c08",
+      "size": 2514360
+    },
+    "assets/music-remastered/manifest.json": {
+      "sha256": "4151816e13c5ae513352053f0f61ae7776b5d9becaa7ca8757179f94843447fd",
+      "size": 4324
+    },
+    "assets/music.json": {
+      "sha256": "20ddd39b4d4d91d4044c59b01fa8569019e9fe335b35059f2185ce777b37822f",
+      "size": 45136
+    },
+    "assets/orava/bark.wav": {
+      "sha256": "888acd9a58e3496476a759a78b6a7467c582970b22fef56513f0187c6b08714f",
+      "size": 82492
+    },
+    "assets/orava/bells.wav": {
+      "sha256": "908109b9868fbe73e5012ff02f0ee74a72ce824236dba7abdda8992c5aa5b211",
+      "size": 211724
+    },
+    "assets/orava/dog.png": {
+      "sha256": "4be4c48ce657986f7eb3e78cf305c4366e8f5ebf56fd69372c380c90dfdf2d23",
+      "size": 1751305
+    },
+    "assets/orava/effects.png": {
+      "sha256": "e4c922ee968c0bd7fcdce005e97ad1caab61a6ec51ef418622df3f869f9cf3db",
+      "size": 1144577
+    },
+    "assets/orava/food.png": {
+      "sha256": "68a550b6da4cc6e6a3b5458ef8ef486abebcaec34f2a1cc16f08233ec4bd00fa",
+      "size": 1816380
+    },
+    "assets/orava/hero.png": {
+      "sha256": "9484bc3e17572cd50b52fcdfb5c0fc0cc32d2e2ae897147a0b0c6f8e1f6c9c42",
+      "size": 1867465
+    },
+    "assets/orava/manifest.json": {
+      "sha256": "b92ea6357a39a2cb66116b6dddd61ad531397387bc0ed2d6d5f93fb3aa889ffd",
+      "size": 16409
+    },
+    "assets/photograph.idx": {
+      "sha256": "54555ece36131ed57038bbe7f65bff6d34965177f0e087cbdea95a779fa07f25",
+      "size": 265600
+    },
+    "assets/samples.json": {
+      "sha256": "4084c9391735fecbac41ef8694b204028941fbe9a36564d5a433d4ff39547cf4",
+      "size": 2412
+    },
+    "assets/screen-CASTLE.idx": {
+      "sha256": "815d2400a74eed11365ac2c1864fda6edb49f5779cdb2b90edb8db8f14b06da1",
+      "size": 64000
+    },
+    "assets/screen-MENU.idx": {
+      "sha256": "5cbcf5d1576facde4acbdaef0140520b1eeb1396982db2243132fcd28474412e",
+      "size": 64000
+    },
+    "assets/screen-PRESENT.idx": {
+      "sha256": "2ce0fb76e384e44686a60302f13e1cb49c54c34a8022c44172a74fe8fba70d9b",
+      "size": 64000
+    },
+    "assets/screen-THEEND.idx": {
+      "sha256": "480be8c49c77632a88cbddb0f76d22ad72dda8bfc1072fad744868fe2fd00c22",
+      "size": 64000
+    },
+    "assets/screen-TITUS.idx": {
+      "sha256": "39bc88a66b8c194eda742c56b4d5cebf2beaa66354d175ea723eb3451e318934",
+      "size": 64000
+    },
+    "assets/screens/CASTLE.png": {
+      "sha256": "47eb74db21b1798857b248a77cd291dc68ae7951b41a65fa6f3447eaa1c1b1b4",
+      "size": 26211
+    },
+    "assets/screens/MENU.png": {
+      "sha256": "ea86d6f847f8412fdfff784ae5619bb457d443175b4a4d315920ad3a06f0acba",
+      "size": 21275
+    },
+    "assets/screens/PRESENT.png": {
+      "sha256": "fa735662012f841edd028c59dd2ca16d1b4b6c54be4a27ca35fb1b53b82e98bf",
+      "size": 24363
+    },
+    "assets/screens/THEEND.png": {
+      "sha256": "799d7834b941a046b72ac1beea9a536084b5d15c9bcf454199ee44d518ea3856",
+      "size": 14652
+    },
+    "assets/screens/TITUS.png": {
+      "sha256": "35d8f2270d74bd83f92f097617d577c669a10f3d2a4a70be02e40dc495824faa",
+      "size": 4892
+    },
+    "assets/sfx.bin": {
+      "sha256": "453f1caca728a6eae942e9cc2637a98acb64e7dfef7248b5d48bc8e78e6960e8",
+      "size": 60768
+    },
+    "assets/sprites.idx": {
+      "sha256": "575f271e68501aaa1a728ddd25c511aae00d87edcbb746af8af355f9b24eef77",
+      "size": 313968
+    },
+    "assets/tables.bin": {
+      "sha256": "a430027ead2d632d0c1867e2d67c8fa10e90fe3c73bdf42e24159cd2996e3765",
+      "size": 49760
+    },
+    "assets/tiles-1.idx": {
+      "sha256": "3eae9d31c984600bf665645ffbc9ba6432c365603e46eac40245a8e5af6a4146",
+      "size": 7424
+    },
+    "assets/tiles-2.idx": {
+      "sha256": "ab2a1a384b154a41467aac87013a3262c60bf4229aeefa1340965b5726fc01c3",
+      "size": 22528
+    },
+    "assets/tiles-3.idx": {
+      "sha256": "732e09147ecc4c8e17a872fa9b29d79cff543c091e935738fd9301de214b3ca3",
+      "size": 27648
+    },
+    "assets/tiles-4.idx": {
+      "sha256": "33f67be7d49633192bbac7df8efafb9499b9035ff13eefe272bfc52b09367259",
+      "size": 49152
+    },
+    "assets/tiles-5.idx": {
+      "sha256": "e702da54d6683c8002075bc73b0db0cf22ac553d409fed1f6882635abe131173",
+      "size": 46848
+    },
+    "assets/tiles-6.idx": {
+      "sha256": "9dadeeafb1e1e8d106284604ea59dc5072b0e4d8baa242ce02e4d45bd39d44b4",
+      "size": 44288
+    },
+    "assets/tiles-7.idx": {
+      "sha256": "f1578a0f2aac4fa0cfa8ef8ed3d79552b0babf1e2c6b7a56d43f020567be3126",
+      "size": 8704
+    },
+    "assets/tiles-8.idx": {
+      "sha256": "5fc4bb401dbc6f1f6eec859a008791d672ca5f8fa220c446b2fc66d43628020b",
+      "size": 62464
+    },
+    "assets/tiles-9.idx": {
+      "sha256": "a1a90954b4d2bcc15da21ce138b17e610daddeeb8aa69c5a383eb7c89ae5f5c8",
+      "size": 44800
+    },
+    "assets/tiles-A.idx": {
+      "sha256": "6207b8e29bedf5bab88427bf1fb90a422c69c8aa057dcd24fbe6b91f3bfd6854",
+      "size": 50432
+    },
+    "assets/tiles-B.idx": {
+      "sha256": "81dbecc46ab50f58028716a8963fe00a18c6330905688ef62b40ca12af1da40a",
+      "size": 1536
+    },
+    "assets/tiles-C.idx": {
+      "sha256": "5c973eccd98e9d72a2099b57a4d91f0525da150741857415b3bec12bfc04215f",
+      "size": 768
+    },
+    "assets/tiles-D.idx": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "assets/tiles-E.idx": {
+      "sha256": "1e4da0e61e72574bbb17ad2dfdf7950d068bb3e0c374b5d310820fa5e7d374ee",
+      "size": 45056
+    },
+    "assets/tiles-F.idx": {
+      "sha256": "341a57ce40279230483bb3aafc11302e4a34f92e7cf4f1be02dbfa7193aece9a",
+      "size": 9472
+    },
+    "assets/tiles-G.idx": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "assets/union.idx": {
+      "sha256": "c59810d54d3dab5fbe9c820003b89937bd3872ea792c4ac2461961ddc8e8f09a",
+      "size": 139264
+    },
+    "hd-preview.html": {
+      "sha256": "e799328c1ee07afc528a50585b471b53ab8302dea0a21feaa10dc53da448d29e",
+      "size": 1583
+    },
+    "icons/icon-192.png": {
+      "sha256": "0fdc41360c0a9c89c0a53500062f54bfd5cfc5e1a3bf33480fb9665ea59dc9cf",
+      "size": 8233
+    },
+    "icons/icon-512.png": {
+      "sha256": "9ad9a97c0e3d0846e3fb7c30475a94451b962b4521b6a7f7f4e381a30672e9da",
+      "size": 25960
+    },
+    "icons/icon.svg": {
+      "sha256": "d2d7dfb29784a569275489baf3548edfaf297361a0665d41b0606843ece8bb60",
+      "size": 468
+    },
+    "index.html": {
+      "sha256": "080fbdf0a12b74eecc5404a092f6bb18df20df51d2c0165732553415821d4938",
+      "size": 6964
+    },
+    "js/amber-art.js": {
+      "sha256": "d61b31a7590022f6a12d2ce3423b91acd1a2cebaf5e69c1a4c435443e74c5157",
+      "size": 2102
+    },
+    "js/amber-level.js": {
+      "sha256": "8f0ecf95c860aa5274e9f351a63129476c6f845ea8fc3a736b4cc433d8f46d22",
+      "size": 4914
+    },
+    "js/app.js": {
+      "sha256": "e409acca2e59c6f5e937271da38192a43a4122b02775ca05e4912e61ca0e1260",
+      "size": 26376
+    },
+    "js/assets.js": {
+      "sha256": "b397478ed2905189560a332ea58fd5c5156687c523987b4dd502a9d67f369e23",
+      "size": 2031
+    },
+    "js/audio.js": {
+      "sha256": "5cdb6f7452e7faf92bcc049c95cb1ded9e58dbdb94b1e9069c79bc8da9423d06",
+      "size": 11964
+    },
+    "js/banquet-terrain.js": {
+      "sha256": "093436048480cbe82e2438a1b6c4b71f95052dd54cb94478032bcec6ae96af15",
+      "size": 5010
+    },
+    "js/bonus-decor.js": {
+      "sha256": "06cb6b7968daacbc857ed54fa3cfad78629fce5619fc31f2f55234d17a7dff9b",
+      "size": 788
+    },
+    "js/bonus-support.js": {
+      "sha256": "975b7f643ba48fe2e2263f0922ad19f32c5f5594069f664635565e5ff07e44a4",
+      "size": 897
+    },
+    "js/bosses.js": {
+      "sha256": "09591174cdde22ed44cbe2f920325d6c8c3a99ffa1705177ba5dd8012a240bb0",
+      "size": 12232
+    },
+    "js/browser-credits.js": {
+      "sha256": "11b91695055d0e49d3fabe3da9aecf627fd64263cd487aca080fbf60aff812cb",
+      "size": 453
+    },
+    "js/build-info.js": {
+      "sha256": "635f399a92997152906f3b8cb185da1a34d297e2e4ac0f0436f962f4a804d57e",
+      "size": 835
+    },
+    "js/cheats.js": {
+      "sha256": "b5aa55329182cfc5ebe2bb2803472bcae41799b359aad840f4a249a68920f59e",
+      "size": 894
+    },
+    "js/compat.js": {
+      "sha256": "17932dfdeddfc8f56b7f39d3980a60e4a72a7de3114b9c96db487a48a85fa6a7",
+      "size": 2932
+    },
+    "js/continuous-materials.js": {
+      "sha256": "a3057184dbf1945315ddb1687b624162c46a4949e8e87b50b25a1f694e1851ef",
+      "size": 3853
+    },
+    "js/engine.js": {
+      "sha256": "2d85b6bad9f7df7dc0394dccb37ba1db61ee28d3713e4179907655877dd7c0a8",
+      "size": 60867
+    },
+    "js/environment.js": {
+      "sha256": "b98d478b7168bcf620c8f091ad35949a2c520083067640897ec49fcb8e636b15",
+      "size": 3274
+    },
+    "js/hd-feedback.js": {
+      "sha256": "b1f4eddf606d04b1781851b00a60c65b001bbb13dbe1db0e94b10393f0c6e4e0",
+      "size": 2460
+    },
+    "js/hd-hud.js": {
+      "sha256": "abddf62c3019a94ef386c1c3ac979329265f32099d1c8dff4f52629ed65fa94d",
+      "size": 3589
+    },
+    "js/hd-lighting.js": {
+      "sha256": "be600e0c933a5bf3a3993370e8621104032b3001b09842599b1a38c005ed607a",
+      "size": 567
+    },
+    "js/hd-preview.js": {
+      "sha256": "23e41942a3278948cf3edf913d192df60d1894d6ddd5d355492a0216016fd212",
+      "size": 3113
+    },
+    "js/hd.js": {
+      "sha256": "9fac2d613f754de9f2a8af820defc92d3394a370d220001503f2d82ee8b8436c",
+      "size": 22705
+    },
+    "js/level-map.js": {
+      "sha256": "0c97479fb65e2717b4bf3c58da08b044dcc1fcf27822694a4a9ac68ec08b3df0",
+      "size": 6221
+    },
+    "js/orava.js": {
+      "sha256": "058ef4bc49f15922881f8921e14e5269c177433e4a8c28926106f96fa15fda56",
+      "size": 5024
+    },
+    "js/painted-terrain.js": {
+      "sha256": "f1ee4da5abe29aee74ef0d82a11bbc0174c67d177bb8c40aed8181decb820891",
+      "size": 6785
+    },
+    "js/platforms.js": {
+      "sha256": "f72ddca5d8d69c514ba7410dd78c063c4160f1c782c94539248662bff5c4733d",
+      "size": 1903
+    },
+    "js/presentation.js": {
+      "sha256": "8b66711bd07c0e0f2d8498d31c4781257c3e69af6be52abe6a86d1ad50f0f31c",
+      "size": 3586
+    },
+    "js/remastered-music.js": {
+      "sha256": "6807994f7065f89426b329fb5881d99c18593b95e73d0fa84234fdf51f8d562a",
+      "size": 3005
+    },
+    "js/render.js": {
+      "sha256": "2ee8b9767629c8858fa7d4a1293c782a74577c7d4e3dac5f75b6aa4cd66dd79b",
+      "size": 17422
+    },
+    "js/scene.js": {
+      "sha256": "80de589d09f78254350dfad5fd888d55f3c28e1e7bf7b226fbf1f203e3e36871",
+      "size": 2640
+    },
+    "js/screen-mode.js": {
+      "sha256": "106fc94487583ad23585906d2871dd8c31fa22e46909529fa6c801964b9a46ed",
+      "size": 1989
+    },
+    "js/secrets.js": {
+      "sha256": "52a4076e480c14ae17255209f4e1ca7681c8c290fc8cf6ef5906a1b5ac988540",
+      "size": 1476
+    },
+    "js/spatial-bells.js": {
+      "sha256": "b5ed4e3eca96be678ba354ba468b1be5d23866624b49d02c9530ec3d3cc87ce2",
+      "size": 2846
+    },
+    "js/stage-tally.js": {
+      "sha256": "bfa5638b7ceecd978f24ab8fa693878e275912f7652385758c71dc1d0fc81bb0",
+      "size": 3571
+    },
+    "js/stage5-surfaces.js": {
+      "sha256": "a3d431d32682a23a415e092e9d401a2954c181326e74cc5db8046274f2f0c732",
+      "size": 465
+    },
+    "js/stage6-composite.js": {
+      "sha256": "8239abeb3c191514b9d7c14decaab08294943a678220af2c4d30e8acbaa6bd86",
+      "size": 1977
+    },
+    "js/terrain-chunk.js": {
+      "sha256": "aa9a604ffefd5ab31dcd0201cae06bb198a69dda260563d5e2a44c3aed929f51",
+      "size": 2728
+    },
+    "js/terrain-layer.js": {
+      "sha256": "85f17f69759b09203a569a1e47f17aacfaa569338f5c18c7ac936ec7214cbce1",
+      "size": 1102
+    },
+    "js/terrain-materials.js": {
+      "sha256": "6cdeaf26312d1bc565910a7cfe0e89fa6f7bed190090d6b36ed4c779299e0302",
+      "size": 4583
+    },
+    "js/terrain-objects.js": {
+      "sha256": "e601da6d2dd11fc372ff2f13f1a042a7c8fc83a1f439d488b2a94944d7dd647d",
+      "size": 1705
+    },
+    "js/terrain-semantics.js": {
+      "sha256": "2fd8d3d6455fd93e94af4d60911112f6766805343483723fdc7ac31bc41cd1d4",
+      "size": 3429
+    },
+    "js/terrain-worker.js": {
+      "sha256": "6117db6c56488f6f9329e6f8637f2f02df00e42de0fa1b28200f050c885f1007",
+      "size": 320
+    },
+    "js/terrain.js": {
+      "sha256": "034438db71c34d52f9fc867a45731de6b9ec58761c873e2ab31adf0bc3ddc156",
+      "size": 4698
+    },
+    "js/tile-animation.js": {
+      "sha256": "df673fa4a9ff6a244030f8da3edd48470508519831319c5d777a26ccef59273a",
+      "size": 654
+    },
+    "js/touch-input.js": {
+      "sha256": "fd1549de43211e123fbd20026e90c1b2bf52f4e754c6d1bc7957840268005f68",
+      "size": 5310
+    },
+    "js/world-decor.js": {
+      "sha256": "67b6c3913282cc8b4d38e1cc5e479893894b8523dd40a401d20123991341a7ac",
+      "size": 5750
+    },
+    "js/world-paint.js": {
+      "sha256": "ac5ff8ae115faa1410ff50e9f65efa1c567db9a7917eb44d5b03a0604a28838c",
+      "size": 5982
+    },
+    "manifest.webmanifest": {
+      "sha256": "4837c5dda9862eb58beff215259e31bdf93d7070c5e37417d21ed37e0988a932",
+      "size": 399
+    },
+    "rules.json": {
+      "sha256": "58df44bb25f165b3b766ff45b69b05e9af28c912ac0172a5bc9dae1bbfeda526",
+      "size": 25445
+    },
+    "style.css": {
+      "sha256": "94fd89de94f5a115ca754006f88b4d0d800e36854bab691f8ffd90e7254209e6",
+      "size": 21813
+    },
+    "terrain-review.html": {
+      "sha256": "0c1dda26ea7d40049df500441dab19b3dfafb58ca8cfb6461bacb06de8fac98d",
+      "size": 3367
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "kubeContext": "",
+  "namespace": "",
+  "image": "",
+  "imagePullSecret": "",
+  "expose": true,
+  "host": "remastered.500miles.cz",
+  "tlsSecret": "",
+  "ingressClass": "",
+  "ingressController": "",
+  "httpsEntrypoint": ""
+}

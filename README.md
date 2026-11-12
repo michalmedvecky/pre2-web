@@ -1,266 +1,65 @@
-# Prehistorik 2 — web game
+# Remastered
 
-Playable native JavaScript reconstruction using the recovered original graphics, levels, music and sound effects. Original graphics render at 320×200; optional HD graphics use a 1280×800 presentation canvas. Gameplay and audio run entirely in the browser. The repository contains the web game and deployment configuration. Original DOS executables, decompiled code and reverse-engineering reports are managed separately.
+A playable archive of classic games rebuilt for modern browsers, with original-game research, remastered presentation and documented fidelity checks.
 
-There is **no server-side application, database, PVC, account service or dependency on Sites hosting**. nginx serves `dist/`. Browser localStorage stores checkpoint progress per browser and origin. Multiple replicas require no session affinity.
+The shared home is **https://remastered.500miles.cz/**. A responsive tile index introduces the project and opens each game:
 
-All 16 recovered stages are available. Core player animations, jump impulses, weapon timing and glider controls follow recovered routines and data. The 13 generic enemy families, head bounces, combat and connected hidden-platform reveals follow recovered callbacks and tables. Boss state machines, multipart weak points, scripted attacks and fractional energy damage follow recovered routines. Input-only IDDQD replays verify completion of all 16 stages, bosses and selected secret branches. Original-game equivalence, every collection route and some terrain/platform presentation edges remain unverified.
+| Game | Source | Browser route |
+| --- | --- | --- |
+| Prehistorik 2 | [pre2/](pre2/) | `/pre2/` |
+| Golden Axe | [ga/](ga/) | `/ga/` |
+| Flappy | [flappy/](flappy/) | `/flappy/` |
 
-Type **MAP** during play, or use the toolbar **Map** button, to pause and fit the entire current level on one screen. Concealed blocks are shown with their revealed terrain and pink outlines, items/enemies appear beyond the current camera, cyan diamonds mark passages, and the player/camera are highlighted. Tap/click a location on the map to teleport there. Any key or the Back button closes the map and returns to the previous position; the closing key cannot move, attack or toggle another feature. Separate bonus stages have their own maps. Map details use original assets in both graphics modes.
-
-Use the toolbar **Original / HD** button or **H** to switch graphics instantly. HD uses a 1280×800 canvas and covers all 460 native sprite IDs through painted frames or precise vector feedback, including player forms/weapons, enemies, bosses and collectibles. Art loads only when requested; failed loading leaves Original available. See [sprite sources](art/hd-v6/README.md), [item sources](art/hd-v5/README.md), and the locally served `/hd-preview.html` to inspect animation frames.
-
-All 16 gameplay scenes now have painted HD background variants, including the roast-pig banquet in B–D. Cherries have a refreshed transparent drawing. Level one uses continuous wall/roots with whole transparent plants, columns and stakes; B–D use a continuous sandwich surface following native platform silhouettes. Release 1.2.0 adds40 painted terrain atlases covering2261 unique fragments /2694 per-stage references across2–9 andA–G, including animated and foreground variants. TITUS, CASTLE, THEEND and PRESENT screens, the world map, the oval LEVEL sign and whole final-boss poses also have HD artwork. Constant-color fills remain literal fills. See [redraw sources, checks and limits](art/hd-v16/README.md). The [asset inventory, sources and remaining native terrain](art/hd-v10/README.md) distinguish these layers explicitly. Level-one cave backdrops retain their small native stones and opening masks; floating islands use complete transparent drawings with partial-discovery clipping. See [cave/island repair and comparisons](art/hd-v11/README.md). Release1.2.1 replaces the remaining atlas joins in the wood of5/6 and castle9/A/F with world-coordinate materials, draws the tree boss and complete final-boss poses coherently, fixes crystal-cave transparency and removes old background patches around the tower lettering. See [browser comparisons and repair evidence](art/hd-v17/README.md). The HD HUD covers lives, score, hearts and BONUS. HD camera motion retains fractional positions, and display-only slope interpolation smooths native height quantization. Physics, hitboxes, animation timing, RNG and saves remain shared across modes.
-
-Release 1.2.2 fixes the stage6 spike mattes and uses a connected drawing for the tree-boss approach. HD terrain prepares ahead of camera movement in a background worker, with a brief preparation screen before play and shared cache entries for static animation phases. This removes the repeated terrain computations that interrupted level introductions and the F credits scroll. Original mode and game rules are unchanged. See [sources, performance measurements and browser checks](art/hd-v18/README.md).
-
-Release 1.2.3 replaces remaining cell-local rock/bark in stages 2–5 with continuous world-coordinate materials, including foreground masks, and keeps wood/leaves separate inside mixed tiles. Stage G now recovers authored ice support when returning uphill or landing across a tile-row boundary. Its replacement input-only completion route rejects checkpoint rescues. Stage5 restores bright platform cut faces and a rounded hut entrance. Stage6 repairs spike/arena compositing and preserves jumping during repeated tree-boss slams. See [sources, browser captures and scope](art/hd-v19/README.md).
-
-Release1.2.4 repairs palette-based surface mixing in2/3, separates rooted ground and horizontal beams from background trunks in4, preserves carved masonry around the gate in9, and introduces a smooth, detailed continuous flowstone redraw forE. See [source drawings, comparisons and limits](art/hd-v20/README.md).
-
-Release1.2.5 fixes OFF/ON lighting across the HD scene, removes unrelated fragments from animated stage2/3 vegetation, distinguishes drop-through planks beside the stage2 cave, and carries native support context into stage4 foreground painting. Stage9 statues use a complete instanced redraw; detached grape pixels are removed. E flowstone is restricted to actual cave families. The browser audit covers recorded completion routes in all16 stages,556 camera samples and targeted Chromium/WebKit checks. See [findings, before/after captures and remaining limits](art/hd-v21/README.md).
-
-Release1.2.6 joins the kite and caveman into16 complete HD poses and adds flight guidance plus voluntary release with **G** or **Put down kite** on touch screens. Run left/right for about a second, then keep moving and hold jump to take off; hold up to climb, down to dive and recharge. Browser-edition credits appear in the final ending panel after the original credits. The page footer links to GitHub and to the source commit baked into the deployed image. See [art provenance and browser checks](art/hd-v22/README.md).
-
-Release1.3.0 adds **H — Jantarové království**, an original amber-hive adventure with painted HD scenery, bees, a queen, checkpoint lanterns and an optional kite route. Open it from the title screen, stage picker or original ending. **J** performs a stronger ground jump using the held-jump enemy-bounce impulse. Type **IDCLUB**, **IDHAMMER**, **IDTOMAHAWK** or **IDAXE** during play to equip the club, hammer, tomahawk or double axe. See [level design, art sources and verification](art/amber-v1/README.md).
-
-Release 1.6.1 adds a short spatial dog bark on genuine enemy/boss defeat in ORAVA, and fixes directional bell attacks: **down + attack** shoots beneath the feet to uncover bonuses under traffic lights; **up + attack** shoots overhead. The bark respects mute and stops with ORAVA. [Details and browser checks](art/orava-game-v1/README.md#patch-161).
-
-Release 1.6.0 turns **ORAVA** into a complete optional adventure skin: shepherd hero, following dog, ringing spatial bells that shoot stars, and halušky/pirohy/bacon replacements. Use the cheat during play or **Orava adventure** in the pause menu on a phone. Repeating ORAVA restores the original character and stored weapon; MUSIC selects the existing orchestral mode. Original remains the default after reload. [Gameplay, artwork, audio and verification](art/orava-game-v1/README.md).
-
-Release 1.5.0 adds **17 original Slovak vocal folk songs inspired by Orava**, one per stage including H. Type **ORAVA** during play to enable them, and again to restore the original. The songs have newly composed melodies and stage-specific lyrics. They load on demand, retain original sound effects and fall back to original music on failure. Selection lasts for the session; every page load starts with original music. [Lyrics, sources and verification](art/music-orava-v1/README.md).
-
-Release1.4.0 adds optional **violin, piano and string-orchestra arrangements of all12 original music modules**, with piccolo replacing bird cues. Type **MUSIC** during play to switch; type it again to return. Every page load defaults to original music. Sound on/off is separate. New tracks load only on demand, retain intro/loop boundaries, and fall back to the original on failure; original effects continue. See [sources, fidelity limits and browser verification](art/music-remaster-v1/README.md).
-
-Environment checks cover all 16 stages: 32 animated tile triplets, 60 authored platforms and 124 foreground masks. Seven rising map regions in stages 9 and E now move with their original triggers and cadence, updating both scenery and collisions; empty platforms use the original contact-dependent display offset. Bonus stage G includes its recovered rain intensity schedule. Rain now uses the native shared RNG, duplicated-byte initialization and VGA OR masks, with the original direction and intensity schedule. Screen shake follows the native alternating offsets, fixed HUD, black top strip and player lift rules. Fresh starts use the initialized DOS seed; an exact menu-dependent random history still depends on the preceding session. Run `node scripts/verify-environment-browser.mjs` with an installed Playwright and the local server for optional Original/HD and secret-route integration checks. `node scripts/verify-shake-rain-browser.mjs` additionally checks actual keyboard holds, weather and shake.
-
-The [360° Quest preparation and roadmap](docs/VR-ROADMAP.md) documents the renderer-neutral scene adapter, asset/rig requirements and future full-3D milestones. This release does not implement VR or contain 3D models.
-
-## Mobile browser release 1.1.1
-
-Play in landscape for the largest clear view. Start/Continue expands the game automatically on touch devices; the fullscreen button also enters or leaves it. Landscape fullscreen fills the entire display with translucent controls over the scene, retaining the full game/HUD while stretching to the phone aspect ratio. Portrait keeps a fitted playfield and controls below it. Fresh browsers start in HD; an explicit saved Original preference remains respected.
-
-- Hold the left/right thumb pad to move; slide across its center to reverse without lifting.
-- Tap elsewhere in the game to attack; hold to repeat attacks.
-- Swipe up to jump, down to crouch or enter a passage. Keep that finger down to sustain the action while the other thumb moves.
-- **Ten quick taps in the right half** toggle **IDKFA** secret hints; **ten in the left half** toggle **IDDQD** invulnerability. Each tap must be short, with at most 650ms between taps. Changing sides, dragging, pausing or touching utility controls breaks the sequence. The final tap shows ON/OFF feedback. Ordinary taps retain their attack/movement action.
-- The fullscreen controls include Pause, MAP (tap to teleport), and Original/HD. Leaving fullscreen or switching apps pauses and releases held inputs.
-
-If native fullscreen is unavailable, the game fills the browser viewport. On iPhone/iPad, use Safari's Share → Add to Home Screen and launch the icon for an app view. Browser/OS bars remain platform-controlled. Serve over HTTPS for Home Screen and optional screen-wake/orientation features. This is an online game; the manifest does not provide offline asset caching. See [mobile implementation, checks and limits](art/mobile-v1/README.md) and [full-width/default-HD update](art/mobile-v1.1.1/README.md).
-
-The [current all-stage HD audit](art/hd-audit-v15/README.md) lists remaining native terrain and foreground objects with physical tile IDs and diagnostic images. Stage D now recognizes its shared-tile cherry ornament and uses the existing whole HD drawing. [Music remaster preparation](art/music-audit-v1/README.md) inventories the12 MODs; no AI music job has been run and playback remains original.
-
-## Local development
-
-Use Node.js 20 or newer. No dependency installation or build step is required:
-
-```sh
-git clone https://github.com/michalmedvecky/pre2-web.git
-cd pre2-web
-npm test
-npm start
-```
-
-Open http://127.0.0.1:5775. On macOS, `Play.command` also serves the game using Python 3. Arrow keys/WASD move, Up/Z jumps, J performs a high bounce jump, Space attacks, Down crouches/uses passages (release it before using the return passage), X looks ahead, P/Escape pauses, M/F3 toggles sound, H toggles original/HD graphics and F enters fullscreen. Sound starts after a gesture; click **Sound on**. Touch controls appear on touch devices.
-
-Land on enemies while holding jump for a higher bounce. Repeated club hits reveal connected hidden platforms; the first hit may leave them concealed. Type **IDDQD** during gameplay to toggle invulnerability. This browser-only cheat blocks enemy/boss damage and harmful pickups; spikes cannot hurt you, and falling out of the map returns you to your checkpoint without losing health or lives. In a fixed cave view, rescue also activates when the fallen character disappears below the playfield, even if there is still more map or a lower floor underneath. Rescue also unlocks cave cameras and clears falling, platform, glider and attack state so movement and jumping remain usable. It remains active across stages/restarts in the current run, but is not saved and resets for a new adventure or page reload. The status line shows when it is active. Type **IDKFA** to toggle secret hints: pulsing outlines on concealed blocks, Down markers at passages, bonus-exit markers, and up to three arrows toward nearby offscreen targets. Hints follow live discovery state and do not reveal walls, collect items, unlock exits or grant weapons. Some secrets require an enemy bounce or the glider. Both cheats reset for a new adventure or reload. Completing the original three-item bonus grants temporary enemy-contact power, which is separate from cheats.
-
-Stage completion now includes the recovered circular closing effect and animated score tally: the caveman approaches the machine, collected food and treasure fall into it one by one, and each landing adds its individual bonus with the original sound and BRAVO music. Original and HD modes share the same timing and arithmetic. Bonus entrances carry their food ledger forward until the appropriate return rather than awarding it prematurely. The browser's Continue/world-map choices appear after the animation. Run `node scripts/verify-stage-tally-browser.mjs` with an installed Playwright and the local server for optional presentation/controller checks.
-
-Pickups follow the original tables: six bones restore one heart; ordinary enemies drop six bones after harmful contact has cleared their native death flag, rather than on every defeat; food and treasure award their individual points, and the collected-food ledger is scored again at stage completion. A spare life is awarded per 250,000 displayed points, up to 99. Some pickups spill energy into recoverable bones. Other pickups defeat enemies, turn them into food, repel following particles, or switch the palette. Weapon pickups do not spend health or score.
-
-Recorded input-only completion routes cover all 16 worlds, all four boss encounters and selected secret-room/bonus branches. See [playthrough coverage](PLAYTHROUGH.md) for reproducible checks and their limits.
-
-Scrolling and moving sprites are interpolated on browser animation frames, with a 65ms camera filter to smooth the original 16px camera steps. Simulation, collisions and authored animation frames retain the original approximately 24.3Hz tick. Presentation adds up to one tick of motion latency; passages, respawns and checkpoint rescues cut immediately. Pixel art remains on the 320×200 pixel grid.
-
-Assets are already generated and committed. Building or deploying does not require the original game or analysis workspace. `dist/rules.json` and the data tables in `dist/assets/` are runtime inputs. Do not remove them or regenerate them from guessed formats.
-
-## Kubernetes deployment — agent runbook
-
-An agent with authorized access to a cluster and registry can follow this section from a fresh checkout. Commands assume a POSIX shell, kubectl and curl. GitHub Actions builds the container; Docker/buildx is only needed for optional local container checks. Node is only needed for local tests, not serving the container.
-
-### 1. Resolve the deployment inputs
-
-Use the operator's existing project configuration and deployment authorization. Establish these values before changing cluster resources:
-
-| Input | How to obtain it |
-| --- | --- |
-| Kubernetes context | Intended context from the operator; inspect `kubectl config get-contexts` |
-| Image | Successful workflow image at `ghcr.io/michalmedvecky/pre2-web`; choose a commit tag or digest |
-| Node architectures | `kubectl --context "$KUBE_CONTEXT" get nodes -L kubernetes.io/arch` |
-| Namespace | Manifests default to dedicated namespace `prehistorik` |
-| Public/private access | Preserve the operator's requested access and existing authentication |
-| Hostname and HTTPS route | Existing ingress/Gateway configuration, DNS and certificate workflow |
-| Registry pull credentials | Existing Secret or the operator's normal registry workflow |
-
-If context, image release or exposure is ambiguous, ask for the missing value. Do not choose an unrelated context, print credentials, disable TLS checks, install a new controller, replace shared routes, or widen access as an incidental deployment step. Registry login is performed with the operator's existing credential mechanism.
-
-Set values for this deployment (replace every example):
-
-```sh
-export KUBE_CONTEXT='your-cluster-context'
-export IMAGE_REPOSITORY='ghcr.io/michalmedvecky/pre2-web'
-# Default to the verified multi-platform digest committed in the manifest.
-export IMAGE="$(awk '$1 == "image:" { print $2; exit }' deploy/kubernetes.yaml)"
-kubectl --context "$KUBE_CONTEXT" cluster-info
-kubectl --context "$KUBE_CONTEXT" get nodes -L kubernetes.io/arch
-npm test
-```
-
-If using a different namespace, update **every** namespace reference in both manifests and subsequent commands. Do not deploy placeholder values.
-
-### 2. Use the image published by GitHub Actions
-
-[Publish game image](https://github.com/michalmedvecky/pre2-web/actions/workflows/publish-image.yml) runs on **every push to `main`**, and can also be dispatched manually on `main`. It tests the game, uses QEMU/Buildx to build `linux/amd64` and `linux/arm64`, and pushes a single multi-platform image to GHCR. It verifies both manifest entries and smoke-tests the published image on the runner's native architecture with a read-only root filesystem.
-
-The workflow authenticates using its automatic `GITHUB_TOKEN` with `contents: read` and `packages: write`; no custom publishing PAT is required. GitHub Actions and these permissions must be allowed by repository/organization policy. The image has a source label linking the package to this repository. For a pre-existing package not linked to this repository, grant this repository Actions access in the package settings if publishing is denied. The workflow does not deploy to Kubernetes or change package visibility.
-
-| Reference | Purpose |
-| --- | --- |
-| `ghcr.io/michalmedvecky/pre2-web:sha-<full-40-character-commit-SHA>` | Versioned image for a particular successful `main` build |
-| `ghcr.io/michalmedvecky/pre2-web:latest` | Convenience tag; changes on publication, avoid for repeatable rollouts |
-| `ghcr.io/michalmedvecky/pre2-web@sha256:<digest>` | Exact image index; preferred deployment/rollback reference |
-
-**Wait for the workflow for your selected commit to finish successfully before applying.** A local commit, a feature branch or an unsuccessful workflow does not guarantee its image exists. The workflow run summary prints the exact digest reference; copy it to `IMAGE` to pin the deployment:
-
-```sh
-# Replace the example with the complete reference from the successful run summary.
-export IMAGE='ghcr.io/michalmedvecky/pre2-web@sha256:REPLACE_WITH_PUBLISHED_DIGEST'
-```
-
-By default, step 1 reads the verified multi-platform digest already pinned in `deploy/kubernetes.yaml`, from successful build [39949226172](https://github.com/michalmedvecky/pre2-web/actions/runs/39949226172) of commit `414de11b66d264bedeb9af73eced108aeb75f798`. Keep that value to deploy the checked-in release, or override `IMAGE` with another successful build’s digest or full-commit tag. Kubernetes selects the node's architecture from the image index. Tags are version identifiers, not enforced immutable registry policy; a digest is the authoritative immutable reference.
-
-#### GHCR pull access
-
-Public packages can be pulled anonymously. New GHCR packages may be private even for a public repository. Inspect package visibility and preserve the intended audience; the workflow does not make the package public. For a private package, provision a GHCR pull Secret in namespace `prehistorik` through the operator's secret-management workflow (a personal access token **classic** with `read:packages` and package access is the usual GHCR credential). Reference its name under `spec.template.spec.imagePullSecrets` in the Deployment. Do not use the short-lived Actions `GITHUB_TOKEN` as a cluster credential or commit any token/Secret manifest.
-
-#### Optional local container verification
-
-A local build is unnecessary for deployment. To inspect changes before pushing, use Docker:
-
-```sh
-docker build -t prehistorik:smoke .
-docker run --rm --name prehistorik-smoke \
-  --read-only --tmpfs /tmp:rw,noexec,nosuid,size=64m \
-  -p 127.0.0.1:8080:8080 prehistorik:smoke
-```
-
-In another terminal:
-
-```sh
-curl --fail http://127.0.0.1:8080/healthz
-curl --fail --output /dev/null http://127.0.0.1:8080/
-curl --fail --output /dev/null http://127.0.0.1:8080/assets/game.json
-curl --fail --output /dev/null http://127.0.0.1:8080/js/audio.js
-```
-
-Open http://localhost:8080 and verify the title, new game, movement, attack, pause, stage selector and sound toggle. Stop the container with Control-C. The image contains nginx and the web assets; it excludes analysis files and Sites metadata. The nginx base uses `stable-alpine`; pin it by digest if base-image reproducibility is required.
-
-### 3. Render and apply the workload
-
-The tracked manifest pins a verified GHCR image digest supporting both architectures. The commands below preserve that default or render the explicit `IMAGE` override selected above:
-
-```sh
-kubectl --context "$KUBE_CONTEXT" create namespace prehistorik --dry-run=client -o yaml | \
-  kubectl --context "$KUBE_CONTEXT" apply -f -
-MANIFEST="$(mktemp)"
-sed -E "s|^([[:space:]]*image:).*|\1 $IMAGE|" \
-  deploy/kubernetes.yaml > "$MANIFEST"
-
-kubectl --context "$KUBE_CONTEXT" apply --dry-run=server -f "$MANIFEST"
-kubectl --context "$KUBE_CONTEXT" diff -f "$MANIFEST"
-# Review the diff. Exit status 1 means differences exist; >1 means an error.
-kubectl --context "$KUBE_CONTEXT" apply -f "$MANIFEST"
-rm "$MANIFEST"
-kubectl --context "$KUBE_CONTEXT" -n prehistorik \
-  rollout status deployment/prehistorik --timeout=180s
-```
-
-This creates a Namespace, a two-replica Deployment and a ClusterIP Service. Containers run as UID/GID 10001, without capabilities or a service-account token, with a read-only root filesystem and a writable temporary volume. Health probes use `/healthz` on container port 8080; the Service exposes port 80. No cluster-wide components are installed.
-
-For a private registry, create/reuse a pull Secret in `prehistorik` through your secret-management workflow and reference it under `spec.template.spec.imagePullSecrets` before rendering/applying. If the namespace does not exist, create it first. Never commit registry tokens or generated secret manifests.
-
-### 4. Verify internally before exposure
-
-```sh
-kubectl --context "$KUBE_CONTEXT" -n prehistorik get pods,service
-kubectl --context "$KUBE_CONTEXT" -n prehistorik \
-  port-forward service/prehistorik 8080:80
-```
-
-Keep the forward running and repeat the curl/browser checks above at http://localhost:8080. Check that both Pods become Ready. A successful readiness probe proves nginx responds, not that all gameplay behaviors are correct.
-
-### 5. Add an HTTPS route using the cluster's existing setup
-
-For an existing Ingress controller, adapt `deploy/ingress.yaml`:
-
-1. Replace `prehistorik.example.com` in both the TLS and rule sections.
-2. Replace `ingressClassName: traefik` with the installed class from `kubectl --context "$KUBE_CONTEXT" get ingressclass`.
-3. Set `secretName` to the TLS Secret in the same namespace. Provision it through the existing certificate workflow; the manifest does not assume cert-manager. Add the operator's issuer/authentication annotations if required.
-4. Point DNS at the ingress controller. Preserve any required authentication or private routing.
-5. Inspect the diff and apply:
-
-```sh
-kubectl --context "$KUBE_CONTEXT" apply --dry-run=server -f deploy/ingress.yaml
-kubectl --context "$KUBE_CONTEXT" diff -f deploy/ingress.yaml
-kubectl --context "$KUBE_CONTEXT" apply -f deploy/ingress.yaml
-kubectl --context "$KUBE_CONTEXT" -n prehistorik get ingress
-```
-
-If the cluster uses Gateway API, use its existing HTTPS Gateway and route the hostname to Service `prehistorik`, port 80, instead of applying the Ingress template. Serve from `/` on a dedicated host, preserve request paths, and avoid rewrite rules. No CORS configuration is required for same-origin game assets. Do not disable authentication to make the game reachable.
-
-**Remote hosting must use HTTPS for AudioWorklet.** localhost HTTP is a browser exception. Click Sound on after the page loads. The Google Fonts stylesheet is optional; blocked external fonts fall back to local fonts. Gameplay, assets and audio need no external APIs.
-
-### 6. Acceptance and handoff
-
-Check the actual HTTPS URL: valid certificate, `/healthz`, title, level one, movement/jump/attack, pause/resume, all-stage selector and audio after a click. Reload and check Continue resumes a checkpoint. Inspect browser errors and missing assets. Testing on mobile hardware remains a separate acceptance step.
-
-Report the repository commit, pushed image tag/digest, context, namespace, Deployment rollout status, final URL, checks performed and any limitations. Do not claim deployment succeeded from `kubectl apply` alone. This repository's initial manifests have not yet been verified against a running container or a real cluster.
-
-## Updates, rollback and troubleshooting
-
-For updates, push changes to `main`, wait for the GHCR workflow to succeed, select the new `sha-<full-commit>` tag or digest, and repeat the render/diff/apply procedure. Retain the same HTTPS origin to preserve browser saves. `Cache-Control: no-cache` revalidates files; players should refresh after a rollout. No service worker is installed. Reapply the previous image version for a declarative rollback, or use:
-
-```sh
-kubectl --context "$KUBE_CONTEXT" -n prehistorik rollout history deployment/prehistorik
-kubectl --context "$KUBE_CONTEXT" -n prehistorik rollout undo deployment/prehistorik
-kubectl --context "$KUBE_CONTEXT" -n prehistorik rollout status deployment/prehistorik
-```
-
-Then reconcile your tracked deployment/image configuration so the next apply preserves the rollback.
-
-| Symptom | Check |
-| --- | --- |
-| ImagePullBackOff | Registry path/tag, pull Secret, node architecture, registry reachability; inspect Pod events |
-| CrashLoopBackOff | `kubectl logs` and Pod events; writable `/tmp`, UID, nginx config |
-| 404 for assets | Full `dist/` in image and no ingress path rewriting |
-| Remote sound fails | HTTPS secure context, Sound on gesture, `js/audio.js` loads and blob AudioWorklet is permitted by any added CSP |
-| Old game after update | Refresh/revalidate; confirm Deployment image and registry digest |
-| Continue is missing | Saves are per browser/origin; changing hostname, scheme or port changes storage |
-
-```sh
-kubectl --context "$KUBE_CONTEXT" -n prehistorik get pods
-kubectl --context "$KUBE_CONTEXT" -n prehistorik logs deployment/prehistorik --tail=100
-kubectl --context "$KUBE_CONTEXT" -n prehistorik describe pods -l app=prehistorik
-kubectl --context "$KUBE_CONTEXT" -n prehistorik get events --sort-by=.lastTimestamp
-```
+Each game keeps its own source, data, tests and research/provenance. The shared application serves all three directories without an ingress rewrite. Keyboard and supported touch controls, original/remastered choices and other features are documented inside each game. The collection does not claim complete bit-exact equivalence with every original hardware configuration.
 
 ## Repository layout
 
-- `dist/`: deployable game, runtime rules, decoded assets, original music and samples
-- `dist/js/`: native simulation, rendering, input/UI and audio mixer
-- `tests/`: asset/render/audio/simulation tests
-- `scripts/serve.mjs`: local HTTP server
-- `.github/workflows/publish-image.yml`: tests, multi-platform GHCR publishing and container smoke checks
-- `Dockerfile`, `.dockerignore`: static container packaging
-- `deploy/`: nginx configuration and Kubernetes workload/Ingress templates
+```text
+portal/dist/        Shared tile index and game previews
+pre2/               Prehistorik 2 (moved from the former repository root)
+ga/                 Golden Axe
+flappy/             Flappy
+scripts/            Shared preview, verification and container smoke
+provenance/         Combined public runtime checksums
+Dockerfile          One image containing the portal and all games
+.github/workflows/  One active multiarch image workflow
+deploy/             NGINX and pure Kubernetes manifest renderer
+DEPLOYER.md         Fresh deployment and reviewed legacy cleanup handoff
+```
 
-Original assets retain their original authorship; this repository does not grant a new license to the 1993 TITUS artwork or music.
+This repository was renamed from `michalmedvecky/pre2-web` to `michalmedvecky/remastered`. Existing history and historical game release tags are retained. Historical release documents describe the layout/image that existed at their tagged commit. Current code and build identity use the new repository. Update local remotes:
 
-References: [Kubernetes Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/), [official nginx image](https://hub.docker.com/_/nginx), [GitHub container registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry), [Docker multi-platform Actions](https://docs.docker.com/build/ci/github-actions/multi-platform/).
+```sh
+git remote set-url origin git@github.com:michalmedvecky/remastered.git
+```
 
-HD scrolling seams are fixed by assembling terrain before subpixel camera filtering. See [v12 compositor evidence and regression checks](art/hd-v12/README.md).
+## Development
 
-Bonus-stage bread paint is restricted to actual bread; map cherries/glasses/ramps retain their original identities. The stone LEVEL sign is restored from its native source. See [v13 correction evidence](art/hd-v13/README.md).
+Node24+, no dependency installation:
 
-HD title and complete bonus-stage cherry ornaments, connected bread material fixes, source-aligned bonus contact and MAP click teleport are documented in [v14 evidence and limits](art/hd-v14/README.md). Type MAP and click to place the player’s feet; any key dismisses without moving.
+```sh
+git clone https://github.com/michalmedvecky/remastered.git
+cd remastered
+npm start
+# http://127.0.0.1:6002/
+npm test
+npm run verify
+```
+
+Individual game suites remain available with `npm --prefix pre2 test`, `npm --prefix ga test` and `npm --prefix flappy test`. Root tests also check actual prefix routing, MIME/cache behavior and offline deployment rendering. Browser QA is separate; passing Node tests does not claim a native DOS fullrun or a physical mobile test.
+
+For an intentionally reviewed public runtime change, run `npm run snapshot`, then tests and verification. Game-specific GA/Flappy manifests must also be refreshed with their existing scripts when those runtimes change. CI refuses mismatched checksums rather than silently rewriting them. Local build metadata has a null commit; the clean CI image injects the actual full commit and each site's source snapshot.
+
+## Build and deploy
+
+The sole active publisher is [publish-remastered-image.yml](.github/workflows/publish-remastered-image.yml). It tests all games, verifies the combined runtime, builds linux/amd64 and linux/arm64, publishes **ghcr.io/michalmedvecky/remastered**, and smoke-tests the actual read-only non-root container. The three former publishers are retired outside the active workflow directory.
+
+[DEPLOYER.md](DEPLOYER.md) is the independent deployer's handoff for **remastered.500miles.cz**, explicit cluster/TLS/image inputs, backups, acceptance and removal of the old applications by a reviewed exact allowlist. This preparation does not execute a cluster rollout or delete live resources. Original source files, old releases and research data are retained.
+
+The container serves `/healthz` and build metadata at `/build.json`, `/pre2/build.json`, `/ga/build.json` and `/flappy/build.json`. The launcher links to GitHub and the full build commit. Missing assets return404, never a game's HTML fallback. Only content-addressed assets receive immutable caching.
+
+## Research and limitations
+
+See each game's README, reports and provenance for source-derived behavior, new browser features, comparison methods and remaining uncertainty. Prehistorik2's historical artwork/research files live under `pre2/art/` and `pre2/docs/`; Golden Axe's current fidelity/sound reports live under `ga/reports/`; Flappy's original-source inventory is [flappy/SOURCES.md](flappy/SOURCES.md).
+
+Classic game names identify their respective originals. Modern reconstruction and presentation work are documented separately from original authorship. The launcher uses actual gameplay captures, not invented marketing screenshots.

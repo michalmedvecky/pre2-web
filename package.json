@@ -1,1 +1,15 @@
-{"name":"prehistorik-two-web","private":true,"type":"module","version":"1.6.1","scripts":{"start":"node scripts/serve.mjs","test":"node --test tests/*.test.mjs"}}
+{
+  "name": "remastered",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "test": "node --test tests/*.test.mjs deploy/render.test.mjs && npm --prefix pre2 test && npm --prefix ga test && npm --prefix flappy test",
+    "verify": "node scripts/verify-package.mjs",
+    "snapshot": "node scripts/refresh-manifest.mjs"
+  }
+}

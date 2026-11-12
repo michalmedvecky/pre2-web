@@ -1,0 +1,2 @@
+import{readFile}from'node:fs/promises';import{fileURLToPath}from'node:url';
+const m=JSON.parse(await readFile(new URL('../provenance/runtime-manifest.json',import.meta.url)));for(const[k,v]of Object.entries({SOURCE_SNAPSHOT:m.snapshotSHA256,GA_SNAPSHOT:m.sites.ga.snapshotSHA256,PRE2_SNAPSHOT:m.sites.pre2.snapshotSHA256,FLAPPY_SNAPSHOT:m.sites.flappy.snapshotSHA256,PORTAL_SNAPSHOT:m.sites.portal.snapshotSHA256})){if(!/^[0-9a-f]{64}$/.test(v))throw Error('Invalid snapshot '+k);console.log(k+'='+v);}

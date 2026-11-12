@@ -6,7 +6,7 @@ ARG VCS_REF=unknown
 ARG BUILD_SOURCE=local
 ARG BUILD_DIRTY=unknown
 ARG SOURCE_SNAPSHOT=unknown
-ARG BUILD_REPOSITORY=https://github.com/michalmedvecky/pre2-web
+ARG BUILD_REPOSITORY=https://github.com/michalmedvecky/remastered
 COPY deploy/nginx.conf /etc/nginx/nginx.conf
 COPY dist/ /usr/share/nginx/html/
 COPY scripts/write-build-info.sh /tmp/flappy-write-build-info.sh

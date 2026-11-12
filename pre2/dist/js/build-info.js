@@ -1,4 +1,4 @@
-export const REPOSITORY='https://github.com/michalmedvecky/pre2-web';
+export const REPOSITORY='https://github.com/michalmedvecky/remastered';
 export function commitIdentity(value){return typeof value==='string'&&/^[0-9a-f]{40}$/.test(value)?{label:'Commit '+value.slice(0,7),title:value,url:REPOSITORY+'/commit/'+value}:null;}
 export async function showBuildInfo(link,fetcher=fetch){
  if(!link)return;

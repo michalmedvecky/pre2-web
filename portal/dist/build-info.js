@@ -1,0 +1,2 @@
+const link=document.querySelector('#build-commit');
+try{const r=await fetch(new URL('./build.json',import.meta.url),{cache:'no-store'});if(!r.ok)throw Error('No build metadata');const m=await r.json();if(m.buildSource==='ci'&&m.dirty===false&&/^[a-f0-9]{40}$/.test(m.commit)&&m.repository==='https://github.com/michalmedvecky/remastered'){link.textContent='Commit '+m.commit.slice(0,7);link.href=m.repository+'/commit/'+m.commit;link.title=m.commit;link.target='_blank';link.rel='noopener noreferrer';}else link.textContent='Local preview';}catch{link.textContent='Local preview';}

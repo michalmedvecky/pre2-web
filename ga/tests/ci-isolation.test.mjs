@@ -1,2 +1,23 @@
-import test from'node:test';import assert from'node:assert/strict';import{readFile}from'node:fs/promises';
-test('root workflow filters isolate GA-only and Pre2-only pushes, mixed changes run both',async()=>{const root=new URL('../../.github/workflows/',import.meta.url),pre=await readFile(new URL('publish-image.yml',root),'utf8'),ga=await readFile(new URL('publish-ga-image.yml',root),'utf8');assert(pre.includes("    paths-ignore: ['ga/**', 'flappy/**', '.github/workflows/publish-ga-image.yml', '.github/workflows/publish-flappy-image.yml', '.github/workflows/publish-image.yml']"));assert(ga.includes("    paths: ['ga/**', '.github/workflows/publish-ga-image.yml']"));const isGa=p=>p.startsWith('ga/')||p==='.github/workflows/publish-ga-image.yml';const ignoredPre2=p=>isGa(p)||p.startsWith('flappy/')||p==='.github/workflows/publish-flappy-image.yml'||p==='.github/workflows/publish-image.yml';const cases=[{name:'Flappy only',files:['flappy/dist/game.js'],pre:false,ga:false},{name:'Flappy workflow only',files:['.github/workflows/publish-flappy-image.yml'],pre:false,ga:false},{name:'ga only',files:['ga/dist/index.html','ga/README.md'],pre:false,ga:true},{name:'GA workflow only',files:['.github/workflows/publish-ga-image.yml'],pre:false,ga:true},{name:'Pre2 only',files:['dist/js/app.js'],pre:true,ga:false},{name:'mixed',files:['ga/dist/js/app.js','dist/js/app.js'],pre:true,ga:true},{name:'Pre2workflow itself',files:['.github/workflows/publish-image.yml'],pre:false,ga:false},{name:'initial GA package and both workflow files',files:['ga/README.md','.github/workflows/publish-ga-image.yml','.github/workflows/publish-image.yml'],pre:false,ga:true}];for(const c of cases){assert.equal(c.files.some(p=>!ignoredPre2(p)),c.pre,c.name+' paths-ignore all must match to skip');assert.equal(c.files.some(isGa),c.ga,c.name+' paths any match to run');}});
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+
+test('unified publisher builds and verifies all game prefixes without deploying the cluster',async()=>{
+ const root=new URL('../../',import.meta.url);
+ const workflow=await readFile(new URL('.github/workflows/publish-remastered-image.yml',root),'utf8');
+ const docker=await readFile(new URL('Dockerfile',root),'utf8');
+ const smoke=await readFile(new URL('scripts/smoke-container.mjs',root),'utf8');
+ assert.match(workflow,/npm (?:run )?test/);
+ assert.match(workflow,/node scripts\/verify-package\.mjs/);
+ assert.match(workflow,/node scripts\/smoke-container\.mjs/);
+ assert.match(workflow,/context:\s*["']?\.["']?\s*(?:\n|$)/);
+ assert.match(workflow,/platforms:\s*linux\/amd64,linux\/arm64/);
+ assert.doesNotMatch(workflow,/kubectl|KUBECONFIG/);
+ for(const game of['ga','pre2','flappy']){
+  assert.match(docker,new RegExp('COPY\\s+'+game+'/dist/\\s+/usr/share/nginx/html/'+game+'/'));
+  assert.ok(smoke.includes('/'+game+'/'),'Smoke must request '+game+' prefix');
+ }
+ assert.match(smoke,/SMOKE_IMAGE/);
+ assert.match(smoke,/EXPECTED_COMMIT/);
+ assert.match(smoke,/EXPECTED_SNAPSHOT/);
+});

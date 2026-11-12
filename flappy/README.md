@@ -2,7 +2,7 @@
 
 Hratelná webová verze Flappy začíná rovnou v **původním sektoru 1**. Obsahuje všech **200 úrovní vytěžených z FLAPPY+4**, moderní i původní pixelovou grafiku a ovládání klávesnicí nebo dotykem.
 
-**Nasazení do k3s:** [deploy/README.md](deploy/README.md). Samostatný Docker context je `flappy/`, image repository `ghcr.io/michalmedvecky/pre2-web-flappy`.
+**Aktuální nasazení:** společný kontejner repozitáře [michalmedvecky/remastered](https://github.com/michalmedvecky/remastered) servíruje hru na **https://remastered.500miles.cz/flappy/**. Použijte konfiguraci nasazení v kořeni repozitáře. [Původní samostatné nasazení](deploy/README.md) zůstává jako historická kompatibilita.
 
 ## Spuštění
 

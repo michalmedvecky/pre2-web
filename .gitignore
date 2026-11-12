@@ -1,26 +1,10 @@
-# Local hosting identity and analysis material are not part of this repository.
-.openai/
-PROGRESS.md
-FIDELITY.md
-RESEARCH-RULES.md
-rules-extracted.json
-scripts/build-assets.py
-preview.png
-# Redundant decoded source banks and analysis-oriented asset notes.
-dist/assets/source/
-dist/assets/executable-data.bin
-dist/assets/README.md
 node_modules/
+**/node_modules/
 .DS_Store
+**/.DS_Store
+.openai/
 *.tar.gz
-# Reproducible music intermediates; compressed playback assets and provenance stay tracked.
-art/music-faithful-v1/samples/*.wav
-art/music-faithful-v2/samples/*.wav
-art/music-faithful-v1/output*/*.wav
-art/music-faithful-v2/output*/*.wav
-art/music-remaster-v1/masters/*.wav
-# Provider originals and decoded Orava masters are packaging intermediates.
-art/music-orava-v1/raw/
-
-# Downloadable sprite archive is reproducible from its tracked source directory.
-art/orava-sprites-v1.zip
+.env
+.env.*
+deploy/config.local.json
+deploy/*.rendered.json
