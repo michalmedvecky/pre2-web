@@ -30,12 +30,24 @@ export function adaptRunShortcut(value,actor,pending=null) {
   if(actor.state===2){value.jump=true;value.pressed.jump=true;return null;}
   return pending.polls>1?{...pending,polls:pending.polls-1}:null;
 }
+// Original devices whose state comes from LegacyControls instead of key tables.
+const LEGACY_PHYSICAL=['mouse','joystick1','joystick2'];
+// LegacyControls only knows original devices; give modern players a neutral
+// original stand-in that never duplicates the other player's original device.
+export function legacyStandIns(devices){
+  const out=[];
+  devices.forEach((device,index)=>{if(!MODERN_IDS.includes(device)){out[index]=device;return;}const other=devices[1-index];out[index]=['keypad','keyboard','mouse'].find(id=>id!==other&&id!==out[1-index]);});
+  return out;
+}
 export class Input {
-  constructor({onPause,onStart}) {
+  constructor({onPause,onStart,onGamepadStart=null,onMenuPad=null,bindings=null}) {
+    this.bindings=bindings||new BindingStore();this.onGamepadStart=onGamepadStart;this.onMenuPad=onMenuPad;this.menuPad=new MenuPad();this.suspended=false;
+    this.padHeld=[null,null];this.padPrev=[null,null];this.padFresh=[new Set(),new Set()];this.padAssigned=[null,null];this.startHeld=false;
     this.keyboard = new Set(); this.pendingKeys = new Set(); this.pendingActions = new Set(); this.pointers = new Map(); this.pulses = new Map();
     this.playerCount = 1; this.active = false; this.runJumps=[null,null];
     this.devices=['keypad','keyboard'];
     this.legacy=new LegacyControls({element:document.querySelector('#game'),devices:this.devices});
+    const poll=()=>{this.pollPads();this.padRaf=requestAnimationFrame(poll);};this.padRaf=requestAnimationFrame(poll);
     window.addEventListener('keydown',e => {
       const interactive=!!e.target?.closest?.('button,input,select,textarea,a[href]');
       const browserShortcut=['KeyR','KeyF'].includes(e.code)&&(e.ctrlKey||e.metaKey||e.altKey);
@@ -67,9 +79,29 @@ export class Input {
     area.addEventListener('pointercancel',e=>{starts.delete(e.pointerId);area.classList.remove('active');});
   }
   setPlayers(count){this.playerCount=count===2?2:1;this.clear();}
-  setDevices(devices){this.legacy.setDevices(devices);this.devices=[...devices];this.clear();}
+  setDevices(devices){this.legacy.setDevices(legacyStandIns(devices));this.devices=[...devices];this.clear();}
+  setSuspended(suspended){this.suspended=!!suspended;this.clear();}
+  pollPads(){
+    let pads=[];try{pads=this.legacy.getGamepads()||[];}catch{}
+    const assigned=assignPads(this.devices,pads,this.legacy.gamepadIndices);this.padAssigned=assigned.map(p=>p?.index??null);
+    for(let index=0;index<2;index++){
+      if(this.devices[index]!=='gamepad'||index>=this.playerCount){this.padHeld[index]=null;this.padPrev[index]=null;continue;}
+      const state=readPad(assigned[index],this.bindings.pads[index]),prev=this.padPrev[index];this.padPrev[index]=state;
+      if(!this.active||this.suspended){this.padHeld[index]=null;continue;}
+      // A button already held when play begins does not count as a new press.
+      if(prev)for(const action of ACTIONS)if(state[action]&&!prev[action])this.padFresh[index].add(action);
+      this.padHeld[index]=state;
+    }
+    const start=Array.from(pads).some(pad=>pad&&pad.connected!==false&&padStartPressed(pad));
+    if(start&&!this.startHeld&&!this.suspended)this.onGamepadStart?.();
+    this.startHeld=start;
+    if(this.suspended){this.menuPad.reset();return;}
+    const extra=[...(this.bindings.pads[0]?.attack||[]),...(this.bindings.pads[0]?.jump||[])];
+    for(const action of this.menuPad.edges(pads,extra))this.onMenuPad?.(action);
+  }
   actions(code,index){
     const device=this.devices[index],actions=[];
+    if(device==='custom'){const table=this.bindings?.keys?.[index];return table?keyActions(table,code).map(action=>action==='run'?'heldRun':action):[];}
     if(code===(index===0?'KeyR':'KeyF'))actions.push('heldRun');
     if(device==='keypad'&&(code.startsWith('Numpad')||['Insert','Backquote','Backslash'].includes(code)))actions.push(...(p1.get(code)||[]));
     if(device==='keyboard'&&code!=='ShiftLeft')actions.push(...(p2.get(code)||[]));
@@ -83,6 +115,7 @@ export class Input {
   }
   runBinding(code,index) {
     const device=this.devices[index];
+    if(device==='custom'){const table=this.bindings?.keys?.[index];return table?.left?.includes(code)?0:table?.right?.includes(code)?1:-1;}
     if(!['keypad','keyboard'].includes(device))return -1;
     if(code==='ArrowLeft')return index===0?0:-1;
     if(code==='ArrowRight')return index===0?1:-1;
@@ -105,9 +138,16 @@ export class Input {
     for(const code of this.pendingKeys)for(let index=0;index<this.playerCount;index++)for(const action of this.actions(code,index)){value[index][action]=true;pressed[index][action]=true;}
     for(const code of this.pendingKeys)for(let index=0;index<this.playerCount;index++){const binding=this.runBinding(code,index);if(binding>=0)runBindingFresh[index][binding]=true;}
     this.pendingKeys.clear();
+    for(let index=0;index<this.playerCount;index++){
+      if(this.devices[index]!=='gamepad')continue;
+      const held=this.padHeld[index]||{},fresh=this.padFresh[index];
+      for(const action of ACTIONS){const key=action==='run'?'heldRun':action;if(held[action]||fresh.has(action))value[index][key]=true;if(fresh.has(action))pressed[index][key]=true;}
+      if(fresh.has('left'))runBindingFresh[index][0]=true;if(fresh.has('right'))runBindingFresh[index][1]=true;
+      fresh.clear();
+    }
     const heldShortcuts=value.map(v=>!!v.heldRun);
     const physical=this.legacy.sample(actors,value.map(v=>v.magic));
-    for(let index=0;index<this.playerCount;index++)if(!['keypad','keyboard'].includes(this.devices[index])){value[index]=physical[index];pressed[index].attack=!!physical[index].attack;pressed[index].jump=!!physical[index].jump;}
+    for(let index=0;index<this.playerCount;index++)if(LEGACY_PHYSICAL.includes(this.devices[index])){value[index]=physical[index];pressed[index].attack=!!physical[index].attack;pressed[index].jump=!!physical[index].jump;}
     for(let index=0;index<this.playerCount;index++)if(heldShortcuts[index])value[index].heldRun=true;
     for(const action of this.pointers.values())value[0][action]=true;
     for(const[action,left]of this.pulses){value[0][action]=true;if(left<=1)this.pulses.delete(action);else this.pulses.set(action,left-1);}
@@ -115,7 +155,8 @@ export class Input {
     for(let index=0;index<this.playerCount;index++){value[index].pressed=pressed[index];value[index].runBindingFresh=runBindingFresh[index];this.runJumps[index]=adaptRunShortcut(value[index],actors[index],this.runJumps[index]);delete value[index].heldRun;delete pressed[index].heldRun;}
     return this.playerCount===2?{players:value}:value[0];
   }
-  clear(){this.runJumps=[null,null];this.keyboard.clear();this.pendingKeys.clear();this.pendingActions.clear();this.gestureStarts?.clear();this.pointers.clear();this.pulses.clear();this.legacy?.clear();document.querySelectorAll('.active').forEach(el=>el.classList.remove('active'));}
-  dispose(){this.active=false;this.clear();this.legacy.dispose();}
+  clear(){this.padFresh?.forEach(set=>set.clear());this.padHeld=[null,null];this.runJumps=[null,null];this.keyboard.clear();this.pendingKeys.clear();this.pendingActions.clear();this.gestureStarts?.clear();this.pointers.clear();this.pulses.clear();this.legacy?.clear();document.querySelectorAll('.active').forEach(el=>el.classList.remove('active'));}
+  dispose(){cancelAnimationFrame(this.padRaf);this.active=false;this.clear();this.legacy.dispose();}
 }
 import {LegacyControls} from './legacy-controls.js';
+import {ACTIONS,BindingStore,MenuPad,MODERN_IDS,assignPads,keyActions,padStartPressed,readPad} from './bindings.js';

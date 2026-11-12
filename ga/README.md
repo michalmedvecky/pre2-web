@@ -44,6 +44,17 @@ Zkratka bezpečně zahájí rozběh před skokem i při současném stisku.
 
 Původní klávesy zůstávají: Keypad používá numerické směry, Num5 útok a Insert skok; Keyboard používá QWE/A·D/ZXC, S útok a Tab skok. Tyto dva typy lze v Options prohodit mezi hráči. Magie zůstává podle hráče: P1 pravý Shift, P2 levý Shift. Šipky/J/K/L jsou rozšíření P1 a R/F jsou webové zkratky pro běh. Nejde o nové herní schopnosti.
 
+### Přemapování a gamepad (webová verze)
+
+Options nabízí každému hráči dvě další zařízení ve skupině **Webová verze**. Původní Keypad, Keyboard, Joystick 1/2 a Mouse zůstávají beze změny a výchozí volba je stále Keypad / Keyboard.
+
+- **Vlastní klávesy** používají tabulku kláves daného hráče. Výchozí rozložení odpovídá webovému: P1 šipky, J útok, K skok, L nebo pravý Shift magie, R běh; P2 W/X/A/D, S útok, Tab skok, levý Shift magie, F běh. Úhlopříčky vzniknou současným stiskem dvou směrů a dvojklep směru pro běh funguje dál.
+- **Gamepad** čte Gamepad API se standardním mapováním, bez kalibrace: D-pad nebo levá páčka, X útok, A skok, Y magie, RB běh (držet). **Start** pozastaví a obnoví hru, v nabídkách a cutscénách funguje jako Enter. Hráči s Gamepadem dostanou připojené ovladače v pořadí připojení. Ovladač, který už používá původní Joystick 1/2, se přeskočí. Pravý/levý Shift a R/F zůstávají i pro hráče s gamepadem.
+- **Nabídky gamepadem:** D-pad nebo levá páčka pohybuje v hlavním menu, Options, Sound Test i v přehledu Controls. A (nebo přiřazený útok/skok) potvrzuje, B vrací zpět, vlevo/vpravo mění vybraný seznam. Když hráč přiřadí tlačítko gamepadu nebo ovládá nabídku gamepadem a nikdo zatím nepoužívá gamepad/joystick, přepne se zařízení na Gamepad (hráč 1, resp. hráč, kterému přiřazuje) a menu to oznámí.
+- Položka **Controls** v hlavním menu (pod Options) otevře tabulku obou hráčů. Klikni na pole a stiskni klávesu, tlačítko gamepadu nebo vychyl páčku. Esc nebo Start zruší, Backspace pole vymaže. Kolize kláves mezi akcemi nebo s druhým hráčem se zvýrazní. Mezerník, Esc, Enter a F1–F12 přiřadit nelze. „Obnovit výchozí“ vrátí rozložení hráče.
+- Přiřazení i zvolená zařízení se ukládají do `localStorage` tohoto prohlížeče (`ga.bindings.v1`, `ga.devices.v1`). Původní simulace dostává stejné logické vstupy jako z kláves; herní mechaniky se nemění.
+- Implementace: `dist/js/bindings.js` (data, uložení, čtení gamepadu), `dist/js/bindings-dialog.js` (dialog) a `dist/js/input.js` (zařízení). Testy: `tests/bindings.test.mjs`.
+
 ## Lokální spuštění a kontroly
 
 Node24+, žádné npm závislosti ani instalace:

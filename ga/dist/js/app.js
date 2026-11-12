@@ -12,6 +12,8 @@ import {LEGACY_DATA,averageJoystickSamples} from './legacy-controls.js';
 import {createMapOverlay} from './map-overlay.js';
 import {createLevelOverlay} from './level-overlay.js';
 import {createControlsHelp} from './controls-help.js';
+import {BindingStore,MODERN_DEVICES,MODERN_IDS,loadDevices,moveFocus,saveDevices,stepSelect} from './bindings.js';
+import {createBindingsDialog} from './bindings-dialog.js';
 import {preloadPresentationHD} from './hd-presentation.js';
 import {warmStatePalettes} from './hd-palette-warmup.js';
 import {HDStageLoader} from './hd-stage-loader.js';
@@ -27,7 +29,9 @@ let assets, menuStep = 'mode';
 let selectingPlayer = 1;
 let characterSelect = null;
 let menuCursor = 0;
-const selection = {mode:'arcade',character:'hero',players:1,character2:'amazon',healthBars:3,devices:['keypad','keyboard']};
+const DEVICE_IDS=[...LEGACY_DATA.devices.map(device=>device.id),...MODERN_IDS];
+const bindings=new BindingStore();
+const selection = {mode:'arcade',character:'hero',players:1,character2:'amazon',healthBars:3,devices:loadDevices(DEVICE_IDS)||['keypad','keyboard']};
 let sequence=null;
 let titlePending=true,openingShown=false,interludeShown=false;
 let calibration=null;
@@ -49,7 +53,7 @@ function updateGraphicsUI() {
 }
 function setGraphicsMode(mode) {const result=renderer.setGraphicsMode(mode);try{localStorage.setItem('ga.graphics',mode);}catch{}updateGraphicsUI();return result;}
 function toggleHD() {return setGraphicsMode(renderer.graphicsMode==='hd'?'original':'hd');}
-let mapOverlay=null,levelOverlay=null,controlsHelp=null,lastGodMode=false;
+let mapOverlay=null,levelOverlay=null,controlsHelp=null,bindingsDialog=null,lastGodMode=false;
 const hdWarmups=new Map();
 let paletteWarmupRunning=false,lastPaletteWarmup=-Infinity;
 let hdStageLoader=null;
@@ -179,14 +183,14 @@ function menuSync() {
   }
   for(const button of document.querySelectorAll('[data-health-bars]')){const active=Number(button.dataset.healthBars)===selection.healthBars;button.classList.toggle('selected',active);button.setAttribute('aria-pressed',String(active));}
   $('#two-player-note').hidden=selection.players!==2;
-  for(const select of document.querySelectorAll('[data-device-player]')){const index=Number(select.dataset.devicePlayer);select.value=selection.devices[index];for(const option of select.options)option.disabled=option.value===selection.devices[1-index];}
+  for(const select of document.querySelectorAll('[data-device-player]')){const index=Number(select.dataset.devicePlayer);select.value=selection.devices[index];for(const option of select.options)option.disabled=option.value===selection.devices[1-index]&&!MODERN_IDS.includes(option.value);}
   $('#mouse-lock').disabled=!selection.devices.includes('mouse');
   $('#launch').innerHTML='Vybrat <span>✓</span>';
-  $('#open-options').classList.toggle('selected',menuCursor===3);
-  $('#start').innerHTML=menuCursor===3?'Otevřít Options <span>→</span>':titlePending?'Spustit původní úvod <span>→</span>':'Vybrat hrdinu <span>→</span>';
+  $('#open-options').classList.toggle('selected',menuCursor===3);$('#open-controls-menu').classList.toggle('selected',menuCursor===4);
+  $('#start').innerHTML=menuCursor===3?'Otevřít nastavení <span>→</span>':menuCursor===4?'Nastavit ovládání <span>→</span>':titlePending?'Spustit původní úvod <span>→</span>':'Vybrat hrdinu <span>→</span>';
 }
 function primaryAction() {
-  if(!started&&titlePending&&menuStep==='mode'&&menuCursor!==3){
+  if(!started&&titlePending&&menuStep==='mode'&&menuCursor<3){
     titlePending=false;sequence=new OriginalIntro(simulation,'title');warmPresentation('title');start();
     const generation=audioGeneration;audio.unlock().then(ok=>{if(ok&&generation===audioGeneration&&sequence?.kind==='title')audio.playTrack('opening');});return;
   }
@@ -196,6 +200,7 @@ function primaryAction() {
     if(simulation.state.status==='stage-complete'){continueStage();return;}
     if(paused)pause();return;
   }
+  if (menuStep === 'mode'&&menuCursor===4) {bindingsDialog?.open();return;}
   if (menuStep === 'mode') {if(menuCursor===3)menuAudio();else resetAudio();menuStep=menuCursor===3?'options':'character';selectingPlayer=1;if(menuStep==='character')beginCharacterSelect();menuSync();return;}
   if (menuStep === 'options') {menuStep='mode';menuSync();return;}
   if(menuStep==='soundtest'){if(soundTestCursor<11)playSoundTestMusic(SOUND_TEST_DATA.music[soundTestCursor].selector);else if(soundTestCursor===11)stepSoundTestEffect(1);else exitSoundTest();return;}
@@ -252,7 +257,8 @@ for (const button of document.querySelectorAll('[data-players]')) button.addEven
 for(const button of document.querySelectorAll('[data-health-bars]'))button.addEventListener('click',()=>{selection.healthBars=Number(button.dataset.healthBars);menuSync();});
 for(const select of document.querySelectorAll('[data-device-player]')){
   for(const device of LEGACY_DATA.devices){const option=document.createElement('option');option.value=device.id;option.textContent=device.label;select.append(option);}
-  select.addEventListener('change',()=>{const index=Number(select.dataset.devicePlayer);selection.devices[index]=select.value;input?.setDevices(selection.devices);menuSync();});
+  const modern=document.createElement('optgroup');modern.label='Webová verze';for(const device of MODERN_DEVICES){const option=document.createElement('option');option.value=device.id;option.textContent=device.label;modern.append(option);}select.append(modern);
+  select.addEventListener('change',()=>{const index=Number(select.dataset.devicePlayer);selection.devices[index]=select.value;saveDevices(selection.devices);input?.setDevices(selection.devices);menuSync();});
 }
 $('#mouse-lock').addEventListener('click',async()=>{const result=await input?.legacy.requestMouseLock();$('#device-status').textContent=result?.ok?'Myš je zachycena; Escape ji uvolní.':'Zachycení myši není dostupné. Myš funguje nad herní plochou.';});
 document.querySelector('.screen-wrap').append($('#calibration-panel'));
@@ -271,10 +277,37 @@ async function measureCalibration(){const current=calibration;if(!current||curre
 }catch(error){current.error=error.message;current.step=0;current.points=[];}finally{if(calibration===current){current.busy=false;calibrationPrompt();}}}
 for(const button of document.querySelectorAll('[data-calibrate-port]'))button.addEventListener('click',()=>beginCalibration(Number(button.dataset.calibratePort)));
 $('#calibration-measure').addEventListener('click',measureCalibration);$('#calibration-cancel').addEventListener('click',closeCalibration);
-window.addEventListener('keydown',event=>{if(controlsHelp?.isOpen)return;if(calibration){event.stopImmediatePropagation();if(event.code==='Escape'){event.preventDefault();measureCalibration();}return;}if(event.ctrlKey||event.altKey||event.metaKey||event.repeat)return;if(['F2','F3','F4','F5'].includes(event.code)){event.preventDefault();event.stopImmediatePropagation();if(event.code==='F2')audio.toggleEffects();else if(event.code==='F3')audio.toggleMusic();else beginCalibration(event.code==='F4'?0:1);syncSoundGates();}},true);
+window.addEventListener('keydown',event=>{if(controlsHelp?.isOpen||bindingsDialog?.isOpen)return;if(calibration){event.stopImmediatePropagation();if(event.code==='Escape'){event.preventDefault();measureCalibration();}return;}if(event.ctrlKey||event.altKey||event.metaKey||event.repeat)return;if(['F2','F3','F4','F5'].includes(event.code)){event.preventDefault();event.stopImmediatePropagation();if(event.code==='F2')audio.toggleEffects();else if(event.code==='F3')audio.toggleMusic();else beginCalibration(event.code==='F4'?0:1);syncSoundGates();}},true);
 window.addEventListener('pagehide',()=>{if(calibration){cancelAnimationFrame(calibration.raf);calibration=null;$('#calibration-panel').hidden=true;}});
 $('#menu-back').addEventListener('click',()=>{characterSelect=null;menuStep='mode';input?.clear();menuSync();});
 $('#open-options').addEventListener('click',()=>{menuCursor=3;menuStep='options';menuSync();});
+$('#open-controls-menu').addEventListener('click',()=>{menuCursor=4;menuSync();});
+// Gamepad use: a player who binds or drives menus with a pad but still has a
+// keyboard device is switched to the web Gamepad device, with a visible note.
+const PAD_DEVICES=['gamepad','joystick1','joystick2'];
+function useGamepadFor(player){
+  if(PAD_DEVICES.includes(selection.devices[player]))return '';
+  selection.devices[player]='gamepad';saveDevices(selection.devices);input?.setDevices(selection.devices);menuSync();
+  const note=`Hráč ${player+1} nyní hraje na Gamepad. Zařízení změníš v Options.`;
+  $('#device-status').textContent=note;const pad=$('#pad-note');pad.textContent=note;pad.hidden=false;return note;
+}
+function menuPad(action){
+  if(!assets||started||controlsHelp?.isOpen||bindingsDialog?.isOpen||calibration)return;
+  if(!selection.devices.some(device=>PAD_DEVICES.includes(device)))useGamepadFor(0);
+  if(menuStep==='character'){if(action==='back'){characterSelect=null;menuStep='mode';input?.clear();menuSync();}return;}
+  if(menuStep==='mode'){
+    if(action==='up'||action==='down'){const modes=['arcade','beginner','duel'];menuCursor=(menuCursor+(action==='down'?1:4))%5;if(menuCursor<3)selection.mode=modes[menuCursor];menuSync();}
+    else if(action==='left'||action==='right'){selection.players=action==='right'?2:1;menuSync();}
+    else if(action==='confirm')primaryAction();
+    return;
+  }
+  const container=menuStep==='options'?$('#options-menu'):menuStep==='soundtest'?$('#sound-test-menu'):null;if(!container)return;
+  const focused=container.contains(document.activeElement)?document.activeElement:null;
+  if(action==='back'){if(menuStep==='soundtest')exitSoundTest();else{menuStep='mode';menuSync();}return;}
+  if(action==='confirm'){if(focused?.tagName==='BUTTON')focused.click();else if(!focused)moveFocus(container,1);return;}
+  if((action==='left'||action==='right')&&focused?.tagName==='SELECT'){stepSelect(focused,action==='right'?1:-1);return;}
+  moveFocus(container,action==='down'||action==='right'?1:-1);
+}
 $('#options-back').addEventListener('click',()=>{menuStep='mode';menuSync();});
 function soundTestSync(){for(const button of document.querySelectorAll('[data-sound-track]'))button.classList.toggle('selected',Number(button.dataset.soundTrack)===soundTestCursor);$('#sound-effect-number').textContent=String(soundTestEffect+SOUND_TEST_DATA.effect.displayOffset);}
 async function playSoundTestMusic(selector){const ticket=++soundTestMusicTicket,generation=audioGeneration;if(await audio.unlock()&&['soundtest','options'].includes(menuStep)&&ticket===soundTestMusicTicket&&generation===audioGeneration)audio.playTrack({selector},{restart:true});}
@@ -297,7 +330,8 @@ window.addEventListener('keydown',event=>{
   }
   if(started&&simulation?.state.status==='continue'&&!event.repeat){
     const actor=simulation.state.players?.find(p=>p.id===simulation.state.continueActorID);
-    const confirm=actor?.playerIndex===1?event.code==='KeyS':['KeyJ','Numpad5'].includes(event.code);
+    const owner=actor?.playerIndex===1?1:0,custom=input?.devices[owner]==='custom'&&input.actions(event.code,owner).includes('attack');
+    const confirm=custom||(owner===1?event.code==='KeyS':['KeyJ','Numpad5'].includes(event.code));
     if(confirm){event.preventDefault();event.stopImmediatePropagation();primaryAction();return;}
   }
   if(started||!assets||event.repeat)return;
@@ -305,7 +339,7 @@ window.addEventListener('keydown',event=>{
   if(event.code==='Numpad5'||event.code==='KeyJ'){event.preventDefault();primaryAction();}
   if(event.code==='Escape'&&menuStep!=='mode'){event.preventDefault();menuStep='mode';menuSync();}
   if(menuStep==='mode'&&['ArrowUp','ArrowDown'].includes(event.code)){
-    event.preventDefault();const modes=['arcade','beginner','duel'];menuCursor=(menuCursor+(event.code==='ArrowDown'?1:3))%4;if(menuCursor<3)selection.mode=modes[menuCursor];menuSync();
+    event.preventDefault();const modes=['arcade','beginner','duel'];menuCursor=(menuCursor+(event.code==='ArrowDown'?1:4))%5;if(menuCursor<3)selection.mode=modes[menuCursor];menuSync();
   }
   if(menuStep==='mode'&&['ArrowLeft','ArrowRight'].includes(event.code)){event.preventDefault();selection.players=event.code==='ArrowRight'?2:1;menuSync();}
 
@@ -440,7 +474,10 @@ try {
   simulation = new engine.Simulation({assets});
   let graphicsMode='hd';try{if(localStorage.getItem('ga.graphics')==='original')graphicsMode='original';}catch{}
   renderer = new Renderer(canvas, assets,{graphicsMode});
-  input = new Input({onPause:code=>{if(sequence?.kind==='title'&&code==='Space'){primaryAction();return;}if(!started&&code==='Escape')return;pause();},onStart:primaryAction});
+  input = new Input({bindings,onPause:code=>{if(sequence?.kind==='title'&&code==='Space'){primaryAction();return;}if(!started&&code==='Escape')return;pause();},onStart:primaryAction,onMenuPad:action=>menuPad(action),
+    // Gamepad Start: pause/resume during play, otherwise behave like Enter.
+    onGamepadStart:()=>{if(!assets||controlsHelp?.isOpen||bindingsDialog?.isOpen||calibration||mapOverlay?.isOpen||levelOverlay?.isOpen)return;if(started&&!sequence&&simulation?.state.status==='playing'){pause();return;}primaryAction();}});
+  input.setDevices(selection.devices);
   window.addEventListener('pagehide',event=>{if(!event.persisted)input.dispose();});
   canvas.addEventListener('pointerdown',event=>{if(event.pointerType==='mouse'&&started&&!paused&&!sequence&&selection.devices.includes('mouse'))input.legacy.requestMouseLock();});
   renderer.renderMenu(menuStep);
@@ -459,7 +496,13 @@ try {
     if(saved.started&&!saved.paused&&paused&&!document.hidden&&!pageAudioHeld)pause();
     else if(!started)audio.setPaused(saved.audioPaused||pageAudioHeld||document.hidden);
     if(started&&!paused)return canvas;
-  }});window.goldenAxe.controlsHelp=controlsHelp;
+  },getBindings:()=>bindings});window.goldenAxe.controlsHelp=controlsHelp;
+  bindingsDialog=createBindingsDialog({store:bindings,getGamepads:()=>input.legacy.getGamepads(),getDevices:()=>selection.devices,onPadBound:player=>useGamepadFor(player),
+    otherKeyUses:(code,player)=>selection.players===2&&Input.prototype.actions.call({devices:selection.devices,playerCount:2,bindings},code,1-player).length>0,
+    onOpen:()=>{const saved={started,paused};if(started&&!paused)pause();input.setSuspended(true);return saved;},
+    onClose:(saved,{restore})=>{input.setSuspended(false);prior=performance.now();accumulated=0;if(restore&&saved?.started&&!saved.paused&&paused)pause();}});
+  window.goldenAxe.bindings=bindings;window.goldenAxe.bindingsDialog=bindingsDialog;
+  window.addEventListener('pagehide',event=>{if(!event.persisted)bindingsDialog.dispose();});
   window.addEventListener('pagehide',event=>{if(!event.persisted)controlsHelp.dispose();});
   window.goldenAxe.graphics={toggle:toggleHD,set:setGraphicsMode,status:()=>renderer.getGraphicsStatus()};
   for(const button of document.querySelectorAll('[data-open-hd]'))button.addEventListener('click',toggleHD);

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "snapshotSHA256": "154f24aaeaac84995675c629e4d6eab0d8d53e2a821c901865055e40bb737078",
+  "snapshotSHA256": "e830a7176b8fe38d887484961a44a9f447b17596b794c1b64bf1288b1fbf09d1",
   "excluded": [
     "build.json (injected per build)"
   ],
@@ -2238,16 +2238,24 @@
       "size": 5828
     },
     "index.html": {
-      "sha256": "d6e65a809b594fb09680eda02536f21ba0f40df9b34a676fbff79bfe713c4c19",
-      "size": 12258
+      "sha256": "026e6b978ca70338e78edc69164d29b4bb877a51b579b2dc899c49f3c84a7866",
+      "size": 12512
     },
     "js/app.js": {
-      "sha256": "abac24db557fc0fb94d1be9c61f1a61ec20ff34343af3a1e92b486113f4075e8",
-      "size": 41961
+      "sha256": "c03eb7516ad1b7108e9666b0310e0aa7ade71d8f589c2ddf185c8d0a54cd2716",
+      "size": 46239
     },
     "js/audio.js": {
       "sha256": "73cd3c8854d53ad7d0c046e19d48b9ca929bddfe9cf50614feedb42d5daa4090",
       "size": 17248
+    },
+    "js/bindings-dialog.js": {
+      "sha256": "6bfbee71853bcdb59b2fe7cb8854b08888f6781c47cb37093a98a60ee80cd2a2",
+      "size": 11479
+    },
+    "js/bindings.js": {
+      "sha256": "86e03090f7467267c164035f50a86cc070631858bd44448c4ce51fa7f9adbe16",
+      "size": 11116
     },
     "js/build-info.js": {
       "sha256": "92489d725bec0102c8133632cdd9a6cd52cab4381fc891ebcf05274ed4bf5cb3",
@@ -2262,8 +2270,8 @@
       "size": 3849
     },
     "js/controls-help.js": {
-      "sha256": "dcae16b61d8601f3baa741500be9523c62b809ba448ac86e19b049cb7903011f",
-      "size": 8532
+      "sha256": "7665a8d319ae78799966298520a453b953f9b14f16927f950a774d5a433ad908",
+      "size": 9899
     },
     "js/ending.js": {
       "sha256": "6a9558c82954eed92233c96a04d2e514cfa1a05755845d97aede09604c5bd8b3",
@@ -2350,8 +2358,8 @@
       "size": 700
     },
     "js/input.js": {
-      "sha256": "cc4760c794e9dd6f0d4ba7cfad2534f0dbda7eb4c3605574dda065fbecac2772",
-      "size": 9178
+      "sha256": "1caa5139079f156b2260aa9e71efb5363fdbc9f394131837f112983ad98b6c98",
+      "size": 12517
     },
     "js/interlude-data.js": {
       "sha256": "9a8a5c61fe1425b3423c4bc0028051483086fc8a069e8fed2b44b3f59bd8311b",
@@ -2470,8 +2478,8 @@
       "size": 675
     },
     "style.css": {
-      "sha256": "da4b0fc0b591afed1729afe1c9a58532b32f3355ba9453208385b3d52529c304",
-      "size": 19496
+      "sha256": "493ec01a4fd25648aa6d95fd93c900a65accddd2aabdee038563dc272c93f70a",
+      "size": 20623
     }
   }
 }

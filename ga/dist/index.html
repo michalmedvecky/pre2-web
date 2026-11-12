@@ -36,7 +36,9 @@
               <button data-mode="beginner" aria-pressed="false"><span>›</span> Beginner</button>
               <button data-mode="duel" aria-pressed="false"><span>›</span> The Duel</button>
               <button id="open-options"><span>›</span> Options</button>
+              <button id="open-controls-menu" data-open-bindings><span>›</span> Controls</button>
             </div>
+            <p id="pad-note" class="scope pad-note" role="status" hidden></p>
             <button id="start" class="primary">Vybrat hrdinu <span>→</span></button>
             <button data-open-controls class="menu-help">Ovládání a kombinace</button>
             <p class="scope">Pracovní rekonstrukce · shoda s originálem se ověřuje</p>
@@ -48,7 +50,7 @@
             <div class="device-options"><label>Player 1 <select data-device-player="0" aria-label="Ovládání hráče 1"></select></label><label>Player 2 <select data-device-player="1" aria-label="Ovládání hráče 2"></select></label></div>
             <p class="scope">Hráči používají odlišné vstupy. Keyboard znamená QWE / A·D / ZXC; Keypad numerickou klávesnici.</p>
             <button data-open-controls class="secondary">Ovládání obou hráčů a kombinace</button>
-            <p id="device-status" class="scope">Joystick 1/2 používá první/druhý připojený gamepad.</p>
+            <p id="device-status" class="scope">Joystick 1/2 emuluje původní analogový joystick. Gamepad a Vlastní klávesy jsou doplňky webové verze s vlastním přiřazením.</p>
             <div class="device-calibration"><button data-calibrate-port="0" class="secondary">Kalibrace Joystick 1</button><button data-calibrate-port="1" class="secondary">Kalibrace Joystick 2</button></div>
             <div id="calibration-panel" class="overlay" role="dialog" aria-modal="true" aria-labelledby="calibration-prompt" hidden><div class="pause-card"><div class="menu-caption">JOYSTICK CALIBRATION</div><p id="calibration-prompt" role="status"></p><p>Polohu potvrď tlačítkem gamepadu, Esc nebo tlačítkem níže.</p><button id="calibration-measure" class="secondary">Změřit polohu</button><button id="calibration-cancel" class="menu-back">Zrušit</button></div></div>
             <div class="device-calibration"><button data-toggle-effects class="secondary">Zvuky: zapnuto · F2</button><button data-toggle-music class="secondary">Hudba: zapnuto · F3</button></div>
